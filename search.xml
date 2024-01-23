@@ -1,13 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Welcom to My Blog</title>
-    <url>/2024/01/20/Welcom-to-My-Blog/</url>
-    <content><![CDATA[<p>I've been trying to document things about myself, as a reminder that
-I have existed in this world. <span id="more"></span></p>
-<p>In this blog, I might write about personal feelings, reading notes,
-thoughts, achievements, plans...etc Welcome to my blog.</p>
+    <title>Notes for SICPJS</title>
+    <url>/2024/01/23/Notes-for-SICPJS/</url>
+    <content><![CDATA[<p>Notes for SICP JS. <span id="more"></span> # Introduction</p>
+<p><a href="https://sourceacademy.org/sicpjs">SICPJS</a> is a Java
+Script version(or Source Language) of the computer science textbook
+<em>Structure and Interpretation of Computer Programs (SICP)</em> . The
+original textbook was written by Massachusetts Institute of Technology
+professors Harold Abelson and Gerald Jay Sussman with Julie Sussman, and
+is known as the "Wizard Book" in hacker culture. In NUS, year1 CS
+students who take CS1101S uses SICPJS as the reference book on their
+amazing study journey with the Source Academy.</p>
+<p>During my study of CS in 2023/24 Sem 1 in CS1101, I find SICPJS a
+great book. It not works as an introductory book to computer science,
+but it also inspired me to think about the fundamental principles of CS.
+I wrote this note during my sem1 study in CS1101S and is still working
+on the book after that. Hopefully, this note would have been finished in
+2023/24 Sem2.</p>
+<p>This note involves ideas that I find inspiring in the book and
+questions that I came up with while reading. Notes with (U) are
+questions that are unsolved and it would be great if readers could
+comment below about your ideas on the notes.</p>
+<p>I recommend anyone studying CS to read the book(either the original
+version or JS version), and hopefully this note would be of some use to
+the reader's understanding of the book.</p>
+<h1 id="notes">Notes</h1>
+<h2 id="foreword">Foreword</h2>
+<ol type="1">
+<li><p><strong>(U)What is combinatory calculus &amp; lambda calculus
+&amp; predicate calculus?</strong></p>
+<p><img src="1.png" /></p>
+<p>Lambda Calculus : (lambda x.lambda y. x+y)(5 6) = 11</p>
+<p>A lambda notation is equivalent to a Turing Machine, vice
+versa</p></li>
+<li><p><strong>(U)How can you use a lambda notation to represent AND and
+OR?</strong></p>
+<p>For reference, if we define True and False as:</p>
+<pre><code> True: lambda x. lambda y. x
+
+ False: lambda x. lambda y. y</code></pre>
+<p>For any boolean value b, the logic NOT can be represented as</p>
+<pre><code> NOT: lambda b. b False True</code></pre>
+<p>Proof: case 1: b = True</p>
+<pre><code>         Not b = Not True = True Flase True = False
+
+     case2: b = False
+
+         Not b = Not False = False False True = True</code></pre></li>
+<li><p><strong>(U)What is object oriented approach?</strong></p></li>
+<li><p><strong>(U)Why does the author say that most programming
+languages “does not have a completely automatic storage
+management”?</strong></p></li>
+<li><p><strong>(U)Is it better to have 100 functions programmed on 1
+data structure or 10 functions for each of 10 data
+structures?</strong></p></li>
+<li><p><strong>(U)What is Lisp?</strong></p></li>
+</ol>
+<h2 id="chapter-1-building-abstractions-with-functions">Chapter 1
+Building Abstractions with Functions</h2>
+<h3 id="section">1.1</h3>
+<p><strong>Inflix Notation</strong></p>
+<pre><code>operand + operator + operand</code></pre>
+<p><strong>JS programmers know the value of everything but the cost of
+nothing.(LOL)</strong></p>
+<pre><code>The fact that every expression has a value and JS programmers are known for not caring about time/space efficiency.</code></pre>
+<p><strong>(U)What is the difference between statements and
+expressions?</strong></p>
+<pre><code>A?</code></pre>
+<p><strong>Snake Case &amp; Camel Case</strong></p>
+<pre><code>Different ways to name variables.</code></pre>
+<h2 id="chapter-3-modularity-objects-and-state">Chapter 3: Modularity,
+Objects, and State</h2>
+<h3 id="section-1">3.1</h3>
+<p><strong>Why use the CSE machine, why is environment an important
+thing?(3.1.2)</strong></p>
+<pre><code>Storing the temporary data that the function needs in the local environment of a function helps us to generalize
+functions(for example, in this way the memoization progress can be applied to different functions)
+
+Encapsulation: We say a variable is encapsulated in the environment when its information is only accessed inside the environment. A general systemword designing principle called “the hiding principle“ is that a system gets more modular and robust by providing information access to only the parts of the programme that are “need to know”. </code></pre>
+<p><strong>Monte Carlo Method</strong></p>
+<pre><code>The use of randomness. Say you want to calculate the area of a circle(x^2 +y^2 &lt;= 1). Choose a rectangle(whose area you have already know), and try to make many following experiments: pick up one point and test whether the point is in the circle. If we try this many times, we get the possibility of a point in the rectangle is in the circle, thus p * area_of_rectangle = area_of_circle.</code></pre>
+<p> </p>
 ]]></content>
+      <categories>
+        <category>Notes</category>
+        <category>CS</category>
+        <category>JavaScript</category>
+        <category>Overview</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+        <tag>ComputerScience</tag>
+        <tag>Study</tag>
+        <tag>Notes</tag>
+        <tag>CS1101S</tag>
+        <tag>NUS</tag>
+      </tags>
   </entry>
   <entry>
     <title>Hello World</title>
@@ -60,5 +149,17 @@ class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 ]]></content>
+  </entry>
+  <entry>
+    <title>Thought - 2024.1.23</title>
+    <url>/2024/01/23/Thought-2024-1-23/</url>
+    <content><![CDATA[<h1 id="sleeping-is-important.">Sleeping is important.</h1>
+]]></content>
+      <categories>
+        <category>thoughts</category>
+      </categories>
+      <tags>
+        <tag>thoughts</tag>
+      </tags>
   </entry>
 </search>

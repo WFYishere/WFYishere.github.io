@@ -20,27 +20,35 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"wfyishere.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.19.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":true,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="This is a Blog to test this website&#39;s functionalities.">
+    <meta name="description" content="Notes for SICP JS.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="https://wfyishere.github.io/2024/01/20/hello-world/index.html">
+<meta property="og:title" content="Notes for SICPJS">
+<meta property="og:url" content="https://wfyishere.github.io/2024/01/23/Notes-for-SICPJS/index.html">
 <meta property="og:site_name" content="WFY&#39;s Blog">
-<meta property="og:description" content="This is a Blog to test this website&#39;s functionalities.">
+<meta property="og:description" content="Notes for SICP JS.">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-01-20T02:34:20.406Z">
-<meta property="article:modified_time" content="2024-01-23T03:37:52.257Z">
+<meta property="og:image" content="https://wfyishere.github.io/2024/01/23/Notes-for-SICPJS/1.png">
+<meta property="article:published_time" content="2024-01-23T05:21:59.000Z">
+<meta property="article:modified_time" content="2024-01-23T05:58:12.687Z">
 <meta property="article:author" content="Wen Fanyu">
+<meta property="article:tag" content="JavaScript">
+<meta property="article:tag" content="ComputerScience">
+<meta property="article:tag" content="Study">
+<meta property="article:tag" content="Notes">
+<meta property="article:tag" content="CS1101S">
+<meta property="article:tag" content="NUS">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://wfyishere.github.io/2024/01/23/Notes-for-SICPJS/1.png">
 
 
-<link rel="canonical" href="https://wfyishere.github.io/2024/01/20/hello-world/">
+<link rel="canonical" href="https://wfyishere.github.io/2024/01/23/Notes-for-SICPJS/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://wfyishere.github.io/2024/01/20/hello-world/","path":"2024/01/20/hello-world/","title":"Hello World"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://wfyishere.github.io/2024/01/23/Notes-for-SICPJS/","path":"2024/01/23/Notes-for-SICPJS/","title":"Notes for SICPJS"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Hello World | WFY's Blog</title>
+<title>Notes for SICPJS | WFY's Blog</title>
   
 
 
@@ -141,7 +149,9 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#url"><span class="nav-number">1.</span> <span class="nav-text">URL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#code"><span class="nav-number">2.</span> <span class="nav-text">code</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#useful-syntax"><span class="nav-number">3.</span> <span class="nav-text">useful syntax</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#create-a-new-post"><span class="nav-number">4.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mathjax-testing"><span class="nav-number">5.</span> <span class="nav-text">mathjax testing</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#notes"><span class="nav-number">1.</span> <span class="nav-text">Notes</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#foreword"><span class="nav-number">1.1.</span> <span class="nav-text">Foreword</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#chapter-1-building-abstractions-with-functions"><span class="nav-number">1.2.</span> <span class="nav-text">Chapter 1
+Building Abstractions with Functions</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#section"><span class="nav-number">1.2.1.</span> <span class="nav-text">1.1</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#chapter-3-modularity-objects-and-state"><span class="nav-number">1.3.</span> <span class="nav-text">Chapter 3: Modularity,
+Objects, and State</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#section-1"><span class="nav-number">1.3.1.</span> <span class="nav-text">3.1</span></a></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -201,7 +211,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://wfyishere.github.io/2024/01/20/hello-world/">
+    <link itemprop="mainEntityOfPage" href="https://wfyishere.github.io/2024/01/23/Notes-for-SICPJS/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -214,12 +224,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="Hello World | WFY's Blog">
+      <meta itemprop="name" content="Notes for SICPJS | WFY's Blog">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Hello World
+          Notes for SICPJS
         </h1>
 
         <div class="post-meta-container">
@@ -229,15 +239,30 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
+      
 
-      <time title="Created: 2024-01-20 10:34:20" itemprop="dateCreated datePublished" datetime="2024-01-20T10:34:20+08:00">2024-01-20</time>
+      <time title="Created: 2024-01-23 13:21:59 / Modified: 13:58:12" itemprop="dateCreated datePublished" datetime="2024-01-23T13:21:59+08:00">2024-01-23</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
+        <i class="far fa-folder"></i>
       </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-01-23 11:37:52" itemprop="dateModified" datetime="2024-01-23T11:37:52+08:00">2024-01-23</time>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Notes/" itemprop="url" rel="index"><span itemprop="name">Notes</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Notes/CS/" itemprop="url" rel="index"><span itemprop="name">CS</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Notes/CS/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Notes/CS/Overview/" itemprop="url" rel="index"><span itemprop="name">Overview</span></a>
+        </span>
     </span>
 
   
@@ -247,14 +272,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Word count in article: </span>
-      <span>474</span>
+      <span>3k</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>1 mins.</span>
+      <span>3 mins.</span>
     </span>
 </div>
 
@@ -264,53 +289,85 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>This is a Blog to test this website's functionalities.
-<span id="more"></span></p>
-<hr />
-<h3 id="url">URL</h3>
-<p><a target="_blank" rel="noopener" href="https://wch.github.io/latexsheet/latexsheet.pdf">markdown
-cheatsheet</a></p>
-<p><a target="_blank" rel="noopener" href="https://wch.github.io/latexsheet/latexsheet.pdf">latex
-Cheatsheet</a></p>
-<h3 id="code">code</h3>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hello World!</span><br></pre></td></tr></table></figure>
-<h3 id="useful-syntax">useful syntax</h3>
-<p>Here's a sentence with a footnote. <a href="#fn1"
-class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
-<blockquote>
-<p>This is a quote.</p>
-</blockquote>
-<ul class="task-list">
-<li><label><input type="checkbox" checked="" />Write the press
-release</label></li>
-<li><label><input type="checkbox" />Update the website</label></li>
-<li><label><input type="checkbox" />Contact the media</label></li>
-</ul>
-<p><span style="color:red"> Changing Colour </span></p>
-<h3 id="create-a-new-post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a
-target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="mathjax-testing">mathjax testing</h3>
-<p><span class="math display">\[\begin{equation}
-   E = mc^2
-\end{equation}\]</span></p>
-<p><span class="math display">\[\begin{equation}
-\begin{aligned}
-a &amp;= b + c \\
-  &amp;= d + e + f + g \\
-  &amp;= h + i
-\end{aligned}
-\end{equation}\]</span></p>
-<p><span class="math display">\[x+1\over\sqrt{1-x^2} \]</span></p>
-<section id="footnotes" class="footnotes footnotes-end-of-document"
-role="doc-endnotes">
-<hr />
-<ol>
-<li id="fn1"><p>This is the footnote.<a href="#fnref1"
-class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+    <div class="post-body" itemprop="articleBody"><p>Notes for SICP JS. <span id="more"></span> # Introduction</p>
+<p><a target="_blank" rel="noopener" href="https://sourceacademy.org/sicpjs">SICPJS</a> is a Java
+Script version(or Source Language) of the computer science textbook
+<em>Structure and Interpretation of Computer Programs (SICP)</em> . The
+original textbook was written by Massachusetts Institute of Technology
+professors Harold Abelson and Gerald Jay Sussman with Julie Sussman, and
+is known as the "Wizard Book" in hacker culture. In NUS, year1 CS
+students who take CS1101S uses SICPJS as the reference book on their
+amazing study journey with the Source Academy.</p>
+<p>During my study of CS in 2023/24 Sem 1 in CS1101, I find SICPJS a
+great book. It not works as an introductory book to computer science,
+but it also inspired me to think about the fundamental principles of CS.
+I wrote this note during my sem1 study in CS1101S and is still working
+on the book after that. Hopefully, this note would have been finished in
+2023/24 Sem2.</p>
+<p>This note involves ideas that I find inspiring in the book and
+questions that I came up with while reading. Notes with (U) are
+questions that are unsolved and it would be great if readers could
+comment below about your ideas on the notes.</p>
+<p>I recommend anyone studying CS to read the book(either the original
+version or JS version), and hopefully this note would be of some use to
+the reader's understanding of the book.</p>
+<h1 id="notes">Notes</h1>
+<h2 id="foreword">Foreword</h2>
+<ol type="1">
+<li><p><strong>(U)What is combinatory calculus &amp; lambda calculus
+&amp; predicate calculus?</strong></p>
+<p><img src="1.png" /></p>
+<p>Lambda Calculus : (lambda x.lambda y. x+y)(5 6) = 11</p>
+<p>A lambda notation is equivalent to a Turing Machine, vice
+versa</p></li>
+<li><p><strong>(U)How can you use a lambda notation to represent AND and
+OR?</strong></p>
+<p>For reference, if we define True and False as:</p>
+<pre><code> True: lambda x. lambda y. x
+
+ False: lambda x. lambda y. y</code></pre>
+<p>For any boolean value b, the logic NOT can be represented as</p>
+<pre><code> NOT: lambda b. b False True</code></pre>
+<p>Proof: case 1: b = True</p>
+<pre><code>         Not b = Not True = True Flase True = False
+
+     case2: b = False
+
+         Not b = Not False = False False True = True</code></pre></li>
+<li><p><strong>(U)What is object oriented approach?</strong></p></li>
+<li><p><strong>(U)Why does the author say that most programming
+languages “does not have a completely automatic storage
+management”?</strong></p></li>
+<li><p><strong>(U)Is it better to have 100 functions programmed on 1
+data structure or 10 functions for each of 10 data
+structures?</strong></p></li>
+<li><p><strong>(U)What is Lisp?</strong></p></li>
 </ol>
-</section>
+<h2 id="chapter-1-building-abstractions-with-functions">Chapter 1
+Building Abstractions with Functions</h2>
+<h3 id="section">1.1</h3>
+<p><strong>Inflix Notation</strong></p>
+<pre><code>operand + operator + operand</code></pre>
+<p><strong>JS programmers know the value of everything but the cost of
+nothing.(LOL)</strong></p>
+<pre><code>The fact that every expression has a value and JS programmers are known for not caring about time/space efficiency.</code></pre>
+<p><strong>(U)What is the difference between statements and
+expressions?</strong></p>
+<pre><code>A?</code></pre>
+<p><strong>Snake Case &amp; Camel Case</strong></p>
+<pre><code>Different ways to name variables.</code></pre>
+<h2 id="chapter-3-modularity-objects-and-state">Chapter 3: Modularity,
+Objects, and State</h2>
+<h3 id="section-1">3.1</h3>
+<p><strong>Why use the CSE machine, why is environment an important
+thing?(3.1.2)</strong></p>
+<pre><code>Storing the temporary data that the function needs in the local environment of a function helps us to generalize
+functions(for example, in this way the memoization progress can be applied to different functions)
+
+Encapsulation: We say a variable is encapsulated in the environment when its information is only accessed inside the environment. A general systemword designing principle called “the hiding principle“ is that a system gets more modular and robust by providing information access to only the parts of the programme that are “need to know”. </code></pre>
+<p><strong>Monte Carlo Method</strong></p>
+<pre><code>The use of randomness. Say you want to calculate the area of a circle(x^2 +y^2 &lt;= 1). Choose a rectangle(whose area you have already know), and try to make many following experiments: pick up one point and test whether the point is in the circle. If we try this many times, we get the possibility of a point in the rectangle is in the circle, thus p * area_of_rectangle = area_of_circle.</code></pre>
+<p> </p>
 
     </div>
 
@@ -328,7 +385,7 @@ class="footnote-back" role="doc-backlink">↩︎</a></p></li>
   </li>
   <li class="post-copyright-link">
       <strong>Post link: </strong>
-      <a href="https://wfyishere.github.io/2024/01/20/hello-world/" title="Hello World">https://wfyishere.github.io/2024/01/20/hello-world/</a>
+      <a href="https://wfyishere.github.io/2024/01/23/Notes-for-SICPJS/" title="Notes for SICPJS">https://wfyishere.github.io/2024/01/23/Notes-for-SICPJS/</a>
   </li>
   <li class="post-copyright-license">
       <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
@@ -336,6 +393,14 @@ class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ul>
 </div>
 
+          <div class="post-tags">
+              <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+              <a href="/tags/ComputerScience/" rel="tag"># ComputerScience</a>
+              <a href="/tags/Study/" rel="tag"># Study</a>
+              <a href="/tags/Notes/" rel="tag"># Notes</a>
+              <a href="/tags/CS1101S/" rel="tag"># CS1101S</a>
+              <a href="/tags/NUS/" rel="tag"># NUS</a>
+          </div>
 
         
   <div class="social-like a2a_kit a2a_kit_size_32 a2a_default_style">
@@ -349,10 +414,13 @@ class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 
           <div class="post-nav">
             <div class="post-nav-item">
+                <a href="/2024/01/20/hello-world/" rel="prev" title="Hello World">
+                  <i class="fa fa-angle-left"></i> Hello World
+                </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2024/01/23/Notes-for-SICPJS/" rel="next" title="Notes for SICPJS">
-                  Notes for SICPJS <i class="fa fa-angle-right"></i>
+                <a href="/2024/01/23/Thought-2024-1-23/" rel="next" title="Thought - 2024.1.23">
+                  Thought - 2024.1.23 <i class="fa fa-angle-right"></i>
                 </a>
             </div>
           </div>
@@ -450,13 +518,13 @@ setInterval("createtime()",250);
 
   
 
-  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
 <script src="/js/third-party/math/mathjax.js"></script>
 
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
 
-<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"WFYishere","repo":"Blog_comments","client_id":"61d14243abd55a9c5e17","client_secret":"899eab7ce0c9f0e5f96df28b5b7a9fa5362c981e","admin_user":"WFYishere","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":null,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"1cac633b44e090f2d70cd56f3c4bfb4d"}</script>
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"WFYishere","repo":"Blog_comments","client_id":"61d14243abd55a9c5e17","client_secret":"899eab7ce0c9f0e5f96df28b5b7a9fa5362c981e","admin_user":"WFYishere","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":null,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"dffbd70b4c3a0d2a560b26f6781ae001"}</script>
 <script src="/js/third-party/comments/gitalk.js"></script>
 
 </body>
