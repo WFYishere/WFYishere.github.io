@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Thought - 2024.1.23</title>
+    <url>/2024/01/23/Thought-2024-1-23/</url>
+    <content><![CDATA[<h1 id="sleep-is-important.">Sleep is important.</h1>
+]]></content>
+      <categories>
+        <category>thoughts</category>
+      </categories>
+      <tags>
+        <tag>thoughts</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Notes for SICPJS</title>
     <url>/2024/01/23/Notes-for-SICPJS/</url>
     <content><![CDATA[<p>Notes for SICP JS. <span id="more"></span></p>
@@ -14,11 +26,11 @@ is known as the "Wizard Book" in hacker culture. In NUS, year1 CS
 students who take CS1101S uses SICPJS as the reference book on their
 amazing study journey with the Source Academy.</p>
 <p>During my study of CS in 2023/24 Sem 1 in CS1101, I find SICPJS a
-great book. It not works as an introductory book to computer science,
-but it also inspired me to think about the fundamental principles of CS.
-I wrote this note during my sem1 study in CS1101S and is still working
-on the book after that. Hopefully, this note would have been finished in
-2023/24 Sem2.</p>
+great book. It not only works as an introductory book to computer
+science, but also inspired me to think about the fundamental principles
+of CS. I wrote this note during my sem1 study in CS1101S and is still
+working on the book after that. Hopefully, this note would have been
+finished in 2023/24 Sem2.</p>
 <p>This note involves ideas that I find inspiring in the book and
 questions that I came up with while reading. Notes with (U) are
 questions that are unsolved and it would be great if readers could
@@ -160,17 +172,5 @@ class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 ]]></content>
-  </entry>
-  <entry>
-    <title>Thought - 2024.1.23</title>
-    <url>/2024/01/23/Thought-2024-1-23/</url>
-    <content><![CDATA[<h1 id="sleeping-is-important.">Sleeping is important.</h1>
-]]></content>
-      <categories>
-        <category>thoughts</category>
-      </categories>
-      <tags>
-        <tag>thoughts</tag>
-      </tags>
   </entry>
 </search>
