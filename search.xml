@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Hello World</title>
+    <url>/2024/01/20/hello-world/</url>
+    <content><![CDATA[<p>This is a Blog to test this website's functionalities.
+<span id="more"></span></p>
+<hr />
+<h3 id="url">URL</h3>
+<p><a href="https://wch.github.io/latexsheet/latexsheet.pdf">markdown
+cheatsheet</a></p>
+<p><a href="https://wch.github.io/latexsheet/latexsheet.pdf">latex
+Cheatsheet</a></p>
+<h3 id="code">code</h3>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Hello World!</span><br></pre></td></tr></table></figure>
+<h3 id="useful-syntax">useful syntax</h3>
+<p>Here's a sentence with a footnote. <a href="#fn1"
+class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<blockquote>
+<p>This is a quote.</p>
+</blockquote>
+<ul class="task-list">
+<li><label><input type="checkbox" checked="" />Write the press
+release</label></li>
+<li><label><input type="checkbox" />Update the website</label></li>
+<li><label><input type="checkbox" />Contact the media</label></li>
+</ul>
+<p><span style="color:red"> Changing Colour </span></p>
+<h3 id="create-a-new-post">Create a new post</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a
+href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="mathjax-testing">mathjax testing</h3>
+<p><span class="math display">\[\begin{equation}
+   E = mc^2
+\end{equation}\]</span></p>
+<p><span class="math display">\[\begin{equation}
+\begin{aligned}
+a &amp;= b + c \\
+  &amp;= d + e + f + g \\
+  &amp;= h + i
+\end{aligned}
+\end{equation}\]</span></p>
+<p><span class="math display">\[x+1\over\sqrt{1-x^2} \]</span></p>
+<section id="footnotes" class="footnotes footnotes-end-of-document"
+role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1"><p>This is the footnote.<a href="#fnref1"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+]]></content>
+  </entry>
+  <entry>
+    <title>Welcom to My Blog</title>
+    <url>/2024/01/20/Welcom-to-My-Blog/</url>
+    <content><![CDATA[<p>I've been trying to document things about myself, as a reminder that
+I have existed in this world. <span id="more"></span></p>
+<p>In this blog, I might write about personal feelings, reading notes,
+thoughts, achievements, plans...etc Welcome to my blog.</p>
+]]></content>
+  </entry>
+</search>
