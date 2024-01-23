@@ -3,7 +3,8 @@
   <entry>
     <title>Notes for SICPJS</title>
     <url>/2024/01/23/Notes-for-SICPJS/</url>
-    <content><![CDATA[<p>Notes for SICP JS. <span id="more"></span> # Introduction</p>
+    <content><![CDATA[<p>Notes for SICP JS. <span id="more"></span></p>
+<h1 id="introduction">Introduction</h1>
 <p><a href="https://sourceacademy.org/sicpjs">SICPJS</a> is a Java
 Script version(or Source Language) of the computer science textbook
 <em>Structure and Interpretation of Computer Programs (SICP)</em> . The
