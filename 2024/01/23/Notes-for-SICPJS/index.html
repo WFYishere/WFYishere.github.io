@@ -29,7 +29,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://wfyishere.github.io/2024/01/23/Notes-for-SICPJS/1.png">
 <meta property="article:published_time" content="2024-01-23T05:21:59.000Z">
-<meta property="article:modified_time" content="2024-01-23T07:32:02.060Z">
+<meta property="article:modified_time" content="2024-01-23T07:36:04.496Z">
 <meta property="article:author" content="Wen Fanyu">
 <meta property="article:tag" content="JavaScript">
 <meta property="article:tag" content="ComputerScience">
@@ -98,7 +98,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">7</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">5</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">3</span></a></li><li class="menu-item menu-item-commonweal"><a href="/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>Commonweal 404</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">7</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">4</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">3</span></a></li><li class="menu-item menu-item-commonweal"><a href="/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>Commonweal 404</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -170,7 +170,7 @@ Objects, and State</span></a><ol class="nav-child"><li class="nav-item nav-level
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -241,7 +241,7 @@ Objects, and State</span></a><ol class="nav-child"><li class="nav-item nav-level
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2024-01-23 13:21:59 / Modified: 15:32:02" itemprop="dateCreated datePublished" datetime="2024-01-23T13:21:59+08:00">2024-01-23</time>
+      <time title="Created: 2024-01-23 13:21:59 / Modified: 15:36:04" itemprop="dateCreated datePublished" datetime="2024-01-23T13:21:59+08:00">2024-01-23</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -254,10 +254,6 @@ Objects, and State</span></a><ol class="nav-child"><li class="nav-item nav-level
           , 
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
           <a href="/categories/Notes/CS/" itemprop="url" rel="index"><span itemprop="name">CS</span></a>
-        </span>
-          , 
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Notes/CS/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
         </span>
           , 
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
@@ -348,26 +344,37 @@ structures?</strong></p></li>
 Building Abstractions with Functions</h2>
 <h3 id="section">1.1</h3>
 <p><strong>Inflix Notation</strong></p>
-<pre><code>operand + operator + operand</code></pre>
+<p>operand + operator + operand</p>
 <p><strong>JS programmers know the value of everything but the cost of
 nothing.(LOL)</strong></p>
-<pre><code>The fact that every expression has a value and JS programmers are known for not caring about time/space efficiency.</code></pre>
+<p>The fact that every expression has a value and JS programmers are
+known for not caring about time/space efficiency.</p>
 <p><strong>(U)What is the difference between statements and
 expressions?</strong></p>
-<pre><code>A?</code></pre>
+<p>A?</p>
 <p><strong>Snake Case &amp; Camel Case</strong></p>
-<pre><code>Different ways to name variables.</code></pre>
+<p>Different ways to name variables.</p>
 <h2 id="chapter-3-modularity-objects-and-state">Chapter 3: Modularity,
 Objects, and State</h2>
 <h3 id="section-1">3.1</h3>
 <p><strong>Why use the CSE machine, why is environment an important
 thing?(3.1.2)</strong></p>
-<pre><code>Storing the temporary data that the function needs in the local environment of a function helps us to generalize
-functions(for example, in this way the memoization progress can be applied to different functions)
-
-Encapsulation: We say a variable is encapsulated in the environment when its information is only accessed inside the environment. A general systemword designing principle called “the hiding principle“ is that a system gets more modular and robust by providing information access to only the parts of the programme that are “need to know”. </code></pre>
+<p>Storing the temporary data that the function needs in the local
+environment of a function helps us to generalize functions(for example,
+in this way the memoization progress can be applied to different
+functions)</p>
+<p>Encapsulation: We say a variable is encapsulated in the environment
+when its information is only accessed inside the environment. A general
+systemword designing principle called “the hiding principle“ is that a
+system gets more modular and robust by providing information access to
+only the parts of the programme that are “need to know”. </p>
 <p><strong>Monte Carlo Method</strong></p>
-<pre><code>The use of randomness. Say you want to calculate the area of a circle(x^2 +y^2 &lt;= 1). Choose a rectangle(whose area you have already know), and try to make many following experiments: pick up one point and test whether the point is in the circle. If we try this many times, we get the possibility of a point in the rectangle is in the circle, thus p * area_of_rectangle = area_of_circle.</code></pre>
+<p>The use of randomness. Say you want to calculate the area of a
+circle(x^2 +y^2 &lt;= 1). Choose a rectangle(whose area you have already
+know), and try to make many following experiments: pick up one point and
+test whether the point is in the circle. If we try this many times, we
+get the possibility of a point in the rectangle is in the circle, thus p
+* area_of_rectangle = area_of_circle.</p>
 <p> </p>
 
     </div>
