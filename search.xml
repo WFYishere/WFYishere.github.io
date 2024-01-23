@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Welcom to My Blog</title>
+    <url>/2024/01/20/Welcom-to-My-Blog/</url>
+    <content><![CDATA[<p>I've been trying to document things about myself, as a reminder that
+I have existed in this world. <span id="more"></span></p>
+<p>In this blog, I might write about personal feelings, reading notes,
+thoughts, achievements, plans...etc Welcome to my blog.</p>
+]]></content>
+  </entry>
+  <entry>
     <title>Hello World</title>
     <url>/2024/01/20/hello-world/</url>
     <content><![CDATA[<p>This is a Blog to test this website's functionalities.
@@ -50,15 +59,6 @@ role="doc-endnotes">
 class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
-]]></content>
-  </entry>
-  <entry>
-    <title>Welcom to My Blog</title>
-    <url>/2024/01/20/Welcom-to-My-Blog/</url>
-    <content><![CDATA[<p>I've been trying to document things about myself, as a reminder that
-I have existed in this world. <span id="more"></span></p>
-<p>In this blog, I might write about personal feelings, reading notes,
-thoughts, achievements, plans...etc Welcome to my blog.</p>
 ]]></content>
   </entry>
 </search>
