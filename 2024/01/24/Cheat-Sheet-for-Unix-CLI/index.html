@@ -20,28 +20,33 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"wfyishere.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.19.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":true,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="Sleep is important.">
+    <meta name="description" content="Learnt Unix in NUS CS2030S. Here&#39;s a cheatsheet.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Thought - 2024.1.23">
-<meta property="og:url" content="https://wfyishere.github.io/2024/01/23/Thought-2024-1-23/index.html">
+<meta property="og:title" content="Cheat Sheet for Unix CLI">
+<meta property="og:url" content="https://wfyishere.github.io/2024/01/24/Cheat-Sheet-for-Unix-CLI/index.html">
 <meta property="og:site_name" content="WFY&#39;s Blog">
-<meta property="og:description" content="Sleep is important.">
+<meta property="og:description" content="Learnt Unix in NUS CS2030S. Here&#39;s a cheatsheet.">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2024-01-23T05:22:57.000Z">
-<meta property="article:modified_time" content="2024-01-23T14:51:04.673Z">
+<meta property="article:published_time" content="2024-01-24T04:42:21.000Z">
+<meta property="article:modified_time" content="2024-01-24T06:59:36.494Z">
 <meta property="article:author" content="Wen Fanyu">
-<meta property="article:tag" content="thoughts">
+<meta property="article:tag" content="ComputerScience">
+<meta property="article:tag" content="Unix">
+<meta property="article:tag" content="Notes">
+<meta property="article:tag" content="Study">
+<meta property="article:tag" content="NUS">
+<meta property="article:tag" content="CheatSheet">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://wfyishere.github.io/2024/01/23/Thought-2024-1-23/">
+<link rel="canonical" href="https://wfyishere.github.io/2024/01/24/Cheat-Sheet-for-Unix-CLI/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://wfyishere.github.io/2024/01/23/Thought-2024-1-23/","path":"2024/01/23/Thought-2024-1-23/","title":"Thought - 2024.1.23"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://wfyishere.github.io/2024/01/24/Cheat-Sheet-for-Unix-CLI/","path":"2024/01/24/Cheat-Sheet-for-Unix-CLI/","title":"Cheat Sheet for Unix CLI"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Thought - 2024.1.23 | WFY's Blog</title>
+<title>Cheat Sheet for Unix CLI | WFY's Blog</title>
   
 
 
@@ -142,7 +147,8 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#sleep-is-important."><span class="nav-number">1.</span> <span class="nav-text">Sleep is important.</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#background"><span class="nav-number">1.</span> <span class="nav-text">Background</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#essentials"><span class="nav-number">2.</span> <span class="nav-text">Essentials</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#directory"><span class="nav-number">2.1.</span> <span class="nav-text">Directory</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#symbols"><span class="nav-number">2.1.1.</span> <span class="nav-text">Symbols</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#path"><span class="nav-number">2.1.2.</span> <span class="nav-text">Path</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#files"><span class="nav-number">2.2.</span> <span class="nav-text">Files</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#file-permission"><span class="nav-number">2.3.</span> <span class="nav-text">File Permission</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#what"><span class="nav-number">2.3.1.</span> <span class="nav-text">What:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#who"><span class="nav-number">2.3.2.</span> <span class="nav-text">Who</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#check-and-change-of-permission"><span class="nav-number">2.3.3.</span> <span class="nav-text">Check and Change of
+Permission</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#standard-input-output"><span class="nav-number">2.4.</span> <span class="nav-text">Standard Input &amp; Output</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#advanced"><span class="nav-number">3.</span> <span class="nav-text">Advanced</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -202,7 +208,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://wfyishere.github.io/2024/01/23/Thought-2024-1-23/">
+    <link itemprop="mainEntityOfPage" href="https://wfyishere.github.io/2024/01/24/Cheat-Sheet-for-Unix-CLI/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -215,12 +221,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="Thought - 2024.1.23 | WFY's Blog">
+      <meta itemprop="name" content="Cheat Sheet for Unix CLI | WFY's Blog">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Thought - 2024.1.23
+          Cheat Sheet for Unix CLI
         </h1>
 
         <div class="post-meta-container">
@@ -232,16 +238,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2024-01-23 13:22:57 / Modified: 22:51:04" itemprop="dateCreated datePublished" datetime="2024-01-23T13:22:57+08:00">2024-01-23</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/thoughts/" itemprop="url" rel="index"><span itemprop="name">thoughts</span></a>
-        </span>
+      <time title="Created: 2024-01-24 12:42:21 / Modified: 14:59:36" itemprop="dateCreated datePublished" datetime="2024-01-24T12:42:21+08:00">2024-01-24</time>
     </span>
 
   
@@ -251,14 +248,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Word count in article: </span>
-      <span>17</span>
+      <span>2.9k</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>1 mins.</span>
+      <span>3 mins.</span>
     </span>
 </div>
 
@@ -268,7 +265,128 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h1 id="sleep-is-important.">Sleep is important.</h1>
+    <div class="post-body" itemprop="articleBody"><p>Learnt Unix in NUS CS2030S. Here's a cheatsheet. <span id="more"></span></p>
+<h1 id="background">Background</h1>
+<ul>
+<li><p><code>Ctrl + D</code> : end of input/ exit shell</p></li>
+<li><p><code>Ctrl + Z</code> : suspend the current running program. This
+pauses the execution of the program (but not terminates it). Resume
+executing in the background with the command <code>bg</code> Back to
+execution in the foreground again with the command
+<code>fg</code>.</p></li>
+<li><p><code>Ctrl + C</code> : terminate the current running
+program.</p></li>
+<li><p><code>Ctrl + S</code> : freeze the terminal. <code>Ctrl +
+Q</code> : resume the terminal.</p></li>
+<li><p><code>Ctrl + P</code> &amp; <code>Ctrl + N</code>: See the
+previously executed commands.</p></li>
+<li><p><code>Tab</code> : complete the name of a command/file</p></li>
+<li><p><code>man</code> : look at the manuals. e.g. :
+<code>man ls</code></p></li>
+</ul>
+<h1 id="essentials">Essentials</h1>
+<h2 id="directory">Directory</h2>
+<h3 id="symbols">Symbols</h3>
+<ul>
+<li><p><code>~</code> : The home directory. <code>~bob</code> means the
+home directory of a user named bob.</p></li>
+<li><p><code>.</code> : Current working directory.</p></li>
+<li><p><code>/</code>: Root directory.</p></li>
+<li><p><code>..</code> : Parent directory.</p></li>
+</ul>
+<h3 id="path">Path</h3>
+<ul>
+<li><p>Absolute Path: <code>/home/o/ooiwt</code></p></li>
+<li><p>Relative Path: <code>../o/ooiwt</code></p></li>
+<li><p><code>pwd</code> : Print current working directory.</p></li>
+<li><p><code>ls</code> : Check the list of contents. Contents that
+starts with <code>.</code> are hidden, use <code>ls -a</code> to check
+<em>all</em> contents. <code>ls -F</code> to see more information.
+<code>ls -l</code> to see information including the size and
+date.</p></li>
+<li><p><code>mkdir</code> : make a directory</p></li>
+<li><p><code>cd</code> : brings you to the home directory</p></li>
+</ul>
+<h2 id="files">Files</h2>
+<ul>
+<li><p><code>rmdir</code> : remove a subdirectory, it must be
+empty.</p></li>
+<li><p><code>cp</code> : <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ ls</span><br><span class="line">test.txt</span><br><span class="line">$ cp test.txt foo.txt</span><br><span class="line">$ ls</span><br><span class="line">test.txt foo.txt</span><br></pre></td></tr></table></figure> <code>cp -r</code> copys the
+whole directory: <code>$ cp -r ../workshop .</code></p></li>
+</ul>
+<p>* <em>If there is an existing file with the same name, cp will
+overwrite the existing file without warning.</em></p>
+<ul>
+<li><p><code>mv</code> : Rename a content. <figure class="highlight plaintext"><figcaption><span>ls</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">foo.txt test.txt</span><br><span class="line">$ mv foo.txt bar.txt</span><br><span class="line">$ ls</span><br><span class="line">bar.txt test.txt</span><br></pre></td></tr></table></figure></p>
+<p>When the destination of mv is a directory, then it moves the source
+to the destisnation</p>
+<p><em>It's better to use mv -i as it asks if you want to overwrite a
+file</em></p></li>
+<li><p><code>rm</code> : removes the file.</p>
+<p>*It's better to use <code>rm -i</code>.</p></li>
+<li><p><code>cat</code> : Take a look at the content of a file.</p>
+<p><code>less</code> : look at less content of a file.</p>
+<pre><code>  In less, use `space` to move forward,  `b` to move back, `q` to quit.</code></pre></li>
+</ul>
+<h2 id="file-permission">File Permission</h2>
+<h3 id="what">What:</h3>
+<ul>
+<li><p><code>r</code> : read - 4</p></li>
+<li><p><code>w</code> : write - 2</p></li>
+<li><p><code>x</code> : executing a file / access contents and info of
+the directory - 1</p></li>
+</ul>
+<p>Permission are used in two ways:</p>
+<ol type="1">
+<li><p>rwx or r-x etc.</p></li>
+<li><p>Numerical notation like : 5 = r-x</p></li>
+</ol>
+<h3 id="who">Who</h3>
+<p><code>u</code> is the user who owns the file; <code>g</code> refers
+to the users in the same group as the user; and <code>o</code> are all
+the other users.</p>
+<p>For instance, the permission of <code>644</code>, or
+<code>rw-r--r--</code>, on a file means that:</p>
+<pre><code>- the owner can read and write
+
+- the group users can only read
+
+- all the other users can only read</code></pre>
+<h3 id="check-and-change-of-permission">Check and Change of
+Permission</h3>
+<p>Check:</p>
+<pre><code>$ ls -l test.txt
+-rw-r--r--@ 1 ooiwt  staff  64 Jul 28 09:52 test.txt</code></pre>
+<p>Change:</p>
+<pre><code>$ chmod 666 test.txt
+$ ls -l test.txt
+-rw-rw-rw-@ 1 ooiwt  staff  64 Jul 28 09:52 test.txt</code></pre>
+<p>Or:</p>
+<pre><code>$ chmod o-w test.txt
+$ ls -l test.txt
+-rw-rw-r--@ 1 ooiwt  staff  64 Jul 28 09:52 test.txt</code></pre>
+<p>Eliminates the writing permission of a user.(use o+w to give the
+permission)</p>
+<h2 id="standard-input-output">Standard Input &amp; Output</h2>
+<ul>
+<li><code>wc</code> : it will count the number of lines, words, and
+characters in that given file. e.g.:</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wc text.txt</span><br><span class="line">$ wc test.txt</span><br><span class="line">1      11      64 test.txt</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>&gt;</code> &amp; <code>&gt;&gt;</code> : The operators &gt;
+and &gt;&gt; are used to redirect the standard output to a file. The
+difference is that &gt; will overwrite the given file, while &gt;&gt;
+will concatenate into the given file. e.g.: <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ wc test.txt &gt; test.count</span><br><span class="line">$ cat test.count</span><br><span class="line">1      11      64 test.txt</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>This programme reads the output of <code>wc text.txt</code> into a
+file test.count</p>
+<ul>
+<li><code>&lt;</code> &amp; <code>&lt;&lt;</code> : Imports the input.
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ wc test.txt</span><br><span class="line">       1      11      64 test.txt</span><br><span class="line">$ wc &lt; test.txt // This is reading the content from test.txt, thus the input is not a file but the content of test.txt.</span><br><span class="line">       1      11      64</span><br><span class="line">$ cat test.txt</span><br><span class="line">This is a test file for learning Unix file management commands.</span><br><span class="line">$ cat &lt; test.txt</span><br><span class="line">This is a test file for learning Unix file management commands.</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h1 id="advanced">Advanced</h1>
+<p>To be continued.</p>
 
     </div>
 
@@ -286,7 +404,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>Post link: </strong>
-      <a href="https://wfyishere.github.io/2024/01/23/Thought-2024-1-23/" title="Thought - 2024.1.23">https://wfyishere.github.io/2024/01/23/Thought-2024-1-23/</a>
+      <a href="https://wfyishere.github.io/2024/01/24/Cheat-Sheet-for-Unix-CLI/" title="Cheat Sheet for Unix CLI">https://wfyishere.github.io/2024/01/24/Cheat-Sheet-for-Unix-CLI/</a>
   </li>
   <li class="post-copyright-license">
       <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
@@ -295,7 +413,12 @@
 </div>
 
           <div class="post-tags">
-              <a href="/tags/thoughts/" rel="tag"># thoughts</a>
+              <a href="/tags/ComputerScience/" rel="tag"># ComputerScience</a>
+              <a href="/tags/Unix/" rel="tag"># Unix</a>
+              <a href="/tags/Notes/" rel="tag"># Notes</a>
+              <a href="/tags/Study/" rel="tag"># Study</a>
+              <a href="/tags/NUS/" rel="tag"># NUS</a>
+              <a href="/tags/CheatSheet/" rel="tag"># CheatSheet</a>
           </div>
 
         
@@ -310,14 +433,11 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2024/01/23/Notes-for-SICPJS/" rel="prev" title="Notes for SICPJS">
-                  <i class="fa fa-angle-left"></i> Notes for SICPJS
+                <a href="/2024/01/23/Thought-2024-1-23/" rel="prev" title="Thought - 2024.1.23">
+                  <i class="fa fa-angle-left"></i> Thought - 2024.1.23
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2024/01/24/Cheat-Sheet-for-Unix-CLI/" rel="next" title="Cheat Sheet for Unix CLI">
-                  Cheat Sheet for Unix CLI <i class="fa fa-angle-right"></i>
-                </a>
             </div>
           </div>
     </footer>
@@ -420,7 +540,7 @@ setInterval("createtime()",250);
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
 
-<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"WFYishere","repo":"Blog_comments","client_id":"61d14243abd55a9c5e17","client_secret":"899eab7ce0c9f0e5f96df28b5b7a9fa5362c981e","admin_user":"WFYishere","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":null,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"a5c546bb0897d09041225e9dcd30a9fb"}</script>
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"WFYishere","repo":"Blog_comments","client_id":"61d14243abd55a9c5e17","client_secret":"899eab7ce0c9f0e5f96df28b5b7a9fa5362c981e","admin_user":"WFYishere","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":null,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"1e9d5b5024e92531409235a45ab20dc7"}</script>
 <script src="/js/third-party/comments/gitalk.js"></script>
 
 </body>

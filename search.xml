@@ -1,6 +1,141 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Cheat Sheet for Unix CLI</title>
+    <url>/2024/01/24/Cheat-Sheet-for-Unix-CLI/</url>
+    <content><![CDATA[<p>Learnt Unix in NUS CS2030S. Here's a cheatsheet. <span id="more"></span></p>
+<h1 id="background">Background</h1>
+<ul>
+<li><p><code>Ctrl + D</code> : end of input/ exit shell</p></li>
+<li><p><code>Ctrl + Z</code> : suspend the current running program. This
+pauses the execution of the program (but not terminates it). Resume
+executing in the background with the command <code>bg</code> Back to
+execution in the foreground again with the command
+<code>fg</code>.</p></li>
+<li><p><code>Ctrl + C</code> : terminate the current running
+program.</p></li>
+<li><p><code>Ctrl + S</code> : freeze the terminal. <code>Ctrl +
+Q</code> : resume the terminal.</p></li>
+<li><p><code>Ctrl + P</code> &amp; <code>Ctrl + N</code>: See the
+previously executed commands.</p></li>
+<li><p><code>Tab</code> : complete the name of a command/file</p></li>
+<li><p><code>man</code> : look at the manuals. e.g. :
+<code>man ls</code></p></li>
+</ul>
+<h1 id="essentials">Essentials</h1>
+<h2 id="directory">Directory</h2>
+<h3 id="symbols">Symbols</h3>
+<ul>
+<li><p><code>~</code> : The home directory. <code>~bob</code> means the
+home directory of a user named bob.</p></li>
+<li><p><code>.</code> : Current working directory.</p></li>
+<li><p><code>/</code>: Root directory.</p></li>
+<li><p><code>..</code> : Parent directory.</p></li>
+</ul>
+<h3 id="path">Path</h3>
+<ul>
+<li><p>Absolute Path: <code>/home/o/ooiwt</code></p></li>
+<li><p>Relative Path: <code>../o/ooiwt</code></p></li>
+<li><p><code>pwd</code> : Print current working directory.</p></li>
+<li><p><code>ls</code> : Check the list of contents. Contents that
+starts with <code>.</code> are hidden, use <code>ls -a</code> to check
+<em>all</em> contents. <code>ls -F</code> to see more information.
+<code>ls -l</code> to see information including the size and
+date.</p></li>
+<li><p><code>mkdir</code> : make a directory</p></li>
+<li><p><code>cd</code> : brings you to the home directory</p></li>
+</ul>
+<h2 id="files">Files</h2>
+<ul>
+<li><p><code>rmdir</code> : remove a subdirectory, it must be
+empty.</p></li>
+<li><p><code>cp</code> : <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ ls</span><br><span class="line">test.txt</span><br><span class="line">$ cp test.txt foo.txt</span><br><span class="line">$ ls</span><br><span class="line">test.txt foo.txt</span><br></pre></td></tr></table></figure> <code>cp -r</code> copys the
+whole directory: <code>$ cp -r ../workshop .</code></p></li>
+</ul>
+<p>* <em>If there is an existing file with the same name, cp will
+overwrite the existing file without warning.</em></p>
+<ul>
+<li><p><code>mv</code> : Rename a content. <figure class="highlight plaintext"><figcaption><span>ls</span></figcaption><table><tr><td class="code"><pre><span class="line">foo.txt test.txt</span><br><span class="line">$ mv foo.txt bar.txt</span><br><span class="line">$ ls</span><br><span class="line">bar.txt test.txt</span><br></pre></td></tr></table></figure></p>
+<p>When the destination of mv is a directory, then it moves the source
+to the destisnation</p>
+<p><em>It's better to use mv -i as it asks if you want to overwrite a
+file</em></p></li>
+<li><p><code>rm</code> : removes the file.</p>
+<p>*It's better to use <code>rm -i</code>.</p></li>
+<li><p><code>cat</code> : Take a look at the content of a file.</p>
+<p><code>less</code> : look at less content of a file.</p>
+<pre><code>  In less, use `space` to move forward,  `b` to move back, `q` to quit.</code></pre></li>
+</ul>
+<h2 id="file-permission">File Permission</h2>
+<h3 id="what">What:</h3>
+<ul>
+<li><p><code>r</code> : read - 4</p></li>
+<li><p><code>w</code> : write - 2</p></li>
+<li><p><code>x</code> : executing a file / access contents and info of
+the directory - 1</p></li>
+</ul>
+<p>Permission are used in two ways:</p>
+<ol type="1">
+<li><p>rwx or r-x etc.</p></li>
+<li><p>Numerical notation like : 5 = r-x</p></li>
+</ol>
+<h3 id="who">Who</h3>
+<p><code>u</code> is the user who owns the file; <code>g</code> refers
+to the users in the same group as the user; and <code>o</code> are all
+the other users.</p>
+<p>For instance, the permission of <code>644</code>, or
+<code>rw-r--r--</code>, on a file means that:</p>
+<pre><code>- the owner can read and write
+
+- the group users can only read
+
+- all the other users can only read</code></pre>
+<h3 id="check-and-change-of-permission">Check and Change of
+Permission</h3>
+<p>Check:</p>
+<pre><code>$ ls -l test.txt
+-rw-r--r--@ 1 ooiwt  staff  64 Jul 28 09:52 test.txt</code></pre>
+<p>Change:</p>
+<pre><code>$ chmod 666 test.txt
+$ ls -l test.txt
+-rw-rw-rw-@ 1 ooiwt  staff  64 Jul 28 09:52 test.txt</code></pre>
+<p>Or:</p>
+<pre><code>$ chmod o-w test.txt
+$ ls -l test.txt
+-rw-rw-r--@ 1 ooiwt  staff  64 Jul 28 09:52 test.txt</code></pre>
+<p>Eliminates the writing permission of a user.(use o+w to give the
+permission)</p>
+<h2 id="standard-input-output">Standard Input &amp; Output</h2>
+<ul>
+<li><code>wc</code> : it will count the number of lines, words, and
+characters in that given file. e.g.:</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wc text.txt</span><br><span class="line">$ wc test.txt</span><br><span class="line">1      11      64 test.txt</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>&gt;</code> &amp; <code>&gt;&gt;</code> : The operators &gt;
+and &gt;&gt; are used to redirect the standard output to a file. The
+difference is that &gt; will overwrite the given file, while &gt;&gt;
+will concatenate into the given file. e.g.: <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ wc test.txt &gt; test.count</span><br><span class="line">$ cat test.count</span><br><span class="line">1      11      64 test.txt</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>This programme reads the output of <code>wc text.txt</code> into a
+file test.count</p>
+<ul>
+<li><code>&lt;</code> &amp; <code>&lt;&lt;</code> : Imports the input.
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ wc test.txt</span><br><span class="line">       1      11      64 test.txt</span><br><span class="line">$ wc &lt; test.txt // This is reading the content from test.txt, thus the input is not a file but the content of test.txt.</span><br><span class="line">       1      11      64</span><br><span class="line">$ cat test.txt</span><br><span class="line">This is a test file for learning Unix file management commands.</span><br><span class="line">$ cat &lt; test.txt</span><br><span class="line">This is a test file for learning Unix file management commands.</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h1 id="advanced">Advanced</h1>
+<p>To be continued.</p>
+]]></content>
+      <tags>
+        <tag>ComputerScience</tag>
+        <tag>Unix</tag>
+        <tag>Notes</tag>
+        <tag>Study</tag>
+        <tag>NUS</tag>
+        <tag>CheatSheet</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Thought - 2024.1.23</title>
     <url>/2024/01/23/Thought-2024-1-23/</url>
     <content><![CDATA[<h1 id="sleep-is-important.">Sleep is important.</h1>
@@ -113,12 +248,12 @@ get the possibility of a point in the rectangle is in the circle, thus p
         <category>Overview</category>
       </categories>
       <tags>
-        <tag>JavaScript</tag>
         <tag>ComputerScience</tag>
-        <tag>Study</tag>
         <tag>Notes</tag>
-        <tag>CS1101S</tag>
+        <tag>Study</tag>
         <tag>NUS</tag>
+        <tag>JavaScript</tag>
+        <tag>CS1101S</tag>
       </tags>
   </entry>
   <entry>
