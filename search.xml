@@ -4,6 +4,9 @@
     <title>Cheat Sheet for Unix CLI</title>
     <url>/2024/01/24/Cheat-Sheet-for-Unix-CLI/</url>
     <content><![CDATA[<p>Learnt Unix in NUS CS2030S. Here's a cheatsheet. <span id="more"></span></p>
+<p><strong><a
+href="https://nus-cs2030s.github.io/2324-s2/unix/background.html">Original
+Text Here</a></strong></p>
 <h1 id="background">Background</h1>
 <ul>
 <li><p><code>Ctrl + D</code> : end of input/ exit shell</p></li>
@@ -133,6 +136,30 @@ file test.count</p>
         <tag>Study</tag>
         <tag>NUS</tag>
         <tag>CheatSheet</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Thought - 2024.1</title>
+    <url>/2024/01/23/Thought-2024-1-23/</url>
+    <content><![CDATA[<p>Thougts in Jan 2024 <span id="more"></span></p>
+<blockquote>
+<p>1.23 : Sleep is important.</p>
+</blockquote>
+<blockquote>
+<p>1.24 : 有舍有得，但也需分轻重。</p>
+</blockquote>
+<blockquote>
+<p>1.25 : 在图书馆而非宿舍学习。</p>
+</blockquote>
+<blockquote>
+<p>1.26 : 允许自己犯错。</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>thoughts</category>
+      </categories>
+      <tags>
+        <tag>thoughts</tag>
       </tags>
   </entry>
   <entry>
@@ -295,20 +322,5 @@ class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 ]]></content>
-  </entry>
-  <entry>
-    <title>Thought - 2024.1</title>
-    <url>/2024/01/23/Thought-2024-1-23/</url>
-    <content><![CDATA[<p>Thougts in Jan 2024 <span id="more"></span></p>
-<blockquote>
-<p>1.23 : Sleep is important.</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>thoughts</category>
-      </categories>
-      <tags>
-        <tag>thoughts</tag>
-      </tags>
   </entry>
 </search>
