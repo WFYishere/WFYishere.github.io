@@ -1,78 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Notes for CS2040S</title>
-    <url>/2024/01/28/Notes-for-CS2040S/</url>
-    <content><![CDATA[<p>Mainly questions that I encountered during my study for
-CS2040S<Data Structures and Algorithms></p>
-<span id="more"></span>
-<h1 id="java">Java</h1>
-<ol type="1">
-<li>[U] How to implement a <strong>File System</strong>?</li>
-</ol>
-<p><img src="FileSystem.png" /></p>
-<pre><code>1. Objects represent state (“nouns”), not actions (”verbs”)
-
-2. What after folders?
-
-3. Objects should be unitary, without dividing functionality.(What does this mean and why?)</code></pre>
-<ol start="2" type="1">
-<li><p><strong>First Principal of JAVA: Everything is an
-object</strong></p>
-<p>A class is a template for producing an object.</p>
-<p>An object is an instance of the class.</p></li>
-<li><p><strong>Second Principal of JAVA: Everything has a
-type</strong></p>
-<p><strong><a
-href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">Type
-String</a></strong>:</p>
-<ul>
-<li><p>charAt(int index)</p></li>
-<li><p>substring(int begin, int end)</p></li>
-<li><p>toCharArray()</p></li>
-<li><p>length()</p></li>
-<li><p>compareTo(String otherString)</p></li>
-<li><p>compareToIgnoreCase(String otherString)</p></li>
-<li><p>equals(Object anObject)</p></li>
-</ul></li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class File implements IFile</span><br><span class="line">&#123;</span><br><span class="line">    //Member(Instance) Variables.</span><br><span class="line">    String name = “”;</span><br><span class="line">    FileData contents = null;</span><br><span class="line">    private int[] pageNumbers = null;</span><br><span class="line"></span><br><span class="line">    public File(int NumPages)&#123;</span><br><span class="line">        pageNumbers = new int[numPages]; //array constructer</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //Methods(Functions)</span><br><span class="line">    void rename(String newName)&#123;...&#125; //signatures: parameters</span><br><span class="line">    FileData getData()&#123;...&#125;</span><br><span class="line">    void setData(FileData newdata)&#123;...&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// Explain with a comment</span><br><span class="line">// what your interface is for.</span><br><span class="line">interface IFile</span><br><span class="line">&#123;</span><br><span class="line">    // Comments explain how to use interface</span><br><span class="line">    void rename(String newName);</span><br><span class="line">    FileData getData();</span><br><span class="line">    void setData(FileData newdata);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ol start="4" type="1">
-<li><p><strong>Behaviour is public, Data is private.</strong></p>
-<p>regular variables/functions are PER OBJECT</p>
-<p>static variables/functions are PER CLASS // cannot access member
-variable</p></li>
-</ol>
-<h1 id="others">Others</h1>
-<ol type="1">
-<li>log2n = O( log10n ) Correct! We can easily switch between bases by
-multiplying by a constant.</li>
-</ol>
-<h1 id="puzzles">Puzzles:</h1>
-<ol type="1">
-<li><p>[U]Sicherman Dice</p></li>
-<li><p>[U]Puzzle of the Week: Bubbly (Courtesy: MIT Puzzle Hunt,
-2019)</p></li>
-</ol>
-<p>//29</p>
-]]></content>
-      <categories>
-        <category>Notes</category>
-        <category>CS</category>
-        <category>Algorithm</category>
-      </categories>
-      <tags>
-        <tag>Notes</tag>
-        <tag>Java</tag>
-        <tag>ComputerScience</tag>
-        <tag>NUS</tag>
-        <tag>Study</tag>
-        <tag>Algorithm</tag>
-        <tag>Questions</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Cheat Sheet for Unix CLI</title>
     <url>/2024/01/24/Cheat-Sheet-for-Unix-CLI/</url>
     <content><![CDATA[<p>Learnt Unix in NUS CS2030S. Here's a cheatsheet. <span id="more"></span></p>
@@ -202,45 +130,84 @@ file test.count</p>
 <p>To be continued.</p>
 ]]></content>
       <tags>
-        <tag>Notes</tag>
         <tag>ComputerScience</tag>
-        <tag>NUS</tag>
-        <tag>Study</tag>
         <tag>Unix</tag>
+        <tag>Notes</tag>
+        <tag>Study</tag>
+        <tag>NUS</tag>
         <tag>CheatSheet</tag>
       </tags>
   </entry>
   <entry>
-    <title>Thought - 2024.1</title>
-    <url>/2024/01/23/Thought-2024-1-23/</url>
-    <content><![CDATA[<p>Thougts in Jan 2024 <span id="more"></span></p>
-<blockquote>
-<p>1.23 : Sleep is important.</p>
-</blockquote>
-<blockquote>
-<p>1.24 : 有舍有得，但也需分轻重。</p>
-</blockquote>
-<blockquote>
-<p>1.25 : 在图书馆而非宿舍学习。</p>
-</blockquote>
-<blockquote>
-<p>1.26 : 允许自己犯错。</p>
-</blockquote>
-<blockquote>
-<p>1.27 : Push yourself.</p>
-</blockquote>
-<blockquote>
-<p>1.28 : Try everything!</p>
-</blockquote>
-<blockquote>
-<p>1.29 : YOLO</p>
-</blockquote>
+    <title>Notes for CS2040S</title>
+    <url>/2024/01/28/Notes-for-CS2040S/</url>
+    <content><![CDATA[<p>Mainly questions that I encountered during my study for
+CS2040S<Data Structures and Algorithms></p>
+<span id="more"></span>
+<h1 id="java">Java</h1>
+<ol type="1">
+<li>[U] How to implement a <strong>File System</strong>?</li>
+</ol>
+<p><img src="FileSystem.png" /></p>
+<pre><code>1. Objects represent state (“nouns”), not actions (”verbs”)
+
+2. What after folders?
+
+3. Objects should be unitary, without dividing functionality.(What does this mean and why?)</code></pre>
+<ol start="2" type="1">
+<li><p><strong>First Principal of JAVA: Everything is an
+object</strong></p>
+<p>A class is a template for producing an object.</p>
+<p>An object is an instance of the class.</p></li>
+<li><p><strong>Second Principal of JAVA: Everything has a
+type</strong></p>
+<p><strong><a
+href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">Type
+String</a></strong>:</p>
+<ul>
+<li><p>charAt(int index)</p></li>
+<li><p>substring(int begin, int end)</p></li>
+<li><p>toCharArray()</p></li>
+<li><p>length()</p></li>
+<li><p>compareTo(String otherString)</p></li>
+<li><p>compareToIgnoreCase(String otherString)</p></li>
+<li><p>equals(Object anObject)</p></li>
+</ul></li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class File implements IFile</span><br><span class="line">&#123;</span><br><span class="line">    //Member(Instance) Variables.</span><br><span class="line">    String name = “”;</span><br><span class="line">    FileData contents = null;</span><br><span class="line">    private int[] pageNumbers = null;</span><br><span class="line"></span><br><span class="line">    public File(int NumPages)&#123;</span><br><span class="line">        pageNumbers = new int[numPages]; //array constructer</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //Methods(Functions)</span><br><span class="line">    void rename(String newName)&#123;...&#125; //signatures: parameters</span><br><span class="line">    FileData getData()&#123;...&#125;</span><br><span class="line">    void setData(FileData newdata)&#123;...&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// Explain with a comment</span><br><span class="line">// what your interface is for.</span><br><span class="line">interface IFile</span><br><span class="line">&#123;</span><br><span class="line">    // Comments explain how to use interface</span><br><span class="line">    void rename(String newName);</span><br><span class="line">    FileData getData();</span><br><span class="line">    void setData(FileData newdata);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="4" type="1">
+<li><p><strong>Behaviour is public, Data is private.</strong></p>
+<p>regular variables/functions are PER OBJECT</p>
+<p>static variables/functions are PER CLASS // cannot access member
+variable</p></li>
+</ol>
+<h1 id="others">Others</h1>
+<ol type="1">
+<li>log2n = O( log10n ) Correct! We can easily switch between bases by
+multiplying by a constant.</li>
+</ol>
+<h1 id="puzzles">Puzzles:</h1>
+<ol type="1">
+<li><p>[U]Sicherman Dice</p></li>
+<li><p>[U]Puzzle of the Week: Bubbly (Courtesy: MIT Puzzle Hunt,
+2019)</p></li>
+</ol>
+<p>//29</p>
 ]]></content>
       <categories>
-        <category>thoughts</category>
+        <category>Notes</category>
+        <category>CS</category>
+        <category>Algorithm</category>
       </categories>
       <tags>
-        <tag>thoughts</tag>
+        <tag>ComputerScience</tag>
+        <tag>Notes</tag>
+        <tag>Study</tag>
+        <tag>NUS</tag>
+        <tag>Java</tag>
+        <tag>Algorithm</tag>
+        <tag>Questions</tag>
       </tags>
   </entry>
   <entry>
@@ -344,10 +311,10 @@ get the possibility of a point in the rectangle is in the circle, thus p
         <category>Overview</category>
       </categories>
       <tags>
-        <tag>Notes</tag>
         <tag>ComputerScience</tag>
-        <tag>NUS</tag>
+        <tag>Notes</tag>
         <tag>Study</tag>
+        <tag>NUS</tag>
         <tag>JavaScript</tag>
         <tag>CS1101S</tag>
       </tags>
@@ -403,5 +370,38 @@ class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 ]]></content>
+  </entry>
+  <entry>
+    <title>Thought - 2024.1</title>
+    <url>/2024/01/23/Thought-2024-1-23/</url>
+    <content><![CDATA[<p>Thougts in Jan 2024 <span id="more"></span></p>
+<blockquote>
+<p>1.23 : Sleep is important.</p>
+</blockquote>
+<blockquote>
+<p>1.24 : 有舍有得，但也需分轻重。</p>
+</blockquote>
+<blockquote>
+<p>1.25 : 在图书馆而非宿舍学习。</p>
+</blockquote>
+<blockquote>
+<p>1.26 : 允许自己犯错。</p>
+</blockquote>
+<blockquote>
+<p>1.27 : Push yourself.</p>
+</blockquote>
+<blockquote>
+<p>1.28 : Try everything!</p>
+</blockquote>
+<blockquote>
+<p>1.29 : YOLO</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>thoughts</category>
+      </categories>
+      <tags>
+        <tag>thoughts</tag>
+      </tags>
   </entry>
 </search>
