@@ -144,7 +144,7 @@ file test.count</p>
     <content><![CDATA[<p>Mainly questions that I encountered during my study for
 CS2040S<Data Structures and Algorithms></p>
 <span id="more"></span>
-<h1 id="java">Java</h1>
+<h1 id="lecture-1-2-java">Lecture 1 &amp; 2 : Java</h1>
 <ol type="1">
 <li>[U] How to implement a <strong>File System</strong>?</li>
 </ol>
@@ -182,6 +182,45 @@ String</a></strong>:</p>
 <p>static variables/functions are PER CLASS // cannot access member
 variable</p></li>
 </ol>
+<h1 id="lecture-3-4-peak-finding-searching">Lecture 3 &amp; 4 : Peak
+Finding &amp; Searching</h1>
+<ol type="1">
+<li>[U] 2D Peak Finding: How to PROVE that it works?</li>
+</ol>
+<h1 id="lecture-5-6-sorting">Lecture 5 &amp; 6 : Sorting</h1>
+<ol type="1">
+<li><strong>BogoSort Running Time</strong></li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Repeat:</span><br><span class="line"></span><br><span class="line">a) Choose a random permutation of the array A.</span><br><span class="line"></span><br><span class="line">b) If A is sorted, return A.</span><br></pre></td></tr></table></figure>
+<p>What is the expected running time of BogoSort?</p>
+<p>Ans: O(n * n!) // The <strong>n</strong> is important!</p>
+<ol start="2" type="1">
+<li><strong>Quantumn BogoSort</strong></li>
+</ol>
+<p><em>Remember QuantumBogoSort when you learn about non-deterministic
+Turing Machines.</em> What?</p>
+<ol start="3" type="1">
+<li><strong>Maybe BogoSort</strong></li>
+</ol>
+<p>MaybeBogoSort(A[1..n])</p>
+<ol type="1">
+<li><p>Choose a random permutation of the array A.</p></li>
+<li></li>
+</ol>
+<p>If A[1] is the minimum item in A then:</p>
+<p>MaybeBogoSort(A[2..n])</p>
+<p>Else</p>
+<p>MaybeBogoSort(A[1..n])</p>
+<ul>
+<li><p>[U]What is the expected running time of MaybeBogoSort?</p>
+<p>I guess it's something like <span class="math inline">\(\sum_{k =
+1}^{n} (k-1) * (k-1)!\)</span></p>
+<p>[U]But then, What is the bigO notation of this thing?</p>
+<p>[U]Additionally, what is the difference between n! and <span
+class="math inline">\(n^{n}\)</span>? What is the difference between n *
+n! and (n+1)! ?</p></li>
+<li><p>[U]</p></li>
+</ul>
 <h1 id="others">Others</h1>
 <ol type="1">
 <li>log2n = O( log10n ) Correct! We can easily switch between bases by
@@ -192,8 +231,12 @@ multiplying by a constant.</li>
 <li><p>[U]Sicherman Dice</p></li>
 <li><p>[U]Puzzle of the Week: Bubbly (Courtesy: MIT Puzzle Hunt,
 2019)</p></li>
+<li><p>[U]Treasure Island:</p></li>
 </ol>
-<p>//dddddd</p>
+<p>You choose a set of keys.</p>
+<p>You can test whether all the good keys are in the set (and possibly
+some extra keys). If even one bad key is in the set, then it fails.</p>
+<p>Goal: identify exactly the good keys.</p>
 ]]></content>
       <categories>
         <category>Notes</category>
@@ -320,6 +363,28 @@ get the possibility of a point in the rectangle is in the circle, thus p
       </tags>
   </entry>
   <entry>
+    <title>Thought - 2024.2</title>
+    <url>/2024/02/03/Thought-2024-2/</url>
+    <content><![CDATA[<p>Thougts in Feb 2024</p>
+<span id="more"></span>
+<blockquote>
+<p>2.1 : opportunities will come!</p>
+</blockquote>
+<blockquote>
+<p>2.2 : Tomorrow's a brand new day!</p>
+</blockquote>
+<blockquote>
+<p>2.3 : Everything will be all right.</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>thoughts</category>
+      </categories>
+      <tags>
+        <tag>thoughts</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Thought - 2024.1</title>
     <url>/2024/01/23/Thought-2024-1-23/</url>
     <content><![CDATA[<p>Thougts in Jan 2024 <span id="more"></span></p>
@@ -346,6 +411,11 @@ get the possibility of a point in the rectangle is in the circle, thus p
 </blockquote>
 <blockquote>
 <p>1.30 : 严于律己，宽于待人。</p>
+</blockquote>
+<blockquote>
+<p>1.31 :...So you have to trust that the dots will somehow connect in
+your future. You have to trust in something - your gut, destiny, life,
+karma, whatever. - Steve Jobs</p>
 </blockquote>
 ]]></content>
       <categories>
