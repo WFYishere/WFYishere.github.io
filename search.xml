@@ -188,6 +188,7 @@ Finding &amp; Searching</h1>
 <li>[U] 2D Peak Finding: How to PROVE that it works?</li>
 </ol>
 <h1 id="lecture-5-6-sorting">Lecture 5 &amp; 6 : Sorting</h1>
+<h2 id="bogosort">BogoSort</h2>
 <ol type="1">
 <li><strong>BogoSort Running Time</strong></li>
 </ol>
@@ -202,26 +203,104 @@ Turing Machines.</em> What?</p>
 <ol start="3" type="1">
 <li><strong>Maybe BogoSort</strong></li>
 </ol>
-<p>MaybeBogoSort(A[1..n])</p>
-<ol type="1">
-<li><p>Choose a random permutation of the array A.</p></li>
-<li></li>
-</ol>
-<p>If A[1] is the minimum item in A then:</p>
-<p>MaybeBogoSort(A[2..n])</p>
-<p>Else</p>
-<p>MaybeBogoSort(A[1..n])</p>
-<ul>
-<li><p>[U]What is the expected running time of MaybeBogoSort?</p>
-<p>I guess it's something like <span class="math inline">\(\sum_{k =
-1}^{n} (k-1) * (k-1)!\)</span></p>
+<p>MaybeBogoSort(A[1..n]) <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Choose a random permutation of the array A.</span><br><span class="line">- If A[1] is the minimum item in A then:</span><br><span class="line">MaybeBogoSort(A[2..n])</span><br><span class="line">Else</span><br><span class="line">MaybeBogoSort(A[1..n])</span><br></pre></td></tr></table></figure> [U]What is the expected running
+time of MaybeBogoSort?</p>
+<pre><code>I guess it&#39;s something like 
+    $\sum_&#123;k = 1&#125;^&#123;n&#125; (k-1) * (k-1)!$</code></pre>
 <p>[U]But then, What is the bigO notation of this thing?</p>
 <p>[U]Additionally, what is the difference between n! and <span
 class="math inline">\(n^{n}\)</span>? What is the difference between n *
-n! and (n+1)! ?</p></li>
-<li><p>[U]</p></li>
+n! and (n+1)! ?</p>
+<pre><code>Stirling Apporximation:
+
+![](Stirling Approximation)</code></pre>
+<ul>
+<li>[U]</li>
 </ul>
-<h1 id="others">Others</h1>
+<ol start="3" type="1">
+<li>[U] List of the stability, runtime and performance difference on
+nearly sorted and random arrays of different algorithms</li>
+</ol>
+<h2 id="classic-sorting-algorithms"><strong>Classic Sorting
+Algorithms</strong></h2>
+<h3 id="bogosort-1">BogoSort</h3>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">repeat n times:</span><br><span class="line">for j ¬ 1 to n-1</span><br><span class="line">if A[j] &gt; A[j+1] then swap(A[j], A[j+1])</span><br></pre></td></tr></table></figure>
+<h3 id="selection-sort">Selection Sort</h3>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">for j ¬ 1 to n-1:</span><br><span class="line">find minimum element A[j] in A[j..n]</span><br><span class="line">swap(A[j], A[k])</span><br></pre></td></tr></table></figure>
+<h3 id="insertion-sort">Insertion Sort</h3>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">InsertionSort(A, n)</span><br><span class="line">for j ¬ 2 to n</span><br><span class="line">key ¬ A[j]</span><br><span class="line">//Insert key into the sorted array A[1..j-1]</span><br><span class="line">i ¬ j-1</span><br><span class="line">while (i &gt; 0) and (A[i] &gt;key)</span><br><span class="line">A[i+1] ¬ A[i]</span><br><span class="line">i ¬ i-1</span><br><span class="line">A[i+1] ¬ key</span><br></pre></td></tr></table></figure>
+<p><em>In this case, since the insertion work is done from nearest
+element to key(backwards), it behaves differently in a sorted
+array</em></p>
+<p>[U] Average-case analysis:</p>
+<p><img src="InsertionSort.png" /></p>
+<blockquote>
+<p>On average, a key in position j needs to move j/2 slots backward (in
+expectation).(WHY?)</p>
+</blockquote>
+<h3 id="mergesort">MergeSort</h3>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">MergeSort(A, n)</span><br><span class="line">if (n=1) then return;</span><br><span class="line">else:</span><br><span class="line">X ¬MergeSort(A[1..n/2], n/2);</span><br><span class="line">Y ¬MergeSort(A[n/2+1, n], n/2);</span><br><span class="line">return Merge (X,Y, n/2);</span><br></pre></td></tr></table></figure>
+<p>[U] Master Theorem? Akra–Bazzi Method ? ##
+<strong>Summary</strong></p>
+<table>
+<colgroup>
+<col style="width: 29%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 23%" />
+<col style="width: 14%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Features</th>
+<th>Bubble Sort</th>
+<th>Selection Sort</th>
+<th>Inerstion Sort</th>
+<th>Merge Sort</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Time Complexity</td>
+<td>O(n^2)</td>
+<td>O(n^2)</td>
+<td>O(n^2)</td>
+<td>O(n * log(n))</td>
+</tr>
+<tr class="even">
+<td>NearlySorted ? Random</td>
+<td>O(n) &lt;</td>
+<td>=</td>
+<td>O(n) &lt;</td>
+<td>=</td>
+</tr>
+<tr class="odd">
+<td>Space Complexity</td>
+<td>O(n)</td>
+<td>O(n)</td>
+<td>O(n)</td>
+<td>O(n) (No need to allocate new arrays, can you previous ones instead)
+/ O(n * log(n)) when it's MergeSort iteration</td>
+</tr>
+<tr class="even">
+<td>Stability</td>
+<td>1(swap only when elements are different)</td>
+<td>0</td>
+<td>1(A[i] &gt; key not &gt;=)</td>
+<td>1(if implementation is designed carefully)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>[U] Find a permutation of [1..n] where:</strong></p>
+<p>• BubbleSort is slow.</p>
+<p>• InsertionSort is fast.</p>
+<p>Or explain why such array does not exist</p>
+<p><strong>How do you count space?</strong></p>
+<p>• Maximum space every allocated at one time?</p>
+<p>• Total space ever allocated.</p>
+<p><strong>[U] How “close to sorted” should a list be for InsertionSort
+to be faster?</strong></p>
+<p><strong>Slowest Sorting Algorithm</strong> <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Step 1:</span><br><span class="line">– Generate all the permutations of the input.</span><br><span class="line">Step 2:</span><br><span class="line">– Sort the permutations (by number of inversions).</span><br><span class="line">Step 3:</span><br><span class="line">– Return the first element in the sorted list of</span><br><span class="line">permutations.</span><br></pre></td></tr></table></figure> # Others</p>
 <ol type="1">
 <li>log2n = O( log10n ) Correct! We can easily switch between bases by
 multiplying by a constant.</li>
@@ -251,6 +330,27 @@ some extra keys). If even one bad key is in the set, then it fails.</p>
         <tag>Java</tag>
         <tag>Algorithm</tag>
         <tag>Questions</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>General Studying Tips</title>
+    <url>/2024/02/11/General-Studying-Tips/</url>
+    <content><![CDATA[<p>General study tips.</p>
+<span id="more"></span>
+<ol type="1">
+<li>Use Red pen for knowledge that I don't remember when looking back;
+Blue pen for additional knowledge</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Notes</category>
+        <category>General</category>
+      </categories>
+      <tags>
+        <tag>Notes</tag>
+        <tag>Study</tag>
+        <tag>StudyTips</tag>
+        <tag>General</tag>
       </tags>
   </entry>
   <entry>
@@ -363,26 +463,10 @@ get the possibility of a point in the rectangle is in the circle, thus p
       </tags>
   </entry>
   <entry>
-    <title>Thought - 2024.2</title>
-    <url>/2024/02/03/Thought-2024-2/</url>
-    <content><![CDATA[<p>Thougts in Feb 2024</p>
-<span id="more"></span>
-<blockquote>
-<p>2.1 : opportunities will come!</p>
-</blockquote>
-<blockquote>
-<p>2.2 : Tomorrow's a brand new day!</p>
-</blockquote>
-<blockquote>
-<p>2.3 : Everything will be all right.</p>
-</blockquote>
+    <title>Notes for CS2100</title>
+    <url>/2024/02/06/Notes-for-CS2100/</url>
+    <content><![CDATA[
 ]]></content>
-      <categories>
-        <category>thoughts</category>
-      </categories>
-      <tags>
-        <tag>thoughts</tag>
-      </tags>
   </entry>
   <entry>
     <title>Thought - 2024.1</title>
@@ -423,6 +507,66 @@ karma, whatever. - Steve Jobs</p>
       </categories>
       <tags>
         <tag>thoughts</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Thought - 2024.2</title>
+    <url>/2024/02/03/Thought-2024-2/</url>
+    <content><![CDATA[<p>Thougts in Feb 2024</p>
+<span id="more"></span>
+<blockquote>
+<p>2.1 : opportunities will come!</p>
+</blockquote>
+<blockquote>
+<p>2.2 : Tomorrow's a brand new day!</p>
+</blockquote>
+<blockquote>
+<p>2.3 : Everything will be all right.</p>
+</blockquote>
+<blockquote>
+<p>2.4 : Focus, even if it's one tiny thing.</p>
+</blockquote>
+<blockquote>
+<p>2.5 : 戒骄戒躁。</p>
+</blockquote>
+<blockquote>
+<p>2.6 : Keep Going</p>
+</blockquote>
+<blockquote>
+<p>2.10 : 哎呀好像断更了。祝大家新年快乐！</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>thoughts</category>
+      </categories>
+      <tags>
+        <tag>thoughts</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>我的世界起床战争技巧总结</title>
+    <url>/2024/02/11/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C%E8%B5%B7%E5%BA%8A%E6%88%98%E4%BA%89%E6%8A%80%E5%B7%A7%E6%80%BB%E7%BB%93/</url>
+    <content><![CDATA[<p>我的世界起床战争技巧总结 <span id="more"></span></p>
+<h1 id="pvp">PVP</h1>
+<h2 id="控距">控距</h2>
+<p>将敌人保持在自己攻击范围的边上。为了保持这一点，手可以时不时按<code>w</code>而不是一直按着键盘</p>
+<h2 id="攻击">攻击</h2>
+<p>跳劈可以用，但是容易翻车。可以尝试在第一次攻击的时候跳劈，注意往旁边跳劈会比较好一点。</p>
+<h1 id="搭路">搭路</h1>
+<p>找到节奏感</p>
+]]></content>
+      <categories>
+        <category>Games</category>
+        <category>Minecraft</category>
+        <category>Bedwars</category>
+      </categories>
+      <tags>
+        <tag>Games</tag>
+        <tag>Minecraft</tag>
+        <tag>Entertainment</tag>
+        <tag>Fun</tag>
+        <tag>Skills</tag>
+        <tag>Bedwars</tag>
       </tags>
   </entry>
   <entry>
