@@ -28,9 +28,10 @@
 <meta property="og:description" content="Mainly questions that I encountered during my study for CS2040S">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://wfyishere.github.io/2024/01/28/Notes-for-CS2040S/FileSystem.png">
+<meta property="og:image" content="https://wfyishere.github.io/2024/01/28/Notes-for-CS2040S/Stirling%20Approximation">
 <meta property="og:image" content="https://wfyishere.github.io/2024/01/28/Notes-for-CS2040S/InsertionSort.png">
 <meta property="article:published_time" content="2024-01-28T03:14:20.000Z">
-<meta property="article:modified_time" content="2024-02-07T12:39:14.529Z">
+<meta property="article:modified_time" content="2024-02-14T12:03:09.739Z">
 <meta property="article:author" content="Wen Fanyu">
 <meta property="article:tag" content="ComputerScience">
 <meta property="article:tag" content="Notes">
@@ -100,7 +101,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">9</span></a></li><li class="menu-item menu-item-todo"><a href="/todo" rel="section"><i class="fa-solid fa-bars fa-fw"></i>Todo</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">20</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">9</span></a></li><li class="menu-item menu-item-commonweal"><a href="/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>Commonweal 404</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">9</span></a></li><li class="menu-item menu-item-todo"><a href="/todo" rel="section"><i class="fa-solid fa-bars fa-fw"></i>Todo</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">23</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">10</span></a></li><li class="menu-item menu-item-commonweal"><a href="/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>Commonweal 404</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -153,7 +154,7 @@
         <div class="post-toc-wrap sidebar-panel">
             <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#lecture-1-2-java"><span class="nav-number">1.</span> <span class="nav-text">Lecture 1 &amp; 2 : Java</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#lecture-3-4-peak-finding-searching"><span class="nav-number">2.</span> <span class="nav-text">Lecture 3 &amp; 4 : Peak
 Finding &amp; Searching</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#lecture-5-6-sorting"><span class="nav-number">3.</span> <span class="nav-text">Lecture 5 &amp; 6 : Sorting</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#bogosort"><span class="nav-number">3.1.</span> <span class="nav-text">BogoSort</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#classic-sorting-algorithms"><span class="nav-number">3.2.</span> <span class="nav-text">Classic Sorting
-Algorithms</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#bogosort-1"><span class="nav-number">3.2.1.</span> <span class="nav-text">BogoSort</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#selection-sort"><span class="nav-number">3.2.2.</span> <span class="nav-text">Selection Sort</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#insertion-sort"><span class="nav-number">3.2.3.</span> <span class="nav-text">Insertion Sort</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mergesort"><span class="nav-number">3.2.4.</span> <span class="nav-text">MergeSort</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#puzzles"><span class="nav-number">4.</span> <span class="nav-text">Puzzles:</span></a></li></ol></div>
+Algorithms</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#bogosort-1"><span class="nav-number">3.2.1.</span> <span class="nav-text">BogoSort</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#selection-sort"><span class="nav-number">3.2.2.</span> <span class="nav-text">Selection Sort</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#insertion-sort"><span class="nav-number">3.2.3.</span> <span class="nav-text">Insertion Sort</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mergesort"><span class="nav-number">3.2.4.</span> <span class="nav-text">MergeSort</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#quicksort"><span class="nav-number">3.3.</span> <span class="nav-text">Quicksort</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#others"><span class="nav-number">4.</span> <span class="nav-text">Others</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#puzzles"><span class="nav-number">5.</span> <span class="nav-text">Puzzles:</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -166,7 +167,7 @@ Algorithms</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a c
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-count">10</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -177,7 +178,7 @@ Algorithms</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a c
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">20</span>
+        <span class="site-state-item-count">23</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -249,7 +250,7 @@ Algorithms</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a c
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-02-07 20:39:14" itemprop="dateModified" datetime="2024-02-07T20:39:14+08:00">2024-02-07</time>
+      <time title="Modified: 2024-02-14 20:03:09" itemprop="dateModified" datetime="2024-02-14T20:03:09+08:00">2024-02-14</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -276,14 +277,14 @@ Algorithms</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a c
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Word count in article: </span>
-      <span>4k</span>
+      <span>5k</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>4 mins.</span>
+      <span>5 mins.</span>
     </span>
 </div>
 
@@ -363,9 +364,9 @@ time of MaybeBogoSort?</p>
 <p>[U]Additionally, what is the difference between n! and <span
 class="math inline">\(n^{n}\)</span>? What is the difference between n *
 n! and (n+1)! ?</p>
-<pre><code>Stirling Apporximation:
-
-![](Stirling Approximation)</code></pre>
+<pre><code>Stirling Apporximation:</code></pre>
+<p><img src="Stirling%20Approximation" /></p>
+<pre><code>by this approximation, we can say that `O(log(n!)) == O(nlog(n))`</code></pre>
 <ul>
 <li>[U]</li>
 </ul>
@@ -452,7 +453,24 @@ expectation).(WHY?)</p>
 <p>• Total space ever allocated.</p>
 <p><strong>[U] How “close to sorted” should a list be for InsertionSort
 to be faster?</strong></p>
-<p><strong>Slowest Sorting Algorithm</strong> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Step 1:</span><br><span class="line">– Generate all the permutations of the input.</span><br><span class="line">Step 2:</span><br><span class="line">– Sort the permutations (by number of inversions).</span><br><span class="line">Step 3:</span><br><span class="line">– Return the first element in the sorted list of</span><br><span class="line">permutations.</span><br></pre></td></tr></table></figure> # Others</p>
+<p><strong>Slowest Sorting Algorithm</strong> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Step 1:</span><br><span class="line">– Generate all the permutations of the input.</span><br><span class="line">Step 2:</span><br><span class="line">– Sort the permutations (by number of inversions).</span><br><span class="line">Step 3:</span><br><span class="line">– Return the first element in the sorted list of</span><br><span class="line">permutations.</span><br></pre></td></tr></table></figure></p>
+<h2 id="quicksort">Quicksort</h2>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">QuickSort(A[1..n], n)</span><br><span class="line">    if (n == 1) then return;</span><br><span class="line">    else</span><br><span class="line">        Choose pivot index pIndex.</span><br><span class="line">        p = partition(A[1..n], n, pIndex)</span><br><span class="line">        x = QuickSort(A[1..p–1], p–1)</span><br><span class="line">        y = QuickSort(A[p+1..n], n–p)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">partition(A[1..n], n, pIndex) // Assume no duplicates, n&gt;1</span><br><span class="line">    pivot = A[pIndex]; // pIndex is the index of pivot</span><br><span class="line">    swap(A[1], A[pIndex]); // store pivot in A[1]</span><br><span class="line">    low = 2; // start after pivot in A[1]</span><br><span class="line">    high = n+1; // Define: A[n+1] = ¥</span><br><span class="line">    while (low &lt; high)</span><br><span class="line">        while (A[low] &lt;= pivot) and (low &lt; high) do low++;</span><br><span class="line">        while (A[high] &gt; pivot) and (low &lt; high) do high– – ;</span><br><span class="line">        if (low &lt; high) then swap(A[low], A[high]);</span><br><span class="line">    swap(A[1], A[low–1]);</span><br><span class="line">    return low–1;</span><br></pre></td></tr></table></figure>
+<ol type="1">
+<li>What if there are duplicates?</li>
+</ol>
+<p>[U] Two way partitioning (what happens for numbers on the right side?
+Lec 6 slides)</p>
+<p>One way partitioning - maintaining 4 parts of an array. * Quicksort
+is not stable</p>
+<p>[U] Is it possible to make quicksort stable by using an extra array
+to partition rather than do swapping?</p>
+<ol start="2" type="1">
+<li><p>[U] Why is quicksort faster than merge sort?</p></li>
+<li><p>[U] What if we use triple pivots</p></li>
+</ol>
+<h1 id="others">Others</h1>
 <ol type="1">
 <li>log2n = O( log10n ) Correct! We can easily switch between bases by
 multiplying by a constant.</li>
@@ -468,6 +486,7 @@ multiplying by a constant.</li>
 <p>You can test whether all the good keys are in the set (and possibly
 some extra keys). If even one bad key is in the set, then it fails.</p>
 <p>Goal: identify exactly the good keys.</p>
+<p>** Updated: Lecture 07 p53</p>
 
     </div>
 
@@ -555,14 +574,14 @@ some extra keys). If even one bad key is in the set, then it fails.</p>
       <i class="fa fa-chart-line"></i>
     </span>
       <span>Word count total: </span>
-    <span title="Word count total">11k</span>
+    <span title="Word count total">13k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>Reading time total &asymp;</span>
-    <span title="Reading time total">10 mins.</span>
+    <span title="Reading time total">12 mins.</span>
   </span>
 </div>
 
