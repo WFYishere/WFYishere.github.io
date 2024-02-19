@@ -226,7 +226,7 @@ Algorithms</strong></h2>
 <h3 id="bogosort-1">BogoSort</h3>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">repeat n times:</span><br><span class="line">for j ¬ 1 to n-1</span><br><span class="line">if A[j] &gt; A[j+1] then swap(A[j], A[j+1])</span><br></pre></td></tr></table></figure>
 <h3 id="selection-sort">Selection Sort</h3>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">for j ¬ 1 to n-1:</span><br><span class="line">find minimum element A[j] in A[j..n]</span><br><span class="line">swap(A[j], A[k])</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">for j ¬ 1 to n-1:</span><br><span class="line">    find minimum element A[j] in A[j..n] //A[k]</span><br><span class="line">swap(A[j], A[k])</span><br></pre></td></tr></table></figure>
 <h3 id="insertion-sort">Insertion Sort</h3>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">InsertionSort(A, n)</span><br><span class="line">for j ¬ 2 to n</span><br><span class="line">key ¬ A[j]</span><br><span class="line">//Insert key into the sorted array A[1..j-1]</span><br><span class="line">i ¬ j-1</span><br><span class="line">while (i &gt; 0) and (A[i] &gt;key)</span><br><span class="line">A[i+1] ¬ A[i]</span><br><span class="line">i ¬ i-1</span><br><span class="line">A[i+1] ¬ key</span><br></pre></td></tr></table></figure>
 <p><em>In this case, since the insertion work is done from nearest
@@ -285,7 +285,7 @@ expectation).(WHY?)</p>
 <tr class="even">
 <td>Stability</td>
 <td>1(swap only when elements are different)</td>
-<td>0</td>
+<td>0(e.g. [2, 2, 1])</td>
 <td>1(A[i] &gt; key not &gt;=)</td>
 <td>1(if implementation is designed carefully)</td>
 </tr>
@@ -372,6 +372,87 @@ Blue pen for additional knowledge</li>
       </tags>
   </entry>
   <entry>
+    <title>Machine Learning Introduction on Coursera</title>
+    <url>/2024/02/19/Machine-Learning-Introduction-on-Coursera/</url>
+    <content><![CDATA[<p>Took the <a
+href="https://www.coursera.org/specializations/machine-learning-introduction">Machine
+Learning Specialization</a> on Coursera, here's the notes.
+<span id="more"></span></p>
+<h1
+id="supervised-machine-learning-regression-and-classification">Supervised
+Machine Learning: Regression and Classification</h1>
+<h2 id="week-1introduction-to-ml">Week 1:Introduction to ML</h2>
+<h3 id="supervised-vs-unsupervised-learning">Supervised VS Unsupervised
+Learning</h3>
+<ol type="1">
+<li>Supervised Learning</li>
+</ol>
+<ul>
+<li><p>Input - Output prediction</p>
+<ol type="a">
+<li><p>Train your models with x and correct answers Y</p></li>
+<li><p>Models take brand new X and predict Y</p></li>
+</ol></li>
+<li><p><strong>Regresion</strong> : predict X-Y mappings, where Y has
+unlimited inifinte possible values</p></li>
+<li><p><strong>CLassification</strong>: predict only a small number of
+outputs Y (categories/classes)</p></li>
+</ul>
+<ol start="2" type="1">
+<li>Unsupervised Learning</li>
+</ol>
+<ul>
+<li>Find something interesting (structure) in unlabeled data. <strong>Do
+not have an aim</strong>(e.g. <strong>clustering</strong>: (google news
+cluster the related news togethe / grouping different customers);
+<strong>Dimemsionality reduction</strong> ; <strong>Anomally
+depression</strong>)</li>
+</ul>
+<h3 id="regression-model">Regression model</h3>
+<ol type="1">
+<li>Terminology</li>
+</ol>
+<ul>
+<li><p>Training Set: Data set used to train the model</p></li>
+<li><p>x : Feature / input variable</p></li>
+<li><p>y : "target" variable(the correct answer)</p></li>
+<li><p>(x,y) : single training variable</p></li>
+<li><p>(<span class="math inline">\(x^{(i)}\)</span>, <span
+class="math inline">\(y^{(i)}\)</span>) : the ith row of training
+example</p></li>
+<li><p>m : number of training examples</p></li>
+<li><p>f : hypothesis / model</p></li>
+<li><p><span class="math inline">\(\hat{y}\)</span> :
+prediction</p></li>
+<li><p><span class="math inline">\(f_{w,b}\)</span>(x) = wx + b</p></li>
+<li><p>Univariate Linear Regression: one variable</p></li>
+</ul>
+<ol start="2" type="1">
+<li>Hands on pactice: <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import numpy as np</span><br><span class="line">import matplotlib.pyplot as plt</span><br><span class="line">plt.style.use(&#x27;./deeplearning.mplstyle&#x27;)</span><br><span class="line"></span><br><span class="line"># x_train is the input variable (size in 1000 square feet)</span><br><span class="line"># y_train is the target (price in 1000s of dollars)</span><br><span class="line">x_train = np.array([1.0, 2.0])</span><br><span class="line">y_train = np.array([300.0, 500.0])</span><br><span class="line">print(f&quot;x_train = &#123;x_train&#125;&quot;)</span><br><span class="line">print(f&quot;y_train = &#123;y_train&#125;&quot;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># m is the number of training examples</span><br><span class="line">print(f&quot;x_train.shape: &#123;x_train.shape&#125;&quot;)</span><br><span class="line">m = x_train.shape[0]</span><br><span class="line">print(f&quot;Number of training examples is: &#123;m&#125;&quot;)</span><br><span class="line"># m is the number of training examples</span><br><span class="line">m = len(x_train)</span><br><span class="line">print(f&quot;Number of training examples is: &#123;m&#125;&quot;)</span><br><span class="line"></span><br><span class="line">i = 0 # Change this to 1 to see (x^1, y^1)</span><br><span class="line">x_i = x_train[i]</span><br><span class="line">y_i = y_train[i]</span><br><span class="line">print(f&quot;(x^(&#123;i&#125;), y^(&#123;i&#125;)) = (&#123;x_i&#125;, &#123;y_i&#125;)&quot;)</span><br><span class="line"></span><br><span class="line"># Plot the data points(marker : shape of the points, c : colour of points)</span><br><span class="line">plt.scatter(x_train, y_train, marker=&#x27;x&#x27;, c=&#x27;r&#x27;)</span><br><span class="line"># Set the title</span><br><span class="line">plt.title(&quot;Housing Prices&quot;)</span><br><span class="line"># Set the y-axis label</span><br><span class="line">plt.ylabel(&#x27;Price (in 1000s of dollars)&#x27;)</span><br><span class="line"># Set the x-axis label</span><br><span class="line">plt.xlabel(&#x27;Size (1000 sqft)&#x27;)</span><br><span class="line">plt.show()</span><br><span class="line"></span><br><span class="line">def compute_model_output(x, w, b):</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    Computes the prediction of a linear model</span><br><span class="line">    Args:</span><br><span class="line">      x (ndarray (m,)): n-dimensional array of shape (m, ) </span><br><span class="line">      w,b (scalar)    : model parameters  </span><br><span class="line">    Returns</span><br><span class="line">      f_wb (ndarray (m,)): model prediction</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    m = x.shape[0]</span><br><span class="line">    f_wb = np.zeros(m) # one dimensional array with n entries</span><br><span class="line">    for i in range(m):</span><br><span class="line">        f_wb[i] = w * x[i] + b</span><br><span class="line">        </span><br><span class="line">    return f_wb</span><br><span class="line"></span><br><span class="line">tmp_f_wb = compute_model_output(x_train, w, b,)</span><br><span class="line"></span><br><span class="line"># Plot our model prediction</span><br><span class="line">plt.plot(x_train, tmp_f_wb, c=&#x27;b&#x27;,label=&#x27;Our Prediction&#x27;)</span><br><span class="line"></span><br><span class="line"># Plot the data points</span><br><span class="line">plt.scatter(x_train, y_train, marker=&#x27;x&#x27;, c=&#x27;r&#x27;,label=&#x27;Actual Values&#x27;)</span><br><span class="line"></span><br><span class="line"># Set the title</span><br><span class="line">plt.title(&quot;Housing Prices&quot;)</span><br><span class="line"># Set the y-axis label</span><br><span class="line">plt.ylabel(&#x27;Price (in 1000s of dollars)&#x27;)</span><br><span class="line"># Set the x-axis label</span><br><span class="line">plt.xlabel(&#x27;Size (1000 sqft)&#x27;)</span><br><span class="line">plt.legend()</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>[] Todo: should learn python [] Todo: clean the code above</p>
+<p>TBC.</p>
+]]></content>
+      <categories>
+        <category>Notes</category>
+        <category>CS</category>
+        <category>AI</category>
+        <category>MachineLearning</category>
+      </categories>
+      <tags>
+        <tag>ComputerScience</tag>
+        <tag>Notes</tag>
+        <tag>Study</tag>
+        <tag>Coursera</tag>
+        <tag>Stanford</tag>
+        <tag>AI</tag>
+        <tag>MachineLearning</tag>
+        <tag>SelfStudy</tag>
+        <tag>OnlineCourses</tag>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Notes for CS2100</title>
     <url>/2024/02/06/Notes-for-CS2100/</url>
     <content><![CDATA[
@@ -417,101 +498,6 @@ karma, whatever. - Steve Jobs</p>
       <tags>
         <tag>thoughts</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>Thought - 2024.2</title>
-    <url>/2024/02/03/Thought-2024-2/</url>
-    <content><![CDATA[<p>Thougts in Feb 2024</p>
-<span id="more"></span>
-<blockquote>
-<p>2.1 : opportunities will come!</p>
-</blockquote>
-<blockquote>
-<p>2.2 : Tomorrow's a brand new day!</p>
-</blockquote>
-<blockquote>
-<p>2.3 : Everything will be all right.</p>
-</blockquote>
-<blockquote>
-<p>2.4 : Focus, even if it's one tiny thing.</p>
-</blockquote>
-<blockquote>
-<p>2.5 : 戒骄戒躁。</p>
-</blockquote>
-<blockquote>
-<p>2.6 : Keep Going</p>
-</blockquote>
-<blockquote>
-<p>2.10 : 哎呀好像断更了。祝大家新年快乐！</p>
-</blockquote>
-<blockquote>
-<p>2.12 : Try new things!</p>
-</blockquote>
-<blockquote>
-<p>2.13 : Deal with loneliness</p>
-</blockquote>
-<blockquote>
-<p>2.14 : 拓宽人脉！</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>thoughts</category>
-      </categories>
-      <tags>
-        <tag>thoughts</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2024/01/20/hello-world/</url>
-    <content><![CDATA[<p>This is a Blog to test this website's functionalities.
-<span id="more"></span></p>
-<hr />
-<h3 id="url">URL</h3>
-<p><a href="https://wch.github.io/latexsheet/latexsheet.pdf">markdown
-cheatsheet</a></p>
-<p><a href="https://wch.github.io/latexsheet/latexsheet.pdf">latex
-Cheatsheet</a></p>
-<h3 id="code">code</h3>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Hello World!</span><br></pre></td></tr></table></figure>
-<h3 id="useful-syntax">useful syntax</h3>
-<p>Here's a sentence with a footnote. <a href="#fn1"
-class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
-<blockquote>
-<p>This is a quote.</p>
-</blockquote>
-<ul class="task-list">
-<li><label><input type="checkbox" checked="" />Write the press
-release</label></li>
-<li><label><input type="checkbox" />Update the website</label></li>
-<li><label><input type="checkbox" />Contact the media</label></li>
-</ul>
-<p><span style="color:red"> Changing Colour </span></p>
-<h3 id="create-a-new-post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a
-href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="mathjax-testing">mathjax testing</h3>
-<p><span class="math display">\[\begin{equation}
-   E = mc^2
-\end{equation}\]</span></p>
-<p><span class="math display">\[\begin{equation}
-\begin{aligned}
-a &amp;= b + c \\
-  &amp;= d + e + f + g \\
-  &amp;= h + i
-\end{aligned}
-\end{equation}\]</span></p>
-<p><span class="math display">\[x+1\over\sqrt{1-x^2} \]</span></p>
-<section id="footnotes" class="footnotes footnotes-end-of-document"
-role="doc-endnotes">
-<hr />
-<ol>
-<li id="fn1"><p>This is the footnote.<a href="#fnref1"
-class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section>
-]]></content>
   </entry>
   <entry>
     <title>Notes for SICPJS</title>
@@ -623,27 +609,101 @@ get the possibility of a point in the rectangle is in the circle, thus p
       </tags>
   </entry>
   <entry>
-    <title>吹灭读书灯，一身都是月</title>
-    <url>/2024/02/17/%E5%90%B9%E7%81%AD%E8%AF%BB%E4%B9%A6%E7%81%AF%EF%BC%8C%E4%B8%80%E8%BA%AB%E9%83%BD%E6%98%AF%E6%9C%88/</url>
-    <content><![CDATA[<p>吹灭读书灯，一身都是月，多美的句子啊。</p>
+    <title>Hello World</title>
+    <url>/2024/01/20/hello-world/</url>
+    <content><![CDATA[<p>This is a Blog to test this website's functionalities.
+<span id="more"></span></p>
+<hr />
+<h3 id="url">URL</h3>
+<p><a href="https://wch.github.io/latexsheet/latexsheet.pdf">markdown
+cheatsheet</a></p>
+<p><a href="https://wch.github.io/latexsheet/latexsheet.pdf">latex
+Cheatsheet</a></p>
+<h3 id="code">code</h3>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Hello World!</span><br></pre></td></tr></table></figure>
+<h3 id="useful-syntax">useful syntax</h3>
+<p>Here's a sentence with a footnote. <a href="#fn1"
+class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<blockquote>
+<p>This is a quote.</p>
+</blockquote>
+<ul class="task-list">
+<li><label><input type="checkbox" checked="" />Write the press
+release</label></li>
+<li><label><input type="checkbox" />Update the website</label></li>
+<li><label><input type="checkbox" />Contact the media</label></li>
+</ul>
+<p><span style="color:red"> Changing Colour </span></p>
+<h3 id="create-a-new-post">Create a new post</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a
+href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="mathjax-testing">mathjax testing</h3>
+<p><span class="math display">\[\begin{equation}
+   E = mc^2
+\end{equation}\]</span></p>
+<p><span class="math display">\[\begin{equation}
+\begin{aligned}
+a &amp;= b + c \\
+  &amp;= d + e + f + g \\
+  &amp;= h + i
+\end{aligned}
+\end{equation}\]</span></p>
+<p><span class="math display">\[x+1\over\sqrt{1-x^2} \]</span></p>
+<section id="footnotes" class="footnotes footnotes-end-of-document"
+role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1"><p>This is the footnote.<a href="#fnref1"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+]]></content>
+  </entry>
+  <entry>
+    <title>Thought - 2024.2</title>
+    <url>/2024/02/03/Thought-2024-2/</url>
+    <content><![CDATA[<p>Thougts in Feb 2024</p>
 <span id="more"></span>
-<p>小的时候最喜欢的房子就是：</p>
-<p>小小的房间，与世人的喧嚣隔绝。屋子里的东西不多，一张朴素的床，一个放得满满的书架，一个能在晚上眺望星空的窗户，一张书桌。
-比如曾经看过一本漫画书（忘记叫什么名字了），讲一个老爷爷和他的小精灵生活在一个农场里。那个小精灵的房子在田地的中央，每天晚上他就爬上去，打开昏黄的台灯，就着星光读书。</p>
-<p>又比如里约大冒险里那个小男孩，住在深巷中的一个房子的天台上，甚至不能叫屋子，只是雨棚下的简单铺成的床。每天晚上，他听着巷子里的人声喧闹，爬着水管回到家中，从破烂的箱子里拿出一杯饮料，坐下来看星星看月亮。</p>
-<p>而大学一学期的时光里，我最享受的时刻就是上完了课去完了cca回到宿舍里，洗完澡之后坐下来，煮一碗泡面，看着窗外的星光，伏案学习。这样的时光里，我感受不到时间的流逝。人生的享受不过如此。</p>
-<p>在上大学之前我从来没住过宿，也从来没有远离过家乡，有时候一个人呆着难免会觉得孤独。当我试图通过互联网转移注意力、试图在无意义的社交中浪费时间，孤独感并不会得到缓解。唯有在这种夜深人静的时刻，吹灭读书灯一身都是月的时候，我才能清清楚楚明明白白地感受到生命的存在，感受到意义，消解孤独。</p>
-<p>突然又想到一句话，好像和以上没什么联系：人的一生，苦也罢，乐也罢，的也罢，失也罢，要紧的是心中要有一泓清泉不能没有月辉。</p>
-<p><img src="dorm.jpg" /></p>
+<blockquote>
+<p>2.1 : opportunities will come!</p>
+</blockquote>
+<blockquote>
+<p>2.2 : Tomorrow's a brand new day!</p>
+</blockquote>
+<blockquote>
+<p>2.3 : Everything will be all right.</p>
+</blockquote>
+<blockquote>
+<p>2.4 : Focus, even if it's one tiny thing.</p>
+</blockquote>
+<blockquote>
+<p>2.5 : 戒骄戒躁。</p>
+</blockquote>
+<blockquote>
+<p>2.6 : Keep Going</p>
+</blockquote>
+<blockquote>
+<p>2.10 : 哎呀好像断更了。祝大家新年快乐！</p>
+</blockquote>
+<blockquote>
+<p>2.12 : Try new things!</p>
+</blockquote>
+<blockquote>
+<p>2.13 : Deal with loneliness</p>
+</blockquote>
+<blockquote>
+<p>2.14 : 拓宽人脉！</p>
+</blockquote>
+<blockquote>
+<p>2.18 : Making progress!</p>
+</blockquote>
 ]]></content>
       <categories>
         <category>thoughts</category>
       </categories>
       <tags>
         <tag>thoughts</tag>
-        <tag>random</tag>
-        <tag>peace</tag>
-        <tag>study</tag>
       </tags>
   </entry>
   <entry>
@@ -670,6 +730,30 @@ get the possibility of a point in the rectangle is in the circle, thus p
         <tag>Fun</tag>
         <tag>Skills</tag>
         <tag>Bedwars</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>吹灭读书灯，一身都是月</title>
+    <url>/2024/02/17/%E5%90%B9%E7%81%AD%E8%AF%BB%E4%B9%A6%E7%81%AF%EF%BC%8C%E4%B8%80%E8%BA%AB%E9%83%BD%E6%98%AF%E6%9C%88/</url>
+    <content><![CDATA[<p>吹灭读书灯，一身都是月，多美的句子啊。</p>
+<span id="more"></span>
+<p>小的时候最喜欢的房子就是：</p>
+<p>小小的房间，与世人的喧嚣隔绝。屋子里的东西不多，一张朴素的床，一个放得满满的书架，一个能在晚上眺望星空的窗户，一张书桌。
+比如曾经看过一本漫画书（忘记叫什么名字了），讲一个老爷爷和他的小精灵生活在一个农场里。那个小精灵的房子在田地的中央，每天晚上他就爬上去，打开昏黄的台灯，就着星光读书。</p>
+<p>又比如里约大冒险里那个小男孩，住在深巷中的一个房子的天台上，甚至不能叫屋子，只是雨棚下的简单铺成的床。每天晚上，他听着巷子里的人声喧闹，爬着水管回到家中，从破烂的箱子里拿出一杯饮料，坐下来看星星看月亮。</p>
+<p>而大学一学期的时光里，我最享受的时刻就是上完了课去完了cca回到宿舍里，洗完澡之后坐下来，煮一碗泡面，看着窗外的星光，伏案学习。这样的时光里，我感受不到时间的流逝。人生的享受不过如此。</p>
+<p>在上大学之前我从来没住过宿，也从来没有远离过家乡，有时候一个人呆着难免会觉得孤独。当我试图通过互联网转移注意力、试图在无意义的社交中浪费时间，孤独感并不会得到缓解。唯有在这种夜深人静的时刻，吹灭读书灯一身都是月的时候，我才能清清楚楚明明白白地感受到生命的存在，感受到意义，消解孤独。</p>
+<p>突然又想到一句话，好像和以上没什么联系：人的一生，苦也罢，乐也罢，的也罢，失也罢，要紧的是心中要有一泓清泉不能没有月辉。</p>
+<p><img src="dorm.jpg" /></p>
+]]></content>
+      <categories>
+        <category>thoughts</category>
+      </categories>
+      <tags>
+        <tag>thoughts</tag>
+        <tag>random</tag>
+        <tag>peace</tag>
+        <tag>study</tag>
       </tags>
   </entry>
 </search>
