@@ -428,7 +428,7 @@ prediction</p></li>
 <li><p>Univariate Linear Regression: one variable</p></li>
 </ul>
 <ol start="2" type="1">
-<li>Hands on pactice: <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import numpy as np</span><br><span class="line">import matplotlib.pyplot as plt</span><br><span class="line">plt.style.use(&#x27;./deeplearning.mplstyle&#x27;)</span><br><span class="line"></span><br><span class="line"># x_train is the input variable (size in 1000 square feet)</span><br><span class="line"># y_train is the target (price in 1000s of dollars)</span><br><span class="line">x_train = np.array([1.0, 2.0])</span><br><span class="line">y_train = np.array([300.0, 500.0])</span><br><span class="line">print(f&quot;x_train = &#123;x_train&#125;&quot;)</span><br><span class="line">print(f&quot;y_train = &#123;y_train&#125;&quot;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># m is the number of training examples</span><br><span class="line">print(f&quot;x_train.shape: &#123;x_train.shape&#125;&quot;)</span><br><span class="line">m = x_train.shape[0]</span><br><span class="line">print(f&quot;Number of training examples is: &#123;m&#125;&quot;)</span><br><span class="line"># m is the number of training examples</span><br><span class="line">m = len(x_train)</span><br><span class="line">print(f&quot;Number of training examples is: &#123;m&#125;&quot;)</span><br><span class="line"></span><br><span class="line">i = 0 # Change this to 1 to see (x^1, y^1)</span><br><span class="line">x_i = x_train[i]</span><br><span class="line">y_i = y_train[i]</span><br><span class="line">print(f&quot;(x^(&#123;i&#125;), y^(&#123;i&#125;)) = (&#123;x_i&#125;, &#123;y_i&#125;)&quot;)</span><br><span class="line"></span><br><span class="line"># Plot the data points(marker : shape of the points, c : colour of points)</span><br><span class="line">plt.scatter(x_train, y_train, marker=&#x27;x&#x27;, c=&#x27;r&#x27;)</span><br><span class="line"># Set the title</span><br><span class="line">plt.title(&quot;Housing Prices&quot;)</span><br><span class="line"># Set the y-axis label</span><br><span class="line">plt.ylabel(&#x27;Price (in 1000s of dollars)&#x27;)</span><br><span class="line"># Set the x-axis label</span><br><span class="line">plt.xlabel(&#x27;Size (1000 sqft)&#x27;)</span><br><span class="line">plt.show()</span><br><span class="line"></span><br><span class="line">def compute_model_output(x, w, b):</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    Computes the prediction of a linear model</span><br><span class="line">    Args:</span><br><span class="line">      x (ndarray (m,)): n-dimensional array of shape (m, ) </span><br><span class="line">      w,b (scalar)    : model parameters  </span><br><span class="line">    Returns</span><br><span class="line">      f_wb (ndarray (m,)): model prediction</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    m = x.shape[0]</span><br><span class="line">    f_wb = np.zeros(m) # one dimensional array with n entries</span><br><span class="line">    for i in range(m):</span><br><span class="line">        f_wb[i] = w * x[i] + b</span><br><span class="line">        </span><br><span class="line">    return f_wb</span><br><span class="line"></span><br><span class="line">tmp_f_wb = compute_model_output(x_train, w, b,)</span><br><span class="line"></span><br><span class="line"># Plot our model prediction</span><br><span class="line">plt.plot(x_train, tmp_f_wb, c=&#x27;b&#x27;,label=&#x27;Our Prediction&#x27;)</span><br><span class="line"></span><br><span class="line"># Plot the data points</span><br><span class="line">plt.scatter(x_train, y_train, marker=&#x27;x&#x27;, c=&#x27;r&#x27;,label=&#x27;Actual Values&#x27;)</span><br><span class="line"></span><br><span class="line"># Set the title</span><br><span class="line">plt.title(&quot;Housing Prices&quot;)</span><br><span class="line"># Set the y-axis label</span><br><span class="line">plt.ylabel(&#x27;Price (in 1000s of dollars)&#x27;)</span><br><span class="line"># Set the x-axis label</span><br><span class="line">plt.xlabel(&#x27;Size (1000 sqft)&#x27;)</span><br><span class="line">plt.legend()</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure></li>
+<li>Hands on pactice: <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import numpy as np</span><br><span class="line">import matplotlib.pyplot as plt</span><br><span class="line">plt.style.use(&#x27;./deeplearning.mplstyle&#x27;)</span><br><span class="line"></span><br><span class="line"># x_train is the input variable (size in 1000 square feet)</span><br><span class="line"># y_train is the target (price in 1000s of dollars)</span><br><span class="line">x_train = np.array([1.0, 2.0])</span><br><span class="line">y_train = np.array([300.0, 500.0])</span><br><span class="line">print(f&quot;x_train = &#123;x_train&#125;&quot;)</span><br><span class="line">print(f&quot;y_train = &#123;y_train&#125;&quot;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># m is the number of training examples</span><br><span class="line">print(f&quot;x_train.shape: &#123;x_train.shape&#125;&quot;)</span><br><span class="line">m = x_train.shape[0]</span><br><span class="line">print(f&quot;Number of training examples is: &#123;m&#125;&quot;)</span><br><span class="line"># m is the number of training examples</span><br><span class="line">m = len(x_train)</span><br><span class="line">print(f&quot;Number of training examples is: &#123;m&#125;&quot;)</span><br><span class="line"></span><br><span class="line">i = 0 # Change this to 1 to see (x^1, y^1)</span><br><span class="line">x_i = x_train[i]</span><br><span class="line">y_i = y_train[i]</span><br><span class="line">print(f&quot;(x^(&#123;i&#125;), y^(&#123;i&#125;)) = (&#123;x_i&#125;, &#123;y_i&#125;)&quot;)</span><br><span class="line"></span><br><span class="line"># Plot the data points(marker : shape of the points, c : colour of points)</span><br><span class="line">plt.scatter(x_train, y_train, marker=&#x27;x&#x27;, c=&#x27;r&#x27;)</span><br><span class="line"># Set the title</span><br><span class="line">plt.title(&quot;Housing Prices&quot;)</span><br><span class="line"># Set the y-axis label</span><br><span class="line">plt.ylabel(&#x27;Price (in 1000s of dollars)&#x27;)</span><br><span class="line"># Set the x-axis label</span><br><span class="line">plt.xlabel(&#x27;Size (1000 sqft)&#x27;)</span><br><span class="line">plt.show()</span><br><span class="line"></span><br><span class="line">def compute_model_output(x, w, b):</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    Computes the prediction of a linear model</span><br><span class="line">    Args:</span><br><span class="line">      x (ndarray (m,)): n-dimensional array of shape (m, ) </span><br><span class="line">      w,b (scalar)    : model parameters  </span><br><span class="line">    Returns</span><br><span class="line">      f_wb (ndarray (m,)): model prediction</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    m = x.shape[0]</span><br><span class="line">    f_wb = np.zeros(m) # one dimensional array with n entries</span><br><span class="line">    for i in range(m):</span><br><span class="line">        f_wb[i] = w * x[i] + b</span><br><span class="line">        </span><br><span class="line">    return f_wb</span><br><span class="line"></span><br><span class="line">tmp_f_wb = compute_model_output(x_train, w, b,)</span><br><span class="line"></span><br><span class="line"># Plot our model prediction</span><br><span class="line">plt.plot(x_train, tmp_f_wb, c=&#x27;b&#x27;,label=&#x27;Our Prediction&#x27;)</span><br><span class="line"></span><br><span class="line"># Plot the data points</span><br><span class="line">plt.scatter(x_train, y_train, marker=&#x27;x&#x27;, c=&#x27;r&#x27;,label=&#x27;Actual Values&#x27;)</span><br><span class="line"></span><br><span class="line"># Set the title</span><br><span class="line">plt.title(&quot;Housing Prices&quot;)</span><br><span class="line"># Set the y-axis label</span><br><span class="line">plt.ylabel(&#x27;Price (in 1000s of dollars)&#x27;)</span><br><span class="line"># Set the x-axis label</span><br><span class="line">plt.xlabel(&#x27;Size (1000 sqft)&#x27;)</span><br><span class="line">plt.legend() # what does this do ?</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure></li>
 </ol>
 <p>[] Todo: should learn python [] Todo: clean the code above</p>
 <p>TBC.</p>
@@ -754,6 +754,78 @@ class="footnote-back" role="doc-backlink">↩︎</a></p></li>
         <tag>random</tag>
         <tag>peace</tag>
         <tag>study</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Thoughts for Attending Guest Lecture on Pi</title>
+    <url>/2024/02/20/Thoughts-for-Attending-Guest-Lecture-on-Pi/</url>
+    <content><![CDATA[<p>Attending a guest lecture is fun <span id="more"></span> # Thoughts</p>
+<p>I never thought about attending guest lectures before. Mainly because
+all the guest lectures that I attended in high school didn't talk much
+about "knowledge", but rather about "the history of knowledge" or the
+guests' experiences. Since we needed to compete for Olympiad and prepare
+for College Entrance Exams, we didn't have much time for doing "useless"
+stuff other than studying directly for the exams(at least, that's what I
+thought, I'll probably write about that as well in another post. <em>If
+I have time</em>). So I've always been kind of resistant to guest
+talks.</p>
+<p>But then, I've started to change my mind since I came to university
+in a different country and tried to touch on things that I didn't want
+to take before(I'll also talk about that in the other post). Plus, I
+read Cal Newport's <em>How To Win At College</em> (I know this book
+sounds uitilitarian but it's actually good), in which he suggested
+listening to guest lectures twice a week. So I've decided to give it a
+try on a Maths Talks, since I want to know whether my interest actually
+lies in this realm.</p>
+<p>The talk was given by prof Chan Heng Huat, from the Department of
+Mathematics in NUS. There were also several other profs who attended the
+meeting such as my prof from GEA1000N (What a surprise that I would be
+seeing him tmr) and profs from non-mathematics departments. Apart from
+this, several kids were also there in the talk, listening carefully and
+silently. That actually surprised me and I was even kind of jealous of
+those kids who get the chance to get exposed to these interesting talks
+when they were young(maybe one of them would be the next Ramanujan, who
+knows!).</p>
+<p>Prof Chan mainly talked about the progress and various kinds of
+techniques or thoughts that were related to apporximating Pi. He used
+simple language, but dived deep into the thought progress of doing these
+approximations and gave useful details about the questions that were
+raised during the talk. The talk lasted for 40 minutes. It wasn't useful
+in a sense that I would probably forget about all these series and
+integrations next morning when I wake up. However, I would definetely
+say that it makes me remember why and how I loved Mathematics when I was
+young. I can't sum up <strong>now</strong> about what the talk brought
+to me or what I've learned in the talk, but I know in my heart that
+something was changed in my mind. Something was envoked. I cannot tell
+what it is right now, nor do I know how this would influence my future
+careers. I can't even say that it is <strong>"useful"</strong>.</p>
+<p>But as I am writing this, I remember David Brooks's talk about how
+everyone has this part of them that does not care about fame or money or
+tiktok likes, there is a part of us that pursues true happiness and
+higher realm. I guess I begin to remember how I like Maths as Maths
+itself, not because "Studying Maths Sounds So Hardcore" or "Maths Is
+Useful for CS" or anything like that. And I guess that's what guest
+lectures are for. To guide you to a higher perspective and envoke
+interest. To put down the utilitarian thoughts and discover something
+new. To truly enjoy the thing you love and remove the impurities
+imparted by reality to those things.</p>
+<p>I look forward to attending more guest lectures.</p>
+<p><em>This lecture is not a Special one. I wouldn't say that the
+lecture is the-thought-provoking-one. But as a first guest lecture that
+I take the initiative to participate, and as a first guest lecture that
+I attend in university, it does reminds me of something deep in my heart
+and inspires me to attend future guest lectures.</em></p>
+<h1 id="useless-notes">(Useless) Notes</h1>
+<p>Here are the notes:(taken real quick so basically not useful lah)
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">(k 2k) 1/(2k+1)(2k-1) </span><br><span class="line"></span><br><span class="line">AGM of Gauss: an = (an-1 +bn-1)/2, bn = sqrt(an-1 * bn-1)</span><br><span class="line">Kanada-Tamura-Yoshino=Ushiro</span><br><span class="line"></span><br><span class="line">Borwenis iteration</span><br><span class="line"></span><br><span class="line">Quadratic speed</span><br><span class="line"></span><br><span class="line">Ramanujan</span><br><span class="line">The man who knew infinity</span><br><span class="line">A Disappearing Number</span><br><span class="line"></span><br><span class="line">Chudnovsky series</span><br><span class="line"></span><br><span class="line">Ramanujan’s majic squares</span><br></pre></td></tr></table></figure></p>
+]]></content>
+      <categories>
+        <category>thoughts</category>
+      </categories>
+      <tags>
+        <tag>thoughts</tag>
+        <tag>random</tag>
+        <tag>Mathematics</tag>
       </tags>
   </entry>
 </search>
