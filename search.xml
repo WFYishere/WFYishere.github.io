@@ -1,6 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Machine Learning Introduction on Coursera</title>
+    <url>/2024/02/19/Machine-Learning-Introduction-on-Coursera/</url>
+    <content><![CDATA[<p>Took the <a
+href="https://www.coursera.org/specializations/machine-learning-introduction">Machine
+Learning Specialization</a> on Coursera, here's the notes.
+<span id="more"></span></p>
+<h1
+id="supervised-machine-learning-regression-and-classification">Supervised
+Machine Learning: Regression and Classification</h1>
+<h2 id="week-1introduction-to-ml">Week 1:Introduction to ML</h2>
+<h3 id="supervised-vs-unsupervised-learning">Supervised VS Unsupervised
+Learning</h3>
+<ol type="1">
+<li>Supervised Learning</li>
+</ol>
+<ul>
+<li><p>Input - Output prediction</p>
+<ol type="a">
+<li><p>Train your models with x and correct answers Y</p></li>
+<li><p>Models take brand new X and predict Y</p></li>
+</ol></li>
+<li><p><strong>Regresion</strong> : predict X-Y mappings, where Y has
+unlimited inifinte possible values</p></li>
+<li><p><strong>CLassification</strong>: predict only a small number of
+outputs Y (categories/classes)</p></li>
+</ul>
+<ol start="2" type="1">
+<li>Unsupervised Learning</li>
+</ol>
+<ul>
+<li>Find something interesting (structure) in unlabeled data. <strong>Do
+not have an aim</strong>(e.g. <strong>clustering</strong>: (google news
+cluster the related news togethe / grouping different customers);
+<strong>Dimemsionality reduction</strong> ; <strong>Anomally
+depression</strong>)</li>
+</ul>
+<h3 id="regression-model">Regression model</h3>
+<h4 id="terminology">1. Terminology</h4>
+<ul>
+<li>Training Set: Data set used to train the model</li>
+<li>x : Feature / input variable</li>
+<li>y : "target" variable(the correct answer)</li>
+<li>(x,y) : single training variable</li>
+<li>(<span class="math inline">\(x^{(i)}\)</span>, <span
+class="math inline">\(y^{(i)}\)</span>) : the ith row of training
+example</li>
+<li>m : number of training examples</li>
+<li>f : hypothesis / model</li>
+<li><span class="math inline">\(\hat{y}\)</span> : prediction</li>
+<li><span class="math inline">\(f_{w,b}\)</span>(x) = wx + b <em>w, b:
+coefficients / weight</em></li>
+<li>Univariate Linear Regression: one variable</li>
+</ul>
+<h4 id="hands-on-pactice">2. Hands on pactice:</h4>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line">plt.style.use(<span class="string">&#x27;./deeplearning.mplstyle&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># x_train is the input variable (size in 1000 square feet)</span></span><br><span class="line"><span class="comment"># y_train is the target (price in 1000s of dollars)</span></span><br><span class="line">x_train = np.array([<span class="number">1.0</span>, <span class="number">2.0</span>])</span><br><span class="line">y_train = np.array([<span class="number">300.0</span>, <span class="number">500.0</span>])</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;x_train = <span class="subst">&#123;x_train&#125;</span>&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;y_train = <span class="subst">&#123;y_train&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># m is the number of training examples</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;x_train.shape: <span class="subst">&#123;x_train.shape&#125;</span>&quot;</span>)</span><br><span class="line">m = x_train.shape[<span class="number">0</span>]</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;Number of training examples is: <span class="subst">&#123;m&#125;</span>&quot;</span>)</span><br><span class="line"><span class="comment"># m is the number of training examples</span></span><br><span class="line">m = <span class="built_in">len</span>(x_train)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;Number of training examples is: <span class="subst">&#123;m&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line">i = <span class="number">0</span> <span class="comment"># Change this to 1 to see (x^1, y^1)</span></span><br><span class="line">x_i = x_train[i]</span><br><span class="line">y_i = y_train[i]</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;(x^(<span class="subst">&#123;i&#125;</span>), y^(<span class="subst">&#123;i&#125;</span>)) = (<span class="subst">&#123;x_i&#125;</span>, <span class="subst">&#123;y_i&#125;</span>)&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Plot the data points(marker : shape of the points, c : colour of points)</span></span><br><span class="line">plt.scatter(x_train, y_train, marker=<span class="string">&#x27;x&#x27;</span>, c=<span class="string">&#x27;r&#x27;</span>)</span><br><span class="line"><span class="comment"># Set the title</span></span><br><span class="line">plt.title(<span class="string">&quot;Housing Prices&quot;</span>)</span><br><span class="line"><span class="comment"># Set the y-axis label</span></span><br><span class="line">plt.ylabel(<span class="string">&#x27;Price (in 1000s of dollars)&#x27;</span>)</span><br><span class="line"><span class="comment"># Set the x-axis label</span></span><br><span class="line">plt.xlabel(<span class="string">&#x27;Size (1000 sqft)&#x27;</span>)</span><br><span class="line">plt.show()</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">compute_model_output</span>(<span class="params">x, w, b</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    Computes the prediction of a linear model</span></span><br><span class="line"><span class="string">    Args:</span></span><br><span class="line"><span class="string">      x (ndarray (m,)): n-dimensional array of shape (m, ) </span></span><br><span class="line"><span class="string">      w,b (scalar)    : model parameters  </span></span><br><span class="line"><span class="string">    Returns</span></span><br><span class="line"><span class="string">      f_wb (ndarray (m,)): model prediction</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    m = x.shape[<span class="number">0</span>]</span><br><span class="line">    f_wb = np.zeros(m) <span class="comment"># one dimensional array with n entries</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(m):</span><br><span class="line">        f_wb[i] = w * x[i] + b</span><br><span class="line">        </span><br><span class="line">    <span class="keyword">return</span> f_wb</span><br><span class="line"></span><br><span class="line">tmp_f_wb = compute_model_output(x_train, w, b,)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Plot our model prediction</span></span><br><span class="line">plt.plot(x_train, tmp_f_wb, c=<span class="string">&#x27;b&#x27;</span>,label=<span class="string">&#x27;Our Prediction&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Plot the data points</span></span><br><span class="line">plt.scatter(x_train, y_train, marker=<span class="string">&#x27;x&#x27;</span>, c=<span class="string">&#x27;r&#x27;</span>,label=<span class="string">&#x27;Actual Values&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Set the title</span></span><br><span class="line">plt.title(<span class="string">&quot;Housing Prices&quot;</span>)</span><br><span class="line"><span class="comment"># Set the y-axis label</span></span><br><span class="line">plt.ylabel(<span class="string">&#x27;Price (in 1000s of dollars)&#x27;</span>)</span><br><span class="line"><span class="comment"># Set the x-axis label</span></span><br><span class="line">plt.xlabel(<span class="string">&#x27;Size (1000 sqft)&#x27;</span>)</span><br><span class="line">plt.legend() <span class="comment"># what does this do ?</span></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<h4 id="cost-function">3. Cost Function</h4>
+<ul>
+<li>error: <span class="math inline">\(\hat{y^(i)}\)</span> - <span
+class="math inline">\(y^(i)\)</span></li>
+</ul>
+<p><span class="math display">\[J(w,b) = \frac{1}{2m} \sum\limits_{i =
+0}^{m-1} (f_{w,b}(x^{(i)}) - y^{(i)})^2 \tag{1}\]</span></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">compute_cost</span>(<span class="params">x, y, w, b</span>): </span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    Computes the cost function for linear regression.</span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">    Args:</span></span><br><span class="line"><span class="string">      x (ndarray (m,)): Data, m examples </span></span><br><span class="line"><span class="string">      y (ndarray (m,)): target values</span></span><br><span class="line"><span class="string">      w,b (scalar)    : model parameters  </span></span><br><span class="line"><span class="string">    </span></span><br><span class="line"><span class="string">    Returns</span></span><br><span class="line"><span class="string">        total_cost (float): The cost of using w,b as the parameters for linear regression</span></span><br><span class="line"><span class="string">               to fit the data points in x and y</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="comment"># number of training examples</span></span><br><span class="line">    m = x.shape[<span class="number">0</span>] </span><br><span class="line">    </span><br><span class="line">    cost_sum = <span class="number">0</span> </span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(m): </span><br><span class="line">        f_wb = w * x[i] + b   </span><br><span class="line">        cost = (f_wb - y[i]) ** <span class="number">2</span>  </span><br><span class="line">        cost_sum = cost_sum + cost  </span><br><span class="line">    total_cost = (<span class="number">1</span> / (<span class="number">2</span> * m)) * cost_sum  </span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> total_cost</span><br><span class="line"></span><br><span class="line">x_train = np.array([<span class="number">1.0</span>, <span class="number">1.7</span>, <span class="number">2.0</span>, <span class="number">2.5</span>, <span class="number">3.0</span>, <span class="number">3.2</span>])</span><br><span class="line">y_train = np.array([<span class="number">250</span>, <span class="number">300</span>, <span class="number">480</span>,  <span class="number">430</span>,   <span class="number">630</span>, <span class="number">730</span>,])</span><br><span class="line"></span><br><span class="line">fig, ax, dyn_items = plt_stationary(x_train, y_train)</span><br><span class="line">updater = plt_update_onclick(fig, ax, x_train, y_train, dyn_items)</span><br></pre></td></tr></table></figure>
+<p>[U] Why is some places in the graph dense while others are loose?
+Does that imply anything? <img src="CostFunction.png" /></p>
+<h3 id="gradient-descent">Gradient Descent</h3>
+<p>[ ] Todo: should learn python</p>
+<p>[ ] Todo: clean the code above</p>
+<p>TBC.</p>
+]]></content>
+      <categories>
+        <category>Notes</category>
+        <category>CS</category>
+        <category>AI</category>
+        <category>MachineLearning</category>
+      </categories>
+      <tags>
+        <tag>Coursera</tag>
+        <tag>Stanford</tag>
+        <tag>ComputerScience</tag>
+        <tag>AI</tag>
+        <tag>MachineLearning</tag>
+        <tag>Notes</tag>
+        <tag>Study</tag>
+        <tag>SelfStudy</tag>
+        <tag>OnlineCourses</tag>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Cheat Sheet for Unix CLI</title>
     <url>/2024/01/24/Cheat-Sheet-for-Unix-CLI/</url>
     <content><![CDATA[<p>Learnt Unix in NUS CS2030S. Here's a cheatsheet. <span id="more"></span></p>
@@ -131,223 +221,11 @@ file test.count</p>
 ]]></content>
       <tags>
         <tag>ComputerScience</tag>
-        <tag>Unix</tag>
         <tag>Notes</tag>
         <tag>Study</tag>
+        <tag>Unix</tag>
         <tag>NUS</tag>
         <tag>CheatSheet</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Notes for CS2040S</title>
-    <url>/2024/01/28/Notes-for-CS2040S/</url>
-    <content><![CDATA[<p>Mainly questions that I encountered during my study for
-CS2040S<Data Structures and Algorithms></p>
-<span id="more"></span>
-<h1 id="lecture-1-2-java">Lecture 1 &amp; 2 : Java</h1>
-<ol type="1">
-<li>[U] How to implement a <strong>File System</strong>?</li>
-</ol>
-<p><img src="FileSystem.png" /></p>
-<pre><code>1. Objects represent state (“nouns”), not actions (”verbs”)
-
-2. What after folders?
-
-3. Objects should be unitary, without dividing functionality.(What does this mean and why?)</code></pre>
-<ol start="2" type="1">
-<li><p><strong>First Principal of JAVA: Everything is an
-object</strong></p>
-<p>A class is a template for producing an object.</p>
-<p>An object is an instance of the class.</p></li>
-<li><p><strong>Second Principal of JAVA: Everything has a
-type</strong></p>
-<p><strong><a
-href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">Type
-String</a></strong>:</p>
-<ul>
-<li><p>charAt(int index)</p></li>
-<li><p>substring(int begin, int end)</p></li>
-<li><p>toCharArray()</p></li>
-<li><p>length()</p></li>
-<li><p>compareTo(String otherString)</p></li>
-<li><p>compareToIgnoreCase(String otherString)</p></li>
-<li><p>equals(Object anObject)</p></li>
-</ul></li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class File implements IFile</span><br><span class="line">&#123;</span><br><span class="line">    //Member(Instance) Variables.</span><br><span class="line">    String name = “”;</span><br><span class="line">    FileData contents = null;</span><br><span class="line">    private int[] pageNumbers = null;</span><br><span class="line"></span><br><span class="line">    public File(int NumPages)&#123;</span><br><span class="line">        pageNumbers = new int[numPages]; //array constructer</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //Methods(Functions)</span><br><span class="line">    void rename(String newName)&#123;...&#125; //signatures: parameters</span><br><span class="line">    FileData getData()&#123;...&#125;</span><br><span class="line">    void setData(FileData newdata)&#123;...&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// Explain with a comment</span><br><span class="line">// what your interface is for.</span><br><span class="line">interface IFile</span><br><span class="line">&#123;</span><br><span class="line">    // Comments explain how to use interface</span><br><span class="line">    void rename(String newName);</span><br><span class="line">    FileData getData();</span><br><span class="line">    void setData(FileData newdata);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ol start="4" type="1">
-<li><p><strong>Behaviour is public, Data is private.</strong></p>
-<p>regular variables/functions are PER OBJECT</p>
-<p>static variables/functions are PER CLASS // cannot access member
-variable</p></li>
-</ol>
-<h1 id="lecture-3-4-peak-finding-searching">Lecture 3 &amp; 4 : Peak
-Finding &amp; Searching</h1>
-<ol type="1">
-<li>[U] 2D Peak Finding: How to PROVE that it works?</li>
-</ol>
-<h1 id="lecture-5-6-sorting">Lecture 5 &amp; 6 : Sorting</h1>
-<h2 id="bogosort">BogoSort</h2>
-<ol type="1">
-<li><strong>BogoSort Running Time</strong></li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Repeat:</span><br><span class="line"></span><br><span class="line">a) Choose a random permutation of the array A.</span><br><span class="line"></span><br><span class="line">b) If A is sorted, return A.</span><br></pre></td></tr></table></figure>
-<p>What is the expected running time of BogoSort?</p>
-<p>Ans: O(n * n!) // The <strong>n</strong> is important!</p>
-<ol start="2" type="1">
-<li><strong>Quantumn BogoSort</strong></li>
-</ol>
-<p><em>Remember QuantumBogoSort when you learn about non-deterministic
-Turing Machines.</em> What?</p>
-<ol start="3" type="1">
-<li><strong>Maybe BogoSort</strong></li>
-</ol>
-<p>MaybeBogoSort(A[1..n]) <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Choose a random permutation of the array A.</span><br><span class="line">- If A[1] is the minimum item in A then:</span><br><span class="line">MaybeBogoSort(A[2..n])</span><br><span class="line">Else</span><br><span class="line">MaybeBogoSort(A[1..n])</span><br></pre></td></tr></table></figure> [U]What is the expected running
-time of MaybeBogoSort?</p>
-<pre><code>I guess it&#39;s something like 
-    $\sum_&#123;k = 1&#125;^&#123;n&#125; (k-1) * (k-1)!$</code></pre>
-<p>[U]But then, What is the bigO notation of this thing?</p>
-<p>[U]Additionally, what is the difference between n! and <span
-class="math inline">\(n^{n}\)</span>? What is the difference between n *
-n! and (n+1)! ?</p>
-<pre><code>Stirling Apporximation:</code></pre>
-<p><img src="Stirling%20Approximation" /></p>
-<pre><code>by this approximation, we can say that `O(log(n!)) == O(nlog(n))`</code></pre>
-<ul>
-<li>[U]</li>
-</ul>
-<ol start="3" type="1">
-<li>[U] List of the stability, runtime and performance difference on
-nearly sorted and random arrays of different algorithms</li>
-</ol>
-<h2 id="classic-sorting-algorithms"><strong>Classic Sorting
-Algorithms</strong></h2>
-<h3 id="bogosort-1">BogoSort</h3>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">repeat n times:</span><br><span class="line">for j ¬ 1 to n-1</span><br><span class="line">if A[j] &gt; A[j+1] then swap(A[j], A[j+1])</span><br></pre></td></tr></table></figure>
-<h3 id="selection-sort">Selection Sort</h3>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">for j ¬ 1 to n-1:</span><br><span class="line">    find minimum element A[j] in A[j..n] //A[k]</span><br><span class="line">swap(A[j], A[k])</span><br></pre></td></tr></table></figure>
-<h3 id="insertion-sort">Insertion Sort</h3>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">InsertionSort(A, n)</span><br><span class="line">for j ¬ 2 to n</span><br><span class="line">key ¬ A[j]</span><br><span class="line">//Insert key into the sorted array A[1..j-1]</span><br><span class="line">i ¬ j-1</span><br><span class="line">while (i &gt; 0) and (A[i] &gt;key)</span><br><span class="line">A[i+1] ¬ A[i]</span><br><span class="line">i ¬ i-1</span><br><span class="line">A[i+1] ¬ key</span><br></pre></td></tr></table></figure>
-<p><em>In this case, since the insertion work is done from nearest
-element to key(backwards), it behaves differently in a sorted
-array</em></p>
-<p>[U] Average-case analysis:</p>
-<p><img src="InsertionSort.png" /></p>
-<blockquote>
-<p>On average, a key in position j needs to move j/2 slots backward (in
-expectation).(WHY?)</p>
-</blockquote>
-<h3 id="mergesort">MergeSort</h3>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">MergeSort(A, n)</span><br><span class="line">if (n=1) then return;</span><br><span class="line">else:</span><br><span class="line">X ¬MergeSort(A[1..n/2], n/2);</span><br><span class="line">Y ¬MergeSort(A[n/2+1, n], n/2);</span><br><span class="line">return Merge (X,Y, n/2);</span><br></pre></td></tr></table></figure>
-<p>[U] Master Theorem? Akra–Bazzi Method ? ##
-<strong>Summary</strong></p>
-<table>
-<colgroup>
-<col style="width: 29%" />
-<col style="width: 16%" />
-<col style="width: 16%" />
-<col style="width: 23%" />
-<col style="width: 14%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th>Features</th>
-<th>Bubble Sort</th>
-<th>Selection Sort</th>
-<th>Inerstion Sort</th>
-<th>Merge Sort</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Time Complexity</td>
-<td>O(n^2)</td>
-<td>O(n^2)</td>
-<td>O(n^2)</td>
-<td>O(n * log(n))</td>
-</tr>
-<tr class="even">
-<td>NearlySorted ? Random</td>
-<td>O(n) &lt;</td>
-<td>=</td>
-<td>O(n) &lt;</td>
-<td>=</td>
-</tr>
-<tr class="odd">
-<td>Space Complexity</td>
-<td>O(n)</td>
-<td>O(n)</td>
-<td>O(n)</td>
-<td>O(n) (No need to allocate new arrays, can you previous ones instead)
-/ O(n * log(n)) when it's MergeSort iteration</td>
-</tr>
-<tr class="even">
-<td>Stability</td>
-<td>1(swap only when elements are different)</td>
-<td>0(e.g. [2, 2, 1])</td>
-<td>1(A[i] &gt; key not &gt;=)</td>
-<td>1(if implementation is designed carefully)</td>
-</tr>
-</tbody>
-</table>
-<p><strong>[U] Find a permutation of [1..n] where:</strong></p>
-<p>• BubbleSort is slow.</p>
-<p>• InsertionSort is fast.</p>
-<p>Or explain why such array does not exist</p>
-<p><strong>How do you count space?</strong></p>
-<p>• Maximum space every allocated at one time?</p>
-<p>• Total space ever allocated.</p>
-<p><strong>[U] How “close to sorted” should a list be for InsertionSort
-to be faster?</strong></p>
-<p><strong>Slowest Sorting Algorithm</strong> <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Step 1:</span><br><span class="line">– Generate all the permutations of the input.</span><br><span class="line">Step 2:</span><br><span class="line">– Sort the permutations (by number of inversions).</span><br><span class="line">Step 3:</span><br><span class="line">– Return the first element in the sorted list of</span><br><span class="line">permutations.</span><br></pre></td></tr></table></figure></p>
-<h2 id="quicksort">Quicksort</h2>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">QuickSort(A[1..n], n)</span><br><span class="line">    if (n == 1) then return;</span><br><span class="line">    else</span><br><span class="line">        Choose pivot index pIndex.</span><br><span class="line">        p = partition(A[1..n], n, pIndex)</span><br><span class="line">        x = QuickSort(A[1..p–1], p–1)</span><br><span class="line">        y = QuickSort(A[p+1..n], n–p)</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">partition(A[1..n], n, pIndex) // Assume no duplicates, n&gt;1</span><br><span class="line">    pivot = A[pIndex]; // pIndex is the index of pivot</span><br><span class="line">    swap(A[1], A[pIndex]); // store pivot in A[1]</span><br><span class="line">    low = 2; // start after pivot in A[1]</span><br><span class="line">    high = n+1; // Define: A[n+1] = ¥</span><br><span class="line">    while (low &lt; high)</span><br><span class="line">        while (A[low] &lt;= pivot) and (low &lt; high) do low++;</span><br><span class="line">        while (A[high] &gt; pivot) and (low &lt; high) do high– – ;</span><br><span class="line">        if (low &lt; high) then swap(A[low], A[high]);</span><br><span class="line">    swap(A[1], A[low–1]);</span><br><span class="line">    return low–1;</span><br></pre></td></tr></table></figure>
-<ol type="1">
-<li>What if there are duplicates?</li>
-</ol>
-<p>[U] Two way partitioning (what happens for numbers on the right side?
-Lec 6 slides)</p>
-<p>One way partitioning - maintaining 4 parts of an array. * Quicksort
-is not stable</p>
-<p>[U] Is it possible to make quicksort stable by using an extra array
-to partition rather than do swapping?</p>
-<ol start="2" type="1">
-<li><p>[U] Why is quicksort faster than merge sort?</p></li>
-<li><p>[U] What if we use triple pivots</p></li>
-</ol>
-<h1 id="others">Others</h1>
-<ol type="1">
-<li>log2n = O( log10n ) Correct! We can easily switch between bases by
-multiplying by a constant.</li>
-</ol>
-<h1 id="puzzles">Puzzles:</h1>
-<ol type="1">
-<li><p>[U]Sicherman Dice</p></li>
-<li><p>[U]Puzzle of the Week: Bubbly (Courtesy: MIT Puzzle Hunt,
-2019)</p></li>
-<li><p>[U]Treasure Island:</p></li>
-</ol>
-<p>You choose a set of keys.</p>
-<p>You can test whether all the good keys are in the set (and possibly
-some extra keys). If even one bad key is in the set, then it fails.</p>
-<p>Goal: identify exactly the good keys.</p>
-<p>** Updated: Lecture 07 p53</p>
-]]></content>
-      <categories>
-        <category>Notes</category>
-        <category>CS</category>
-        <category>Algorithm</category>
-      </categories>
-      <tags>
-        <tag>ComputerScience</tag>
-        <tag>Notes</tag>
-        <tag>Study</tag>
-        <tag>NUS</tag>
-        <tag>Java</tag>
-        <tag>Algorithm</tag>
-        <tag>Questions</tag>
       </tags>
   </entry>
   <entry>
@@ -372,132 +250,10 @@ Blue pen for additional knowledge</li>
       </tags>
   </entry>
   <entry>
-    <title>Machine Learning Introduction on Coursera</title>
-    <url>/2024/02/19/Machine-Learning-Introduction-on-Coursera/</url>
-    <content><![CDATA[<p>Took the <a
-href="https://www.coursera.org/specializations/machine-learning-introduction">Machine
-Learning Specialization</a> on Coursera, here's the notes.
-<span id="more"></span></p>
-<h1
-id="supervised-machine-learning-regression-and-classification">Supervised
-Machine Learning: Regression and Classification</h1>
-<h2 id="week-1introduction-to-ml">Week 1:Introduction to ML</h2>
-<h3 id="supervised-vs-unsupervised-learning">Supervised VS Unsupervised
-Learning</h3>
-<ol type="1">
-<li>Supervised Learning</li>
-</ol>
-<ul>
-<li><p>Input - Output prediction</p>
-<ol type="a">
-<li><p>Train your models with x and correct answers Y</p></li>
-<li><p>Models take brand new X and predict Y</p></li>
-</ol></li>
-<li><p><strong>Regresion</strong> : predict X-Y mappings, where Y has
-unlimited inifinte possible values</p></li>
-<li><p><strong>CLassification</strong>: predict only a small number of
-outputs Y (categories/classes)</p></li>
-</ul>
-<ol start="2" type="1">
-<li>Unsupervised Learning</li>
-</ol>
-<ul>
-<li>Find something interesting (structure) in unlabeled data. <strong>Do
-not have an aim</strong>(e.g. <strong>clustering</strong>: (google news
-cluster the related news togethe / grouping different customers);
-<strong>Dimemsionality reduction</strong> ; <strong>Anomally
-depression</strong>)</li>
-</ul>
-<h3 id="regression-model">Regression model</h3>
-<ol type="1">
-<li>Terminology</li>
-</ol>
-<ul>
-<li><p>Training Set: Data set used to train the model</p></li>
-<li><p>x : Feature / input variable</p></li>
-<li><p>y : "target" variable(the correct answer)</p></li>
-<li><p>(x,y) : single training variable</p></li>
-<li><p>(<span class="math inline">\(x^{(i)}\)</span>, <span
-class="math inline">\(y^{(i)}\)</span>) : the ith row of training
-example</p></li>
-<li><p>m : number of training examples</p></li>
-<li><p>f : hypothesis / model</p></li>
-<li><p><span class="math inline">\(\hat{y}\)</span> :
-prediction</p></li>
-<li><p><span class="math inline">\(f_{w,b}\)</span>(x) = wx + b</p></li>
-<li><p>Univariate Linear Regression: one variable</p></li>
-</ul>
-<ol start="2" type="1">
-<li>Hands on pactice: <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import numpy as np</span><br><span class="line">import matplotlib.pyplot as plt</span><br><span class="line">plt.style.use(&#x27;./deeplearning.mplstyle&#x27;)</span><br><span class="line"></span><br><span class="line"># x_train is the input variable (size in 1000 square feet)</span><br><span class="line"># y_train is the target (price in 1000s of dollars)</span><br><span class="line">x_train = np.array([1.0, 2.0])</span><br><span class="line">y_train = np.array([300.0, 500.0])</span><br><span class="line">print(f&quot;x_train = &#123;x_train&#125;&quot;)</span><br><span class="line">print(f&quot;y_train = &#123;y_train&#125;&quot;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># m is the number of training examples</span><br><span class="line">print(f&quot;x_train.shape: &#123;x_train.shape&#125;&quot;)</span><br><span class="line">m = x_train.shape[0]</span><br><span class="line">print(f&quot;Number of training examples is: &#123;m&#125;&quot;)</span><br><span class="line"># m is the number of training examples</span><br><span class="line">m = len(x_train)</span><br><span class="line">print(f&quot;Number of training examples is: &#123;m&#125;&quot;)</span><br><span class="line"></span><br><span class="line">i = 0 # Change this to 1 to see (x^1, y^1)</span><br><span class="line">x_i = x_train[i]</span><br><span class="line">y_i = y_train[i]</span><br><span class="line">print(f&quot;(x^(&#123;i&#125;), y^(&#123;i&#125;)) = (&#123;x_i&#125;, &#123;y_i&#125;)&quot;)</span><br><span class="line"></span><br><span class="line"># Plot the data points(marker : shape of the points, c : colour of points)</span><br><span class="line">plt.scatter(x_train, y_train, marker=&#x27;x&#x27;, c=&#x27;r&#x27;)</span><br><span class="line"># Set the title</span><br><span class="line">plt.title(&quot;Housing Prices&quot;)</span><br><span class="line"># Set the y-axis label</span><br><span class="line">plt.ylabel(&#x27;Price (in 1000s of dollars)&#x27;)</span><br><span class="line"># Set the x-axis label</span><br><span class="line">plt.xlabel(&#x27;Size (1000 sqft)&#x27;)</span><br><span class="line">plt.show()</span><br><span class="line"></span><br><span class="line">def compute_model_output(x, w, b):</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    Computes the prediction of a linear model</span><br><span class="line">    Args:</span><br><span class="line">      x (ndarray (m,)): n-dimensional array of shape (m, ) </span><br><span class="line">      w,b (scalar)    : model parameters  </span><br><span class="line">    Returns</span><br><span class="line">      f_wb (ndarray (m,)): model prediction</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    m = x.shape[0]</span><br><span class="line">    f_wb = np.zeros(m) # one dimensional array with n entries</span><br><span class="line">    for i in range(m):</span><br><span class="line">        f_wb[i] = w * x[i] + b</span><br><span class="line">        </span><br><span class="line">    return f_wb</span><br><span class="line"></span><br><span class="line">tmp_f_wb = compute_model_output(x_train, w, b,)</span><br><span class="line"></span><br><span class="line"># Plot our model prediction</span><br><span class="line">plt.plot(x_train, tmp_f_wb, c=&#x27;b&#x27;,label=&#x27;Our Prediction&#x27;)</span><br><span class="line"></span><br><span class="line"># Plot the data points</span><br><span class="line">plt.scatter(x_train, y_train, marker=&#x27;x&#x27;, c=&#x27;r&#x27;,label=&#x27;Actual Values&#x27;)</span><br><span class="line"></span><br><span class="line"># Set the title</span><br><span class="line">plt.title(&quot;Housing Prices&quot;)</span><br><span class="line"># Set the y-axis label</span><br><span class="line">plt.ylabel(&#x27;Price (in 1000s of dollars)&#x27;)</span><br><span class="line"># Set the x-axis label</span><br><span class="line">plt.xlabel(&#x27;Size (1000 sqft)&#x27;)</span><br><span class="line">plt.legend() # what does this do ?</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure></li>
-</ol>
-<p>[] Todo: should learn python [] Todo: clean the code above</p>
-<p>TBC.</p>
-]]></content>
-      <categories>
-        <category>Notes</category>
-        <category>CS</category>
-        <category>AI</category>
-        <category>MachineLearning</category>
-      </categories>
-      <tags>
-        <tag>ComputerScience</tag>
-        <tag>Notes</tag>
-        <tag>Study</tag>
-        <tag>Coursera</tag>
-        <tag>Stanford</tag>
-        <tag>AI</tag>
-        <tag>MachineLearning</tag>
-        <tag>SelfStudy</tag>
-        <tag>OnlineCourses</tag>
-        <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Notes for CS2100</title>
     <url>/2024/02/06/Notes-for-CS2100/</url>
     <content><![CDATA[
 ]]></content>
-  </entry>
-  <entry>
-    <title>Thought - 2024.1</title>
-    <url>/2024/01/23/Thought-2024-1-23/</url>
-    <content><![CDATA[<p>Thougts in Jan 2024 <span id="more"></span></p>
-<blockquote>
-<p>1.23 : Sleep is important.</p>
-</blockquote>
-<blockquote>
-<p>1.24 : 有舍有得，但也需分轻重。</p>
-</blockquote>
-<blockquote>
-<p>1.25 : 在图书馆而非宿舍学习。</p>
-</blockquote>
-<blockquote>
-<p>1.26 : 允许自己犯错。</p>
-</blockquote>
-<blockquote>
-<p>1.27 : Push yourself.</p>
-</blockquote>
-<blockquote>
-<p>1.28 : Try everything!</p>
-</blockquote>
-<blockquote>
-<p>1.29 : YOLO</p>
-</blockquote>
-<blockquote>
-<p>1.30 : 严于律己，宽于待人。</p>
-</blockquote>
-<blockquote>
-<p>1.31 :...So you have to trust that the dots will somehow connect in
-your future. You have to trust in something - your gut, destiny, life,
-karma, whatever. - Steve Jobs</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>thoughts</category>
-      </categories>
-      <tags>
-        <tag>thoughts</tag>
-      </tags>
   </entry>
   <entry>
     <title>Notes for SICPJS</title>
@@ -609,154 +365,6 @@ get the possibility of a point in the rectangle is in the circle, thus p
       </tags>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2024/01/20/hello-world/</url>
-    <content><![CDATA[<p>This is a Blog to test this website's functionalities.
-<span id="more"></span></p>
-<hr />
-<h3 id="url">URL</h3>
-<p><a href="https://wch.github.io/latexsheet/latexsheet.pdf">markdown
-cheatsheet</a></p>
-<p><a href="https://wch.github.io/latexsheet/latexsheet.pdf">latex
-Cheatsheet</a></p>
-<h3 id="code">code</h3>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Hello World!</span><br></pre></td></tr></table></figure>
-<h3 id="useful-syntax">useful syntax</h3>
-<p>Here's a sentence with a footnote. <a href="#fn1"
-class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
-<blockquote>
-<p>This is a quote.</p>
-</blockquote>
-<ul class="task-list">
-<li><label><input type="checkbox" checked="" />Write the press
-release</label></li>
-<li><label><input type="checkbox" />Update the website</label></li>
-<li><label><input type="checkbox" />Contact the media</label></li>
-</ul>
-<p><span style="color:red"> Changing Colour </span></p>
-<h3 id="create-a-new-post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a
-href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="mathjax-testing">mathjax testing</h3>
-<p><span class="math display">\[\begin{equation}
-   E = mc^2
-\end{equation}\]</span></p>
-<p><span class="math display">\[\begin{equation}
-\begin{aligned}
-a &amp;= b + c \\
-  &amp;= d + e + f + g \\
-  &amp;= h + i
-\end{aligned}
-\end{equation}\]</span></p>
-<p><span class="math display">\[x+1\over\sqrt{1-x^2} \]</span></p>
-<section id="footnotes" class="footnotes footnotes-end-of-document"
-role="doc-endnotes">
-<hr />
-<ol>
-<li id="fn1"><p>This is the footnote.<a href="#fnref1"
-class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section>
-]]></content>
-  </entry>
-  <entry>
-    <title>Thought - 2024.2</title>
-    <url>/2024/02/03/Thought-2024-2/</url>
-    <content><![CDATA[<p>Thougts in Feb 2024</p>
-<span id="more"></span>
-<blockquote>
-<p>2.1 : opportunities will come!</p>
-</blockquote>
-<blockquote>
-<p>2.2 : Tomorrow's a brand new day!</p>
-</blockquote>
-<blockquote>
-<p>2.3 : Everything will be all right.</p>
-</blockquote>
-<blockquote>
-<p>2.4 : Focus, even if it's one tiny thing.</p>
-</blockquote>
-<blockquote>
-<p>2.5 : 戒骄戒躁。</p>
-</blockquote>
-<blockquote>
-<p>2.6 : Keep Going</p>
-</blockquote>
-<blockquote>
-<p>2.10 : 哎呀好像断更了。祝大家新年快乐！</p>
-</blockquote>
-<blockquote>
-<p>2.12 : Try new things!</p>
-</blockquote>
-<blockquote>
-<p>2.13 : Deal with loneliness</p>
-</blockquote>
-<blockquote>
-<p>2.14 : 拓宽人脉！</p>
-</blockquote>
-<blockquote>
-<p>2.18 : Making progress!</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>thoughts</category>
-      </categories>
-      <tags>
-        <tag>thoughts</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>我的世界起床战争技巧总结</title>
-    <url>/2024/02/11/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C%E8%B5%B7%E5%BA%8A%E6%88%98%E4%BA%89%E6%8A%80%E5%B7%A7%E6%80%BB%E7%BB%93/</url>
-    <content><![CDATA[<p>我的世界起床战争技巧总结 <span id="more"></span></p>
-<h1 id="pvp">PVP</h1>
-<h2 id="控距">控距</h2>
-<p>将敌人保持在自己攻击范围的边上。为了保持这一点，手可以时不时按<code>w</code>而不是一直按着键盘</p>
-<h2 id="攻击">攻击</h2>
-<p>跳劈可以用，但是容易翻车。可以尝试在第一次攻击的时候跳劈，注意往旁边跳劈会比较好一点。</p>
-<h1 id="搭路">搭路</h1>
-<p>找到节奏感</p>
-]]></content>
-      <categories>
-        <category>Games</category>
-        <category>Minecraft</category>
-        <category>Bedwars</category>
-      </categories>
-      <tags>
-        <tag>Games</tag>
-        <tag>Minecraft</tag>
-        <tag>Entertainment</tag>
-        <tag>Fun</tag>
-        <tag>Skills</tag>
-        <tag>Bedwars</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>吹灭读书灯，一身都是月</title>
-    <url>/2024/02/17/%E5%90%B9%E7%81%AD%E8%AF%BB%E4%B9%A6%E7%81%AF%EF%BC%8C%E4%B8%80%E8%BA%AB%E9%83%BD%E6%98%AF%E6%9C%88/</url>
-    <content><![CDATA[<p>吹灭读书灯，一身都是月，多美的句子啊。</p>
-<span id="more"></span>
-<p>小的时候最喜欢的房子就是：</p>
-<p>小小的房间，与世人的喧嚣隔绝。屋子里的东西不多，一张朴素的床，一个放得满满的书架，一个能在晚上眺望星空的窗户，一张书桌。
-比如曾经看过一本漫画书（忘记叫什么名字了），讲一个老爷爷和他的小精灵生活在一个农场里。那个小精灵的房子在田地的中央，每天晚上他就爬上去，打开昏黄的台灯，就着星光读书。</p>
-<p>又比如里约大冒险里那个小男孩，住在深巷中的一个房子的天台上，甚至不能叫屋子，只是雨棚下的简单铺成的床。每天晚上，他听着巷子里的人声喧闹，爬着水管回到家中，从破烂的箱子里拿出一杯饮料，坐下来看星星看月亮。</p>
-<p>而大学一学期的时光里，我最享受的时刻就是上完了课去完了cca回到宿舍里，洗完澡之后坐下来，煮一碗泡面，看着窗外的星光，伏案学习。这样的时光里，我感受不到时间的流逝。人生的享受不过如此。</p>
-<p>在上大学之前我从来没住过宿，也从来没有远离过家乡，有时候一个人呆着难免会觉得孤独。当我试图通过互联网转移注意力、试图在无意义的社交中浪费时间，孤独感并不会得到缓解。唯有在这种夜深人静的时刻，吹灭读书灯一身都是月的时候，我才能清清楚楚明明白白地感受到生命的存在，感受到意义，消解孤独。</p>
-<p>突然又想到一句话，好像和以上没什么联系：人的一生，苦也罢，乐也罢，的也罢，失也罢，要紧的是心中要有一泓清泉不能没有月辉。</p>
-<p><img src="dorm.jpg" /></p>
-]]></content>
-      <categories>
-        <category>thoughts</category>
-      </categories>
-      <tags>
-        <tag>thoughts</tag>
-        <tag>random</tag>
-        <tag>peace</tag>
-        <tag>study</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Thoughts for Attending Guest Lecture on Pi</title>
     <url>/2024/02/20/Thoughts-for-Attending-Guest-Lecture-on-Pi/</url>
     <content><![CDATA[<p>Attending a guest lecture is fun <span id="more"></span> # Thoughts</p>
@@ -824,8 +432,472 @@ and inspires me to attend future guest lectures.</em></p>
       </categories>
       <tags>
         <tag>thoughts</tag>
-        <tag>random</tag>
         <tag>Mathematics</tag>
+        <tag>random</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Thought - 2024.1</title>
+    <url>/2024/01/23/Thought-2024-1-23/</url>
+    <content><![CDATA[<p>Thougts in Jan 2024 <span id="more"></span></p>
+<blockquote>
+<p>1.23 : Sleep is important.</p>
+</blockquote>
+<blockquote>
+<p>1.24 : 有舍有得，但也需分轻重。</p>
+</blockquote>
+<blockquote>
+<p>1.25 : 在图书馆而非宿舍学习。</p>
+</blockquote>
+<blockquote>
+<p>1.26 : 允许自己犯错。</p>
+</blockquote>
+<blockquote>
+<p>1.27 : Push yourself.</p>
+</blockquote>
+<blockquote>
+<p>1.28 : Try everything!</p>
+</blockquote>
+<blockquote>
+<p>1.29 : YOLO</p>
+</blockquote>
+<blockquote>
+<p>1.30 : 严于律己，宽于待人。</p>
+</blockquote>
+<blockquote>
+<p>1.31 :...So you have to trust that the dots will somehow connect in
+your future. You have to trust in something - your gut, destiny, life,
+karma, whatever. - Steve Jobs</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>thoughts</category>
+      </categories>
+      <tags>
+        <tag>thoughts</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Notes for CS2040S</title>
+    <url>/2024/01/28/Notes-for-CS2040S/</url>
+    <content><![CDATA[<p>Mainly questions that I encountered during my study for
+CS2040S<Data Structures and Algorithms></p>
+<span id="more"></span>
+<h1 id="lecture-1-2-java">Lecture 1 &amp; 2 : Java</h1>
+<ol type="1">
+<li>[U] How to implement a <strong>File System</strong>?</li>
+</ol>
+<p><img src="FileSystem.png" /></p>
+<pre><code>1. Objects represent state (“nouns”), not actions (”verbs”)
+
+2. What after folders?
+
+3. Objects should be unitary, without dividing functionality.(What does this mean and why?)</code></pre>
+<ol start="2" type="1">
+<li><p><strong>First Principal of JAVA: Everything is an
+object</strong></p>
+<p>A class is a template for producing an object.</p>
+<p>An object is an instance of the class.</p></li>
+<li><p><strong>Second Principal of JAVA: Everything has a
+type</strong></p>
+<p><strong><a
+href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html">Type
+String</a></strong>:</p>
+<ul>
+<li><p>charAt(int index)</p></li>
+<li><p>substring(int begin, int end)</p></li>
+<li><p>toCharArray()</p></li>
+<li><p>length()</p></li>
+<li><p>compareTo(String otherString)</p></li>
+<li><p>compareToIgnoreCase(String otherString)</p></li>
+<li><p>equals(Object anObject)</p></li>
+</ul></li>
+</ol>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">File</span> <span class="keyword">implements</span> <span class="title class_">IFile</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">//Member(Instance) Variables.</span></span><br><span class="line">    <span class="type">String</span> <span class="variable">name</span> <span class="operator">=</span> “”;</span><br><span class="line">    <span class="type">FileData</span> <span class="variable">contents</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span>[] pageNumbers = <span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">File</span><span class="params">(<span class="type">int</span> NumPages)</span>&#123;</span><br><span class="line">        pageNumbers = <span class="keyword">new</span> <span class="title class_">int</span>[numPages]; <span class="comment">//array constructer</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//Methods(Functions)</span></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">rename</span><span class="params">(String newName)</span>&#123;...&#125; <span class="comment">//signatures: parameters</span></span><br><span class="line">    FileData <span class="title function_">getData</span><span class="params">()</span>&#123;...&#125;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">setData</span><span class="params">(FileData newdata)</span>&#123;...&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Explain with a comment</span></span><br><span class="line"><span class="comment">// what your interface is for.</span></span><br><span class="line"><span class="keyword">interface</span> <span class="title class_">IFile</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// Comments explain how to use interface</span></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">rename</span><span class="params">(String newName)</span>;</span><br><span class="line">    FileData <span class="title function_">getData</span><span class="params">()</span>;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">setData</span><span class="params">(FileData newdata)</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="4" type="1">
+<li><p><strong>Behaviour is public, Data is private.</strong></p>
+<p>regular variables/functions are PER OBJECT</p>
+<p>static variables/functions are PER CLASS // cannot access member
+variable</p></li>
+</ol>
+<h1 id="lecture-3-4-peak-finding-searching">Lecture 3 &amp; 4 : Peak
+Finding &amp; Searching</h1>
+<ol type="1">
+<li>[U] 2D Peak Finding: How to PROVE that it works?</li>
+</ol>
+<h1 id="lecture-5-6-sorting">Lecture 5 &amp; 6 : Sorting</h1>
+<h2 id="bogosort">BogoSort</h2>
+<ol type="1">
+<li><strong>BogoSort Running Time</strong></li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Repeat:</span><br><span class="line"></span><br><span class="line">a) Choose a random permutation of the array A.</span><br><span class="line"></span><br><span class="line">b) If A is sorted, return A.</span><br></pre></td></tr></table></figure>
+<p>What is the expected running time of BogoSort?</p>
+<p>Ans: O(n * n!) // The <strong>n</strong> is important!</p>
+<ol start="2" type="1">
+<li><strong>Quantumn BogoSort</strong></li>
+</ol>
+<p><em>Remember QuantumBogoSort when you learn about non-deterministic
+Turing Machines.</em> What?</p>
+<ol start="3" type="1">
+<li><strong>Maybe BogoSort</strong></li>
+</ol>
+<p>MaybeBogoSort(A[1..n]) <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Choose a random permutation of the array A.</span><br><span class="line">    If A[<span class="number">1</span>] is the minimum item in A then:</span><br><span class="line">        MaybeBogoSort(A[<span class="number">2.</span>.n])</span><br><span class="line">    Else</span><br><span class="line">    <span class="title function_">MaybeBogoSort</span><span class="params">(A[<span class="number">1.</span>.n])</span></span><br></pre></td></tr></table></figure> [U]What is the expected running
+time of MaybeBogoSort?</p>
+<pre><code>I guess it&#39;s something like 
+    $\sum_&#123;k = 1&#125;^&#123;n&#125; (k-1) * (k-1)!$</code></pre>
+<p>[U]But then, What is the bigO notation of this thing?</p>
+<p>[U]Additionally, what is the difference between n! and <span
+class="math inline">\(n^{n}\)</span>? What is the difference between n *
+n! and (n+1)! ?</p>
+<pre><code>Stirling Apporximation:</code></pre>
+<p><img src="Stirling%20Approximation" /></p>
+<pre><code>by this approximation, we can say that `O(log(n!)) == O(nlog(n))`</code></pre>
+<ul>
+<li>[U]</li>
+</ul>
+<ol start="3" type="1">
+<li>[U] List of the stability, runtime and performance difference on
+nearly sorted and random arrays of different algorithms</li>
+</ol>
+<h2 id="classic-sorting-algorithms"><strong>Classic Sorting
+Algorithms</strong></h2>
+<h3 id="bogosort-1">BogoSort</h3>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">repeat n times:</span><br><span class="line">    <span class="keyword">for</span> j ¬ <span class="number">1</span> to n-<span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> A[j] &gt; A[j+<span class="number">1</span>] then <span class="title function_">swap</span><span class="params">(A[j], A[j+<span class="number">1</span>])</span></span><br></pre></td></tr></table></figure>
+<h3 id="selection-sort">Selection Sort</h3>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> j ¬ <span class="number">1</span> to n-<span class="number">1</span>:</span><br><span class="line">    find minimum element A[j] in A[j..n] <span class="comment">//A[k]</span></span><br><span class="line">swap(A[j], A[k])</span><br></pre></td></tr></table></figure>
+<h3 id="insertion-sort">Insertion Sort</h3>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">InsertionSort(A, n)</span><br><span class="line"><span class="keyword">for</span> j ¬ <span class="number">2</span> to n</span><br><span class="line">key ¬ A[j]</span><br><span class="line"><span class="comment">//Insert key into the sorted array A[1..j-1]</span></span><br><span class="line">i ¬ j-<span class="number">1</span></span><br><span class="line"><span class="keyword">while</span> (i &gt; <span class="number">0</span>) and (A[i] &gt;key)</span><br><span class="line">A[i+<span class="number">1</span>] ¬ A[i]</span><br><span class="line">i ¬ i-<span class="number">1</span></span><br><span class="line">A[i+<span class="number">1</span>] ¬ key</span><br></pre></td></tr></table></figure>
+<p><em>In this case, since the insertion work is done from nearest
+element to key(backwards), it behaves differently in a sorted
+array</em></p>
+<p>[U] Average-case analysis:</p>
+<p><img src="InsertionSort.png" /></p>
+<blockquote>
+<p>On average, a key in position j needs to move j/2 slots backward (in
+expectation).(WHY?)</p>
+</blockquote>
+<h3 id="mergesort">MergeSort</h3>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">MergeSort(A, n)</span><br><span class="line"><span class="keyword">if</span> (n=<span class="number">1</span>) then <span class="keyword">return</span>;</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">X ¬MergeSort(A[<span class="number">1.</span>.n/<span class="number">2</span>], n/<span class="number">2</span>);</span><br><span class="line">Y ¬MergeSort(A[n/<span class="number">2</span>+<span class="number">1</span>, n], n/<span class="number">2</span>);</span><br><span class="line"><span class="keyword">return</span> Merge (X,Y, n/<span class="number">2</span>);</span><br></pre></td></tr></table></figure>
+<p>[U] Master Theorem? Akra–Bazzi Method ? ##
+<strong>Summary</strong></p>
+<table>
+<colgroup>
+<col style="width: 29%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 23%" />
+<col style="width: 14%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Features</th>
+<th>Bubble Sort</th>
+<th>Selection Sort</th>
+<th>Inerstion Sort</th>
+<th>Merge Sort</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Time Complexity</td>
+<td>O(n^2)</td>
+<td>O(n^2)</td>
+<td>O(n^2)</td>
+<td>O(n * log(n))</td>
+</tr>
+<tr class="even">
+<td>NearlySorted ? Random</td>
+<td>O(n) &lt;</td>
+<td>=</td>
+<td>O(n) &lt;</td>
+<td>=</td>
+</tr>
+<tr class="odd">
+<td>Space Complexity</td>
+<td>O(n)</td>
+<td>O(n)</td>
+<td>O(n)</td>
+<td>O(n) (No need to allocate new arrays, can you previous ones instead)
+/ O(n * log(n)) when it's MergeSort iteration</td>
+</tr>
+<tr class="even">
+<td>Stability</td>
+<td>1(swap only when elements are different)</td>
+<td>0(e.g. [2, 2, 1])</td>
+<td>1(A[i] &gt; key not &gt;=)</td>
+<td>1(if implementation is designed carefully)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>[U] Find a permutation of [1..n] where:</strong></p>
+<p>• BubbleSort is slow.</p>
+<p>• InsertionSort is fast.</p>
+<p>Or explain why such array does not exist</p>
+<p><strong>How do you count space?</strong></p>
+<p>• Maximum space every allocated at one time?</p>
+<p>• Total space ever allocated.</p>
+<p><strong>[U] How “close to sorted” should a list be for InsertionSort
+to be faster?</strong></p>
+<p><strong>Slowest Sorting Algorithm</strong> <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Step 1:</span><br><span class="line">– Generate all the permutations of the input.</span><br><span class="line">Step 2:</span><br><span class="line">– Sort the permutations (by number of inversions).</span><br><span class="line">Step 3:</span><br><span class="line">– Return the first element in the sorted list of</span><br><span class="line">permutations.</span><br></pre></td></tr></table></figure></p>
+<h2 id="quicksort">Quicksort</h2>
+<h3 id="introduction">Introduction</h3>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">QuickSort(A[<span class="number">1.</span>.n], n)</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">1</span>) then <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        Choose pivot index pIndex.</span><br><span class="line">        p = partition(A[<span class="number">1.</span>.n], n, pIndex)</span><br><span class="line">        x = QuickSort(A[<span class="number">1.</span>.p–<span class="number">1</span>], p–<span class="number">1</span>)</span><br><span class="line">        y = QuickSort(A[p+<span class="number">1.</span>.n], n–p)</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">partition(A[<span class="number">1.</span>.n], n, pIndex) <span class="comment">// Assume no duplicates, n&gt;1</span></span><br><span class="line">    pivot = A[pIndex]; <span class="comment">// pIndex is the index of pivot</span></span><br><span class="line">    swap(A[<span class="number">1</span>], A[pIndex]); <span class="comment">// store pivot in A[1]</span></span><br><span class="line">    low = <span class="number">2</span>; <span class="comment">// start after pivot in A[1]</span></span><br><span class="line">    high = n+<span class="number">1</span>; <span class="comment">// Define: A[n+1] = ¥</span></span><br><span class="line">    <span class="keyword">while</span> (low &lt; high)</span><br><span class="line">        <span class="keyword">while</span> (A[low] &lt;= pivot) and (low &lt; high) <span class="keyword">do</span> low++;</span><br><span class="line">        <span class="keyword">while</span> (A[high] &gt; pivot) and (low &lt; high) <span class="keyword">do</span> high– – ;</span><br><span class="line">        <span class="keyword">if</span> (low &lt; high) then <span class="title function_">swap</span><span class="params">(A[low], A[high])</span>;</span><br><span class="line">    swap(A[<span class="number">1</span>], A[low–<span class="number">1</span>]);</span><br><span class="line">    <span class="keyword">return</span> low–<span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+<ol type="1">
+<li>What if there are duplicates?</li>
+</ol>
+<p>[U] Two way partitioning (what happens for numbers on the right side?
+Lec 6 slides)</p>
+<p>One way partitioning - maintaining 4 parts of an array. * Quicksort
+is not stable</p>
+<p>[U] Is it possible to make quicksort stable by using an extra array
+to partition rather than do swapping?</p>
+<ol start="2" type="1">
+<li><p>[U] Why is quicksort faster than merge sort?</p></li>
+<li><p>[U] What if we use triple pivots</p></li>
+</ol>
+<h3 id="time-complexity-for-random-chosen-pivot.">Time complexity for
+random chosen pivot.</h3>
+<h4 id="analysis-on-a-good-pivot">Analysis on a good pivot</h4>
+<p>T(n) = T(n-k) + T(k) + n</p>
+<p>Suppose <span class="math display">\[\frac{1}{10} n  &lt; k &lt;
+\frac{9}{10} n\]</span></p>
+<p>Time complexity: O(n * h), where h is the time of partition</p>
+<p><span class="math display">\[(\frac{9}{10}) ^ {h} * n &gt;=
+1\tag{1}\]</span></p>
+<ul>
+<li>Paranoid Quicksort(partition until a good partition)
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">ParanoidQuickSort(A[<span class="number">1.</span>.n], n)</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">1</span>) then <span class="keyword">return</span>;    </span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="type">repeat</span></span><br><span class="line">            <span class="variable">pIndex</span> <span class="operator">=</span> random(<span class="number">1</span>, n)</span><br><span class="line">            p = partition(A[<span class="number">1.</span>.n], n, pIndex)</span><br><span class="line">        until p &gt; (<span class="number">1</span>/<span class="number">10</span>)n and p &lt; (<span class="number">9</span>/<span class="number">10</span>)<span class="type">n</span></span><br><span class="line"></span><br><span class="line">    <span class="variable">x</span> <span class="operator">=</span> QuickSort(A[<span class="number">1.</span>.p–<span class="number">1</span>], p–<span class="number">1</span>)</span><br><span class="line">    y = QuickSort(A[p+<span class="number">1.</span>.n], n–p)</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>[U] Non-paranoid quicksort works too?</p>
+<p>[U] Why is it more important to fool the adversary then for the
+algorithm to behave well on average cases(we would need time to do
+randomization and find the A[k], but we don't need time to get A[1]) Or,
+since the possibility of choosing a bad pivot is small, is the
+efficiency of doing paranoid quicksort better then randomly
+choosing?</p>
+<h4 id="probability-theory-on-choosing-a-good-pivot">Probability Theory
+on choosing a good pivot</h4>
+<p>We only execute the repeat loop <span
+class="math inline">\(\frac{n}{k}\)</span> times (in expectation) <a
+href="#fn1" class="footnote-ref" id="fnref1"
+role="doc-noteref"><sup>1</sup></a></p>
+<h3 id="quicksort-optimization">Quicksort Optimization</h3>
+<ol type="1">
+<li><p>Switch to InsertionSort for small arrays.</p></li>
+<li><p>Halt recursion early, leaving small arrays unsorted. Then perform
+InsertionSort on entire array. (InsertionSort is fast on almost sorted
+arrays, about O(n))</p></li>
+</ol>
+<h2 id="order-statistics">Order Statistics</h2>
+<p>Find <span class="math inline">\(k^{th}\)</span> smallest element in
+an unsorted array:</p>
+<ol type="1">
+<li>sort and return A[k]</li>
+<li><strong>Minimize sorting</strong></li>
+</ol>
+<p><em>You can even do paranoid sorting</em></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Select(A[<span class="number">1.</span>.n], n, k)</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">1</span>) then <span class="keyword">return</span> A[<span class="number">1</span>];</span><br><span class="line">    <span class="keyword">else</span> Choose random pivot index pIndex.</span><br><span class="line">        p = partition(A[<span class="number">1.</span>.n], n, pIndex)</span><br><span class="line">        <span class="keyword">if</span> (k == p) then </span><br><span class="line">            <span class="keyword">return</span> A[p];</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (k &lt; p) then</span><br><span class="line">            <span class="keyword">return</span> Select(A[<span class="number">1.</span>.p–<span class="number">1</span>], k)</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (k &gt; p) then</span><br><span class="line">            <span class="keyword">return</span> Select(A[p+<span class="number">1</span>], k – p)</span><br></pre></td></tr></table></figure>
+<p><strong>Time Complexity: O(n)</strong></p>
+<h1 id="others">Others</h1>
+<ol type="1">
+<li>log2n = O( log10n ) Correct! We can easily switch between bases by
+multiplying by a constant.</li>
+</ol>
+<h1 id="puzzles">Puzzles:</h1>
+<ol type="1">
+<li><p>[U]Sicherman Dice</p></li>
+<li><p>[U]Puzzle of the Week: Bubbly (Courtesy: MIT Puzzle Hunt,
+2019)</p></li>
+<li><p>[U]Treasure Island:</p></li>
+</ol>
+<p>You choose a set of keys.</p>
+<p>You can test whether all the good keys are in the set (and possibly
+some extra keys). If even one bad key is in the set, then it fails.</p>
+<p>Goal: identify exactly the good keys.</p>
+<ol start="4" type="1">
+<li>PotW: Gambling for Profit? (Lecture 07 p121)</li>
+</ol>
+<p>** Updated: Lecture 08 p23</p>
+<section id="footnotes" class="footnotes footnotes-end-of-document"
+role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1"><p><span class="math inline">\(\color{green}{SOMETHING
+RELATED}\)</span>: How many flips to get at least one head? : <span
+class="math display">\[E[X] = \frac{1}{2}(1) + \frac{1}{2} (1 + E[X])
+\tag{1}\]</span> (this is useful for infinity E[x] problems)<a
+href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+]]></content>
+      <categories>
+        <category>Notes</category>
+        <category>CS</category>
+        <category>Algorithm</category>
+      </categories>
+      <tags>
+        <tag>ComputerScience</tag>
+        <tag>Notes</tag>
+        <tag>Study</tag>
+        <tag>NUS</tag>
+        <tag>Java</tag>
+        <tag>Algorithm</tag>
+        <tag>Questions</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Thought - 2024.2</title>
+    <url>/2024/02/03/Thought-2024-2/</url>
+    <content><![CDATA[<p>Thougts in Feb 2024</p>
+<span id="more"></span>
+<blockquote>
+<p>2.1 : opportunities will come!</p>
+</blockquote>
+<blockquote>
+<p>2.2 : Tomorrow's a brand new day!</p>
+</blockquote>
+<blockquote>
+<p>2.3 : Everything will be all right.</p>
+</blockquote>
+<blockquote>
+<p>2.4 : Focus, even if it's one tiny thing.</p>
+</blockquote>
+<blockquote>
+<p>2.5 : 戒骄戒躁。</p>
+</blockquote>
+<blockquote>
+<p>2.6 : Keep Going</p>
+</blockquote>
+<blockquote>
+<p>2.10 : 哎呀好像断更了。祝大家新年快乐！</p>
+</blockquote>
+<blockquote>
+<p>2.12 : Try new things!</p>
+</blockquote>
+<blockquote>
+<p>2.13 : Deal with loneliness</p>
+</blockquote>
+<blockquote>
+<p>2.14 : 拓宽人脉！</p>
+</blockquote>
+<blockquote>
+<p>2.18 : Making progress!</p>
+</blockquote>
+<blockquote>
+<p>2.21 : <a
+href="https://wfyishere.github.io/2024/02/20/Thoughts-for-Attending-Guest-Lecture-on-Pi/">guest
+lecture is fun.</a></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>thoughts</category>
+      </categories>
+      <tags>
+        <tag>thoughts</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2024/01/20/hello-world/</url>
+    <content><![CDATA[<p>This is a Blog to test this website's functionalities.
+<span id="more"></span></p>
+<hr />
+<h3 id="url">URL</h3>
+<p><a href="https://wch.github.io/latexsheet/latexsheet.pdf">markdown
+cheatsheet</a></p>
+<p><a href="https://wch.github.io/latexsheet/latexsheet.pdf">latex
+Cheatsheet</a></p>
+<h3 id="code">code</h3>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Hello World!</span><br></pre></td></tr></table></figure>
+<h3 id="useful-syntax">useful syntax</h3>
+<p>Here's a sentence with a footnote. <a href="#fn1"
+class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<blockquote>
+<p>This is a quote.</p>
+</blockquote>
+<ul class="task-list">
+<li><label><input type="checkbox" checked="" />Write the press
+release</label></li>
+<li><label><input type="checkbox" />Update the website</label></li>
+<li><label><input type="checkbox" />Contact the media</label></li>
+</ul>
+<p><span class="math inline">\(\color{blue}{blue}\)</span></p>
+<h3 id="create-a-new-post">Create a new post</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a
+href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="mathjax-testing">mathjax testing</h3>
+<p><span class="math display">\[\begin{equation}
+   E = mc^2
+\end{equation}\]</span></p>
+<p><span class="math display">\[\begin{equation}
+\begin{aligned}
+a &amp;= b + c \\
+  &amp;= d + e + f + g \\
+  &amp;= h + i
+\end{aligned}
+\end{equation}\]</span></p>
+<p><span class="math display">\[x+1\over\sqrt{1-x^2} \]</span></p>
+<section id="footnotes" class="footnotes footnotes-end-of-document"
+role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1"><p>This is the footnote.<a href="#fnref1"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+]]></content>
+  </entry>
+  <entry>
+    <title>吹灭读书灯，一身都是月</title>
+    <url>/2024/02/17/%E5%90%B9%E7%81%AD%E8%AF%BB%E4%B9%A6%E7%81%AF%EF%BC%8C%E4%B8%80%E8%BA%AB%E9%83%BD%E6%98%AF%E6%9C%88/</url>
+    <content><![CDATA[<p>吹灭读书灯，一身都是月，多美的句子啊。</p>
+<span id="more"></span>
+<p>小的时候最喜欢的房子就是：</p>
+<p>小小的房间，与世人的喧嚣隔绝。屋子里的东西不多，一张朴素的床，一个放得满满的书架，一个能在晚上眺望星空的窗户，一张书桌。
+比如曾经看过一本漫画书（忘记叫什么名字了），讲一个老爷爷和他的小精灵生活在一个农场里。那个小精灵的房子在田地的中央，每天晚上他就爬上去，打开昏黄的台灯，就着星光读书。</p>
+<p>又比如里约大冒险里那个小男孩，住在深巷中的一个房子的天台上，甚至不能叫屋子，只是雨棚下的简单铺成的床。每天晚上，他听着巷子里的人声喧闹，爬着水管回到家中，从破烂的箱子里拿出一杯饮料，坐下来看星星看月亮。</p>
+<p>而大学一学期的时光里，我最享受的时刻就是上完了课去完了cca回到宿舍里，洗完澡之后坐下来，煮一碗泡面，看着窗外的星光，伏案学习。这样的时光里，我感受不到时间的流逝。人生的享受不过如此。</p>
+<p>在上大学之前我从来没住过宿，也从来没有远离过家乡，有时候一个人呆着难免会觉得孤独。当我试图通过互联网转移注意力、试图在无意义的社交中浪费时间，孤独感并不会得到缓解。唯有在这种夜深人静的时刻，吹灭读书灯一身都是月的时候，我才能清清楚楚明明白白地感受到生命的存在，感受到意义，消解孤独。</p>
+<p>突然又想到一句话，好像和以上没什么联系：人的一生，苦也罢，乐也罢，的也罢，失也罢，要紧的是心中要有一泓清泉不能没有月辉。</p>
+<p><img src="dorm.jpg" /></p>
+]]></content>
+      <categories>
+        <category>thoughts</category>
+      </categories>
+      <tags>
+        <tag>thoughts</tag>
+        <tag>random</tag>
+        <tag>peace</tag>
+        <tag>study</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>我的世界起床战争技巧总结</title>
+    <url>/2024/02/11/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C%E8%B5%B7%E5%BA%8A%E6%88%98%E4%BA%89%E6%8A%80%E5%B7%A7%E6%80%BB%E7%BB%93/</url>
+    <content><![CDATA[<p>我的世界起床战争技巧总结 <span id="more"></span></p>
+<h1 id="pvp">PVP</h1>
+<h2 id="控距">控距</h2>
+<p>将敌人保持在自己攻击范围的边上。为了保持这一点，手可以时不时按<code>w</code>而不是一直按着键盘</p>
+<h2 id="攻击">攻击</h2>
+<p>跳劈可以用，但是容易翻车。可以尝试在第一次攻击的时候跳劈，注意往旁边跳劈会比较好一点。</p>
+<h1 id="搭路">搭路</h1>
+<p>找到节奏感</p>
+]]></content>
+      <categories>
+        <category>Games</category>
+        <category>Minecraft</category>
+        <category>Bedwars</category>
+      </categories>
+      <tags>
+        <tag>Games</tag>
+        <tag>Minecraft</tag>
+        <tag>Entertainment</tag>
+        <tag>Fun</tag>
+        <tag>Skills</tag>
+        <tag>Bedwars</tag>
       </tags>
   </entry>
 </search>

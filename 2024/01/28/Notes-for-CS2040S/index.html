@@ -31,7 +31,7 @@
 <meta property="og:image" content="https://wfyishere.github.io/2024/01/28/Notes-for-CS2040S/Stirling%20Approximation">
 <meta property="og:image" content="https://wfyishere.github.io/2024/01/28/Notes-for-CS2040S/InsertionSort.png">
 <meta property="article:published_time" content="2024-01-28T03:14:20.000Z">
-<meta property="article:modified_time" content="2024-02-18T01:38:44.509Z">
+<meta property="article:modified_time" content="2024-02-21T09:29:44.103Z">
 <meta property="article:author" content="Wen Fanyu">
 <meta property="article:tag" content="ComputerScience">
 <meta property="article:tag" content="Notes">
@@ -154,7 +154,9 @@
         <div class="post-toc-wrap sidebar-panel">
             <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#lecture-1-2-java"><span class="nav-number">1.</span> <span class="nav-text">Lecture 1 &amp; 2 : Java</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#lecture-3-4-peak-finding-searching"><span class="nav-number">2.</span> <span class="nav-text">Lecture 3 &amp; 4 : Peak
 Finding &amp; Searching</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#lecture-5-6-sorting"><span class="nav-number">3.</span> <span class="nav-text">Lecture 5 &amp; 6 : Sorting</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#bogosort"><span class="nav-number">3.1.</span> <span class="nav-text">BogoSort</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#classic-sorting-algorithms"><span class="nav-number">3.2.</span> <span class="nav-text">Classic Sorting
-Algorithms</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#bogosort-1"><span class="nav-number">3.2.1.</span> <span class="nav-text">BogoSort</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#selection-sort"><span class="nav-number">3.2.2.</span> <span class="nav-text">Selection Sort</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#insertion-sort"><span class="nav-number">3.2.3.</span> <span class="nav-text">Insertion Sort</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mergesort"><span class="nav-number">3.2.4.</span> <span class="nav-text">MergeSort</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#quicksort"><span class="nav-number">3.3.</span> <span class="nav-text">Quicksort</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#others"><span class="nav-number">4.</span> <span class="nav-text">Others</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#puzzles"><span class="nav-number">5.</span> <span class="nav-text">Puzzles:</span></a></li></ol></div>
+Algorithms</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#bogosort-1"><span class="nav-number">3.2.1.</span> <span class="nav-text">BogoSort</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#selection-sort"><span class="nav-number">3.2.2.</span> <span class="nav-text">Selection Sort</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#insertion-sort"><span class="nav-number">3.2.3.</span> <span class="nav-text">Insertion Sort</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mergesort"><span class="nav-number">3.2.4.</span> <span class="nav-text">MergeSort</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#quicksort"><span class="nav-number">3.3.</span> <span class="nav-text">Quicksort</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#introduction"><span class="nav-number">3.3.1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#time-complexity-for-random-chosen-pivot."><span class="nav-number">3.3.2.</span> <span class="nav-text">Time complexity for
+random chosen pivot.</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#analysis-on-a-good-pivot"><span class="nav-number">3.3.2.1.</span> <span class="nav-text">Analysis on a good pivot</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#probability-theory-on-choosing-a-good-pivot"><span class="nav-number">3.3.2.2.</span> <span class="nav-text">Probability Theory
+on choosing a good pivot</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#quicksort-optimization"><span class="nav-number">3.3.3.</span> <span class="nav-text">Quicksort Optimization</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#order-statistics"><span class="nav-number">3.4.</span> <span class="nav-text">Order Statistics</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#others"><span class="nav-number">4.</span> <span class="nav-text">Others</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#puzzles"><span class="nav-number">5.</span> <span class="nav-text">Puzzles:</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -250,7 +252,7 @@ Algorithms</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a c
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-02-18 09:38:44" itemprop="dateModified" datetime="2024-02-18T09:38:44+08:00">2024-02-18</time>
+      <time title="Modified: 2024-02-21 17:29:44" itemprop="dateModified" datetime="2024-02-21T17:29:44+08:00">2024-02-21</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -277,14 +279,14 @@ Algorithms</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a c
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Word count in article: </span>
-      <span>5k</span>
+      <span>6.6k</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>5 mins.</span>
+      <span>6 mins.</span>
     </span>
 </div>
 
@@ -327,8 +329,8 @@ String</a></strong>:</p>
 <li><p>equals(Object anObject)</p></li>
 </ul></li>
 </ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">class File implements IFile</span><br><span class="line">&#123;</span><br><span class="line">    //Member(Instance) Variables.</span><br><span class="line">    String name = “”;</span><br><span class="line">    FileData contents = null;</span><br><span class="line">    private int[] pageNumbers = null;</span><br><span class="line"></span><br><span class="line">    public File(int NumPages)&#123;</span><br><span class="line">        pageNumbers = new int[numPages]; //array constructer</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //Methods(Functions)</span><br><span class="line">    void rename(String newName)&#123;...&#125; //signatures: parameters</span><br><span class="line">    FileData getData()&#123;...&#125;</span><br><span class="line">    void setData(FileData newdata)&#123;...&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">// Explain with a comment</span><br><span class="line">// what your interface is for.</span><br><span class="line">interface IFile</span><br><span class="line">&#123;</span><br><span class="line">    // Comments explain how to use interface</span><br><span class="line">    void rename(String newName);</span><br><span class="line">    FileData getData();</span><br><span class="line">    void setData(FileData newdata);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">File</span> <span class="keyword">implements</span> <span class="title class_">IFile</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">//Member(Instance) Variables.</span></span><br><span class="line">    <span class="type">String</span> <span class="variable">name</span> <span class="operator">=</span> “”;</span><br><span class="line">    <span class="type">FileData</span> <span class="variable">contents</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span>[] pageNumbers = <span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">File</span><span class="params">(<span class="type">int</span> NumPages)</span>&#123;</span><br><span class="line">        pageNumbers = <span class="keyword">new</span> <span class="title class_">int</span>[numPages]; <span class="comment">//array constructer</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//Methods(Functions)</span></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">rename</span><span class="params">(String newName)</span>&#123;...&#125; <span class="comment">//signatures: parameters</span></span><br><span class="line">    FileData <span class="title function_">getData</span><span class="params">()</span>&#123;...&#125;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">setData</span><span class="params">(FileData newdata)</span>&#123;...&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Explain with a comment</span></span><br><span class="line"><span class="comment">// what your interface is for.</span></span><br><span class="line"><span class="keyword">interface</span> <span class="title class_">IFile</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// Comments explain how to use interface</span></span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">rename</span><span class="params">(String newName)</span>;</span><br><span class="line">    FileData <span class="title function_">getData</span><span class="params">()</span>;</span><br><span class="line">    <span class="keyword">void</span> <span class="title function_">setData</span><span class="params">(FileData newdata)</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ol start="4" type="1">
 <li><p><strong>Behaviour is public, Data is private.</strong></p>
 <p>regular variables/functions are PER OBJECT</p>
@@ -356,7 +358,7 @@ Turing Machines.</em> What?</p>
 <ol start="3" type="1">
 <li><strong>Maybe BogoSort</strong></li>
 </ol>
-<p>MaybeBogoSort(A[1..n]) <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Choose a random permutation of the array A.</span><br><span class="line">- If A[1] is the minimum item in A then:</span><br><span class="line">MaybeBogoSort(A[2..n])</span><br><span class="line">Else</span><br><span class="line">MaybeBogoSort(A[1..n])</span><br></pre></td></tr></table></figure> [U]What is the expected running
+<p>MaybeBogoSort(A[1..n]) <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Choose a random permutation of the array A.</span><br><span class="line">    If A[<span class="number">1</span>] is the minimum item in A then:</span><br><span class="line">        MaybeBogoSort(A[<span class="number">2.</span>.n])</span><br><span class="line">    Else</span><br><span class="line">    <span class="title function_">MaybeBogoSort</span><span class="params">(A[<span class="number">1.</span>.n])</span></span><br></pre></td></tr></table></figure> [U]What is the expected running
 time of MaybeBogoSort?</p>
 <pre><code>I guess it&#39;s something like 
     $\sum_&#123;k = 1&#125;^&#123;n&#125; (k-1) * (k-1)!$</code></pre>
@@ -377,11 +379,11 @@ nearly sorted and random arrays of different algorithms</li>
 <h2 id="classic-sorting-algorithms"><strong>Classic Sorting
 Algorithms</strong></h2>
 <h3 id="bogosort-1">BogoSort</h3>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">repeat n times:</span><br><span class="line">for j ¬ 1 to n-1</span><br><span class="line">if A[j] &gt; A[j+1] then swap(A[j], A[j+1])</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">repeat n times:</span><br><span class="line">    <span class="keyword">for</span> j ¬ <span class="number">1</span> to n-<span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> A[j] &gt; A[j+<span class="number">1</span>] then <span class="title function_">swap</span><span class="params">(A[j], A[j+<span class="number">1</span>])</span></span><br></pre></td></tr></table></figure>
 <h3 id="selection-sort">Selection Sort</h3>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for j ¬ 1 to n-1:</span><br><span class="line">    find minimum element A[j] in A[j..n] //A[k]</span><br><span class="line">swap(A[j], A[k])</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> j ¬ <span class="number">1</span> to n-<span class="number">1</span>:</span><br><span class="line">    find minimum element A[j] in A[j..n] <span class="comment">//A[k]</span></span><br><span class="line">swap(A[j], A[k])</span><br></pre></td></tr></table></figure>
 <h3 id="insertion-sort">Insertion Sort</h3>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">InsertionSort(A, n)</span><br><span class="line">for j ¬ 2 to n</span><br><span class="line">key ¬ A[j]</span><br><span class="line">//Insert key into the sorted array A[1..j-1]</span><br><span class="line">i ¬ j-1</span><br><span class="line">while (i &gt; 0) and (A[i] &gt;key)</span><br><span class="line">A[i+1] ¬ A[i]</span><br><span class="line">i ¬ i-1</span><br><span class="line">A[i+1] ¬ key</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">InsertionSort(A, n)</span><br><span class="line"><span class="keyword">for</span> j ¬ <span class="number">2</span> to n</span><br><span class="line">key ¬ A[j]</span><br><span class="line"><span class="comment">//Insert key into the sorted array A[1..j-1]</span></span><br><span class="line">i ¬ j-<span class="number">1</span></span><br><span class="line"><span class="keyword">while</span> (i &gt; <span class="number">0</span>) and (A[i] &gt;key)</span><br><span class="line">A[i+<span class="number">1</span>] ¬ A[i]</span><br><span class="line">i ¬ i-<span class="number">1</span></span><br><span class="line">A[i+<span class="number">1</span>] ¬ key</span><br></pre></td></tr></table></figure>
 <p><em>In this case, since the insertion work is done from nearest
 element to key(backwards), it behaves differently in a sorted
 array</em></p>
@@ -392,7 +394,7 @@ array</em></p>
 expectation).(WHY?)</p>
 </blockquote>
 <h3 id="mergesort">MergeSort</h3>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">MergeSort(A, n)</span><br><span class="line">if (n=1) then return;</span><br><span class="line">else:</span><br><span class="line">X ¬MergeSort(A[1..n/2], n/2);</span><br><span class="line">Y ¬MergeSort(A[n/2+1, n], n/2);</span><br><span class="line">return Merge (X,Y, n/2);</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">MergeSort(A, n)</span><br><span class="line"><span class="keyword">if</span> (n=<span class="number">1</span>) then <span class="keyword">return</span>;</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">X ¬MergeSort(A[<span class="number">1.</span>.n/<span class="number">2</span>], n/<span class="number">2</span>);</span><br><span class="line">Y ¬MergeSort(A[n/<span class="number">2</span>+<span class="number">1</span>, n], n/<span class="number">2</span>);</span><br><span class="line"><span class="keyword">return</span> Merge (X,Y, n/<span class="number">2</span>);</span><br></pre></td></tr></table></figure>
 <p>[U] Master Theorem? Akra–Bazzi Method ? ##
 <strong>Summary</strong></p>
 <table>
@@ -455,8 +457,9 @@ expectation).(WHY?)</p>
 to be faster?</strong></p>
 <p><strong>Slowest Sorting Algorithm</strong> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Step 1:</span><br><span class="line">– Generate all the permutations of the input.</span><br><span class="line">Step 2:</span><br><span class="line">– Sort the permutations (by number of inversions).</span><br><span class="line">Step 3:</span><br><span class="line">– Return the first element in the sorted list of</span><br><span class="line">permutations.</span><br></pre></td></tr></table></figure></p>
 <h2 id="quicksort">Quicksort</h2>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">QuickSort(A[1..n], n)</span><br><span class="line">    if (n == 1) then return;</span><br><span class="line">    else</span><br><span class="line">        Choose pivot index pIndex.</span><br><span class="line">        p = partition(A[1..n], n, pIndex)</span><br><span class="line">        x = QuickSort(A[1..p–1], p–1)</span><br><span class="line">        y = QuickSort(A[p+1..n], n–p)</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">partition(A[1..n], n, pIndex) // Assume no duplicates, n&gt;1</span><br><span class="line">    pivot = A[pIndex]; // pIndex is the index of pivot</span><br><span class="line">    swap(A[1], A[pIndex]); // store pivot in A[1]</span><br><span class="line">    low = 2; // start after pivot in A[1]</span><br><span class="line">    high = n+1; // Define: A[n+1] = ¥</span><br><span class="line">    while (low &lt; high)</span><br><span class="line">        while (A[low] &lt;= pivot) and (low &lt; high) do low++;</span><br><span class="line">        while (A[high] &gt; pivot) and (low &lt; high) do high– – ;</span><br><span class="line">        if (low &lt; high) then swap(A[low], A[high]);</span><br><span class="line">    swap(A[1], A[low–1]);</span><br><span class="line">    return low–1;</span><br></pre></td></tr></table></figure>
+<h3 id="introduction">Introduction</h3>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">QuickSort(A[<span class="number">1.</span>.n], n)</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">1</span>) then <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        Choose pivot index pIndex.</span><br><span class="line">        p = partition(A[<span class="number">1.</span>.n], n, pIndex)</span><br><span class="line">        x = QuickSort(A[<span class="number">1.</span>.p–<span class="number">1</span>], p–<span class="number">1</span>)</span><br><span class="line">        y = QuickSort(A[p+<span class="number">1.</span>.n], n–p)</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">partition(A[<span class="number">1.</span>.n], n, pIndex) <span class="comment">// Assume no duplicates, n&gt;1</span></span><br><span class="line">    pivot = A[pIndex]; <span class="comment">// pIndex is the index of pivot</span></span><br><span class="line">    swap(A[<span class="number">1</span>], A[pIndex]); <span class="comment">// store pivot in A[1]</span></span><br><span class="line">    low = <span class="number">2</span>; <span class="comment">// start after pivot in A[1]</span></span><br><span class="line">    high = n+<span class="number">1</span>; <span class="comment">// Define: A[n+1] = ¥</span></span><br><span class="line">    <span class="keyword">while</span> (low &lt; high)</span><br><span class="line">        <span class="keyword">while</span> (A[low] &lt;= pivot) and (low &lt; high) <span class="keyword">do</span> low++;</span><br><span class="line">        <span class="keyword">while</span> (A[high] &gt; pivot) and (low &lt; high) <span class="keyword">do</span> high– – ;</span><br><span class="line">        <span class="keyword">if</span> (low &lt; high) then <span class="title function_">swap</span><span class="params">(A[low], A[high])</span>;</span><br><span class="line">    swap(A[<span class="number">1</span>], A[low–<span class="number">1</span>]);</span><br><span class="line">    <span class="keyword">return</span> low–<span class="number">1</span>;</span><br></pre></td></tr></table></figure>
 <ol type="1">
 <li>What if there are duplicates?</li>
 </ol>
@@ -470,6 +473,49 @@ to partition rather than do swapping?</p>
 <li><p>[U] Why is quicksort faster than merge sort?</p></li>
 <li><p>[U] What if we use triple pivots</p></li>
 </ol>
+<h3 id="time-complexity-for-random-chosen-pivot.">Time complexity for
+random chosen pivot.</h3>
+<h4 id="analysis-on-a-good-pivot">Analysis on a good pivot</h4>
+<p>T(n) = T(n-k) + T(k) + n</p>
+<p>Suppose <span class="math display">\[\frac{1}{10} n  &lt; k &lt;
+\frac{9}{10} n\]</span></p>
+<p>Time complexity: O(n * h), where h is the time of partition</p>
+<p><span class="math display">\[(\frac{9}{10}) ^ {h} * n &gt;=
+1\tag{1}\]</span></p>
+<ul>
+<li>Paranoid Quicksort(partition until a good partition)
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">ParanoidQuickSort(A[<span class="number">1.</span>.n], n)</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">1</span>) then <span class="keyword">return</span>;    </span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="type">repeat</span></span><br><span class="line">            <span class="variable">pIndex</span> <span class="operator">=</span> random(<span class="number">1</span>, n)</span><br><span class="line">            p = partition(A[<span class="number">1.</span>.n], n, pIndex)</span><br><span class="line">        until p &gt; (<span class="number">1</span>/<span class="number">10</span>)n and p &lt; (<span class="number">9</span>/<span class="number">10</span>)<span class="type">n</span></span><br><span class="line"></span><br><span class="line">    <span class="variable">x</span> <span class="operator">=</span> QuickSort(A[<span class="number">1.</span>.p–<span class="number">1</span>], p–<span class="number">1</span>)</span><br><span class="line">    y = QuickSort(A[p+<span class="number">1.</span>.n], n–p)</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>[U] Non-paranoid quicksort works too?</p>
+<p>[U] Why is it more important to fool the adversary then for the
+algorithm to behave well on average cases(we would need time to do
+randomization and find the A[k], but we don't need time to get A[1]) Or,
+since the possibility of choosing a bad pivot is small, is the
+efficiency of doing paranoid quicksort better then randomly
+choosing?</p>
+<h4 id="probability-theory-on-choosing-a-good-pivot">Probability Theory
+on choosing a good pivot</h4>
+<p>We only execute the repeat loop <span
+class="math inline">\(\frac{n}{k}\)</span> times (in expectation) <a
+href="#fn1" class="footnote-ref" id="fnref1"
+role="doc-noteref"><sup>1</sup></a></p>
+<h3 id="quicksort-optimization">Quicksort Optimization</h3>
+<ol type="1">
+<li><p>Switch to InsertionSort for small arrays.</p></li>
+<li><p>Halt recursion early, leaving small arrays unsorted. Then perform
+InsertionSort on entire array. (InsertionSort is fast on almost sorted
+arrays, about O(n))</p></li>
+</ol>
+<h2 id="order-statistics">Order Statistics</h2>
+<p>Find <span class="math inline">\(k^{th}\)</span> smallest element in
+an unsorted array:</p>
+<ol type="1">
+<li>sort and return A[k]</li>
+<li><strong>Minimize sorting</strong></li>
+</ol>
+<p><em>You can even do paranoid sorting</em></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Select(A[<span class="number">1.</span>.n], n, k)</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">1</span>) then <span class="keyword">return</span> A[<span class="number">1</span>];</span><br><span class="line">    <span class="keyword">else</span> Choose random pivot index pIndex.</span><br><span class="line">        p = partition(A[<span class="number">1.</span>.n], n, pIndex)</span><br><span class="line">        <span class="keyword">if</span> (k == p) then </span><br><span class="line">            <span class="keyword">return</span> A[p];</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (k &lt; p) then</span><br><span class="line">            <span class="keyword">return</span> Select(A[<span class="number">1.</span>.p–<span class="number">1</span>], k)</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (k &gt; p) then</span><br><span class="line">            <span class="keyword">return</span> Select(A[p+<span class="number">1</span>], k – p)</span><br></pre></td></tr></table></figure>
+<p><strong>Time Complexity: O(n)</strong></p>
 <h1 id="others">Others</h1>
 <ol type="1">
 <li>log2n = O( log10n ) Correct! We can easily switch between bases by
@@ -486,7 +532,21 @@ multiplying by a constant.</li>
 <p>You can test whether all the good keys are in the set (and possibly
 some extra keys). If even one bad key is in the set, then it fails.</p>
 <p>Goal: identify exactly the good keys.</p>
-<p>** Updated: Lecture 07 p53</p>
+<ol start="4" type="1">
+<li>PotW: Gambling for Profit? (Lecture 07 p121)</li>
+</ol>
+<p>** Updated: Lecture 08 p23</p>
+<section id="footnotes" class="footnotes footnotes-end-of-document"
+role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1"><p><span class="math inline">\(\color{green}{SOMETHING
+RELATED}\)</span>: How many flips to get at least one head? : <span
+class="math display">\[E[X] = \frac{1}{2}(1) + \frac{1}{2} (1 + E[X])
+\tag{1}\]</span> (this is useful for infinity E[x] problems)<a
+href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
 
     </div>
 
@@ -574,14 +634,14 @@ some extra keys). If even one bad key is in the set, then it fails.</p>
       <i class="fa fa-chart-line"></i>
     </span>
       <span>Word count total: </span>
-    <span title="Word count total">19k</span>
+    <span title="Word count total">22k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>Reading time total &asymp;</span>
-    <span title="Reading time total">17 mins.</span>
+    <span title="Reading time total">20 mins.</span>
   </span>
 </div>
 
