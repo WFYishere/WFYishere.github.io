@@ -2,9 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://wfyishere.github.io/todo/index.html</loc>
+    <loc>https://wfyishere.github.io/2024/02/20/Thoughts-for-Attending-Guest-Lecture-on-Pi/</loc>
     
-    <lastmod>2024-02-21</lastmod>
+    <lastmod>2024-02-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://wfyishere.github.io/2024/01/23/Thought-2024-1-23/</loc>
+    
+    <lastmod>2024-02-22</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -13,7 +22,61 @@
   <url>
     <loc>https://wfyishere.github.io/2024/01/24/Cheat-Sheet-for-Unix-CLI/</loc>
     
-    <lastmod>2024-02-21</lastmod>
+    <lastmod>2024-02-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://wfyishere.github.io/2024/02/22/Welcome-to-my-blog/</loc>
+    
+    <lastmod>2024-02-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://wfyishere.github.io/2024/02/03/Thought-2024-2/</loc>
+    
+    <lastmod>2024-02-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://wfyishere.github.io/2024/02/17/%E5%90%B9%E7%81%AD%E8%AF%BB%E4%B9%A6%E7%81%AF%EF%BC%8C%E4%B8%80%E8%BA%AB%E9%83%BD%E6%98%AF%E6%9C%88/</loc>
+    
+    <lastmod>2024-02-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://wfyishere.github.io/about/index.html</loc>
+    
+    <lastmod>2024-02-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://wfyishere.github.io/todo/index.html</loc>
+    
+    <lastmod>2024-02-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://wfyishere.github.io/2024/02/19/Machine-Learning-Introduction-on-Coursera/</loc>
+    
+    <lastmod>2024-02-22</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -29,45 +92,9 @@
   </url>
   
   <url>
-    <loc>https://wfyishere.github.io/2024/02/19/Machine-Learning-Introduction-on-Coursera/</loc>
-    
-    <lastmod>2024-02-21</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://wfyishere.github.io/2024/01/20/hello-world/</loc>
     
     <lastmod>2024-02-21</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://wfyishere.github.io/2024/02/03/Thought-2024-2/</loc>
-    
-    <lastmod>2024-02-21</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://wfyishere.github.io/2024/02/20/Thoughts-for-Attending-Guest-Lecture-on-Pi/</loc>
-    
-    <lastmod>2024-02-20</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://wfyishere.github.io/2024/02/17/%E5%90%B9%E7%81%AD%E8%AF%BB%E4%B9%A6%E7%81%AF%EF%BC%8C%E4%B8%80%E8%BA%AB%E9%83%BD%E6%98%AF%E6%9C%88/</loc>
-    
-    <lastmod>2024-02-17</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -101,27 +128,9 @@
   </url>
   
   <url>
-    <loc>https://wfyishere.github.io/2024/01/23/Thought-2024-1-23/</loc>
-    
-    <lastmod>2024-02-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://wfyishere.github.io/2024/01/23/Notes-for-SICPJS/</loc>
     
     <lastmod>2024-01-24</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://wfyishere.github.io/about/index.html</loc>
-    
-    <lastmod>2024-01-23</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -215,14 +224,21 @@
   </url>
   
   <url>
-    <loc>https://wfyishere.github.io/tags/StudyTips/</loc>
+    <loc>https://wfyishere.github.io/tags/Java/</loc>
     <lastmod>2024-02-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://wfyishere.github.io/tags/General/</loc>
+    <loc>https://wfyishere.github.io/tags/Algorithm/</loc>
+    <lastmod>2024-02-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://wfyishere.github.io/tags/Questions/</loc>
     <lastmod>2024-02-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -278,21 +294,42 @@
   </url>
   
   <url>
-    <loc>https://wfyishere.github.io/tags/Java/</loc>
+    <loc>https://wfyishere.github.io/tags/StudyTips/</loc>
     <lastmod>2024-02-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://wfyishere.github.io/tags/Algorithm/</loc>
+    <loc>https://wfyishere.github.io/tags/General/</loc>
     <lastmod>2024-02-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://wfyishere.github.io/tags/Questions/</loc>
+    <loc>https://wfyishere.github.io/tags/Thoughts/</loc>
+    <lastmod>2024-02-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://wfyishere.github.io/tags/Mathematics/</loc>
+    <lastmod>2024-02-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://wfyishere.github.io/tags/Random/</loc>
+    <lastmod>2024-02-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://wfyishere.github.io/tags/Peace/</loc>
     <lastmod>2024-02-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -307,27 +344,6 @@
   
   <url>
     <loc>https://wfyishere.github.io/tags/CS1101S/</loc>
-    <lastmod>2024-02-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://wfyishere.github.io/tags/thoughts/</loc>
-    <lastmod>2024-02-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://wfyishere.github.io/tags/Mathematics/</loc>
-    <lastmod>2024-02-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://wfyishere.github.io/tags/random/</loc>
     <lastmod>2024-02-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -375,31 +391,10 @@
     <priority>0.2</priority>
   </url>
   
-  <url>
-    <loc>https://wfyishere.github.io/tags/peace/</loc>
-    <lastmod>2024-02-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://wfyishere.github.io/tags/study/</loc>
-    <lastmod>2024-02-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
 
   
   <url>
     <loc>https://wfyishere.github.io/categories/Notes/</loc>
-    <lastmod>2024-02-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://wfyishere.github.io/categories/Notes/CS/</loc>
     <lastmod>2024-02-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -413,21 +408,14 @@
   </url>
   
   <url>
-    <loc>https://wfyishere.github.io/categories/thoughts/</loc>
+    <loc>https://wfyishere.github.io/categories/Notes/CS/</loc>
     <lastmod>2024-02-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://wfyishere.github.io/categories/Notes/CS/Overview/</loc>
-    <lastmod>2024-02-22</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://wfyishere.github.io/categories/Notes/CS/AI/</loc>
+    <loc>https://wfyishere.github.io/categories/Thoughts/</loc>
     <lastmod>2024-02-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -441,7 +429,7 @@
   </url>
   
   <url>
-    <loc>https://wfyishere.github.io/categories/Notes/CS/AI/MachineLearning/</loc>
+    <loc>https://wfyishere.github.io/categories/Notes/CS/Overview/</loc>
     <lastmod>2024-02-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -455,7 +443,28 @@
   </url>
   
   <url>
+    <loc>https://wfyishere.github.io/categories/Notes/CS/AI/</loc>
+    <lastmod>2024-02-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://wfyishere.github.io/categories/Thoughts/Experiences/</loc>
+    <lastmod>2024-02-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://wfyishere.github.io/categories/Games/Minecraft/</loc>
+    <lastmod>2024-02-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://wfyishere.github.io/categories/Notes/CS/AI/MachineLearning/</loc>
     <lastmod>2024-02-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
