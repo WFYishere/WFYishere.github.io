@@ -139,47 +139,6 @@ file test.count</p>
       </tags>
   </entry>
   <entry>
-    <title>Thought - 2024.1</title>
-    <url>/2024/01/23/Thought-2024-1-23/</url>
-    <content><![CDATA[<p>Thougts in Jan 2024 <span id="more"></span></p>
-<blockquote>
-<p>1.23 : Sleep is important.</p>
-</blockquote>
-<blockquote>
-<p>1.24 : 有舍有得，但也需分轻重。</p>
-</blockquote>
-<blockquote>
-<p>1.25 : 在图书馆而非宿舍学习。</p>
-</blockquote>
-<blockquote>
-<p>1.26 : 允许自己犯错。</p>
-</blockquote>
-<blockquote>
-<p>1.27 : Push yourself.</p>
-</blockquote>
-<blockquote>
-<p>1.28 : Try everything!</p>
-</blockquote>
-<blockquote>
-<p>1.29 : YOLO</p>
-</blockquote>
-<blockquote>
-<p>1.30 : 严于律己，宽于待人。</p>
-</blockquote>
-<blockquote>
-<p>1.31 :...So you have to trust that the dots will somehow connect in
-your future. You have to trust in something - your gut, destiny, life,
-karma, whatever. - Steve Jobs</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>thoughts</category>
-      </categories>
-      <tags>
-        <tag>thoughts</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>General Studying Tips</title>
     <url>/2024/02/11/General-Studying-Tips/</url>
     <content><![CDATA[<p>General study tips.</p>
@@ -198,115 +157,6 @@ Blue pen for additional knowledge</li>
         <tag>Study</tag>
         <tag>StudyTips</tag>
         <tag>General</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Notes for SICPJS</title>
-    <url>/2024/01/23/Notes-for-SICPJS/</url>
-    <content><![CDATA[<p>Notes for SICP JS. <span id="more"></span></p>
-<h1 id="introduction">Introduction</h1>
-<p><a href="https://sourceacademy.org/sicpjs">SICPJS</a> is a Java
-Script version(or Source Language) of the computer science textbook
-<em>Structure and Interpretation of Computer Programs (SICP)</em> . The
-original textbook was written by Massachusetts Institute of Technology
-professors Harold Abelson and Gerald Jay Sussman with Julie Sussman, and
-is known as the "Wizard Book" in hacker culture. In NUS, year1 CS
-students who take CS1101S uses SICPJS as the reference book on their
-amazing study journey with the Source Academy.</p>
-<p>During my study of CS in 2023/24 Sem 1 in CS1101, I find SICPJS a
-great book. It not only works as an introductory book to computer
-science, but also inspired me to think about the fundamental principles
-of CS. I wrote this note during my sem1 study in CS1101S and is still
-working on the book after that. Hopefully, this note would have been
-finished in 2023/24 Sem2.</p>
-<p>This note involves ideas that I find inspiring in the book and
-questions that I came up with while reading. Notes with (U) are
-questions that are unsolved and it would be great if readers could
-comment below about your ideas on the notes.</p>
-<p>I recommend anyone studying CS to read the book(either the original
-version or JS version), and hopefully this note would be of some use to
-the reader's understanding of the book.</p>
-<h1 id="notes">Notes</h1>
-<h2 id="foreword">Foreword</h2>
-<ol type="1">
-<li><p><strong>(U)What is combinatory calculus &amp; lambda calculus
-&amp; predicate calculus?</strong></p>
-<p><img src="1.png" /></p>
-<p>Lambda Calculus : (lambda x.lambda y. x+y)(5 6) = 11</p>
-<p>A lambda notation is equivalent to a Turing Machine, vice
-versa</p></li>
-<li><p><strong>(U)How can you use a lambda notation to represent AND and
-OR?</strong></p>
-<p>For reference, if we define True and False as:</p>
-<pre><code> True: lambda x. lambda y. x
-
- False: lambda x. lambda y. y</code></pre>
-<p>For any boolean value b, the logic NOT can be represented as</p>
-<pre><code> NOT: lambda b. b False True</code></pre>
-<p>Proof: case 1: b = True</p>
-<pre><code>         Not b = Not True = True Flase True = False
-
-     case2: b = False
-
-         Not b = Not False = False False True = True</code></pre></li>
-<li><p><strong>(U)What is object oriented approach?</strong></p></li>
-<li><p><strong>(U)Why does the author say that most programming
-languages “does not have a completely automatic storage
-management”?</strong></p></li>
-<li><p><strong>(U)Is it better to have 100 functions programmed on 1
-data structure or 10 functions for each of 10 data
-structures?</strong></p></li>
-<li><p><strong>(U)What is Lisp?</strong></p></li>
-</ol>
-<h2 id="chapter-1-building-abstractions-with-functions">Chapter 1
-Building Abstractions with Functions</h2>
-<h3 id="section">1.1</h3>
-<p><strong>Inflix Notation</strong></p>
-<p>operand + operator + operand</p>
-<p><strong>JS programmers know the value of everything but the cost of
-nothing.(LOL)</strong></p>
-<p>The fact that every expression has a value and JS programmers are
-known for not caring about time/space efficiency.</p>
-<p><strong>(U)What is the difference between statements and
-expressions?</strong></p>
-<p>A?</p>
-<p><strong>Snake Case &amp; Camel Case</strong></p>
-<p>Different ways to name variables.</p>
-<h2 id="chapter-3-modularity-objects-and-state">Chapter 3: Modularity,
-Objects, and State</h2>
-<h3 id="section-1">3.1</h3>
-<p><strong>Why use the CSE machine, why is environment an important
-thing?(3.1.2)</strong></p>
-<p>Storing the temporary data that the function needs in the local
-environment of a function helps us to generalize functions(for example,
-in this way the memoization progress can be applied to different
-functions)</p>
-<p>Encapsulation: We say a variable is encapsulated in the environment
-when its information is only accessed inside the environment. A general
-systemword designing principle called “the hiding principle“ is that a
-system gets more modular and robust by providing information access to
-only the parts of the programme that are “need to know”. </p>
-<p><strong>Monte Carlo Method</strong></p>
-<p>The use of randomness. Say you want to calculate the area of a
-circle(x^2 +y^2 &lt;= 1). Choose a rectangle(whose area you have already
-know), and try to make many following experiments: pick up one point and
-test whether the point is in the circle. If we try this many times, we
-get the possibility of a point in the rectangle is in the circle, thus p
-* area_of_rectangle = area_of_circle.</p>
-<p> </p>
-]]></content>
-      <categories>
-        <category>Notes</category>
-        <category>CS</category>
-        <category>Overview</category>
-      </categories>
-      <tags>
-        <tag>ComputerScience</tag>
-        <tag>Notes</tag>
-        <tag>Study</tag>
-        <tag>NUS</tag>
-        <tag>JavaScript</tag>
-        <tag>CS1101S</tag>
       </tags>
   </entry>
   <entry>
@@ -670,62 +520,160 @@ href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
       </tags>
   </entry>
   <entry>
+    <title>Notes for SICPJS</title>
+    <url>/2024/01/23/Notes-for-SICPJS/</url>
+    <content><![CDATA[<p>Notes for SICP JS. <span id="more"></span></p>
+<h1 id="introduction">Introduction</h1>
+<p><a href="https://sourceacademy.org/sicpjs">SICPJS</a> is a Java
+Script version(or Source Language) of the computer science textbook
+<em>Structure and Interpretation of Computer Programs (SICP)</em> . The
+original textbook was written by Massachusetts Institute of Technology
+professors Harold Abelson and Gerald Jay Sussman with Julie Sussman, and
+is known as the "Wizard Book" in hacker culture. In NUS, year1 CS
+students who take CS1101S uses SICPJS as the reference book on their
+amazing study journey with the Source Academy.</p>
+<p>During my study of CS in 2023/24 Sem 1 in CS1101, I find SICPJS a
+great book. It not only works as an introductory book to computer
+science, but also inspired me to think about the fundamental principles
+of CS. I wrote this note during my sem1 study in CS1101S and is still
+working on the book after that. Hopefully, this note would have been
+finished in 2023/24 Sem2.</p>
+<p>This note involves ideas that I find inspiring in the book and
+questions that I came up with while reading. Notes with (U) are
+questions that are unsolved and it would be great if readers could
+comment below about your ideas on the notes.</p>
+<p>I recommend anyone studying CS to read the book(either the original
+version or JS version), and hopefully this note would be of some use to
+the reader's understanding of the book.</p>
+<h1 id="notes">Notes</h1>
+<h2 id="foreword">Foreword</h2>
+<ol type="1">
+<li><p><strong>(U)What is combinatory calculus &amp; lambda calculus
+&amp; predicate calculus?</strong></p>
+<p><img src="1.png" /></p>
+<p>Lambda Calculus : (lambda x.lambda y. x+y)(5 6) = 11</p>
+<p>A lambda notation is equivalent to a Turing Machine, vice
+versa</p></li>
+<li><p><strong>(U)How can you use a lambda notation to represent AND and
+OR?</strong></p>
+<p>For reference, if we define True and False as:</p>
+<pre><code> True: lambda x. lambda y. x
+
+ False: lambda x. lambda y. y</code></pre>
+<p>For any boolean value b, the logic NOT can be represented as</p>
+<pre><code> NOT: lambda b. b False True</code></pre>
+<p>Proof: case 1: b = True</p>
+<pre><code>         Not b = Not True = True Flase True = False
+
+     case2: b = False
+
+         Not b = Not False = False False True = True</code></pre></li>
+<li><p><strong>(U)What is object oriented approach?</strong></p></li>
+<li><p><strong>(U)Why does the author say that most programming
+languages “does not have a completely automatic storage
+management”?</strong></p></li>
+<li><p><strong>(U)Is it better to have 100 functions programmed on 1
+data structure or 10 functions for each of 10 data
+structures?</strong></p></li>
+<li><p><strong>(U)What is Lisp?</strong></p></li>
+</ol>
+<h2 id="chapter-1-building-abstractions-with-functions">Chapter 1
+Building Abstractions with Functions</h2>
+<h3 id="section">1.1</h3>
+<p><strong>Inflix Notation</strong></p>
+<p>operand + operator + operand</p>
+<p><strong>JS programmers know the value of everything but the cost of
+nothing.(LOL)</strong></p>
+<p>The fact that every expression has a value and JS programmers are
+known for not caring about time/space efficiency.</p>
+<p><strong>(U)What is the difference between statements and
+expressions?</strong></p>
+<p>A?</p>
+<p><strong>Snake Case &amp; Camel Case</strong></p>
+<p>Different ways to name variables.</p>
+<h2 id="chapter-3-modularity-objects-and-state">Chapter 3: Modularity,
+Objects, and State</h2>
+<h3 id="section-1">3.1</h3>
+<p><strong>Why use the CSE machine, why is environment an important
+thing?(3.1.2)</strong></p>
+<p>Storing the temporary data that the function needs in the local
+environment of a function helps us to generalize functions(for example,
+in this way the memoization progress can be applied to different
+functions)</p>
+<p>Encapsulation: We say a variable is encapsulated in the environment
+when its information is only accessed inside the environment. A general
+systemword designing principle called “the hiding principle“ is that a
+system gets more modular and robust by providing information access to
+only the parts of the programme that are “need to know”. </p>
+<p><strong>Monte Carlo Method</strong></p>
+<p>The use of randomness. Say you want to calculate the area of a
+circle(x^2 +y^2 &lt;= 1). Choose a rectangle(whose area you have already
+know), and try to make many following experiments: pick up one point and
+test whether the point is in the circle. If we try this many times, we
+get the possibility of a point in the rectangle is in the circle, thus p
+* area_of_rectangle = area_of_circle.</p>
+<p> </p>
+]]></content>
+      <categories>
+        <category>Notes</category>
+        <category>CS</category>
+        <category>Overview</category>
+      </categories>
+      <tags>
+        <tag>ComputerScience</tag>
+        <tag>Notes</tag>
+        <tag>Study</tag>
+        <tag>NUS</tag>
+        <tag>JavaScript</tag>
+        <tag>CS1101S</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Notes for CS2100</title>
     <url>/2024/02/06/Notes-for-CS2100/</url>
     <content><![CDATA[
 ]]></content>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2024/01/20/hello-world/</url>
-    <content><![CDATA[<p>This is a Blog to test this website's functionalities.
-<span id="more"></span></p>
-<hr />
-<h3 id="url">URL</h3>
-<p><a href="https://wch.github.io/latexsheet/latexsheet.pdf">markdown
-cheatsheet</a></p>
-<p><a href="https://wch.github.io/latexsheet/latexsheet.pdf">latex
-Cheatsheet</a></p>
-<h3 id="code">code</h3>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Hello World!</span><br></pre></td></tr></table></figure>
-<h3 id="useful-syntax">useful syntax</h3>
-<p>Here's a sentence with a footnote. <a href="#fn1"
-class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+    <title>Thought - 2024.1</title>
+    <url>/2024/01/23/Thought-2024-1-23/</url>
+    <content><![CDATA[<p>Thougts in Jan 2024 <span id="more"></span></p>
 <blockquote>
-<p>This is a quote.</p>
+<p>1.23 : Sleep is important.</p>
 </blockquote>
-<ul class="task-list">
-<li><label><input type="checkbox" checked="" />Write the press
-release</label></li>
-<li><label><input type="checkbox" />Update the website</label></li>
-<li><label><input type="checkbox" />Contact the media</label></li>
-</ul>
-<p><span class="math inline">\(\color{blue}{blue}\)</span></p>
-<h3 id="create-a-new-post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a
-href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="mathjax-testing">mathjax testing</h3>
-<p><span class="math display">\[\begin{equation}
-   E = mc^2
-\end{equation}\]</span></p>
-<p><span class="math display">\[\begin{equation}
-\begin{aligned}
-a &amp;= b + c \\
-  &amp;= d + e + f + g \\
-  &amp;= h + i
-\end{aligned}
-\end{equation}\]</span></p>
-<p><span class="math display">\[x+1\over\sqrt{1-x^2} \]</span></p>
-<section id="footnotes" class="footnotes footnotes-end-of-document"
-role="doc-endnotes">
-<hr />
-<ol>
-<li id="fn1"><p>This is the footnote.<a href="#fnref1"
-class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section>
+<blockquote>
+<p>1.24 : 有舍有得，但也需分轻重。</p>
+</blockquote>
+<blockquote>
+<p>1.25 : 在图书馆而非宿舍学习。</p>
+</blockquote>
+<blockquote>
+<p>1.26 : 允许自己犯错。</p>
+</blockquote>
+<blockquote>
+<p>1.27 : Push yourself.</p>
+</blockquote>
+<blockquote>
+<p>1.28 : Try everything!</p>
+</blockquote>
+<blockquote>
+<p>1.29 : YOLO</p>
+</blockquote>
+<blockquote>
+<p>1.30 : 严于律己，宽于待人。</p>
+</blockquote>
+<blockquote>
+<p>1.31 :...So you have to trust that the dots will somehow connect in
+your future. You have to trust in something - your gut, destiny, life,
+karma, whatever. - Steve Jobs</p>
+</blockquote>
 ]]></content>
+      <categories>
+        <category>thoughts</category>
+      </categories>
+      <tags>
+        <tag>thoughts</tag>
+      </tags>
   </entry>
   <entry>
     <title>Thought - 2024.2</title>
@@ -776,56 +724,6 @@ lecture is fun.</a></p>
       </categories>
       <tags>
         <tag>thoughts</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>我的世界起床战争技巧总结</title>
-    <url>/2024/02/11/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C%E8%B5%B7%E5%BA%8A%E6%88%98%E4%BA%89%E6%8A%80%E5%B7%A7%E6%80%BB%E7%BB%93/</url>
-    <content><![CDATA[<p>我的世界起床战争技巧总结 <span id="more"></span></p>
-<h1 id="pvp">PVP</h1>
-<h2 id="控距">控距</h2>
-<p>将敌人保持在自己攻击范围的边上。为了保持这一点，手可以时不时按<code>w</code>而不是一直按着键盘</p>
-<h2 id="攻击">攻击</h2>
-<p>跳劈可以用，但是容易翻车。可以尝试在第一次攻击的时候跳劈，注意往旁边跳劈会比较好一点。</p>
-<h1 id="搭路">搭路</h1>
-<p>找到节奏感</p>
-]]></content>
-      <categories>
-        <category>Games</category>
-        <category>Minecraft</category>
-        <category>Bedwars</category>
-      </categories>
-      <tags>
-        <tag>Games</tag>
-        <tag>Minecraft</tag>
-        <tag>Entertainment</tag>
-        <tag>Fun</tag>
-        <tag>Skills</tag>
-        <tag>Bedwars</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>吹灭读书灯，一身都是月</title>
-    <url>/2024/02/17/%E5%90%B9%E7%81%AD%E8%AF%BB%E4%B9%A6%E7%81%AF%EF%BC%8C%E4%B8%80%E8%BA%AB%E9%83%BD%E6%98%AF%E6%9C%88/</url>
-    <content><![CDATA[<p>吹灭读书灯，一身都是月，多美的句子啊。</p>
-<span id="more"></span>
-<p>小的时候最喜欢的房子就是：</p>
-<p>小小的房间，与世人的喧嚣隔绝。屋子里的东西不多，一张朴素的床，一个放得满满的书架，一个能在晚上眺望星空的窗户，一张书桌。
-比如曾经看过一本漫画书（忘记叫什么名字了），讲一个老爷爷和他的小精灵生活在一个农场里。那个小精灵的房子在田地的中央，每天晚上他就爬上去，打开昏黄的台灯，就着星光读书。</p>
-<p>又比如里约大冒险里那个小男孩，住在深巷中的一个房子的天台上，甚至不能叫屋子，只是雨棚下的简单铺成的床。每天晚上，他听着巷子里的人声喧闹，爬着水管回到家中，从破烂的箱子里拿出一杯饮料，坐下来看星星看月亮。</p>
-<p>而大学一学期的时光里，我最享受的时刻就是上完了课去完了cca回到宿舍里，洗完澡之后坐下来，煮一碗泡面，看着窗外的星光，伏案学习。这样的时光里，我感受不到时间的流逝。人生的享受不过如此。</p>
-<p>在上大学之前我从来没住过宿，也从来没有远离过家乡，有时候一个人呆着难免会觉得孤独。当我试图通过互联网转移注意力、试图在无意义的社交中浪费时间，孤独感并不会得到缓解。唯有在这种夜深人静的时刻，吹灭读书灯一身都是月的时候，我才能清清楚楚明明白白地感受到生命的存在，感受到意义，消解孤独。</p>
-<p>突然又想到一句话，好像和以上没什么联系：人的一生，苦也罢，乐也罢，的也罢，失也罢，要紧的是心中要有一泓清泉不能没有月辉。</p>
-<p><img src="dorm.jpg" /></p>
-]]></content>
-      <categories>
-        <category>thoughts</category>
-      </categories>
-      <tags>
-        <tag>thoughts</tag>
-        <tag>random</tag>
-        <tag>peace</tag>
-        <tag>study</tag>
       </tags>
   </entry>
   <entry>
@@ -896,8 +794,110 @@ and inspires me to attend future guest lectures.</em></p>
       </categories>
       <tags>
         <tag>thoughts</tag>
-        <tag>random</tag>
         <tag>Mathematics</tag>
+        <tag>random</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2024/01/20/hello-world/</url>
+    <content><![CDATA[<p>This is a Blog to test this website's functionalities.
+<span id="more"></span></p>
+<hr />
+<h3 id="url">URL</h3>
+<p><a href="https://wch.github.io/latexsheet/latexsheet.pdf">markdown
+cheatsheet</a></p>
+<p><a href="https://wch.github.io/latexsheet/latexsheet.pdf">latex
+Cheatsheet</a></p>
+<h3 id="code">code</h3>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Hello World!</span><br></pre></td></tr></table></figure>
+<h3 id="useful-syntax">useful syntax</h3>
+<p>Here's a sentence with a footnote. <a href="#fn1"
+class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<blockquote>
+<p>This is a quote.</p>
+</blockquote>
+<ul class="task-list">
+<li><label><input type="checkbox" checked="" />Write the press
+release</label></li>
+<li><label><input type="checkbox" />Update the website</label></li>
+<li><label><input type="checkbox" />Contact the media</label></li>
+</ul>
+<p><span class="math inline">\(\color{blue}{blue}\)</span></p>
+<h3 id="create-a-new-post">Create a new post</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a
+href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="mathjax-testing">mathjax testing</h3>
+<p><span class="math display">\[\begin{equation}
+   E = mc^2
+\end{equation}\]</span></p>
+<p><span class="math display">\[\begin{equation}
+\begin{aligned}
+a &amp;= b + c \\
+  &amp;= d + e + f + g \\
+  &amp;= h + i
+\end{aligned}
+\end{equation}\]</span></p>
+<p><span class="math display">\[x+1\over\sqrt{1-x^2} \]</span></p>
+<section id="footnotes" class="footnotes footnotes-end-of-document"
+role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1"><p>This is the footnote.<a href="#fnref1"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+]]></content>
+  </entry>
+  <entry>
+    <title>我的世界起床战争技巧总结</title>
+    <url>/2024/02/11/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C%E8%B5%B7%E5%BA%8A%E6%88%98%E4%BA%89%E6%8A%80%E5%B7%A7%E6%80%BB%E7%BB%93/</url>
+    <content><![CDATA[<p>我的世界起床战争技巧总结 <span id="more"></span></p>
+<h1 id="pvp">PVP</h1>
+<h2 id="控距">控距</h2>
+<p>将敌人保持在自己攻击范围的边上。为了保持这一点，手可以时不时按<code>w</code>而不是一直按着键盘</p>
+<h2 id="攻击">攻击</h2>
+<p>跳劈可以用，但是容易翻车。可以尝试在第一次攻击的时候跳劈，注意往旁边跳劈会比较好一点。</p>
+<h1 id="搭路">搭路</h1>
+<p>找到节奏感</p>
+]]></content>
+      <categories>
+        <category>Games</category>
+        <category>Minecraft</category>
+        <category>Bedwars</category>
+      </categories>
+      <tags>
+        <tag>Games</tag>
+        <tag>Minecraft</tag>
+        <tag>Entertainment</tag>
+        <tag>Fun</tag>
+        <tag>Skills</tag>
+        <tag>Bedwars</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>吹灭读书灯，一身都是月</title>
+    <url>/2024/02/17/%E5%90%B9%E7%81%AD%E8%AF%BB%E4%B9%A6%E7%81%AF%EF%BC%8C%E4%B8%80%E8%BA%AB%E9%83%BD%E6%98%AF%E6%9C%88/</url>
+    <content><![CDATA[<p>吹灭读书灯，一身都是月，多美的句子啊。</p>
+<span id="more"></span>
+<p>小的时候最喜欢的房子就是：</p>
+<p>小小的房间，与世人的喧嚣隔绝。屋子里的东西不多，一张朴素的床，一个放得满满的书架，一个能在晚上眺望星空的窗户，一张书桌。
+比如曾经看过一本漫画书（忘记叫什么名字了），讲一个老爷爷和他的小精灵生活在一个农场里。那个小精灵的房子在田地的中央，每天晚上他就爬上去，打开昏黄的台灯，就着星光读书。</p>
+<p>又比如里约大冒险里那个小男孩，住在深巷中的一个房子的天台上，甚至不能叫屋子，只是雨棚下的简单铺成的床。每天晚上，他听着巷子里的人声喧闹，爬着水管回到家中，从破烂的箱子里拿出一杯饮料，坐下来看星星看月亮。</p>
+<p>而大学一学期的时光里，我最享受的时刻就是上完了课去完了cca回到宿舍里，洗完澡之后坐下来，煮一碗泡面，看着窗外的星光，伏案学习。这样的时光里，我感受不到时间的流逝。人生的享受不过如此。</p>
+<p>在上大学之前我从来没住过宿，也从来没有远离过家乡，有时候一个人呆着难免会觉得孤独。当我试图通过互联网转移注意力、试图在无意义的社交中浪费时间，孤独感并不会得到缓解。唯有在这种夜深人静的时刻，吹灭读书灯一身都是月的时候，我才能清清楚楚明明白白地感受到生命的存在，感受到意义，消解孤独。</p>
+<p>突然又想到一句话，好像和以上没什么联系：人的一生，苦也罢，乐也罢，的也罢，失也罢，要紧的是心中要有一泓清泉不能没有月辉。</p>
+<p><img src="dorm.jpg" /></p>
+]]></content>
+      <categories>
+        <category>thoughts</category>
+      </categories>
+      <tags>
+        <tag>thoughts</tag>
+        <tag>random</tag>
+        <tag>peace</tag>
+        <tag>study</tag>
       </tags>
   </entry>
 </search>
