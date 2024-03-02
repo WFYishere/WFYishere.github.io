@@ -21,15 +21,26 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"wfyishere.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.19.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":true,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta property="og:type" content="article">
+    <meta name="description" content="Notes for CS2100 - Computer Organization">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Notes for CS2100">
 <meta property="og:url" content="https://wfyishere.github.io/2024/02/06/Notes-for-CS2100/index.html">
 <meta property="og:site_name" content="WFY&#39;s Blog">
+<meta property="og:description" content="Notes for CS2100 - Computer Organization">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://wfyishere.github.io/2024/02/06/Notes-for-CS2100/Carries.png">
+<meta property="og:image" content="https://wfyishere.github.io/2024/02/06/Notes-for-CS2100/Excess4.png">
 <meta property="article:published_time" content="2024-02-06T02:57:26.000Z">
-<meta property="article:modified_time" content="2024-02-06T02:57:26.137Z">
+<meta property="article:modified_time" content="2024-02-29T15:25:59.409Z">
 <meta property="article:author" content="Wen Fanyu">
+<meta property="article:tag" content="ComputerScience">
+<meta property="article:tag" content="Notes">
+<meta property="article:tag" content="CPP">
+<meta property="article:tag" content="C">
+<meta property="article:tag" content="MIPS">
+<meta property="article:tag" content="OperatingSystem">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://wfyishere.github.io/2024/02/06/Notes-for-CS2100/Carries.png">
 
 
 <link rel="canonical" href="https://wfyishere.github.io/2024/02/06/Notes-for-CS2100/">
@@ -89,7 +100,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">12</span></a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">30</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">13</span></a></li><li class="menu-item menu-item-todo"><a href="/todo" rel="section"><i class="fa-solid fa-bars fa-fw"></i>Todo</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">13</span></a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">34</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">14</span></a></li><li class="menu-item menu-item-todo"><a href="/todo" rel="section"><i class="fa-solid fa-bars fa-fw"></i>Todo</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -127,7 +138,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -140,6 +151,8 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#c-programming"><span class="nav-number">1.</span> <span class="nav-text">C Programming</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#introduction-to-c"><span class="nav-number">1.1.</span> <span class="nav-text">Introduction to C</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#features-of-c"><span class="nav-number">1.1.1.</span> <span class="nav-text">Features of C</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sample-c-programme"><span class="nav-number">1.1.2.</span> <span class="nav-text">Sample C Programme</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#computation"><span class="nav-number">1.2.</span> <span class="nav-text">Computation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#selection-structures"><span class="nav-number">1.3.</span> <span class="nav-text">Selection Structures</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#number-system"><span class="nav-number">2.</span> <span class="nav-text">Number System</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#introduction"><span class="nav-number">2.1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#american-standard-code-for-information-interchange"><span class="nav-number">2.2.</span> <span class="nav-text">American
+Standard Code for Information Interchange</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#signed-and-unsigned-values"><span class="nav-number">2.3.</span> <span class="nav-text">Signed and Unsigned Values</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ways-to-represent"><span class="nav-number">2.3.1.</span> <span class="nav-text">Ways to represent</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#addition-and-subtraction"><span class="nav-number">2.4.</span> <span class="nav-text">Addition and Subtraction</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#s-complement"><span class="nav-number">2.4.1.</span> <span class="nav-text">2s Complement</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#s-complement-1"><span class="nav-number">2.4.2.</span> <span class="nav-text">1s Complement</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#representation-of-numbers"><span class="nav-number">2.5.</span> <span class="nav-text">Representation of Numbers</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#fixed-vs-floating"><span class="nav-number">2.5.1.</span> <span class="nav-text">Fixed vs Floating</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ieee-754-floating-point-rep."><span class="nav-number">2.5.2.</span> <span class="nav-text">IEEE 754 Floating-Point Rep.</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#things-to-say"><span class="nav-number">3.</span> <span class="nav-text">Things to say</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -152,18 +165,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-count">14</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-count">13</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">30</span>
+        <span class="site-state-item-count">34</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -230,6 +243,30 @@
 
       <time title="Created: 2024-02-06 10:57:26" itemprop="dateCreated datePublished" datetime="2024-02-06T10:57:26+08:00">2024-02-06</time>
     </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2024-02-29 23:25:59" itemprop="dateModified" datetime="2024-02-29T23:25:59+08:00">2024-02-29</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Notes/" itemprop="url" rel="index"><span itemprop="name">Notes</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Notes/CS/" itemprop="url" rel="index"><span itemprop="name">CS</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Notes/CS/ComputerOrganization/" itemprop="url" rel="index"><span itemprop="name">ComputerOrganization</span></a>
+        </span>
+    </span>
 
   
     <span class="post-meta-break"></span>
@@ -238,14 +275,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Word count in article: </span>
-      <span>0</span>
+      <span>6.1k</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>1 mins.</span>
+      <span>6 mins.</span>
     </span>
 </div>
 
@@ -255,7 +292,171 @@
     
     
     
-    <div class="post-body" itemprop="articleBody">
+    <div class="post-body" itemprop="articleBody"><p>Notes for CS2100 - Computer Organization</p>
+<span id="more"></span>
+<h1 id="c-programming">C Programming</h1>
+<h2 id="introduction-to-c">Introduction to C</h2>
+<h3 id="features-of-c">Features of C</h3>
+<ol type="1">
+<li><p><strong>Computer organisation</strong> is the study of internal
+working structuring and implementation of a computer system. It refers
+to the level of abstraction above the digital logic level, but below the
+operating system level.</p></li>
+<li><p>Why is C <strong>so fast</strong>?</p>
+<p>Edit code(vim tmp.c) -&gt; <strong>Source code(tmp.c)</strong> -&gt;
+Compile(gcc tmp.out) -&gt; Executable Code(tmp.out) -&gt;
+Output</p></li>
+<li><p><strong>von Neumann architecture</strong>(Prinston
+Architecture)</p>
+<ul>
+<li><p>Central Processing Unit</p>
+<ul>
+<li>registers</li>
+<li>A control unit containing an instruction register and program
+counter</li>
+<li>Arithmetic/Logic Unit(ALU)</li>
+</ul></li>
+<li><p>Memory Random Access Memory</p></li>
+<li><p>Input Output Devices (I/O Devices)</p></li>
+</ul></li>
+<li><p>Why every varaible <strong>must be declared</strong>?</p>
+<p>The execution code for different variables in Source Code is
+different</p></li>
+<li><p>Data Types</p>
+<ul>
+<li>int (<span class="math inline">\(2^{31}\)</span> To <span
+class="math inline">\(-2^{31}\)</span>) 4 bytes</li>
+<li>float(4 bytes) or double(8 byte)</li>
+<li>chars(8 bit integer)</li>
+</ul>
+<p><code>sizeof( &lt;variable&gt; or &lt;DataType&gt; )</code> : returns
+the size of the variable</p></li>
+</ol>
+<h3 id="sample-c-programme">Sample C Programme</h3>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*Preprocessor Directives*/</span></span><br><span class="line"><span class="comment">//Header Files</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="comment">//Macro Expansions (compiler substitudes Pi to 3.14 when compiling.</span></span><br><span class="line"><span class="comment">//                  If #define PI 3.14; then PI is substituded to 3.14;)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> PI 3.14 <span class="comment">// please use full CAP</span></span></span><br><span class="line"><span class="comment">//Conditional Compilation([U]: wuts this)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* Main Function: Input/Output */</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123; <span class="comment">// will always return 0 if executed correctly</span></span><br><span class="line">    <span class="type">int</span> age;</span><br><span class="line">    <span class="type">double</span> cap;</span><br><span class="line">    <span class="comment">//printf(format string);</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;What is your age?&quot;</span>);</span><br><span class="line">    <span class="comment">//scanf(format string, input list); </span></span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;age); <span class="comment">// &amp;age: the address of the variable </span></span><br><span class="line">    <span class="comment">// %lf double - %e float or double</span></span><br><span class="line">    <span class="comment">//%5d: display integer in width of 5, right justified(123456 - 23456)</span></span><br><span class="line">    <span class="comment">//%8.3f: a is minimum number of characters</span></span><br><span class="line">    <span class="comment">//       including whole part, point and decimal part</span></span><br><span class="line">    <span class="comment">//       b number of characters of decimal part</span></span><br><span class="line">    <span class="comment">//       If total number of characters are less than a</span></span><br><span class="line">    <span class="comment">//       it fills with blank spaces at the left side of number</span></span><br><span class="line"></span><br><span class="line">With - sign it fills blank spaces at the right side of the number</span><br><span class="line">    <span class="comment">//escape sequence: \n \t(tab) \&quot;(double quote) %% percent</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-Wall <span class="comment">//gives all warnings</span></span><br><span class="line">-o &lt;Name&gt;<span class="comment">// specifies the name of executable file(default a.out)</span></span><br><span class="line">-lm <span class="comment">//needed for mathematical functions headers like math.h</span></span><br></pre></td></tr></table></figure>
+<h2 id="computation">Computation</h2>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* */</span></span><br><span class="line"><span class="comment">//letters, numbers and _ can be used. but should not satrt with numbers</span></span><br><span class="line"><span class="comment">//Avoid standard identifiers(!= reserved words; does not cause warning) </span></span><br><span class="line"><span class="type">int</span> count, Count; </span><br><span class="line"></span><br><span class="line"><span class="comment">/*Assignment*/</span></span><br><span class="line"><span class="comment">//a: lvalue</span></span><br><span class="line">a = <span class="number">32</span>;</span><br><span class="line"><span class="comment">// Cascading. assigns from right to left. </span></span><br><span class="line">a = b = c = <span class="number">3</span> + <span class="number">6</span>; </span><br><span class="line"></span><br><span class="line"><span class="comment">/*Operations*/</span></span><br><span class="line"><span class="comment">//binary Operations: Left Associative</span></span><br><span class="line"><span class="comment">//[U] (int) / (double) / (int) or (double) / (int) / (int), </span></span><br><span class="line"><span class="comment">//if the value doesn&#x27;t change but the type changes, would the answer be different?</span></span><br><span class="line"><span class="comment">//Or when is the case they are different?</span></span><br><span class="line"><span class="number">46</span> / <span class="number">15</span> / <span class="number">2</span> = <span class="number">3</span> / <span class="number">2</span> = <span class="number">1</span></span><br><span class="line"><span class="comment">//Unary Operators: + - are right associative</span></span><br><span class="line">a = <span class="number">-23</span>;</span><br><span class="line"><span class="comment">//Truncate result</span></span><br><span class="line"><span class="type">int</span> n = <span class="number">9</span> * <span class="number">0.5</span>; <span class="comment">// n = 4</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*Precedence*/</span></span><br><span class="line"><span class="comment">//()    exp++   exp--</span></span><br><span class="line"><span class="comment">//* &amp; + - (unary) ++expr --expr typecast</span></span><br><span class="line"><span class="comment">//(* / % ) &gt; (+ -) &gt; (&gt; &lt;) &gt; (== !=) &gt; (&amp;&amp;) &gt; (||)</span></span><br><span class="line"><span class="comment">// = += -= *=...</span></span><br><span class="line">x = (<span class="literal">true</span> || <span class="literal">false</span> &amp;&amp; <span class="literal">true</span>) <span class="comment">//This evaluates to true because &amp;&amp; is executed first</span></span><br><span class="line">b = a++; <span class="comment">// assign a to b then increment</span></span><br><span class="line">b = ++a; <span class="comment">// a ++ and then b = a</span></span><br><span class="line"><span class="comment">//Mixed-Type Arithmetic Operation</span></span><br><span class="line"><span class="type">float</span> p = <span class="number">10</span> / <span class="number">4</span>; <span class="comment">//p = 2.0</span></span><br><span class="line"><span class="type">int</span> n = <span class="number">10</span> / <span class="number">4.0</span>; <span class="comment">//n = 2.5 = 2;</span></span><br><span class="line"><span class="type">int</span> r = <span class="number">-10</span> / <span class="number">4.0</span>; <span class="comment">// r = -2; </span></span><br><span class="line"><span class="type">int</span> aa = <span class="number">6</span>;</span><br><span class="line"><span class="type">float</span> pp = (<span class="type">float</span>) aa / <span class="number">4</span>; <span class="comment">// pp = 1.5</span></span><br><span class="line"><span class="type">float</span> qq = (<span class="type">float</span>) (aa / <span class="number">4</span>) <span class="comment">// qq = 1.0</span></span><br><span class="line"><span class="comment">//modulo and remainder</span></span><br><span class="line">a = <span class="number">-10</span>%<span class="number">4</span> <span class="comment">// a = -2 this is a remainder</span></span><br><span class="line">          <span class="comment">//in python this is a modulo, a = 2;</span></span><br></pre></td></tr></table></figure>
+<h2 id="selection-structures">Selection Structures</h2>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*Selection Strcture*/</span></span><br><span class="line"><span class="comment">// Notice the break; here. If no break is put here, then if the value == value2</span></span><br><span class="line"><span class="comment">// Then the programme will execute Code1 &amp; Code 2 &amp; default</span></span><br><span class="line"><span class="keyword">switch</span>( &lt;variable or expression&gt; ) &#123;</span><br><span class="line">    <span class="keyword">case</span> value1:</span><br><span class="line">        Cod1 to execute</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> value2:</span><br><span class="line">        Code2 to execute</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">        Code to execute <span class="keyword">if</span> no <span class="keyword">case</span> is matched</span><br><span class="line">        <span class="keyword">break</span>; </span><br><span class="line"><span class="comment">//lazy evaluation || short circuit evaluation</span></span><br><span class="line"><span class="keyword">if</span>(<span class="literal">true</span> || (runtime error statement)) <span class="comment">// return : true.</span></span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="number-system">Number System</h1>
+<h2 id="introduction">Introduction</h2>
+<p><strong>Decimal Number System</strong> 1. Weighted-posistional number
+system 2. Base(radix) is 10 3. Each position has a weight of power of
+10. (1.2 where 2 has a weight of <span
+class="math inline">\(2^{-1}\)</span>) 4. e.g.: 7594.36 is a 6 digit
+number with 2 decimal places</p>
+<p><strong>Prefix</strong> 1. 0 for octal(8) 2. 0x for hexadecimal</p>
+<p><strong>Converting Decimals</strong></p>
+<figure>
+<img src="Carries.png" alt="Converting Decimals" />
+<figcaption aria-hidden="true">Converting Decimals</figcaption>
+</figure>
+<h2 id="american-standard-code-for-information-interchange">American
+Standard Code for Information Interchange</h2>
+<ul>
+<li><p>7 bits, plus 1 parity bit(odd or even parity) (Count the number
+of 1 bits and check whether it is even/odd(_0101101: odd parity should
+be 0))</p></li>
+<li><p>Converting: '9' - '0' = 9</p></li>
+</ul>
+<h2 id="signed-and-unsigned-values">Signed and Unsigned Values</h2>
+<h3 id="ways-to-represent">Ways to represent</h3>
+<ol type="1">
+<li><p><strong>Sign-and-Magnitude</strong></p>
+<ul>
+<li>sign bit: 0 for + and 1 for -</li>
+<li><span class="math inline">\({10100000}_{sm} = 33_{10}\)</span></li>
+</ul></li>
+<li><p><strong>1s complment</strong></p>
+<ul>
+<li>-x = <span class="math inline">\(2^{n}\)</span> - x - 1</li>
+<li>to negate x, just invert all the bits</li>
+<li>MSB still represents the sign, 0 for positive, 1 for negative</li>
+<li>MSB's weight: (in n bits, ) <span class="math inline">\(-2^{n-1} +
+1\)</span></li>
+</ul></li>
+<li><p><strong>2s-complement</strong></p>
+<ul>
+<li>-x = <span class="math inline">\(2^n\)</span> - x</li>
+<li>Negate x: invert all bits and add 1</li>
+<li>shortcut: from right to left, copy everything until the first 1.
+invert everything to the left of the first 1. (e.g: 00101000 -&gt;
+11011000)</li>
+<li>MSB still represent the sign, 0 for positive</li>
+<li><strong>in a 4-bit 2s number, the MSB has a weight of -8 ([U] Prove
+that?)</strong></li>
+</ul></li>
+<li><p><strong>Excess Notation</strong></p>
+<ul>
+<li>Allows the range of values to be split evenly betweent the positive
+and negative values.</li>
+<li>the Excess-n notation means that in order for a negative number x to
+be negated, you need to add n to it. (e.g.: for the excess-4 notation,
+add 4 to -2 inorder to get 2) <img src="Excess4.png"
+alt="Excess-4 representation on 3-bit numbers" /></li>
+</ul></li>
+</ol>
+<p>For a 4-bit system, - SM: 0 to 7, -0 to -7 - 1s: 0 to 7, -0 to -7 -
+2s: 0 to 7, -1 to -8 <em>-8 is 1000</em></p>
+<p>So <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> x = <span class="number">2147483647</span>; <span class="comment">// 2^31 - 1</span></span><br><span class="line">x = x + <span class="number">1</span>;<span class="comment">// 0111...1111 + 1 = 1000....000 = (-2147483648)10</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>Complement on Fractions</strong> For fractions, simply ignore
+the '.'</p>
+<h2 id="addition-and-subtraction">Addition and Subtraction</h2>
+<h3 id="s-complement">2s Complement</h3>
+<p>Simply disgard the additional bit <a
+href="Why%20does%20this%20work?">U</a></p>
+<p>For subtraction, add <span class="math inline">\((-x)_{2s}\)</span>
+<a href="Why%20does%20this%20work?">U</a></p>
+<p><strong>Overflow Checking</strong></p>
+<pre><code>If the carry in and carry out of the MSB is different, then a overflow occurs.
+
+e.g.: 1001 + 1101 - in:0 out: 1 thus an overflow</code></pre>
+<h3 id="s-complement-1">1s Complement</h3>
+<ol type="1">
+<li>Addition: If there is a carry out of the MSB, add 1 to the result
+([U] why does this work?)</li>
+<li>Subtraction: add <span class="math inline">\((-x)_{1s}\)</span></li>
+</ol>
+<h2 id="representation-of-numbers">Representation of Numbers</h2>
+<h3 id="fixed-vs-floating">Fixed vs Floating</h3>
+<ol type="1">
+<li><p>Fixed Point Representation The allocated number for the number
+part and fractional part are fixed.</p></li>
+<li><p>Floating Point Representation Allows representation of very large
+and very small numbers.</p></li>
+</ol>
+<h3 id="ieee-754-floating-point-rep.">IEEE 754 Floating-Point Rep.</h3>
+<ol type="1">
+<li>Components:<strong>sign - exponent -
+mantissa(fraction)</strong></li>
+</ol>
+<p><em>The sign is for the mantissa, not the exponent</em></p>
+<ol start="2" type="1">
+<li>Format: <strong>Single-precision(32 bits)</strong>
+<ul>
+<li><p>1-bit sign, 8-bit exponent with bias127(excess-127), 23-bit
+mantissa</p></li>
+<li><p>The Mantissa is normalised with an implicit leading bit 1.</p>
+<p>This means that we will always keep the part to the left of the point
+1. Only the left part will be stored. e.g.: (110.1<span
+class="math inline">\()_2\)</span> = 1.10<span
+class="math inline">\(1_2\)</span> * <span
+class="math inline">\(2^2\)</span>, only 101 is stored in the mantissa.
+<em>Normalisation: 123.2 </em> <span
+class="math inline">\(10^{0}\)</span> = 1.232 * <span
+class="math inline">\(10^{2}\)</span>*</p></li>
+</ul></li>
+<li>E.g.: To find the IEEE 754 representation of -6.5 <span
+class="math display">\[-6.5_{10} = -110.1_{2} = -1.101_{2} *
+2^{2}\]</span> Since <span class="math display">\[Exponent = 2 + 127 =
+129 = 10000001_2\]</span> <span class="math display">\[ (-110.1)_2 =
+1_{sign}10000001_{exponent}{101 0000 ... 0000}_{mantissa}\]</span> Or in
+hexadecimal <span class="math display">\[1 10000001 1010000...00000_2 =
+C0D00000_{16}\]</span></li>
+</ol>
+<h1 id="things-to-say">Things to say</h1>
+<p>Why do we even compare C with Python in this course?</p>
 
     </div>
 
@@ -281,6 +482,14 @@
 </ul>
 </div>
 
+          <div class="post-tags">
+              <a href="/tags/ComputerScience/" rel="tag"># ComputerScience</a>
+              <a href="/tags/Notes/" rel="tag"># Notes</a>
+              <a href="/tags/CPP/" rel="tag"># CPP</a>
+              <a href="/tags/C/" rel="tag"># C</a>
+              <a href="/tags/MIPS/" rel="tag"># MIPS</a>
+              <a href="/tags/OperatingSystem/" rel="tag"># OperatingSystem</a>
+          </div>
 
         
   <div class="social-like a2a_kit a2a_kit_size_32 a2a_default_style">
@@ -334,14 +543,14 @@
       <i class="fa fa-chart-line"></i>
     </span>
       <span>Word count total: </span>
-    <span title="Word count total">34k</span>
+    <span title="Word count total">41k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>Reading time total &asymp;</span>
-    <span title="Reading time total">31 mins.</span>
+    <span title="Reading time total">37 mins.</span>
   </span>
 </div>
 
@@ -398,7 +607,7 @@ setInterval("createtime()",250);
 
   
 
-  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
 <script src="/js/third-party/math/mathjax.js"></script>
 
 
