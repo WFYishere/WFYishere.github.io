@@ -21,15 +21,20 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"wfyishere.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.19.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":true,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta property="og:type" content="article">
+    <meta name="description" content="CS2030S lecture notes.">
+<meta property="og:type" content="article">
 <meta property="og:title" content="CS2030S Lecture Notes">
 <meta property="og:url" content="https://wfyishere.github.io/2024/03/02/CS2030S-Lecture-Notes/index.html">
 <meta property="og:site_name" content="WFY&#39;s Blog">
+<meta property="og:description" content="CS2030S lecture notes.">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://wfyishere.github.io/2024/03/02/CS2030S-Lecture-Notes/StackAndHeap.png">
+<meta property="og:image" content="https://wfyishere.github.io/2024/03/02/CS2030S-Lecture-Notes/StackAndHeap2.png">
 <meta property="article:published_time" content="2024-03-02T05:42:47.000Z">
-<meta property="article:modified_time" content="2024-03-02T05:42:47.375Z">
+<meta property="article:modified_time" content="2024-03-09T03:20:02.181Z">
 <meta property="article:author" content="Wen Fanyu">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://wfyishere.github.io/2024/03/02/CS2030S-Lecture-Notes/StackAndHeap.png">
 
 
 <link rel="canonical" href="https://wfyishere.github.io/2024/03/02/CS2030S-Lecture-Notes/">
@@ -89,7 +94,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">13</span></a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">34</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">14</span></a></li><li class="menu-item menu-item-todo"><a href="/todo" rel="section"><i class="fa-solid fa-bars fa-fw"></i>Todo</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">13</span></a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">34</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">15</span></a></li><li class="menu-item menu-item-todo"><a href="/todo" rel="section"><i class="fa-solid fa-bars fa-fw"></i>Todo</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -127,7 +132,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -140,6 +145,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#java"><span class="nav-number">1.</span> <span class="nav-text">Java</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sample-code-for-pe"><span class="nav-number"></span> <span class="nav-text">Sample Code for PE</span></a></div>
         </div>
         <!--/noindex-->
 
@@ -152,7 +158,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">14</span>
+          <span class="site-state-item-count">15</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -230,6 +236,13 @@
 
       <time title="Created: 2024-03-02 13:42:47" itemprop="dateCreated datePublished" datetime="2024-03-02T13:42:47+08:00">2024-03-02</time>
     </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2024-03-09 11:20:02" itemprop="dateModified" datetime="2024-03-09T11:20:02+08:00">2024-03-09</time>
+    </span>
 
   
     <span class="post-meta-break"></span>
@@ -238,14 +251,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Word count in article: </span>
-      <span>0</span>
+      <span>7.1k</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>1 mins.</span>
+      <span>6 mins.</span>
     </span>
 </div>
 
@@ -255,7 +268,186 @@
     
     
     
-    <div class="post-body" itemprop="articleBody">
+    <div class="post-body" itemprop="articleBody"><p>CS2030S lecture notes. <span id="more"></span></p>
+<h3 id="java">Java</h3>
+<ol type="1">
+<li><p>Java Compiler: compiled into bytecode.(.java-&gt; javac -&gt;
+.class); interpreted and compiled on the fly by JVM into machine
+code.(java .class) / be interpreted by the Java interpreter.</p></li>
+<li><p>Types:</p></li>
+</ol>
+<ul>
+<li>statically typed language: declare every variable we use in the
+program and specify its type(compile-time type).</li>
+<li>Primitive: numeric &amp; boolean values byte &lt;: short &lt;: int
+&lt;: long &lt;: float &lt;: double; char &lt;: int</li>
+<li>Reference Types: stores only the reference to the value</li>
+<li>widening type conversion: long i = int(j); narrowing type
+conversion: type casting</li>
+</ul>
+<ol start="3" type="1">
+<li>Principals:</li>
+</ol>
+<ul>
+<li>encapsulation: keeping all the data and functions operating on the
+data related to a composite data type together within an abstraction
+barrier.</li>
+<li>"Tell, Don't Ask" principle. The client should tell a Circle object
+what to do , instead of asking "What is your radius?" to get the value
+of a field</li>
+<li>composition: combining classes</li>
+<li>Composition : has-a relationship;Inheritance : is-a
+relationship.</li>
+<li>polymorphism: method invoked is decided during run-time(dynamic
+binding/dispatch) - <em>Class Methods do not support dynamic
+binding.</em> At compile time, determines the <strong>method
+descriptor</strong>(including return type) of the method invoked, using
+the compile-time type of the target. At runtime, the method descriptor
+is retrieved and the run-tim type is determined</li>
+<li>Inheritance: subtypes can only access public fields/methods</li>
+<li>Liskov Substitution Principle: A subclass should not break the
+expectations set by the superclass</li>
+</ul>
+<ol start="4" type="1">
+<li><p>package: <code>import java.lang.Math;</code>
+<code>return Math.PI * this.r * this.r;</code></p></li>
+<li><p>The main method <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p></li>
+<li><p>aliasing: sharing references. Avoid that.e.g.:
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Point</span> <span class="variable">p</span> <span class="operator">=</span> ...; </span><br><span class="line">Circle1.setPoint(p); </span><br><span class="line">Circle2.setPoint(p); <span class="comment">// Circle1.point is an alias of p</span></span><br></pre></td></tr></table></figure></p></li>
+<li><p>Stack and Heap</p></li>
+</ol>
+<ul>
+<li>heap : objects - whenever you use the keyword new</li>
+<li>Stack: variables in method call frames(main/moveTo...)</li>
+<li>non-static methods, including constructors, have
+<code>this</code></li>
+<li>Initialization: object- null; Primitive - zero(uninitialized -
+∅)</li>
+</ul>
+<figure>
+<img src="StackAndHeap.png"
+alt="Circle c; c = new Circle(new Point(1, 2), 3)" />
+<figcaption aria-hidden="true">Circle c; c = new Circle(new Point(1, 2),
+3)</figcaption>
+</figure>
+<figure>
+<img src="StackAndHeap2.png"
+alt="Point p1 = new Point(0, 0);Point p2 = new Point(1, 1);p1.distanceTo(p2)" />
+<figcaption aria-hidden="true">Point p1 = new Point(0, 0);Point p2 = new
+Point(1, 1);p1.distanceTo(p2)</figcaption>
+</figure>
+<ol start="8" type="1">
+<li><p>Representing a method: <code>Object::equals(Object)</code> - a
+method in the class Object</p></li>
+<li><p>Method override and overload:</p></li>
+</ol>
+<ul>
+<li><p><code>@Override</code>: Acts as a hint to the compiler. Use
+<code>super</code> to call the overriden method.</p></li>
+<li><p>method overloading ： differing method signature.</p></li>
+</ul>
+<ol start="10" type="1">
+<li><p><code>obj instanceof Circle</code> (runtime)</p></li>
+<li><p><code>final</code></p></li>
+</ol>
+<ul>
+<li><code>final class Circle&#123;&#125;</code> To prevent being inhereited</li>
+<li><code>public final boolean contains(Point p)</code> To prevent being
+overriden</li>
+</ul>
+<ol start="13" type="1">
+<li><code>abstract</code>: cannot be instantiated - concrete class</li>
+<li>Interface:</li>
+</ol>
+<ul>
+<li>across different class hierarchies.(public abstract by default.) An
+interface is a type(a type can have multiple supertypes.e.g. a class can
+be subype of multiple interface) <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> <span class="title class_">GetAreable</span> &#123;<span class="type">double</span> <span class="title function_">getArea</span><span class="params">()</span>;&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Flat</span> <span class="keyword">extends</span> <span class="title class_">RealEstate</span> </span><br><span class="line"><span class="keyword">implements</span> <span class="title class_">GetAreable</span>,getMonyable &#123;&#125;</span><br></pre></td></tr></table></figure></li>
+<li>casting unrelated interface is allowed. E.g.: class A, Interface B,
+class C extends A implements B. There is possiblity that C(subclass of
+A) can be casted on B. In this situation <code>A = B</code> compiles.
+default implementation: <code>default</code> (impure interfaces)</li>
+</ul>
+<ol start="17" type="1">
+<li>Wrapper Classes : <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Integer</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">4</span>;</span><br><span class="line"><span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> i;<span class="comment">//Autoboxing &amp; unboxing</span></span><br></pre></td></tr></table></figure> primitive wrapper class objects are
+immutable</li>
+<li>variance of types:
+<ul>
+<li>covariant : S&lt;:T -&gt; C(S) &lt;: C(T); contravariant;invariant:
+neither <em>Arrays of primitive types are invariant</em>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Object[] objArray = intArray;</span><br><span class="line">objArray[<span class="number">0</span>] = <span class="string">&quot;Hello!&quot;</span>; <span class="comment">// &lt;- compiles!</span></span><br></pre></td></tr></table></figure></li>
+</ul></li>
+<li>Exceptions</li>
+</ol>
+<ul>
+<li><p>instances that are a subtype of the Exception. Follows the
+hierarchy <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">InvalidOperandException</span> <span class="keyword">extends</span> <span class="title class_">RuntimeException</span> &#123;</span><br><span class="line">    InvalidOperandException(<span class="type">char</span> operator) &#123;</span><br><span class="line">        <span class="built_in">super</span>(<span class="string">&quot;ERROR: Invalid operand for operator &quot;</span> + operator);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="title function_">Circle</span><span class="params">(Point c, <span class="type">double</span> r)</span> <span class="keyword">throws</span> IllegalArgumentException &#123;</span><br><span class="line">    <span class="keyword">if</span> (r &lt; <span class="number">0</span>) &#123;</span><br><span class="line">      <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">IllegalArgumentException</span>(<span class="string">&quot;radius is negative.&quot;</span>);</span><br><span class="line">    &#125;<span class="comment">// throw statement causes the method to immediately return.</span></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">  scanner = <span class="keyword">new</span> <span class="title class_">Scanner</span>(reader);</span><br><span class="line">  value = scanner.nextInt();</span><br><span class="line">&#125; <span class="keyword">catch</span> (FileNotFoundException | InputMismatchException) &#123;</span><br><span class="line">  System.err.println(<span class="string">&quot;Unable to find&quot;</span> + e.getMessage);</span><br><span class="line">&#125; <span class="keyword">finally</span> &#123;<span class="comment">// executed even when return or throw is called </span></span><br><span class="line">    scanner.close();</span><br><span class="line">&#125;<span class="comment">//note the throw and throws difference</span></span><br></pre></td></tr></table></figure></p></li>
+<li><p>Checked: programmer's errors. Would not happen if perfect code
+was written;</p></li>
+<li><p>Unchecked:<code>InvalidInputException</code>, subclass of
+<code>RuntimeException</code> <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">catch</span> (Exception e) &#123;<span class="comment">// do nothing&#125;//Pokemon Exception Handling:</span></span><br></pre></td></tr></table></figure></p></li>
+</ul>
+<ol start="20" type="1">
+<li>only reference types can be used as type arguments.
+<code>Comparable&lt;T&gt;</code> dictates the implementation of int
+<code>compareTo(T t)</code> <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Class DictEntry&lt;S <span class="keyword">extends</span> <span class="title class_">Comparable</span>&lt;S&gt;&gt; </span><br><span class="line"><span class="keyword">implements</span> <span class="title class_">Comparable</span>&lt;Pair&lt;S,String&gt;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<ul>
+<li><p>Note that we use extends for interface bounding</p></li>
+<li><p>the constructor for a generic class is still declared as Pair
+(without the type parameters).</p></li>
+<li><p>Once a generic type is instantiated, it is called a parameterized
+type</p></li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Seq</span>&lt;T&gt; &#123;</span><br><span class="line">  <span class="keyword">private</span> T[] array;</span><br><span class="line">  <span class="keyword">public</span> <span class="title function_">Seq</span><span class="params">(<span class="type">int</span> size)</span> &#123;</span><br><span class="line">  <span class="comment">// SuppressWarnings only be used on instantiating expression</span></span><br><span class="line">  <span class="meta">@SuppressWarnings(&quot;unchecked&quot;)</span></span><br><span class="line">    T[] a = (T[]) <span class="keyword">new</span> <span class="title class_">Object</span>[size];</span><br><span class="line">  <span class="built_in">this</span>.array = a;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">set</span><span class="params">(<span class="type">int</span> index, T item)</span> &#123;</span><br><span class="line">    <span class="built_in">this</span>.array[index] = item;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">public</span> T <span class="title function_">get</span><span class="params">(<span class="type">int</span> index)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">this</span>.array[index];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">copyFrom</span><span class="params">(Seq&lt;? extends T&gt; src)</span> ;</span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">copyTo</span><span class="params">(Seq&lt;? <span class="built_in">super</span> T&gt; dest)</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">A</span> &#123;</span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> &lt;S&gt; <span class="type">boolean</span> <span class="title function_">contains</span><span class="params">(Seq&lt;? extends S&gt; seq, S obj)</span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; seq.getLength(); i++) &#123;</span><br><span class="line">      <span class="type">S</span> <span class="variable">curr</span> <span class="operator">=</span> seq.get(i);</span><br><span class="line">      <span class="keyword">if</span> (curr.equals(obj))&#123;<span class="keyword">return</span> <span class="literal">true</span>;&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">  &#125; <span class="comment">// have to have new genric type in static classes</span></span><br><span class="line">&#125;<span class="comment">//because static classes can be used without instantiation.</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Box</span>&lt;T&gt; &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">equals</span><span class="params">(Object other)</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (other <span class="keyword">instanceof</span> Box&lt;?&gt;) &#123;</span><br><span class="line">        Box&lt;?&gt; otherBox = (Box&lt;?&gt;) other; <span class="comment">//remember to add this!!!</span></span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">this</span>.content.equals(otherBox.getContent())) </span><br><span class="line">          &#123;<span class="keyword">return</span> <span class="literal">true</span>;&#125;</span><br><span class="line">    &#125;&#125;&#125;</span><br></pre></td></tr></table></figure>
+<ol start="21" type="1">
+<li>Type erasure: after type checking, erase the type parameters and
+type arguments during compilation(to Object). If the bounded, replaced
+by the bounds. After type erasure, we do explicit typecast on an
+object.</li>
+</ol>
+<ul>
+<li><p>arrays are reifiable type(gets full type information during
+run-time); but generics are not due to type erasure</p></li>
+<li><p>Actually, generic array declaration is fine but generic array
+instantiation is not. <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="title class_">Pair</span>&lt;S,T&gt;[<span class="number">2</span>];<span class="comment">//illegal</span></span><br><span class="line"><span class="keyword">new</span> <span class="title class_">T</span>[<span class="number">2</span>];<span class="comment">//illegal</span></span><br><span class="line">T[] array;<span class="comment">//allowed</span></span><br></pre></td></tr></table></figure></p></li>
+</ul>
+<ol start="22" type="1">
+<li><p>ArrayList: a generic class,checks appropriate types during
+compile time. Note that it is <strong>invariant</strong>.</p></li>
+<li><p><code>@SuppressWarning</code> to the most limited scope</p>
+<p>raw types: only used in instance of</p></li>
+<li><p>Wild Cards:</p></li>
+</ol>
+<ul>
+<li><p><code>public void copyTo(Seq&lt;? super T&gt; dest)</code>
+<em>super is a contravariance type</em></p></li>
+<li><p>PECS: Producer Extends Consumer Super</p></li>
+<li><p><em>Seq&lt;Object&gt; is NOT supertype of all Seq&lt;T&gt; due to
+generics being invariant.</em></p></li>
+<li><p><code>Seq&lt;?&gt;</code> is a sequence of objects of some
+specific, but unknown type;</p></li>
+<li><p><code>Seq&lt;Object&gt;</code> is a sequence of Object instances,
+with type checking by the compiler;(Note that generics are invariants so
+<code>Seq&lt;Object&gt; !&gt;: Seq&lt;Integer&gt;</code>)</p></li>
+<li><p><code>Seq</code> is a sequence of Object instances, without type
+checking.</p></li>
+</ul>
+<ol start="25" type="1">
+<li>Type Infering: T &lt;: Type2, then T is inferred as Type2</li>
+</ol>
+<h2 id="sample-code-for-pe">Sample Code for PE</h2>
+<ol type="1">
+<li><p>remember to make all the numbers encountered static.
+(<code>private static final int RATE = 22</code>)</p></li>
+<li><p>Recommended to do(in subclass and superclass)
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Todo:</span></span><br><span class="line">superclass: &#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">toString</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">this</span>.name; </span><br><span class="line">        <span class="comment">//recommend this. even if there is no conflicting parameter</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">subclass: &#123;</span><br><span class="line">    <span class="keyword">private</span> String typeName;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">toString</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">this</span>.typeName + <span class="built_in">super</span>.toString();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// rather than use typeToString in subclass and </span></span><br><span class="line"><span class="comment">// toString and (abstract)typeToString in superclass</span></span><br></pre></td></tr></table></figure></p></li>
+<li><p>Vim <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/ + search <span class="keyword">for</span> word</span><br><span class="line">&#123; + line number</span><br><span class="line">:split / :vsplit</span><br><span class="line">Ctrl + w + w/W</span><br></pre></td></tr></table></figure></p></li>
+<li><p>Coding Style</p></li>
+</ol>
+<ul>
+<li><code>public protected private abstract default static final transient volatile synchronized native strictfp</code></li>
+</ul>
 
     </div>
 
@@ -299,6 +491,9 @@
                 </a>
             </div>
             <div class="post-nav-item">
+                <a href="/2024/03/05/MA2104-Multivariable-Calculus/" rel="next" title="MA2104 Multivariable Calculus">
+                  MA2104 Multivariable Calculus <i class="fa fa-angle-right"></i>
+                </a>
             </div>
           </div>
     </footer>
@@ -331,14 +526,14 @@
       <i class="fa fa-chart-line"></i>
     </span>
       <span>Word count total: </span>
-    <span title="Word count total">41k</span>
+    <span title="Word count total">66k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>Reading time total &asymp;</span>
-    <span title="Reading time total">37 mins.</span>
+    <span title="Reading time total">1:01</span>
   </span>
 </div>
 
@@ -395,7 +590,7 @@ setInterval("createtime()",250);
 
   
 
-  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
 <script src="/js/third-party/math/mathjax.js"></script>
 
 

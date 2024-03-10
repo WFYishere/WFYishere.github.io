@@ -31,8 +31,20 @@
 <meta property="og:image" content="https://wfyishere.github.io/2024/01/28/Notes-for-CS2040S/FileSystem.png">
 <meta property="og:image" content="https://wfyishere.github.io/2024/01/28/Notes-for-CS2040S/Stirling%20Approximation">
 <meta property="og:image" content="https://wfyishere.github.io/2024/01/28/Notes-for-CS2040S/InsertionSort.png">
+<meta property="og:image" content="https://wfyishere.github.io/2024/01/28/Notes-for-CS2040S/Tree_Successor.png">
+<meta property="og:image" content="https://wfyishere.github.io/2024/01/28/Notes-for-CS2040S/RightRotation.png">
+<meta property="og:image" content="https://wfyishere.github.io/2024/01/28/Notes-for-CS2040S/TreeRotationCase1.png">
+<meta property="og:image" content="https://wfyishere.github.io/2024/01/28/Notes-for-CS2040S/TreeRotationCase2.png">
+<meta property="og:image" content="https://wfyishere.github.io/2024/01/28/Notes-for-CS2040S/TreeRotationCase3_1.png">
+<meta property="og:image" content="https://wfyishere.github.io/2024/01/28/Notes-for-CS2040S/TreeRotationCase3_2.png">
+<meta property="og:image" content="https://wfyishere.github.io/2024/01/28/Notes-for-CS2040S/BalanceButNotHeightBalance.png">
+<meta property="og:image" content="https://wfyishere.github.io/2024/01/28/Notes-for-CS2040S/MaintainingWeight.png">
+<meta property="og:image" content="https://wfyishere.github.io/2024/01/28/Notes-for-CS2040S/SearchIntervalTree.png">
+<meta property="og:image" content="https://wfyishere.github.io/2024/01/28/Notes-for-CS2040S/OneDimensionORS.png">
+<meta property="og:image" content="https://wfyishere.github.io/2024/01/28/Notes-for-CS2040S/TwoDimensionRangeSearching.png">
+<meta property="og:image" content="https://wfyishere.github.io/2024/01/28/Notes-for-CS2040S/PancakeWorstCase.png">
 <meta property="article:published_time" content="2024-01-28T03:14:20.000Z">
-<meta property="article:modified_time" content="2024-02-21T09:29:44.103Z">
+<meta property="article:modified_time" content="2024-03-10T02:58:58.890Z">
 <meta property="article:author" content="Wen Fanyu">
 <meta property="article:tag" content="ComputerScience">
 <meta property="article:tag" content="Notes">
@@ -102,7 +114,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">13</span></a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">34</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">14</span></a></li><li class="menu-item menu-item-todo"><a href="/todo" rel="section"><i class="fa-solid fa-bars fa-fw"></i>Todo</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">13</span></a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">34</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">15</span></a></li><li class="menu-item menu-item-todo"><a href="/todo" rel="section"><i class="fa-solid fa-bars fa-fw"></i>Todo</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -153,11 +165,15 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#lecture-1-2-java"><span class="nav-number">1.</span> <span class="nav-text">Lecture 1 &amp; 2 : Java</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#lecture-3-4-peak-finding-searching"><span class="nav-number">2.</span> <span class="nav-text">Lecture 3 &amp; 4 : Peak
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#lecture-1-2-java-and-overall-data-structures"><span class="nav-number">1.</span> <span class="nav-text">Lecture 1 &amp; 2
+: Java and Overall Data Structures</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#lecture-3-4-peak-finding-searching"><span class="nav-number">2.</span> <span class="nav-text">Lecture 3 &amp; 4 : Peak
 Finding &amp; Searching</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#lecture-5-6-sorting"><span class="nav-number">3.</span> <span class="nav-text">Lecture 5 &amp; 6 : Sorting</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#bogosort"><span class="nav-number">3.1.</span> <span class="nav-text">BogoSort</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#classic-sorting-algorithms"><span class="nav-number">3.2.</span> <span class="nav-text">Classic Sorting
 Algorithms</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#bogosort-1"><span class="nav-number">3.2.1.</span> <span class="nav-text">BogoSort</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#selection-sort"><span class="nav-number">3.2.2.</span> <span class="nav-text">Selection Sort</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#insertion-sort"><span class="nav-number">3.2.3.</span> <span class="nav-text">Insertion Sort</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mergesort"><span class="nav-number">3.2.4.</span> <span class="nav-text">MergeSort</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#quicksort"><span class="nav-number">3.3.</span> <span class="nav-text">Quicksort</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#introduction"><span class="nav-number">3.3.1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#time-complexity-for-random-chosen-pivot."><span class="nav-number">3.3.2.</span> <span class="nav-text">Time complexity for
 random chosen pivot.</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#analysis-on-a-good-pivot"><span class="nav-number">3.3.2.1.</span> <span class="nav-text">Analysis on a good pivot</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#probability-theory-on-choosing-a-good-pivot"><span class="nav-number">3.3.2.2.</span> <span class="nav-text">Probability Theory
-on choosing a good pivot</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#quicksort-optimization"><span class="nav-number">3.3.3.</span> <span class="nav-text">Quicksort Optimization</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#order-statistics"><span class="nav-number">3.4.</span> <span class="nav-text">Order Statistics</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#others"><span class="nav-number">4.</span> <span class="nav-text">Others</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#puzzles"><span class="nav-number">5.</span> <span class="nav-text">Puzzles:</span></a></li></ol></div>
+on choosing a good pivot</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#quicksort-optimization"><span class="nav-number">3.3.3.</span> <span class="nav-text">Quicksort Optimization</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#order-statistics"><span class="nav-number">3.4.</span> <span class="nav-text">Order Statistics</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#other-sorting-algorithms"><span class="nav-number">3.5.</span> <span class="nav-text">Other Sorting Algorithms</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#counting-sort"><span class="nav-number">3.5.1.</span> <span class="nav-text">Counting Sort</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#bitsort"><span class="nav-number">3.5.2.</span> <span class="nav-text">BitSort(?)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#lecture-08-trees"><span class="nav-number">4.</span> <span class="nav-text">Lecture 08 Trees</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#dynamic-data-structures"><span class="nav-number">4.1.</span> <span class="nav-text">Dynamic Data Structures</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tree-basic-concepts"><span class="nav-number">4.2.</span> <span class="nav-text">Tree Basic Concepts</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#keeping-trees-balanced"><span class="nav-number">4.3.</span> <span class="nav-text">Keeping Trees Balanced</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#concept"><span class="nav-number">4.3.1.</span> <span class="nav-text">Concept</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#avl-trees"><span class="nav-number">4.3.2.</span> <span class="nav-text">AVL Trees</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#proof-of-balance"><span class="nav-number">4.3.2.1.</span> <span class="nav-text">Proof of Balance</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#maintaining-height-balance"><span class="nav-number">4.3.2.2.</span> <span class="nav-text">Maintaining Height-Balance</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#augmenting-trees"><span class="nav-number">4.4.</span> <span class="nav-text">Augmenting Trees</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#dynamic-order-statistics"><span class="nav-number">4.4.1.</span> <span class="nav-text">Dynamic Order Statistics</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tree-traversal"><span class="nav-number">4.5.</span> <span class="nav-text">Tree Traversal</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#dfs-and-bfs"><span class="nav-number">4.5.1.</span> <span class="nav-text">DFS and BFS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#introduction-1"><span class="nav-number">4.5.2.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#non-recursive-bfs-and-dfs"><span class="nav-number">4.5.3.</span> <span class="nav-text">Non-recursive BFS and DFS</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#stack---dfs"><span class="nav-number">4.5.3.1.</span> <span class="nav-text">Stack - DFS</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tree-operation-conclusion"><span class="nav-number">4.6.</span> <span class="nav-text">Tree Operation conclusion</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#trie"><span class="nav-number">4.6.1.</span> <span class="nav-text">Trie</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#interval-queries"><span class="nav-number">4.6.2.</span> <span class="nav-text">Interval Queries</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#goal"><span class="nav-number">4.6.2.1.</span> <span class="nav-text">Goal:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#augment"><span class="nav-number">4.6.2.2.</span> <span class="nav-text">Augment</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#implement"><span class="nav-number">4.6.2.3.</span> <span class="nav-text">Implement</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#search"><span class="nav-number">4.6.2.3.1.</span> <span class="nav-text">search:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#insertion-rotation"><span class="nav-number">4.6.2.3.2.</span> <span class="nav-text">insertion &amp; rotation</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#others"><span class="nav-number">4.6.2.3.3.</span> <span class="nav-text">Others</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#orthogonal-range-searching"><span class="nav-number">4.6.3.</span> <span class="nav-text">Orthogonal Range Searching</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#introduction-2"><span class="nav-number">4.6.3.1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sample-one-dimension"><span class="nav-number">4.6.3.2.</span> <span class="nav-text">Sample: One-Dimension</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#strategy"><span class="nav-number">4.6.3.2.1.</span> <span class="nav-text">Strategy</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#two-dimension"><span class="nav-number">4.6.3.3.</span> <span class="nav-text">Two-Dimension</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#others-1"><span class="nav-number">5.</span> <span class="nav-text">Others</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#problems-in-tutorials"><span class="nav-number">6.</span> <span class="nav-text">Problems (in tutorials)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#mountain-stack"><span class="nav-number">6.1.</span> <span class="nav-text">Mountain stack</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#chicken-rice-competetion"><span class="nav-number">6.2.</span> <span class="nav-text">Chicken Rice Competetion :</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#weight-selectioneonomic-research"><span class="nav-number">6.3.</span> <span class="nav-text">Weight Selection(Eonomic
+Research):</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#height-of-binary-tree-after-subtree-removal"><span class="nav-number">6.4.</span> <span class="nav-text">Height of Binary
+Tree After Subtree Removal</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#safely-evaluating-average-pay"><span class="nav-number">6.5.</span> <span class="nav-text">Safely Evaluating average
+pay!</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pancake-flipping"><span class="nav-number">6.6.</span> <span class="nav-text">Pancake flipping!</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#puzzles"><span class="nav-number">7.</span> <span class="nav-text">Puzzles:</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -170,7 +186,7 @@ on choosing a good pivot</span></a></li></ol></li><li class="nav-item nav-level-
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">14</span>
+          <span class="site-state-item-count">15</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -253,7 +269,7 @@ on choosing a good pivot</span></a></li></ol></li><li class="nav-item nav-level-
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-02-21 17:29:44" itemprop="dateModified" datetime="2024-02-21T17:29:44+08:00">2024-02-21</time>
+      <time title="Modified: 2024-03-10 10:58:58" itemprop="dateModified" datetime="2024-03-10T10:58:58+08:00">2024-03-10</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -280,14 +296,14 @@ on choosing a good pivot</span></a></li></ol></li><li class="nav-item nav-level-
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Word count in article: </span>
-      <span>6.6k</span>
+      <span>25k</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>6 mins.</span>
+      <span>23 mins.</span>
     </span>
 </div>
 
@@ -300,7 +316,8 @@ on choosing a good pivot</span></a></li></ol></li><li class="nav-item nav-level-
     <div class="post-body" itemprop="articleBody"><p>Mainly questions that I encountered during my study for
 CS2040S<Data Structures and Algorithms></p>
 <span id="more"></span>
-<h1 id="lecture-1-2-java">Lecture 1 &amp; 2 : Java</h1>
+<h1 id="lecture-1-2-java-and-overall-data-structures">Lecture 1 &amp; 2
+: Java and Overall Data Structures</h1>
 <ol type="1">
 <li>[U] How to implement a <strong>File System</strong>?</li>
 </ol>
@@ -337,11 +354,59 @@ String</a></strong>:</p>
 <p>regular variables/functions are PER OBJECT</p>
 <p>static variables/functions are PER CLASS // cannot access member
 variable</p></li>
+<li><p>Java program’s main method has to be declared
+<strong>static</strong> because the keyword static allows main to be
+called without creating an object. If omit the static keyword, it can
+still compile.</p></li>
+<li><p>Why is it incorrect to call Java "pass-by-reference" (should be
+called <strong>pass-reference-by-value</strong> instead)? In the
+following programme, i and j behaves differently. For j, lineA simply
+changes the address of the parameter j0 is pointing to. Hence, the value
+in j in main function does not change.(Think about the stack and heap
+structure!) <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MyInteger</span>() &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> value;</span><br><span class="line">    <span class="comment">//constructor omitted</span></span><br><span class="line">&#125;</span><br><span class="line">main()&#123;</span><br><span class="line">    <span class="type">MyIntger</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">10</span>;</span><br><span class="line">    <span class="type">MyInteger</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">10</span>;</span><br><span class="line">    addOne(i);</span><br><span class="line">    otherAddOne(j);</span><br><span class="line">    <span class="comment">//after execution: i.value = 11; j.value = 10;</span></span><br><span class="line">&#125;</span><br><span class="line">addOne(MyInteger i) &#123;</span><br><span class="line">    i.value ++;</span><br><span class="line">&#125;</span><br><span class="line">otherAddOne(MyInteger j0) &#123;</span><br><span class="line">    j0 = <span class="keyword">new</span> <span class="title class_">MyInteger</span>(j0.value + <span class="number">1</span>); <span class="comment">//lineA</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p></li>
+<li><p>f(n) = O(n) and g(n) = O(log n), what is h(n) = <span
+class="math inline">\(f(n)^{g(n)}\)</span> ? <strong>the constat matters
+in a exponent!</strong> Cannot tell because g(n) = k log(n) matters in
+this situation.</p></li>
+<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//I don&#x27;t know how I got O(n log n) out of this but the correct answer is O(n)</span></span><br><span class="line"><span class="keyword">public</span> <span class="type">int</span> <span class="title function_">meanFunction</span><span class="params">(<span class="type">int</span> n)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">2</span> * meanFunction(n / <span class="number">2</span>) + niceFunction(n);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// This is O(n log n) instead of O(n ^ 2)</span></span><br><span class="line"><span class="comment">// j*=2 and j += 2 are different</span></span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">1</span>; j &lt; i; j *= <span class="number">2</span>) &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;!&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// This is O(n ^ 2)</span></span><br><span class="line"><span class="comment">//string operations take o(Length) time(Strings are immutable!)</span></span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">    s += <span class="string">&quot;?&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//Improvement on the above code:</span></span><br><span class="line"><span class="type">StringBuilder</span> <span class="variable">sb</span> <span class="operator">=</span> <span class="string">&quot;&quot;</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">    sb.append(<span class="string">&quot;?&quot;</span>); <span class="comment">//O(1)</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> sb.toString();</span><br><span class="line"><span class="comment">//The order of growth is T(n),</span></span><br><span class="line"><span class="comment">//T(n) = SumOf(T(i), from 1 to sqrt(n)) + sqrt(n);</span></span><br><span class="line"><span class="comment">//Since T(n) is an increasing function, </span></span><br><span class="line"><span class="comment">//T(n) &lt;= sqrt(n) * T(sqrt(n)) + sqrt(n)</span></span><br><span class="line"><span class="comment">//we can guess that T(n) = O(n)</span></span><br><span class="line"><span class="comment">//Another wat to think is write out a few T(1), T(2), ... first</span></span><br><span class="line"><span class="comment">//Or from the trend of T(n) increases, guess that T(n) = O(n);</span></span><br><span class="line"><span class="comment">//For more efficient algrithm, see Sieve of Eratosthenes</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">boolean</span> <span class="title function_">isPrime3</span><span class="params">(<span class="type">int</span> n)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (n&lt;<span class="number">2</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">2</span>;i&lt;=sqrt(n);i++)&#123;</span><br><span class="line">        <span class="keyword">if</span> (isPrime3(i) &amp;&amp; isDivisible(n,i)) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><ul>
+<li>Abstract Data Types (ADTs) are interfaces, which are specifications
+for behaviors without any implementation. E.g. Stack, Queue, Dictionary,
+Set, Map</li>
+<li>Data Structures are concrete implementations of ADTs. E.g. Array,
+Linked List, Binary Tree, Hash Table, Heap</li>
+<li>An ADT can be implemented by more than one data structure (E.g.
+Queue can be implemented using either an array or a linked list)</li>
+</ul></li>
+<li><p>Linked List</p>
+<ul>
+<li>Advantages (compared to an array)
+<ul>
+<li>Variable size</li>
+<li>Can easily add/delete elements anywhere</li>
+</ul></li>
+<li>Disadvantages
+<ul>
+<li>Difficulty in random access</li>
+<li>Not guaranteed to be stored together in memory</li>
+</ul></li>
+</ul></li>
 </ol>
 <h1 id="lecture-3-4-peak-finding-searching">Lecture 3 &amp; 4 : Peak
 Finding &amp; Searching</h1>
 <ol type="1">
-<li>[U] 2D Peak Finding: How to PROVE that it works?</li>
+<li><p>[U] 2D Peak Finding: How to PROVE that it works?</p></li>
+<li><p>Applications of binary search: Think of binary search
+whenever:</p>
+<ul>
+<li>There is a sequence of "monotonic function" in blackbox. That is ,
+for each v[i], for i &lt;= k, it returns false, for i &gt;= k, it
+returns true.</li>
+<li>We try to find the k which is the seperating point of a "valid"
+value. (e.g. the "finding the pieces of homework-per-hour" problem <a
+href="#fn1" class="footnote-ref" id="fnref1"
+role="doc-noteref"><sup>1</sup></a> )</li>
+</ul></li>
 </ol>
 <h1 id="lecture-5-6-sorting">Lecture 5 &amp; 6 : Sorting</h1>
 <h2 id="bogosort">BogoSort</h2>
@@ -367,9 +432,11 @@ time of MaybeBogoSort?</p>
 <p>[U]Additionally, what is the difference between n! and <span
 class="math inline">\(n^{n}\)</span>? What is the difference between n *
 n! and (n+1)! ?</p>
-<pre><code>Stirling Apporximation:</code></pre>
+<p>Stirling Apporximation:<a href="#fn2" class="footnote-ref"
+id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
 <p><img src="Stirling%20Approximation" /></p>
-<pre><code>by this approximation, we can say that `O(log(n!)) == O(nlog(n))`</code></pre>
+<p>by this approximation, we can say that
+<code>O(log(n!)) == O(nlog(n))</code></p>
 <ul>
 <li>[U]</li>
 </ul>
@@ -395,7 +462,10 @@ array</em></p>
 expectation).(WHY?)</p>
 </blockquote>
 <h3 id="mergesort">MergeSort</h3>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">MergeSort(A, n)</span><br><span class="line"><span class="keyword">if</span> (n=<span class="number">1</span>) then <span class="keyword">return</span>;</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">X ¬MergeSort(A[<span class="number">1.</span>.n/<span class="number">2</span>], n/<span class="number">2</span>);</span><br><span class="line">Y ¬MergeSort(A[n/<span class="number">2</span>+<span class="number">1</span>, n], n/<span class="number">2</span>);</span><br><span class="line"><span class="keyword">return</span> Merge (X,Y, n/<span class="number">2</span>);</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">MergeSort(A, n)</span><br><span class="line"><span class="keyword">if</span> (n=<span class="number">1</span>) then <span class="keyword">return</span>;</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    X ¬MergeSort(A[<span class="number">1.</span>.n/<span class="number">2</span>], n/<span class="number">2</span>);</span><br><span class="line">    Y ¬MergeSort(A[n/<span class="number">2</span>+<span class="number">1</span>, n], n/<span class="number">2</span>);</span><br><span class="line">    <span class="keyword">return</span> Merge (X,Y, n/<span class="number">2</span>);</span><br></pre></td></tr></table></figure>
+<p>For the iterative MergeSort, we will sort the array in groups of
+power of 2. In other words, we will first sort the arrays in pairs, then
+merge into 4’s, 8’s and so on, until we have merged the entire array</p>
 <p>[U] Master Theorem? Akra–Bazzi Method ? ##
 <strong>Summary</strong></p>
 <table>
@@ -476,6 +546,9 @@ to partition rather than do swapping?</p>
 </ol>
 <h3 id="time-complexity-for-random-chosen-pivot.">Time complexity for
 random chosen pivot.</h3>
+<p><em>For an array of length n with k distinct arrays, given a good
+pivot choosing algorithm, the time complexity would be O(n log
+k)</em></p>
 <h4 id="analysis-on-a-good-pivot">Analysis on a good pivot</h4>
 <p>T(n) = T(n-k) + T(k) + n</p>
 <p>Suppose <span class="math display">\[\frac{1}{10} n  &lt; k &lt;
@@ -498,14 +571,27 @@ choosing?</p>
 on choosing a good pivot</h4>
 <p>We only execute the repeat loop <span
 class="math inline">\(\frac{n}{k}\)</span> times (in expectation) <a
-href="#fn1" class="footnote-ref" id="fnref1"
-role="doc-noteref"><sup>1</sup></a></p>
+href="#fn3" class="footnote-ref" id="fnref3"
+role="doc-noteref"><sup>3</sup></a></p>
 <h3 id="quicksort-optimization">Quicksort Optimization</h3>
 <ol type="1">
 <li><p>Switch to InsertionSort for small arrays.</p></li>
 <li><p>Halt recursion early, leaving small arrays unsorted. Then perform
 InsertionSort on entire array. (InsertionSort is fast on almost sorted
 arrays, about O(n))</p></li>
+<li><p><a
+target="_blank" rel="noopener" href="https://github.com/openjdk/jdk/blob/15196325977254ee73d96bf99be62c520de59af9/src/java.base/share/classes/java/util/DualPivotQuicksort.java#L2186">Java
+QuickSort Implementation</a> uses a two pivot quicksort.</p>
+<ul>
+<li>Sort the k pivots in the pivot array K</li>
+<li>Do QuickSelect(e, K) on every element e in the original array
+(partitioning)</li>
+<li>Recurse.</li>
+</ul>
+<p>The time complexity is T(n) = O(nlogk) + k * T(n / k) which is O(n
+log n). The performance of 2 and 3 pivot QuickSort are actually better
+than regular QuickSort because <em>2-pivot quicksort takes benefits of
+modern computer architecture</em>.</p></li>
 </ol>
 <h2 id="order-statistics">Order Statistics</h2>
 <p>Find <span class="math inline">\(k^{th}\)</span> smallest element in
@@ -517,11 +603,474 @@ an unsorted array:</p>
 <p><em>You can even do paranoid sorting</em></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Select(A[<span class="number">1.</span>.n], n, k)</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">1</span>) then <span class="keyword">return</span> A[<span class="number">1</span>];</span><br><span class="line">    <span class="keyword">else</span> Choose random pivot index pIndex.</span><br><span class="line">        p = partition(A[<span class="number">1.</span>.n], n, pIndex)</span><br><span class="line">        <span class="keyword">if</span> (k == p) then </span><br><span class="line">            <span class="keyword">return</span> A[p];</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (k &lt; p) then</span><br><span class="line">            <span class="keyword">return</span> Select(A[<span class="number">1.</span>.p–<span class="number">1</span>], k)</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (k &gt; p) then</span><br><span class="line">            <span class="keyword">return</span> Select(A[p+<span class="number">1</span>], k – p)</span><br></pre></td></tr></table></figure>
 <p><strong>Time Complexity: O(n)</strong></p>
-<h1 id="others">Others</h1>
+<h2 id="other-sorting-algorithms">Other Sorting Algorithms</h2>
+<h3 id="counting-sort">Counting Sort</h3>
+<p><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/counting-sort/">Counting
+Sort</a> is useful for sorting arrays that contains integers from 0 - M,
+where M is relatively small.</p>
+<ul>
+<li>Time complexity: O(n + M)</li>
+</ul>
+<p>[U] Check the website!</p>
+<h3 id="bitsort">BitSort(?)</h3>
+<ol type="1">
+<li>Regular version</li>
+</ol>
+<ul>
+<li>In-place-sorting agorithm for arrays of 0s and 1s: Do Quiksort
+Partition on the array, with two pointers, one at each side:The
+0-pointer will advance to the right up until it finds the first 1; vice
+versa.</li>
+<li>For an integer of k bits, do k times the In-place-sorting, starting
+from the highest bit.</li>
+<li>time complexity is O(kn). However! since integers are stored in 64
+bits, only when n &gt; <span class="math inline">\(2^{64}\)</span>, this
+would beat Quicksort!</li>
+</ul>
+<ol start="2" type="1">
+<li>Optimization:</li>
+</ol>
+<ul>
+<li><p>Don't represent integers in binary, rather, in M - base numbering
+systems, where M is realtively small. Now, do Counting Sort <span
+class="math inline">\(log_M\)</span> n times. the time complexity would
+be O(n * logM n). However, it still requires n to be relatively
+large.</p></li>
+<li><p>TradeOff: Space! Lets say we use 8-base algorithm. It will take
+256 Integers worth of space to do Counting Sort! <em>Also the fact that
+the sorting is not in-place might take longer than you think</em> ([U]
+Test it out!)</p></li>
+</ul>
+<h1 id="lecture-08-trees">Lecture 08 Trees</h1>
+<h2 id="dynamic-data-structures">Dynamic Data Structures</h2>
+<p>Operations that create a data structure - build (preprocess)</p>
+<p>Operations that modify the structure - insert - delete</p>
+<p>Query operations - search, select, etc.</p>
+<h2 id="tree-basic-concepts">Tree Basic Concepts</h2>
+<ol type="1">
+<li><p>[U] What determines shape? • Order of insertion • Does each order
+yield a unique shape? NO – # ways to order insertions: n! – # shapes of
+a binary tree? ~4n (Catalan numbers: Catalan Numbers Cn = # of trees
+with (n+1) nodes Cn = # expressions with n pairs of matched
+parentheses)</p></li>
+<li><p>Successor:</p>
+<figure>
+<img src="Tree_Successor.png"
+alt="If you search for a key not in a tree, you would either find its successor or its predecessor" />
+<figcaption aria-hidden="true">If you search for a key not in a tree,
+you would either find its successor or its predecessor</figcaption>
+</figure>
+<p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Successor(<span class="type">int</span> key) &#123; <span class="comment">// successor function for key (in / not in tree)</span></span><br><span class="line">    <span class="type">int</span> <span class="variable">result</span> <span class="operator">=</span> search(key); <span class="comment">//either return successor or predecessor</span></span><br><span class="line">    <span class="keyword">if</span>(result &gt; key) <span class="keyword">return</span> result;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> SuccessorKeyInTree(result);</span><br><span class="line">&#125;</span><br><span class="line">SuccessorKeyInTree(<span class="type">int</span> key) &#123;<span class="comment">// search for successor when key is in tree</span></span><br><span class="line">    <span class="keyword">if</span> (key has right child ) &#123;</span><br><span class="line">        <span class="keyword">return</span> rightChild;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> ((parent != <span class="literal">null</span>) &amp;&amp; (child == parent.rightTree)) &#123;</span><br><span class="line">        child = parent;</span><br><span class="line">        parent = child.parentTree; <span class="comment">// note that here child has become parent</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> parent;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p></li>
+<li><p>Deleting <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (key.childNumber == <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="comment">//simply delete.</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span> (key.childNumber == <span class="number">1</span>) &#123;</span><br><span class="line">    <span class="comment">//make the child of key substitude child</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">//key has two child -&gt; key has right child -&gt; the successor is the min in the right child -&gt; sucessor has no left child.</span></span><br><span class="line">    substitude successor with its child and substitude key with successor.</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p></li>
+</ol>
+<h2 id="keeping-trees-balanced">Keeping Trees Balanced</h2>
+<h3 id="concept">Concept</h3>
+<p>Key definition: A tree is <strong>balanced</strong> if h = O(logN)
+(By default: log(n) –1 ≤ h ≤ n)</p>
+<ol type="1">
+<li>Augment</li>
+<li>Define Balance Condition</li>
+<li>Maintain Balance</li>
+</ol>
+<h3 id="avl-trees">AVL Trees</h3>
+<h4 id="proof-of-balance">Proof of Balance</h4>
+<ol type="1">
+<li><p>node v is height-balanced if |v.left.height – v.right.height|
+&lt;= 1</p></li>
+<li><p>A height-balanced tree with n nodes has at most height h &lt;
+2log(n)</p>
+<p>Proof: = proof that every height-balanced tree with height h has at
+least n nodes <em>(Since every height-balanced tree with height h has at
+least n &gt; 2h/2 nodes, every height-balanced tree with n nodes has
+height h &lt; 2log(n).)</em></p>
+<pre><code> $$n_h &gt;= 1 + n_&#123;h-1&#125; + n_&#123;h-2&#125; &gt;= 2 * n_&#123;h-2&#125; &gt;= 2^&#123;n/2&#125; * n_&#123;n-n&#125; = 2^&#123;n/2&#125;$$</code></pre></li>
+</ol>
+<p><em>Interesting Property: a maximal imbalanced AVL tree(AVL treewith
+the minimum possible number of nodes given its height h.)has all its
+subtrees to be maximally imbalanced.</em></p>
+<p>What else can we store instead of height: height difference between
+the left and right subtrees! [U] How do we implement that? how do we
+find out whether the tree is not balanced?</p>
+<p><em>Proof: if S(h) = the minimum possible number of nodes: S(h) = S(h
+− 1) + S(h − 2) + 1.</em></p>
+<h4 id="maintaining-height-balance">Maintaining Height-Balance</h4>
+<figure>
+<img src="RightRotation.png" alt="RightRotation" />
+<figcaption aria-hidden="true">RightRotation</figcaption>
+</figure>
+<p>After insertion, start at bottom, work your way up.</p>
+<p>Assume A is the lowest node violating valance property. Assuming that
+A is <strong>left heavy</strong>:</p>
+<ol type="1">
+<li>B is balanced</li>
+</ol>
+<figure>
+<img src="TreeRotationCase1.png"
+alt="B is balanced: do righ rotation on A" />
+<figcaption aria-hidden="true">B is balanced: do righ rotation on
+A</figcaption>
+</figure>
+<ol start="2" type="1">
+<li>B is left-heavy</li>
+</ol>
+<figure>
+<img src="TreeRotationCase2.png" alt="B is left-heavy" />
+<figcaption aria-hidden="true">B is left-heavy</figcaption>
+</figure>
+<ol start="3" type="1">
+<li>B is right heavy</li>
+</ol>
+<figure>
+<img src="TreeRotationCase3_1.png"
+alt="Left Rotate B - A and C are still out of balance" />
+<figcaption aria-hidden="true">Left Rotate B - A and C are still out of
+balance</figcaption>
+</figure>
+<figure>
+<img src="TreeRotationCase3_2.png" alt="Right Rotate A - Solved!" />
+<figcaption aria-hidden="true">Right Rotate A - Solved!</figcaption>
+</figure>
+<p>[S] what about nodes higher than that?</p>
+<pre><code>- In Case 2 &amp; 3, we reduce the height by 1, thus the upper must be balanced. ([U] Why doesn&#39;t that unbalance the balanced node?)
+
+- In Case 1, Case 1 would never appear when doing an insertion.</code></pre>
+<p>[S] What about deletion!</p>
+<p>For deletion, we walk up tree, check for balance and rotate every
+node if needed. It is NOT sufficient to only fix lowest out-of-balance
+node. [U] Why?</p>
+<figure>
+<img src="BalanceButNotHeightBalance.png" alt="[U] Why?" />
+<figcaption aria-hidden="true">[U] Why?</figcaption>
+</figure>
+<p>[U] Using rotations you can create every possible tree shape?</p>
+<p>[U] What if for deletion, we don't rotate immediately but leave it in
+the tree and do rotations afterwards? (Amortized performance)</p>
+<p>[U] Instead of storing height from every node, only store difference
+in height from parent - What's the use?</p>
+<h2 id="augmenting-trees">Augmenting Trees</h2>
+<p>Properties: properties that contains information about the subtrees
+(or information that can be updated by walking up/down the tree) tends
+to be easy to maintain; properties that contain the full information
+about the tree tend to be hard to maintain overall(e.g. if I want to do
+selection, what properties do I need: weight of subtree - information
+that can be uploaded VS index - full information about the tree) (L10
+1h10min)</p>
+<h3 id="dynamic-order-statistics">Dynamic Order Statistics</h3>
+<p>[U] Compare the time complexity of using sorted array and a tree?
+Additionally, compare the behavior of storing index and storing weight
+in a tree?</p>
+<ol type="1">
+<li><p>Find the rank of a node <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">rank(node)</span><br><span class="line">    rank = node.left.weight + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (node != <span class="literal">null</span>) <span class="keyword">do</span></span><br><span class="line">        <span class="keyword">if</span> node is left child then</span><br><span class="line">            <span class="keyword">do</span> nothing</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> node is right child then</span><br><span class="line">            rank += node.parent.left.weight + <span class="number">1</span>;</span><br><span class="line">        node = node.parent;</span><br><span class="line">    <span class="keyword">return</span> rank;</span><br></pre></td></tr></table></figure></p></li>
+<li><p>Maintaining weight during insertion and rotation.</p></li>
+</ol>
+<figure>
+<img src="MaintainingWeight.png"
+alt="Maintaining weight during rotations" />
+<figcaption aria-hidden="true">Maintaining weight during
+rotations</figcaption>
+</figure>
+<h2 id="tree-traversal">Tree Traversal</h2>
+<h3 id="dfs-and-bfs">DFS and BFS</h3>
+<h3 id="introduction-1">Introduction</h3>
+<p>[U] Wait, where did this come from?</p>
+<h3 id="non-recursive-bfs-and-dfs">Non-recursive BFS and DFS</h3>
+<h4 id="stack---dfs">Stack - DFS</h4>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">push(root);</span><br><span class="line"><span class="keyword">while</span> (!stack.empty()) &#123;</span><br><span class="line">    <span class="type">node</span> <span class="variable">curr</span> <span class="operator">=</span> stack.pop();</span><br><span class="line">    push(curr.children);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="tree-operation-conclusion">Tree Operation conclusion</h2>
+<ol type="1">
+<li>modifying:
+<ul>
+<li>insert: O(h)</li>
+<li>delete: O(h)</li>
+</ul></li>
+<li>Query Operations:
+<ul>
+<li>search: O(h)</li>
+<li>predecessor / successor: O(h)</li>
+<li>findMax / findMin: O(h)</li>
+<li>Traversal: O(n)</li>
+</ul></li>
+</ol>
+<h3 id="trie">Trie</h3>
+<ol type="1">
+<li>Costs(h for the height of trie, L for the length of word)
+<ul>
+<li>search: time - O(L)</li>
+<li>store: space - O(L) <em>What does prof mean by tries take up more
+space because it involves more overhead here?(L10, p90)</em></li>
+</ul></li>
+<li>String dictionaries
+<ul>
+<li>Searching</li>
+<li>Sorting / enumerating strings</li>
+</ul>
+<em>Partial string operations:</em>
+<ul>
+<li>Prefix queries: find all the strings that start with pi.</li>
+<li>Long prefix: what is the longest prefix of “pickling” in the
+trie?</li>
+<li>Wildcards: find a string of the form “pi??le” in the trie.</li>
+</ul></li>
+</ol>
+<h3 id="interval-queries">Interval Queries</h3>
+<h4 id="goal">Goal:</h4>
+<ul>
+<li>Solutions where space is linear (or near linear) in the number of
+things stored (i.e., intervals).</li>
+<li>Operations are logarithmic in # of things stored.</li>
+</ul>
+<h4 id="augment">Augment</h4>
+<p>store the maximum of right end point!</p>
+<h4 id="implement">Implement</h4>
+<h5 id="search">search:</h5>
+<figure>
+<img src="SearchIntervalTree.png" alt="sample interval tree" />
+<figcaption aria-hidden="true">sample interval tree</figcaption>
+</figure>
+<p>when we walk down the nodes to(17,19), the information that we need
+are: 17(left interval), 25(max = left subtree)</p>
+<ul>
+<li><p>Case 1: x &gt; 25 (max of left subtree):</p>
+<p>Go right. (the node is either in right tree or not in tree!)</p></li>
+<li><p>Case2: 17 &lt; x &lt;= 25</p>
+<p>Go left. (there must be atleast one node that contains x!)</p></li>
+<li><p>Case3: x &lt; 17</p>
+<p>Go left. (there is 0 possibility that the right subtree contains
+x!)</p></li>
+</ul>
+<p>In three cases we are safe to go (the direction we go contains the
+key / the direction we don't go does not contain key)</p>
+<h5 id="insertion-rotation">insertion &amp; rotation</h5>
+<p>easy to maintain</p>
+<h5 id="others">Others</h5>
+<p>[U] Extension: List all intervals that overlap with point?</p>
+<h3 id="orthogonal-range-searching">Orthogonal Range Searching</h3>
+<h4 id="introduction-2">Introduction</h4>
+<p>Are there any good restaurants within one block of me - search for
+the points in a given box</p>
+<h4 id="sample-one-dimension">Sample: One-Dimension</h4>
+<h5 id="strategy">Strategy</h5>
+<ol type="1">
+<li>Use a binary search tree and store all the points in the leaves of a
+tree. Each internal node stores the MAX of any leaf in the left
+sub-tree.</li>
+</ol>
+<figure>
+<img src="OneDimensionORS.png" style="width:60.0%" alt="Sample Tree" />
+<figcaption aria-hidden="true">Sample Tree</figcaption>
+</figure>
+<ol start="2" type="1">
+<li><p>Do Search(10, 50): (Time complexity: <strong>O(log(n) +
+k)</strong>, where k is the number of items)</p>
+<ul>
+<li>Find Split Node: the highest node that search includes both left and
+right subtrees(in this case, 25) <strong>O(logn)</strong></li>
+<li>Do left and right traversal on the left and right tree.
+<strong>O(k)</strong></li>
+<li>Left Traversal: The search interval for a left-traversal at node v
+includes the maximum item in the left subtree of v. <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">LeftTraversal(v, low, high) &#123;</span><br><span class="line">    <span class="keyword">if</span> (low &lt;= v.key) &#123;</span><br><span class="line">        all-leaf-traversal(v.right); </span><br><span class="line">        <span class="comment">//change all-tree-traversals to total += v.right.ount</span></span><br><span class="line">        <span class="comment">//if just need to know how many nodes are with the range</span></span><br><span class="line">        LeftTraversal(v.left, low, high);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123; <span class="comment">// left traversal on the right subtree</span></span><br><span class="line">        LeftTraversal(v.right, low, high);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">RightTraversal(v, low, high) &#123;</span><br><span class="line">    <span class="keyword">if</span> (v.key &lt;= high) &#123;</span><br><span class="line">        all-leaf-traverasal(v.left);</span><br><span class="line">        RightTraversal(v.right, low, high);</span><br><span class="line">    &#125;  <span class="keyword">else</span> &#123;</span><br><span class="line">        RightTraversal(v.left, low, high);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul></li>
+<li><p>BuildTree time complexity : O(n log n) ([U] why?)</p></li>
+<li><p>Dynamic updates: Rotation ([U] how?)</p></li>
+</ol>
+<h4 id="two-dimension">Two-Dimension</h4>
+<ol type="1">
+<li>Idea:</li>
+</ol>
+<ul>
+<li>1: Create a 1d-range-tree on the x-coords.</li>
+<li>2: Store a y-tree at each x-node containing all the points in the
+sub-tree.</li>
+</ul>
+<figure>
+<img src="TwoDimensionRangeSearching.png"
+alt="Too much space for all the nodes! - use two-dimensional Trees!" />
+<figcaption aria-hidden="true">Too much space for all the nodes! - use
+two-dimensional Trees!</figcaption>
+</figure>
+<p>[U] don't quite understand.</p>
+<h1 id="others-1">Others</h1>
 <ol type="1">
 <li>log2n = O( log10n ) Correct! We can easily switch between bases by
 multiplying by a constant.</li>
 </ol>
+<h1 id="problems-in-tutorials">Problems (in tutorials)</h1>
+<h2 id="mountain-stack">Mountain stack</h2>
+<p>A mountains consists of <strong>n</strong> hills, aligned linearly.
+Each hill <strong>i</strong>, stands at a height of a[i]. Standing at
+hill i, you’ll see a point j kilometers away if and only if all hills
+from i−j to i are no taller than a[i] meters. For each hill i, determine
+the maximum distance you can see from it(distance is "-1" if no hill
+blocks your sight). <em>(Hint: try using a stack to achieve O(n) time
+complexity)</em></p>
+<p><strong>Answer</strong>: Use a monotonic decreasing stack: - For
+every element at index i in the array: <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">boolean</span> <span class="variable">isInfinity</span> <span class="operator">=</span> <span class="literal">true</span>;</span><br><span class="line">While(!stack.empty) &#123;</span><br><span class="line">    curr = stack.peek(); <span class="comment">//get the top object without popping it</span></span><br><span class="line">    <span class="keyword">if</span>(curr.height &gt;= h[i])&#123;</span><br><span class="line">        isInfinity = <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        d[i]++;</span><br><span class="line">        stack.pop();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span>(isInfinity) d[i] = -<span class="number">1</span>;</span><br></pre></td></tr></table></figure> <em>[U] This is
+somehow incorrect. But the idea is similar. pls correct this.</em></p>
+<p>How to come up with this: <strong>Gather only the information you
+need</strong>! Information for any hill i that is lower than another
+hill j where j &gt; i can be eliminated!</p>
+<h2 id="chicken-rice-competetion">Chicken Rice Competetion :</h2>
+<ul>
+<li>You have in front of you n plates of chicken rice, each plate
+contains n bites of chicken rice. Supppose you want to find the median
+chicken rice. Design an algorithm to maximize the amount of remaining
+chicken rice on the median plate.</li>
+<li>Solution 1: Run QuickSelect: on one level of QuickSelect, the
+expectation of time of bitten on any plate is (1 / n) * (n - 1) + (1 - 1
+/ n) * 1 &lt;= 2. Thus the expected consumption of chicken rice is O(2
+log n) bites.</li>
+<li>Solution 2: Inserting each plate into an AVL tree takes O(log n)
+comparisons. (However, if median is the root of AVL tree, there would be
+O(n) moves!)</li>
+<li><em>In fact, using a randomized algorithm, this can be solved with
+only O(log log(n)) bites to the median plate, but that is much, much
+more complicated</em> [U]</li>
+</ul>
+<h2 id="weight-selectioneonomic-research">Weight Selection(Eonomic
+Research):</h2>
+<ul>
+<li>You are an economist doing a research on the wealth of different
+generations. Each row of data you've gained consists of a unique
+identifier, an age, and a number that represents their amount of wealth.
+Your goal is to divide the dataset into “equi-wealth” age ranges. That
+is, given a parameter k, you should produce k different age ranges A1,
+A2, ..., Ak with the following properties:
+<ol type="1">
+<li>All the ages of people in set <span
+class="math inline">\(A_j\)</span> should be &lt;= the ages of people in
+<span class="math inline">\(A_{j+1}\)</span>.</li>
+<li>The sum of wealth in each set should be (roughly) the same
+(tolerating rounding errors if k does not divide the total wealth, or
+exact equality is not attainable).</li>
+</ol></li>
+</ul>
+<p>You should assume that the given k is relatively small while the
+dataset is very large . (i.e. O(nk) &lt; O(n log n))</p>
+<p>Design the most efficient algorithm you can to solve this problem.
+Optionally, consider the case where rows can consist of the same ages,
+versus the case where rows have unique ages. - Solution: a weight
+selection problem. We are asking to find the 1/k,2/k,...,k−1/k order
+statistics of the weighted sum 1. Finding a single Weight Order
+Statistic. - First, use QuickSelect to find the median aged dataset, and
+then partition around the median - sum the totals on the left and right
+halves. (DO the sum while partitioning to save time!) If target weight
+&gt; left sum, subtract left sum weight from your target weight and
+search on right half...etc. This is O(n) time. 2. repeat for the k - 1
+targets and <em>Do one final partitioning to build your output lists([U]
+why is this nessary)</em> This is O(nk) time.</p>
+<ul>
+<li><p>Solution 2: Instead of finding the median, we use a random pivot.
+Each time we partition, we keep track of the sum of the wealth to the
+left of the selected pivots! We do Quickselect O(k) times and each
+selection takes O(n) times. ([U] Needs further explanation, see tutorial
+slides w6 "better solution") [U] Why is this better than Solution
+1?</p></li>
+<li><p>Solution 3: Find k order statistics all at once! When random
+pivot was selected, say its 2 * <span
+class="math inline">\(\bar{w}\)</span>, then we recurse on the left to
+find the 1st order-statistics and recurse on the right to find the 3rd
+order-statistics! In this case, we get a rough overall runtime of O(n
+log k) ([U] Needs further explanation, see tutorial slides w6 "better
+solution")</p></li>
+<li><p>[U] How about naiive solution?</p></li>
+</ul>
+<h2 id="height-of-binary-tree-after-subtree-removal">Height of Binary
+Tree After Subtree Removal</h2>
+<ul>
+<li><p>Description: You are given a <strong>binary tree</strong> with n
+nodes. You are given m queries, where queries[i] asks the height of the
+tree after deletion of the subtree containing the ith node. What is the
+optimized solution?</p></li>
+<li><p>Solution 1 : Build a tree. for each query, walk up the tree and
+try to update the node's height. O(log n * m) ([U] Why does the slides
+say its O(n * m)?)</p></li>
+<li><p>Solution 2: <em>Depth of a node refers to the number of edges in
+the simple path from root to the node</em></p>
+<ol type="1">
+<li>preprocess the tree to get its depth using DFS and height using
+in-order-traversal.</li>
+<li>For ith query, we look at all the nodes with the same depth of ith
+node and find the maximum height among them. The answer to the query
+would be <code>node[i].depth + max_height</code>.</li>
+<li>SO how do we group the nodes of the same depth? We do this by
+iterating the nodes in in-order-traversal([U] wut?). For each group of
+nodes in the same depth, we only require the maximum height and second
+maximum height. To do this we need O(n) time([U] wut?).</li>
+<li>In this algorithm, we only need O(1) for each query. The overal time
+complexity would be O(n + m)</li>
+</ol></li>
+</ul>
+<p>[U] <em>There is another method based on Euler Tour Tree (which is
+out of syllabus of CS2040S). You may find more details about the data
+structure on</em></p>
+<p>https://courses.csail.mit.edu/6.851/spring07/scribe/lec05.pdf and
+http://web.stanford.edu/class/archive/cs/cs166/cs166.1166/lectures/17/Small17.pdf.</p>
+<p><em>The data structure provide a neat alternative solution and
+support for deleting multiple subtrees.</em></p>
+<h2 id="safely-evaluating-average-pay">Safely Evaluating average
+pay!</h2>
+<ol type="1">
+<li>Question 1</li>
+</ol>
+<ul>
+<li>Come up with an algorithm that will allow the students to determine
+the average pay of the group without revealing their own salaries to any
+of the other members in the group</li>
+<li>Solution 1: Everyone pick a random number and add it to there
+salery. 1st person passes the sum to the 2nd person, the 2nd person add
+their sum to the number the 1st one passed ... Until everyone's sum adds
+up. Then they deduct the number one by one.</li>
+</ul>
+<ol start="2" type="1">
+<li>Extention:</li>
+</ol>
+<ul>
+<li>what happens if k members of the group decide to collude and share
+information. Is your algorithm still able to preserve the privacy of all
+the members, or could the salary for some of the members be leaked</li>
+<li>Solution 1 will not work! the (i-1)th and (i+1)th person can easily
+calculate the ith people's salery! ([U] is there a way to manipulate the
+order of adding and subtracting such that there is no way they can do
+that?)</li>
+<li>Solution 2: Divide the salery into n pieces and each person give the
+ith piece of their salery to the ith people! Even if everyone in the
+house except for the kth person cheat and try to calculate kth person's
+salery, they cannot do so! ([U] How did you come up with that!)</li>
+<li>Way to come up with a good algorithm: [U] ?
+<ol type="1">
+<li>How you (re)define the problem</li>
+<li>Determines what are the metrics of success</li>
+<li>How to iterate a solution?</li>
+</ol></li>
+</ul>
+<h2 id="pancake-flipping">Pancake flipping!</h2>
+<ol type="1">
+<li><p>Description: Try to serve pancakes a stack sorted by size. You
+can only flip the pancakes at the top of the pancake stack. <img
+src="PancakeFlipping.png" alt="Flipping top 3 pancakes" /></p></li>
+<li><p>Show that any pancake flipping algorithm requires at least n
+flips. What do we call such properties of the problem? [U] Check out
+recitation 2</p></li>
+</ol>
+<ul>
+<li>A lower bound of the algorithm!</li>
+<li>Consider a possible worst case! <img src="PancakeWorstCase.png" />
+Why is this the worst case? [U] Worst case should differ for different
+algorithms?
+<ul>
+<li>Feature 1: if two consecutive pancakes in the sorted pancake stack
+are together in the unsorted stack then we can treat those pancakes as
+one pancake either with burnt side up or down based on their order. This
+means that if 2 4 are adjacent in the original pancake, we must use at
+least one flip between 2 and 4 to seperate them!</li>
+<li>Feature 2: If the largest pancake is at the bottom we can simply
+ignore it.</li>
+<li>By Feature 1, we need at least n - 1 flips. By feature 2, we need at
+least 1 additional flip to seperate the bottom one and the table! Thus
+the lower bound is at least n flip.</li>
+</ul></li>
+</ul>
+<p>[U] Check out recitation 2 on more about pancake flipping.</p>
 <h1 id="puzzles">Puzzles:</h1>
 <ol type="1">
 <li><p>[U]Sicherman Dice</p></li>
@@ -530,22 +1079,50 @@ multiplying by a constant.</li>
 <li><p>[U]Treasure Island:</p></li>
 </ol>
 <p>You choose a set of keys.</p>
-<p>You can test whether all the good keys are in the set (and possibly
-some extra keys). If even one bad key is in the set, then it fails.</p>
+<p>You can test whether all the good keys are in the set (and
+possibly</p>
+<p>some extra keys). If even one bad key is in the set, then it
+fails.</p>
 <p>Goal: identify exactly the good keys.</p>
 <ol start="4" type="1">
-<li>PotW: Gambling for Profit? (Lecture 07 p121)</li>
+<li><p>PotW: Gambling for Profit? (Lecture 07 p121)</p></li>
+<li><p>Prisoners! (L10)</p></li>
 </ol>
-<p>** Updated: Lecture 08 p23</p>
+<hr />
+<p>** Updated: Lecture 11 p135</p>
+<p>tut 2</p>
+<p>[U] optional questions in tutorials.</p>
+<p>[U] Check the open <a
+target="_blank" rel="noopener" href="https://github.com/4ndrelim/data-structures-and-algorithms">resourse</a></p>
+<p>[U] Check this out: <a
+target="_blank" rel="noopener" href="https://visualgo.net/training">visualAlgo</a></p>
+<p>[U] HashTable - Tutorial Slides W6 - problem 2 -credit CS2109S</p>
+<p>[U] Optional problems in tuts and recs</p>
+<p>There are some useful advice on midterms in Week 6 tut materal</p>
 <section id="footnotes" class="footnotes footnotes-end-of-document"
 role="doc-endnotes">
 <hr />
 <ol>
-<li id="fn1"><p><span class="math inline">\(\color{green}{SOMETHING
+<li id="fn1"><p>You have n piles of homework and the ith pile has
+<strong>piles[i]</strong> pieces of homework. You have
+<strong>h</strong> hours left before all your homework is due. Try to
+find out the minimal <strong>k = “pieces of homework”-per-hour</strong>
+while finishing everything on time that follows the below constraints:
+At every hour, choose a pile of homework, If the pile has less than k
+pieces of homework remaining, you do not start on the next pile during
+the same hour. how you can find the minimum integer k such that you can
+finish all your homework withinh hours? <em>(Hint: v[i] is the function
+of whether you can finish on time, and k is the seperating point.
+)</em><a href="#fnref1" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Another way to prove this is : <img
+src="nlognisn.png" /><a href="#fnref2" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p><span class="math inline">\(\color{green}{SOMETHING
 RELATED}\)</span>: How many flips to get at least one head? : <span
 class="math display">\[E[X] = \frac{1}{2}(1) + \frac{1}{2} (1 + E[X])
 \tag{1}\]</span> (this is useful for infinity E[x] problems)<a
-href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
@@ -635,14 +1212,14 @@ href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
       <i class="fa fa-chart-line"></i>
     </span>
       <span>Word count total: </span>
-    <span title="Word count total">41k</span>
+    <span title="Word count total">66k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>Reading time total &asymp;</span>
-    <span title="Reading time total">37 mins.</span>
+    <span title="Reading time total">1:01</span>
   </span>
 </div>
 
