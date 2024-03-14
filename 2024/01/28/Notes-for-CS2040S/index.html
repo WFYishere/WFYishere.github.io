@@ -42,9 +42,16 @@
 <meta property="og:image" content="https://wfyishere.github.io/2024/01/28/Notes-for-CS2040S/SearchIntervalTree.png">
 <meta property="og:image" content="https://wfyishere.github.io/2024/01/28/Notes-for-CS2040S/OneDimensionORS.png">
 <meta property="og:image" content="https://wfyishere.github.io/2024/01/28/Notes-for-CS2040S/TwoDimensionRangeSearching.png">
+<meta property="og:image" content="https://wfyishere.github.io/2024/01/28/Notes-for-CS2040S/abtreeChildPolicy.png">
+<meta property="og:image" content="https://wfyishere.github.io/2024/01/28/Notes-for-CS2040S/abtreeBalance.png">
+<meta property="og:image" content="https://wfyishere.github.io/2024/01/28/Notes-for-CS2040S/abtreeOrphan.png">
+<meta property="og:image" content="https://wfyishere.github.io/2024/01/28/Notes-for-CS2040S/abtreeDownFlow.png">
+<meta property="og:image" content="https://wfyishere.github.io/2024/01/28/Notes-for-CS2040S/abtreeDownFlow2.png">
+<meta property="og:image" content="https://wfyishere.github.io/2024/01/28/Notes-for-CS2040S/abtreeDownFlow4.png">
+<meta property="og:image" content="https://wfyishere.github.io/2024/01/28/Notes-for-CS2040S/abtreeDownFlow6png">
 <meta property="og:image" content="https://wfyishere.github.io/2024/01/28/Notes-for-CS2040S/PancakeWorstCase.png">
 <meta property="article:published_time" content="2024-01-28T03:14:20.000Z">
-<meta property="article:modified_time" content="2024-03-10T02:58:58.890Z">
+<meta property="article:modified_time" content="2024-03-12T06:14:07.979Z">
 <meta property="article:author" content="Wen Fanyu">
 <meta property="article:tag" content="ComputerScience">
 <meta property="article:tag" content="Notes">
@@ -114,7 +121,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">13</span></a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">34</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">15</span></a></li><li class="menu-item menu-item-todo"><a href="/todo" rel="section"><i class="fa-solid fa-bars fa-fw"></i>Todo</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">13</span></a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">34</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">16</span></a></li><li class="menu-item menu-item-todo"><a href="/todo" rel="section"><i class="fa-solid fa-bars fa-fw"></i>Todo</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -170,10 +177,10 @@
 Finding &amp; Searching</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#lecture-5-6-sorting"><span class="nav-number">3.</span> <span class="nav-text">Lecture 5 &amp; 6 : Sorting</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#bogosort"><span class="nav-number">3.1.</span> <span class="nav-text">BogoSort</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#classic-sorting-algorithms"><span class="nav-number">3.2.</span> <span class="nav-text">Classic Sorting
 Algorithms</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#bogosort-1"><span class="nav-number">3.2.1.</span> <span class="nav-text">BogoSort</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#selection-sort"><span class="nav-number">3.2.2.</span> <span class="nav-text">Selection Sort</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#insertion-sort"><span class="nav-number">3.2.3.</span> <span class="nav-text">Insertion Sort</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mergesort"><span class="nav-number">3.2.4.</span> <span class="nav-text">MergeSort</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#quicksort"><span class="nav-number">3.3.</span> <span class="nav-text">Quicksort</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#introduction"><span class="nav-number">3.3.1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#time-complexity-for-random-chosen-pivot."><span class="nav-number">3.3.2.</span> <span class="nav-text">Time complexity for
 random chosen pivot.</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#analysis-on-a-good-pivot"><span class="nav-number">3.3.2.1.</span> <span class="nav-text">Analysis on a good pivot</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#probability-theory-on-choosing-a-good-pivot"><span class="nav-number">3.3.2.2.</span> <span class="nav-text">Probability Theory
-on choosing a good pivot</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#quicksort-optimization"><span class="nav-number">3.3.3.</span> <span class="nav-text">Quicksort Optimization</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#order-statistics"><span class="nav-number">3.4.</span> <span class="nav-text">Order Statistics</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#other-sorting-algorithms"><span class="nav-number">3.5.</span> <span class="nav-text">Other Sorting Algorithms</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#counting-sort"><span class="nav-number">3.5.1.</span> <span class="nav-text">Counting Sort</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#bitsort"><span class="nav-number">3.5.2.</span> <span class="nav-text">BitSort(?)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#lecture-08-trees"><span class="nav-number">4.</span> <span class="nav-text">Lecture 08 Trees</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#dynamic-data-structures"><span class="nav-number">4.1.</span> <span class="nav-text">Dynamic Data Structures</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tree-basic-concepts"><span class="nav-number">4.2.</span> <span class="nav-text">Tree Basic Concepts</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#keeping-trees-balanced"><span class="nav-number">4.3.</span> <span class="nav-text">Keeping Trees Balanced</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#concept"><span class="nav-number">4.3.1.</span> <span class="nav-text">Concept</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#avl-trees"><span class="nav-number">4.3.2.</span> <span class="nav-text">AVL Trees</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#proof-of-balance"><span class="nav-number">4.3.2.1.</span> <span class="nav-text">Proof of Balance</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#maintaining-height-balance"><span class="nav-number">4.3.2.2.</span> <span class="nav-text">Maintaining Height-Balance</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#augmenting-trees"><span class="nav-number">4.4.</span> <span class="nav-text">Augmenting Trees</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#dynamic-order-statistics"><span class="nav-number">4.4.1.</span> <span class="nav-text">Dynamic Order Statistics</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tree-traversal"><span class="nav-number">4.5.</span> <span class="nav-text">Tree Traversal</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#dfs-and-bfs"><span class="nav-number">4.5.1.</span> <span class="nav-text">DFS and BFS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#introduction-1"><span class="nav-number">4.5.2.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#non-recursive-bfs-and-dfs"><span class="nav-number">4.5.3.</span> <span class="nav-text">Non-recursive BFS and DFS</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#stack---dfs"><span class="nav-number">4.5.3.1.</span> <span class="nav-text">Stack - DFS</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tree-operation-conclusion"><span class="nav-number">4.6.</span> <span class="nav-text">Tree Operation conclusion</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#trie"><span class="nav-number">4.6.1.</span> <span class="nav-text">Trie</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#interval-queries"><span class="nav-number">4.6.2.</span> <span class="nav-text">Interval Queries</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#goal"><span class="nav-number">4.6.2.1.</span> <span class="nav-text">Goal:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#augment"><span class="nav-number">4.6.2.2.</span> <span class="nav-text">Augment</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#implement"><span class="nav-number">4.6.2.3.</span> <span class="nav-text">Implement</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#search"><span class="nav-number">4.6.2.3.1.</span> <span class="nav-text">search:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#insertion-rotation"><span class="nav-number">4.6.2.3.2.</span> <span class="nav-text">insertion &amp; rotation</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#others"><span class="nav-number">4.6.2.3.3.</span> <span class="nav-text">Others</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#orthogonal-range-searching"><span class="nav-number">4.6.3.</span> <span class="nav-text">Orthogonal Range Searching</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#introduction-2"><span class="nav-number">4.6.3.1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sample-one-dimension"><span class="nav-number">4.6.3.2.</span> <span class="nav-text">Sample: One-Dimension</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#strategy"><span class="nav-number">4.6.3.2.1.</span> <span class="nav-text">Strategy</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#two-dimension"><span class="nav-number">4.6.3.3.</span> <span class="nav-text">Two-Dimension</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#others-1"><span class="nav-number">5.</span> <span class="nav-text">Others</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#problems-in-tutorials"><span class="nav-number">6.</span> <span class="nav-text">Problems (in tutorials)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#mountain-stack"><span class="nav-number">6.1.</span> <span class="nav-text">Mountain stack</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#chicken-rice-competetion"><span class="nav-number">6.2.</span> <span class="nav-text">Chicken Rice Competetion :</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#weight-selectioneonomic-research"><span class="nav-number">6.3.</span> <span class="nav-text">Weight Selection(Eonomic
+on choosing a good pivot</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#quicksort-optimization"><span class="nav-number">3.3.3.</span> <span class="nav-text">Quicksort Optimization</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#order-statistics"><span class="nav-number">3.4.</span> <span class="nav-text">Order Statistics</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#other-sorting-algorithms"><span class="nav-number">3.5.</span> <span class="nav-text">Other Sorting Algorithms</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#counting-sort"><span class="nav-number">3.5.1.</span> <span class="nav-text">Counting Sort</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#bitsort"><span class="nav-number">3.5.2.</span> <span class="nav-text">BitSort(?)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#lecture-08-trees"><span class="nav-number">4.</span> <span class="nav-text">Lecture 08 Trees</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#dynamic-data-structures"><span class="nav-number">4.1.</span> <span class="nav-text">Dynamic Data Structures</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tree-basic-concepts"><span class="nav-number">4.2.</span> <span class="nav-text">Tree Basic Concepts</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#keeping-trees-balanced"><span class="nav-number">4.3.</span> <span class="nav-text">Keeping Trees Balanced</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#concept"><span class="nav-number">4.3.1.</span> <span class="nav-text">Concept</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#avl-trees"><span class="nav-number">4.3.2.</span> <span class="nav-text">AVL Trees</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#proof-of-balance"><span class="nav-number">4.3.2.1.</span> <span class="nav-text">Proof of Balance</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#maintaining-height-balance"><span class="nav-number">4.3.2.2.</span> <span class="nav-text">Maintaining Height-Balance</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#augmenting-trees"><span class="nav-number">4.4.</span> <span class="nav-text">Augmenting Trees</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#dynamic-order-statistics"><span class="nav-number">4.4.1.</span> <span class="nav-text">Dynamic Order Statistics</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tree-traversal"><span class="nav-number">4.5.</span> <span class="nav-text">Tree Traversal</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#dfs-and-bfs"><span class="nav-number">4.5.1.</span> <span class="nav-text">DFS and BFS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#introduction-1"><span class="nav-number">4.5.2.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#non-recursive-bfs-and-dfs"><span class="nav-number">4.5.3.</span> <span class="nav-text">Non-recursive BFS and DFS</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#stack---dfs"><span class="nav-number">4.5.3.1.</span> <span class="nav-text">Stack - DFS</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tree-operation-conclusion"><span class="nav-number">4.6.</span> <span class="nav-text">Tree Operation conclusion</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#trie"><span class="nav-number">4.6.1.</span> <span class="nav-text">Trie</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#interval-queries"><span class="nav-number">4.6.2.</span> <span class="nav-text">Interval Queries</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#goal"><span class="nav-number">4.6.2.1.</span> <span class="nav-text">Goal:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#augment"><span class="nav-number">4.6.2.2.</span> <span class="nav-text">Augment</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#implement"><span class="nav-number">4.6.2.3.</span> <span class="nav-text">Implement</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#search"><span class="nav-number">4.6.2.3.1.</span> <span class="nav-text">search:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#insertion-rotation"><span class="nav-number">4.6.2.3.2.</span> <span class="nav-text">insertion &amp; rotation</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#others"><span class="nav-number">4.6.2.3.3.</span> <span class="nav-text">Others</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#orthogonal-range-searching"><span class="nav-number">4.6.3.</span> <span class="nav-text">Orthogonal Range Searching</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#introduction-2"><span class="nav-number">4.6.3.1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sample-one-dimension"><span class="nav-number">4.6.3.2.</span> <span class="nav-text">Sample: One-Dimension</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#strategy"><span class="nav-number">4.6.3.2.1.</span> <span class="nav-text">Strategy</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#two-dimension"><span class="nav-number">4.6.3.3.</span> <span class="nav-text">Two-Dimension</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#k-d-tree"><span class="nav-number">4.6.4.</span> <span class="nav-text">k-d Tree</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#b-trees"><span class="nav-number">4.7.</span> <span class="nav-text">B-trees</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#a-b-trees"><span class="nav-number">4.7.1.</span> <span class="nav-text">(a, b) trees</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#rules"><span class="nav-number">4.7.1.1.</span> <span class="nav-text">Rules</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#manipulation"><span class="nav-number">4.7.1.2.</span> <span class="nav-text">Manipulation</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#b-trees-1"><span class="nav-number">4.7.2.</span> <span class="nav-text">B-trees</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#others-1"><span class="nav-number">5.</span> <span class="nav-text">Others</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#problems-in-tutorials"><span class="nav-number">6.</span> <span class="nav-text">Problems (in tutorials)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#mountain-stack"><span class="nav-number">6.1.</span> <span class="nav-text">Mountain stack</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#chicken-rice-competetion"><span class="nav-number">6.2.</span> <span class="nav-text">Chicken Rice Competetion :</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#weight-selectioneonomic-research"><span class="nav-number">6.3.</span> <span class="nav-text">Weight Selection(Eonomic
 Research):</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#height-of-binary-tree-after-subtree-removal"><span class="nav-number">6.4.</span> <span class="nav-text">Height of Binary
 Tree After Subtree Removal</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#safely-evaluating-average-pay"><span class="nav-number">6.5.</span> <span class="nav-text">Safely Evaluating average
-pay!</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pancake-flipping"><span class="nav-number">6.6.</span> <span class="nav-text">Pancake flipping!</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#puzzles"><span class="nav-number">7.</span> <span class="nav-text">Puzzles:</span></a></li></ol></div>
+pay!</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pancake-flipping"><span class="nav-number">6.6.</span> <span class="nav-text">Pancake flipping!</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dna-swapping"><span class="nav-number">6.7.</span> <span class="nav-text">DNA Swapping</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#random-permutation"><span class="nav-number">6.8.</span> <span class="nav-text">Random Permutation</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -186,7 +193,7 @@ pay!</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-count">16</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -269,7 +276,7 @@ pay!</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-03-10 10:58:58" itemprop="dateModified" datetime="2024-03-10T10:58:58+08:00">2024-03-10</time>
+      <time title="Modified: 2024-03-12 14:14:07" itemprop="dateModified" datetime="2024-03-12T14:14:07+08:00">2024-03-12</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -296,14 +303,14 @@ pay!</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Word count in article: </span>
-      <span>25k</span>
+      <span>27k</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>23 mins.</span>
+      <span>25 mins.</span>
     </span>
 </div>
 
@@ -889,6 +896,84 @@ alt="Too much space for all the nodes! - use two-dimensional Trees!" />
 two-dimensional Trees!</figcaption>
 </figure>
 <p>[U] don't quite understand.</p>
+<h3 id="k-d-tree">k-d Tree</h3>
+<p>space partitioning data structure for organising points into a
+𝑘-dimensional space</p>
+<h2 id="b-trees">B-trees</h2>
+<h3 id="a-b-trees">(a, b) trees</h3>
+<h4 id="rules">Rules</h4>
+<ul>
+<li>2 ≤ a ≤ (b + 1)/2, where a and b refers to the minimum and maximum
+number of <strong>children</strong> in a internal node(not root /
+leaf).</li>
+</ul>
+<figure>
+<img src="abtreeChildPolicy.png" alt="(a,b)tree child policy" />
+<figcaption aria-hidden="true">(a,b)tree child policy</figcaption>
+</figure>
+<ul>
+<li><p>every node should follow that: numberOfChild = numberOfKey + 1.
+For a node with k keys (v1,v2,...,vk), the subtrees(t1,t2,...,tk+1)
+should follow that ： First child t1 has key range ≤ v1； Final child
+tk+1 has key range &gt; vk； All other children ti where i ∈ [2, k] has
+key range (vi−1, vi)</p></li>
+<li><p>All leaves should have the same depth.</p></li>
+</ul>
+<h4 id="manipulation">Manipulation</h4>
+<ol type="1">
+<li><p>Is ab tree balanced? <img src="abtreeBalance.png"
+alt="Is ab tree balanced?" /></p></li>
+<li><p>Insertion:</p></li>
+</ol>
+<p>Solution 1: (1) At first put the element in its correct place in the
+node (which is in sorted order)</p>
+<ol start="2" type="1">
+<li><p>If the node overflows, then find the median ( = if is even and if
+is odd ) key in that node.</p></li>
+<li><p>Put the median key in the parent and split the current
+node</p></li>
+</ol>
+<p>Solution 2: Proactive Approach</p>
+<p>Preemptively split a node whe it is full so that it does not overflow
+in the future.</p>
+<ol start="3" type="1">
+<li>Deletion:</li>
+</ol>
+<ol type="1">
+<li>Case 1: Problem with Orphan Children.</li>
+</ol>
+<figure>
+<img src="abtreeOrphan.png" alt="Delete 13" />
+<figcaption aria-hidden="true">Delete 13</figcaption>
+</figure>
+<pre><code>In this case, we replace the deleted node either with the predecessor or successor key</code></pre>
+<ol start="2" type="1">
+<li>Case 2: Problem with downflow</li>
+</ol>
+<figure>
+<img src="abtreeDownFlow.png" alt="Delete 23" />
+<figcaption aria-hidden="true">Delete 23</figcaption>
+</figure>
+<p>If at least one sibling has at least a keys, then donate the key to
+the other sibling</p>
+<p>If none have enough keys, then merge the two siblings and the parent
+together.</p>
+<p><img src="abtreeDownFlow2.png" alt="Downflow" /> <img
+src="abtreeDownFlow3.png" alt="Down flow again" /></p>
+<p><img src="abtreeDownFlow4.png" alt="Another example" /> <img
+src="abtreeDownFlow5.png" /> <img src="abtreeDownFlow6png" /></p>
+<h3 id="b-trees-1">B-trees</h3>
+<p>B-trees are simply (B, 2B)-trees. That is to say, they are a
+subcategory of (a, b)-trees such that a = B and b = 2B.</p>
+<ol type="1">
+<li>Cost</li>
+</ol>
+<ul>
+<li><p>All the costs of searching a key list / splitting a node /
+merging / sharing B-tree nodes are O(1)!</p></li>
+<li><p>The cost of searching a B-tree / inserting / deleting in a B tree
+is O(loga n)!</p></li>
+</ul>
 <h1 id="others-1">Others</h1>
 <ol type="1">
 <li>log2n = O( log10n ) Correct! We can easily switch between bases by
@@ -1071,7 +1156,50 @@ the lower bound is at least n flip.</li>
 </ul></li>
 </ul>
 <p>[U] Check out recitation 2 on more about pancake flipping.</p>
-<h1 id="puzzles">Puzzles:</h1>
+<h2 id="dna-swapping">DNA Swapping</h2>
+<ol type="1">
+<li>Description</li>
+</ol>
+<ul>
+<li>We are doing sorting when only calculating the cst of swapping
+subarrays. The cost of swapping subarrays of length k would cost
+O(k).</li>
+</ul>
+<ol start="2" type="1">
+<li>What if we are sorting an array of two element? - Do mergesort!</li>
+<li>What if the input string comprises of arbitrary characters without
+duplicates.</li>
+</ol>
+<ul>
+<li>Wait, we can do this using the solution in 2! partition is the same
+as sorting an array of two kinds of elements! The time complexity is
+T(n) = 2 * T(n / 2) + O(n log n). [U]</li>
+</ul>
+<h2 id="random-permutation">Random Permutation</h2>
+<ol type="1">
+<li><p>Given an array of n items, we need to return a random permutation
+of the given array.</p></li>
+<li><p>How do we evaluate the performance of a random permutation
+algorithm!</p></li>
+</ol>
+<ul>
+<li>The possibility of each permuatation to appear in the array should
+be n!</li>
+</ul>
+<ol start="3" type="1">
+<li><p>Consider the Fisher-Yates / Knuth Shuffle algorithm: Time
+Complexity O(n) and Space complexity O(1)! [U] why is space complexity
+O(1)</p></li>
+<li><p>Solution 2: assign a random number to each element and sort
+it!</p></li>
+</ol>
+<ul>
+<li>Question: what if we meet duplicate numbers?</li>
+<li>If the sorting is stable, simply treat the earlier occurence to be
+the smaller one([U] Is this still random? )</li>
+<li>If not, the sorting would not be stable!</li>
+</ul>
+<p>[U] Check the ppt # Puzzles:</p>
 <ol type="1">
 <li><p>[U]Sicherman Dice</p></li>
 <li><p>[U]Puzzle of the Week: Bubbly (Courtesy: MIT Puzzle Hunt,
@@ -1212,14 +1340,14 @@ href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
       <i class="fa fa-chart-line"></i>
     </span>
       <span>Word count total: </span>
-    <span title="Word count total">66k</span>
+    <span title="Word count total">78k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>Reading time total &asymp;</span>
-    <span title="Reading time total">1:01</span>
+    <span title="Reading time total">1:11</span>
   </span>
 </div>
 

@@ -1,0 +1,844 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 7.1.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon_coder.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon_coder.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon_coder.png">
+  <link rel="mask-icon" href="/images/favicon_coder.png" color="#222">
+  <meta name="google-site-verification" content="eTHQKcPBLYyk8UGRbE7UYNyfbTP8dDk5ivI4newcIH0">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha256-yIDrPSXHZdOZhAqiBP7CKzIwMQmRCJ8UeB8Jo17YC4o=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"wfyishere.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.19.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":true,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="CheatSheet">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CS2040S Midterm CheatSheet">
+<meta property="og:url" content="https://wfyishere.github.io/2024/03/11/CS2040S-Midterm-CheatSheet/index.html">
+<meta property="og:site_name" content="WFY&#39;s Blog">
+<meta property="og:description" content="CheatSheet">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://wfyishere.github.io/2024/03/11/CS2040S-Midterm-CheatSheet/RightRotation.png">
+<meta property="og:image" content="https://wfyishere.github.io/2024/03/11/CS2040S-Midterm-CheatSheet/TreeRotationCase1.png">
+<meta property="og:image" content="https://wfyishere.github.io/2024/03/11/CS2040S-Midterm-CheatSheet/TreeRotationCase2.png">
+<meta property="og:image" content="https://wfyishere.github.io/2024/03/11/CS2040S-Midterm-CheatSheet/TreeRotationCase3_1.png">
+<meta property="og:image" content="https://wfyishere.github.io/2024/03/11/CS2040S-Midterm-CheatSheet/TreeRotationCase3_2.png">
+<meta property="og:image" content="https://wfyishere.github.io/2024/03/11/CS2040S-Midterm-CheatSheet/BalanceButNotHeightBalance.png">
+<meta property="og:image" content="https://wfyishere.github.io/2024/03/11/CS2040S-Midterm-CheatSheet/MaintainingWeight.png">
+<meta property="og:image" content="https://wfyishere.github.io/2024/03/11/CS2040S-Midterm-CheatSheet/SearchIntervalTree.png">
+<meta property="og:image" content="https://wfyishere.github.io/2024/03/11/CS2040S-Midterm-CheatSheet/OneDimensionORS.png">
+<meta property="og:image" content="https://wfyishere.github.io/2024/03/11/CS2040S-Midterm-CheatSheet/TwoDimensionRangeSearching.png">
+<meta property="og:image" content="https://wfyishere.github.io/2024/03/11/CS2040S-Midterm-CheatSheet/abtreeChildPolicy.png">
+<meta property="og:image" content="https://wfyishere.github.io/2024/03/11/CS2040S-Midterm-CheatSheet/abtreeBalance.png">
+<meta property="og:image" content="https://wfyishere.github.io/2024/03/11/CS2040S-Midterm-CheatSheet/abtreeOrphan.png">
+<meta property="og:image" content="https://wfyishere.github.io/2024/03/11/CS2040S-Midterm-CheatSheet/abtreeDownFlow.png">
+<meta property="og:image" content="https://wfyishere.github.io/2024/03/11/CS2040S-Midterm-CheatSheet/abtreeDownFlow2.png">
+<meta property="og:image" content="https://wfyishere.github.io/2024/03/11/CS2040S-Midterm-CheatSheet/abtreeDownFlow3.png">
+<meta property="og:image" content="https://wfyishere.github.io/2024/03/11/CS2040S-Midterm-CheatSheet/abtreeDownFlow4.png">
+<meta property="og:image" content="https://wfyishere.github.io/2024/03/11/CS2040S-Midterm-CheatSheet/abtreeDownFlow5.png">
+<meta property="og:image" content="https://wfyishere.github.io/2024/03/11/CS2040S-Midterm-CheatSheet/abtreeDownFlow6.png">
+<meta property="article:published_time" content="2024-03-11T06:09:54.000Z">
+<meta property="article:modified_time" content="2024-03-11T07:31:12.286Z">
+<meta property="article:author" content="Wen Fanyu">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://wfyishere.github.io/2024/03/11/CS2040S-Midterm-CheatSheet/RightRotation.png">
+
+
+<link rel="canonical" href="https://wfyishere.github.io/2024/03/11/CS2040S-Midterm-CheatSheet/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://wfyishere.github.io/2024/03/11/CS2040S-Midterm-CheatSheet/","path":"2024/03/11/CS2040S-Midterm-CheatSheet/","title":"CS2040S Midterm CheatSheet"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>CS2040S Midterm CheatSheet | WFY's Blog</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">WFY's Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">wfy的博客</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">13</span></a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">34</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">16</span></a></li><li class="menu-item menu-item-todo"><a href="/todo" rel="section"><i class="fa-solid fa-bars fa-fw"></i>Todo</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#lecture-3-4-peak-finding-searching"><span class="nav-number">1.</span> <span class="nav-text">Lecture 3 &amp; 4 : Peak
+Finding &amp; Searching</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#sort"><span class="nav-number">2.</span> <span class="nav-text">Sort</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#classic-sorting-algorithms"><span class="nav-number">2.1.</span> <span class="nav-text">Classic Sorting
+Algorithms</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#bubblesort"><span class="nav-number">2.1.1.</span> <span class="nav-text">BubbleSort</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#selection-sort"><span class="nav-number">2.1.2.</span> <span class="nav-text">Selection Sort</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#insertion-sort"><span class="nav-number">2.1.3.</span> <span class="nav-text">Insertion Sort</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mergesort"><span class="nav-number">2.1.4.</span> <span class="nav-text">MergeSort</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#summary"><span class="nav-number">2.2.</span> <span class="nav-text">Summary</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#quicksort"><span class="nav-number">2.3.</span> <span class="nav-text">Quicksort</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#introduction"><span class="nav-number">2.3.1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#quicksort-optimization"><span class="nav-number">2.3.2.</span> <span class="nav-text">Quicksort Optimization</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#order-statistics"><span class="nav-number">2.4.</span> <span class="nav-text">Order Statistics</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#lecture-08-trees"><span class="nav-number">3.</span> <span class="nav-text">Lecture 08 Trees</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#dynamic-data-structures"><span class="nav-number">3.1.</span> <span class="nav-text">Dynamic Data Structures</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tree-basic-concepts"><span class="nav-number">3.2.</span> <span class="nav-text">Tree Basic Concepts</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#keeping-trees-balanced"><span class="nav-number">3.3.</span> <span class="nav-text">Keeping Trees Balanced</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#concept"><span class="nav-number">3.3.1.</span> <span class="nav-text">Concept</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#avl-trees"><span class="nav-number">3.3.2.</span> <span class="nav-text">AVL Trees</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#proof-of-balance"><span class="nav-number">3.3.2.1.</span> <span class="nav-text">Proof of Balance</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#maintaining-height-balance"><span class="nav-number">3.3.2.2.</span> <span class="nav-text">Maintaining Height-Balance</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#augmenting-trees"><span class="nav-number">3.4.</span> <span class="nav-text">Augmenting Trees</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#dynamic-order-statistics"><span class="nav-number">3.4.1.</span> <span class="nav-text">Dynamic Order Statistics</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#trie"><span class="nav-number">3.4.2.</span> <span class="nav-text">Trie</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#interval-queries"><span class="nav-number">3.4.3.</span> <span class="nav-text">Interval Queries</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#goal"><span class="nav-number">3.4.3.1.</span> <span class="nav-text">Goal:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#augment"><span class="nav-number">3.4.3.2.</span> <span class="nav-text">Augment</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#implement"><span class="nav-number">3.4.3.3.</span> <span class="nav-text">Implement</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#search"><span class="nav-number">3.4.3.3.1.</span> <span class="nav-text">search:</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#orthogonal-range-searching"><span class="nav-number">3.4.4.</span> <span class="nav-text">Orthogonal Range Searching</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#introduction-1"><span class="nav-number">3.4.4.1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sample-one-dimension"><span class="nav-number">3.4.4.2.</span> <span class="nav-text">Sample: One-Dimension</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#strategy"><span class="nav-number">3.4.4.2.1.</span> <span class="nav-text">Strategy</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#two-dimension"><span class="nav-number">3.4.4.3.</span> <span class="nav-text">Two-Dimension</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#k-d-tree"><span class="nav-number">3.4.5.</span> <span class="nav-text">k-d Tree</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#a-b-trees"><span class="nav-number">3.4.6.</span> <span class="nav-text">(a, b) trees</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#rules"><span class="nav-number">3.4.6.1.</span> <span class="nav-text">Rules</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#manipulation"><span class="nav-number">3.4.6.2.</span> <span class="nav-text">Manipulation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#b-trees"><span class="nav-number">3.4.6.3.</span> <span class="nav-text">B-trees</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tree-operation-conclusion"><span class="nav-number">3.5.</span> <span class="nav-text">Tree Operation conclusion</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#height-of-binary-tree-after-subtree-removal"><span class="nav-number">3.6.</span> <span class="nav-text">Height of Binary
+Tree After Subtree Removal</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Wen Fanyu</p>
+  <div class="site-description" itemprop="description">留下自己的足迹</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">16</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">34</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="cc-license animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="Back to top">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+
+    
+
+    <script type="text/javascript" src="//rf.revolvermaps.com/0/0/8.js?i=5zo8jh0nep7&amp;m=0&amp;c=ff0000&amp;cr1=ffffff&amp;f=arial&amp;l=33" async="async"></script>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://wfyishere.github.io/2024/03/11/CS2040S-Midterm-CheatSheet/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Wen Fanyu">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WFY's Blog">
+      <meta itemprop="description" content="留下自己的足迹">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="CS2040S Midterm CheatSheet | WFY's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          CS2040S Midterm CheatSheet
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2024-03-11 14:09:54 / Modified: 15:31:12" itemprop="dateCreated datePublished" datetime="2024-03-11T14:09:54+08:00">2024-03-11</time>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>9.5k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>9 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>CheatSheet</p>
+<span id="more"></span>
+<ol type="1">
+<li>ADTs are specifications for behaviors without any implementation.
+E.g. Stack, Queue, Dictionary, Set, Map. Data Structures are concrete
+implementations of ADTs. E.g. Array, Linked List, Binary Tree, Hash
+Table, Heap</li>
+</ol>
+<h1 id="lecture-3-4-peak-finding-searching">Lecture 3 &amp; 4 : Peak
+Finding &amp; Searching</h1>
+<ol start="2" type="1">
+<li>Applications of binary search: Think of binary search whenever:
+<ul>
+<li>There is a sequence of "monotonic function" in blackbox. That is ,
+for each v[i], for i &lt;= k, it returns false, for i &gt;= k, it
+returns true.</li>
+</ul></li>
+</ol>
+<h1 id="sort">Sort</h1>
+<p>Stirling approximation: <code>O(log(n!)) == O(nlog(n))</code></p>
+<h2 id="classic-sorting-algorithms"><strong>Classic Sorting
+Algorithms</strong></h2>
+<h3 id="bubblesort">BubbleSort</h3>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">repeat n times:</span><br><span class="line">    <span class="keyword">for</span> j ¬ <span class="number">1</span> to n-<span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> A[j] &gt; A[j+<span class="number">1</span>] then <span class="title function_">swap</span><span class="params">(A[j], A[j+<span class="number">1</span>])</span></span><br></pre></td></tr></table></figure>
+<h3 id="selection-sort">Selection Sort</h3>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> j ¬ <span class="number">1</span> to n-<span class="number">1</span>:</span><br><span class="line">    find minimum element A[j] in A[j..n] <span class="comment">//A[k]</span></span><br><span class="line">swap(A[j], A[k])</span><br></pre></td></tr></table></figure>
+<h3 id="insertion-sort">Insertion Sort</h3>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">InsertionSort(A, n)</span><br><span class="line">    <span class="keyword">for</span> j ¬ <span class="number">2</span> to n</span><br><span class="line">    key ¬ A[j]</span><br><span class="line">    <span class="comment">//Insert key into the sorted array A[1..j-1]</span></span><br><span class="line">    i ¬ j-<span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> (i &gt; <span class="number">0</span>) and (A[i] &gt;key)</span><br><span class="line">        A[i+<span class="number">1</span>] ¬ A[i]</span><br><span class="line">        i ¬ i-<span class="number">1</span></span><br><span class="line">    A[i+<span class="number">1</span>] ¬ key</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Average Case Analysis: On average, a key in position j needs to move
+j/2 slots backward (in expectation).</p>
+</blockquote>
+<h3 id="mergesort">MergeSort</h3>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">MergeSort(A, n)</span><br><span class="line"><span class="keyword">if</span> (n=<span class="number">1</span>) then <span class="keyword">return</span>;</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    X ¬MergeSort(A[<span class="number">1.</span>.n/<span class="number">2</span>], n/<span class="number">2</span>);</span><br><span class="line">    Y ¬MergeSort(A[n/<span class="number">2</span>+<span class="number">1</span>, n], n/<span class="number">2</span>);</span><br><span class="line">    <span class="keyword">return</span> Merge (X,Y, n/<span class="number">2</span>);</span><br></pre></td></tr></table></figure>
+<p>For the iterative MergeSort, we will sort the array in groups of
+power of 2. In other words, we will first sort the arrays in pairs, then
+merge into 4’s, 8’s and so on, until we have merged the entire array</p>
+<h2 id="summary"><strong>Summary</strong></h2>
+<table>
+<colgroup>
+<col style="width: 29%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 23%" />
+<col style="width: 14%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Features</th>
+<th>Bubble Sort</th>
+<th>Selection Sort</th>
+<th>Inerstion Sort</th>
+<th>Merge Sort</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Time Complexity</td>
+<td>O(n^2)</td>
+<td>O(n^2)</td>
+<td>O(n^2)</td>
+<td>O(n * log(n))</td>
+</tr>
+<tr class="even">
+<td>NearlySorted ? Random</td>
+<td>O(n) &lt;</td>
+<td>=</td>
+<td>O(n) &lt;</td>
+<td>=</td>
+</tr>
+<tr class="odd">
+<td>Space Complexity</td>
+<td>O(n)</td>
+<td>O(n)</td>
+<td>O(n)</td>
+<td>O(n) (No need to allocate new arrays, can you previous ones instead)
+/ O(n * log(n)) when it's MergeSort iteration</td>
+</tr>
+<tr class="even">
+<td>Stability</td>
+<td>1(swap only when elements are different)</td>
+<td>0(e.g. [2, 2, 1])</td>
+<td>1(A[i] &gt; key not &gt;=)</td>
+<td>1(if implementation is designed carefully)</td>
+</tr>
+<tr class="odd">
+<td>Behaviour</td>
+<td>Largest 𝑘 elements are at the end of the array(after 𝑘
+iterations)</td>
+<td>Smallest 𝑘 elements are at the start of the array(after 𝑘
+iterations)</td>
+<td>First 𝑘 elements are sorted (after 𝑘 iterations),last 𝑛 − 𝑘 elements
+are untouched</td>
+<td>Each subarray is already sorted when merging</td>
+</tr>
+</tbody>
+</table>
+<h2 id="quicksort">Quicksort</h2>
+<h3 id="introduction">Introduction</h3>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">QuickSort(A[<span class="number">1.</span>.n], n)</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">1</span>) then <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        Choose pivot index pIndex.</span><br><span class="line">        p = partition(A[<span class="number">1.</span>.n], n, pIndex)</span><br><span class="line">        x = QuickSort(A[<span class="number">1.</span>.p–<span class="number">1</span>], p–<span class="number">1</span>)</span><br><span class="line">        y = QuickSort(A[p+<span class="number">1.</span>.n], n–p)</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">partition(A[<span class="number">1.</span>.n], n, pIndex) <span class="comment">// Assume no duplicates, n&gt;1</span></span><br><span class="line">    pivot = A[pIndex]; <span class="comment">// pIndex is the index of pivot</span></span><br><span class="line">    swap(A[<span class="number">1</span>], A[pIndex]); <span class="comment">// store pivot in A[1]</span></span><br><span class="line">    low = <span class="number">2</span>; <span class="comment">// start after pivot in A[1]</span></span><br><span class="line">    high = n+<span class="number">1</span>; <span class="comment">// Define: A[n+1] = ¥</span></span><br><span class="line">    <span class="keyword">while</span> (low &lt; high)</span><br><span class="line">        <span class="keyword">while</span> (A[low] &lt;= pivot) and (low &lt; high) <span class="keyword">do</span> low++;</span><br><span class="line">        <span class="keyword">while</span> (A[high] &gt; pivot) and (low &lt; high) <span class="keyword">do</span> high– – ;</span><br><span class="line">        <span class="keyword">if</span> (low &lt; high) then <span class="title function_">swap</span><span class="params">(A[low], A[high])</span>;</span><br><span class="line">    swap(A[<span class="number">1</span>], A[low–<span class="number">1</span>]);</span><br><span class="line">    <span class="keyword">return</span> low–<span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">ParanoidQuickSort(A[<span class="number">1.</span>.n], n)</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">1</span>) then <span class="keyword">return</span>;    </span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="type">repeat</span></span><br><span class="line">            <span class="variable">pIndex</span> <span class="operator">=</span> random(<span class="number">1</span>, n)</span><br><span class="line">            p = partition(A[<span class="number">1.</span>.n], n, pIndex)</span><br><span class="line">        until p &gt; (<span class="number">1</span>/<span class="number">10</span>)n and p &lt; (<span class="number">9</span>/<span class="number">10</span>)<span class="type">n</span></span><br><span class="line"></span><br><span class="line">    <span class="variable">x</span> <span class="operator">=</span> QuickSort(A[<span class="number">1.</span>.p–<span class="number">1</span>], p–<span class="number">1</span>)</span><br><span class="line">    y = QuickSort(A[p+<span class="number">1.</span>.n], n–p)</span><br></pre></td></tr></table></figure>
+<h3 id="quicksort-optimization">Quicksort Optimization</h3>
+<ol type="1">
+<li><p>Switch to InsertionSort for small arrays.</p></li>
+<li><p>Halt recursion early, leaving small arrays unsorted. Then perform
+InsertionSort on entire array. (InsertionSort is fast on almost sorted
+arrays, about O(n))</p></li>
+</ol>
+<h2 id="order-statistics">Order Statistics</h2>
+<p>Find <span class="math inline">\(k^{th}\)</span> smallest element in
+an unsorted array</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Select(A[<span class="number">1.</span>.n], n, k)</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">1</span>) then <span class="keyword">return</span> A[<span class="number">1</span>];</span><br><span class="line">    <span class="keyword">else</span> Choose random pivot index pIndex.</span><br><span class="line">        p = partition(A[<span class="number">1.</span>.n], n, pIndex)</span><br><span class="line">        <span class="keyword">if</span> (k == p) then </span><br><span class="line">            <span class="keyword">return</span> A[p];</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (k &lt; p) then</span><br><span class="line">            <span class="keyword">return</span> Select(A[<span class="number">1.</span>.p–<span class="number">1</span>], k)</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (k &gt; p) then</span><br><span class="line">            <span class="keyword">return</span> Select(A[p+<span class="number">1</span>], k – p)</span><br></pre></td></tr></table></figure>
+<p><strong>Time Complexity: O(n)</strong></p>
+<h1 id="lecture-08-trees">Lecture 08 Trees</h1>
+<h2 id="dynamic-data-structures">Dynamic Data Structures</h2>
+<h2 id="tree-basic-concepts">Tree Basic Concepts</h2>
+<ol type="1">
+<li><p>What determines shape? • Order of insertion • Does each order
+yield a unique shape? NO – # ways to order insertions: n! – # shapes of
+a binary tree? ~4n (Catalan numbers: Catalan Numbers Cn = # of trees
+with (n+1) nodes Cn = # expressions with n pairs of matched
+parentheses)</p></li>
+<li><p>Successor:</p>
+<p>If you search for a key not in a tree, you would either find its
+successor or its predecessor <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Successor(<span class="type">int</span> key) &#123; <span class="comment">// successor function for key (in / not in tree)</span></span><br><span class="line">    <span class="type">int</span> <span class="variable">result</span> <span class="operator">=</span> search(key); <span class="comment">//either return successor or predecessor</span></span><br><span class="line">    <span class="keyword">if</span>(result &gt; key) <span class="keyword">return</span> result;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> SuccessorKeyInTree(result);</span><br><span class="line">&#125;</span><br><span class="line">SuccessorKeyInTree(<span class="type">int</span> key) &#123;<span class="comment">// search for successor when key is in tree</span></span><br><span class="line">    <span class="keyword">if</span> (key has right child ) &#123;</span><br><span class="line">        <span class="keyword">return</span> rightChild;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> ((parent != <span class="literal">null</span>) &amp;&amp; (child == parent.rightTree)) &#123;</span><br><span class="line">        child = parent;</span><br><span class="line">        parent = child.parentTree; <span class="comment">// note that here child has become parent</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> parent;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p></li>
+<li><p>Deleting <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (key.childNumber == <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="comment">//simply delete.</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span> (key.childNumber == <span class="number">1</span>) &#123;</span><br><span class="line">    <span class="comment">//make the child of key substitude child</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">//key has two child -&gt; key has right child -&gt; the successor is the min in the right child -&gt; sucessor has no left child.</span></span><br><span class="line">    substitude successor with its child and substitude key with successor.</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p></li>
+</ol>
+<h2 id="keeping-trees-balanced">Keeping Trees Balanced</h2>
+<h3 id="concept">Concept</h3>
+<p>Key definition: A tree is <strong>balanced</strong> if h = O(logN)
+(By default: log(n) –1 ≤ h ≤ n)</p>
+<h3 id="avl-trees">AVL Trees</h3>
+<h4 id="proof-of-balance">Proof of Balance</h4>
+<ol type="1">
+<li><p>node v is height-balanced if |v.left.height – v.right.height|
+&lt;= 1</p></li>
+<li><p>A height-balanced tree with n nodes has at most height h &lt;
+2log(n)</p></li>
+</ol>
+<p><em>Interesting Property: a maximal imbalanced AVL tree(AVL treewith
+the minimum possible number of nodes given its height h.)has all its
+subtrees to be maximally imbalanced.</em></p>
+<h4 id="maintaining-height-balance">Maintaining Height-Balance</h4>
+<figure>
+<img src="RightRotation.png" style="width:30.0%" alt="RightRotation" />
+<figcaption aria-hidden="true">RightRotation</figcaption>
+</figure>
+<p>After insertion, start at bottom, work your way up.</p>
+<p>Assume A is the lowest node violating valance property. Assuming that
+A is <strong>left heavy</strong>:</p>
+<ol type="1">
+<li>B is balanced</li>
+</ol>
+<figure>
+<img src="TreeRotationCase1.png" style="width:30.0%"
+alt="B is balanced: do righ rotation on A" />
+<figcaption aria-hidden="true">B is balanced: do righ rotation on
+A</figcaption>
+</figure>
+<ol start="2" type="1">
+<li>B is left-heavy</li>
+</ol>
+<figure>
+<img src="TreeRotationCase2.png" style="width:30.0%"
+alt="B is left-heavy" />
+<figcaption aria-hidden="true">B is left-heavy</figcaption>
+</figure>
+<ol start="3" type="1">
+<li>B is right heavy</li>
+</ol>
+<figure>
+<img src="TreeRotationCase3_1.png" style="width:30.0%"
+alt="Left Rotate B - A and C are still out of balance" />
+<figcaption aria-hidden="true">Left Rotate B - A and C are still out of
+balance</figcaption>
+</figure>
+<figure>
+<img src="TreeRotationCase3_2.png" style="width:30.0%"
+alt="Right Rotate A - Solved!" />
+<figcaption aria-hidden="true">Right Rotate A - Solved!</figcaption>
+</figure>
+<p>[S] what about nodes higher than that?</p>
+<pre><code>- In Case 2 &amp; 3, we reduce the height by 1, thus the upper must be balanced.
+
+- In Case 1, Case 1 would never appear when doing an insertion.</code></pre>
+<p>[S] What about deletion!</p>
+<p>For deletion, we walk up tree, check for balance and rotate every
+node if needed. It is NOT sufficient to only fix lowest out-of-balance
+node.</p>
+<figure>
+<img src="BalanceButNotHeightBalance.png" style="width:30.0%"
+alt="[U] Why?" />
+<figcaption aria-hidden="true">[U] Why?</figcaption>
+</figure>
+<h2 id="augmenting-trees">Augmenting Trees</h2>
+<h3 id="dynamic-order-statistics">Dynamic Order Statistics</h3>
+<ol type="1">
+<li><p>Find the rank of a node <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">rank(node)</span><br><span class="line">    rank = node.left.weight + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (node != <span class="literal">null</span>) <span class="keyword">do</span></span><br><span class="line">        <span class="keyword">if</span> node is left child then</span><br><span class="line">            <span class="keyword">do</span> nothing</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> node is right child then</span><br><span class="line">            rank += node.parent.left.weight + <span class="number">1</span>;</span><br><span class="line">        node = node.parent;</span><br><span class="line">    <span class="keyword">return</span> rank;</span><br></pre></td></tr></table></figure></p></li>
+<li><p>Maintaining weight during insertion and rotation.</p></li>
+</ol>
+<figure>
+<img src="MaintainingWeight.png" style="width:30.0%"
+alt="Maintaining weight during rotations" />
+<figcaption aria-hidden="true">Maintaining weight during
+rotations</figcaption>
+</figure>
+<h3 id="trie">Trie</h3>
+<ul>
+<li>Costs(h for the height of trie, L for the length of word)
+<ul>
+<li>search: time - O(L)</li>
+<li>store: space - O(L)</li>
+</ul></li>
+</ul>
+<h3 id="interval-queries">Interval Queries</h3>
+<h4 id="goal">Goal:</h4>
+<ul>
+<li>Solutions where space is linear (or near linear) in the number of
+things stored (i.e., intervals).</li>
+<li>Operations are logarithmic in number of things stored.</li>
+</ul>
+<h4 id="augment">Augment</h4>
+<p>store the maximum of right end point!</p>
+<h4 id="implement">Implement</h4>
+<h5 id="search">search:</h5>
+<figure>
+<img src="SearchIntervalTree.png" style="width:30.0%"
+alt="sample interval tree" />
+<figcaption aria-hidden="true">sample interval tree</figcaption>
+</figure>
+<p>when we walk down the nodes to(17,19), the information that we need
+are: 17(left interval), 25(max = left subtree)</p>
+<ul>
+<li><p>Case 1: x &gt; 25 (max of left subtree):</p>
+<p>Go right. (the node is either in right tree or not in tree!)</p></li>
+<li><p>Case2: 17 &lt; x &lt;= 25</p>
+<p>Go left. (there must be atleast one node that contains x!)</p></li>
+<li><p>Case3: x &lt; 17</p>
+<p>Go left. (there is 0 possibility that the right subtree contains
+x!)</p></li>
+</ul>
+<p>In three cases we are safe to go (the direction we go contains the
+key / the direction we don't go does not contain key)</p>
+<h3 id="orthogonal-range-searching">Orthogonal Range Searching</h3>
+<h4 id="introduction-1">Introduction</h4>
+<p>Are there any good restaurants within one block of me - search for
+the points in a given box</p>
+<h4 id="sample-one-dimension">Sample: One-Dimension</h4>
+<h5 id="strategy">Strategy</h5>
+<ol type="1">
+<li>Use a binary search tree and store all the points in the leaves of a
+tree. Each internal node stores the MAX of any leaf in the left
+sub-tree.</li>
+</ol>
+<figure>
+<img src="OneDimensionORS.png" style="width:30.0%" alt="Sample Tree" />
+<figcaption aria-hidden="true">Sample Tree</figcaption>
+</figure>
+<ol start="2" type="1">
+<li><p>Do Search(10, 50): (Time complexity: <strong>O(log(n) +
+k)</strong>, where k is the number of items)</p>
+<ul>
+<li>Find Split Node: the highest node that search includes both left and
+right subtrees(in this case, 25) <strong>O(logn)</strong></li>
+<li>Do left and right traversal on the left and right tree.
+<strong>O(k)</strong></li>
+<li>Left Traversal: The search interval for a left-traversal at node v
+includes the maximum item in the left subtree of v. <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">LeftTraversal(v, low, high) &#123;</span><br><span class="line">    <span class="keyword">if</span> (low &lt;= v.key) &#123;</span><br><span class="line">        all-leaf-traversal(v.right); </span><br><span class="line">        <span class="comment">//change all-tree-traversals to total += v.right.ount</span></span><br><span class="line">        <span class="comment">//if just need to know how many nodes are with the range</span></span><br><span class="line">        LeftTraversal(v.left, low, high);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123; <span class="comment">// left traversal on the right subtree</span></span><br><span class="line">        LeftTraversal(v.right, low, high);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">RightTraversal(v, low, high) &#123;</span><br><span class="line">    <span class="keyword">if</span> (v.key &lt;= high) &#123;</span><br><span class="line">        all-leaf-traverasal(v.left);</span><br><span class="line">        RightTraversal(v.right, low, high);</span><br><span class="line">    &#125;  <span class="keyword">else</span> &#123;</span><br><span class="line">        RightTraversal(v.left, low, high);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul></li>
+<li><p>BuildTree time complexity : O(n log n)</p></li>
+<li><p>Dynamic updates: Rotation</p></li>
+</ol>
+<h4 id="two-dimension">Two-Dimension</h4>
+<ol type="1">
+<li>Idea:</li>
+</ol>
+<ul>
+<li>1: Create a 1d-range-tree on the x-coords.</li>
+<li>2: Store a y-tree at each x-node containing all the points in the
+sub-tree.</li>
+</ul>
+<figure>
+<img src="TwoDimensionRangeSearching.png" style="width:30.0%"
+alt="Too much space for all the nodes! - use two-dimensional Trees!" />
+<figcaption aria-hidden="true">Too much space for all the nodes! - use
+two-dimensional Trees!</figcaption>
+</figure>
+<h3 id="k-d-tree">k-d Tree</h3>
+<p>space partitioning data structure for organising points into a
+𝑘-dimensional space.</p>
+<p>The even stores horizontal splits and odd stores vertical split(vice
+versa)</p>
+<h3 id="a-b-trees">(a, b) trees</h3>
+<h4 id="rules">Rules</h4>
+<ul>
+<li>2 ≤ a ≤ (b + 1)/2, where a and b refers to the minimum and maximum
+number of <strong>children</strong> in a internal node(not root /
+leaf).</li>
+</ul>
+<figure>
+<img src="abtreeChildPolicy.png" style="width:30.0%"
+alt="(a,b)tree child policy" />
+<figcaption aria-hidden="true">(a,b)tree child policy</figcaption>
+</figure>
+<ul>
+<li>every node should follow that: range theory</li>
+<li>All leaves should have the same depth.</li>
+</ul>
+<h4 id="manipulation">Manipulation</h4>
+<ol type="1">
+<li><p>Is ab tree balanced? <img src="abtreeBalance.png"
+style="width:30.0%" alt="Is ab tree balanced?" /></p></li>
+<li><p>Insertion:</p></li>
+</ol>
+<p>Solution 1: (1) At first put the element in its correct place in the
+node (which is in sorted order)</p>
+<ol start="2" type="1">
+<li><p>If the node overflows, then find the median ( = if is even and if
+is odd ) key in that node.</p></li>
+<li><p>Put the median key in the parent and split the current
+node</p></li>
+</ol>
+<p>Solution 2: Proactive Approach</p>
+<p>Preemptively split a node whe it is full so that it does not overflow
+in the future.</p>
+<ol start="3" type="1">
+<li>Deletion:</li>
+</ol>
+<ol type="1">
+<li>Case 1: Problem with Orphan Children.</li>
+</ol>
+<figure>
+<img src="abtreeOrphan.png" style="width:30.0%" alt="Delete 13" />
+<figcaption aria-hidden="true">Delete 13</figcaption>
+</figure>
+<pre><code>In this case, we replace the deleted node either with the predecessor or successor key</code></pre>
+<ol start="2" type="1">
+<li>Case 2: Problem with downflow</li>
+</ol>
+<figure>
+<img src="abtreeDownFlow.png" style="width:30.0%" alt="Delete 23" />
+<figcaption aria-hidden="true">Delete 23</figcaption>
+</figure>
+<p>If at least one sibling has at least a keys, then donate the key to
+the other sibling</p>
+<p>If none have enough keys, then merge the two siblings and the parent
+together.</p>
+<figure>
+<img src="abtreeDownFlow2.png" style="width:30.0%" alt="Downflow" />
+<figcaption aria-hidden="true">Downflow</figcaption>
+</figure>
+<figure>
+<img src="abtreeDownFlow3.png" style="width:30.0%"
+alt="Down flow again" />
+<figcaption aria-hidden="true">Down flow again</figcaption>
+</figure>
+<figure>
+<img src="abtreeDownFlow4.png" style="width:30.0%"
+alt="Another example" />
+<figcaption aria-hidden="true">Another example</figcaption>
+</figure>
+<p><img src="abtreeDownFlow5.png" style="width:30.0%" /></p>
+<p><img src="abtreeDownFlow6.png" style="width:30.0%" /></p>
+<h4 id="b-trees">B-trees</h4>
+<p>B-trees are simply (B, 2B)-trees. That is to say, they are a
+subcategory of (a, b)-trees such that a = B and b = 2B.</p>
+<ol type="1">
+<li>Cost</li>
+</ol>
+<ul>
+<li><p>All the costs of searching a key list / splitting a node /
+merging / sharing B-tree nodes are O(1)!</p></li>
+<li><p>The cost of searching a B-tree / inserting / deleting in a B tree
+is O(loga n)!</p></li>
+</ul>
+<h2 id="tree-operation-conclusion">Tree Operation conclusion</h2>
+<ol type="1">
+<li>modifying:
+<ul>
+<li>insert: O(h)</li>
+<li>delete: O(h)</li>
+</ul></li>
+<li>Query Operations:
+<ul>
+<li>search: O(h)</li>
+<li>predecessor / successor: O(h)</li>
+<li>findMax / findMin: O(h)</li>
+<li>Traversal: O(n)</li>
+</ul></li>
+</ol>
+<h2 id="height-of-binary-tree-after-subtree-removal">Height of Binary
+Tree After Subtree Removal</h2>
+<ul>
+<li>Solution 2: <em>Depth of a node refers to the number of edges in the
+simple path from root to the node</em>
+<ol type="1">
+<li>preprocess the tree to get its depth using DFS and height using
+in-order-traversal.</li>
+<li>For ith query, we look at all the nodes with the same depth of ith
+node and find the maximum height among them. The answer to the query
+would be <code>node[i].depth + max_height</code>.</li>
+<li>SO how do we group the nodes of the same depth? We do this by
+iterating the nodes in in-order-traversal([U] wut?). For each group of
+nodes in the same depth, we only require the maximum height and second
+maximum height. To do this we need O(n) time([U] wut?).</li>
+<li>In this algorithm, we only need O(1) for each query. The overal time
+complexity would be O(n + m)</li>
+</ol></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>Post author:  </strong>Wen Fanyu
+  </li>
+  <li class="post-copyright-link">
+      <strong>Post link: </strong>
+      <a href="https://wfyishere.github.io/2024/03/11/CS2040S-Midterm-CheatSheet/" title="CS2040S Midterm CheatSheet">https://wfyishere.github.io/2024/03/11/CS2040S-Midterm-CheatSheet/</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+
+        
+  <div class="social-like a2a_kit a2a_kit_size_32 a2a_default_style">
+    <a class="a2a_dd" target="_blank" rel="noopener" href="https://www.addtoany.com/share"></a>
+      <a class="a2a_button_facebook"></a>
+      <a class="a2a_button_twitter"></a>
+      <a class="a2a_button_telegram"></a>
+      <a class="a2a_button_wechat"></a>
+      <a class="a2a_button_qzone"></a>
+  </div>
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2024/03/05/MA2104-Multivariable-Calculus/" rel="prev" title="MA2104 Multivariable Calculus">
+                  <i class="fa fa-angle-left"></i> MA2104 Multivariable Calculus
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Wen Fanyu</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>Word count total: </span>
+    <span title="Word count total">78k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>Reading time total &asymp;</span>
+    <span title="Reading time total">1:11</span>
+  </span>
+</div>
+
+<!-- 网站运行时间的设置 -->
+<span id="timeDate">载入天数...</span>
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("01/20/2024 00:00:00");//此处修改你的建站时间或者网站上线时间
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "本站已成功存活 "+dnum+" 天 " + hnum + "小时" + mnum + "分钟";
+}
+setInterval("createtime()",250);
+</script>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+
+    </div>
+  </footer>
+
+  
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+
+  <script src="/js/third-party/addtoany.js"></script>
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"WFYishere","repo":"Blog_comments","client_id":"61d14243abd55a9c5e17","client_secret":"899eab7ce0c9f0e5f96df28b5b7a9fa5362c981e","admin_user":"WFYishere","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":null,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"98f509c8bf1d262054b525c178cf0dd8"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>
