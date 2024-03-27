@@ -671,11 +671,13 @@ specific, but unknown type;</p></li>
 <li><p><code>Seq&lt;Object&gt;</code> is a sequence of Object instances,
 with type checking by the compiler;(Note that generics are invariants so
 <code>Seq&lt;Object&gt; !&gt;: Seq&lt;Integer&gt;</code>)</p></li>
-<li><p><code>Seq</code> is a sequence of Object instances, without type
+<li><p><code>Seq</code> is a sequence of Object instanc es, without type
 checking.</p></li>
 </ul>
 <ol start="25" type="1">
-<li>Type Infering: T &lt;: Type2, then T is inferred as Type2</li>
+<li><p>Type Infering: T &lt;: Type2, then T is inferred as
+Type2</p></li>
+<li><p>Immutable Classes:</p></li>
 </ol>
 <h2 id="sample-code-for-pe">Sample Code for PE</h2>
 <ol type="1">
@@ -1011,9 +1013,9 @@ if it is decreasing, else there's something wrong with the code</em></p>
         <category>MachineLearning</category>
       </categories>
       <tags>
-        <tag>ComputerScience</tag>
-        <tag>Notes</tag>
         <tag>Study</tag>
+        <tag>Notes</tag>
+        <tag>ComputerScience</tag>
         <tag>Coursera</tag>
         <tag>Stanford</tag>
         <tag>AI</tag>
@@ -1062,9 +1064,9 @@ Blue pen for additional knowledge</li>
         <category>General</category>
       </categories>
       <tags>
-        <tag>Notes</tag>
-        <tag>Study</tag>
         <tag>StudyTips</tag>
+        <tag>Study</tag>
+        <tag>Notes</tag>
         <tag>General</tag>
       </tags>
   </entry>
@@ -1133,6 +1135,8 @@ different</p></li>
 class="math inline">\(-2^{31}\)</span>) 4 bytes</li>
 <li>float(4 bytes) or double(8 byte)</li>
 <li>chars(8 bit integer)</li>
+<li><em>Do note that an int doesn't always take up 4 bytes, it depends
+on the machine architecture</em></li>
 </ul>
 <p><code>sizeof( &lt;variable&gt; or &lt;DataType&gt; )</code> : returns
 the size of the variable</p></li>
@@ -1141,9 +1145,49 @@ the size of the variable</p></li>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*Preprocessor Directives*/</span></span><br><span class="line"><span class="comment">//Header Files</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="comment">//Macro Expansions (compiler substitudes Pi to 3.14 when compiling.</span></span><br><span class="line"><span class="comment">//                  If #define PI 3.14; then PI is substituded to 3.14;)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> PI 3.14 <span class="comment">// please use full CAP</span></span></span><br><span class="line"><span class="comment">//Conditional Compilation([U]: wuts this)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* Main Function: Input/Output */</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123; <span class="comment">// will always return 0 if executed correctly</span></span><br><span class="line">    <span class="type">int</span> age;</span><br><span class="line">    <span class="type">double</span> cap;</span><br><span class="line">    <span class="comment">//printf(format string);</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;What is your age?&quot;</span>);</span><br><span class="line">    <span class="comment">//scanf(format string, input list); </span></span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;age); <span class="comment">// &amp;age: the address of the variable </span></span><br><span class="line">    <span class="comment">// %lf double - %e float or double</span></span><br><span class="line">    <span class="comment">//%5d: display integer in width of 5, right justified(123456 - 23456)</span></span><br><span class="line">    <span class="comment">//%8.3f: a is minimum number of characters</span></span><br><span class="line">    <span class="comment">//       including whole part, point and decimal part</span></span><br><span class="line">    <span class="comment">//       b number of characters of decimal part</span></span><br><span class="line">    <span class="comment">//       If total number of characters are less than a</span></span><br><span class="line">    <span class="comment">//       it fills with blank spaces at the left side of number</span></span><br><span class="line"></span><br><span class="line">With - sign it fills blank spaces at the right side of the number</span><br><span class="line">    <span class="comment">//escape sequence: \n \t(tab) \&quot;(double quote) %% percent</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line">-Wall <span class="comment">//gives all warnings</span></span><br><span class="line">-o &lt;Name&gt;<span class="comment">// specifies the name of executable file(default a.out)</span></span><br><span class="line">-lm <span class="comment">//needed for mathematical functions headers like math.h</span></span><br></pre></td></tr></table></figure>
 <h2 id="computation">Computation</h2>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* */</span></span><br><span class="line"><span class="comment">//letters, numbers and _ can be used. but should not satrt with numbers</span></span><br><span class="line"><span class="comment">//Avoid standard identifiers(!= reserved words; does not cause warning) </span></span><br><span class="line"><span class="type">int</span> count, Count; </span><br><span class="line"></span><br><span class="line"><span class="comment">/*Assignment*/</span></span><br><span class="line"><span class="comment">//a: lvalue</span></span><br><span class="line">a = <span class="number">32</span>;</span><br><span class="line"><span class="comment">// Cascading. assigns from right to left. </span></span><br><span class="line">a = b = c = <span class="number">3</span> + <span class="number">6</span>; </span><br><span class="line"></span><br><span class="line"><span class="comment">/*Operations*/</span></span><br><span class="line"><span class="comment">//binary Operations: Left Associative</span></span><br><span class="line"><span class="comment">//[U] (int) / (double) / (int) or (double) / (int) / (int), </span></span><br><span class="line"><span class="comment">//if the value doesn&#x27;t change but the type changes, would the answer be different?</span></span><br><span class="line"><span class="comment">//Or when is the case they are different?</span></span><br><span class="line"><span class="number">46</span> / <span class="number">15</span> / <span class="number">2</span> = <span class="number">3</span> / <span class="number">2</span> = <span class="number">1</span></span><br><span class="line"><span class="comment">//Unary Operators: + - are right associative</span></span><br><span class="line">a = <span class="number">-23</span>;</span><br><span class="line"><span class="comment">//Truncate result</span></span><br><span class="line"><span class="type">int</span> n = <span class="number">9</span> * <span class="number">0.5</span>; <span class="comment">// n = 4</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*Precedence*/</span></span><br><span class="line"><span class="comment">//()    exp++   exp--</span></span><br><span class="line"><span class="comment">//* &amp; + - (unary) ++expr --expr typecast</span></span><br><span class="line"><span class="comment">//(* / % ) &gt; (+ -) &gt; (&gt; &lt;) &gt; (== !=) &gt; (&amp;&amp;) &gt; (||)</span></span><br><span class="line"><span class="comment">// = += -= *=...</span></span><br><span class="line">x = (<span class="literal">true</span> || <span class="literal">false</span> &amp;&amp; <span class="literal">true</span>) <span class="comment">//This evaluates to true because &amp;&amp; is executed first</span></span><br><span class="line">b = a++; <span class="comment">// assign a to b then increment</span></span><br><span class="line">b = ++a; <span class="comment">// a ++ and then b = a</span></span><br><span class="line"><span class="comment">//Mixed-Type Arithmetic Operation</span></span><br><span class="line"><span class="type">float</span> p = <span class="number">10</span> / <span class="number">4</span>; <span class="comment">//p = 2.0</span></span><br><span class="line"><span class="type">int</span> n = <span class="number">10</span> / <span class="number">4.0</span>; <span class="comment">//n = 2.5 = 2;</span></span><br><span class="line"><span class="type">int</span> r = <span class="number">-10</span> / <span class="number">4.0</span>; <span class="comment">// r = -2; </span></span><br><span class="line"><span class="type">int</span> aa = <span class="number">6</span>;</span><br><span class="line"><span class="type">float</span> pp = (<span class="type">float</span>) aa / <span class="number">4</span>; <span class="comment">// pp = 1.5</span></span><br><span class="line"><span class="type">float</span> qq = (<span class="type">float</span>) (aa / <span class="number">4</span>) <span class="comment">// qq = 1.0</span></span><br><span class="line"><span class="comment">//modulo and remainder</span></span><br><span class="line">a = <span class="number">-10</span>%<span class="number">4</span> <span class="comment">// a = -2 this is a remainder</span></span><br><span class="line">          <span class="comment">//in python this is a modulo, a = 2;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* */</span></span><br><span class="line"><span class="comment">//letters, numbers and _ can be used. but should not satrt with numbers</span></span><br><span class="line"><span class="comment">//Avoid standard identifiers(!= reserved words; does not cause warning) </span></span><br><span class="line"><span class="type">int</span> count, Count;  <span class="comment">// when a variable is declared,</span></span><br><span class="line"><span class="comment">// it is assigned with a random number.</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*Assignment*/</span></span><br><span class="line"><span class="comment">//a: lvalue</span></span><br><span class="line">a = <span class="number">32</span>;</span><br><span class="line"><span class="comment">// Cascading. assigns from right to left. </span></span><br><span class="line">a = b = c = <span class="number">3</span> + <span class="number">6</span>; </span><br><span class="line"></span><br><span class="line"><span class="comment">/*Operations*/</span></span><br><span class="line"><span class="comment">//binary Operations: Left Associative</span></span><br><span class="line"><span class="comment">//[U] (int) / (double) / (int) or (double) / (int) / (int), </span></span><br><span class="line"><span class="comment">//if the value doesn&#x27;t change but the type changes, would the answer be different?</span></span><br><span class="line"><span class="comment">//Or when is the case they are different?</span></span><br><span class="line"><span class="number">46</span> / <span class="number">15</span> / <span class="number">2</span> = <span class="number">3</span> / <span class="number">2</span> = <span class="number">1</span></span><br><span class="line"><span class="comment">//Unary Operators: + - are right associative</span></span><br><span class="line">a = <span class="number">-23</span>;</span><br><span class="line"><span class="comment">//Truncate result</span></span><br><span class="line"><span class="type">int</span> n = <span class="number">9</span> * <span class="number">0.5</span>; <span class="comment">// n = 4</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*Precedence*/</span></span><br><span class="line"><span class="comment">//()    exp++   exp--</span></span><br><span class="line"><span class="comment">//* &amp; + - (unary) ++expr --expr typecast</span></span><br><span class="line"><span class="comment">//(* / % ) &gt; (+ -) &gt; (&gt; &lt;) &gt; (== !=) &gt; (&amp;&amp;) &gt; (||)</span></span><br><span class="line"><span class="comment">// = += -= *=...</span></span><br><span class="line">x = (<span class="literal">true</span> || <span class="literal">false</span> &amp;&amp; <span class="literal">true</span>) <span class="comment">//This evaluates to true because &amp;&amp; is executed first</span></span><br><span class="line">b = a++; <span class="comment">// assign a to b then increment</span></span><br><span class="line">b = ++a; <span class="comment">// a ++ and then b = a</span></span><br><span class="line"><span class="comment">//Mixed-Type Arithmetic Operation</span></span><br><span class="line"><span class="type">float</span> p = <span class="number">10</span> / <span class="number">4</span>; <span class="comment">//p = 2.0</span></span><br><span class="line"><span class="type">int</span> n = <span class="number">10</span> / <span class="number">4.0</span>; <span class="comment">//n = 2.5 = 2;</span></span><br><span class="line"><span class="type">int</span> r = <span class="number">-10</span> / <span class="number">4.0</span>; <span class="comment">// r = -2; </span></span><br><span class="line"><span class="type">int</span> aa = <span class="number">6</span>;</span><br><span class="line"><span class="type">float</span> pp = (<span class="type">float</span>) aa / <span class="number">4</span>; <span class="comment">// pp = 1.5</span></span><br><span class="line"><span class="type">float</span> qq = (<span class="type">float</span>) (aa / <span class="number">4</span>) <span class="comment">// qq = 1.0</span></span><br><span class="line"><span class="comment">//modulo and remainder</span></span><br><span class="line">a = <span class="number">-10</span>%<span class="number">4</span> <span class="comment">// a = -2 this is a remainder</span></span><br><span class="line">          <span class="comment">//in python this is a modulo, a = 2;</span></span><br></pre></td></tr></table></figure>
 <h2 id="selection-structures">Selection Structures</h2>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*Selection Strcture*/</span></span><br><span class="line"><span class="comment">// Notice the break; here. If no break is put here, then if the value == value2</span></span><br><span class="line"><span class="comment">// Then the programme will execute Code1 &amp; Code 2 &amp; default</span></span><br><span class="line"><span class="keyword">switch</span>( &lt;variable or expression&gt; ) &#123;</span><br><span class="line">    <span class="keyword">case</span> value1:</span><br><span class="line">        Cod1 to execute</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> value2:</span><br><span class="line">        Code2 to execute</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    ...</span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">        Code to execute <span class="keyword">if</span> no <span class="keyword">case</span> is matched</span><br><span class="line">        <span class="keyword">break</span>; </span><br><span class="line"><span class="comment">//lazy evaluation || short circuit evaluation</span></span><br><span class="line"><span class="keyword">if</span>(<span class="literal">true</span> || (runtime error statement)) <span class="comment">// return : true.</span></span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="pointers-and-functions">Pointers and Functions</h2>
+<h3 id="pointers">Pointers</h3>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> a = <span class="number">123</span>;</span><br><span class="line"><span class="comment">//address operator `&amp;`</span></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%p&quot;</span>, &amp;a); <span class="comment">// &amp;a = ffbff7dc in hexadecimal</span></span><br><span class="line"><span class="comment">// The address of a variable caries from run to run, as the system allocates any free memory to the variable</span></span><br><span class="line">type *pointer_name; <span class="comment">// pointer_name is a pointer to a variable of &lt;type&gt;</span></span><br><span class="line"><span class="type">int</span> *a_ptr = &amp;a;</span><br><span class="line"></span><br><span class="line"><span class="comment">// indirection operator `*`</span></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, *a_ptr); <span class="comment">// *a_ptr is synonymous</span></span><br><span class="line">*a_ptr = <span class="number">456</span>;</span><br><span class="line">(*a_ptr) ++; <span class="comment">//Why do we need a bracket!</span></span><br><span class="line"><span class="comment">//because * operator has a lower priority than the ++</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//incrementing address</span></span><br><span class="line"><span class="type">int</span> *a; <span class="type">float</span> *bp; <span class="type">char</span> *cp; <span class="type">double</span> *dp;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%p %p %p %p\n&quot;</span>, ap, bp, cp, dp); </span><br><span class="line"><span class="comment">// ffbff0a4, ffbff0a0, ffbff09f, ffbff090;</span></span><br><span class="line">ap++; bp++; cp++; dp++;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%p %p %p %p\n&quot;</span>, ap, bp, cp, dp);</span><br><span class="line"><span class="comment">// ffbff0a8 ffbff0a4 ffbff0a0 ffbff098</span></span><br><span class="line"><span class="comment">// We are incrementing by the bytes needed to store the specific value</span></span><br><span class="line"><span class="comment">// int-4byte float-4 char-1 double-8</span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> *n;</span><br><span class="line">*n = <span class="number">123</span>;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, *n);</span><br><span class="line"><span class="comment">//Segmentation Fault: n is pointing to a random address!</span></span><br><span class="line"><span class="comment">// * when you see a &quot;core dumped&quot; with the error, delete the core file.</span></span><br></pre></td></tr></table></figure>
+<p><strong>Why do we use pointers!</strong></p>
+<ul>
+<li>When we pass the address of a variable into a function! See the
+Functions part of the blog.</li>
+</ul>
+<h3 id="funcitions">Funcitions</h3>
+<p><em>TO use math functions, (1) include &lt;math.h&gt; (2) compile
+with -lm option</em></p>
+<ol type="1">
+<li><p>It is generally a good practice to put a function prototypes at
+the top of the program before the main() function.
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">double</span> <span class="title function_">circle_area</span><span class="params">(<span class="type">double</span>)</span>; <span class="comment">//function prototype(parameter names not needed)</span></span><br><span class="line"><span class="comment">//Without function prototype declaration, </span></span><br><span class="line"><span class="comment">//C thinks that the function returns int by default</span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span> &#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//the function returns the area of a circle</span></span><br><span class="line"><span class="type">double</span> <span class="title function_">circle_area</span><span class="params">(<span class="type">double</span> diameter)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> PI * <span class="built_in">pow</span>(diameter / <span class="number">2</span>, <span class="number">2</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p></li>
+<li><p>Parameters are <strong>passed by value</strong>.</p>
+<ul>
+<li><p>local variables inside a function only exist during the execution
+of a function. They are called automatic variables.</p></li>
+<li><p>So if we want to access a value outside a function, we need to
+use pointers!</p></li>
+</ul></li>
+</ol>
+<h2 id="array-string-and-structures">Array String and Structures</h2>
+<h3 id="array">Array</h3>
+<ol type="1">
+<li><p>Handle homogeneous data(the same type). When declaraing an array,
+include the type, name and size.</p></li>
+<li><p>Array elements occupy contiuous memory locations.</p></li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span> a[<span class="number">5</span>]; <span class="comment">//will not initialize</span></span><br><span class="line">a[<span class="number">5</span>] = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>&#125;; <span class="comment">//not allowed. </span></span><br><span class="line"><span class="type">int</span> d[<span class="number">5</span>] = &#123;<span class="number">0</span>&#125;; <span class="comment">// automatically initialize all elements to  be 0.</span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> a[<span class="number">3</span>], dest[<span class="number">3</span>];</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%p&quot;</span>, a); <span class="comment">// refers to the address of a[0]</span></span><br><span class="line"><span class="comment">// An array name is a CONSTANT pointer(cannot be altered)</span></span><br><span class="line">dest = a; <span class="comment">//illegal. trys to alter the constant.</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// programming sugar: code 1 and 2 are of no difference to </span></span><br><span class="line"><span class="comment">// the machine but is different for the programmer.</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">sumArray</span><span class="params">(<span class="type">int</span> [], <span class="type">int</span>)</span>;<span class="comment">//code 1</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">sumArray</span><span class="params">(<span class="type">int</span> arr[], <span class="type">int</span> size)</span> &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; size; i++) &#123;</span><br><span class="line">        sum += arr[i]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">sumArray(a, <span class="number">3</span>); <span class="comment">//points the pointer of arr[] to a;</span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">sumArray</span><span class="params">(<span class="type">int</span> *, <span class="type">int</span>)</span>; <span class="comment">//code2</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">sumArray</span><span class="params">(<span class="type">int</span> *arr, <span class="type">int</span> size)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// [U] How does the program know that </span></span><br><span class="line"><span class="comment">//the pointer is a pointer for an arry, not a normal integer?</span></span><br></pre></td></tr></table></figure>
+<h3 id="string">String</h3>
+<ol type="1">
+<li>A string is an array of char with a null character '\0'(ascii value
+0) at the end.</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;string.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*Inistializing a string:*/</span></span><br><span class="line"><span class="type">char</span> str[] = <span class="string">&quot;apple&quot;</span>; </span><br><span class="line"><span class="type">char</span> str[]  = &#123;<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;p&#x27;</span> ,..., <span class="string">&#x27;e&#x27;</span>&#125;;</span><br><span class="line"><span class="comment">// &quot;&quot; and &#x27;&#x27; are difference: </span></span><br><span class="line"><span class="comment">// &quot;&quot; for a string and creates a &#x27;\0&#x27; at the end.</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*Read and print string*/</span></span><br><span class="line">fgets(str, size, <span class="built_in">stdin</span>); <span class="comment">// the last element is </span></span><br><span class="line"><span class="comment">// the file to read from. stdin is from the keyboard.</span></span><br><span class="line"><span class="comment">// read until the newline or size - 1 char</span></span><br><span class="line">user input: eat: str = <span class="string">&quot;eat\n&quot;</span>; <span class="comment">//undesirable!</span></span><br><span class="line">len = <span class="built_in">strlen</span>(str); <span class="comment">// the length not including &#x27;\0&#x27;</span></span><br><span class="line"><span class="keyword">if</span> (str[len - <span class="number">1</span>] == <span class="string">&#x27;\n&#x27;</span>) str[len - <span class="number">1</span>] = <span class="string">&#x27;\0&#x27;</span>;</span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>, str); <span class="comment">//read until white space</span></span><br><span class="line"><span class="built_in">puts</span>(str); <span class="comment">//terminates with newline (pronounce put s)</span></span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;%s\n&quot;</span>, str); <span class="comment">//terminates with the null pointer</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*utilities*/</span></span><br><span class="line"><span class="built_in">strlen</span>(s)</span><br><span class="line"><span class="built_in">strcmp</span>(s1, s2)<span class="comment">//compare the ascii values of corresponding characters</span></span><br><span class="line"><span class="comment">// return negative integer if s1 is lexicographicallyless than s2;</span></span><br><span class="line"><span class="built_in">strcmp</span>(<span class="string">&quot;abc&quot;</span>, <span class="string">&quot;abd&quot;</span>) <span class="comment">// return negative</span></span><br><span class="line"><span class="built_in">strncmp</span>(s1, s2, n) <span class="comment">//compare the first n characters</span></span><br><span class="line"><span class="built_in">strcpy</span>(dest, source) <span class="comment">// copy up to &#x27;\0&#x27; </span></span><br><span class="line"><span class="built_in">strncpy</span>(dest, source, n) <span class="comment">// copy n characters.</span></span><br><span class="line"><span class="comment">// always use strncmp and strncpy! (avoid stack overflow attack)</span></span><br></pre></td></tr></table></figure>
+<h3 id="structures">Structures</h3>
+<p>Structures allow grouping of heterogeneous members.</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    <span class="type">int</span> day, month, year;</span><br><span class="line">&#125; <span class="type">date_t</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    <span class="type">int</span> number;</span><br><span class="line">    <span class="type">date_t</span> date;</span><br><span class="line">&#125; <span class="type">card_t</span>;</span><br><span class="line"><span class="type">card_t</span> card_t1 = &#123;<span class="number">8888</span>, &#123;<span class="number">1</span>,<span class="number">1</span>,<span class="number">2001</span>&#125;&#125;;</span><br><span class="line"><span class="comment">//[U]what if I want all year to be 2023?  </span></span><br><span class="line"><span class="type">int</span> card_number = card_t1.number; </span><br><span class="line"></span><br><span class="line"><span class="comment">//unlike arrays, we can do assignments!</span></span><br><span class="line"><span class="type">card_t</span> card_t2 = card_t1; </span><br><span class="line"><span class="comment">//[S] Is this pass by refernce or value? - pass by value!</span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">change_card_number</span><span class="params">(<span class="type">card_t</span> *card)</span> &#123;</span><br><span class="line">    (*card). number = <span class="number">0000</span>; <span class="comment">// We need the bracket </span></span><br><span class="line">    <span class="comment">// because the pointer notation has a lower priority.</span></span><br><span class="line">    card-&gt;number = <span class="number">1000</span>; <span class="comment">//syntatic sugar(same code as above!)</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h1 id="number-system">Number System</h1>
 <h2 id="introduction">Introduction</h2>
 <p><strong>Decimal Number System</strong> 1. Weighted-posistional number
@@ -1154,7 +1198,7 @@ number with 2 decimal places</p>
 <p><strong>Prefix</strong> 1. 0 for octal(8) 2. 0x for hexadecimal</p>
 <p><strong>Converting Decimals</strong></p>
 <figure>
-<img src="Carries.png" alt="Converting Decimals" />
+<img src="Carries.png" style="width:40.0%" alt="Converting Decimals" />
 <figcaption aria-hidden="true">Converting Decimals</figcaption>
 </figure>
 <h2 id="american-standard-code-for-information-interchange">American
@@ -1198,7 +1242,7 @@ that?)</strong></li>
 and negative values.</li>
 <li>the Excess-n notation means that in order for a negative number x to
 be negated, you need to add n to it. (e.g.: for the excess-4 notation,
-add 4 to -2 inorder to get 2) <img src="Excess4.png"
+add 4 to -2 inorder to get 2) <img src="Excess4.png" style="width:40.0%"
 alt="Excess-4 representation on 3-bit numbers" /></li>
 </ul></li>
 </ol>
@@ -1260,6 +1304,332 @@ class="math display">\[-6.5_{10} = -110.1_{2} = -1.101_{2} *
 hexadecimal <span class="math display">\[1 10000001 1010000...00000_2 =
 C0D00000_{16}\]</span></li>
 </ol>
+<h1 id="isa">ISA</h1>
+<h2
+id="mipsmicroprocessor-without-interlocked-pipelined-stages">MIPS((Microprocessor
+without Interlocked Pipelined Stages)</h2>
+<h3 id="introduction-1">Introduction</h3>
+<ol type="1">
+<li><p>How the computer work:</p>
+<ul>
+<li><p>programming: High-level language(C++/java) - Compiler -&gt;
+Assembly Language - Assembler -&gt; Machine Language Instructions(1000
+1100...) -&gt; MIPS processor</p></li>
+<li><p>components: Processor &amp; Memory.</p>
+<ul>
+<li><p>Bus: the data connector between the Processor and
+Memory.</p></li>
+<li><p>Processor: Fast. Contains ALU; Registers(temporary value
+storage)</p>
+<ul>
+<li><p>Registers:</p>
+<ul>
+<li><p>A typical architecture has 16 to 32 registers.</p></li>
+<li><p>Registers have no data types(assumes that the data type is
+correct).</p></li>
+<li><p>Referered by number(<code>$0</code>)/name(<code>$a0</code>) <img
+src="register1.png" style="width:40.0%" /> <img
+src="register2.png" /></p></li>
+<li><p>$at(register 1) is reserved for the assembler, $k0-k1(26-27)
+reserved for the operating system</p></li>
+</ul></li>
+</ul></li>
+<li><p>Memory: Instruction and data are stored in memory.</p></li>
+</ul></li>
+</ul></li>
+<li><p>ISA: abstraction between the hardware and low-level software(set
+of instructions) - manual for the hardware.</p></li>
+<li><p>What's the use?</p>
+<ul>
+<li><p>Include everything programmers need to know to make the machine
+code work correctly.</p></li>
+<li><p>allow CPU designers to design functionalities in different
+hardware</p></li>
+</ul></li>
+<li><p>Assembly Code Types:</p>
+<ul>
+<li><p>Memory Instruction: move data into registers.
+<code>r0 &lt;- load i</code> ; move data from register into memory:
+<code>store</code></p></li>
+<li><p>Reg-to-Reg Arithmetic: Arithmetic operations can work directly on
+registers only. It can also take in constant values(instead of from
+registers).</p></li>
+<li><p>Control Flow: Instructions to change the control flow based on
+conditions(e.g. Repetition(loop) / Seection(if-else) ).</p></li>
+</ul></li>
+</ol>
+<h3 id="instructions">Instructions</h3>
+<h3 id="basic">Basic</h3>
+<ol type="1">
+<li>Arithmetic Operations</li>
+</ol>
+<p><strong>Arithmetic Operations are within registers only.</strong></p>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line">add $s0, $s1, $s2 <span class="comment"># Operation, Destination, Source1, Source2</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># a = b + c - d;</span></span><br><span class="line">add $t0, $b, $c</span><br><span class="line">sub $a, $t0, $c</span><br><span class="line"></span><br><span class="line"><span class="comment"># immediate values! constant range: [-2^15 to 2^]</span></span><br><span class="line">addi $s0, $s0, <span class="number">4</span> <span class="comment"># no subi.</span></span><br><span class="line"></span><br><span class="line">add $a, $b, $zero <span class="comment"># a = b </span></span><br><span class="line">move $dest, $src <span class="comment"># syntax sugar(pseudo-instruction)</span></span><br></pre></td></tr></table></figure>
+<ol start="2" type="1">
+<li><p>Logical Operations</p>
+<ul>
+<li><p><code>sll</code>: shift left(&lt;&lt;) logical (4 bits: 1011
+1000-&gt; 1000 0000 (*))</p></li>
+<li><p><code>srl</code>: = divide by <span
+class="math inline">\(2^n\)</span> (&gt;&gt;)</p></li>
+<li><p>and: force bits to be 0; or: force bits to be 1s; nor: nor 0 to
+toggle bits. nor 1 to force bits to 0.; xor: xor 1 to get not
+operation</p></li>
+</ul></li>
+<li><p>Load instructions:</p></li>
+</ol>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="comment"># lui: load upper immediate </span></span><br><span class="line">lui $t0, <span class="number">0xAAAA</span> <span class="comment"># 1010101010101010</span></span><br><span class="line"><span class="comment"># now $to is: 1010101010101010 000...0 (lower bits filled with zeros)</span></span><br><span class="line">ori $t0, $t0, <span class="number">0xF0F0</span> <span class="comment"># 0xF0F0: 00...00 1111000011110000</span></span><br><span class="line"><span class="comment"># now $t0 is AAAAF0F0</span></span><br></pre></td></tr></table></figure>
+<p><em>xor: true if a and b are different; nor: not or</em></p>
+<h3 id="more-instructions">More Instructions</h3>
+<h4 id="memory-organisation">Memory Organisation</h4>
+<ol type="1">
+<li><p>Given a k-bit address, the address space is of size <span
+class="math inline">\(2^k\)</span>, which is 8
+<strong>locations</strong>. The memory might contain 1 byte of data in
+every location/address(byte addressing).</p></li>
+<li><p>Transfer Unit:</p>
+<ul>
+<li><p>Using distinct memory address, we can access a single byte(byte
+addressable) / word (word accessable). * Word is Usually <span
+class="math inline">\(2^n\)</span> bytes and is the common unit of
+transfer between processor and memory.</p></li>
+<li><p>Word Alignment: Words are aligned in memory if they begin at a
+byte address that is a multiple number of bytes in a word. (e.g. If
+4-byte word, then 0-3, 4-7 aligned; 1-4, 5-9 not aligned)</p></li>
+</ul></li>
+<li><p>MIPS is a load-store register architecture</p>
+<ul>
+<li><p>32 registers, each 32-bit long</p></li>
+<li><p>Memory address are 32-bit long(<span
+class="math inline">\(2^{32}\)</span> addresses)</p></li>
+<li><p>Each word contains 32 bits (4 bytes) (<span
+class="math inline">\(2^{30}\)</span> memory words)</p></li>
+</ul></li>
+</ol>
+<h4 id="memory-instruction">Memory Instruction</h4>
+<ol type="1">
+<li><p>Load Word: <code>lw $t0, 4($s0)</code>, the memory word at
+Mem[<code>$s0</code> + 4] is loaded into <code>$t0</code> <em>4 is the
+offset and should be multiple of 4(length of memory)</em></p></li>
+<li><p>Store Word: <code>sw $t0, 12($s0)</code>, value at
+<code>$t0</code> is stored into Mem[<code>$s0</code> + 12]</p></li>
+<li><p>Load and Store Arrays: <code>$s3</code> contains the base
+address(A[0]), h is mapped to <code>$s2</code></p></li>
+</ol>
+<p><img src="LoadAndStore.png" style="width:40.0%" /></p>
+<ol start="4" type="1">
+<li><p><code>lb</code> and <code>sb</code> used to load byte and store
+byte (when $t2 is 32 bits long, we use the lowest byte.)</p></li>
+<li><p><code>ulw</code> and <code>uls</code> are pseudo-Instructions for
+unaligned load word</p></li>
+</ol>
+<p><em>Consecutive word address in machines with byte-addressing do not
+differ by 1, it differs by length of word!</em></p>
+<h4 id="control-flows">Control Flows</h4>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Conditional (branch) Instructions</span></span><br><span class="line">bne $t0, $t1, label <span class="comment"># $t0 == $t1, go to next instruction, else branch to label</span></span><br><span class="line">beq $t0, $t1, label <span class="comment"># opposite to bne(branch not equal)</span></span><br><span class="line">slt $t0, $s1, $s2 <span class="comment"># if($s1 &lt; $s2) $t0 = 1, else = 0 (set on less than)</span></span><br><span class="line">slti</span><br><span class="line"></span><br><span class="line"><span class="comment"># Unconditional (jump) Instructions</span></span><br><span class="line">j label <span class="comment"># jump to label</span></span><br><span class="line"></span><br><span class="line">bne $s3, $s4, L1</span><br><span class="line">j Exit <span class="comment"># necessary, else the programme executes the L1</span></span><br><span class="line">L1: sub $s0, $s1, $s2</span><br><span class="line">Exit: </span><br><span class="line"></span><br><span class="line"><span class="comment"># while($s2 == $s3) $s1 = $s1 + 1</span></span><br><span class="line">Loop: bne $s2, $s3, Exit</span><br><span class="line">      addi $s3, $s3, <span class="number">1</span></span><br><span class="line">      j Loop</span><br><span class="line">Exit: </span><br><span class="line"></span><br><span class="line"><span class="comment"># if(x &lt; y) then ....</span></span><br></pre></td></tr></table></figure>
+<h4 id="instruction-formats">Instruction Formats</h4>
+<h5 id="mips-instruction-encoding">MIPS Instruction Encoding</h5>
+<p>Each MIPS Instruction has a fixed length of 32 bits(word
+alligned).</p>
+<p><strong>Remember that the opcode and funct values on the sheet are
+hexadecimal!</strong></p>
+<p><a
+href="https://www.comp.nus.edu.sg/~cs2100/lect/MIPS_Reference_Data_page1.pdf">MIPS
+Reference Data</a></p>
+<ol type="1">
+<li><p>R format(Register): <code>op $r1, $r2, $r3</code> (e.g.: srl sll
+add sub)</p>
+<ul>
+<li><p><code>opcode rs rt rd shamt funct</code></p></li>
+<li><p>only 32 registers, so only 5 bits for each registers. Same for
+shamt(), since shifting 32 bits clea the entire register. opcode and
+funct are 6 bits.</p></li>
+<li><p>opcode are 0 for all R-Format.</p></li>
+<li><p>funct specifies the instruction</p></li>
+<li><p>rs: source register; rt: target register; rd: Destination
+register;</p></li>
+<li><p>shamt: amount a shift instruction will shift by. 0 for all
+non-shift instructions</p></li>
+</ul>
+<p><img src="RInstruction.png" style="width:40.0%" /></p></li>
+<li><p>I format(Immediate): <code>op $r1, $r2, Immd</code> (e.g.: lw sw
+beq bne)</p>
+<ul>
+<li><p><code>opcode rs rt immediate</code></p></li>
+<li><p>opcode (6 bits): uniquely specifies an instruction</p></li>
+<li><p>rs rt (5 bits): rs: source register. rt: destination <em>Note the
+difference in I and R format!</em></p></li>
+<li><p>immediate(16 bits) : signed integer(2s complement).</p></li>
+<li><p>For beq/bne, immediate is not enough to specify the entire target
+address(memory address: 32 bits). Thus, we do PC-Relative Addressing (a
+branch often change the PC value by a small amount)! When branch is not
+taken, PC = PC + 4, when taken, PC = (PC + 4) + immdiate * 4(1 word = 4
+address). Where immediate is a signed two's complement integer (the
+number of instruction needed to jump).</p></li>
+<li><p><em>Program Counter: a special register that keeps address of
+instruction to be executed in the processor.</em></p></li>
+</ul></li>
+<li><p>J format(Jump): <code>op Immd</code></p>
+<ul>
+<li><p><code>opcode target-address</code></p></li>
+<li><p>opcode (6 bits)</p></li>
+<li><p>target-addres (26 bits): Assume we go word by word, then it's 28
+bits. Where do we get the other 4 bits? We choose the 4 most significant
+bits from PC + 4. Thus the maximum jump range would be <span
+class="math inline">\(2^28\)</span> bytes = 256 MB. <em>Effective
+Address: target-address + 00(by word)</em></p></li>
+<li><p>Steps: write out address(in binary) of PC + 4, write out address
+to jump to. Take the middle 26 bits and store into target
+address(despite the 4 significant bits and the last 2 0s)</p></li>
+</ul>
+<p><img src="JInstruction.png" /></p></li>
+</ol>
+<h2 id="isa-concepts">ISA Concepts</h2>
+<h3 id="overview">Overview</h3>
+<h4 id="cisc-vsrisc">CISC vsRISC</h4>
+<ol type="1">
+<li><p>Complex Instruction Set Computer</p>
+<ul>
+<li>Single Instruction performs comple operation in order to get smaller
+program size. No room for hardware optimization</li>
+</ul></li>
+<li><p>Reduced Instruction Set Computer</p>
+<ul>
+<li>Keep instruction set small and simple. Burden on software to combine
+simpler operations to implement high-level statements.</li>
+</ul></li>
+</ol>
+<h3 id="concept-1-data-storage">Concept 1: Data Storage</h3>
+<ol type="1">
+<li><p>Storage Architecture:</p>
+<ul>
+<li><p>Stack Architecture (Implicit)</p></li>
+<li><p>Accumulator Architecture (Implicit)</p></li>
+<li><p>General-purpose Register Architecture (Explicit) (most common
+choice) (CISC use mixture)</p>
+<ul>
+<li><p>Register-memory architecture(one operand in memory)</p></li>
+<li><p>Register-register(load-store) architecture (MIPS) (RISC
+use)</p></li>
+</ul></li>
+<li><p>Memory-memory architecture: All operands in memory</p></li>
+</ul>
+<p><img src="StorageArchitecture.png" /></p></li>
+</ol>
+<h3 id="concept-2-memory-address">Concept 2: Memory Address:</h3>
+<p><img src="MemoryAddress.png" /></p>
+<figure>
+<img src="Endianness.png" alt="Endianness" />
+<figcaption aria-hidden="true">Endianness</figcaption>
+</figure>
+<h3
+id="concept-3-4-operations-in-instruction-set-and-instruction-formats">Concept
+3 &amp; 4: Operations in Instruction Set and Instruction Formats</h3>
+<p>Instruction Length</p>
+<pre><code>- Variable Lenght vs Fixed Length: Variable length instructions  are fetched by parts. The second part of the instruction is loaded due to the instruction of the 1st part...
+
+- Very Long Instruction Word architecture: Instructions are 64 bit long and can load 32/64 bit instructions.</code></pre>
+<h3 id="concept-5-instruction-encoding">Concept 5: Instruction
+Encoding</h3>
+<h2 id="data-path">Data Path</h2>
+<h3 id="fetch">Fetch</h3>
+<ol type="1">
+<li><p>Fetch the instruction from the PC and output to the decoding
+stage.</p></li>
+<li><p>Elements:</p>
+<ul>
+<li><p>Instruction Memory: a sequential circuit</p></li>
+<li><p>Adder</p></li>
+<li><p>Clock: [U] how do you implement this? what about the time needed
+for PC to be updated？ What is the point of having this?</p></li>
+</ul>
+<figure>
+<img src="Clock.png"
+alt="PC is read during the first half and updated in the rising clock edge" />
+<figcaption aria-hidden="true">PC is read during the first half and
+updated in the rising clock edge</figcaption>
+</figure></li>
+</ol>
+<h3 id="decode">Decode</h3>
+<p><img src="DataPathDecode.png" /></p>
+<ol type="1">
+<li><p>Elements:</p>
+<ul>
+<li><p>Register File: collection of registers. Input the address and
+output data.</p></li>
+<li><p>RegWrite: control signal to indicate whether the data in "Write
+Data" will be written into the Write register</p></li>
+<li><p>RegDst: Multiplexer that decides whether the write register reads
+from rt(0, I-Format instruction) or from Inst(1, R-Format
+instruction).</p></li>
+<li><p>ALUSrc: Multiplexer that decides what is written into Operand 2
+of ALU(0 for read data2 and 1 for immediate value, note that for
+<code>beq</code> instruction, ALUSrc is set to 0 because Immediate value
+is fetched to the PC + 4 part). If we take immediate value, we extend it
+to 32 bits by filling in the 16 bits by the sign bit.(e.g. [U])</p></li>
+</ul></li>
+</ol>
+<h3 id="execution-stage">Execution Stage</h3>
+<p><img src="DataPathExecution.png" /></p>
+<ol type="1">
+<li><p>Functionalities</p>
+<ul>
+<li><p>Arithmetic: add / sll / and</p></li>
+<li><p>Memory: Address calculation</p></li>
+<li><p>Branch: register comparison and target address
+calculation.</p></li>
+</ul></li>
+<li><p>Elements:</p>
+<ul>
+<li><p>ALU(Arithmetic Logic Unit)</p>
+<ul>
+<li><p>Control: 4-bit todecide the particular operation</p></li>
+<li><p>isZero: output 1 if A op B == 0</p></li>
+</ul></li>
+<li><p>Mutiplexer: Choose between PC + 4 or PC + 4 + offset.</p>
+<ul>
+<li>PCSrc: 0 if it is the next Instruction, 1 if it is the next
+branch(PC + 4 + Immediate Value)</li>
+</ul></li>
+</ul></li>
+</ol>
+<h3 id="memory-stage">Memory Stage</h3>
+<p><img src="DataPathMemory.png" /></p>
+<ol type="1">
+<li><p>I/O: Fetch data fom ALU stage and output the results to be
+stored</p></li>
+<li><p>Elements:</p>
+<ul>
+<li><p>Data Memory: why is this needed?</p></li>
+<li><p>MemRead and MemWrite: only one is asserted at any time. If both
+are 1, error occur.</p></li>
+<li><p>Write Data: for <code>sw</code> instructions, The src regiter's
+address is passed to WR and the content is fetched by RD2, then it's
+passed to the Write Data part and stored in the new address.</p></li>
+<li><p>MemToReg: Decides whether the data should be read from memory or
+from the ALU output.</p></li>
+</ul></li>
+</ol>
+<p><img src="DataPathMemory2.png" /></p>
+<h3 id="register-write-stage">Register Write Stage</h3>
+<p><img src="DataPathRegisterWrite.png" /></p>
+<ol type="1">
+<li><p>I/O: Input: computation result from memory/ALU</p></li>
+<li><p>Elements:</p>
+<ul>
+<li><p>Register File</p>
+<ul>
+<li><p>Write Register: takes in the address of which register to write
+in from the Decode Stage</p></li>
+<li><p>Write Data: take in the data to write in</p></li>
+</ul></li>
+</ul></li>
+</ol>
+<h3 id="elements">Elements</h3>
+<ol type="1">
+<li>Multiplexer: Control = k, select <span
+class="math inline">\(in_k\)</span> as output.</li>
+</ol>
 <h1 id="things-to-say">Things to say</h1>
 <p>Why do we even compare C with Python in this course?</p>
 ]]></content>
@@ -1269,8 +1639,8 @@ C0D00000_{16}\]</span></li>
         <category>ComputerOrganization</category>
       </categories>
       <tags>
-        <tag>ComputerScience</tag>
         <tag>Notes</tag>
+        <tag>ComputerScience</tag>
         <tag>CPP</tag>
         <tag>C</tag>
         <tag>MIPS</tag>
@@ -2010,6 +2380,220 @@ is O(loga n)!</p></li>
 <li>log2n = O( log10n ) Correct! We can easily switch between bases by
 multiplying by a constant.</li>
 </ol>
+<h1 id="lecture-12-hashing">Lecture 12 Hashing</h1>
+<h2 id="basic-concepts">Basic Concepts</h2>
+<ol type="1">
+<li><p>Difference with trees: no comparison between keys. [U] Why do you
+need O(n^2) time to sort in symbol table</p></li>
+<li><p>For <code>java.util.Map&lt;Key, Value&gt;</code></p>
+<ul>
+<li><p>No duplicates are allowed</p></li>
+<li><p>Keys are immutable</p></li>
+</ul></li>
+</ol>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Map&lt;String, Integer&gt; ageMap = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;String, Integer&gt;(); </span><br><span class="line"><span class="comment">//Map instantiation is not allowed as Map is an interfacee</span></span><br><span class="line">ageMap.put(<span class="string">&quot;Alice&quot;</span>, <span class="number">32</span>);</span><br><span class="line"><span class="type">Integer</span> <span class="variable">age</span> <span class="operator">=</span> ageMap.get(<span class="string">&quot;Bob&quot;</span>);</span><br><span class="line"><span class="keyword">if</span>(age == <span class="literal">null</span>) &#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;Bob not found&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="3" type="1">
+<li>How does java implement hashFunctions?</li>
+</ol>
+<ul>
+<li>hashCode should be:</li>
+</ul>
+<ol type="1">
+<li><p>reflexive, symmetric, transitive</p></li>
+<li><p>consistent(always return the same answer)</p></li>
+<li><p>simultanious with equals method! (returns the same hashcode if
+and only if two objects are the same!) <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// By default, returns the memory location of the object! </span></span><br><span class="line"><span class="comment">// In fact, it just returns some part of the memory location</span></span><br><span class="line"><span class="keyword">static</span> <span class="type">int</span> <span class="title function_">indexFor</span><span class="params">(<span class="type">int</span> h, <span class="type">int</span> length)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> h &amp; (length - <span class="number">1</span>); <span class="comment">//returns the last few bits</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//  Sample hashCode functions for different types of variables.</span></span><br><span class="line">Integer: <span class="keyword">return</span> value;</span><br><span class="line">Long: <span class="keyword">return</span> <span class="type">int</span>(value ^ (value &gt;&gt;&gt; <span class="number">32</span>)) <span class="comment">//collision can happen [U]</span></span><br><span class="line">String: <span class="keyword">return</span> converToDecimal(String.base31())</span><br><span class="line"><span class="comment">// Mathematical calculation: think of the integer as a base 31 number </span></span><br><span class="line"><span class="comment">// and convert it to decimal! </span></span><br><span class="line"><span class="comment">// [U] Why 31? - you can quickly implement mod 31 with bit shifting operations?</span></span><br><span class="line"><span class="comment">// Note that &quot;Aa&quot; and &quot;BB&quot; have the same hasCode value </span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Implement your own hashCode method!</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Pair</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> first, second;</span><br><span class="line">    <span class="type">int</span> <span class="title function_">hashCode</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> (first ^ second); <span class="comment">// E.g.</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">equals</span><span class="params">(Object o)</span>; <span class="comment">// the third rule of hashCode!</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//Implementation of the get function:</span></span><br><span class="line"><span class="keyword">for</span> (e in linkedList) &#123;</span><br><span class="line">    <span class="keyword">if</span>(e.hash == hash &amp;&amp; <span class="comment">//check if hashcode are the same</span></span><br><span class="line">        e. key == key || key.equals(e.key)) </span><br><span class="line">        <span class="comment">// check if memory address are the same or if they are defined equal</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p></li>
+</ol>
+<ol start="4" type="1">
+<li><p>Two Good properties of a good Hash Function:</p>
+<ul>
+<li><p>For every bucket j, there is some i such that h(key, i) = j.
+(make sure that you make use of all the space)</p></li>
+<li><p>Simple Uniform Hashing Assumption: Every key is equally likely to
+be mapped to every permutation, independent of every other key. [U] wut?
+Why does linear probing violate the rule</p></li>
+</ul></li>
+</ol>
+<h2 id="coping-with-collision">Coping with Collision</h2>
+<h3 id="concept-1">Concept</h3>
+<blockquote>
+<p>Collision: h(k1) = h(k2), then k1 and k2 collide, where h is a hash
+function that takes in a key(e.g. "Hello") and returns the index where
+it should be stored in the array.</p>
+</blockquote>
+<h3 id="chaining">Chaining</h3>
+<ol type="1">
+<li><p>Why don't we just insert each key into a random bucket?</p>
+<ul>
+<li><p>search would be slow!</p></li>
+<li><p>Simple Uniform Hasing Assumption: every key is equally likely to
+map to every bucket.</p>
+<ul>
+<li><p>What is the maximum chain length with SUHA? - O(log(n)) ([U]
+Why?)</p></li>
+<li><p>To minimize the maximum chain length, we use two function h1 and
+h2. store the k in the bucket with a smaller chain. This would reduce
+the maximum chain length to O(log log n)</p></li>
+</ul></li>
+</ul></li>
+</ol>
+<h3 id="open-addressing">Open Addressing</h3>
+<ol type="1">
+<li><p>Concept: find the next bucket! one itme per slot and try to fill
+in all buckets.</p></li>
+<li><p>Idea: probe a sequence of buckets until you find an empty
+one.</p>
+<ul>
+<li>h(key, i) where i is the time that you are trying (to find the
+slot), <em>Do note that it may not be that h(key, i) = h(key, i - 1) + 1
+and the "sequence" of objects may be arranged in random order.</em></li>
+</ul></li>
+<li><p>Problem: Deletion! If I simply set the box to null, when I try to
+search after deletion, I would stop at the deleted box and not search
+for any element after that(we assume that search stops as the first
+null, since we only stores elements in order). To solve that, we
+<strong>use DELETED for deleted elements instead of
+null</strong>.</p></li>
+<li><p>Linear probing:</p>
+<ul>
+<li><p>Clusters! There are clusters and there is a higher probability
+for the next h(k) to hit the cluster</p></li>
+<li><p>In practice, however, linear probing is faster. This is because
+caching!</p></li>
+</ul></li>
+<li><p>Double Hashing!</p>
+<ul>
+<li>Use two hash functions f, g. <span class="math display">\[h(k,i) =
+f(k) + i * g(k)\]</span> ([U] Claim: if g(k) is relatively prime to m,
+then h(k,i) hits all buckets. L15)</li>
+</ul></li>
+<li><p>Performance(assuming uniform hashing) ([U] why do you need this?
+Proof? L15):</p></li>
+</ol>
+<p>if <span class="math display">\[\alpha = n/m\]</span>, then <span
+class="math display">\[Cost = \frac {1}{1 - \alpha}\]</span></p>
+<p>So performancee degrades badly as <span
+class="math inline">\(\alpha\)</span> -&gt; 1</p>
+<h2 id="resizing">Resizing</h2>
+<h3 id="concept-2">Concept</h3>
+<ol type="1">
+<li><p>I don't know how many elements are going to be inserted! - Grow
+the table!</p></li>
+<li><p>Idea: Implement a new slot m2 and a new hash function. Scan the
+items in m1 (old hash table) and insert them in a new hash table -
+O(n)</p></li>
+</ol>
+<h3 id="how-fast-to-grow-the-hash-table">How fast to grow the hash
+table?</h3>
+<ol type="1">
+<li><p>m = m + 1: O(n^2); m = 2m: O(n); m = m^2: O(n^2)</p></li>
+<li><p>Shrinking and growing: if(n === m), then m = 2m. if(n &lt; m /
+4), then m = m /2</p>
+<ul>
+<li><p>Claim: Everytime you double a table of size m, at least m / 2 new
+items were added.</p></li>
+<li><p>Everytime you shrink a table of size m, at least m / 4 items were
+deleted.</p></li>
+</ul></li>
+<li><p>Technique of analyzing "average cost" (when some operations are
+cheap and some are expensive): Operation has amortized cost T(n) if for
+every integer k, the cost of k operations is &lt;= kT(n)</p>
+<ul>
+<li><p>e.g. For a list of insertions, the 5 insertions cost 5,5,5,13,7
+respectively. The amortized cost = 7, where 5 &lt; 7; 5 + 5 &lt; 7 * 2;
+5 + 5 + 5 &lt; 7 * 3...etc</p></li>
+<li><p>We claim that in this sense, the insert operation of a hash
+function has amortized cost O(1) [U] Proof</p></li>
+</ul></li>
+<li><p>[U] What if we don't want to be the person who triggers the 2
+hour hash table incrementing?</p></li>
+</ol>
+<h1 id="lecture-14-heaps">Lecture 14: Heaps</h1>
+<h2 id="priority-queue">Priority Queue</h2>
+<h2 id="heaps">Heaps</h2>
+<h3 id="two-properties">Two properties</h3>
+<ol type="1">
+<li><p>Heap Ordering: priority[parent] &gt;= priority[child] (different
+from a binary search tree!)</p></li>
+<li><p>Complete Binary Tree:</p>
+<ul>
+<li><p>Every level is full, except the last</p></li>
+<li><p>All nodes are as far left as possible</p></li>
+</ul></li>
+</ol>
+<h3 id="features">Features</h3>
+<ol type="1">
+<li><p>The maimum hbeight of a heap with n elements: floor(log
+n)</p></li>
+<li><p>Storing: we store the tree in an array in BFS order. In this
+case, it is easier to access the last node and the root node.</p></li>
+</ol>
+<p><img src="HeapStoring.png" style="width:40.0%" /></p>
+<ul>
+<li>How do we find the parent of a node? Since the tree is a Complete
+Binary Tree, the parent index would be: (k-1) / 2 !</li>
+</ul>
+<h3 id="operations">Operations</h3>
+<ol type="1">
+<li><p>Insert:</p>
+<ul>
+<li><p>Step one: add the new leaf to the left most of the last
+level</p></li>
+<li><p>bubble up: swap the leaf that doesn't satify the Heap Ordering
+property with the parent. [U] Why would this work</p></li>
+</ul></li>
+<li><p>Increase Key: increase a key from e.g. 5 -&gt; 25.</p>
+<ul>
+<li>bubble up 25.</li>
+</ul></li>
+<li><p>Decrease Key : 28 -&gt; 4</p></li>
+</ol>
+<ul>
+<li>We bubble down with the child with the bigger one (22)</li>
+</ul>
+<p><img src="HeapDecrease" style="width:40.0%" /></p>
+<ol start="4" type="1">
+<li><p>Delete:</p>
+<ul>
+<li><p>swap the node with the last node</p></li>
+<li><p>delete the node</p></li>
+<li><p>bubble down the last node</p></li>
+</ul></li>
+<li><p>extractMax: output the max and delete it.</p></li>
+</ol>
+<h3 id="performancee">Performancee:</h3>
+<p>All these operations are O(log n)!</p>
+<h3 id="heapsort">HeapSort</h3>
+<ol type="1">
+<li><p>Thought1: Unsorted List -&gt; Heap -&gt; Sorted List</p>
+<ul>
+<li><p>Procedure: Keep doing extractMax!</p></li>
+<li><p>Time complexity: O(n log n). Faster than Mergesort and slower
+than Quicksort.</p></li>
+<li><p>Unstable [U]</p></li>
+<li><p>Ternary (3-way) HeapSort is a little faster</p></li>
+</ul></li>
+<li><p>Thought 2: Heapify!</p>
+<ul>
+<li><p>Procedure: view the array as a complete tree. Do recursion!</p>
+<ul>
+<li><p>Base case: Each leaf node is a heap</p></li>
+<li><p>Heapify upwards where each left and right are heaps.(by bubble
+down)</p></li>
+</ul></li>
+<li><p>Code: <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">int</span>[] A = array of unsorted integers.</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> n - <span class="number">1</span> ;i &gt;=  <span class="number">0</span>; i--) &#123;</span><br><span class="line">    bubbleDown(i, A); </span><br><span class="line">    <span class="comment">//O(log n) but most nodes have smaller height!</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p></li>
+<li><p>Cost:</p></li>
+</ul>
+<p><span class="math display">\[\sum\limits_{h = 0}^{log(n)} {\frac
+{n}{2^h} O(h)} = O(n)\]</span></p>
+<ul>
+<li>[U] wait so why doesn't this count? Or why is heapsort consideered
+O(n log n)? Because to convert a heap into an array you still need O(n
+log n) ？</li>
+</ul></li>
+</ol>
+<h2 id="sets">Sets</h2>
+<p>[U] I did not understand a single word he said</p>
 <h1 id="problems-in-tutorials">Problems (in tutorials)</h1>
 <h2 id="mountain-stack">Mountain stack</h2>
 <p>A mountains consists of <strong>n</strong> hills, aligned linearly.
@@ -2230,6 +2814,20 @@ it!</p></li>
 the smaller one([U] Is this still random? )</li>
 <li>If not, the sorting would not be stable!</li>
 </ul>
+<h2 id="binary-counter-amortized-cost">Binary Counter Amortized
+Cost</h2>
+<ol type="1">
+<li><p>Suppose we have a binary counter, after n increments, what is the
+amortized cost?</p></li>
+<li><p>Simple answer: O(log n). But this is not the case!</p></li>
+<li><p>Closer look: 2! [U] Seems kind of unclear</p>
+<ul>
+<li><p>Observation: each increament would only change one 0 to
+1.</p></li>
+<li><p>Suppose each bit is a bank. When we change from 0 to 1, add 1
+dollar, when we change from 1 to 0, pay 1 dollar.</p></li>
+</ul></li>
+</ol>
 <p>[U] Check the ppt # Puzzles:</p>
 <ol type="1">
 <li><p>[U]Sicherman Dice</p></li>
@@ -2248,7 +2846,8 @@ fails.</p>
 <li><p>Prisoners! (L10)</p></li>
 </ol>
 <hr />
-<p>** Updated: Lecture 11 p135</p>
+<p>** Updated Until:</p>
+<p>Lecture 11 p135</p>
 <p>tut 2</p>
 <p>[U] optional questions in tutorials.</p>
 <p>[U] Check the open <a
@@ -2291,9 +2890,9 @@ href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
         <category>Algorithm</category>
       </categories>
       <tags>
-        <tag>ComputerScience</tag>
-        <tag>Notes</tag>
         <tag>Study</tag>
+        <tag>Notes</tag>
+        <tag>ComputerScience</tag>
         <tag>NUS</tag>
         <tag>Java</tag>
         <tag>Algorithm</tag>
@@ -2430,10 +3029,10 @@ file test.count</p>
 <p>To be continued.</p>
 ]]></content>
       <tags>
+        <tag>Study</tag>
+        <tag>Notes</tag>
         <tag>ComputerScience</tag>
         <tag>Unix</tag>
-        <tag>Notes</tag>
-        <tag>Study</tag>
         <tag>NUS</tag>
         <tag>CheatSheet</tag>
       </tags>
@@ -2580,9 +3179,9 @@ get the possibility of a point in the rectangle is in the circle, thus p
         <category>Overview</category>
       </categories>
       <tags>
-        <tag>ComputerScience</tag>
-        <tag>Notes</tag>
         <tag>Study</tag>
+        <tag>Notes</tag>
+        <tag>ComputerScience</tag>
         <tag>NUS</tag>
         <tag>JavaScript</tag>
         <tag>CS1101S</tag>
