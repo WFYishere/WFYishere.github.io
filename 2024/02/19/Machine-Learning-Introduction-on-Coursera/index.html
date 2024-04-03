@@ -32,8 +32,11 @@
 <meta property="og:image" content="https://wfyishere.github.io/2024/02/19/Machine-Learning-Introduction-on-Coursera/CostOverIterations.png">
 <meta property="og:image" content="https://wfyishere.github.io/2024/02/19/Machine-Learning-Introduction-on-Coursera/LearningCurve.png">
 <meta property="og:image" content="https://wfyishere.github.io/2024/02/19/Machine-Learning-Introduction-on-Coursera/LearningRateTooLarge.png">
+<meta property="og:image" content="https://wfyishere.github.io/2024/02/19/Machine-Learning-Introduction-on-Coursera/SigmoidFunction.png">
+<meta property="og:image" content="https://wfyishere.github.io/2024/02/19/Machine-Learning-Introduction-on-Coursera/DecisionBoundary.png">
+<meta property="og:image" content="https://wfyishere.github.io/2024/02/19/Machine-Learning-Introduction-on-Coursera/SquaredErrorTest.png">
 <meta property="article:published_time" content="2024-02-19T09:27:15.000Z">
-<meta property="article:modified_time" content="2024-03-06T08:43:04.739Z">
+<meta property="article:modified_time" content="2024-04-03T05:29:51.566Z">
 <meta property="article:author" content="Wen Fanyu">
 <meta property="article:tag" content="Study">
 <meta property="article:tag" content="Notes">
@@ -161,7 +164,8 @@
 Machine Learning: Regression and Classification</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#week-1introduction-to-ml"><span class="nav-number">1.1.</span> <span class="nav-text">Week 1:Introduction to ML</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#supervised-vs-unsupervised-learning"><span class="nav-number">1.1.1.</span> <span class="nav-text">Supervised VS Unsupervised
 Learning</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#regression-model"><span class="nav-number">1.1.2.</span> <span class="nav-text">Regression model</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#terminology"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">1. Terminology</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#hands-on-pactice"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">2. Hands on pactice:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cost-function"><span class="nav-number">1.1.2.3.</span> <span class="nav-text">3. Cost Function</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gradient-descent"><span class="nav-number">1.1.3.</span> <span class="nav-text">Gradient Descent</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#implemetation"><span class="nav-number">1.1.3.1.</span> <span class="nav-text">Implemetation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#code"><span class="nav-number">1.1.3.2.</span> <span class="nav-text">Code</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#week-2-regression-with-multiple-input-variables"><span class="nav-number">1.2.</span> <span class="nav-text">Week 2:
 Regression with multiple input variables</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#multiple-linear-regression"><span class="nav-number">1.2.1.</span> <span class="nav-text">Multiple Linear Regression</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#terminologies"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">Terminologies</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#vectorization"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">Vectorization</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#arrays-in-python"><span class="nav-number">1.2.1.2.1.</span> <span class="nav-text">Arrays in python</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#indexing-and-slicing"><span class="nav-number">1.2.1.2.2.</span> <span class="nav-text">Indexing and Slicing</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#vector-operation"><span class="nav-number">1.2.1.2.3.</span> <span class="nav-text">Vector Operation</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#two-dimensional-arrays"><span class="nav-number">1.2.1.2.4.</span> <span class="nav-text">Two Dimensional Arrays</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#implementation"><span class="nav-number">1.2.1.3.</span> <span class="nav-text">Implementation:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#normal-equation"><span class="nav-number">1.2.1.4.</span> <span class="nav-text">Normal Equation</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gradient-descent-in-practice"><span class="nav-number">1.2.2.</span> <span class="nav-text">Gradient Descent in Practice</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#feature-scaling"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">Feature scaling</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#checking-the-convergence-of-gradient-descent"><span class="nav-number">1.2.2.2.</span> <span class="nav-text">Checking the
-Convergence of Gradient Descent</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#useful-referenceswebsites"><span class="nav-number">2.</span> <span class="nav-text">Useful References&#x2F;Websites:</span></a></li></ol></div>
+Convergence of Gradient Descent</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#polynomial-regression"><span class="nav-number">1.2.2.3.</span> <span class="nav-text">Polynomial Regression</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#week-3-classification"><span class="nav-number">1.3.</span> <span class="nav-text">Week 3: Classification</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#logistic-regression"><span class="nav-number">1.3.1.</span> <span class="nav-text">Logistic Regression</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cost-function-for-logistic-regression"><span class="nav-number">1.3.2.</span> <span class="nav-text">Cost Function for
+Logistic Regression</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#useful-referenceswebsites"><span class="nav-number">2.</span> <span class="nav-text">Useful References&#x2F;Websites:</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -257,7 +261,7 @@ Convergence of Gradient Descent</span></a></li></ol></li></ol></li></ol></li><li
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-03-06 16:43:04" itemprop="dateModified" datetime="2024-03-06T16:43:04+08:00">2024-03-06</time>
+      <time title="Modified: 2024-04-03 13:29:51" itemprop="dateModified" datetime="2024-04-03T13:29:51+08:00">2024-04-03</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -288,14 +292,14 @@ Convergence of Gradient Descent</span></a></li></ol></li></ol></li></ol></li><li
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Word count in article: </span>
-      <span>14k</span>
+      <span>16k</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>13 mins.</span>
+      <span>15 mins.</span>
     </span>
 </div>
 
@@ -533,6 +537,94 @@ class="math inline">\(\alpha\)</span> to a very small number and check
 if it is decreasing, else there's something wrong with the code</em></p>
 <p><em>Values of <span class="math inline">\(\alpha\)</span> to choose :
 0.01 - 0.03 - 0.1 - 0.3 - 1 - 3 ...</em></p>
+<h4 id="polynomial-regression">Polynomial Regression</h4>
+<p>The importance of rescaling is shown as <span
+class="math inline">\(x, x^2, x^3\)</span> vary quite a lot, and it's
+important to do rescaling.</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># create target data</span></span><br><span class="line">x = np.arange(<span class="number">0</span>, <span class="number">20</span>, <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># engineer features .</span></span><br><span class="line">X = np.c_[x, x**<span class="number">2</span>, x**<span class="number">3</span>]   <span class="comment">#&lt;-- added engineered feature</span></span><br><span class="line"></span><br><span class="line">X = zscore_normalize_features(X)   </span><br><span class="line"></span><br><span class="line">model_w,model_b = run_gradient_descent_feng(X, y, iterations=<span class="number">10000</span>, alpha=<span class="number">1e-7</span>)</span><br><span class="line"></span><br><span class="line">plt.scatter(x, y, marker=<span class="string">&#x27;x&#x27;</span>, c=<span class="string">&#x27;r&#x27;</span>, label=<span class="string">&quot;Actual Value&quot;</span>); plt.title(<span class="string">&quot;x, x**2, x**3 features&quot;</span>)</span><br><span class="line">plt.plot(x, X@model_w + model_b, label=<span class="string">&quot;Predicted Value&quot;</span>); plt.xlabel(<span class="string">&quot;x&quot;</span>); plt.ylabel(<span class="string">&quot;y&quot;</span>); plt.legend(); plt.show()</span><br><span class="line"><span class="comment"># w,b found by gradient descent: w: [0.08 0.54 0.03], b: 0.0106</span></span><br></pre></td></tr></table></figure>
+<p>In the above example, the weight associated with the <span
+class="math inline">\(x^2\)</span>feature is much larger than the other,
+so <span class="math inline">\(x^2\)</span> is the most useful in
+fitting data.</p>
+<p><a target="_blank" rel="noopener" href="https://scikit-learn.org/stable/index.html">scikit
+learn</a></p>
+<p><a
+target="_blank" rel="noopener" href="https://www.coursera.org/learn/machine-learning/ungradedLab/uaIsm/optional-lab-linear-regression-with-scikit-learn/lab?path=%2Fnotebooks%2FC1_W2_Lab05_Sklearn_GD_Soln.ipynb">lab
+for using scikit</a></p>
+<h2 id="week-3-classification">Week 3: Classification</h2>
+<h3 id="logistic-regression">Logistic Regression</h3>
+<ol type="1">
+<li>Problem with linear regression:</li>
+</ol>
+<ul>
+<li>when new data that is beyong the threshold of the data is added, the
+function genreated by linear regression shifts, thus making the previous
+correct prediction change.</li>
+</ul>
+<ol start="2" type="1">
+<li><p>Sigmoid Function: <span class="math display">\[g(z) = \frac{1}{1
++ e^{-z}}, 0&lt;g(z)&lt;1\]</span> <img src="SigmoidFunction.png"
+alt="A sigmoid function is defined for all real input values" /></p></li>
+<li><p>Logistic Regression</p></li>
+</ol>
+<ul>
+<li><span class="math display">\[\vec{z} = \vec{w} * \vec{x} +
+b\]</span> <span class="math display">\[f_{w,b} = g(\vec{z})\]</span>,
+where <span class="math inline">\(f_{w,b}\)</span> represents the
+possibility of the y value to be 1([U] why), or <span
+class="math display">\[f_{\vec{w},b} = P(y = 1 |
+\vec{x};\vec{w},b)\]</span>, which means that the probability is
+affected by w, b, given the input x</li>
+</ul>
+<ol start="4" type="1">
+<li>Decision boundary.</li>
+</ol>
+<ul>
+<li><p>For a Logistic Regression, lets say we predict y = 1 whenever
+g(z) &gt; 0.5, vice versa.</p></li>
+<li><p>g(z) &gt; 0.5 iff z &gt; 0. Thus the line where <span
+class="math inline">\(z = 0\)</span> is an important line. We call this
+line <code>decision boundary</code>.</p></li>
+</ul>
+<figure>
+<img src="DecisionBoundary.png" alt="example of decision boundary" />
+<figcaption aria-hidden="true">example of decision boundary</figcaption>
+</figure>
+<h3 id="cost-function-for-logistic-regression">Cost Function for
+Logistic Regression</h3>
+<figure>
+<img src="SquaredErrorTest.png"
+alt="Why is Squared Error Test not useful for Logistic Regression" />
+<figcaption aria-hidden="true">Why is Squared Error Test not useful for
+Logistic Regression</figcaption>
+</figure>
+<p>Define the <code>loss function</code> to be <span
+class="math inline">\(L(predict, actual)\)</span>, where <span
+class="math display">\[J(w, b) = \frac{1}{m} \sum{L(f_{w,b},
+y[i])}\]</span></p>
+<p>For Logistic Regression, we define the loss function to be:</p>
+<p><span class="math display">\[
+  loss(f_{\vec{w},b}(\vec{x}^{(i)}), y^{(i)}) = \begin{cases}
+    - \log\left(f_{\vec{w},b}\left( \vec{x}^{(i)} \right) \right) &amp;
+\text{if $y^{(i)}=1$}\\
+    - \log \left( 1 - f_{\vec{w},b}\left( \vec{x}^{(i)} \right) \right)
+&amp; \text{if $y^{(i)}=0$}
+  \end{cases}
+\]</span>, or</p>
+<p><span class="math display">\[loss(f_{\mathbf{w},b}(\mathbf{x}^{(i)}),
+y^{(i)}) = (-y^{(i)} \log\left(f_{\mathbf{w},b}\left( \mathbf{x}^{(i)}
+\right) \right) - \left( 1 - y^{(i)}\right) \log \left( 1 -
+f_{\mathbf{w},b}\left( \mathbf{x}^{(i)} \right) \right)\]</span>,
+where</p>
+<p><span class="math display">\[f_{\vec{w},b}(\mathbf{x}^{(i)}) =
+g(\vec{w} \cdot\vec{x}^{(i)}+b)\]</span></p>
+<p>To check if this make sense, we check</p>
+<ul>
+<li><p>whether if the predicted value becomes nearer to the actual
+value, the <code>loss</code> becomes nearer to 0.</p></li>
+<li><p>The <code>cost function</code> is <code>convex</code>, meaning
+there is a local minimum.</p></li>
+</ul>
 <h1 id="useful-referenceswebsites">Useful References/Websites:</h1>
 <ol type="1">
 <li>https://numpy.org/doc/stable/</li>
@@ -631,14 +723,14 @@ if it is decreasing, else there's something wrong with the code</em></p>
       <i class="fa fa-chart-line"></i>
     </span>
       <span>Word count total: </span>
-    <span title="Word count total">97k</span>
+    <span title="Word count total">102k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>Reading time total &asymp;</span>
-    <span title="Reading time total">1:28</span>
+    <span title="Reading time total">1:33</span>
   </span>
 </div>
 

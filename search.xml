@@ -997,6 +997,94 @@ class="math inline">\(\alpha\)</span> to a very small number and check
 if it is decreasing, else there's something wrong with the code</em></p>
 <p><em>Values of <span class="math inline">\(\alpha\)</span> to choose :
 0.01 - 0.03 - 0.1 - 0.3 - 1 - 3 ...</em></p>
+<h4 id="polynomial-regression">Polynomial Regression</h4>
+<p>The importance of rescaling is shown as <span
+class="math inline">\(x, x^2, x^3\)</span> vary quite a lot, and it's
+important to do rescaling.</p>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="comment"># create target data</span></span><br><span class="line">x = np.arange(<span class="number">0</span>, <span class="number">20</span>, <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># engineer features .</span></span><br><span class="line">X = np.c_[x, x**<span class="number">2</span>, x**<span class="number">3</span>]   <span class="comment">#&lt;-- added engineered feature</span></span><br><span class="line"></span><br><span class="line">X = zscore_normalize_features(X)   </span><br><span class="line"></span><br><span class="line">model_w,model_b = run_gradient_descent_feng(X, y, iterations=<span class="number">10000</span>, alpha=<span class="number">1e-7</span>)</span><br><span class="line"></span><br><span class="line">plt.scatter(x, y, marker=<span class="string">&#x27;x&#x27;</span>, c=<span class="string">&#x27;r&#x27;</span>, label=<span class="string">&quot;Actual Value&quot;</span>); plt.title(<span class="string">&quot;x, x**2, x**3 features&quot;</span>)</span><br><span class="line">plt.plot(x, X@model_w + model_b, label=<span class="string">&quot;Predicted Value&quot;</span>); plt.xlabel(<span class="string">&quot;x&quot;</span>); plt.ylabel(<span class="string">&quot;y&quot;</span>); plt.legend(); plt.show()</span><br><span class="line"><span class="comment"># w,b found by gradient descent: w: [0.08 0.54 0.03], b: 0.0106</span></span><br></pre></td></tr></table></figure>
+<p>In the above example, the weight associated with the <span
+class="math inline">\(x^2\)</span>feature is much larger than the other,
+so <span class="math inline">\(x^2\)</span> is the most useful in
+fitting data.</p>
+<p><a href="https://scikit-learn.org/stable/index.html">scikit
+learn</a></p>
+<p><a
+href="https://www.coursera.org/learn/machine-learning/ungradedLab/uaIsm/optional-lab-linear-regression-with-scikit-learn/lab?path=%2Fnotebooks%2FC1_W2_Lab05_Sklearn_GD_Soln.ipynb">lab
+for using scikit</a></p>
+<h2 id="week-3-classification">Week 3: Classification</h2>
+<h3 id="logistic-regression">Logistic Regression</h3>
+<ol type="1">
+<li>Problem with linear regression:</li>
+</ol>
+<ul>
+<li>when new data that is beyong the threshold of the data is added, the
+function genreated by linear regression shifts, thus making the previous
+correct prediction change.</li>
+</ul>
+<ol start="2" type="1">
+<li><p>Sigmoid Function: <span class="math display">\[g(z) = \frac{1}{1
++ e^{-z}}, 0&lt;g(z)&lt;1\]</span> <img src="SigmoidFunction.png"
+alt="A sigmoid function is defined for all real input values" /></p></li>
+<li><p>Logistic Regression</p></li>
+</ol>
+<ul>
+<li><span class="math display">\[\vec{z} = \vec{w} * \vec{x} +
+b\]</span> <span class="math display">\[f_{w,b} = g(\vec{z})\]</span>,
+where <span class="math inline">\(f_{w,b}\)</span> represents the
+possibility of the y value to be 1([U] why), or <span
+class="math display">\[f_{\vec{w},b} = P(y = 1 |
+\vec{x};\vec{w},b)\]</span>, which means that the probability is
+affected by w, b, given the input x</li>
+</ul>
+<ol start="4" type="1">
+<li>Decision boundary.</li>
+</ol>
+<ul>
+<li><p>For a Logistic Regression, lets say we predict y = 1 whenever
+g(z) &gt; 0.5, vice versa.</p></li>
+<li><p>g(z) &gt; 0.5 iff z &gt; 0. Thus the line where <span
+class="math inline">\(z = 0\)</span> is an important line. We call this
+line <code>decision boundary</code>.</p></li>
+</ul>
+<figure>
+<img src="DecisionBoundary.png" alt="example of decision boundary" />
+<figcaption aria-hidden="true">example of decision boundary</figcaption>
+</figure>
+<h3 id="cost-function-for-logistic-regression">Cost Function for
+Logistic Regression</h3>
+<figure>
+<img src="SquaredErrorTest.png"
+alt="Why is Squared Error Test not useful for Logistic Regression" />
+<figcaption aria-hidden="true">Why is Squared Error Test not useful for
+Logistic Regression</figcaption>
+</figure>
+<p>Define the <code>loss function</code> to be <span
+class="math inline">\(L(predict, actual)\)</span>, where <span
+class="math display">\[J(w, b) = \frac{1}{m} \sum{L(f_{w,b},
+y[i])}\]</span></p>
+<p>For Logistic Regression, we define the loss function to be:</p>
+<p><span class="math display">\[
+  loss(f_{\vec{w},b}(\vec{x}^{(i)}), y^{(i)}) = \begin{cases}
+    - \log\left(f_{\vec{w},b}\left( \vec{x}^{(i)} \right) \right) &amp;
+\text{if $y^{(i)}=1$}\\
+    - \log \left( 1 - f_{\vec{w},b}\left( \vec{x}^{(i)} \right) \right)
+&amp; \text{if $y^{(i)}=0$}
+  \end{cases}
+\]</span>, or</p>
+<p><span class="math display">\[loss(f_{\mathbf{w},b}(\mathbf{x}^{(i)}),
+y^{(i)}) = (-y^{(i)} \log\left(f_{\mathbf{w},b}\left( \mathbf{x}^{(i)}
+\right) \right) - \left( 1 - y^{(i)}\right) \log \left( 1 -
+f_{\mathbf{w},b}\left( \mathbf{x}^{(i)} \right) \right)\]</span>,
+where</p>
+<p><span class="math display">\[f_{\vec{w},b}(\mathbf{x}^{(i)}) =
+g(\vec{w} \cdot\vec{x}^{(i)}+b)\]</span></p>
+<p>To check if this make sense, we check</p>
+<ul>
+<li><p>whether if the predicted value becomes nearer to the actual
+value, the <code>loss</code> becomes nearer to 0.</p></li>
+<li><p>The <code>cost function</code> is <code>convex</code>, meaning
+there is a local minimum.</p></li>
+</ul>
 <h1 id="useful-referenceswebsites">Useful References/Websites:</h1>
 <ol type="1">
 <li>https://numpy.org/doc/stable/</li>
@@ -2594,6 +2682,96 @@ log n) ？</li>
 </ol>
 <h2 id="sets">Sets</h2>
 <p>[U] I did not understand a single word he said</p>
+<h1 id="graph">Graph</h1>
+<h2 id="basic">Basic</h2>
+<h3 id="terminology">Terminology</h3>
+<ol type="1">
+<li><p>Nodes: At least one; Edges: Each Edge connect two nodes(In
+hypergraph, each edge connects &gt;=2 nodes in the graph)</p></li>
+<li><p><span class="math display">\[Graph G = &lt;V,E&gt;\]</span>,
+where V is a set of nodes, E is set of edges</p></li>
+<li><p>Simple path: set of edges connecting two nodes, which intersects
+eaach node at most once</p>
+<ul>
+<li><p>Connected: all nodes is connected by a path</p></li>
+<li><p>Cycle: where the last and first node are the same(not actually a
+path)</p></li>
+</ul></li>
+<li><p>Degree: number of adjacent edges.</p></li>
+<li><p>Diameter: <strong>Maximum</strong> distance between two nodes
+following the <strong>shortest</strong> path</p></li>
+<li><p>Directed Path: Each edge is directed</p>
+<ul>
+<li>In-degree and Out-degree</li>
+</ul></li>
+<li><p>Weight: the cost to travel from v1 to v2 is w[v1][v2]. It can be
+a negative number</p></li>
+</ol>
+<h3 id="different-kinds-of-graphs">Different Kinds of Graphs</h3>
+<ol type="1">
+<li><p>Unrooted Tree: Connected graph with no cycles. Forest if not
+connected</p></li>
+<li><p>Star: one central node that has connection to all other nodes
+([Do the foot of the stars need to be connected?])</p></li>
+<li><p>Clique(Complete Graph): All pairs are connected by
+edges(dimaeter: 1)</p></li>
+<li><p>Cycle: a circle.</p></li>
+<li><p>Bipartite: There exists a partition, where the edges only go from
+one edge to another. (Method to judge whether one graph is a bipartite:
+choose a random node and color it red, color the neighbours
+blue...etc)</p></li>
+<li><p>Planar graph: You can draw the graph in a way such that no edges
+intercross each other</p></li>
+</ol>
+<h3 id="storing-data">Storing Data</h3>
+<ol type="1">
+<li><p><em>Adjacency Matrix</em> : Graph represented as A[v][w] = 1 iff
+there is an edge between v and w. Neat property: A^2 = if there is
+length 2 paths([U] How does this work)</p></li>
+<li><p>Memory usage for graph G = (V, E)</p>
+<ul>
+<li><p>Adjacency List: O(V+E)</p></li>
+<li><p>Adjacency Matrix: O(<span
+class="math inline">\(V^2\)</span>)</p></li>
+<li><p>if a graph is dense ( |E| = O(<span
+class="math inline">\(V^2\)</span>) ) use adjacency Matrix</p></li>
+</ul></li>
+</ol>
+<h2 id="bfs-and-dfs">BFS and DFS</h2>
+<h3 id="concept-3">Concept</h3>
+<ol type="1">
+<li>Level: the 1st level consists of nodes that have path of length 1.
+The 2nd level consists of nodes that have path of length 2 but
+<strong>do not have path of length 1</strong>.</li>
+</ol>
+<h3 id="bfs">BFS</h3>
+<ol type="1">
+<li><p>Steps:</p>
+<ul>
+<li>Build levels.(calculate level[i] from level[i - 1], skip already
+visited nodes)</li>
+</ul></li>
+</ol>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">BFS(Node[] nodeList, <span class="type">int</span> startId) &#123;</span><br><span class="line">    <span class="type">boolean</span>[] visited = <span class="keyword">new</span> <span class="title class_">boolean</span>[nodeList.length];</span><br><span class="line">    Arrays.fill(visited, <span class="literal">false</span>);</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span>[] parent = <span class="keyword">new</span> <span class="title class_">int</span>[nodelist.length]; <span class="comment">//Each node will have one parent [U], </span></span><br><span class="line">    <span class="comment">// the parent pointer would lead me to the shortest path</span></span><br><span class="line">    Arrays.fill(parent, -<span class="number">1</span>);</span><br><span class="line">    </span><br><span class="line">    Collection&lt;Integer&gt; frontier = <span class="keyword">new</span> <span class="title class_">Collection</span>&lt;Integer&gt;;</span><br><span class="line">    frontier.add(startId);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//Main code</span></span><br><span class="line">    visited[startId] = <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">while</span> (!frontier.isEmpty())&#123;</span><br><span class="line">        Collection&lt;Integer&gt; nextFrontier = <span class="keyword">new</span> <span class="title class_">Collection</span>&lt;Integer&gt;;</span><br><span class="line">        <span class="keyword">for</span> (Integer v : frontier) &#123;</span><br><span class="line">            <span class="keyword">for</span> (Integer w : nodeList[v].nbrList) &#123;</span><br><span class="line">                <span class="keyword">if</span> (!visited[w]) &#123;</span><br><span class="line">                    visited[w] = <span class="literal">true</span>;</span><br><span class="line">                    parent[w] = v;</span><br><span class="line">                    nextFrontier.add(w);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        frontier = nextFrontier;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// For components that are not connected with startID</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">start</span> <span class="operator">=</span> <span class="number">0</span>; start &lt; nodeList.length; start++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (!visited[start])&#123;</span><br><span class="line">            Collection&lt;Integer&gt; frontier = <span class="keyword">new</span> <span class="title class_">Collection</span>&lt;Integer&gt;;frontier.add(startId);</span><br><span class="line">            <span class="comment">// Main code goes here!</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<ol start="2" type="1">
+<li>Complexity: O(V + E). Each vertex is added once and each edge is
+added once. (Do note the difference between E-edges and number of
+neighbours in each vertex here.)</li>
+</ol>
+<h3 id="dfs">DFS</h3>
+<ol type="1">
+<li></li>
+</ol>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">DFS-visit(Node[] nodeList, <span class="type">boolean</span>[] visited, <span class="type">int</span> startId)&#123;</span><br><span class="line">    <span class="keyword">for</span> (Integer v : nodeList[startId].nbrList) &#123;</span><br><span class="line">        <span class="keyword">if</span> (!visited[v])&#123;</span><br><span class="line">            visited[v] = <span class="literal">true</span>;</span><br><span class="line">            DFS-visit(nodeList, visited, v);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// remember to include the disconnected parts here.</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="shortest-paths">Shortest Paths</h2>
+<ol type="1">
+<li>Key idea: triangle inequality <span
+class="math display">\[cost[s][c] &lt;= cost[s][a] +
+cost[a][c]\]</span></li>
+</ol>
+<h3 id="shortest-path-from-s-to-every-node">Shortest Path from s to
+every node</h3>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(Edge e: graph)</span><br><span class="line">    relax(e);</span><br><span class="line"></span><br><span class="line">relax(<span class="type">int</span> v, <span class="type">int</span> w) &#123;</span><br><span class="line">    <span class="keyword">if</span>(cost[v] &gt; cost[w] + weight(v, w)) &#123;</span><br><span class="line">        cost[v] = cost[w] + weight(v, w);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h1 id="problems-in-tutorials">Problems (in tutorials)</h1>
 <h2 id="mountain-stack">Mountain stack</h2>
 <p>A mountains consists of <strong>n</strong> hills, aligned linearly.
