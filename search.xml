@@ -1323,8 +1323,8 @@ and inspires me to attend future guest lectures.</em></p>
       </categories>
       <tags>
         <tag>Thoughts</tag>
-        <tag>Random</tag>
         <tag>Mathematics</tag>
+        <tag>Random</tag>
       </tags>
   </entry>
   <entry>
@@ -1673,11 +1673,11 @@ regression looks the same to linear regression!</p>
         <category>MachineLearning</category>
       </categories>
       <tags>
-        <tag>Study</tag>
+        <tag>ComputerScience</tag>
         <tag>Notes</tag>
+        <tag>Study</tag>
         <tag>Coursera</tag>
         <tag>Stanford</tag>
-        <tag>ComputerScience</tag>
         <tag>AI</tag>
         <tag>MachineLearning</tag>
         <tag>SelfStudy</tag>
@@ -1724,9 +1724,9 @@ Blue pen for additional knowledge</li>
         <category>General</category>
       </categories>
       <tags>
-        <tag>StudyTips</tag>
-        <tag>Study</tag>
         <tag>Notes</tag>
+        <tag>Study</tag>
+        <tag>StudyTips</tag>
         <tag>General</tag>
       </tags>
   </entry>
@@ -2547,8 +2547,8 @@ outputs(the output is the complement of the normal output)</li>
         <category>ComputerOrganization</category>
       </categories>
       <tags>
-        <tag>Notes</tag>
         <tag>ComputerScience</tag>
+        <tag>Notes</tag>
         <tag>CPP</tag>
         <tag>C</tag>
         <tag>MIPS</tag>
@@ -4244,9 +4244,9 @@ href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
         <category>Algorithm</category>
       </categories>
       <tags>
-        <tag>Study</tag>
-        <tag>Notes</tag>
         <tag>ComputerScience</tag>
+        <tag>Notes</tag>
+        <tag>Study</tag>
         <tag>NUS</tag>
         <tag>Java</tag>
         <tag>Algorithm</tag>
@@ -4383,10 +4383,10 @@ file test.count</p>
 <p>To be continued.</p>
 ]]></content>
       <tags>
-        <tag>Study</tag>
-        <tag>Notes</tag>
         <tag>ComputerScience</tag>
         <tag>Unix</tag>
+        <tag>Notes</tag>
+        <tag>Study</tag>
         <tag>NUS</tag>
         <tag>CheatSheet</tag>
       </tags>
@@ -4533,9 +4533,9 @@ get the possibility of a point in the rectangle is in the circle, thus p
         <category>Overview</category>
       </categories>
       <tags>
-        <tag>Study</tag>
-        <tag>Notes</tag>
         <tag>ComputerScience</tag>
+        <tag>Notes</tag>
+        <tag>Study</tag>
         <tag>NUS</tag>
         <tag>JavaScript</tag>
         <tag>CS1101S</tag>
