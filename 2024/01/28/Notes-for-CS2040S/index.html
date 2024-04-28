@@ -51,9 +51,12 @@
 <meta property="og:image" content="https://wfyishere.github.io/2024/01/28/Notes-for-CS2040S/abtreeDownFlow6png">
 <meta property="og:image" content="https://wfyishere.github.io/2024/01/28/Notes-for-CS2040S/HeapStoring.png">
 <meta property="og:image" content="https://wfyishere.github.io/2024/01/28/Notes-for-CS2040S/HeapDecrease">
+<meta property="og:image" content="https://wfyishere.github.io/2024/01/28/Notes-for-CS2040S/Dijkstra.png">
+<meta property="og:image" content="https://wfyishere.github.io/2024/01/28/Notes-for-CS2040S/Dijkstra2.png">
+<meta property="og:image" content="https://wfyishere.github.io/2024/01/28/Notes-for-CS2040S/GraphSummary.png">
 <meta property="og:image" content="https://wfyishere.github.io/2024/01/28/Notes-for-CS2040S/PancakeWorstCase.png">
 <meta property="article:published_time" content="2024-01-28T03:14:20.000Z">
-<meta property="article:modified_time" content="2024-04-01T08:12:54.381Z">
+<meta property="article:modified_time" content="2024-04-24T03:20:05.224Z">
 <meta property="article:author" content="Wen Fanyu">
 <meta property="article:tag" content="Study">
 <meta property="article:tag" content="Notes">
@@ -123,7 +126,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">13</span></a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">34</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">16</span></a></li><li class="menu-item menu-item-todo"><a href="/todo" rel="section"><i class="fa-solid fa-bars fa-fw"></i>Todo</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">13</span></a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">34</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">18</span></a></li><li class="menu-item menu-item-todo"><a href="/todo" rel="section"><i class="fa-solid fa-bars fa-fw"></i>Todo</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -181,11 +184,11 @@ Algorithms</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a c
 random chosen pivot.</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#analysis-on-a-good-pivot"><span class="nav-number">3.3.2.1.</span> <span class="nav-text">Analysis on a good pivot</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#probability-theory-on-choosing-a-good-pivot"><span class="nav-number">3.3.2.2.</span> <span class="nav-text">Probability Theory
 on choosing a good pivot</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#quicksort-optimization"><span class="nav-number">3.3.3.</span> <span class="nav-text">Quicksort Optimization</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#order-statistics"><span class="nav-number">3.4.</span> <span class="nav-text">Order Statistics</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#other-sorting-algorithms"><span class="nav-number">3.5.</span> <span class="nav-text">Other Sorting Algorithms</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#counting-sort"><span class="nav-number">3.5.1.</span> <span class="nav-text">Counting Sort</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#bitsort"><span class="nav-number">3.5.2.</span> <span class="nav-text">BitSort(?)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#lecture-08-trees"><span class="nav-number">4.</span> <span class="nav-text">Lecture 08 Trees</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#dynamic-data-structures"><span class="nav-number">4.1.</span> <span class="nav-text">Dynamic Data Structures</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tree-basic-concepts"><span class="nav-number">4.2.</span> <span class="nav-text">Tree Basic Concepts</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#keeping-trees-balanced"><span class="nav-number">4.3.</span> <span class="nav-text">Keeping Trees Balanced</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#concept"><span class="nav-number">4.3.1.</span> <span class="nav-text">Concept</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#avl-trees"><span class="nav-number">4.3.2.</span> <span class="nav-text">AVL Trees</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#proof-of-balance"><span class="nav-number">4.3.2.1.</span> <span class="nav-text">Proof of Balance</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#maintaining-height-balance"><span class="nav-number">4.3.2.2.</span> <span class="nav-text">Maintaining Height-Balance</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#augmenting-trees"><span class="nav-number">4.4.</span> <span class="nav-text">Augmenting Trees</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#dynamic-order-statistics"><span class="nav-number">4.4.1.</span> <span class="nav-text">Dynamic Order Statistics</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tree-traversal"><span class="nav-number">4.5.</span> <span class="nav-text">Tree Traversal</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#dfs-and-bfs"><span class="nav-number">4.5.1.</span> <span class="nav-text">DFS and BFS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#introduction-1"><span class="nav-number">4.5.2.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#non-recursive-bfs-and-dfs"><span class="nav-number">4.5.3.</span> <span class="nav-text">Non-recursive BFS and DFS</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#stack---dfs"><span class="nav-number">4.5.3.1.</span> <span class="nav-text">Stack - DFS</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tree-operation-conclusion"><span class="nav-number">4.6.</span> <span class="nav-text">Tree Operation conclusion</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#trie"><span class="nav-number">4.6.1.</span> <span class="nav-text">Trie</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#interval-queries"><span class="nav-number">4.6.2.</span> <span class="nav-text">Interval Queries</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#goal"><span class="nav-number">4.6.2.1.</span> <span class="nav-text">Goal:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#augment"><span class="nav-number">4.6.2.2.</span> <span class="nav-text">Augment</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#implement"><span class="nav-number">4.6.2.3.</span> <span class="nav-text">Implement</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#search"><span class="nav-number">4.6.2.3.1.</span> <span class="nav-text">search:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#insertion-rotation"><span class="nav-number">4.6.2.3.2.</span> <span class="nav-text">insertion &amp; rotation</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#others"><span class="nav-number">4.6.2.3.3.</span> <span class="nav-text">Others</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#orthogonal-range-searching"><span class="nav-number">4.6.3.</span> <span class="nav-text">Orthogonal Range Searching</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#introduction-2"><span class="nav-number">4.6.3.1.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sample-one-dimension"><span class="nav-number">4.6.3.2.</span> <span class="nav-text">Sample: One-Dimension</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#strategy"><span class="nav-number">4.6.3.2.1.</span> <span class="nav-text">Strategy</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#two-dimension"><span class="nav-number">4.6.3.3.</span> <span class="nav-text">Two-Dimension</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#k-d-tree"><span class="nav-number">4.6.4.</span> <span class="nav-text">k-d Tree</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#b-trees"><span class="nav-number">4.7.</span> <span class="nav-text">B-trees</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#a-b-trees"><span class="nav-number">4.7.1.</span> <span class="nav-text">(a, b) trees</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#rules"><span class="nav-number">4.7.1.1.</span> <span class="nav-text">Rules</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#manipulation"><span class="nav-number">4.7.1.2.</span> <span class="nav-text">Manipulation</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#b-trees-1"><span class="nav-number">4.7.2.</span> <span class="nav-text">B-trees</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#others-1"><span class="nav-number">5.</span> <span class="nav-text">Others</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#lecture-12-hashing"><span class="nav-number">6.</span> <span class="nav-text">Lecture 12 Hashing</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#basic-concepts"><span class="nav-number">6.1.</span> <span class="nav-text">Basic Concepts</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#coping-with-collision"><span class="nav-number">6.2.</span> <span class="nav-text">Coping with Collision</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#concept-1"><span class="nav-number">6.2.1.</span> <span class="nav-text">Concept</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#chaining"><span class="nav-number">6.2.2.</span> <span class="nav-text">Chaining</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#open-addressing"><span class="nav-number">6.2.3.</span> <span class="nav-text">Open Addressing</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#resizing"><span class="nav-number">6.3.</span> <span class="nav-text">Resizing</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#concept-2"><span class="nav-number">6.3.1.</span> <span class="nav-text">Concept</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#how-fast-to-grow-the-hash-table"><span class="nav-number">6.3.2.</span> <span class="nav-text">How fast to grow the hash
 table?</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#lecture-14-heaps"><span class="nav-number">7.</span> <span class="nav-text">Lecture 14: Heaps</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#priority-queue"><span class="nav-number">7.1.</span> <span class="nav-text">Priority Queue</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#heaps"><span class="nav-number">7.2.</span> <span class="nav-text">Heaps</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#two-properties"><span class="nav-number">7.2.1.</span> <span class="nav-text">Two properties</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#features"><span class="nav-number">7.2.2.</span> <span class="nav-text">Features</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#operations"><span class="nav-number">7.2.3.</span> <span class="nav-text">Operations</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#performancee"><span class="nav-number">7.2.4.</span> <span class="nav-text">Performancee:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#heapsort"><span class="nav-number">7.2.5.</span> <span class="nav-text">HeapSort</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sets"><span class="nav-number">7.3.</span> <span class="nav-text">Sets</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#graph"><span class="nav-number">8.</span> <span class="nav-text">Graph</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#basic"><span class="nav-number">8.1.</span> <span class="nav-text">Basic</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#terminology"><span class="nav-number">8.1.1.</span> <span class="nav-text">Terminology</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#different-kinds-of-graphs"><span class="nav-number">8.1.2.</span> <span class="nav-text">Different Kinds of Graphs</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#storing-data"><span class="nav-number">8.1.3.</span> <span class="nav-text">Storing Data</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bfs-and-dfs"><span class="nav-number">8.2.</span> <span class="nav-text">BFS and DFS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#concept-3"><span class="nav-number">8.2.1.</span> <span class="nav-text">Concept</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#bfs"><span class="nav-number">8.2.2.</span> <span class="nav-text">BFS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#dfs"><span class="nav-number">8.2.3.</span> <span class="nav-text">DFS</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#shortest-paths"><span class="nav-number">8.3.</span> <span class="nav-text">Shortest Paths</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#shortest-path-from-s-to-every-node"><span class="nav-number">8.3.1.</span> <span class="nav-text">Shortest Path from s to
-every node</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#problems-in-tutorials"><span class="nav-number">9.</span> <span class="nav-text">Problems (in tutorials)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#mountain-stack"><span class="nav-number">9.1.</span> <span class="nav-text">Mountain stack</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#chicken-rice-competetion"><span class="nav-number">9.2.</span> <span class="nav-text">Chicken Rice Competetion :</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#weight-selectioneonomic-research"><span class="nav-number">9.3.</span> <span class="nav-text">Weight Selection(Eonomic
-Research):</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#height-of-binary-tree-after-subtree-removal"><span class="nav-number">9.4.</span> <span class="nav-text">Height of Binary
-Tree After Subtree Removal</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#safely-evaluating-average-pay"><span class="nav-number">9.5.</span> <span class="nav-text">Safely Evaluating average
-pay!</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pancake-flipping"><span class="nav-number">9.6.</span> <span class="nav-text">Pancake flipping!</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dna-swapping"><span class="nav-number">9.7.</span> <span class="nav-text">DNA Swapping</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#random-permutation"><span class="nav-number">9.8.</span> <span class="nav-text">Random Permutation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#binary-counter-amortized-cost"><span class="nav-number">9.9.</span> <span class="nav-text">Binary Counter Amortized
-Cost</span></a></li></ol></li></ol></div>
+every node</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#bellman-ford"><span class="nav-number">8.3.1.1.</span> <span class="nav-text">Bellman-Ford</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#code"><span class="nav-number">8.3.1.1.1.</span> <span class="nav-text">Code</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#proof"><span class="nav-number">8.3.1.1.2.</span> <span class="nav-text">Proof</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#dijkstra"><span class="nav-number">8.3.1.2.</span> <span class="nav-text">Dijkstra</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#basic-idea"><span class="nav-number">8.3.1.2.1.</span> <span class="nav-text">Basic Idea</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#proof-1"><span class="nav-number">8.3.1.2.2.</span> <span class="nav-text">Proof</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#performance-analysis"><span class="nav-number">8.3.1.2.3.</span> <span class="nav-text">Performance Analysis</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#special-cases"><span class="nav-number">8.3.1.3.</span> <span class="nav-text">Special Cases</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#topological-sort"><span class="nav-number">8.3.1.4.</span> <span class="nav-text">Topological Sort</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#weight-union"><span class="nav-number">8.4.</span> <span class="nav-text">Weight Union</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#minimum-spanning-trees"><span class="nav-number">8.5.</span> <span class="nav-text">Minimum Spanning Trees</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#basics"><span class="nav-number">8.5.1.</span> <span class="nav-text">Basics</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#properties"><span class="nav-number">8.5.2.</span> <span class="nav-text">Properties</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#generic-mst-algorithm"><span class="nav-number">8.5.3.</span> <span class="nav-text">Generic MST Algorithm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mst-algorithms"><span class="nav-number">8.5.4.</span> <span class="nav-text">MST Algorithms</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#prim"><span class="nav-number">8.5.4.1.</span> <span class="nav-text">Prim</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#kruskal"><span class="nav-number">8.5.4.2.</span> <span class="nav-text">Kruskal</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#variations-of-mst"><span class="nav-number">8.5.5.</span> <span class="nav-text">Variations of MST</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#dynamic-programming"><span class="nav-number">9.</span> <span class="nav-text">Dynamic Programming</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#basic-1"><span class="nav-number">9.1.</span> <span class="nav-text">Basic</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#graph-summary"><span class="nav-number">9.2.</span> <span class="nav-text">Graph Summary</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#problems-in-tutorials"><span class="nav-number">10.</span> <span class="nav-text">Problems (in tutorials)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#mountain-stack"><span class="nav-number">10.1.</span> <span class="nav-text">Mountain stack</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#chicken-rice-competetion"><span class="nav-number">10.2.</span> <span class="nav-text">Chicken Rice Competetion :</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#weight-selectioneonomic-research"><span class="nav-number">10.3.</span> <span class="nav-text">Weight Selection(Eonomic
+Research):</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#height-of-binary-tree-after-subtree-removal"><span class="nav-number">10.4.</span> <span class="nav-text">Height of Binary
+Tree After Subtree Removal</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#safely-evaluating-average-pay"><span class="nav-number">10.5.</span> <span class="nav-text">Safely Evaluating average
+pay!</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pancake-flipping"><span class="nav-number">10.6.</span> <span class="nav-text">Pancake flipping!</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dna-swapping"><span class="nav-number">10.7.</span> <span class="nav-text">DNA Swapping</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#random-permutation"><span class="nav-number">10.8.</span> <span class="nav-text">Random Permutation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#binary-counter-amortized-cost"><span class="nav-number">10.9.</span> <span class="nav-text">Binary Counter Amortized
+Cost</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#scheduling"><span class="nav-number">11.</span> <span class="nav-text">Scheduling</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#puzzles"><span class="nav-number">12.</span> <span class="nav-text">Puzzles:</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -198,7 +201,7 @@ Cost</span></a></li></ol></li></ol></div>
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">16</span>
+          <span class="site-state-item-count">18</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -281,7 +284,7 @@ Cost</span></a></li></ol></li></ol></div>
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-04-01 16:12:54" itemprop="dateModified" datetime="2024-04-01T16:12:54+08:00">2024-04-01</time>
+      <time title="Modified: 2024-04-24 11:20:05" itemprop="dateModified" datetime="2024-04-24T11:20:05+08:00">2024-04-24</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -308,14 +311,14 @@ Cost</span></a></li></ol></li></ol></div>
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Word count in article: </span>
-      <span>37k</span>
+      <span>47k</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>33 mins.</span>
+      <span>42 mins.</span>
     </span>
 </div>
 
@@ -1215,7 +1218,16 @@ path)</p></li>
 </ul></li>
 <li><p>Degree: number of adjacent edges.</p></li>
 <li><p>Diameter: <strong>Maximum</strong> distance between two nodes
-following the <strong>shortest</strong> path</p></li>
+following the</p></li>
+<li><p>Cut of agraph is a partition of the vertices into two disjoint
+subssets.</p>
+<ul>
+<li>Edge across the cut is the edge that has one node in each of the
+subsets</li>
+</ul></li>
+</ol>
+<p><strong>shortest</strong> path</p>
+<ol start="5" type="1">
 <li><p>Directed Path: Each edge is directed</p>
 <ul>
 <li>In-degree and Out-degree</li>
@@ -1287,7 +1299,326 @@ cost[a][c]\]</span></li>
 </ol>
 <h3 id="shortest-path-from-s-to-every-node">Shortest Path from s to
 every node</h3>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(Edge e: graph)</span><br><span class="line">    relax(e);</span><br><span class="line"></span><br><span class="line">relax(<span class="type">int</span> v, <span class="type">int</span> w) &#123;</span><br><span class="line">    <span class="keyword">if</span>(cost[v] &gt; cost[w] + weight(v, w)) &#123;</span><br><span class="line">        cost[v] = cost[w] + weight(v, w);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(Edge e: graph)</span><br><span class="line">    relax(e);</span><br><span class="line"></span><br><span class="line">relax(<span class="type">int</span> v, <span class="type">int</span> w) &#123;</span><br><span class="line">    <span class="keyword">if</span>(cost[v] &gt; cost[w] + weight(v, w)) &#123;</span><br><span class="line">        cost[v] = cost[w] + weight(v, w);</span><br><span class="line">        parent[v] = u;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="bellman-ford">Bellman-Ford</h4>
+<h5 id="code">Code</h5>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; V.length - <span class="number">1</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">for</span> (Edge e : Graph) &#123;</span><br><span class="line">        relax(e);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="proof">Proof</h5>
+<p><em>Suppose there is no negative-weight cylce</em> ([S] What about
+those that don't satify? - Then it makes no sense calculating the
+shortest path, just keep going in circles![^4]) [^4]: In fact, you can
+use Bellman-Ford to try finding a negative weight cycle - just try to
+see whether edge is relaxed after n-1 iterations!</p>
+<ol type="1">
+<li><p>Invariant: After j iterations(the outer loop), for any j-hop node
+<code>u</code>, cost[u] stores the correct answer. j-hop node refers to
+the node <code>u</code> where on the shortest path from <code>s</code>
+to <code>u</code>, there are j edges.</p></li>
+<li><p>Proof by Induction</p>
+<ul>
+<li><p>Base case: After 1st iteration, all 1-hop nodes stored the
+correct value <span class="math display">\[cost[u] =
+weight(s,u)\]</span></p></li>
+<li><p>If <span class="math display">\[cost[hop_{j - 1}] =
+ultimate\_value\]</span> after one iteration, the edge connecting
+(j-1)hop nodes and j-hop nodes are relaxed. Thus <span
+class="math display">\[cost[hop_j] = ultimate\_value\]</span></p></li>
+<li><p>Since all nodes in Graph are at most n-1 hop nodes (since there
+is no cylce in the ultimate shortest path)</p></li>
+</ul></li>
+<li><p>Performance: O(V<em>E). </em>If weight of all edges are the same,
+then just use BFS*</p></li>
+</ol>
+<h4 id="dijkstra">Dijkstra</h4>
+<h5 id="basic-idea">Basic Idea</h5>
+<ol type="1">
+<li><p>Steps: Maintain a priority queue, which stores the keys and is
+prioritized with the current estimated dist[k]. Maintain an array vis[],
+where vis[k] = true if the node k is visited, or dist[k] stores the
+correct answer.</p>
+<ul>
+<li><p>Initialize: change all nodes to be unvisited and all <span
+class="math inline">\(dist[k] = infinity\)</span>. Put the starting node
+into the priority queue and change dist[s] = 0.</p></li>
+<li><p>Loop: For each loop, extract the minimum element in priority
+queue, lets say <code>m</code>. mark <code>m</code> as visited(we'll
+explain why <code>dist[m]</code> stores the correct answer in a
+second)</p></li>
+<li><p>Relax all edges connected to <code>m</code>. Put the nodes which
+are not visited in the queue, update the nodes that are in the
+queue</p></li>
+<li><p>Repeat the Loop step.</p></li>
+</ul></li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> Dijkstra&#123;</span><br><span class="line">    <span class="keyword">private</span> Graph G;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">IPriorityQueue</span> <span class="variable">pq</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">PriQueue</span>();</span><br><span class="line">    <span class="keyword">private</span> <span class="type">double</span>[] distTo;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//initializing</span></span><br><span class="line">    pq.insert(start, <span class="number">0.0</span>);</span><br><span class="line">    distTo = <span class="keyword">new</span> <span class="title class_">double</span>[G.size()];</span><br><span class="line">    Arrays.fill(distTo, INFTY);</span><br><span class="line">    distTo[start] = <span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">    <span class="comment">//loop</span></span><br><span class="line">    <span class="keyword">while</span> (!pq.isEmpty()) &#123;</span><br><span class="line">       <span class="type">int</span> <span class="variable">m</span> <span class="operator">=</span> pq.deleteMin(); <span class="comment">// extract minimum elemtn</span></span><br><span class="line">        <span class="keyword">for</span> (Edge e : G[m].nbrList)</span><br><span class="line">            relax(e);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    relax(Edge e) &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">v</span> <span class="operator">=</span> e.from();</span><br><span class="line">        <span class="type">int</span> <span class="variable">w</span> <span class="operator">=</span> e.to();</span><br><span class="line">       <span class="type">double</span> <span class="variable">weight</span> <span class="operator">=</span> e.weight();</span><br><span class="line">        <span class="keyword">if</span> (distTo[w] &gt; distTo[v] + weight) &#123;</span><br><span class="line">            distTo[w] = distTo[v] + weight;</span><br><span class="line">            parent[w] = v;</span><br><span class="line">            <span class="keyword">if</span> (pq.contains(w))</span><br><span class="line">                pq.decreaseKey(w, distTo[w]); </span><br><span class="line">                <span class="comment">// decreasekey(k,v): reduce the priority of key k to v.</span></span><br><span class="line">                <span class="comment">// Here, we update distance of w in the priority queue </span></span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                pq.insert(w, distTo[w]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>[U] How did they come up with such a genius idea! Rethink about the
+thinking process.</p>
+<h5 id="proof-1">Proof</h5>
+<p>Imagine all the nodes on the graph to be of three categories:
+<code>visited nodes</code>(nodes that already have the currect distance
+stored), <code>fringe nodes</code> (unvisited nodes that have at least
+one edge that are connected to visited nodes), and
+<code>unknown nodes</code> (these are nodes whose information are
+completely unknown and don't have any edge connected to the
+<code>visited nodes</code>). As shown in the picture below.</p>
+<figure>
+<img src="Dijkstra.png"
+alt="Here, the visited nodes are the black ones, the fringe nodes are the red ones, suppose the circled one is the minimum element in the priority queue" />
+<figcaption aria-hidden="true">Here, the visited nodes are the black
+ones, the fringe nodes are the red ones, suppose the circled one is the
+minimum element in the priority queue</figcaption>
+</figure>
+<p>Before the proof, there are <strong>four properties</strong> that a
+graph would hold.</p>
+<ol type="1">
+<li><p>Any subpath of a shortest path is a shortest path. (Proof by
+contradiction)</p></li>
+<li><p>All <code>fringe nodes</code> are in the priority queue.</p></li>
+<li><p>All shortest paths that ends with an unvisited node would involve
+at least one visited node and one fringe node.</p></li>
+<li><p>At anytime, for any node v, <span
+class="math display">\[curr\_dist[v] &gt;= dist[v]\]</span></p></li>
+</ol>
+<p><strong>Now, we proof by induction</strong>: If at anytime, suppose
+for the visited elements, all distance stored are correct, then the next
+element that we delete in the priority queue would store the correct
+<code>dist[m]</code>.</p>
+<p>We will prove this by contradiction:</p>
+<ul>
+<li>Suppose we delete the minimum element from the priority queue, m,
+the <code>dist[m]</code> stores the wrong value. However, the "shortest
+path" that involves m is the orange path shown in the picture.</li>
+</ul>
+<p><img src="Dijkstra2.png" /></p>
+<ul>
+<li><p>By property(3), suppose the first fringe node that the shortest
+path involves is w. Since m is removed from priority queue(with
+property(2)), <span class="math display">\[curr\_dist[m] &gt;
+curr\_dist[w]\tag{1}\]</span></p></li>
+<li><p>However, since <code>m</code> is in the shortest path to
+<code>w</code>([U] Is this true? does curr_dist[m] really stores the
+correct value?), <span class="math display">\[curr\_dist[m] =
+dist[m]\tag{2}\]</span>, by property(1), <span
+class="math display">\[dist[m] &gt; curr\_dist[w]\tag{2.5}\]</span>.
+Since we know that <code>m</code> is in the shortest path to
+<code>w</code>, we say <span class="math display">\[dist[m] &lt;=
+dist[w]\tag{3}\]</span>, we conclude that <span
+class="math display">\[dist[w] &gt;= curr\_dist[w] \tag{4}\]</span>,
+which is contradictory to property(4).</p></li>
+</ul>
+<p><em>The proof only works for weightsthat are all positive. If there
+is negative weight edges, formula(3) will not hold. This is different
+from Bellman-Ford Algorithm</em></p>
+<h5 id="performance-analysis">Performance Analysis</h5>
+<p><strong>Time Complexity</strong>: we insert / deletMin for |V| times
+each, since every node is added to the priority queue oncec. We
+decreaseKey at most |E| times. Since priority queue operations are O(log
+V) <span class="math display">\[runtime = O((V+E)logV) = O(E log
+V)\]</span></p>
+<ul>
+<li><p>Priority Queue by AVL tree(with Hash Table): O((V + E) log V) =
+O(E log V)</p>
+<ul>
+<li><p>insert: O(log n)</p></li>
+<li><p>deleteMin(): O(log n)</p></li>
+<li><p>decreaseKey(key, priority): O(log n)</p></li>
+<li><p>contains(key): O(1)</p></li>
+</ul></li>
+<li><p>Performance iseven vetter if use d-way Heap or Fibonacci
+Heap(?)</p></li>
+</ul>
+<h4 id="special-cases">Special Cases</h4>
+<ol type="1">
+<li>For <code>Trees</code>, we can relax in the order of BFS/DFS!</li>
+</ol>
+<h4 id="topological-sort">Topological Sort</h4>
+<p><code>Directed Acyclic Graph</code>(e.g. scheduling cooking
+steps!):</p>
+<ul>
+<li><p>Definition: graphs that has no cycles.</p></li>
+<li><p>Topological order: there exists(more than one) sequential total
+ordering of all nodes, such that when I travel the nodes in that order,
+I would not disobey the order. [U] Why</p></li>
+<li><p>We use post-order DFS!</p>
+<ul>
+<li><p>Why don't we use BFS?[U]</p></li>
+<li><p>Why don't we use pre-order DFS?([U] I mean I can understand that
+it doesn't work but what's the key point of determining which algorithm
+to use here?)</p></li>
+</ul></li>
+<li><p>Time Complexity: O(V+E)</p></li>
+<li><p>Alternative Solution</p>
+<ul>
+<li><p>Add all nodes in Graph that has no incoming edges to the
+topo-order, remove all the edges adjacent to these nodes, remove the
+nodes, repeat.</p></li>
+<li><p>O(V + E)([U]Why? No EXPLAINATION?)</p></li>
+</ul></li>
+<li><p>After we Topological Sort the problem, we just relax the nodes in
+topological order. ([U] How exactly do you implement this, it's quite
+crucial for proving the correctness)</p></li>
+</ul>
+<h2 id="weight-union">Weight Union</h2>
+<ol type="1">
+<li><p>Functionalities</p>
+<ul>
+<li><p>Union(i, j)</p></li>
+<li><p>isConnected(i, j): return whether i and j are in the same
+union</p></li>
+<li><p>Union-Split-Find: for weight unions that implements this
+functionality, check <a
+target="_blank" rel="noopener" href="https://www.researchgate.net/publication/289047691_Dynamic_graph_connectivity_in_polylogarithmic_worst_case_time">THIS</a></p></li>
+</ul></li>
+<li><p>Idea: store data in a tree structure. Each tree is a union. When
+union i, j, find the root of i and j and merge the two trees.</p>
+<ul>
+<li><p>Find(i) : find the root of i</p></li>
+<li><p>Merge(rt1, rt2): union the two trees. We merge trees by setting
+the parent of the root of the smaller tree to be the root of the other
+tree.</p></li>
+</ul></li>
+<li><p>Performance</p>
+<ul>
+<li><p>isConnected(i, j) and Union(i, j) : O(h) / O(log n)</p></li>
+<li><p>Proof that h = O(log n) : Proof that for any tree of height h has
+at least <span class="math inline">\(2^k\)</span> nodes. Proof this by
+induction: suppose for height k trees this is true, proof that for
+height k+1 trees this is true.</p></li>
+<li><p>improvement: set parent of every node that is traversed to be the
+root node (flattens the tree - path compression!)</p></li>
+<li><p>Starting from empty, any sequence of m union/find operations on n
+objects takes: O(n + mα(m, n)time., where α is the inverse arckermann
+function ([U] ? Proof and some knowledge about the function? Tarjan
+1975)</p></li>
+</ul></li>
+<li><p>Application</p>
+<ul>
+<li>Binomial tree</li>
+</ul></li>
+</ol>
+<h2 id="minimum-spanning-trees">Minimum Spanning Trees</h2>
+<h3 id="basics">Basics</h3>
+<ol type="1">
+<li><p>Spanning Trees: In a weighted, undirected graphs([U] Why is it
+more complicated with directed graphs), spanning tree is an acyclic
+subset of the edges that connects all nodes.</p></li>
+<li><p>Minimum Spanning tree: a subset of a undirected weighted graph
+which connects all nodes and has the least total weight.</p></li>
+</ol>
+<h3 id="properties">Properties</h3>
+<p><em>Assumption: For simplification, assume all edge weights are
+distinct.</em></p>
+<ol type="1">
+<li><p>No cycles are in the MST.</p></li>
+<li><p>Cut Property: if you cut an edge on a minimum spanning tree, then
+the rest two components T1 and T2, would still be the MST for the
+respective nodes.(However, T1 MST + T2 MST + Minimum edge != (T1 +
+T2)MST)</p></li>
+<li><p>Cycle Property: For any cycle on the original graph, the maximum
+weigt edge is not in the MST.</p>
+<ul>
+<li>Proof: Proof by contradiction - If the maximum weight edge is in the
+MST. By property 1, at least 1 edge of the cycle is not in the MST, lets
+all these edges Enot. By property 2, if we cut the maximum weight edge,
+the rest of the two parts are still MSTs, then if we add one edge that
+connects the two parts, it would have a smaller weight. Now we just need
+to proof that there is at least one Enot that connects the two parts.
+([U] how do you prove this? By cycle property?)</li>
+</ul></li>
+<li><p>For every partition of the nodes, the minimum weight edge across
+the cut is in the MST. (However, it might not be the only one!)</p>
+<ul>
+<li>For every vertex, the minium outgoing edge is always part of the
+MST.</li>
+</ul></li>
+</ol>
+<h3 id="generic-mst-algorithm">Generic MST Algorithm</h3>
+<ol type="1">
+<li><p>Apply the red rule or vlue rule to an arbitrary edge until no
+more edges can be colored.</p>
+<ul>
+<li><p>Red Rule: If C isa cycle with no red arcs, then color the
+max-weight edge in C red. (Property 2)</p></li>
+<li><p>Blue Rule: If D is a cut with no blue arcs, then color the
+min-weight edge in D blue. (Property 4)</p></li>
+</ul></li>
+<li><p>Proof of the greedy algorithm:</p>
+<ul>
+<li>On termination, every cycle has a red edge, and the blue edges form
+a tree(if not, then there is a cut with no blue edge). Every edge is
+colored. ([U]Why, can't there be an eedge that neither satisfy the red
+rule, nor satisfy the blue rule? )</li>
+</ul></li>
+</ol>
+<h3 id="mst-algorithms">MST Algorithms</h3>
+<h4 id="prim">Prim</h4>
+<ol type="1">
+<li><p>Basic Idea:</p>
+<ul>
+<li><p>S: set of nodes connected by blue edges.</p></li>
+<li><p>Repeat: Identify the cut: {S, V - S}</p></li>
+<li><p>Find minimum weight edge on cut (Priority queue)</p></li>
+<li><p>Add new node to S</p></li>
+</ul></li>
+</ol>
+<p>[U] In the code for prim, why should the priority queue keep track of
+the nodes rather than simply keep track of the weights?</p>
+<h4 id="kruskal">Kruskal</h4>
+<ol type="1">
+<li><p>Basic idea:</p>
+<ul>
+<li><p>sort edges by weight from smallest to biggest.</p></li>
+<li><p>Consider edges in ascending order:</p>
+<ul>
+<li><p>If both endpoints are in the same blue tree, then color the edge
+red. (Must be the heaviest edge in the loop!)</p></li>
+<li><p>else, color the edge blue.</p></li>
+</ul></li>
+</ul></li>
+</ol>
+<h3 id="variations-of-mst">Variations of MST</h3>
+<ol type="1">
+<li><p>What if all edges have the same weight?</p>
+<ul>
+<li>DFS / BFS!</li>
+</ul></li>
+<li><p>What if all edges have weight of {1...10} ?</p>
+<ul>
+<li><p>In kruskal algorithm, we no longer need to sort the edges, we
+just use array of size 10. (Why does thi make time complexity <span
+class="math inline">\(O(\alpha{E})\)</span>)</p></li>
+<li><p>In Prim's algorithm, we use array of size 10 as the priority
+queue. Where slot A[j] stores a linked list of nodes of weight j. The
+time complexity would be <span class="math inline">\(O(E)\)</span>([U]
+Go through thi).</p></li>
+</ul></li>
+</ol>
+<p>[U] Why would this fail for Dijkstra's Algorithm?</p>
+<ol start="3" type="1">
+<li><p>Directed Minimum Spanning Trees</p>
+<ul>
+<li>Special Case: For a directed acyclic graph with one "root", We can
+generate MST by adding minimum weight incoming edge for every node
+except the root([U] Why?)</li>
+</ul></li>
+<li><p>Maximum Spanning Trees:</p>
+<ul>
+<li><p>Only relative weight matters.</p></li>
+<li><p>multiply each edge by -1 (why does this work)</p></li>
+</ul></li>
+</ol>
+<h1 id="dynamic-programming">Dynamic Programming</h1>
+<h2 id="basic-1">Basic</h2>
+<ol type="1">
+<li><p>Optimal substructures</p></li>
+<li><p>Overlapping sub-problems: smaller problems are used to solve
+multiple different bigger problems.</p></li>
+<li><p>Check the Floyd Warshall Problem</p></li>
+</ol>
+<h2 id="graph-summary">Graph Summary</h2>
+<p><img src="GraphSummary.png" /></p>
+<p>[U] Where should I put Topological sort, under shortest paths or
+parrallel? Should it be named Topological sort or DAG?</p>
 <h1 id="problems-in-tutorials">Problems (in tutorials)</h1>
 <h2 id="mountain-stack">Mountain stack</h2>
 <p>A mountains consists of <strong>n</strong> hills, aligned linearly.
@@ -1297,9 +1628,13 @@ from i−j to i are no taller than a[i] meters. For each hill i, determine
 the maximum distance you can see from it(distance is "-1" if no hill
 blocks your sight). <em>(Hint: try using a stack to achieve O(n) time
 complexity)</em></p>
-<p><strong>Answer</strong>: Use a monotonic decreasing stack: - For
-every element at index i in the array: <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">boolean</span> <span class="variable">isInfinity</span> <span class="operator">=</span> <span class="literal">true</span>;</span><br><span class="line">While(!stack.empty) &#123;</span><br><span class="line">    curr = stack.peek(); <span class="comment">//get the top object without popping it</span></span><br><span class="line">    <span class="keyword">if</span>(curr.height &gt;= h[i])&#123;</span><br><span class="line">        isInfinity = <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        d[i]++;</span><br><span class="line">        stack.pop();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span>(isInfinity) d[i] = -<span class="number">1</span>;</span><br></pre></td></tr></table></figure> <em>[U] This is
-somehow incorrect. But the idea is similar. pls correct this.</em></p>
+<p><strong>Answer</strong>: Use a monotonic decreasing stack:</p>
+<ul>
+<li>For every element at index i in the array:</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">boolean</span> <span class="variable">isInfinity</span> <span class="operator">=</span> <span class="literal">true</span>;</span><br><span class="line">While(!stack.empty) &#123;</span><br><span class="line">    curr = stack.peek(); <span class="comment">//get the top object without popping it</span></span><br><span class="line">    <span class="keyword">if</span>(curr.height &gt;= h[i])&#123;</span><br><span class="line">        isInfinity = <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        d[i]++;</span><br><span class="line">        stack.pop();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span>(isInfinity) d[i] = -<span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+<p><em>[U] This is somehow incorrect. But the idea is similar. pls
+correct this.</em></p>
 <p>How to come up with this: <strong>Gather only the information you
 need</strong>! Information for any hill i that is lower than another
 hill j where j &gt; i can be eliminated!</p>
@@ -1522,7 +1857,31 @@ amortized cost?</p></li>
 dollar, when we change from 1 to 0, pay 1 dollar.</p></li>
 </ul></li>
 </ol>
-<p>[U] Check the ppt # Puzzles:</p>
+<p>[U] Check the ppt</p>
+<h1 id="scheduling">Scheduling</h1>
+<ol type="1">
+<li><p>Suppose we have a list of tasks, some of the has constraints like
+A has to be done at least 10 minitues before B, C must be done after D,
+E must be done at most 20 minutes after F...etc</p></li>
+<li><p>Think of this as a DAG problem! Imagine the tasks as nodes and
+the edges as constraints of the nodes, dist[u] means the shortest time
+needed to complete <code>u</code>.</p>
+<ul>
+<li><p>For constraint: A has to be done at least 10 minutes before B.
+this means <span class="math inline">\(dist[A] + 10 &lt;=
+dist[B]\)</span> since in graphs we only have <span
+class="math display">\[dist[u] &lt;= dist[v] + weight[u,v]\]</span>, we
+transform the constraint to be <span class="math display">\[dist[A]
+&lt;= dist[B] - 10\]</span>, therefore, the edge between A and B would
+be <span class="math inline">\(-10\)</span>.</p></li>
+<li><p>Now, we add Starting point S with edges of weight 0 connected to
+all nodes and run Bellman-Ford on S.</p></li>
+<li><p>Time Complexity: <span class="math inline">\(O(n * m)\)</span>,
+where n, m is the number of tasks and constraints respectfully. ([U] Why
+don't we use topological sort?)</p></li>
+</ul></li>
+</ol>
+<h1 id="puzzles">Puzzles:</h1>
 <ol type="1">
 <li><p>[U]Sicherman Dice</p></li>
 <li><p>[U]Puzzle of the Week: Bubbly (Courtesy: MIT Puzzle Hunt,
@@ -1541,7 +1900,7 @@ fails.</p>
 </ol>
 <hr />
 <p>** Updated Until:</p>
-<p>Lecture 11 p135</p>
+<p>Lecture 11 p103</p>
 <p>tut 2</p>
 <p>[U] optional questions in tutorials.</p>
 <p>[U] Check the open <a
@@ -1664,14 +2023,14 @@ href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
       <i class="fa fa-chart-line"></i>
     </span>
       <span>Word count total: </span>
-    <span title="Word count total">102k</span>
+    <span title="Word count total">134k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>Reading time total &asymp;</span>
-    <span title="Reading time total">1:33</span>
+    <span title="Reading time total">2:01</span>
   </span>
 </div>
 

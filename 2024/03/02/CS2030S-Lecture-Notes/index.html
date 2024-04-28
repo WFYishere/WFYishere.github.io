@@ -31,7 +31,7 @@
 <meta property="og:image" content="https://wfyishere.github.io/2024/03/02/CS2030S-Lecture-Notes/StackAndHeap.png">
 <meta property="og:image" content="https://wfyishere.github.io/2024/03/02/CS2030S-Lecture-Notes/StackAndHeap2.png">
 <meta property="article:published_time" content="2024-03-02T05:42:47.000Z">
-<meta property="article:modified_time" content="2024-03-21T00:22:25.934Z">
+<meta property="article:modified_time" content="2024-04-24T03:19:36.217Z">
 <meta property="article:author" content="Wen Fanyu">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://wfyishere.github.io/2024/03/02/CS2030S-Lecture-Notes/StackAndHeap.png">
@@ -94,7 +94,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">13</span></a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">34</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">16</span></a></li><li class="menu-item menu-item-todo"><a href="/todo" rel="section"><i class="fa-solid fa-bars fa-fw"></i>Todo</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">13</span></a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">34</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">18</span></a></li><li class="menu-item menu-item-todo"><a href="/todo" rel="section"><i class="fa-solid fa-bars fa-fw"></i>Todo</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -158,7 +158,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">16</span>
+          <span class="site-state-item-count">18</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -241,7 +241,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-03-21 08:22:25" itemprop="dateModified" datetime="2024-03-21T08:22:25+08:00">2024-03-21</time>
+      <time title="Modified: 2024-04-24 11:19:36" itemprop="dateModified" datetime="2024-04-24T11:19:36+08:00">2024-04-24</time>
     </span>
 
   
@@ -251,14 +251,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Word count in article: </span>
-      <span>7.1k</span>
+      <span>12k</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>6 mins.</span>
+      <span>11 mins.</span>
     </span>
 </div>
 
@@ -300,7 +300,7 @@ of a field</li>
 relationship.</li>
 <li>polymorphism: method invoked is decided during run-time(dynamic
 binding/dispatch) - <em>Class Methods do not support dynamic
-binding.</em> At compile time, determines the <strong>method
+binding.</em> At compile time, determines the <strong>meth od
 descriptor</strong>(including return type) of the method invoked, using
 the compile-time type of the target. At runtime, the method descriptor
 is retrieved and the run-tim type is determined</li>
@@ -436,20 +436,144 @@ checking.</p></li>
 <ol start="25" type="1">
 <li><p>Type Infering: T &lt;: Type2, then T is inferred as
 Type2</p></li>
-<li><p>Immutable Classes:</p></li>
+<li><p>Immutability:</p></li>
 </ol>
+<ul>
+<li><p>the instance cannot have any visible changes outside its
+abstraction barrier.</p></li>
+<li><p>To make a method in a class immutable, it is recommended to
+declare the class as immutable <code>final</code> too as subclasses can
+override the method([S]why not declare the method as final? - the final
+keyword prevents assigning new values to the field, but if the field is
+referencing a mutable object, it is possible to mutate it. So we also
+need to ensure that the fields themselves are immutable.)</p></li>
+<li><p>advatanges: allow sharing of reference between objects.</p></li>
+</ul>
+<ol start="29" type="1">
+<li>Nested Classes</li>
+</ol>
+<ul>
+<li><p>Inner class: non-static nested class</p></li>
+<li><p>When we call this.x in a nested class B in class A,
+<code>this</code> refers to instance field in B rather than A. To call
+the x field in A, we use <code>A.this.x</code>. This is called a <span
+class="math inline">\(qualified\)</span> this.</p></li>
+<li><p>if a nested class is private, we cannot access an instance of
+nested class outside the class. However, for nested class B in class A,
+if there is a method in A <code>B getB() &#123;return new B();&#125;</code>, we
+can return an instance of B outside A. So we can do:
+<code>Object b = a.getB();</code>, but we cannot do
+<code>A.B b = a.getB()</code></p></li>
+<li><p>However, as long as the nested class B does not expose any detail
+of class A, it is enouraged to declare B as a public type. Then we can
+use <code>A.B b = a.new B();</code></p></li>
+<li><p>local class: non-static nested class in a method. A local class
+makes a copy of local variables inside itself. This is called <span
+class="math inline">\(capturing\)</span>.</p></li>
+<li><p>Java only allows local classes to access variables that are
+effectively final. They cannot be reassigned after initializstion.
+However, if the variables are reference type, they cannot be reassigned
+but can be mutated. See the below example. The <span
+class="math inline">\(capturing\)</span> is done after the instantiation
+of a nested class - the list is sorted in descendingOrder</p></li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> <span class="title function_">sortNames</span><span class="params">(List&lt;String&gt; names)</span> &#123;</span><br><span class="line">  <span class="type">Bool</span> <span class="variable">ascendingOrder</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Bool</span>(<span class="literal">true</span>);</span><br><span class="line">  <span class="keyword">class</span> <span class="title class_">NameComparator</span> <span class="keyword">implements</span> <span class="title class_">Comparator</span>&lt;String&gt; &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">compare</span><span class="params">(String s1, String s2)</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (ascendingOrder.val)</span><br><span class="line">        <span class="keyword">return</span> s1.length() - s2.length();</span><br><span class="line">      <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">return</span> s2.length() - s1.length();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  ascendingOrder.val = <span class="literal">false</span>;</span><br><span class="line">  names.sort(<span class="keyword">new</span> <span class="title class_">NameComparator</span>());</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Bool</span> &#123;</span><br><span class="line">  <span class="type">boolean</span> val;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Anonymous class: An anonymous class is where you only instantiate a
+local class in a single statement. There is a syntatic sugar:(e.g. the
+above code) <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">names.sort(<span class="keyword">new</span> <span class="title class_">Comparator</span>&lt;String&gt;() &#123; <span class="comment">// new X(arguments) &#123;body&#125;</span></span><br><span class="line">  <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">compare</span><span class="params">(String s1, String s2)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> s1.length() - s2.length();</span><br><span class="line"> &#125;</span><br><span class="line">&#125;);<span class="comment">// Here the class is anonymous!</span></span><br><span class="line"><span class="comment">// We can also do</span></span><br><span class="line">Comparator&lt;String&gt; cmp = <span class="keyword">new</span> ...;</span><br><span class="line">names.sort(cmp);</span><br></pre></td></tr></table></figure></li>
+</ul>
+<ol start="27" type="1">
+<li>Pure Functions: deterministic(return same y for same x), referential
+transparency(same x for same y), no side effects(no
+printing/exception/changing of other variables etc.).</li>
+</ol>
+<ul>
+<li><p>Functional Interface: interface that has a single abstract
+method</p></li>
+<li><p>lambda:
+<code>Transformer&lt;Integer, Integer&gt; t = (/*Integer*/ i) -&gt; (i + 1);</code>,
+where Transformer is a functional Interface. A lambda function is the
+same as a local class so it captures local variables used. Thus we store
+the function together ith the enclosing environment - closure.</p></li>
+<li><p>Function Reference:
+<code>Transformer&lt;Point, Double&gt; t = origin::distanceTo();</code>
+which is the same as:
+<code>t = p -&gt; origin.distanceTo(p)</code></p></li>
+<li><p>The technique of translating a general n-ary function to a
+sequence of n unary functions is called currying. e.g. instead of
+<code>(x,y) -&gt; x+y</code>, we do <code>x -&gt; y -&gt; x + y</code>.
+These functions are called curried fcuntions. With currying, we can
+partially apply a function. This is useful if one of the arguments
+doen't change often/ is too expensive to compute.</p></li>
+</ul>
+<ol start="31" type="1">
+<li>Lazy Evaluation:</li>
+</ol>
+<ul>
+<li><p>Procrastinate: when we create a lambda, its content is not
+evaluated. Only when it is called the content is evaluated.</p></li>
+<li><p>Memoize things: Only works when the function is pure!</p></li>
+</ul>
+<ol start="32" type="1">
+<li>Stream</li>
+</ol>
+<ul>
+<li>Limitation: stream can only be operated once. We cannot use terminal
+operation on a stream multiple times. We cannot iterate a stream
+multiple times. This would throw <code>IllegalStateException</code></li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Terminal Operation: the evaluation of stream.</span></span><br><span class="line">Stream.of(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>).forEach(System.out::println);</span><br><span class="line">Stream.of(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>).reduce(<span class="number">0</span>, (x,y) -&gt; x + y);</span><br><span class="line"><span class="comment">// same as accumulate. start from left to right</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//Matching: terminal operation</span></span><br><span class="line">noneMatch <span class="literal">true</span> <span class="keyword">if</span> none of the elements pass the given predicate.</span><br><span class="line">allMatch <span class="literal">true</span> <span class="keyword">if</span> every element passes the given predicate.</span><br><span class="line">anyMatch <span class="literal">true</span> <span class="keyword">if</span> at least one element passes the given predicate.</span><br><span class="line"></span><br><span class="line"><span class="comment">//Intermediate Operation: returns another Stream.</span></span><br><span class="line">Stream.of(<span class="string">&quot;hello\nworld&quot;</span>, <span class="string">&quot;ciao\nmondo&quot;</span>).map(x -&gt; x.lines()) </span><br><span class="line"><span class="comment">// returns a stream of streams</span></span><br><span class="line">Stream.of(...).flatMap(x -&gt; x.lines()) </span><br><span class="line"><span class="comment">// returns a stream of strings.</span></span><br><span class="line">limit: n -&gt; stream containing the first n elements</span><br><span class="line">Stream.iterate(<span class="number">0</span>, x -&gt; x + <span class="number">1</span>).takeWhile(x -&gt; x &lt; <span class="number">5</span>) <span class="comment">// 0 1 2 3 4</span></span><br><span class="line">peek: takes in a <span class="title function_">Consumer</span><span class="params">(operation (x)</span> -&gt; &#123;&#125;), which </span><br><span class="line">/allow us to apply lambda on the stream without changing it</span><br><span class="line"></span><br><span class="line"><span class="comment">//Stateful Operations: keep track of some states to operate</span></span><br><span class="line"><span class="comment">//Bounded Operations: only be called on finite stream</span></span><br><span class="line"><span class="comment">// e.g.: sorted / distinct [U]</span></span><br></pre></td></tr></table></figure>
+<ol start="30" type="1">
+<li>Monad:</li>
+</ol>
+<ul>
+<li><p>The left identity law: Monad.of(x).flatMap(x -&gt; f(x)) must be
+the same as f(x)</p></li>
+<li><p>The right identity law: monad.flatMap(x -&gt; Monad.of(x)) must
+be the same as monad</p></li>
+<li><p>associative law: monad.flatMap(x -&gt; f(x)).flatMap(x -&gt;
+g(x)) must be the same as monad.flatMap(x -&gt; f(x).flatMap(y -&gt;
+g(y)))</p></li>
+</ul>
+<ol start="31" type="1">
+<li>Functor</li>
+</ol>
+<ul>
+<li><p>preserving identity: functor.map(x -&gt; x) is the same as
+functor</p></li>
+<li><p>preserving composition: functor.map(x -&gt; f(x)).map(x -&gt;
+g(x)) is the same as functor.map(x -&gt; g(f(x)).</p></li>
+</ul>
+<ol start="30" type="1">
+<li>Side Notes:</li>
+</ol>
+<ul>
+<li><code>T... items</code> are called varargs. The methods that use
+<span class="math inline">\(varargs\)</span> are called <span
+class="math inline">\(variadic method\)</span>. Use
+<code>@SafeVarargs</code> to tell te compiler that we know what we are
+doing.</li>
+</ul>
 <h2 id="sample-code-for-pe">Sample Code for PE</h2>
 <ol type="1">
 <li><p>remember to make all the numbers encountered static.
 (<code>private static final int RATE = 22</code>)</p></li>
+<li><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> &lt;R&gt; Loggable&lt;R&gt; <span class="title function_">flatMap</span><span class="params">(Transformer&lt;? <span class="built_in">super</span> T, ? extends Loggable&lt;? extends R&gt;&gt; transformer)</span> &#123;</span><br><span class="line">  Loggable&lt;? <span class="keyword">extends</span> <span class="title class_">R</span>&gt; l = transformer.transform(<span class="built_in">this</span>.value);</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Loggable</span>&lt;&gt;(l.value, l.log + <span class="built_in">this</span>.log);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 <li><p>Recommended to do(in subclass and superclass)
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Todo:</span></span><br><span class="line">superclass: &#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">toString</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">this</span>.name; </span><br><span class="line">        <span class="comment">//recommend this. even if there is no conflicting parameter</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">subclass: &#123;</span><br><span class="line">    <span class="keyword">private</span> String typeName;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">toString</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">this</span>.typeName + <span class="built_in">super</span>.toString();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// rather than use typeToString in subclass and </span></span><br><span class="line"><span class="comment">// toString and (abstract)typeToString in superclass</span></span><br></pre></td></tr></table></figure></p></li>
-<li><p>Vim <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">/ + search <span class="keyword">for</span> word</span><br><span class="line">&#123; + line number</span><br><span class="line">:split / :vsplit</span><br><span class="line">Ctrl + w + w/W</span><br></pre></td></tr></table></figure></p></li>
+<li><p>Vim <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">/ + search <span class="keyword">for</span> word</span><br><span class="line">&#123; + line number</span><br><span class="line">:split / :vsplit</span><br><span class="line">Ctrl + w + w/W</span><br><span class="line">vim .vimrc <span class="string">&#x27;set mouse+=a&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">package</span> cs2030s.fp;</span><br></pre></td></tr></table></figure></p></li>
 <li><p>Coding Style</p></li>
 </ol>
 <ul>
 <li><code>public protected private abstract default static final transient volatile synchronized native strictfp</code></li>
 </ul>
+<p>[U] find 2 different versions of reduce in stream from java api in <a
+target="_blank" rel="noopener" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/stream/Stream.html#reduce(T,java.util.function.BinaryOperator)">here</a></p>
+<p>[U] Read <a
+target="_blank" rel="noopener" href="https://blog.jcoglan.com/2011/03/05/translation-from-haskell-to-javascript-of-selected-portions-of-the-best-introduction-to-monads-ive-ever-read/#">this</a>
+and <a
+target="_blank" rel="noopener" href="https://bartoszmilewski.com/2014/10/28/category-theory-for-programmers-the-preface/">this</a></p>
 
     </div>
 
@@ -528,14 +652,14 @@ Type2</p></li>
       <i class="fa fa-chart-line"></i>
     </span>
       <span>Word count total: </span>
-    <span title="Word count total">102k</span>
+    <span title="Word count total">134k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>Reading time total &asymp;</span>
-    <span title="Reading time total">1:33</span>
+    <span title="Reading time total">2:01</span>
   </span>
 </div>
 
