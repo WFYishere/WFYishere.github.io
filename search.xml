@@ -1,6 +1,475 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>CS2030S Lecture Notes</title>
+    <url>/2024/03/02/CS2030S-Lecture-Notes/</url>
+    <content><![CDATA[<p>CS2030S lecture notes. <span id="more"></span></p>
+<h3 id="java">Java</h3>
+<ol type="1">
+<li><p>Java Compiler: compiled into bytecode.(.java-&gt; javac -&gt;
+.class); interpreted and compiled on the fly by JVM into machine
+code.(java .class) / be interpreted by the Java interpreter.</p></li>
+<li><p>Types:</p></li>
+</ol>
+<ul>
+<li>statically typed language: declare every variable we use in the
+program and specify its type(compile-time type).</li>
+<li>Primitive: numeric &amp; boolean values byte &lt;: short &lt;: int
+&lt;: long &lt;: float &lt;: double; char &lt;: int</li>
+<li>Reference Types: stores only the reference to the value</li>
+<li>widening type conversion: long i = int(j); narrowing type
+conversion: type casting</li>
+</ul>
+<ol start="3" type="1">
+<li>Principals:</li>
+</ol>
+<ul>
+<li>encapsulation: keeping all the data and functions operating on the
+data related to a composite data type together within an abstraction
+barrier.</li>
+<li>"Tell, Don't Ask" principle. The client should tell a Circle object
+what to do , instead of asking "What is your radius?" to get the value
+of a field</li>
+<li>composition: combining classes</li>
+<li>Composition : has-a relationship;Inheritance : is-a
+relationship.</li>
+<li>polymorphism: method invoked is decided during run-time(dynamic
+binding/dispatch) - <em>Class Methods do not support dynamic
+binding.</em> At compile time, determines the <strong>meth od
+descriptor</strong>(including return type) of the method invoked, using
+the compile-time type of the target. At runtime, the method descriptor
+is retrieved and the run-tim type is determined</li>
+<li>Inheritance: subtypes can only access public fields/methods</li>
+<li>Liskov Substitution Principle: A subclass should not break the
+expectations set by the superclass</li>
+</ul>
+<ol start="4" type="1">
+<li><p>package: <code>import java.lang.Math;</code>
+<code>return Math.PI * this.r * this.r;</code></p></li>
+<li><p>The main method <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;&#125;</span><br></pre></td></tr></table></figure></p></li>
+<li><p>aliasing: sharing references. Avoid that.e.g.:
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">Point</span> <span class="variable">p</span> <span class="operator">=</span> ...; </span><br><span class="line">Circle1.setPoint(p); </span><br><span class="line">Circle2.setPoint(p); <span class="comment">// Circle1.point is an alias of p</span></span><br></pre></td></tr></table></figure></p></li>
+<li><p>Stack and Heap</p></li>
+</ol>
+<ul>
+<li>heap : objects - whenever you use the keyword new</li>
+<li>Stack: variables in method call frames(main/moveTo...)</li>
+<li>non-static methods, including constructors, have
+<code>this</code></li>
+<li>Initialization: object- null; Primitive - zero(uninitialized -
+∅)</li>
+</ul>
+<figure>
+<img src="StackAndHeap.png"
+alt="Circle c; c = new Circle(new Point(1, 2), 3)" />
+<figcaption aria-hidden="true">Circle c; c = new Circle(new Point(1, 2),
+3)</figcaption>
+</figure>
+<figure>
+<img src="StackAndHeap2.png"
+alt="Point p1 = new Point(0, 0);Point p2 = new Point(1, 1);p1.distanceTo(p2)" />
+<figcaption aria-hidden="true">Point p1 = new Point(0, 0);Point p2 = new
+Point(1, 1);p1.distanceTo(p2)</figcaption>
+</figure>
+<ol start="8" type="1">
+<li><p>Representing a method: <code>Object::equals(Object)</code> - a
+method in the class Object</p></li>
+<li><p>Method override and overload:</p></li>
+</ol>
+<ul>
+<li><p><code>@Override</code>: Acts as a hint to the compiler. Use
+<code>super</code> to call the overriden method.</p></li>
+<li><p>method overloading ： differing method signature.</p></li>
+</ul>
+<ol start="10" type="1">
+<li><p><code>obj instanceof Circle</code> (runtime)</p></li>
+<li><p><code>final</code></p></li>
+</ol>
+<ul>
+<li><code>final class Circle&#123;&#125;</code> To prevent being inhereited</li>
+<li><code>public final boolean contains(Point p)</code> To prevent being
+overriden</li>
+</ul>
+<ol start="13" type="1">
+<li><code>abstract</code>: cannot be instantiated - concrete class</li>
+<li>Interface:</li>
+</ol>
+<ul>
+<li>across different class hierarchies.(public abstract by default.) An
+interface is a type(a type can have multiple supertypes.e.g. a class can
+be subype of multiple interface) <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">interface</span> <span class="title class_">GetAreable</span> &#123;<span class="type">double</span> <span class="title function_">getArea</span><span class="params">()</span>;&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Flat</span> <span class="keyword">extends</span> <span class="title class_">RealEstate</span> </span><br><span class="line"><span class="keyword">implements</span> <span class="title class_">GetAreable</span>,getMonyable &#123;&#125;</span><br></pre></td></tr></table></figure></li>
+<li>casting unrelated interface is allowed. E.g.: class A, Interface B,
+class C extends A implements B. There is possiblity that C(subclass of
+A) can be casted on B. In this situation <code>A = B</code> compiles.
+default implementation: <code>default</code> (impure interfaces)</li>
+</ul>
+<ol start="17" type="1">
+<li>Wrapper Classes : <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">Integer</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">4</span>;</span><br><span class="line"><span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> i;<span class="comment">//Autoboxing &amp; unboxing</span></span><br></pre></td></tr></table></figure> primitive wrapper class objects are
+immutable</li>
+<li>variance of types:
+<ul>
+<li>covariant : S&lt;:T -&gt; C(S) &lt;: C(T); contravariant;invariant:
+neither <em>Arrays of primitive types are invariant</em>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Object[] objArray = intArray;</span><br><span class="line">objArray[<span class="number">0</span>] = <span class="string">&quot;Hello!&quot;</span>; <span class="comment">// &lt;- compiles!</span></span><br></pre></td></tr></table></figure></li>
+</ul></li>
+<li>Exceptions</li>
+</ol>
+<ul>
+<li><p>instances that are a subtype of the Exception. Follows the
+hierarchy <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">InvalidOperandException</span> <span class="keyword">extends</span> <span class="title class_">RuntimeException</span> &#123;</span><br><span class="line">    InvalidOperandException(<span class="type">char</span> operator) &#123;</span><br><span class="line">        <span class="built_in">super</span>(<span class="string">&quot;ERROR: Invalid operand for operator &quot;</span> + operator);</span><br><span class="line">    &#125;&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="title function_">Circle</span><span class="params">(Point c, <span class="type">double</span> r)</span> <span class="keyword">throws</span> IllegalArgumentException &#123;</span><br><span class="line">    <span class="keyword">if</span> (r &lt; <span class="number">0</span>) &#123;</span><br><span class="line">      <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">IllegalArgumentException</span>(<span class="string">&quot;radius is negative.&quot;</span>);</span><br><span class="line">    &#125;<span class="comment">// throw statement causes the method to immediately return.</span></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">  scanner = <span class="keyword">new</span> <span class="title class_">Scanner</span>(reader);</span><br><span class="line">  value = scanner.nextInt();</span><br><span class="line">&#125; <span class="keyword">catch</span> (FileNotFoundException | InputMismatchException) &#123;</span><br><span class="line">  System.err.println(<span class="string">&quot;Unable to find&quot;</span> + e.getMessage);</span><br><span class="line">&#125; <span class="keyword">finally</span> &#123;<span class="comment">// executed even when return or throw is called </span></span><br><span class="line">    scanner.close();</span><br><span class="line">&#125;<span class="comment">//note the throw and throws difference</span></span><br></pre></td></tr></table></figure></p></li>
+<li><p>Checked: programmer's errors. Would not happen if perfect code
+was written;</p></li>
+<li><p>Unchecked:<code>InvalidInputException</code>, subclass of
+<code>RuntimeException</code> <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">catch</span> (Exception e) &#123;<span class="comment">// do nothing&#125;//Pokemon Exception Handling:</span></span><br></pre></td></tr></table></figure></p></li>
+</ul>
+<ol start="20" type="1">
+<li>only reference types can be used as type arguments.
+<code>Comparable&lt;T&gt;</code> dictates the implementation of int
+<code>compareTo(T t)</code> <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Class DictEntry&lt;S <span class="keyword">extends</span> <span class="title class_">Comparable</span>&lt;S&gt;&gt; </span><br><span class="line"><span class="keyword">implements</span> <span class="title class_">Comparable</span>&lt;Pair&lt;S,String&gt;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<ul>
+<li><p>Note that we use extends for interface bounding</p></li>
+<li><p>the constructor for a generic class is still declared as Pair
+(without the type parameters).</p></li>
+<li><p>Once a generic type is instantiated, it is called a parameterized
+type</p></li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Seq</span>&lt;T&gt; &#123;</span><br><span class="line">  <span class="keyword">private</span> T[] array;</span><br><span class="line">  <span class="keyword">public</span> <span class="title function_">Seq</span><span class="params">(<span class="type">int</span> size)</span> &#123;</span><br><span class="line">  <span class="comment">// SuppressWarnings only be used on instantiating expression</span></span><br><span class="line">  <span class="meta">@SuppressWarnings(&quot;unchecked&quot;)</span></span><br><span class="line">    T[] a = (T[]) <span class="keyword">new</span> <span class="title class_">Object</span>[size];</span><br><span class="line">  <span class="built_in">this</span>.array = a;&#125;</span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">set</span><span class="params">(<span class="type">int</span> index, T item)</span> &#123;</span><br><span class="line">    <span class="built_in">this</span>.array[index] = item;&#125;</span><br><span class="line">  <span class="keyword">public</span> T <span class="title function_">get</span><span class="params">(<span class="type">int</span> index)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">this</span>.array[index];&#125;</span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">copyFrom</span><span class="params">(Seq&lt;? extends T&gt; src)</span> ;</span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">copyTo</span><span class="params">(Seq&lt;? <span class="built_in">super</span> T&gt; dest)</span> ;&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">A</span> &#123;</span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> &lt;S&gt; <span class="type">boolean</span> <span class="title function_">contains</span><span class="params">(Seq&lt;? extends S&gt; seq, S obj)</span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; seq.getLength(); i++) &#123;</span><br><span class="line">      <span class="type">S</span> <span class="variable">curr</span> <span class="operator">=</span> seq.get(i);</span><br><span class="line">      <span class="keyword">if</span> (curr.equals(obj))&#123;<span class="keyword">return</span> <span class="literal">true</span>;&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;&#125; <span class="comment">// have to have new genric type in static classes</span></span><br><span class="line">&#125;<span class="comment">//because static classes can be used without instantiation.</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Box</span>&lt;T&gt; &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">equals</span><span class="params">(Object other)</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (other <span class="keyword">instanceof</span> Box&lt;?&gt;) &#123;</span><br><span class="line">        Box&lt;?&gt; otherBox = (Box&lt;?&gt;) other; <span class="comment">//remember to add this!!!</span></span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">this</span>.content.equals(otherBox.getContent())) </span><br><span class="line">          &#123;<span class="keyword">return</span> <span class="literal">true</span>;&#125;&#125;&#125;&#125;</span><br></pre></td></tr></table></figure>
+<ol start="21" type="1">
+<li>Type erasure: after type checking, erase the type parameters and
+type arguments during compilation(to Object). If the bounded, replaced
+by the bounds. After type erasure, we do explicit typecast on an
+object.</li>
+</ol>
+<ul>
+<li><p>arrays are reifiable type(gets full type information during
+run-time); but generics are not due to type erasure</p></li>
+<li><p>Actually, generic array declaration is fine but generic array
+instantiation is not. <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="title class_">Pair</span>&lt;S,T&gt;[<span class="number">2</span>];<span class="comment">//illegal</span></span><br><span class="line"><span class="keyword">new</span> <span class="title class_">T</span>[<span class="number">2</span>];<span class="comment">//illegal</span></span><br><span class="line">T[] array;<span class="comment">//allowed</span></span><br></pre></td></tr></table></figure></p></li>
+</ul>
+<ol start="22" type="1">
+<li><p>ArrayList: a generic class,checks appropriate types during
+compile time. Note that it is <strong>invariant</strong>.</p></li>
+<li><p><code>@SuppressWarning</code> to the most limited scope</p>
+<p>raw types: only used in instance of</p></li>
+<li><p>Wild Cards:</p></li>
+</ol>
+<ul>
+<li><p><code>public void copyTo(Seq&lt;? super T&gt; dest)</code>
+<em>super is a contravariance type</em></p></li>
+<li><p>PECS: Producer Extends Consumer Super</p></li>
+<li><p><em>Seq&lt;Object&gt; is NOT supertype of all Seq&lt;T&gt; due to
+generics being invariant.</em></p></li>
+<li><p><code>Seq&lt;?&gt;</code> is a sequence of objects of some
+specific, but unknown type;</p></li>
+<li><p><code>Seq&lt;Object&gt;</code> is a sequence of Object instances,
+with type checking by the compiler;(Note that generics are invariants so
+<code>Seq&lt;Object&gt; !&gt;: Seq&lt;Integer&gt;</code>)</p></li>
+<li><p><code>Seq</code> is a sequence of Object instanc es, without type
+checking.</p></li>
+</ul>
+<ol start="25" type="1">
+<li><p>Type Infering: T &lt;: Type2, then T is inferred as
+Type2</p></li>
+<li><p>Immutability:</p></li>
+</ol>
+<ul>
+<li><p>the instance cannot have any visible changes outside its
+abstraction barrier.</p></li>
+<li><p>To make a method in a class immutable, it is recommended to
+declare the class as immutable <code>final</code> too as subclasses can
+override the method([S]why not declare the method as final? - the final
+keyword prevents assigning new values to the field, but if the field is
+referencing a mutable object, it is possible to mutate it. So we also
+need to ensure that the fields themselves are immutable.)</p></li>
+<li><p>advatanges: allow sharing of reference between objects.</p></li>
+</ul>
+<ol start="29" type="1">
+<li>Nested Classes</li>
+</ol>
+<ul>
+<li><p>Inner class: non-static nested class</p></li>
+<li><p>When we call this.x in a nested class B in class A,
+<code>this</code> refers to instance field in B rather than A. To call
+the x field in A, we use <code>A.this.x</code>. This is called a <span
+class="math inline">\(qualified\)</span> this.</p></li>
+<li><p>if a nested class is private, we cannot access an instance of
+nested class outside the class. However, for nested class B in class A,
+if there is a method in A <code>B getB() &#123;return new B();&#125;</code>, we
+can return an instance of B outside A. So we can do:
+<code>Object b = a.getB();</code>, but we cannot do
+<code>A.B b = a.getB()</code></p></li>
+<li><p>However, as long as the nested class B does not expose any detail
+of class A, it is enouraged to declare B as a public type. Then we can
+use <code>A.B b = a.new B();</code></p></li>
+<li><p>local class: non-static nested class in a method. A local class
+makes a copy of local variables inside itself. This is called <span
+class="math inline">\(capturing\)</span>.</p></li>
+<li><p>Java only allows local classes to access variables that are
+effectively final. They cannot be reassigned after initializstion.
+However, if the variables are reference type, they cannot be reassigned
+but can be mutated. See the below example. The <span
+class="math inline">\(capturing\)</span> is done after the instantiation
+of a nested class - the list is sorted in descendingOrder</p></li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">void</span> <span class="title function_">sortNames</span><span class="params">(List&lt;String&gt; names)</span> &#123;</span><br><span class="line">  <span class="type">Bool</span> <span class="variable">ascendingOrder</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Bool</span>(<span class="literal">true</span>);</span><br><span class="line">  <span class="keyword">class</span> <span class="title class_">NameComparator</span> <span class="keyword">implements</span> <span class="title class_">Comparator</span>&lt;String&gt; &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">compare</span><span class="params">(String s1, String s2)</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (ascendingOrder.val)</span><br><span class="line">        <span class="keyword">return</span> s1.length() - s2.length();</span><br><span class="line">      <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">return</span> s2.length() - s1.length();&#125;&#125;</span><br><span class="line">  ascendingOrder.val = <span class="literal">false</span>;</span><br><span class="line">  names.sort(<span class="keyword">new</span> <span class="title class_">NameComparator</span>());&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Bool</span> &#123;</span><br><span class="line">  <span class="type">boolean</span> val;&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Anonymous class: An anonymous class is where you only instantiate a
+local class in a single statement. There is a syntatic sugar:(e.g. the
+above code) <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">names.sort(<span class="keyword">new</span> <span class="title class_">Comparator</span>&lt;String&gt;() &#123; <span class="comment">// new X(arguments) &#123;body&#125;</span></span><br><span class="line">  <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">compare</span><span class="params">(String s1, String s2)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> s1.length() - s2.length();</span><br><span class="line"> &#125;&#125;);<span class="comment">// Here the class is anonymous!</span></span><br><span class="line"><span class="comment">// We can also do</span></span><br><span class="line">Comparator&lt;String&gt; cmp = <span class="keyword">new</span> ...;</span><br><span class="line">names.sort(cmp);</span><br></pre></td></tr></table></figure></li>
+</ul>
+<ol start="27" type="1">
+<li>Pure Functions: deterministic(return same y for same x), referential
+transparency(same x for same y), no side effects(no
+printing/exception/changing of other variables etc.).</li>
+</ol>
+<ul>
+<li><p>Functional Interface: interface that has a single abstract
+method</p></li>
+<li><p>lambda:
+<code>Transformer&lt;Integer, Integer&gt; t = (/*Integer*/ i) -&gt; (i + 1);</code>,
+where Transformer is a functional Interface. A lambda function is the
+same as a local class so it captures local variables used. Thus we store
+the function together ith the enclosing environment - closure.</p></li>
+<li><p>Function Reference:
+<code>Transformer&lt;Point, Double&gt; t = origin::distanceTo();</code>
+which is the same as:
+<code>t = p -&gt; origin.distanceTo(p)</code></p></li>
+<li><p>The technique of translating a general n-ary function to a
+sequence of n unary functions is called currying. e.g. instead of
+<code>(x,y) -&gt; x+y</code>, we do <code>x -&gt; y -&gt; x + y</code>.
+These functions are called curried fcuntions. With currying, we can
+partially apply a function. This is useful if one of the arguments
+doen't change often/ is too expensive to compute.</p></li>
+</ul>
+<ol start="31" type="1">
+<li>Lazy Evaluation:</li>
+</ol>
+<ul>
+<li><p>Procrastinate: when we create a lambda, its content is not
+evaluated. Only when it is called the content is evaluated.</p></li>
+<li><p>Memoize things: Only works when the function is pure!</p></li>
+</ul>
+<ol start="32" type="1">
+<li>Stream</li>
+</ol>
+<ul>
+<li>Limitation: stream can only be operated once. We cannot use terminal
+operation on a stream multiple times. We cannot iterate a stream
+multiple times. This would throw <code>IllegalStateException</code></li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//Terminal Operation: the evaluation of stream.</span></span><br><span class="line">Stream.of(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>).forEach(System.out::println);</span><br><span class="line">Stream.of(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>).reduce(<span class="number">0</span>, (x,y) -&gt; x + y);</span><br><span class="line"><span class="comment">// same as accumulate. start from left to right</span></span><br><span class="line"><span class="comment">//Matching: terminal operation</span></span><br><span class="line">noneMatch <span class="literal">true</span> <span class="keyword">if</span> none of the elements pass the given predicate.</span><br><span class="line">allMatch <span class="literal">true</span> <span class="keyword">if</span> every element passes the given predicate.</span><br><span class="line">anyMatch <span class="literal">true</span> <span class="keyword">if</span> at least one element passes the given predicate.</span><br><span class="line"><span class="comment">//Intermediate Operation: returns another Stream.</span></span><br><span class="line">Stream.of(<span class="string">&quot;hello\nworld&quot;</span>, <span class="string">&quot;ciao\nmondo&quot;</span>).map(x -&gt; x.lines()) </span><br><span class="line"><span class="comment">// returns a stream of streams</span></span><br><span class="line">Stream.of(...).flatMap(x -&gt; x.lines()) </span><br><span class="line"><span class="comment">// returns a stream of strings.</span></span><br><span class="line">limit: n -&gt; stream containing the first n elements</span><br><span class="line">Stream.iterate(<span class="number">0</span>, x -&gt; x + <span class="number">1</span>).takeWhile(x -&gt; x &lt; <span class="number">5</span>) <span class="comment">// 0 1 2 3 4</span></span><br><span class="line">peek: takes in a <span class="title function_">Consumer</span><span class="params">(operation (x)</span> -&gt; &#123;&#125;), which </span><br><span class="line">/allow us to apply lambda on the stream without changing it</span><br><span class="line"><span class="comment">//Stateful Operations: keep track of some states to operate</span></span><br><span class="line"><span class="comment">//Bounded Operations: only be called on finite stream</span></span><br><span class="line"><span class="comment">// e.g.: sorted / distinct [U]</span></span><br></pre></td></tr></table></figure>
+<ol start="30" type="1">
+<li>Monad:</li>
+</ol>
+<ul>
+<li><p>The left identity law: Monad.of(x).flatMap(x -&gt; f(x)) must be
+the same as f(x)</p></li>
+<li><p>The right identity law: monad.flatMap(x -&gt; Monad.of(x)) must
+be the same as monad</p></li>
+<li><p>associative law: monad.flatMap(x -&gt; f(x)).flatMap(x -&gt;
+g(x)) must be the same as monad.flatMap(x -&gt; f(x).flatMap(y -&gt;
+g(y)))</p></li>
+</ul>
+<ol start="31" type="1">
+<li>Functor</li>
+</ol>
+<ul>
+<li><p>preserving identity: functor.map(x -&gt; x) is the same as
+functor</p></li>
+<li><p>preserving composition: functor.map(x -&gt; f(x)).map(x -&gt;
+g(x)) is the same as functor.map(x -&gt; g(f(x)).</p></li>
+</ul>
+<ol start="32" type="1">
+<li>Parallel Computing</li>
+</ol>
+<ul>
+<li><p><code>s.parallel().filter(x -&gt; x &lt; 0).sequential().forEach(..);</code>
+If we call <code>parallel</code> and <code>sequential</code> in the same
+stream, the last call wins.</p></li>
+<li><p>Conditions of parallelable</p>
+<ul>
+<li><p>Interference: one of the operations modify the source stream when
+the terminal operation is executed.</p></li>
+<li><p>Stateful: the lambda expression's result depends on a state that
+might change</p></li>
+</ul></li>
+<li><p>Parallelising Reduce:</p>
+<ul>
+<li>combiner.apply(identity, i) = i; combiner and accumulator must both
+be associative and compatible</li>
+</ul></li>
+</ul>
+<ol start="30" type="1">
+<li>Side Notes:</li>
+</ol>
+<ul>
+<li><code>T... items</code> are called varargs. The methods that use
+<span class="math inline">\(varargs\)</span> are called <span
+class="math inline">\(variadic method\)</span>. Use
+<code>@SafeVarargs</code> to tell te compiler that we know what we are
+doing.</li>
+</ul>
+<h2 id="sample-code-for-pe">Sample Code for PE</h2>
+<ol type="1">
+<li><p>remember to make all the numbers encountered static.
+(<code>private static final int RATE = 22</code>)</p></li>
+<li><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> &lt;R&gt; Loggable&lt;R&gt; <span class="title function_">flatMap</span><span class="params">(Transformer&lt;? <span class="built_in">super</span> T, ? extends Loggable&lt;? extends R&gt;&gt; transformer)</span> &#123;</span><br><span class="line">  Loggable&lt;? <span class="keyword">extends</span> <span class="title class_">R</span>&gt; l = transformer.transform(<span class="built_in">this</span>.value);</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Loggable</span>&lt;&gt;(l.value, l.log + <span class="built_in">this</span>.log);&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>Recommended to do(in subclass and superclass)
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//Todo:</span></span><br><span class="line">superclass: &#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">toString</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">this</span>.name; </span><br><span class="line">        <span class="comment">//recommend this. even if there is no conflicting parameter&#125;</span></span><br><span class="line"></span><br><span class="line">subclass: &#123;</span><br><span class="line">    <span class="keyword">private</span> String typeName;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">toString</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">this</span>.typeName + <span class="built_in">super</span>.toString();</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// rather than use typeToString in subclass and </span></span><br><span class="line"><span class="comment">// toString and (abstract)typeToString in superclass</span></span><br></pre></td></tr></table></figure></p></li>
+<li><p>Vim <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">/ + search <span class="keyword">for</span> word</span><br><span class="line">&#123; + line number</span><br><span class="line">:split / :vsplit</span><br><span class="line">Ctrl + w + w/W</span><br><span class="line">vim .vimrc <span class="string">&#x27;set mouse+=a&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">package</span> cs2030s.fp;</span><br></pre></td></tr></table></figure></p></li>
+<li><p>Coding Style</p></li>
+</ol>
+<ul>
+<li><code>public protected private abstract default static final transient volatile synchronized native strictfp</code></li>
+</ul>
+<p>[U] find 2 different versions of reduce in stream from java api in <a
+href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/stream/Stream.html#reduce(T,java.util.function.BinaryOperator)">here</a></p>
+<p>[U] Read <a
+href="https://blog.jcoglan.com/2011/03/05/translation-from-haskell-to-javascript-of-selected-portions-of-the-best-introduction-to-monads-ive-ever-read/#">this</a>
+and <a
+href="https://bartoszmilewski.com/2014/10/28/category-theory-for-programmers-the-preface/">this</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>Cheat Sheet for Unix CLI</title>
+    <url>/2024/01/24/Cheat-Sheet-for-Unix-CLI/</url>
+    <content><![CDATA[<p>Learnt Unix in NUS CS2030S. Here's a cheatsheet. <span id="more"></span></p>
+<p><strong><a
+href="https://nus-cs2030s.github.io/2324-s2/unix/background.html">Original
+Text Here</a></strong></p>
+<h1 id="background">Background</h1>
+<ul>
+<li><p><code>Ctrl + D</code> : end of input/ exit shell</p></li>
+<li><p><code>Ctrl + Z</code> : suspend the current running program. This
+pauses the execution of the program (but not terminates it). Resume
+executing in the background with the command <code>bg</code> Back to
+execution in the foreground again with the command
+<code>fg</code>.</p></li>
+<li><p><code>Ctrl + C</code> : terminate the current running
+program.</p></li>
+<li><p><code>Ctrl + S</code> : freeze the terminal. <code>Ctrl +
+Q</code> : resume the terminal.</p></li>
+<li><p><code>Ctrl + P</code> &amp; <code>Ctrl + N</code>: See the
+previously executed commands.</p></li>
+<li><p><code>Tab</code> : complete the name of a command/file</p></li>
+<li><p><code>man</code> : look at the manuals. e.g. :
+<code>man ls</code></p></li>
+</ul>
+<h1 id="essentials">Essentials</h1>
+<h2 id="directory">Directory</h2>
+<h3 id="symbols">Symbols</h3>
+<ul>
+<li><p><code>~</code> : The home directory. <code>~bob</code> means the
+home directory of a user named bob.</p></li>
+<li><p><code>.</code> : Current working directory.</p></li>
+<li><p><code>/</code>: Root directory.</p></li>
+<li><p><code>..</code> : Parent directory.</p></li>
+</ul>
+<h3 id="path">Path</h3>
+<ul>
+<li><p>Absolute Path: <code>/home/o/ooiwt</code></p></li>
+<li><p>Relative Path: <code>../o/ooiwt</code></p></li>
+<li><p><code>pwd</code> : Print current working directory.</p></li>
+<li><p><code>ls</code> : Check the list of contents. Contents that
+starts with <code>.</code> are hidden, use <code>ls -a</code> to check
+<em>all</em> contents. <code>ls -F</code> to see more information.
+<code>ls -l</code> to see information including the size and
+date.</p></li>
+<li><p><code>mkdir</code> : make a directory</p></li>
+<li><p><code>cd</code> : brings you to the home directory</p></li>
+</ul>
+<h2 id="files">Files</h2>
+<ul>
+<li><p><code>rmdir</code> : remove a subdirectory, it must be
+empty.</p></li>
+<li><p><code>cp</code> : <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ ls</span><br><span class="line">test.txt</span><br><span class="line">$ cp test.txt foo.txt</span><br><span class="line">$ ls</span><br><span class="line">test.txt foo.txt</span><br></pre></td></tr></table></figure> <code>cp -r</code> copys the
+whole directory: <code>$ cp -r ../workshop .</code></p></li>
+</ul>
+<p>* <em>If there is an existing file with the same name, cp will
+overwrite the existing file without warning.</em></p>
+<ul>
+<li><p><code>mv</code> : Rename a content. <figure class="highlight plaintext"><figcaption><span>ls</span></figcaption><table><tr><td class="code"><pre><span class="line">foo.txt test.txt</span><br><span class="line">$ mv foo.txt bar.txt</span><br><span class="line">$ ls</span><br><span class="line">bar.txt test.txt</span><br></pre></td></tr></table></figure></p>
+<p>When the destination of mv is a directory, then it moves the source
+to the destisnation</p>
+<p><em>It's better to use mv -i as it asks if you want to overwrite a
+file</em></p></li>
+<li><p><code>rm</code> : removes the file.</p>
+<p>*It's better to use <code>rm -i</code>.</p></li>
+<li><p><code>cat</code> : Take a look at the content of a file.</p>
+<p><code>less</code> : look at less content of a file.</p>
+<pre><code>  In less, use `space` to move forward,  `b` to move back, `q` to quit.</code></pre></li>
+</ul>
+<h2 id="file-permission">File Permission</h2>
+<h3 id="what">What:</h3>
+<ul>
+<li><p><code>r</code> : read - 4</p></li>
+<li><p><code>w</code> : write - 2</p></li>
+<li><p><code>x</code> : executing a file / access contents and info of
+the directory - 1</p></li>
+</ul>
+<p>Permission are used in two ways:</p>
+<ol type="1">
+<li><p>rwx or r-x etc.</p></li>
+<li><p>Numerical notation like : 5 = r-x</p></li>
+</ol>
+<h3 id="who">Who</h3>
+<p><code>u</code> is the user who owns the file; <code>g</code> refers
+to the users in the same group as the user; and <code>o</code> are all
+the other users.</p>
+<p>For instance, the permission of <code>644</code>, or
+<code>rw-r--r--</code>, on a file means that:</p>
+<pre><code>- the owner can read and write
+
+- the group users can only read
+
+- all the other users can only read</code></pre>
+<h3 id="check-and-change-of-permission">Check and Change of
+Permission</h3>
+<p>Check:</p>
+<pre><code>$ ls -l test.txt
+-rw-r--r--@ 1 ooiwt  staff  64 Jul 28 09:52 test.txt</code></pre>
+<p>Change:</p>
+<pre><code>$ chmod 666 test.txt
+$ ls -l test.txt
+-rw-rw-rw-@ 1 ooiwt  staff  64 Jul 28 09:52 test.txt</code></pre>
+<p>Or:</p>
+<pre><code>$ chmod o-w test.txt
+$ ls -l test.txt
+-rw-rw-r--@ 1 ooiwt  staff  64 Jul 28 09:52 test.txt</code></pre>
+<p>Eliminates the writing permission of a user.(use o+w to give the
+permission)</p>
+<h2 id="standard-input-output">Standard Input &amp; Output</h2>
+<ul>
+<li><code>wc</code> : it will count the number of lines, words, and
+characters in that given file. e.g.:</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wc text.txt</span><br><span class="line">$ wc test.txt</span><br><span class="line">1      11      64 test.txt</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>&gt;</code> &amp; <code>&gt;&gt;</code> : The operators &gt;
+and &gt;&gt; are used to redirect the standard output to a file. The
+difference is that &gt; will overwrite the given file, while &gt;&gt;
+will concatenate into the given file. e.g.: <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ wc test.txt &gt; test.count</span><br><span class="line">$ cat test.count</span><br><span class="line">1      11      64 test.txt</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>This programme reads the output of <code>wc text.txt</code> into a
+file test.count</p>
+<ul>
+<li><code>&lt;</code> &amp; <code>&lt;&lt;</code> : Imports the input.
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ wc test.txt</span><br><span class="line">       1      11      64 test.txt</span><br><span class="line">$ wc &lt; test.txt // This is reading the content from test.txt, thus the input is not a file but the content of test.txt.</span><br><span class="line">       1      11      64</span><br><span class="line">$ cat test.txt</span><br><span class="line">This is a test file for learning Unix file management commands.</span><br><span class="line">$ cat &lt; test.txt</span><br><span class="line">This is a test file for learning Unix file management commands.</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h1 id="advanced">Advanced</h1>
+<p>To be continued.</p>
+]]></content>
+      <tags>
+        <tag>ComputerScience</tag>
+        <tag>Unix</tag>
+        <tag>Notes</tag>
+        <tag>Study</tag>
+        <tag>NUS</tag>
+        <tag>CheatSheet</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>CS2040S Midterm CheatSheet</title>
     <url>/2024/03/11/CS2040S-Midterm-CheatSheet/</url>
     <content><![CDATA[<p>CheatSheet</p>
@@ -1231,358 +1700,6 @@ href="https://visualgo.net/training">visualAlgo</a></p>
 ]]></content>
   </entry>
   <entry>
-    <title>General Studying Tips</title>
-    <url>/2024/02/11/General-Studying-Tips/</url>
-    <content><![CDATA[<p>General study tips.</p>
-<span id="more"></span>
-<ol type="1">
-<li>Use Red pen for knowledge that I don't remember when looking back;
-Blue pen for additional knowledge</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Notes</category>
-        <category>General</category>
-      </categories>
-      <tags>
-        <tag>StudyTips</tag>
-        <tag>Study</tag>
-        <tag>Notes</tag>
-        <tag>General</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>CS2030S Lecture Notes</title>
-    <url>/2024/03/02/CS2030S-Lecture-Notes/</url>
-    <content><![CDATA[<p>CS2030S lecture notes. <span id="more"></span></p>
-<h3 id="java">Java</h3>
-<ol type="1">
-<li><p>Java Compiler: compiled into bytecode.(.java-&gt; javac -&gt;
-.class); interpreted and compiled on the fly by JVM into machine
-code.(java .class) / be interpreted by the Java interpreter.</p></li>
-<li><p>Types:</p></li>
-</ol>
-<ul>
-<li>statically typed language: declare every variable we use in the
-program and specify its type(compile-time type).</li>
-<li>Primitive: numeric &amp; boolean values byte &lt;: short &lt;: int
-&lt;: long &lt;: float &lt;: double; char &lt;: int</li>
-<li>Reference Types: stores only the reference to the value</li>
-<li>widening type conversion: long i = int(j); narrowing type
-conversion: type casting</li>
-</ul>
-<ol start="3" type="1">
-<li>Principals:</li>
-</ol>
-<ul>
-<li>encapsulation: keeping all the data and functions operating on the
-data related to a composite data type together within an abstraction
-barrier.</li>
-<li>"Tell, Don't Ask" principle. The client should tell a Circle object
-what to do , instead of asking "What is your radius?" to get the value
-of a field</li>
-<li>composition: combining classes</li>
-<li>Composition : has-a relationship;Inheritance : is-a
-relationship.</li>
-<li>polymorphism: method invoked is decided during run-time(dynamic
-binding/dispatch) - <em>Class Methods do not support dynamic
-binding.</em> At compile time, determines the <strong>meth od
-descriptor</strong>(including return type) of the method invoked, using
-the compile-time type of the target. At runtime, the method descriptor
-is retrieved and the run-tim type is determined</li>
-<li>Inheritance: subtypes can only access public fields/methods</li>
-<li>Liskov Substitution Principle: A subclass should not break the
-expectations set by the superclass</li>
-</ul>
-<ol start="4" type="1">
-<li><p>package: <code>import java.lang.Math;</code>
-<code>return Math.PI * this.r * this.r;</code></p></li>
-<li><p>The main method <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;&#125;</span><br></pre></td></tr></table></figure></p></li>
-<li><p>aliasing: sharing references. Avoid that.e.g.:
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">Point</span> <span class="variable">p</span> <span class="operator">=</span> ...; </span><br><span class="line">Circle1.setPoint(p); </span><br><span class="line">Circle2.setPoint(p); <span class="comment">// Circle1.point is an alias of p</span></span><br></pre></td></tr></table></figure></p></li>
-<li><p>Stack and Heap</p></li>
-</ol>
-<ul>
-<li>heap : objects - whenever you use the keyword new</li>
-<li>Stack: variables in method call frames(main/moveTo...)</li>
-<li>non-static methods, including constructors, have
-<code>this</code></li>
-<li>Initialization: object- null; Primitive - zero(uninitialized -
-∅)</li>
-</ul>
-<figure>
-<img src="StackAndHeap.png"
-alt="Circle c; c = new Circle(new Point(1, 2), 3)" />
-<figcaption aria-hidden="true">Circle c; c = new Circle(new Point(1, 2),
-3)</figcaption>
-</figure>
-<figure>
-<img src="StackAndHeap2.png"
-alt="Point p1 = new Point(0, 0);Point p2 = new Point(1, 1);p1.distanceTo(p2)" />
-<figcaption aria-hidden="true">Point p1 = new Point(0, 0);Point p2 = new
-Point(1, 1);p1.distanceTo(p2)</figcaption>
-</figure>
-<ol start="8" type="1">
-<li><p>Representing a method: <code>Object::equals(Object)</code> - a
-method in the class Object</p></li>
-<li><p>Method override and overload:</p></li>
-</ol>
-<ul>
-<li><p><code>@Override</code>: Acts as a hint to the compiler. Use
-<code>super</code> to call the overriden method.</p></li>
-<li><p>method overloading ： differing method signature.</p></li>
-</ul>
-<ol start="10" type="1">
-<li><p><code>obj instanceof Circle</code> (runtime)</p></li>
-<li><p><code>final</code></p></li>
-</ol>
-<ul>
-<li><code>final class Circle&#123;&#125;</code> To prevent being inhereited</li>
-<li><code>public final boolean contains(Point p)</code> To prevent being
-overriden</li>
-</ul>
-<ol start="13" type="1">
-<li><code>abstract</code>: cannot be instantiated - concrete class</li>
-<li>Interface:</li>
-</ol>
-<ul>
-<li>across different class hierarchies.(public abstract by default.) An
-interface is a type(a type can have multiple supertypes.e.g. a class can
-be subype of multiple interface) <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">interface</span> <span class="title class_">GetAreable</span> &#123;<span class="type">double</span> <span class="title function_">getArea</span><span class="params">()</span>;&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Flat</span> <span class="keyword">extends</span> <span class="title class_">RealEstate</span> </span><br><span class="line"><span class="keyword">implements</span> <span class="title class_">GetAreable</span>,getMonyable &#123;&#125;</span><br></pre></td></tr></table></figure></li>
-<li>casting unrelated interface is allowed. E.g.: class A, Interface B,
-class C extends A implements B. There is possiblity that C(subclass of
-A) can be casted on B. In this situation <code>A = B</code> compiles.
-default implementation: <code>default</code> (impure interfaces)</li>
-</ul>
-<ol start="17" type="1">
-<li>Wrapper Classes : <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="type">Integer</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">4</span>;</span><br><span class="line"><span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> i;<span class="comment">//Autoboxing &amp; unboxing</span></span><br></pre></td></tr></table></figure> primitive wrapper class objects are
-immutable</li>
-<li>variance of types:
-<ul>
-<li>covariant : S&lt;:T -&gt; C(S) &lt;: C(T); contravariant;invariant:
-neither <em>Arrays of primitive types are invariant</em>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Object[] objArray = intArray;</span><br><span class="line">objArray[<span class="number">0</span>] = <span class="string">&quot;Hello!&quot;</span>; <span class="comment">// &lt;- compiles!</span></span><br></pre></td></tr></table></figure></li>
-</ul></li>
-<li>Exceptions</li>
-</ol>
-<ul>
-<li><p>instances that are a subtype of the Exception. Follows the
-hierarchy <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">InvalidOperandException</span> <span class="keyword">extends</span> <span class="title class_">RuntimeException</span> &#123;</span><br><span class="line">    InvalidOperandException(<span class="type">char</span> operator) &#123;</span><br><span class="line">        <span class="built_in">super</span>(<span class="string">&quot;ERROR: Invalid operand for operator &quot;</span> + operator);</span><br><span class="line">    &#125;&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="title function_">Circle</span><span class="params">(Point c, <span class="type">double</span> r)</span> <span class="keyword">throws</span> IllegalArgumentException &#123;</span><br><span class="line">    <span class="keyword">if</span> (r &lt; <span class="number">0</span>) &#123;</span><br><span class="line">      <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">IllegalArgumentException</span>(<span class="string">&quot;radius is negative.&quot;</span>);</span><br><span class="line">    &#125;<span class="comment">// throw statement causes the method to immediately return.</span></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">  scanner = <span class="keyword">new</span> <span class="title class_">Scanner</span>(reader);</span><br><span class="line">  value = scanner.nextInt();</span><br><span class="line">&#125; <span class="keyword">catch</span> (FileNotFoundException | InputMismatchException) &#123;</span><br><span class="line">  System.err.println(<span class="string">&quot;Unable to find&quot;</span> + e.getMessage);</span><br><span class="line">&#125; <span class="keyword">finally</span> &#123;<span class="comment">// executed even when return or throw is called </span></span><br><span class="line">    scanner.close();</span><br><span class="line">&#125;<span class="comment">//note the throw and throws difference</span></span><br></pre></td></tr></table></figure></p></li>
-<li><p>Checked: programmer's errors. Would not happen if perfect code
-was written;</p></li>
-<li><p>Unchecked:<code>InvalidInputException</code>, subclass of
-<code>RuntimeException</code> <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">catch</span> (Exception e) &#123;<span class="comment">// do nothing&#125;//Pokemon Exception Handling:</span></span><br></pre></td></tr></table></figure></p></li>
-</ul>
-<ol start="20" type="1">
-<li>only reference types can be used as type arguments.
-<code>Comparable&lt;T&gt;</code> dictates the implementation of int
-<code>compareTo(T t)</code> <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Class DictEntry&lt;S <span class="keyword">extends</span> <span class="title class_">Comparable</span>&lt;S&gt;&gt; </span><br><span class="line"><span class="keyword">implements</span> <span class="title class_">Comparable</span>&lt;Pair&lt;S,String&gt;</span><br></pre></td></tr></table></figure></li>
-</ol>
-<ul>
-<li><p>Note that we use extends for interface bounding</p></li>
-<li><p>the constructor for a generic class is still declared as Pair
-(without the type parameters).</p></li>
-<li><p>Once a generic type is instantiated, it is called a parameterized
-type</p></li>
-</ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Seq</span>&lt;T&gt; &#123;</span><br><span class="line">  <span class="keyword">private</span> T[] array;</span><br><span class="line">  <span class="keyword">public</span> <span class="title function_">Seq</span><span class="params">(<span class="type">int</span> size)</span> &#123;</span><br><span class="line">  <span class="comment">// SuppressWarnings only be used on instantiating expression</span></span><br><span class="line">  <span class="meta">@SuppressWarnings(&quot;unchecked&quot;)</span></span><br><span class="line">    T[] a = (T[]) <span class="keyword">new</span> <span class="title class_">Object</span>[size];</span><br><span class="line">  <span class="built_in">this</span>.array = a;&#125;</span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">set</span><span class="params">(<span class="type">int</span> index, T item)</span> &#123;</span><br><span class="line">    <span class="built_in">this</span>.array[index] = item;&#125;</span><br><span class="line">  <span class="keyword">public</span> T <span class="title function_">get</span><span class="params">(<span class="type">int</span> index)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">this</span>.array[index];&#125;</span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">copyFrom</span><span class="params">(Seq&lt;? extends T&gt; src)</span> ;</span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">copyTo</span><span class="params">(Seq&lt;? <span class="built_in">super</span> T&gt; dest)</span> ;&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">A</span> &#123;</span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> &lt;S&gt; <span class="type">boolean</span> <span class="title function_">contains</span><span class="params">(Seq&lt;? extends S&gt; seq, S obj)</span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; seq.getLength(); i++) &#123;</span><br><span class="line">      <span class="type">S</span> <span class="variable">curr</span> <span class="operator">=</span> seq.get(i);</span><br><span class="line">      <span class="keyword">if</span> (curr.equals(obj))&#123;<span class="keyword">return</span> <span class="literal">true</span>;&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;&#125; <span class="comment">// have to have new genric type in static classes</span></span><br><span class="line">&#125;<span class="comment">//because static classes can be used without instantiation.</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Box</span>&lt;T&gt; &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">equals</span><span class="params">(Object other)</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (other <span class="keyword">instanceof</span> Box&lt;?&gt;) &#123;</span><br><span class="line">        Box&lt;?&gt; otherBox = (Box&lt;?&gt;) other; <span class="comment">//remember to add this!!!</span></span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">this</span>.content.equals(otherBox.getContent())) </span><br><span class="line">          &#123;<span class="keyword">return</span> <span class="literal">true</span>;&#125;&#125;&#125;&#125;</span><br></pre></td></tr></table></figure>
-<ol start="21" type="1">
-<li>Type erasure: after type checking, erase the type parameters and
-type arguments during compilation(to Object). If the bounded, replaced
-by the bounds. After type erasure, we do explicit typecast on an
-object.</li>
-</ol>
-<ul>
-<li><p>arrays are reifiable type(gets full type information during
-run-time); but generics are not due to type erasure</p></li>
-<li><p>Actually, generic array declaration is fine but generic array
-instantiation is not. <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="title class_">Pair</span>&lt;S,T&gt;[<span class="number">2</span>];<span class="comment">//illegal</span></span><br><span class="line"><span class="keyword">new</span> <span class="title class_">T</span>[<span class="number">2</span>];<span class="comment">//illegal</span></span><br><span class="line">T[] array;<span class="comment">//allowed</span></span><br></pre></td></tr></table></figure></p></li>
-</ul>
-<ol start="22" type="1">
-<li><p>ArrayList: a generic class,checks appropriate types during
-compile time. Note that it is <strong>invariant</strong>.</p></li>
-<li><p><code>@SuppressWarning</code> to the most limited scope</p>
-<p>raw types: only used in instance of</p></li>
-<li><p>Wild Cards:</p></li>
-</ol>
-<ul>
-<li><p><code>public void copyTo(Seq&lt;? super T&gt; dest)</code>
-<em>super is a contravariance type</em></p></li>
-<li><p>PECS: Producer Extends Consumer Super</p></li>
-<li><p><em>Seq&lt;Object&gt; is NOT supertype of all Seq&lt;T&gt; due to
-generics being invariant.</em></p></li>
-<li><p><code>Seq&lt;?&gt;</code> is a sequence of objects of some
-specific, but unknown type;</p></li>
-<li><p><code>Seq&lt;Object&gt;</code> is a sequence of Object instances,
-with type checking by the compiler;(Note that generics are invariants so
-<code>Seq&lt;Object&gt; !&gt;: Seq&lt;Integer&gt;</code>)</p></li>
-<li><p><code>Seq</code> is a sequence of Object instanc es, without type
-checking.</p></li>
-</ul>
-<ol start="25" type="1">
-<li><p>Type Infering: T &lt;: Type2, then T is inferred as
-Type2</p></li>
-<li><p>Immutability:</p></li>
-</ol>
-<ul>
-<li><p>the instance cannot have any visible changes outside its
-abstraction barrier.</p></li>
-<li><p>To make a method in a class immutable, it is recommended to
-declare the class as immutable <code>final</code> too as subclasses can
-override the method([S]why not declare the method as final? - the final
-keyword prevents assigning new values to the field, but if the field is
-referencing a mutable object, it is possible to mutate it. So we also
-need to ensure that the fields themselves are immutable.)</p></li>
-<li><p>advatanges: allow sharing of reference between objects.</p></li>
-</ul>
-<ol start="29" type="1">
-<li>Nested Classes</li>
-</ol>
-<ul>
-<li><p>Inner class: non-static nested class</p></li>
-<li><p>When we call this.x in a nested class B in class A,
-<code>this</code> refers to instance field in B rather than A. To call
-the x field in A, we use <code>A.this.x</code>. This is called a <span
-class="math inline">\(qualified\)</span> this.</p></li>
-<li><p>if a nested class is private, we cannot access an instance of
-nested class outside the class. However, for nested class B in class A,
-if there is a method in A <code>B getB() &#123;return new B();&#125;</code>, we
-can return an instance of B outside A. So we can do:
-<code>Object b = a.getB();</code>, but we cannot do
-<code>A.B b = a.getB()</code></p></li>
-<li><p>However, as long as the nested class B does not expose any detail
-of class A, it is enouraged to declare B as a public type. Then we can
-use <code>A.B b = a.new B();</code></p></li>
-<li><p>local class: non-static nested class in a method. A local class
-makes a copy of local variables inside itself. This is called <span
-class="math inline">\(capturing\)</span>.</p></li>
-<li><p>Java only allows local classes to access variables that are
-effectively final. They cannot be reassigned after initializstion.
-However, if the variables are reference type, they cannot be reassigned
-but can be mutated. See the below example. The <span
-class="math inline">\(capturing\)</span> is done after the instantiation
-of a nested class - the list is sorted in descendingOrder</p></li>
-</ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">void</span> <span class="title function_">sortNames</span><span class="params">(List&lt;String&gt; names)</span> &#123;</span><br><span class="line">  <span class="type">Bool</span> <span class="variable">ascendingOrder</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Bool</span>(<span class="literal">true</span>);</span><br><span class="line">  <span class="keyword">class</span> <span class="title class_">NameComparator</span> <span class="keyword">implements</span> <span class="title class_">Comparator</span>&lt;String&gt; &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">compare</span><span class="params">(String s1, String s2)</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (ascendingOrder.val)</span><br><span class="line">        <span class="keyword">return</span> s1.length() - s2.length();</span><br><span class="line">      <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">return</span> s2.length() - s1.length();&#125;&#125;</span><br><span class="line">  ascendingOrder.val = <span class="literal">false</span>;</span><br><span class="line">  names.sort(<span class="keyword">new</span> <span class="title class_">NameComparator</span>());&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Bool</span> &#123;</span><br><span class="line">  <span class="type">boolean</span> val;&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>Anonymous class: An anonymous class is where you only instantiate a
-local class in a single statement. There is a syntatic sugar:(e.g. the
-above code) <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">names.sort(<span class="keyword">new</span> <span class="title class_">Comparator</span>&lt;String&gt;() &#123; <span class="comment">// new X(arguments) &#123;body&#125;</span></span><br><span class="line">  <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">compare</span><span class="params">(String s1, String s2)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> s1.length() - s2.length();</span><br><span class="line"> &#125;&#125;);<span class="comment">// Here the class is anonymous!</span></span><br><span class="line"><span class="comment">// We can also do</span></span><br><span class="line">Comparator&lt;String&gt; cmp = <span class="keyword">new</span> ...;</span><br><span class="line">names.sort(cmp);</span><br></pre></td></tr></table></figure></li>
-</ul>
-<ol start="27" type="1">
-<li>Pure Functions: deterministic(return same y for same x), referential
-transparency(same x for same y), no side effects(no
-printing/exception/changing of other variables etc.).</li>
-</ol>
-<ul>
-<li><p>Functional Interface: interface that has a single abstract
-method</p></li>
-<li><p>lambda:
-<code>Transformer&lt;Integer, Integer&gt; t = (/*Integer*/ i) -&gt; (i + 1);</code>,
-where Transformer is a functional Interface. A lambda function is the
-same as a local class so it captures local variables used. Thus we store
-the function together ith the enclosing environment - closure.</p></li>
-<li><p>Function Reference:
-<code>Transformer&lt;Point, Double&gt; t = origin::distanceTo();</code>
-which is the same as:
-<code>t = p -&gt; origin.distanceTo(p)</code></p></li>
-<li><p>The technique of translating a general n-ary function to a
-sequence of n unary functions is called currying. e.g. instead of
-<code>(x,y) -&gt; x+y</code>, we do <code>x -&gt; y -&gt; x + y</code>.
-These functions are called curried fcuntions. With currying, we can
-partially apply a function. This is useful if one of the arguments
-doen't change often/ is too expensive to compute.</p></li>
-</ul>
-<ol start="31" type="1">
-<li>Lazy Evaluation:</li>
-</ol>
-<ul>
-<li><p>Procrastinate: when we create a lambda, its content is not
-evaluated. Only when it is called the content is evaluated.</p></li>
-<li><p>Memoize things: Only works when the function is pure!</p></li>
-</ul>
-<ol start="32" type="1">
-<li>Stream</li>
-</ol>
-<ul>
-<li>Limitation: stream can only be operated once. We cannot use terminal
-operation on a stream multiple times. We cannot iterate a stream
-multiple times. This would throw <code>IllegalStateException</code></li>
-</ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//Terminal Operation: the evaluation of stream.</span></span><br><span class="line">Stream.of(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>).forEach(System.out::println);</span><br><span class="line">Stream.of(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>).reduce(<span class="number">0</span>, (x,y) -&gt; x + y);</span><br><span class="line"><span class="comment">// same as accumulate. start from left to right</span></span><br><span class="line"><span class="comment">//Matching: terminal operation</span></span><br><span class="line">noneMatch <span class="literal">true</span> <span class="keyword">if</span> none of the elements pass the given predicate.</span><br><span class="line">allMatch <span class="literal">true</span> <span class="keyword">if</span> every element passes the given predicate.</span><br><span class="line">anyMatch <span class="literal">true</span> <span class="keyword">if</span> at least one element passes the given predicate.</span><br><span class="line"><span class="comment">//Intermediate Operation: returns another Stream.</span></span><br><span class="line">Stream.of(<span class="string">&quot;hello\nworld&quot;</span>, <span class="string">&quot;ciao\nmondo&quot;</span>).map(x -&gt; x.lines()) </span><br><span class="line"><span class="comment">// returns a stream of streams</span></span><br><span class="line">Stream.of(...).flatMap(x -&gt; x.lines()) </span><br><span class="line"><span class="comment">// returns a stream of strings.</span></span><br><span class="line">limit: n -&gt; stream containing the first n elements</span><br><span class="line">Stream.iterate(<span class="number">0</span>, x -&gt; x + <span class="number">1</span>).takeWhile(x -&gt; x &lt; <span class="number">5</span>) <span class="comment">// 0 1 2 3 4</span></span><br><span class="line">peek: takes in a <span class="title function_">Consumer</span><span class="params">(operation (x)</span> -&gt; &#123;&#125;), which </span><br><span class="line">/allow us to apply lambda on the stream without changing it</span><br><span class="line"><span class="comment">//Stateful Operations: keep track of some states to operate</span></span><br><span class="line"><span class="comment">//Bounded Operations: only be called on finite stream</span></span><br><span class="line"><span class="comment">// e.g.: sorted / distinct [U]</span></span><br></pre></td></tr></table></figure>
-<ol start="30" type="1">
-<li>Monad:</li>
-</ol>
-<ul>
-<li><p>The left identity law: Monad.of(x).flatMap(x -&gt; f(x)) must be
-the same as f(x)</p></li>
-<li><p>The right identity law: monad.flatMap(x -&gt; Monad.of(x)) must
-be the same as monad</p></li>
-<li><p>associative law: monad.flatMap(x -&gt; f(x)).flatMap(x -&gt;
-g(x)) must be the same as monad.flatMap(x -&gt; f(x).flatMap(y -&gt;
-g(y)))</p></li>
-</ul>
-<ol start="31" type="1">
-<li>Functor</li>
-</ol>
-<ul>
-<li><p>preserving identity: functor.map(x -&gt; x) is the same as
-functor</p></li>
-<li><p>preserving composition: functor.map(x -&gt; f(x)).map(x -&gt;
-g(x)) is the same as functor.map(x -&gt; g(f(x)).</p></li>
-</ul>
-<ol start="32" type="1">
-<li>Parallel Computing</li>
-</ol>
-<ul>
-<li><p><code>s.parallel().filter(x -&gt; x &lt; 0).sequential().forEach(..);</code>
-If we call <code>parallel</code> and <code>sequential</code> in the same
-stream, the last call wins.</p></li>
-<li><p>Conditions of parallelable</p>
-<ul>
-<li><p>Interference: one of the operations modify the source stream when
-the terminal operation is executed.</p></li>
-<li><p>Stateful: the lambda expression's result depends on a state that
-might change</p></li>
-</ul></li>
-<li><p>Parallelising Reduce:</p>
-<ul>
-<li>combiner.apply(identity, i) = i; combiner and accumulator must both
-be associative and compatible</li>
-</ul></li>
-</ul>
-<ol start="30" type="1">
-<li>Side Notes:</li>
-</ol>
-<ul>
-<li><code>T... items</code> are called varargs. The methods that use
-<span class="math inline">\(varargs\)</span> are called <span
-class="math inline">\(variadic method\)</span>. Use
-<code>@SafeVarargs</code> to tell te compiler that we know what we are
-doing.</li>
-</ul>
-<h2 id="sample-code-for-pe">Sample Code for PE</h2>
-<ol type="1">
-<li><p>remember to make all the numbers encountered static.
-(<code>private static final int RATE = 22</code>)</p></li>
-<li><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> &lt;R&gt; Loggable&lt;R&gt; <span class="title function_">flatMap</span><span class="params">(Transformer&lt;? <span class="built_in">super</span> T, ? extends Loggable&lt;? extends R&gt;&gt; transformer)</span> &#123;</span><br><span class="line">  Loggable&lt;? <span class="keyword">extends</span> <span class="title class_">R</span>&gt; l = transformer.transform(<span class="built_in">this</span>.value);</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Loggable</span>&lt;&gt;(l.value, l.log + <span class="built_in">this</span>.log);&#125;</span><br></pre></td></tr></table></figure></li>
-<li><p>Recommended to do(in subclass and superclass)
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//Todo:</span></span><br><span class="line">superclass: &#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">toString</span><span class="params">()</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">this</span>.name; </span><br><span class="line">        <span class="comment">//recommend this. even if there is no conflicting parameter&#125;</span></span><br><span class="line"></span><br><span class="line">subclass: &#123;</span><br><span class="line">    <span class="keyword">private</span> String typeName;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">toString</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">this</span>.typeName + <span class="built_in">super</span>.toString();</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// rather than use typeToString in subclass and </span></span><br><span class="line"><span class="comment">// toString and (abstract)typeToString in superclass</span></span><br></pre></td></tr></table></figure></p></li>
-<li><p>Vim <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">/ + search <span class="keyword">for</span> word</span><br><span class="line">&#123; + line number</span><br><span class="line">:split / :vsplit</span><br><span class="line">Ctrl + w + w/W</span><br><span class="line">vim .vimrc <span class="string">&#x27;set mouse+=a&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">package</span> cs2030s.fp;</span><br></pre></td></tr></table></figure></p></li>
-<li><p>Coding Style</p></li>
-</ol>
-<ul>
-<li><code>public protected private abstract default static final transient volatile synchronized native strictfp</code></li>
-</ul>
-<p>[U] find 2 different versions of reduce in stream from java api in <a
-href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/stream/Stream.html#reduce(T,java.util.function.BinaryOperator)">here</a></p>
-<p>[U] Read <a
-href="https://blog.jcoglan.com/2011/03/05/translation-from-haskell-to-javascript-of-selected-portions-of-the-best-introduction-to-monads-ive-ever-read/#">this</a>
-and <a
-href="https://bartoszmilewski.com/2014/10/28/category-theory-for-programmers-the-preface/">this</a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>GEA1000N Lecture Notes</title>
     <url>/2024/04/22/GEA1000N-Lecture-Notes/</url>
     <content><![CDATA[<p>This for a SU mode? Lol</p>
@@ -1911,141 +2028,72 @@ null hypothesis.</p></li>
 ]]></content>
   </entry>
   <entry>
-    <title>Cheat Sheet for Unix CLI</title>
-    <url>/2024/01/24/Cheat-Sheet-for-Unix-CLI/</url>
-    <content><![CDATA[<p>Learnt Unix in NUS CS2030S. Here's a cheatsheet. <span id="more"></span></p>
-<p><strong><a
-href="https://nus-cs2030s.github.io/2324-s2/unix/background.html">Original
-Text Here</a></strong></p>
-<h1 id="background">Background</h1>
-<ul>
-<li><p><code>Ctrl + D</code> : end of input/ exit shell</p></li>
-<li><p><code>Ctrl + Z</code> : suspend the current running program. This
-pauses the execution of the program (but not terminates it). Resume
-executing in the background with the command <code>bg</code> Back to
-execution in the foreground again with the command
-<code>fg</code>.</p></li>
-<li><p><code>Ctrl + C</code> : terminate the current running
-program.</p></li>
-<li><p><code>Ctrl + S</code> : freeze the terminal. <code>Ctrl +
-Q</code> : resume the terminal.</p></li>
-<li><p><code>Ctrl + P</code> &amp; <code>Ctrl + N</code>: See the
-previously executed commands.</p></li>
-<li><p><code>Tab</code> : complete the name of a command/file</p></li>
-<li><p><code>man</code> : look at the manuals. e.g. :
-<code>man ls</code></p></li>
-</ul>
-<h1 id="essentials">Essentials</h1>
-<h2 id="directory">Directory</h2>
-<h3 id="symbols">Symbols</h3>
-<ul>
-<li><p><code>~</code> : The home directory. <code>~bob</code> means the
-home directory of a user named bob.</p></li>
-<li><p><code>.</code> : Current working directory.</p></li>
-<li><p><code>/</code>: Root directory.</p></li>
-<li><p><code>..</code> : Parent directory.</p></li>
-</ul>
-<h3 id="path">Path</h3>
-<ul>
-<li><p>Absolute Path: <code>/home/o/ooiwt</code></p></li>
-<li><p>Relative Path: <code>../o/ooiwt</code></p></li>
-<li><p><code>pwd</code> : Print current working directory.</p></li>
-<li><p><code>ls</code> : Check the list of contents. Contents that
-starts with <code>.</code> are hidden, use <code>ls -a</code> to check
-<em>all</em> contents. <code>ls -F</code> to see more information.
-<code>ls -l</code> to see information including the size and
-date.</p></li>
-<li><p><code>mkdir</code> : make a directory</p></li>
-<li><p><code>cd</code> : brings you to the home directory</p></li>
-</ul>
-<h2 id="files">Files</h2>
-<ul>
-<li><p><code>rmdir</code> : remove a subdirectory, it must be
-empty.</p></li>
-<li><p><code>cp</code> : <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ ls</span><br><span class="line">test.txt</span><br><span class="line">$ cp test.txt foo.txt</span><br><span class="line">$ ls</span><br><span class="line">test.txt foo.txt</span><br></pre></td></tr></table></figure> <code>cp -r</code> copys the
-whole directory: <code>$ cp -r ../workshop .</code></p></li>
-</ul>
-<p>* <em>If there is an existing file with the same name, cp will
-overwrite the existing file without warning.</em></p>
-<ul>
-<li><p><code>mv</code> : Rename a content. <figure class="highlight plaintext"><figcaption><span>ls</span></figcaption><table><tr><td class="code"><pre><span class="line">foo.txt test.txt</span><br><span class="line">$ mv foo.txt bar.txt</span><br><span class="line">$ ls</span><br><span class="line">bar.txt test.txt</span><br></pre></td></tr></table></figure></p>
-<p>When the destination of mv is a directory, then it moves the source
-to the destisnation</p>
-<p><em>It's better to use mv -i as it asks if you want to overwrite a
-file</em></p></li>
-<li><p><code>rm</code> : removes the file.</p>
-<p>*It's better to use <code>rm -i</code>.</p></li>
-<li><p><code>cat</code> : Take a look at the content of a file.</p>
-<p><code>less</code> : look at less content of a file.</p>
-<pre><code>  In less, use `space` to move forward,  `b` to move back, `q` to quit.</code></pre></li>
-</ul>
-<h2 id="file-permission">File Permission</h2>
-<h3 id="what">What:</h3>
-<ul>
-<li><p><code>r</code> : read - 4</p></li>
-<li><p><code>w</code> : write - 2</p></li>
-<li><p><code>x</code> : executing a file / access contents and info of
-the directory - 1</p></li>
-</ul>
-<p>Permission are used in two ways:</p>
+    <title>General Studying Tips</title>
+    <url>/2024/02/11/General-Studying-Tips/</url>
+    <content><![CDATA[<p>General study tips.</p>
+<span id="more"></span>
 <ol type="1">
-<li><p>rwx or r-x etc.</p></li>
-<li><p>Numerical notation like : 5 = r-x</p></li>
+<li>Use Red pen for knowledge that I don't remember when looking back;
+Blue pen for additional knowledge</li>
 </ol>
-<h3 id="who">Who</h3>
-<p><code>u</code> is the user who owns the file; <code>g</code> refers
-to the users in the same group as the user; and <code>o</code> are all
-the other users.</p>
-<p>For instance, the permission of <code>644</code>, or
-<code>rw-r--r--</code>, on a file means that:</p>
-<pre><code>- the owner can read and write
-
-- the group users can only read
-
-- all the other users can only read</code></pre>
-<h3 id="check-and-change-of-permission">Check and Change of
-Permission</h3>
-<p>Check:</p>
-<pre><code>$ ls -l test.txt
--rw-r--r--@ 1 ooiwt  staff  64 Jul 28 09:52 test.txt</code></pre>
-<p>Change:</p>
-<pre><code>$ chmod 666 test.txt
-$ ls -l test.txt
--rw-rw-rw-@ 1 ooiwt  staff  64 Jul 28 09:52 test.txt</code></pre>
-<p>Or:</p>
-<pre><code>$ chmod o-w test.txt
-$ ls -l test.txt
--rw-rw-r--@ 1 ooiwt  staff  64 Jul 28 09:52 test.txt</code></pre>
-<p>Eliminates the writing permission of a user.(use o+w to give the
-permission)</p>
-<h2 id="standard-input-output">Standard Input &amp; Output</h2>
-<ul>
-<li><code>wc</code> : it will count the number of lines, words, and
-characters in that given file. e.g.:</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wc text.txt</span><br><span class="line">$ wc test.txt</span><br><span class="line">1      11      64 test.txt</span><br></pre></td></tr></table></figure>
-<ul>
-<li><code>&gt;</code> &amp; <code>&gt;&gt;</code> : The operators &gt;
-and &gt;&gt; are used to redirect the standard output to a file. The
-difference is that &gt; will overwrite the given file, while &gt;&gt;
-will concatenate into the given file. e.g.: <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ wc test.txt &gt; test.count</span><br><span class="line">$ cat test.count</span><br><span class="line">1      11      64 test.txt</span><br></pre></td></tr></table></figure></li>
-</ul>
-<p>This programme reads the output of <code>wc text.txt</code> into a
-file test.count</p>
-<ul>
-<li><code>&lt;</code> &amp; <code>&lt;&lt;</code> : Imports the input.
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ wc test.txt</span><br><span class="line">       1      11      64 test.txt</span><br><span class="line">$ wc &lt; test.txt // This is reading the content from test.txt, thus the input is not a file but the content of test.txt.</span><br><span class="line">       1      11      64</span><br><span class="line">$ cat test.txt</span><br><span class="line">This is a test file for learning Unix file management commands.</span><br><span class="line">$ cat &lt; test.txt</span><br><span class="line">This is a test file for learning Unix file management commands.</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h1 id="advanced">Advanced</h1>
-<p>To be continued.</p>
 ]]></content>
+      <categories>
+        <category>Notes</category>
+        <category>General</category>
+      </categories>
       <tags>
-        <tag>Study</tag>
         <tag>Notes</tag>
+        <tag>Study</tag>
+        <tag>StudyTips</tag>
+        <tag>General</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[LeetCode] 20 - Valid Parentheses</title>
+    <url>/2024/05/24/LeetCode-20-Valid-Parentheses/</url>
+    <content><![CDATA[<p>Easy question but a lot of special cases to think about.</p>
+<span id="more"></span>
+<h3 id="problem-description">Problem Description</h3>
+<p>Given a string s containing just the characters '(', ')', '{', '}',
+'[' and ']', determine if the input string is valid.</p>
+<p>An input string is valid if:</p>
+<p>Open brackets must be closed by the same type of brackets.</p>
+<p>Open brackets must be closed in the correct order.</p>
+<p>Every close bracket has a corresponding open bracket of the same
+type.</p>
+<p><span class="math inline">\(1 &lt;= s.length &lt;= 104\)</span></p>
+<h3 id="solution">Solution</h3>
+<h4 id="runtime-analysis">Runtime Analysis</h4>
+<p>Runtime: O(n), Memory: O(n)</p>
+<p><em>Runtime: 1ms, Memory: 43.21MB</em></p>
+<h4 id="idea-code">Idea &amp; Code</h4>
+<p>Idea: Maintain a stack. Everytime a left parenthesis is met, push
+into stack. If right parenthesis is met, check if the top component in
+stack is the correct left parenthesis. if yes, pop the top component.
+Else, return false. Finally, check whether the stack is empty.</p>
+<p>Here we use an array and a pointer to implement stack.</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"><span class="keyword">import</span> java.lang.*;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">boolean</span> <span class="title function_">isMatchParentheses</span><span class="params">(<span class="type">char</span> curr, <span class="type">char</span> other)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> ((curr == <span class="string">&#x27;(&#x27;</span> &amp;&amp; other == <span class="string">&#x27;)&#x27;</span>) || (curr == <span class="string">&#x27;[&#x27;</span> &amp;&amp; other == <span class="string">&#x27;]&#x27;</span>)) || (curr == <span class="string">&#x27;&#123;&#x27;</span> &amp;&amp; other == <span class="string">&#x27;&#125;&#x27;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">isValid</span><span class="params">(String s)</span> &#123;</span><br><span class="line">        <span class="type">char</span>[] stack = <span class="keyword">new</span> <span class="title class_">char</span>[<span class="number">10000</span>];</span><br><span class="line">        <span class="type">int</span> <span class="variable">pointer</span> <span class="operator">=</span> -<span class="number">1</span>; <span class="comment">// points to index of current element in stack.</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; s.length(); i++) &#123;</span><br><span class="line">            <span class="type">char</span> <span class="variable">curr</span> <span class="operator">=</span> s.charAt(i);</span><br><span class="line">            <span class="keyword">if</span> (curr == <span class="string">&#x27;(&#x27;</span> || curr == <span class="string">&#x27;[&#x27;</span> || curr == <span class="string">&#x27;&#123;&#x27;</span>) &#123;</span><br><span class="line">                pointer ++;</span><br><span class="line">                stack[pointer] = curr;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> (pointer &lt; <span class="number">0</span> || !isMatchParentheses(stack[pointer], curr)) &#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    pointer --;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> (pointer == -<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="conclusion">Conclusion</h3>
+<p>This is a quite easy question, but there are a lot of special cases.
+E.g. "[" should returen false(reason why the final return statement is
+pointer == -1).</p>
+<p>At first I tried not using stacks, and instead just use an array
+<code>parnthesis[3]</code> to check whether the number of left
+parentheses are correct. However, that did not work as cases like "[(])"
+is considered false. That's why we have to use stack structure.</p>
+<p>Time used: 20 minutes.</p>
+]]></content>
+      <categories>
+        <category>Solutions</category>
+        <category>LeetCode</category>
+        <category>Easy</category>
+      </categories>
+      <tags>
         <tag>ComputerScience</tag>
-        <tag>Unix</tag>
-        <tag>NUS</tag>
-        <tag>CheatSheet</tag>
+        <tag>LeetCode</tag>
+        <tag>Algorithems</tag>
+        <tag>BruteForce</tag>
+        <tag>Java</tag>
       </tags>
   </entry>
   <entry>
@@ -2141,58 +2189,10 @@ hashmaps.</p>
         <tag>ComputerScience</tag>
         <tag>LeetCode</tag>
         <tag>Algorithems</tag>
+        <tag>BruteForce</tag>
+        <tag>Java</tag>
         <tag>HashMap</tag>
         <tag>Sort</tag>
-        <tag>BruteForce</tag>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[LeetCode] 20 - Valid Parentheses</title>
-    <url>/2024/05/24/LeetCode-20-Valid-Parentheses/</url>
-    <content><![CDATA[<p>Easy question but a lot of special cases to think about.</p>
-<span id="more"></span>
-<h3 id="problem-description">Problem Description</h3>
-<p>Given a string s containing just the characters '(', ')', '{', '}',
-'[' and ']', determine if the input string is valid.</p>
-<p>An input string is valid if:</p>
-<p>Open brackets must be closed by the same type of brackets.</p>
-<p>Open brackets must be closed in the correct order.</p>
-<p>Every close bracket has a corresponding open bracket of the same
-type.</p>
-<p><span class="math inline">\(1 &lt;= s.length &lt;= 104\)</span></p>
-<h3 id="solution">Solution</h3>
-<h4 id="runtime-analysis">Runtime Analysis</h4>
-<p>Runtime: O(n), Memory: O(n)</p>
-<p><em>Runtime: 1ms, Memory: 43.21MB</em></p>
-<h4 id="idea-code">Idea &amp; Code</h4>
-<p>Idea: Maintain a stack. Everytime a left parenthesis is met, push
-into stack. If right parenthesis is met, check if the top component in
-stack is the correct left parenthesis. if yes, pop the top component.
-Else, return false. Finally, check whether the stack is empty.</p>
-<p>Here we use an array and a pointer to implement stack.</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"><span class="keyword">import</span> java.lang.*;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="type">boolean</span> <span class="title function_">isMatchParentheses</span><span class="params">(<span class="type">char</span> curr, <span class="type">char</span> other)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> ((curr == <span class="string">&#x27;(&#x27;</span> &amp;&amp; other == <span class="string">&#x27;)&#x27;</span>) || (curr == <span class="string">&#x27;[&#x27;</span> &amp;&amp; other == <span class="string">&#x27;]&#x27;</span>)) || (curr == <span class="string">&#x27;&#123;&#x27;</span> &amp;&amp; other == <span class="string">&#x27;&#125;&#x27;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">isValid</span><span class="params">(String s)</span> &#123;</span><br><span class="line">        <span class="type">char</span>[] stack = <span class="keyword">new</span> <span class="title class_">char</span>[<span class="number">10000</span>];</span><br><span class="line">        <span class="type">int</span> <span class="variable">pointer</span> <span class="operator">=</span> -<span class="number">1</span>; <span class="comment">// points to index of current element in stack.</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; s.length(); i++) &#123;</span><br><span class="line">            <span class="type">char</span> <span class="variable">curr</span> <span class="operator">=</span> s.charAt(i);</span><br><span class="line">            <span class="keyword">if</span> (curr == <span class="string">&#x27;(&#x27;</span> || curr == <span class="string">&#x27;[&#x27;</span> || curr == <span class="string">&#x27;&#123;&#x27;</span>) &#123;</span><br><span class="line">                pointer ++;</span><br><span class="line">                stack[pointer] = curr;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> (pointer &lt; <span class="number">0</span> || !isMatchParentheses(stack[pointer], curr)) &#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    pointer --;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> (pointer == -<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="conclusion">Conclusion</h3>
-<p>This is a quite easy question, but there are a lot of special cases.
-E.g. "[" should returen false(reason why the final return statement is
-pointer == -1).</p>
-<p>At first I tried not using stacks, and instead just use an array
-<code>parnthesis[3]</code> to check whether the number of left
-parentheses are correct. However, that did not work as cases like "[(])"
-is considered false. That's why we have to use stack structure.</p>
-<p>Time used: 20 minutes.</p>
-]]></content>
-      <categories>
-        <category>Solutions</category>
-        <category>LeetCode</category>
-        <category>Easy</category>
-      </categories>
-      <tags>
-        <tag>ComputerScience</tag>
-        <tag>LeetCode</tag>
-        <tag>Algorithems</tag>
-        <tag>BruteForce</tag>
-        <tag>Java</tag>
       </tags>
   </entry>
   <entry>
@@ -2231,10 +2231,10 @@ class="math inline">\(10^9\)</span>)</p>
         <tag>ComputerScience</tag>
         <tag>LeetCode</tag>
         <tag>Algorithems</tag>
-        <tag>HashMap</tag>
-        <tag>Sort</tag>
         <tag>BruteForce</tag>
         <tag>Java</tag>
+        <tag>HashMap</tag>
+        <tag>Sort</tag>
       </tags>
   </entry>
   <entry>
@@ -2276,6 +2276,66 @@ price since day i, and try to find out largest
         <tag>BruteForce</tag>
         <tag>Java</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>[LeetCode] 238 - Product of Array Except Self</title>
+    <url>/2024/05/25/LeetCode-238-Product-of-Array-Except-Self/</url>
+    <content><![CDATA[<p>Easy question but I didn't think much about it before looking for
+solutions :C</p>
+<span id="more"></span>
+<h3 id="problem-description">Problem Description</h3>
+<p>Given an integer array nums, return an array answer such that
+answer[i] is equal to the product of all the elements of nums except
+nums[i].</p>
+<p>The product of any prefix or suffix of nums is guaranteed to fit in a
+32-bit integer.</p>
+<p>You must write an algorithm that runs in O(n) time and without using
+the division operation.</p>
+<p><span class="math inline">\(2 &lt;= nums.length &lt;=
+10^5\)</span></p>
+<p><span class="math inline">\(-30 &lt;= nums[i] &lt;= 30\)</span> <span
+class="math inline">\(\text{The product of any prefix or suffix of nums
+is guaranteed to fit in a 32-bit integer.}\)</span></p>
+<h3 id="solution">Solution</h3>
+<h4 id="runtime-analysis">Runtime Analysis</h4>
+<p>Runtime: O(n), Memory: O(1)</p>
+<p><em>Runtime: 1ms, Memory: 55.40MB</em></p>
+<h4 id="idea-code">Idea &amp; Code</h4>
+<p><strong>Idea</strong>: use two arrays <code>pre</code> and
+<code>suff</code> to store product of all the prefix of
+<code>nums[i]</code> and all the suffix of <code>nums[i]</code>.
+Multiply them.</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span>[] productExceptSelf(<span class="type">int</span>[] nums) &#123;</span><br><span class="line">        <span class="type">int</span>[] pre = <span class="keyword">new</span> <span class="title class_">int</span>[nums.length];</span><br><span class="line">        <span class="type">int</span>[] suff = <span class="keyword">new</span> <span class="title class_">int</span>[nums.length];</span><br><span class="line">        <span class="type">int</span>[] ans = <span class="keyword">new</span> <span class="title class_">int</span>[nums.length];</span><br><span class="line"></span><br><span class="line">        pre[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">        suff[nums.length - <span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">            pre[i] = pre[i - <span class="number">1</span>] * nums[i - <span class="number">1</span>];</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> nums.length - <span class="number">2</span>; i &gt;= <span class="number">0</span>; i --) &#123;</span><br><span class="line">            suff[i] = suff[i + <span class="number">1</span>] * nums[i + <span class="number">1</span>];</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; nums.length ; i++) &#123;</span><br><span class="line">            ans[i] = pre[i] * suff[i];</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>Optimization</strong>: instead of using <code>pre</code> or
+<code>suff</code> as arrays, we store them directly integers.</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span>[] productExceptSelf(<span class="type">int</span>[] nums) &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">pre</span> <span class="operator">=</span> <span class="number">1</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">suff</span> <span class="operator">=</span> <span class="number">1</span>;</span><br><span class="line">        <span class="type">int</span>[] ans = <span class="keyword">new</span> <span class="title class_">int</span>[nums.length];</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">            ans[i] = pre;</span><br><span class="line">            pre = pre * nums[i];</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> nums.length - <span class="number">1</span>; i &gt;= <span class="number">0</span> ; i--) &#123;</span><br><span class="line">            ans[i] *= suff;</span><br><span class="line">            suff = suff * nums[i];</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="conclusion">Conclusion</h3>
+<p>This is a simple question but I've missed the interesting part of it
+because I peeked at the solution first QwQ.</p>
+<p>Time used: 10 minutes.</p>
+]]></content>
+      <categories>
+        <category>Solutions</category>
+        <category>LeetCode</category>
+        <category>Easy</category>
+      </categories>
+      <tags>
+        <tag>ComputerScience</tag>
+        <tag>LeetCode</tag>
+        <tag>Algorithems</tag>
+        <tag>BruteForce</tag>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>MA2104 Multivariable Calculus</title>
+    <url>/2024/03/05/MA2104-Multivariable-Calculus/</url>
+    <content><![CDATA[<ol type="1">
+<li>[U] It can be proved from the defifinition that if lim(x,y)→(a,b)
+f(x, y) = L then • its value L is unique, and • L is independent of the
+choice of path approaching (a, b)</li>
+</ol>
+]]></content>
   </entry>
   <entry>
     <title>[LeetCode] 242 - Valid Anagram</title>
@@ -2328,7 +2388,7 @@ solution</p>
   <entry>
     <title>[LeetCode] 53 - Maximum Subarray</title>
     <url>/2024/05/24/LeetCode-53-Maximum-Subarray/</url>
-    <content><![CDATA[<p>Simple question with special case considerations</p>
+    <content><![CDATA[<p>Simple question with different ways of thinking</p>
 <span id="more"></span>
 <h3 id="problem-description">Problem Description</h3>
 <p>Given an integer array nums, find the subarray with the largest sum,
@@ -2355,6 +2415,19 @@ elements.</p>
 <p>**Optimization: We can use <code>currentSum</code> to store the
 current sums instead of using the <code>sums</code> array.*</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">maxSubArray</span><span class="params">(<span class="type">int</span>[] nums)</span> &#123;</span><br><span class="line">        <span class="type">int</span> min, max, currsum;</span><br><span class="line"></span><br><span class="line">        currsum = nums[<span class="number">0</span>];</span><br><span class="line">        max = currsum;</span><br><span class="line">        min = Math.min(<span class="number">0</span>, currsum);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">            currsum = nums[i] + currsum;</span><br><span class="line">            max = Math.max(max, currsum - min);</span><br><span class="line">            min = Math.min(min, currsum);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> max;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="best-solution">Best Solution</h4>
+<h5 id="runtime-analysis-1">Runtime Analysis</h5>
+<p>Runtime: O(n), Memory: O(1)</p>
+<p><em>Runtime: 1ms, Memory: 57.16MB</em></p>
+<h5 id="idea-code-1">Idea &amp; Code</h5>
+<p><strong>Idea</strong> lets say for any subarray with the largest sum
+<code>largest</code>. For any <code>k</code> in <code>largest</code>,
+sum of <code>[0...k]</code> should not be negative, or else the sum of
+<code>largest[k + 1...]</code> would be larger.</p>
+<p>Thus we just have to calculate and check any continued subarray whose
+<code>sum &gt; 0</code>. If at some point the current sum is smaller
+than zero, we just need to restart.</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">maxSubArray</span><span class="params">(<span class="type">int</span>[] nums)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">sum</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">max</span> <span class="operator">=</span> Integer.MIN_VALUE;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> num : nums) &#123;</span><br><span class="line">            sum += num;</span><br><span class="line">            <span class="keyword">if</span>(sum &gt; max) &#123;</span><br><span class="line">                max = sum;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>( sum &lt; <span class="number">0</span>) &#123;</span><br><span class="line">                sum = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> max;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="suggested-solutions">Suggested Solutions</h3>
 <p>Inspired by <a
 href="https://leetcode.com/problems/maximum-subarray/solutions/1595195/c-python-7-simple-solutions-w-explanation-brute-force-dp-kadane-divide-conquer/">this
@@ -2396,7 +2469,7 @@ Solution.</p>
 <p>Here we calculate every index from 0 to n - 1 of
 <code>solve(index, true)</code>and <code>solve(index, false)</code>
 once. Thus we optimize the runtime to O(n).</p>
-<h4 id="divide-7-conquer">Divide 7 Conquer</h4>
+<h4 id="divide-conquer">Divide &amp; Conquer</h4>
 <p><strong>Idea</strong>: We realize that the subarrays either lie
 entirely on the left or right half of the array, or lies in the middle.
 Thus, if we use a helper function
@@ -2421,6 +2494,11 @@ n)\)</span>. Where the first two cases are T(n / 2) and the third case
 takes <span class="math inline">\(O(n)\)</span> (iterating through the
 whole array) .</p>
 <h3 id="conclusion">Conclusion</h3>
+<p>A very interesting question. I come up with my own solution and then
+find out there were so many interesting solutions out
+there(dp/divide/recursion etc.)! However, all these were defeated by the
+<code>best solution</code>! Sometimes mathematics is much more useful
+than CS!</p>
 <p>Time used: 40 minutes.</p>
 ]]></content>
       <categories>
@@ -2434,47 +2512,11 @@ whole array) .</p>
         <tag>Algorithems</tag>
         <tag>BruteForce</tag>
         <tag>Java</tag>
+        <tag>DynamicProgramming</tag>
+        <tag>DivideAndConquer</tag>
+        <tag>Memoization</tag>
+        <tag>Recursion</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>[LeetCode] 238 - Product of Array Except Self</title>
-    <url>/2024/05/24/LeetCode-238-Product-of-Array-Except-Self/</url>
-    <content><![CDATA[<span id="more"></span>
-<h3 id="problem-description">Problem Description</h3>
-<p>$$</p>
-<p>$$</p>
-<h3 id="solution">Solution</h3>
-<h4 id="runtime-analysis">Runtime Analysis</h4>
-<p>Runtime: O(n), Memory: O(n)</p>
-<p><em>Runtime: 2ms, Memory: 56.92MB</em></p>
-<h4 id="idea-code">Idea &amp; Code</h4>
-<p>Idea:</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
-<h3 id="conclusion">Conclusion</h3>
-<p>Time used: minutes.</p>
-]]></content>
-      <categories>
-        <category>Solutions</category>
-        <category>LeetCode</category>
-        <category>Easy</category>
-      </categories>
-      <tags>
-        <tag>ComputerScience</tag>
-        <tag>LeetCode</tag>
-        <tag>Algorithems</tag>
-        <tag>BruteForce</tag>
-        <tag>Java</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>MA2104 Multivariable Calculus</title>
-    <url>/2024/03/05/MA2104-Multivariable-Calculus/</url>
-    <content><![CDATA[<ol type="1">
-<li>[U] It can be proved from the defifinition that if lim(x,y)→(a,b)
-f(x, y) = L then • its value L is unique, and • L is independent of the
-choice of path approaching (a, b)</li>
-</ol>
-]]></content>
   </entry>
   <entry>
     <title>Machine Learning Introduction on Coursera</title>
@@ -2822,9 +2864,9 @@ regression looks the same to linear regression!</p>
         <category>MachineLearning</category>
       </categories>
       <tags>
-        <tag>Study</tag>
-        <tag>Notes</tag>
         <tag>ComputerScience</tag>
+        <tag>Notes</tag>
+        <tag>Study</tag>
         <tag>Coursera</tag>
         <tag>Stanford</tag>
         <tag>AI</tag>
@@ -2833,6 +2875,259 @@ regression looks the same to linear regression!</p>
         <tag>OnlineCourses</tag>
         <tag>Python</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Notes for StatQuest - Neural Networks / Deep Learning</title>
+    <url>/2024/05/11/Notes-for-StatQuest-Neural-Networks-Deep-Learning/</url>
+    <content><![CDATA[<p>Notes for the youtube playlist "<a
+href="https://www.youtube.com/playlist?list=PLblh5JKOoLUIxGDQs4LFFD--41Vzf-ME1">Neural
+Networks / Deep Learning</a>"</p>
+<span id="more"></span>
+<h3 id="the-essential-main-ideas-of-neural-networks">The Essential Main
+Ideas of Neural Networks</h3>
+<ol type="1">
+<li><p>Activation Functions:</p>
+<ul>
+<li><p>Sigmoid <span class="math inline">\(f(x) = \frac{e^x}{e^x +
+1}\)</span></p></li>
+<li><p>ReLU <span class="math inline">\(f(x) =
+max(0,x)\)</span></p></li>
+<li><p>Softplus <span class="math inline">\(f(x) = log(1 +
+e^x)\)</span></p></li>
+</ul></li>
+<li><p>Hidden Layers: the nodes between input layer nodes and output
+layer nodes.</p>
+<ul>
+<li><p>Fitting a Neural Network to data gives us different parameter
+estimates on the connections(line between different layers of nodes.
+When you pass that line, you get the x-coordinates for the activation
+functions.)</p></li>
+<li><p>Parameters that we multiply are called weights, ~ that we add are
+called biases</p></li>
+</ul></li>
+<li><p>[U] How doyou initialize weights using standard normal
+distribution?</p></li>
+</ol>
+]]></content>
+  </entry>
+  <entry>
+    <title>Notes for SICPJS</title>
+    <url>/2024/01/23/Notes-for-SICPJS/</url>
+    <content><![CDATA[<p>Notes for SICP JS. <span id="more"></span></p>
+<h1 id="introduction">Introduction</h1>
+<p><a href="https://sourceacademy.org/sicpjs">SICPJS</a> is a Java
+Script version(or Source Language) of the computer science textbook
+<em>Structure and Interpretation of Computer Programs (SICP)</em> . The
+original textbook was written by Massachusetts Institute of Technology
+professors Harold Abelson and Gerald Jay Sussman with Julie Sussman, and
+is known as the "Wizard Book" in hacker culture. In NUS, year1 CS
+students who take CS1101S uses SICPJS as the reference book on their
+amazing study journey with the Source Academy.</p>
+<p>During my study of CS in 2023/24 Sem 1 in CS1101, I find SICPJS a
+great book. It not only works as an introductory book to computer
+science, but also inspired me to think about the fundamental principles
+of CS. I wrote this note during my sem1 study in CS1101S and is still
+working on the book after that. Hopefully, this note would have been
+finished in 2023/24 Sem2.</p>
+<p>This note involves ideas that I find inspiring in the book and
+questions that I came up with while reading. Notes with (U) are
+questions that are unsolved and it would be great if readers could
+comment below about your ideas on the notes.</p>
+<p>I recommend anyone studying CS to read the book(either the original
+version or JS version), and hopefully this note would be of some use to
+the reader's understanding of the book.</p>
+<h1 id="notes">Notes</h1>
+<h2 id="foreword">Foreword</h2>
+<ol type="1">
+<li><p><strong>(U)What is combinatory calculus &amp; lambda calculus
+&amp; predicate calculus?</strong></p>
+<p><img src="1.png" /></p>
+<p>Lambda Calculus : (lambda x.lambda y. x+y)(5 6) = 11</p>
+<p>A lambda notation is equivalent to a Turing Machine, vice
+versa</p></li>
+<li><p><strong>(U)How can you use a lambda notation to represent AND and
+OR?</strong></p>
+<p>For reference, if we define True and False as:</p>
+<pre><code> True: lambda x. lambda y. x
+
+ False: lambda x. lambda y. y</code></pre>
+<p>For any boolean value b, the logic NOT can be represented as</p>
+<pre><code> NOT: lambda b. b False True</code></pre>
+<p>Proof: case 1: b = True</p>
+<pre><code>         Not b = Not True = True Flase True = False
+
+     case2: b = False
+
+         Not b = Not False = False False True = True</code></pre></li>
+<li><p><strong>(U)What is object oriented approach?</strong></p></li>
+<li><p><strong>(U)Why does the author say that most programming
+languages “does not have a completely automatic storage
+management”?</strong></p></li>
+<li><p><strong>(U)Is it better to have 100 functions programmed on 1
+data structure or 10 functions for each of 10 data
+structures?</strong></p></li>
+<li><p><strong>(U)What is Lisp?</strong></p></li>
+</ol>
+<h2 id="chapter-1-building-abstractions-with-functions">Chapter 1
+Building Abstractions with Functions</h2>
+<h3 id="section">1.1</h3>
+<p><strong>Inflix Notation</strong></p>
+<p>operand + operator + operand</p>
+<p><strong>JS programmers know the value of everything but the cost of
+nothing.(LOL)</strong></p>
+<p>The fact that every expression has a value and JS programmers are
+known for not caring about time/space efficiency.</p>
+<p><strong>(U)What is the difference between statements and
+expressions?</strong></p>
+<p>A?</p>
+<p><strong>Snake Case &amp; Camel Case</strong></p>
+<p>Different ways to name variables.</p>
+<h2 id="chapter-3-modularity-objects-and-state">Chapter 3: Modularity,
+Objects, and State</h2>
+<h3 id="section-1">3.1</h3>
+<p><strong>Why use the CSE machine, why is environment an important
+thing?(3.1.2)</strong></p>
+<p>Storing the temporary data that the function needs in the local
+environment of a function helps us to generalize functions(for example,
+in this way the memoization progress can be applied to different
+functions)</p>
+<p>Encapsulation: We say a variable is encapsulated in the environment
+when its information is only accessed inside the environment. A general
+systemword designing principle called “the hiding principle“ is that a
+system gets more modular and robust by providing information access to
+only the parts of the programme that are “need to know”. </p>
+<p><strong>Monte Carlo Method</strong></p>
+<p>The use of randomness. Say you want to calculate the area of a
+circle(x^2 +y^2 &lt;= 1). Choose a rectangle(whose area you have already
+know), and try to make many following experiments: pick up one point and
+test whether the point is in the circle. If we try this many times, we
+get the possibility of a point in the rectangle is in the circle, thus p
+* area_of_rectangle = area_of_circle.</p>
+<p> </p>
+]]></content>
+      <categories>
+        <category>Notes</category>
+        <category>CS</category>
+        <category>Overview</category>
+      </categories>
+      <tags>
+        <tag>ComputerScience</tag>
+        <tag>Notes</tag>
+        <tag>Study</tag>
+        <tag>NUS</tag>
+        <tag>JavaScript</tag>
+        <tag>CS1101S</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Reading Notes for Pattern Recognizing and Machine Learning by Chris Bishop</title>
+    <url>/2024/04/04/Reading-Notes-for-Pattern-Recognizing-and-Machine-Learning-by-Chris-Bishop/</url>
+    <content><![CDATA[<p>This book <em><a
+href="https://www.microsoft.com/en-us/research/people/cmbishop/PRML/">Pattern
+Recognizing and Machine Learning</a></em> by Christopher M. Bishop(2006)
+was recommended by my professor. Here are the reading notes.</p>
+<span id="more"></span>
+<h1 id="introduction">Introduction</h1>
+<h2 id="basic-concepts">Basic Concepts</h2>
+<ol type="1">
+<li><p>The ability for the machine leanring algorithm to categorize new
+examples outside the training set are called
+<code>generalization</code>, which is the main goal in machine
+learning.</p>
+<ul>
+<li>An exmaple of the <code>preprocessing</code> stage is when a machine
+learning algorithm is used to recognize handwritten digits.</li>
+</ul>
+<blockquote>
+<p>The images of the digits are typically translated and scaled so that
+each digit is contained within a box of a fixed size... This
+pre-processing stage is sometimes also called
+<code>feature extraction</code>.</p>
+</blockquote></li>
+<li><p><code>reinforcement learning</code> is trying to maximize a
+reward in a given situation. However, reward has to be attributed
+appropriately to all the moves that led to it, which is a
+<code>credit assignment</code> problem. THe general feature of
+reinforcement learning is thr trade-off between
+<code>exploration</code>(machine tries out new kinds of actions to see
+how effective they are) and <code>exploitation</code> (make use of
+actions that are known to yield a high reward). [U]?</p></li>
+<li><p>Root-Mean-Square(RMS) error: used to evaluate E(w) for the test
+data set. where <span class="math display">\[E(w) = \frac{1}{2}
+\sum_{n=1}^{N}{(y(x_n, w) - t_n)^2}\]</span></p></li>
+</ol>
+<p>and RMS is calculated:<span class="math display">\[E_{RMS} =
+\sqrt{2E(w) / N}\]</span>. The square root ensures that <span
+class="math inline">\(E_{RMS}\)</span> is measured on the same scale and
+units as the target vaiable <code>t</code> ([U] Why do we ensure that,
+also where does the 2 come from)</p>
+<p>Since <span class="math inline">\(E(w)\)</span> is a quadratic
+function, its derivative would be a linear equation. There should be a
+one and only <code>w*</code> set where E(w) reaches minimum. We would
+use <code>w*</code> as our model.</p>
+<ol start="4" type="1">
+<li><p>Problem of Overfitting. Suppose we train a model in this way: We
+use the function <span class="math inline">\(y = sin(2\pi{x})\)</span>,
+and we generate a training set by adding random noise to the target
+value. We now train the model with different polynomial functions of
+<span class="math inline">\(y = w_0 + w_1 * x^1 + ... + w_M *
+x^M\)</span>, where M denotes the order of the polynomial. We use 3
+differnt models with different Ms: M = 0, M = 3, and M = 9. With a
+training set of 10 data points, we surprisingly find that: M = 0 fits
+the function <span class="math inline">\(y = sin(2\pi{x})\)</span>
+badly, M = 3 fits the function most, M = 9 goes through every point in
+the data set but it fits the original function badly. We call M = 9 an
+<code>overfitting</code>.</p>
+<ul>
+<li><p>This is quite resonable since for M = 9, there are <span
+class="math inline">\(w_0, w_1...w_{10}\)</span> 10 degrees of freedom,
+so it would fit the training set perfectly. However, if we use RMS error
+to calculate the performance of different Ms models, we find that M = 9
+behaves badly on new datas.</p></li>
+<li><p>This feels strange because (1) M = 3 could be considered a
+special case for M = 9, so M = 9 should behave at least as good as M =
+3. (2) consider the function <span class="math inline">\(y =
+sin(2\pi{x})\)</span>, it could be represented as a power series, so it
+was supposed to improve monotonically as we increase M.</p></li>
+<li><p>If we check the w* for each model, we can see that as M
+increases, w* increases. So we observe oscillation in the polynomial of
+M = 9. Intuitively, polynomials with larger values of M are increasingly
+tuned to the random noises.</p></li>
+<li><p>We can see that over-fitting problem becomes less severe as the
+size of the data set increases. It is said that the number of data
+points should be no less than some multiple(5/10) to the number of
+<strong>adaptive parmeters</strong> in the model. ([u] chapter 3 this
+changes? [U] over=fitting problem can be understood as "general property
+of maximum likelihood" ?)</p></li>
+<li><p>This kind of doesn't make sense because we want the number of the
+parameters in a model(complexity of a model) to be influenced by the
+complexity of the problem, rather than the number of data points that we
+have.[U] this can be avoided by the Bayesian model.</p></li>
+<li><p>Without the above approach, one technique to solve the problem is
+to add an addtional penalty term. <span class="math display">\[E(w) =
+\frac{1}{2} \sum_{n=1}^{N}{(y(x_n, w) - t_n)^2 + \lambda{}
+||w||^2}\]</span>, where <span class="math display">\[||w||^2 = w_1^2 +
+w_2^2+....w_M^2\]</span>. the <span
+class="math inline">\(\lambda\)</span> term determines the importance of
+the two terms. Do note that <span class="math inline">\(w_0\)</span> is
+omitted because it causes the results to depend on the choice of origin
+for the target variable. ([U] or it may be included. Discussed in
+section 5.5.1). This is called a <code>shrinkage</code> method. The case
+of quadrati regularizer is called <code>ridge regression</code>, in the
+context of neural networks, it is called
+<code>weight decay</code>.</p></li>
+<li><p>Determining the complexity for the model is important. The result
+above shows a way of seperating two different sets, which is the
+training data set used to determine <strong>w</strong>, and a
+<code>validation set</code> or a <code>hold-out set</code> used to
+optimize the model complexity.</p></li>
+</ul></li>
+</ol>
+<h2 id="probability-theory">Probability Theory</h2>
+<p>TBC.</p>
+<hr />
+<p>Updated until page 12. Current plan: one 1.1 everyday.</p>
+]]></content>
   </entry>
   <entry>
     <title>Notes for CS2100</title>
@@ -3845,8 +4140,8 @@ delay slot.</p></li>
         <category>ComputerOrganization</category>
       </categories>
       <tags>
-        <tag>Notes</tag>
         <tag>ComputerScience</tag>
+        <tag>Notes</tag>
         <tag>CPP</tag>
         <tag>C</tag>
         <tag>MIPS</tag>
@@ -5470,122 +5765,13 @@ href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
         <category>Algorithm</category>
       </categories>
       <tags>
-        <tag>Study</tag>
-        <tag>Notes</tag>
         <tag>ComputerScience</tag>
+        <tag>Notes</tag>
+        <tag>Study</tag>
         <tag>NUS</tag>
         <tag>Java</tag>
         <tag>Algorithm</tag>
         <tag>Questions</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Notes for SICPJS</title>
-    <url>/2024/01/23/Notes-for-SICPJS/</url>
-    <content><![CDATA[<p>Notes for SICP JS. <span id="more"></span></p>
-<h1 id="introduction">Introduction</h1>
-<p><a href="https://sourceacademy.org/sicpjs">SICPJS</a> is a Java
-Script version(or Source Language) of the computer science textbook
-<em>Structure and Interpretation of Computer Programs (SICP)</em> . The
-original textbook was written by Massachusetts Institute of Technology
-professors Harold Abelson and Gerald Jay Sussman with Julie Sussman, and
-is known as the "Wizard Book" in hacker culture. In NUS, year1 CS
-students who take CS1101S uses SICPJS as the reference book on their
-amazing study journey with the Source Academy.</p>
-<p>During my study of CS in 2023/24 Sem 1 in CS1101, I find SICPJS a
-great book. It not only works as an introductory book to computer
-science, but also inspired me to think about the fundamental principles
-of CS. I wrote this note during my sem1 study in CS1101S and is still
-working on the book after that. Hopefully, this note would have been
-finished in 2023/24 Sem2.</p>
-<p>This note involves ideas that I find inspiring in the book and
-questions that I came up with while reading. Notes with (U) are
-questions that are unsolved and it would be great if readers could
-comment below about your ideas on the notes.</p>
-<p>I recommend anyone studying CS to read the book(either the original
-version or JS version), and hopefully this note would be of some use to
-the reader's understanding of the book.</p>
-<h1 id="notes">Notes</h1>
-<h2 id="foreword">Foreword</h2>
-<ol type="1">
-<li><p><strong>(U)What is combinatory calculus &amp; lambda calculus
-&amp; predicate calculus?</strong></p>
-<p><img src="1.png" /></p>
-<p>Lambda Calculus : (lambda x.lambda y. x+y)(5 6) = 11</p>
-<p>A lambda notation is equivalent to a Turing Machine, vice
-versa</p></li>
-<li><p><strong>(U)How can you use a lambda notation to represent AND and
-OR?</strong></p>
-<p>For reference, if we define True and False as:</p>
-<pre><code> True: lambda x. lambda y. x
-
- False: lambda x. lambda y. y</code></pre>
-<p>For any boolean value b, the logic NOT can be represented as</p>
-<pre><code> NOT: lambda b. b False True</code></pre>
-<p>Proof: case 1: b = True</p>
-<pre><code>         Not b = Not True = True Flase True = False
-
-     case2: b = False
-
-         Not b = Not False = False False True = True</code></pre></li>
-<li><p><strong>(U)What is object oriented approach?</strong></p></li>
-<li><p><strong>(U)Why does the author say that most programming
-languages “does not have a completely automatic storage
-management”?</strong></p></li>
-<li><p><strong>(U)Is it better to have 100 functions programmed on 1
-data structure or 10 functions for each of 10 data
-structures?</strong></p></li>
-<li><p><strong>(U)What is Lisp?</strong></p></li>
-</ol>
-<h2 id="chapter-1-building-abstractions-with-functions">Chapter 1
-Building Abstractions with Functions</h2>
-<h3 id="section">1.1</h3>
-<p><strong>Inflix Notation</strong></p>
-<p>operand + operator + operand</p>
-<p><strong>JS programmers know the value of everything but the cost of
-nothing.(LOL)</strong></p>
-<p>The fact that every expression has a value and JS programmers are
-known for not caring about time/space efficiency.</p>
-<p><strong>(U)What is the difference between statements and
-expressions?</strong></p>
-<p>A?</p>
-<p><strong>Snake Case &amp; Camel Case</strong></p>
-<p>Different ways to name variables.</p>
-<h2 id="chapter-3-modularity-objects-and-state">Chapter 3: Modularity,
-Objects, and State</h2>
-<h3 id="section-1">3.1</h3>
-<p><strong>Why use the CSE machine, why is environment an important
-thing?(3.1.2)</strong></p>
-<p>Storing the temporary data that the function needs in the local
-environment of a function helps us to generalize functions(for example,
-in this way the memoization progress can be applied to different
-functions)</p>
-<p>Encapsulation: We say a variable is encapsulated in the environment
-when its information is only accessed inside the environment. A general
-systemword designing principle called “the hiding principle“ is that a
-system gets more modular and robust by providing information access to
-only the parts of the programme that are “need to know”. </p>
-<p><strong>Monte Carlo Method</strong></p>
-<p>The use of randomness. Say you want to calculate the area of a
-circle(x^2 +y^2 &lt;= 1). Choose a rectangle(whose area you have already
-know), and try to make many following experiments: pick up one point and
-test whether the point is in the circle. If we try this many times, we
-get the possibility of a point in the rectangle is in the circle, thus p
-* area_of_rectangle = area_of_circle.</p>
-<p> </p>
-]]></content>
-      <categories>
-        <category>Notes</category>
-        <category>CS</category>
-        <category>Overview</category>
-      </categories>
-      <tags>
-        <tag>Study</tag>
-        <tag>Notes</tag>
-        <tag>ComputerScience</tag>
-        <tag>NUS</tag>
-        <tag>JavaScript</tag>
-        <tag>CS1101S</tag>
       </tags>
   </entry>
   <entry>
@@ -5703,189 +5889,6 @@ and inspires me to attend future guest lectures.</em></p>
       </tags>
   </entry>
   <entry>
-    <title>Reading Notes for Pattern Recognizing and Machine Learning by Chris Bishop</title>
-    <url>/2024/04/04/Reading-Notes-for-Pattern-Recognizing-and-Machine-Learning-by-Chris-Bishop/</url>
-    <content><![CDATA[<p>This book <em><a
-href="https://www.microsoft.com/en-us/research/people/cmbishop/PRML/">Pattern
-Recognizing and Machine Learning</a></em> by Christopher M. Bishop(2006)
-was recommended by my professor. Here are the reading notes.</p>
-<span id="more"></span>
-<h1 id="introduction">Introduction</h1>
-<h2 id="basic-concepts">Basic Concepts</h2>
-<ol type="1">
-<li><p>The ability for the machine leanring algorithm to categorize new
-examples outside the training set are called
-<code>generalization</code>, which is the main goal in machine
-learning.</p>
-<ul>
-<li>An exmaple of the <code>preprocessing</code> stage is when a machine
-learning algorithm is used to recognize handwritten digits.</li>
-</ul>
-<blockquote>
-<p>The images of the digits are typically translated and scaled so that
-each digit is contained within a box of a fixed size... This
-pre-processing stage is sometimes also called
-<code>feature extraction</code>.</p>
-</blockquote></li>
-<li><p><code>reinforcement learning</code> is trying to maximize a
-reward in a given situation. However, reward has to be attributed
-appropriately to all the moves that led to it, which is a
-<code>credit assignment</code> problem. THe general feature of
-reinforcement learning is thr trade-off between
-<code>exploration</code>(machine tries out new kinds of actions to see
-how effective they are) and <code>exploitation</code> (make use of
-actions that are known to yield a high reward). [U]?</p></li>
-<li><p>Root-Mean-Square(RMS) error: used to evaluate E(w) for the test
-data set. where <span class="math display">\[E(w) = \frac{1}{2}
-\sum_{n=1}^{N}{(y(x_n, w) - t_n)^2}\]</span></p></li>
-</ol>
-<p>and RMS is calculated:<span class="math display">\[E_{RMS} =
-\sqrt{2E(w) / N}\]</span>. The square root ensures that <span
-class="math inline">\(E_{RMS}\)</span> is measured on the same scale and
-units as the target vaiable <code>t</code> ([U] Why do we ensure that,
-also where does the 2 come from)</p>
-<p>Since <span class="math inline">\(E(w)\)</span> is a quadratic
-function, its derivative would be a linear equation. There should be a
-one and only <code>w*</code> set where E(w) reaches minimum. We would
-use <code>w*</code> as our model.</p>
-<ol start="4" type="1">
-<li><p>Problem of Overfitting. Suppose we train a model in this way: We
-use the function <span class="math inline">\(y = sin(2\pi{x})\)</span>,
-and we generate a training set by adding random noise to the target
-value. We now train the model with different polynomial functions of
-<span class="math inline">\(y = w_0 + w_1 * x^1 + ... + w_M *
-x^M\)</span>, where M denotes the order of the polynomial. We use 3
-differnt models with different Ms: M = 0, M = 3, and M = 9. With a
-training set of 10 data points, we surprisingly find that: M = 0 fits
-the function <span class="math inline">\(y = sin(2\pi{x})\)</span>
-badly, M = 3 fits the function most, M = 9 goes through every point in
-the data set but it fits the original function badly. We call M = 9 an
-<code>overfitting</code>.</p>
-<ul>
-<li><p>This is quite resonable since for M = 9, there are <span
-class="math inline">\(w_0, w_1...w_{10}\)</span> 10 degrees of freedom,
-so it would fit the training set perfectly. However, if we use RMS error
-to calculate the performance of different Ms models, we find that M = 9
-behaves badly on new datas.</p></li>
-<li><p>This feels strange because (1) M = 3 could be considered a
-special case for M = 9, so M = 9 should behave at least as good as M =
-3. (2) consider the function <span class="math inline">\(y =
-sin(2\pi{x})\)</span>, it could be represented as a power series, so it
-was supposed to improve monotonically as we increase M.</p></li>
-<li><p>If we check the w* for each model, we can see that as M
-increases, w* increases. So we observe oscillation in the polynomial of
-M = 9. Intuitively, polynomials with larger values of M are increasingly
-tuned to the random noises.</p></li>
-<li><p>We can see that over-fitting problem becomes less severe as the
-size of the data set increases. It is said that the number of data
-points should be no less than some multiple(5/10) to the number of
-<strong>adaptive parmeters</strong> in the model. ([u] chapter 3 this
-changes? [U] over=fitting problem can be understood as "general property
-of maximum likelihood" ?)</p></li>
-<li><p>This kind of doesn't make sense because we want the number of the
-parameters in a model(complexity of a model) to be influenced by the
-complexity of the problem, rather than the number of data points that we
-have.[U] this can be avoided by the Bayesian model.</p></li>
-<li><p>Without the above approach, one technique to solve the problem is
-to add an addtional penalty term. <span class="math display">\[E(w) =
-\frac{1}{2} \sum_{n=1}^{N}{(y(x_n, w) - t_n)^2 + \lambda{}
-||w||^2}\]</span>, where <span class="math display">\[||w||^2 = w_1^2 +
-w_2^2+....w_M^2\]</span>. the <span
-class="math inline">\(\lambda\)</span> term determines the importance of
-the two terms. Do note that <span class="math inline">\(w_0\)</span> is
-omitted because it causes the results to depend on the choice of origin
-for the target variable. ([U] or it may be included. Discussed in
-section 5.5.1). This is called a <code>shrinkage</code> method. The case
-of quadrati regularizer is called <code>ridge regression</code>, in the
-context of neural networks, it is called
-<code>weight decay</code>.</p></li>
-<li><p>Determining the complexity for the model is important. The result
-above shows a way of seperating two different sets, which is the
-training data set used to determine <strong>w</strong>, and a
-<code>validation set</code> or a <code>hold-out set</code> used to
-optimize the model complexity.</p></li>
-</ul></li>
-</ol>
-<h2 id="probability-theory">Probability Theory</h2>
-<p>TBC.</p>
-<hr />
-<p>Updated until page 12. Current plan: one 1.1 everyday.</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>Notes for StatQuest - Neural Networks / Deep Learning</title>
-    <url>/2024/05/11/Notes-for-StatQuest-Neural-Networks-Deep-Learning/</url>
-    <content><![CDATA[<p>Notes for the youtube playlist "<a
-href="https://www.youtube.com/playlist?list=PLblh5JKOoLUIxGDQs4LFFD--41Vzf-ME1">Neural
-Networks / Deep Learning</a>"</p>
-<span id="more"></span>
-<h3 id="the-essential-main-ideas-of-neural-networks">The Essential Main
-Ideas of Neural Networks</h3>
-<ol type="1">
-<li><p>Activation Functions:</p>
-<ul>
-<li><p>Sigmoid <span class="math inline">\(f(x) = \frac{e^x}{e^x +
-1}\)</span></p></li>
-<li><p>ReLU <span class="math inline">\(f(x) =
-max(0,x)\)</span></p></li>
-<li><p>Softplus <span class="math inline">\(f(x) = log(1 +
-e^x)\)</span></p></li>
-</ul></li>
-<li><p>Hidden Layers: the nodes between input layer nodes and output
-layer nodes.</p>
-<ul>
-<li><p>Fitting a Neural Network to data gives us different parameter
-estimates on the connections(line between different layers of nodes.
-When you pass that line, you get the x-coordinates for the activation
-functions.)</p></li>
-<li><p>Parameters that we multiply are called weights, ~ that we add are
-called biases</p></li>
-</ul></li>
-<li><p>[U] How doyou initialize weights using standard normal
-distribution?</p></li>
-</ol>
-]]></content>
-  </entry>
-  <entry>
-    <title>archive for CP2107 Odyssey - a summer research programme</title>
-    <url>/2024/05/21/archive-for-CP2107-Odyssey-a-summer-research-programme/</url>
-    <content><![CDATA[<p>Archive for a research programme that I've done - utilizing existing
-EEG methodologies to determine Relaxtion / Meditation levels.
-<span id="more"></span></p>
-<h3 id="week-1">Week 1</h3>
-<h4 id="meeting">Meeting</h4>
-<ol type="1">
-<li><p>What is community sensing - refer to Kai</p>
-<ul>
-<li><p>EEG Headsets to understand students paying attention in
-class</p></li>
-<li><p>Understand the individual level first</p></li>
-</ul></li>
-<li><p>How can I get some basic knowledge of EEG(when I read the papers,
-I don't quite understand things like "alpha waves" or things like
-that)</p>
-<ul>
-<li>https://imotions.com/blog/learning/best-practice/eeg/</li>
-</ul></li>
-<li><p>The analysis for Relaxation levels and Meditation levels seems
-like two different things</p>
-<ul>
-<li></li>
-</ul></li>
-</ol>
-<h4 id="notes">Notes</h4>
-<ol type="1">
-<li><p>To find the codes: either search for codes directly or check out
-the reference list or Methodologies part of the biological papers, or
-can consider overall analysis of EEG ML</p></li>
-<li><p>Keyword for searching</p>
-<ul>
-<li>EEG stress level methodologies</li>
-</ul></li>
-</ol>
-]]></content>
-  </entry>
-  <entry>
     <title>Thought - 2024.2</title>
     <url>/2024/02/03/Thought-2024-2/</url>
     <content><![CDATA[<p>Thougts in Feb 2024</p>
@@ -5960,56 +5963,6 @@ give them the right directions. Don't give up. Always move on.</p>
       </tags>
   </entry>
   <entry>
-    <title>吹灭读书灯，一身都是月</title>
-    <url>/2024/02/17/%E5%90%B9%E7%81%AD%E8%AF%BB%E4%B9%A6%E7%81%AF%EF%BC%8C%E4%B8%80%E8%BA%AB%E9%83%BD%E6%98%AF%E6%9C%88/</url>
-    <content><![CDATA[<p>吹灭读书灯，一身都是月，多美的句子啊。</p>
-<span id="more"></span>
-<p>小的时候最喜欢的房子就是：</p>
-<p>小小的房间，与世人的喧嚣隔绝。屋子里的东西不多，一张朴素的床，一个放得满满的书架，一个能在晚上眺望星空的窗户，一张书桌。
-比如曾经看过一本漫画书（忘记叫什么名字了），讲一个老爷爷和他的小精灵生活在一个农场里。那个小精灵的房子在田地的中央，每天晚上他就爬上去，打开昏黄的台灯，就着星光读书。</p>
-<p>又比如里约大冒险里那个小男孩，住在深巷中的一个房子的天台上，甚至不能叫屋子，只是雨棚下的简单铺成的床。每天晚上，他听着巷子里的人声喧闹，爬着水管回到家中，从破烂的箱子里拿出一杯饮料，坐下来看星星看月亮。</p>
-<p>而大学一学期的时光里，我最享受的时刻就是上完了课去完了cca回到宿舍里，洗完澡之后坐下来，煮一碗泡面，看着窗外的星光，伏案学习。这样的时光里，我感受不到时间的流逝。人生的享受不过如此。</p>
-<p>在上大学之前我从来没住过宿，也从来没有远离过家乡，有时候一个人呆着难免会觉得孤独。当我试图通过互联网转移注意力、试图在无意义的社交中浪费时间，孤独感并不会得到缓解。唯有在这种夜深人静的时刻，吹灭读书灯一身都是月的时候，我才能清清楚楚明明白白地感受到生命的存在，感受到意义，消解孤独。</p>
-<p>突然又想到一句话，好像和以上没什么联系：人的一生，苦也罢，乐也罢，的也罢，失也罢，要紧的是心中要有一泓清泉不能没有月辉。</p>
-<p><img src="dorm.jpg" /></p>
-]]></content>
-      <categories>
-        <category>Thoughts</category>
-      </categories>
-      <tags>
-        <tag>Study</tag>
-        <tag>Thoughts</tag>
-        <tag>Random</tag>
-        <tag>Peace</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>我的世界起床战争技巧总结</title>
-    <url>/2024/02/11/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C%E8%B5%B7%E5%BA%8A%E6%88%98%E4%BA%89%E6%8A%80%E5%B7%A7%E6%80%BB%E7%BB%93/</url>
-    <content><![CDATA[<p>我的世界起床战争技巧总结 <span id="more"></span></p>
-<h1 id="pvp">PVP</h1>
-<h2 id="控距">控距</h2>
-<p>将敌人保持在自己攻击范围的边上。为了保持这一点，手可以时不时按<code>w</code>而不是一直按着键盘</p>
-<h2 id="攻击">攻击</h2>
-<p>跳劈可以用，但是容易翻车。可以尝试在第一次攻击的时候跳劈，注意往旁边跳劈会比较好一点。</p>
-<h1 id="搭路">搭路</h1>
-<p>找到节奏感</p>
-]]></content>
-      <categories>
-        <category>Games</category>
-        <category>Minecraft</category>
-        <category>Bedwars</category>
-      </categories>
-      <tags>
-        <tag>Games</tag>
-        <tag>Minecraft</tag>
-        <tag>Entertainment</tag>
-        <tag>Fun</tag>
-        <tag>Skills</tag>
-        <tag>Bedwars</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hello World</title>
     <url>/2024/01/20/hello-world/</url>
     <content><![CDATA[<p>This is a Blog to test this website's functionalities.
@@ -6060,6 +6013,95 @@ class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 ]]></content>
+  </entry>
+  <entry>
+    <title>archive for CP2107 Odyssey - a summer research programme</title>
+    <url>/2024/05/21/archive-for-CP2107-Odyssey-a-summer-research-programme/</url>
+    <content><![CDATA[<p>Archive for a research programme that I've done - utilizing existing
+EEG methodologies to determine Relaxtion / Meditation levels.
+<span id="more"></span></p>
+<h3 id="week-1">Week 1</h3>
+<h4 id="meeting">Meeting</h4>
+<ol type="1">
+<li><p>What is community sensing - refer to Kai</p>
+<ul>
+<li><p>EEG Headsets to understand students paying attention in
+class</p></li>
+<li><p>Understand the individual level first</p></li>
+</ul></li>
+<li><p>How can I get some basic knowledge of EEG(when I read the papers,
+I don't quite understand things like "alpha waves" or things like
+that)</p>
+<ul>
+<li>https://imotions.com/blog/learning/best-practice/eeg/</li>
+</ul></li>
+<li><p>The analysis for Relaxation levels and Meditation levels seems
+like two different things</p>
+<ul>
+<li></li>
+</ul></li>
+</ol>
+<h4 id="notes">Notes</h4>
+<ol type="1">
+<li><p>To find the codes: either search for codes directly or check out
+the reference list or Methodologies part of the biological papers, or
+can consider overall analysis of EEG ML</p></li>
+<li><p>Keyword for searching</p>
+<ul>
+<li>EEG stress level methodologies</li>
+</ul></li>
+</ol>
+]]></content>
+  </entry>
+  <entry>
+    <title>吹灭读书灯，一身都是月</title>
+    <url>/2024/02/17/%E5%90%B9%E7%81%AD%E8%AF%BB%E4%B9%A6%E7%81%AF%EF%BC%8C%E4%B8%80%E8%BA%AB%E9%83%BD%E6%98%AF%E6%9C%88/</url>
+    <content><![CDATA[<p>吹灭读书灯，一身都是月，多美的句子啊。</p>
+<span id="more"></span>
+<p>小的时候最喜欢的房子就是：</p>
+<p>小小的房间，与世人的喧嚣隔绝。屋子里的东西不多，一张朴素的床，一个放得满满的书架，一个能在晚上眺望星空的窗户，一张书桌。
+比如曾经看过一本漫画书（忘记叫什么名字了），讲一个老爷爷和他的小精灵生活在一个农场里。那个小精灵的房子在田地的中央，每天晚上他就爬上去，打开昏黄的台灯，就着星光读书。</p>
+<p>又比如里约大冒险里那个小男孩，住在深巷中的一个房子的天台上，甚至不能叫屋子，只是雨棚下的简单铺成的床。每天晚上，他听着巷子里的人声喧闹，爬着水管回到家中，从破烂的箱子里拿出一杯饮料，坐下来看星星看月亮。</p>
+<p>而大学一学期的时光里，我最享受的时刻就是上完了课去完了cca回到宿舍里，洗完澡之后坐下来，煮一碗泡面，看着窗外的星光，伏案学习。这样的时光里，我感受不到时间的流逝。人生的享受不过如此。</p>
+<p>在上大学之前我从来没住过宿，也从来没有远离过家乡，有时候一个人呆着难免会觉得孤独。当我试图通过互联网转移注意力、试图在无意义的社交中浪费时间，孤独感并不会得到缓解。唯有在这种夜深人静的时刻，吹灭读书灯一身都是月的时候，我才能清清楚楚明明白白地感受到生命的存在，感受到意义，消解孤独。</p>
+<p>突然又想到一句话，好像和以上没什么联系：人的一生，苦也罢，乐也罢，的也罢，失也罢，要紧的是心中要有一泓清泉不能没有月辉。</p>
+<p><img src="dorm.jpg" /></p>
+]]></content>
+      <categories>
+        <category>Thoughts</category>
+      </categories>
+      <tags>
+        <tag>Study</tag>
+        <tag>Thoughts</tag>
+        <tag>Random</tag>
+        <tag>Peace</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>我的世界起床战争技巧总结</title>
+    <url>/2024/02/11/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C%E8%B5%B7%E5%BA%8A%E6%88%98%E4%BA%89%E6%8A%80%E5%B7%A7%E6%80%BB%E7%BB%93/</url>
+    <content><![CDATA[<p>我的世界起床战争技巧总结 <span id="more"></span></p>
+<h1 id="pvp">PVP</h1>
+<h2 id="控距">控距</h2>
+<p>将敌人保持在自己攻击范围的边上。为了保持这一点，手可以时不时按<code>w</code>而不是一直按着键盘</p>
+<h2 id="攻击">攻击</h2>
+<p>跳劈可以用，但是容易翻车。可以尝试在第一次攻击的时候跳劈，注意往旁边跳劈会比较好一点。</p>
+<h1 id="搭路">搭路</h1>
+<p>找到节奏感</p>
+]]></content>
+      <categories>
+        <category>Games</category>
+        <category>Minecraft</category>
+        <category>Bedwars</category>
+      </categories>
+      <tags>
+        <tag>Games</tag>
+        <tag>Minecraft</tag>
+        <tag>Entertainment</tag>
+        <tag>Fun</tag>
+        <tag>Skills</tag>
+        <tag>Bedwars</tag>
+      </tags>
   </entry>
   <entry>
     <title>Welcome to my blog</title>
