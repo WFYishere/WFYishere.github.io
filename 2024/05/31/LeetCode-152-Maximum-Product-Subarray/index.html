@@ -21,14 +21,22 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"wfyishere.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.19.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":true,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta property="og:type" content="article">
+    <meta name="description" content="Easy problem but took me soooo long!">
+<meta property="og:type" content="article">
 <meta property="og:title" content="[LeetCode] 152 - Maximum Product Subarray">
 <meta property="og:url" content="https://wfyishere.github.io/2024/05/31/LeetCode-152-Maximum-Product-Subarray/index.html">
 <meta property="og:site_name" content="WFY&#39;s Blog">
+<meta property="og:description" content="Easy problem but took me soooo long!">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-05-31T09:10:20.000Z">
-<meta property="article:modified_time" content="2024-05-31T09:10:20.676Z">
+<meta property="article:modified_time" content="2024-06-02T03:50:02.430Z">
 <meta property="article:author" content="Wen Fanyu">
+<meta property="article:tag" content="ComputerScience">
+<meta property="article:tag" content="LeetCode">
+<meta property="article:tag" content="Algorithems">
+<meta property="article:tag" content="BruteForce">
+<meta property="article:tag" content="Java">
+<meta property="article:tag" content="Mathematics">
 <meta name="twitter:card" content="summary">
 
 
@@ -127,7 +135,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -140,6 +148,8 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#problem-description"><span class="nav-number">1.</span> <span class="nav-text">Problem Description</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#solution-1-mathematical-solutionbest"><span class="nav-number">2.</span> <span class="nav-text">Solution 1 : Mathematical
+Solution(Best)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#runtime-analysis"><span class="nav-number">2.1.</span> <span class="nav-text">Runtime Analysis</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#idea-code"><span class="nav-number">2.2.</span> <span class="nav-text">Idea &amp; Code</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#solution-2-bruteforce"><span class="nav-number">3.</span> <span class="nav-text">Solution 2 : Bruteforce</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#runtime-analysis-1"><span class="nav-number">3.1.</span> <span class="nav-text">Runtime Analysis</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#idea-code-1"><span class="nav-number">3.2.</span> <span class="nav-text">Idea &amp; Code</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#conclusion"><span class="nav-number">4.</span> <span class="nav-text">Conclusion</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -230,6 +240,30 @@
 
       <time title="Created: 2024-05-31 17:10:20" itemprop="dateCreated datePublished" datetime="2024-05-31T17:10:20+08:00">2024-05-31</time>
     </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2024-06-02 11:50:02" itemprop="dateModified" datetime="2024-06-02T11:50:02+08:00">2024-06-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Solutions/" itemprop="url" rel="index"><span itemprop="name">Solutions</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Solutions/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Solutions/LeetCode/Medium/" itemprop="url" rel="index"><span itemprop="name">Medium</span></a>
+        </span>
+    </span>
 
   
     <span class="post-meta-break"></span>
@@ -238,14 +272,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Word count in article: </span>
-      <span>0</span>
+      <span>2.8k</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>1 mins.</span>
+      <span>3 mins.</span>
     </span>
 </div>
 
@@ -255,7 +289,50 @@
     
     
     
-    <div class="post-body" itemprop="articleBody">
+    <div class="post-body" itemprop="articleBody"><p>Easy problem but took me soooo long!</p>
+<span id="more"></span>
+<h3 id="problem-description">Problem Description</h3>
+<p>Given an integer array <code>nums</code>, find a subarray that has
+the largest product, and return the product.</p>
+<p>The test cases are generated so that the answer will fit in a 32-bit
+integer.</p>
+<p><span class="math inline">\(1 &lt;= nums.length &lt;= 2 *
+10^4\)</span></p>
+<p><span class="math inline">\(-10 &lt;= nums[i] &lt;= 10\)</span></p>
+<h3 id="solution-1-mathematical-solutionbest">Solution 1 : Mathematical
+Solution(Best)</h3>
+<p><strong><a
+target="_blank" rel="noopener" href="https://leetcode.com/problems/maximum-product-subarray/solutions/5233409/linear-time-approach-with-prefix-and-suffix-sum/">See
+Original Blog here</a></strong></p>
+<h4 id="runtime-analysis">Runtime Analysis</h4>
+<p>Runtime: O(n), Memory: O(1)</p>
+<p><em>Runtime: 1ms, Memory: 44.70MB</em></p>
+<h4 id="idea-code">Idea &amp; Code</h4>
+<p>Idea: For any array,. the absolute value of the product is always
+increasing. Thus, the maximum array would have the following two
+features the maximum of all arrays that</p>
+<ol type="1">
+<li><p>product is positive (negative for special cases)</p></li>
+<li><p>one end of the array is the "edge" of the array (we define edge
+as either the starting/ending point of the array or <code>i</code> where
+<code>nums[i] = 0</code>)</p></li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">maxProduct</span><span class="params">(<span class="type">int</span>[] nums)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">pref</span> <span class="operator">=</span> <span class="number">1</span>, suff = <span class="number">1</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">len</span> <span class="operator">=</span> nums.length;</span><br><span class="line">        <span class="type">int</span> <span class="variable">ans</span> <span class="operator">=</span> Integer.MIN_VALUE;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">            pref = (pref == <span class="number">0</span>) ? nums[i] : nums[i] * pref;</span><br><span class="line">            suff = (suff == <span class="number">0</span>) ? nums[len - i - <span class="number">1</span>] : suff * nums[len - i - <span class="number">1</span>];</span><br><span class="line">            ans = Math.max(ans, Math.max(suff, pref));</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="solution-2-bruteforce">Solution 2 : Bruteforce</h3>
+<h4 id="runtime-analysis-1">Runtime Analysis</h4>
+<p>Runtime: O(n), Memory: O(1)</p>
+<p><em>Runtime: 1ms, Memory: 44.67MB</em></p>
+<h4 id="idea-code-1">Idea &amp; Code</h4>
+<p>Idea: TLDR, Bruteforce the solution with negativeMax and
+positiveMax.</p>
+<p>This is a very bad code, please don't read it. It NEEDS improvement
+but I'm just too tired to do that.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">maxProduct</span><span class="params">(<span class="type">int</span>[] nums)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">currProduct</span> <span class="operator">=</span> <span class="number">1</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">ans</span> <span class="operator">=</span> Integer.MIN_VALUE;</span><br><span class="line">        <span class="type">boolean</span> <span class="variable">hasMoreThanOneNegativeNumber</span> <span class="operator">=</span> <span class="literal">false</span>, hasNegativeNumber = <span class="literal">false</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">positiveMax</span> <span class="operator">=</span> Integer.MIN_VALUE, negativeMax = <span class="number">0</span>, negativeMin = <span class="number">1</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (nums[i] == <span class="number">0</span>) &#123;</span><br><span class="line">                ans = Math.max(<span class="number">0</span>, ans);</span><br><span class="line"></span><br><span class="line">                <span class="keyword">if</span> (hasNegativeNumber) &#123;</span><br><span class="line">                    <span class="keyword">if</span> (hasMoreThanOneNegativeNumber) &#123;</span><br><span class="line">                        negativeMax = negativeMax / negativeMin;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    negativeMax = Integer.MIN_VALUE;</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                ans = Math.max(Math.max(negativeMax, positiveMax), ans);</span><br><span class="line"></span><br><span class="line">                positiveMax = Integer.MIN_VALUE;</span><br><span class="line">                negativeMax = <span class="number">0</span>;</span><br><span class="line">                negativeMin = <span class="number">1</span>;</span><br><span class="line">                hasNegativeNumber = <span class="literal">false</span>;</span><br><span class="line">                hasMoreThanOneNegativeNumber = <span class="literal">false</span>;</span><br><span class="line">                currProduct = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            currProduct = currProduct * nums[i];</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (currProduct &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                positiveMax = currProduct;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                negativeMax = currProduct;</span><br><span class="line">                <span class="keyword">if</span> (!hasNegativeNumber &amp;&amp; !hasMoreThanOneNegativeNumber) &#123;</span><br><span class="line">                    negativeMin = currProduct;</span><br><span class="line">                    negativeMax = currProduct;</span><br><span class="line">                    hasNegativeNumber = <span class="literal">true</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span> <span class="keyword">if</span>(!hasMoreThanOneNegativeNumber) &#123;</span><br><span class="line">                    negativeMax = currProduct;</span><br><span class="line">                    hasMoreThanOneNegativeNumber = <span class="literal">true</span>;</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    negativeMax = currProduct;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (hasNegativeNumber) &#123;</span><br><span class="line">            <span class="keyword">if</span> (hasMoreThanOneNegativeNumber) &#123;</span><br><span class="line">                negativeMax = negativeMax / negativeMin;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            negativeMax = Integer.MIN_VALUE;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        ans = Math.max(Math.max(negativeMax, positiveMax), ans);</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="conclusion">Conclusion</h3>
+<p>This is actually a very easy question but I spent 80 minutes
+debugging! I feel like my coding skills still needs improving.</p>
+<p>BTW, still beaten by easy mathematical solution.</p>
+<p>Time used: 80minutes.</p>
 
     </div>
 
@@ -281,6 +358,14 @@
 </ul>
 </div>
 
+          <div class="post-tags">
+              <a href="/tags/ComputerScience/" rel="tag"># ComputerScience</a>
+              <a href="/tags/LeetCode/" rel="tag"># LeetCode</a>
+              <a href="/tags/Algorithems/" rel="tag"># Algorithems</a>
+              <a href="/tags/BruteForce/" rel="tag"># BruteForce</a>
+              <a href="/tags/Java/" rel="tag"># Java</a>
+              <a href="/tags/Mathematics/" rel="tag"># Mathematics</a>
+          </div>
 
         
   <div class="social-like a2a_kit a2a_kit_size_32 a2a_default_style">
@@ -294,8 +379,8 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2024/05/31/LeetCode-49-Group-Anagrams/" rel="prev" title="[LeetCode] 49 - Group Anagrams">
-                  <i class="fa fa-angle-left"></i> [LeetCode] 49 - Group Anagrams
+                <a href="/2024/05/31/LeetCode-56-Merge-Intervals/" rel="prev" title="[LeetCode] 56 - Merge Intervals">
+                  <i class="fa fa-angle-left"></i> [LeetCode] 56 - Merge Intervals
                 </a>
             </div>
             <div class="post-nav-item">
@@ -334,14 +419,14 @@
       <i class="fa fa-chart-line"></i>
     </span>
       <span>Word count total: </span>
-    <span title="Word count total">183k</span>
+    <span title="Word count total">189k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>Reading time total &asymp;</span>
-    <span title="Reading time total">2:47</span>
+    <span title="Reading time total">2:52</span>
   </span>
 </div>
 
@@ -398,7 +483,7 @@ setInterval("createtime()",250);
 
   
 
-  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
 <script src="/js/third-party/math/mathjax.js"></script>
 
 
