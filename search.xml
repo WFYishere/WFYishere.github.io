@@ -86,6 +86,51 @@ estimated reading time / the days this website has survived.</p>
 ]]></content>
   </entry>
   <entry>
+    <title>[LeetCode] 206 - Reverse a Linked List</title>
+    <url>/2024/06/02/LeetCode-206-Reverse-a-Linked-List/</url>
+    <content><![CDATA[<p>I wasn't too familiar with linked list. still treated it as a
+list.</p>
+<span id="more"></span>
+<h3 id="problem-description">Problem Description</h3>
+<p>Given the <code>head</code> of a singly linked list, reverse the
+list, and return the reversed list.</p>
+<p><span class="math inline">\(The number of nodes in the list is the
+range [0, 5000].\)</span></p>
+<p><span class="math inline">\(-5000 &lt;= Node.val &lt;=
+5000\)</span></p>
+<h3 id="solution-1-recursion">Solution 1: recursion</h3>
+<h4 id="runtime-analysis">Runtime Analysis</h4>
+<p>Runtime: O(n^2), Memory: O(n)</p>
+<p><em>Runtime: 15ms, Memory: 42.67MB</em></p>
+<h4 id="idea-code">Idea &amp; Code</h4>
+<p>Idea: Simple recursion</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * public class ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode next;</span></span><br><span class="line"><span class="comment"> *     ListNode() &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int val) &#123; this.val = val; &#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int val, ListNode next) &#123; this.val = val; this.next = next; &#125;</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> ListNode <span class="title function_">reverseList</span><span class="params">(ListNode head)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (head == <span class="literal">null</span> || head.next == <span class="literal">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> head;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="type">ListNode</span> <span class="variable">newHead</span> <span class="operator">=</span> reverseList(head.next);</span><br><span class="line">        <span class="type">ListNode</span> <span class="variable">curr</span> <span class="operator">=</span> newHead;</span><br><span class="line">        <span class="keyword">while</span>(curr.next != <span class="literal">null</span>) &#123;</span><br><span class="line">            curr = curr.next;</span><br><span class="line">        &#125;</span><br><span class="line">        curr.next = head;</span><br><span class="line">        head.next = <span class="literal">null</span>;</span><br><span class="line">        <span class="keyword">return</span> newHead;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="solution-2-iteration">Solution 2: Iteration</h3>
+<h4 id="runtime-analysis-1">Runtime Analysis</h4>
+<p>Runtime: O(n), Memory: O(n)</p>
+<p><em>Runtime: 0ms, Memory: 42.08MB</em></p>
+<h4 id="idea-code-1">Idea &amp; Code</h4>
+<p>Idea: Simple Iteration</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * public class ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode next;</span></span><br><span class="line"><span class="comment"> *     ListNode() &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int val) &#123; this.val = val; &#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int val, ListNode next) &#123; this.val = val; this.next = next; &#125;</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> ListNode <span class="title function_">reverseList</span><span class="params">(ListNode head)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> helper(head, <span class="literal">null</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> ListNode <span class="title function_">helper</span><span class="params">(ListNode head, ListNode curr)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (head == <span class="literal">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> curr;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">ListNode</span> <span class="variable">newHead</span> <span class="operator">=</span> head.next;</span><br><span class="line">        head.next = curr;</span><br><span class="line">        <span class="keyword">return</span> helper(newHead, head);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="conclusion">Conclusion</h3>
+<p>Well I guess that iteration and recursion should always be considered
+simultaneously.</p>
+<p>Time used: 20 minutes.</p>
+]]></content>
+      <categories>
+        <category>Solutions</category>
+        <category>LeetCode</category>
+        <category>Easy</category>
+      </categories>
+      <tags>
+        <tag>ComputerScience</tag>
+        <tag>LeetCode</tag>
+        <tag>Algorithems</tag>
+        <tag>BruteForce</tag>
+        <tag>Java</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>[LeetCode] 33 - Search in Rotated Sorted Array</title>
     <url>/2024/06/02/LeetCode-33-Search-in-Rotated-Sorted-Array/</url>
     <content><![CDATA[<p>Simple Question with binarySearch.</p>
@@ -196,18 +241,6 @@ Thus, we can use sorting algorithm on the strings.</p>
   <entry>
     <title>[LeetCode] 141 - Linked List Cycle</title>
     <url>/2024/05/31/LeetCode-141-Linked-List-Cycle/</url>
-    <content><![CDATA[
-]]></content>
-  </entry>
-  <entry>
-    <title>[LeetCode] 206 - Reverse a Linked List</title>
-    <url>/2024/05/31/LeetCode-206-Reverse-a-Linked-List/</url>
-    <content><![CDATA[
-]]></content>
-  </entry>
-  <entry>
-    <title>[LeetCode] 206 - Reverse Linked List</title>
-    <url>/2024/05/31/LeetCode-206-Reverse-Linked-List/</url>
     <content><![CDATA[
 ]]></content>
   </entry>
