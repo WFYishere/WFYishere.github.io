@@ -704,9 +704,9 @@ variables changes.</p>
         <tag>Algorithems</tag>
         <tag>BruteForce</tag>
         <tag>Java</tag>
-        <tag>HashTable</tag>
-        <tag>String</tag>
         <tag>SlidingWindow</tag>
+        <tag>String</tag>
+        <tag>HashTable</tag>
       </tags>
   </entry>
   <entry>
@@ -954,8 +954,8 @@ digits, symbols and spaces.}\)</span></p>
         <tag>Algorithems</tag>
         <tag>BruteForce</tag>
         <tag>Java</tag>
-        <tag>String</tag>
         <tag>SlidingWindow</tag>
+        <tag>String</tag>
       </tags>
   </entry>
   <entry>
@@ -1175,10 +1175,10 @@ up with the two pointers</p></li>
         <tag>ComputerScience</tag>
         <tag>LeetCode</tag>
         <tag>Algorithems</tag>
-        <tag>HashMap</tag>
         <tag>BruteForce</tag>
         <tag>Java</tag>
         <tag>LinkedList</tag>
+        <tag>HashMap</tag>
       </tags>
   </entry>
   <entry>
@@ -1330,12 +1330,12 @@ Thus, we can use sorting algorithm on the strings.</p>
         <tag>ComputerScience</tag>
         <tag>LeetCode</tag>
         <tag>Algorithems</tag>
-        <tag>HashMap</tag>
         <tag>BruteForce</tag>
         <tag>Java</tag>
+        <tag>HashMap</tag>
         <tag>Array</tag>
-        <tag>HashTable</tag>
         <tag>String</tag>
+        <tag>HashTable</tag>
         <tag>Sorting</tag>
       </tags>
   </entry>
@@ -1446,9 +1446,9 @@ we just need to sort the intervals and intuitively merge them.</p>
         <tag>ComputerScience</tag>
         <tag>LeetCode</tag>
         <tag>Algorithems</tag>
-        <tag>Sort</tag>
         <tag>BruteForce</tag>
         <tag>Java</tag>
+        <tag>Sort</tag>
       </tags>
   </entry>
   <entry>
@@ -1826,10 +1826,10 @@ class="math inline">\(10^9\)</span>)</p>
         <tag>ComputerScience</tag>
         <tag>LeetCode</tag>
         <tag>Algorithems</tag>
-        <tag>HashMap</tag>
-        <tag>Sort</tag>
         <tag>BruteForce</tag>
         <tag>Java</tag>
+        <tag>HashMap</tag>
+        <tag>Sort</tag>
       </tags>
   </entry>
   <entry>
@@ -1965,10 +1965,10 @@ hashmaps.</p>
         <tag>ComputerScience</tag>
         <tag>LeetCode</tag>
         <tag>Algorithems</tag>
-        <tag>HashMap</tag>
-        <tag>Sort</tag>
         <tag>BruteForce</tag>
         <tag>Java</tag>
+        <tag>HashMap</tag>
+        <tag>Sort</tag>
       </tags>
   </entry>
   <entry>
