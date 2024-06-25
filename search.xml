@@ -485,6 +485,17 @@ b)\)</span></li>
 <p><span class="math display">\[g(z) = max(0, z)\]</span></p>
 <h3 id="code-1">Code</h3>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">model.<span class="built_in">compile</span>(loss = BinaryCrossentropy())</span><br><span class="line"></span><br><span class="line">model.fit(X, y, epochs = <span class="number">100</span>) <span class="comment"># Back Porpagation</span></span><br></pre></td></tr></table></figure>
+<h3 id="multiclass-classification">Multiclass Classification</h3>
+<h4 id="softmax">SoftMax</h4>
+<p>The softmax function can be written: <span class="math display">\[a_j
+= \frac{e^{z_j}}{ \sum\limits_{k=1}^{N}{e^{z_k} }} \]</span></p>
+<p><span class="math display">\[\begin{equation}
+  L(\mathbf{a},y)=\begin{cases}
+    -log(a_1), &amp; \text{if $y=1$}.\\
+        &amp;\vdots\\
+     -log(a_N), &amp; \text{if $y=N$}
+  \end{cases} \tag{3}
+\end{equation}\]</span></p>
 <h1 id="beyond-the-classrooom">Beyond the Classrooom</h1>
 <h2 id="are-agi-possible">Are AGI possible?</h2>
 <ol type="1">
