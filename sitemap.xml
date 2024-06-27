@@ -2,6 +2,51 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://wfyishere.github.io/2024/04/22/GEA1000N-Lecture-Notes/</loc>
+    
+    <lastmod>2024-06-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://wfyishere.github.io/2024/03/11/CS2040S-Midterm-CheatSheet/</loc>
+    
+    <lastmod>2024-06-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://wfyishere.github.io/2024/03/02/CS2030S-Lecture-Notes/</loc>
+    
+    <lastmod>2024-06-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://wfyishere.github.io/2024/02/03/Thoughts-Feb-2024/</loc>
+    
+    <lastmod>2024-06-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://wfyishere.github.io/2024/01/23/Thoughts-Jan-2024/</loc>
+    
+    <lastmod>2024-06-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://wfyishere.github.io/2024/06/16/LeetCode-98-Validate-Binary-Search-Tree/</loc>
     
     <lastmod>2024-06-16</lastmod>
@@ -254,45 +299,9 @@
   </url>
   
   <url>
-    <loc>https://wfyishere.github.io/2024/02/03/Thought-2024-2/</loc>
-    
-    <lastmod>2024-05-20</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://wfyishere.github.io/2024/03/11/CS2040S-Midterm-CheatSheet/</loc>
-    
-    <lastmod>2024-05-11</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://wfyishere.github.io/2024/03/02/CS2030S-Lecture-Notes/</loc>
-    
-    <lastmod>2024-05-02</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://wfyishere.github.io/2024/02/06/Notes-for-CS2100/</loc>
     
     <lastmod>2024-05-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://wfyishere.github.io/2024/04/22/GEA1000N-Lecture-Notes/</loc>
-    
-    <lastmod>2024-04-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -309,15 +318,6 @@
   
   <url>
     <loc>https://wfyishere.github.io/2024/02/20/Thoughts-for-Attending-Guest-Lecture-on-Pi/</loc>
-    
-    <lastmod>2024-02-22</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://wfyishere.github.io/2024/01/23/Thought-2024-1-23/</loc>
     
     <lastmod>2024-02-22</lastmod>
     
@@ -438,6 +438,55 @@
   </url>
   
   <url>
+    <loc>https://wfyishere.github.io/tags/OOP/</loc>
+    <lastmod>2024-06-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://wfyishere.github.io/tags/Coding/</loc>
+    <lastmod>2024-06-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://wfyishere.github.io/tags/Basics/</loc>
+    <lastmod>2024-06-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://wfyishere.github.io/tags/Study/</loc>
+    <lastmod>2024-06-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://wfyishere.github.io/tags/Notes/</loc>
+    <lastmod>2024-06-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://wfyishere.github.io/tags/Conclusion/</loc>
+    <lastmod>2024-06-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://wfyishere.github.io/tags/NUS/</loc>
+    <lastmod>2024-06-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://wfyishere.github.io/tags/LinkedList/</loc>
     <lastmod>2024-06-27</lastmod>
     <changefreq>weekly</changefreq>
@@ -445,14 +494,7 @@
   </url>
   
   <url>
-    <loc>https://wfyishere.github.io/tags/Array/</loc>
-    <lastmod>2024-06-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://wfyishere.github.io/tags/Mathematics/</loc>
+    <loc>https://wfyishere.github.io/tags/Algorithm/</loc>
     <lastmod>2024-06-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -466,21 +508,21 @@
   </url>
   
   <url>
-    <loc>https://wfyishere.github.io/tags/List/</loc>
+    <loc>https://wfyishere.github.io/tags/CheatSheet/</loc>
     <lastmod>2024-06-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://wfyishere.github.io/tags/Recursion/</loc>
+    <loc>https://wfyishere.github.io/tags/CS2040S/</loc>
     <lastmod>2024-06-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://wfyishere.github.io/tags/Iteration/</loc>
+    <loc>https://wfyishere.github.io/tags/Sorting/</loc>
     <lastmod>2024-06-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -494,7 +536,56 @@
   </url>
   
   <url>
+    <loc>https://wfyishere.github.io/tags/Mathematics/</loc>
+    <lastmod>2024-06-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://wfyishere.github.io/tags/Array/</loc>
+    <lastmod>2024-06-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://wfyishere.github.io/tags/Excel/</loc>
+    <lastmod>2024-06-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://wfyishere.github.io/tags/Statistics/</loc>
+    <lastmod>2024-06-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://wfyishere.github.io/tags/GeneralEducation/</loc>
+    <lastmod>2024-06-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://wfyishere.github.io/tags/Fun/</loc>
+    <lastmod>2024-06-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://wfyishere.github.io/tags/BinaryTree/</loc>
+    <lastmod>2024-06-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://wfyishere.github.io/tags/Recursion/</loc>
     <lastmod>2024-06-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -529,13 +620,6 @@
   </url>
   
   <url>
-    <loc>https://wfyishere.github.io/tags/BinarySearch/</loc>
-    <lastmod>2024-06-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://wfyishere.github.io/tags/SlidingWindow/</loc>
     <lastmod>2024-06-27</lastmod>
     <changefreq>weekly</changefreq>
@@ -550,7 +634,14 @@
   </url>
   
   <url>
-    <loc>https://wfyishere.github.io/tags/Depth-First-Search/</loc>
+    <loc>https://wfyishere.github.io/tags/List/</loc>
+    <lastmod>2024-06-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://wfyishere.github.io/tags/Iteration/</loc>
     <lastmod>2024-06-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -564,7 +655,7 @@
   </url>
   
   <url>
-    <loc>https://wfyishere.github.io/tags/Sorting/</loc>
+    <loc>https://wfyishere.github.io/tags/Depth-First-Search/</loc>
     <lastmod>2024-06-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -592,6 +683,13 @@
   </url>
   
   <url>
+    <loc>https://wfyishere.github.io/tags/BinarySearch/</loc>
+    <lastmod>2024-06-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://wfyishere.github.io/tags/Two-Pointers/</loc>
     <lastmod>2024-06-27</lastmod>
     <changefreq>weekly</changefreq>
@@ -606,35 +704,28 @@
   </url>
   
   <url>
-    <loc>https://wfyishere.github.io/tags/Notes/</loc>
+    <loc>https://wfyishere.github.io/tags/Thoughts/</loc>
     <lastmod>2024-06-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://wfyishere.github.io/tags/NUS/</loc>
+    <loc>https://wfyishere.github.io/tags/DailyLife/</loc>
     <lastmod>2024-06-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://wfyishere.github.io/tags/Study/</loc>
+    <loc>https://wfyishere.github.io/tags/Life/</loc>
     <lastmod>2024-06-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://wfyishere.github.io/tags/Algorithm/</loc>
-    <lastmod>2024-06-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://wfyishere.github.io/tags/Questions/</loc>
+    <loc>https://wfyishere.github.io/tags/Quotes/</loc>
     <lastmod>2024-06-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -669,14 +760,14 @@
   </url>
   
   <url>
-    <loc>https://wfyishere.github.io/tags/Thoughts/</loc>
+    <loc>https://wfyishere.github.io/tags/Random/</loc>
     <lastmod>2024-06-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://wfyishere.github.io/tags/Random/</loc>
+    <loc>https://wfyishere.github.io/tags/Questions/</loc>
     <lastmod>2024-06-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -699,7 +790,28 @@
   </url>
   
   <url>
+    <loc>https://wfyishere.github.io/categories/Notes/</loc>
+    <lastmod>2024-06-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://wfyishere.github.io/categories/Solutions/LeetCode/</loc>
+    <lastmod>2024-06-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://wfyishere.github.io/categories/Notes/ComputerScience/</loc>
+    <lastmod>2024-06-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://wfyishere.github.io/categories/Notes/Mathematics/</loc>
     <lastmod>2024-06-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -734,7 +846,14 @@
   </url>
   
   <url>
-    <loc>https://wfyishere.github.io/categories/Notes/</loc>
+    <loc>https://wfyishere.github.io/categories/Notes/ComputerScience/Basics/</loc>
+    <lastmod>2024-06-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://wfyishere.github.io/categories/Notes/Mathematics/Statistics/</loc>
     <lastmod>2024-06-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -755,7 +874,21 @@
   </url>
   
   <url>
-    <loc>https://wfyishere.github.io/categories/Notes/CS/Algorithm/</loc>
+    <loc>https://wfyishere.github.io/categories/Notes/ComputerScience/Algorithm/</loc>
+    <lastmod>2024-06-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://wfyishere.github.io/categories/Notes/NUSCourse/</loc>
+    <lastmod>2024-06-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://wfyishere.github.io/categories/Thoughts/MonthlyThoughts/</loc>
     <lastmod>2024-06-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -770,6 +903,27 @@
   
   <url>
     <loc>https://wfyishere.github.io/categories/Thoughts/Experiences/</loc>
+    <lastmod>2024-06-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://wfyishere.github.io/categories/Notes/CS/Algorithm/</loc>
+    <lastmod>2024-06-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://wfyishere.github.io/categories/Notes/NUSCourse/ComputerScience/</loc>
+    <lastmod>2024-06-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://wfyishere.github.io/categories/Notes/NUSCourse/GeneralEducation/</loc>
     <lastmod>2024-06-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

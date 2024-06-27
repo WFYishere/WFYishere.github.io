@@ -34,8 +34,17 @@
 <meta property="og:image" content="https://wfyishere.github.io/2024/03/02/CS2030S-Lecture-Notes/StackAndHeap.png">
 <meta property="og:image" content="https://wfyishere.github.io/2024/03/02/CS2030S-Lecture-Notes/StackAndHeap2.png">
 <meta property="article:published_time" content="2024-03-02T05:42:47.000Z">
-<meta property="article:modified_time" content="2024-05-02T09:51:13.361Z">
+<meta property="article:modified_time" content="2024-06-27T14:24:29.987Z">
 <meta property="article:author" content="Wen Fanyu">
+<meta property="article:tag" content="ComputerScience">
+<meta property="article:tag" content="Java">
+<meta property="article:tag" content="OOP">
+<meta property="article:tag" content="Coding">
+<meta property="article:tag" content="Basics">
+<meta property="article:tag" content="Study">
+<meta property="article:tag" content="Notes">
+<meta property="article:tag" content="Conclusion">
+<meta property="article:tag" content="NUS">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://wfyishere.github.io/2024/03/02/CS2030S-Lecture-Notes/StackAndHeap.png">
 
@@ -97,7 +106,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">12</span></a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">43</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">36</span></a></li><li class="menu-item menu-item-todo"><a href="/todo" rel="section"><i class="fa-solid fa-bars fa-fw"></i>Todo</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">21</span></a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">56</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">36</span></a></li><li class="menu-item menu-item-todo"><a href="/todo" rel="section"><i class="fa-solid fa-bars fa-fw"></i>Todo</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -167,12 +176,12 @@
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-count">21</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">43</span>
+        <span class="site-state-item-count">56</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -255,7 +264,28 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-05-02 17:51:13" itemprop="dateModified" datetime="2024-05-02T17:51:13+08:00">2024-05-02</time>
+      <time title="Modified: 2024-06-27 22:24:29" itemprop="dateModified" datetime="2024-06-27T22:24:29+08:00">2024-06-27</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Notes/" itemprop="url" rel="index"><span itemprop="name">Notes</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Notes/ComputerScience/" itemprop="url" rel="index"><span itemprop="name">ComputerScience</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Notes/ComputerScience/Basics/" itemprop="url" rel="index"><span itemprop="name">Basics</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Notes/NUSCourse/" itemprop="url" rel="index"><span itemprop="name">NUSCourse</span></a>
+        </span>
     </span>
 
   
@@ -285,58 +315,80 @@
     <div class="post-body" itemprop="articleBody"><p>CS2030S lecture notes. <span id="more"></span></p>
 <h3 id="java">Java</h3>
 <ol type="1">
-<li><p>Java Compiler: compiled into bytecode.(.java-&gt; javac -&gt;
-.class); interpreted and compiled on the fly by JVM into machine
-code.(java .class) / be interpreted by the Java interpreter.</p></li>
-<li><p>Types:</p></li>
+<li><p><span class="math inline">\(Java\)</span> <span
+class="math inline">\(Compiler\)</span>: compiled into
+bytecode.(<code>.java-&gt; javac -&gt; .class</code>); interpreted and
+compiled on the fly by JVM into machine code`.(java .class) / be
+interpreted by the Java interpreter.</p></li>
+<li><p><span class="math inline">\(Types\)</span>:</p></li>
 </ol>
 <ul>
-<li>statically typed language: declare every variable we use in the
-program and specify its type(compile-time type).</li>
-<li>Primitive: numeric &amp; boolean values byte &lt;: short &lt;: int
-&lt;: long &lt;: float &lt;: double; char &lt;: int</li>
-<li>Reference Types: stores only the reference to the value</li>
-<li>widening type conversion: long i = int(j); narrowing type
-conversion: type casting</li>
+<li><p><span class="math inline">\(statically\)</span> <span
+class="math inline">\(typed\)</span> <span
+class="math inline">\(language\)</span>: declare every variable we use
+in the program and specify its type(compile-time type).</p>
+<ul>
+<li><p><span class="math inline">\(Primitive\)</span> Types: numeric
+&amp; boolean values byte &lt;: short &lt;: int &lt;: long &lt;: float
+&lt;: double; char &lt;: int</p></li>
+<li><p><span class="math inline">\(Reference\)</span> Types: stores only
+the reference to the value</p></li>
+</ul></li>
+<li><p>widening type conversion: <code>long i = int(j)</code>;</p>
+<p>narrowing type conversion: type casting</p></li>
 </ul>
 <ol start="3" type="1">
-<li>Principals:</li>
+<li><strong>Principals</strong>:</li>
 </ol>
 <ul>
-<li>encapsulation: keeping all the data and functions operating on the
-data related to a composite data type together within an abstraction
-barrier.</li>
-<li>"Tell, Don't Ask" principle. The client should tell a Circle object
-what to do , instead of asking "What is your radius?" to get the value
-of a field</li>
-<li>composition: combining classes</li>
-<li>Composition : has-a relationship;Inheritance : is-a
-relationship.</li>
-<li>polymorphism: method invoked is decided during run-time(dynamic
-binding/dispatch) - <em>Class Methods do not support dynamic
-binding.</em> At compile time, determines the <strong>meth od
-descriptor</strong>(including return type) of the method invoked, using
-the compile-time type of the target. At runtime, the method descriptor
-is retrieved and the run-tim type is determined</li>
-<li>Inheritance: subtypes can only access public fields/methods</li>
-<li>Liskov Substitution Principle: A subclass should not break the
-expectations set by the superclass</li>
+<li><p><span class="math inline">\(Encapsulation\)</span>: keep
+abstraction barrier.</p></li>
+<li><p><span class="math inline">\(&quot;Tell,\)</span> <span
+class="math inline">\(Don&#39;t\)</span> <span
+class="math inline">\(Ask&quot;\)</span> principle: E.g. The client
+should tell a <code>Circle</code> object what to do , instead of asking
+"What is your <code>radius</code>?"</p></li>
+<li><p><span class="math inline">\(Composition\)</span>: combining
+classes</p></li>
+<li><p><span class="math inline">\(Composition\)</span> : has-a
+relationship; <span class="math inline">\(Inheritance\)</span>: is-a
+relationship.</p></li>
+<li><p><span class="math inline">\(Polymorphism\)</span>: method invoked
+is decided during run-time(<span class="math inline">\(dynamic\)</span>
+<span class="math inline">\(binding\)</span>/<span
+class="math inline">\(dispatch\)</span>) - <em>Class Methods do not
+support dynamic binding.</em> At compile time, determines the
+<strong>meth od descriptor</strong>(including return type) of the method
+invoked, using the compile-time type of the target. At runtime, the
+method descriptor is retrieved and the run-tim type is
+determined</p></li>
+<li><p><span class="math inline">\(Inheritance\)</span>: subtypes can
+only access public fields/methods</p></li>
+<li><p><span class="math inline">\(Liskov Substitution
+Principle\)</span>: A subclass should not break the expectations set by
+the superclass</p></li>
 </ul>
 <ol start="4" type="1">
-<li><p>package: <code>import java.lang.Math;</code>
-<code>return Math.PI * this.r * this.r;</code></p></li>
+<li><p>package: <code>import java.lang.Math;</code></p>
+<p><code>return Math.PI * this.r * this.r;</code></p></li>
 <li><p>The main method <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;&#125;</span><br></pre></td></tr></table></figure></p></li>
-<li><p>aliasing: sharing references. Avoid that.e.g.:
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Point</span> <span class="variable">p</span> <span class="operator">=</span> ...; </span><br><span class="line">Circle1.setPoint(p); </span><br><span class="line">Circle2.setPoint(p); <span class="comment">// Circle1.point is an alias of p</span></span><br></pre></td></tr></table></figure></p></li>
+<li><p>Avoid <span class="math inline">\(aliasing\)</span>: sharing
+references. <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Point</span> <span class="variable">p</span> <span class="operator">=</span> ...; </span><br><span class="line">Circle1.setPoint(p); </span><br><span class="line">Circle2.setPoint(p); <span class="comment">// Circle1.point is an alias of p</span></span><br></pre></td></tr></table></figure></p></li>
 <li><p>Stack and Heap</p></li>
 </ol>
 <ul>
-<li>heap : objects - whenever you use the keyword new</li>
-<li>Stack: variables in method call frames(main/moveTo...)</li>
+<li><p><span class="math inline">\(Heap\)</span> : <code>objects</code>
+- whenever you use the keyword <code>new</code></p>
+<ul>
+<li>Initialization: <code>object- null</code>;
+<code>Primitive - zero</code>(<code>uninitialized - ∅</code>)</li>
+</ul></li>
+<li><p><span class="math inline">\(Stack\)</span>: variables in method
+call frames(main/moveTo...)</p>
+<ul>
 <li>non-static methods, including constructors, have
 <code>this</code></li>
-<li>Initialization: object- null; Primitive - zero(uninitialized -
-∅)</li>
+</ul></li>
 </ul>
 <figure>
 <img src="StackAndHeap.png"
@@ -352,91 +404,110 @@ Point(1, 1);p1.distanceTo(p2)</figcaption>
 </figure>
 <ol start="8" type="1">
 <li><p>Representing a method: <code>Object::equals(Object)</code> - a
-method in the class Object</p></li>
-<li><p>Method override and overload:</p></li>
+method in the class <code>Object</code></p></li>
+<li><p>`Method <span class="math inline">\(override\)</span> and <span
+class="math inline">\(overload\)</span>:</p></li>
 </ol>
 <ul>
 <li><p><code>@Override</code>: Acts as a hint to the compiler. Use
 <code>super</code> to call the overriden method.</p></li>
-<li><p>method overloading ： differing method signature.</p></li>
+<li><p>method overloading ： differing method
+<code>signature</code>.</p></li>
 </ul>
 <ol start="10" type="1">
 <li><p><code>obj instanceof Circle</code> (runtime)</p></li>
 <li><p><code>final</code></p></li>
 </ol>
 <ul>
-<li><code>final class Circle&#123;&#125;</code> To prevent being inhereited</li>
-<li><code>public final boolean contains(Point p)</code> To prevent being
-overriden</li>
+<li><p><code>final class Circle&#123;&#125;</code> To prevent being
+inhereited</p></li>
+<li><p><code>public final boolean contains(Point p)</code> To prevent
+being overriden</p></li>
 </ul>
-<ol start="13" type="1">
-<li><code>abstract</code>: cannot be instantiated - concrete class</li>
-<li>Interface:</li>
+<ol start="12" type="1">
+<li><p><code>abstract</code>: cannot be instantiated - concrete
+class</p></li>
+<li><p><span class="math inline">\(Interface\)</span>:</p></li>
 </ol>
 <ul>
-<li>across different class hierarchies.(public abstract by default.) An
-interface is a type(a type can have multiple supertypes.e.g. a class can
-be subype of multiple interface) <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> <span class="title class_">GetAreable</span> &#123;<span class="type">double</span> <span class="title function_">getArea</span><span class="params">()</span>;&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Flat</span> <span class="keyword">extends</span> <span class="title class_">RealEstate</span> </span><br><span class="line"><span class="keyword">implements</span> <span class="title class_">GetAreable</span>,getMonyable &#123;&#125;</span><br></pre></td></tr></table></figure></li>
-<li>casting unrelated interface is allowed. E.g.: class A, Interface B,
-class C extends A implements B. There is possiblity that C(subclass of
-A) can be casted on B. In this situation <code>A = B</code> compiles.
-default implementation: <code>default</code> (impure interfaces)</li>
+<li><p>across different class hierarchies.(<code>public abstract</code>
+by default.) An interface is a <code>type</code> (a type can have
+multiple supertypes.e.g. a class can be subype of multiple
+interface)</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> <span class="title class_">GetAreable</span> &#123;<span class="type">double</span> <span class="title function_">getArea</span><span class="params">()</span>;&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Flat</span> <span class="keyword">extends</span> <span class="title class_">RealEstate</span> </span><br><span class="line"><span class="keyword">implements</span> <span class="title class_">GetAreable</span>,getMonyable &#123;&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>casting <code>unrelated interface</code> is
+<strong>allowed</strong>. E.g.: class <code>A</code>, Interface
+<code>B</code>, <code>class C extends A implements B</code>. There is
+possiblity that <code>C</code>(subclass of <code>A</code>) can be casted
+on <code>B</code>. In this situation <code>A = B</code> compiles.
+default implementation: <code>default</code> (impure
+interfaces)</p></li>
 </ul>
-<ol start="17" type="1">
-<li>Wrapper Classes : <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Integer</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">4</span>;</span><br><span class="line"><span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> i;<span class="comment">//Autoboxing &amp; unboxing</span></span><br></pre></td></tr></table></figure> primitive wrapper class objects are
-immutable</li>
-<li>variance of types:
+<ol start="14" type="1">
+<li><p><span class="math inline">\(Wrapper\)</span> <span
+class="math inline">\(Classes\)</span> : <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Integer</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">4</span>;</span><br><span class="line"><span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> i;<span class="comment">//Autoboxing &amp; unboxing</span></span><br></pre></td></tr></table></figure> primitive wrapper
+class objects are <strong>immutable</strong></p></li>
+<li><p><span class="math inline">\(variance\)</span> of types:</p>
 <ul>
-<li>covariant : S&lt;:T -&gt; C(S) &lt;: C(T); contravariant;invariant:
-neither <em>Arrays of primitive types are invariant</em>
+<li><span class="math inline">\(covariant\)</span> : S&lt;:T -&gt; C(S)
+&lt;: C(T); <span class="math inline">\(contravariant\)</span>;<span
+class="math inline">\(invariant\)</span>: neither
+<em><code>Arrays</code> of primitive types are invariant</em>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Object[] objArray = intArray;</span><br><span class="line">objArray[<span class="number">0</span>] = <span class="string">&quot;Hello!&quot;</span>; <span class="comment">// &lt;- compiles!</span></span><br></pre></td></tr></table></figure></li>
 </ul></li>
-<li>Exceptions</li>
+<li><p><code>Exceptions</code></p></li>
 </ol>
 <ul>
-<li><p>instances that are a subtype of the Exception. Follows the
-hierarchy <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">InvalidOperandException</span> <span class="keyword">extends</span> <span class="title class_">RuntimeException</span> &#123;</span><br><span class="line">    InvalidOperandException(<span class="type">char</span> operator) &#123;</span><br><span class="line">        <span class="built_in">super</span>(<span class="string">&quot;ERROR: Invalid operand for operator &quot;</span> + operator);</span><br><span class="line">    &#125;&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="title function_">Circle</span><span class="params">(Point c, <span class="type">double</span> r)</span> <span class="keyword">throws</span> IllegalArgumentException &#123;</span><br><span class="line">    <span class="keyword">if</span> (r &lt; <span class="number">0</span>) &#123;</span><br><span class="line">      <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">IllegalArgumentException</span>(<span class="string">&quot;radius is negative.&quot;</span>);</span><br><span class="line">    &#125;<span class="comment">// throw statement causes the method to immediately return.</span></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">  scanner = <span class="keyword">new</span> <span class="title class_">Scanner</span>(reader);</span><br><span class="line">  value = scanner.nextInt();</span><br><span class="line">&#125; <span class="keyword">catch</span> (FileNotFoundException | InputMismatchException) &#123;</span><br><span class="line">  System.err.println(<span class="string">&quot;Unable to find&quot;</span> + e.getMessage);</span><br><span class="line">&#125; <span class="keyword">finally</span> &#123;<span class="comment">// executed even when return or throw is called </span></span><br><span class="line">    scanner.close();</span><br><span class="line">&#125;<span class="comment">//note the throw and throws difference</span></span><br></pre></td></tr></table></figure></p></li>
-<li><p>Checked: programmer's errors. Would not happen if perfect code
-was written;</p></li>
-<li><p>Unchecked:<code>InvalidInputException</code>, subclass of
-<code>RuntimeException</code> <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">catch</span> (Exception e) &#123;<span class="comment">// do nothing&#125;//Pokemon Exception Handling:</span></span><br></pre></td></tr></table></figure></p></li>
+<li><p>instances that are a subtype of <code>Exception</code>.
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">InvalidOperandException</span> <span class="keyword">extends</span> <span class="title class_">RuntimeException</span> &#123;</span><br><span class="line">    InvalidOperandException(<span class="type">char</span> operator) &#123;</span><br><span class="line">        <span class="built_in">super</span>(<span class="string">&quot;ERROR: Invalid operand for operator &quot;</span> + operator);</span><br><span class="line">    &#125;&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="title function_">Circle</span><span class="params">(Point c, <span class="type">double</span> r)</span> <span class="keyword">throws</span> IllegalArgumentException &#123;</span><br><span class="line">    <span class="keyword">if</span> (r &lt; <span class="number">0</span>) &#123;</span><br><span class="line">      <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">IllegalArgumentException</span>(<span class="string">&quot;radius is negative.&quot;</span>);</span><br><span class="line">    &#125;<span class="comment">// throw statement causes the method to immediately return.</span></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">  scanner = <span class="keyword">new</span> <span class="title class_">Scanner</span>(reader);</span><br><span class="line">  value = scanner.nextInt();</span><br><span class="line">&#125; <span class="keyword">catch</span> (FileNotFoundException | InputMismatchException) &#123;</span><br><span class="line">  System.err.println(<span class="string">&quot;Unable to find&quot;</span> + e.getMessage);</span><br><span class="line">&#125; <span class="keyword">finally</span> &#123;<span class="comment">// executed even when return or throw is called </span></span><br><span class="line">    scanner.close();</span><br><span class="line">&#125;<span class="comment">//note the throw and throws difference</span></span><br></pre></td></tr></table></figure></p></li>
+<li><p><span class="math inline">\(Checked\)</span>
+<code>Exceptions</code>: programmer's errors. Would not happen if
+perfect code was written;</p></li>
+<li><p><span class="math inline">\(Unchecked\)</span>
+<code>Exceptions</code>:<code>InvalidInputException</code>, subclass of
+<code>RuntimeException</code> <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">catch</span> (Exception e) &#123;&#125;<span class="comment">//Pokemon Exception Handling</span></span><br></pre></td></tr></table></figure></p></li>
 </ul>
 <ol start="20" type="1">
-<li>only reference types can be used as type arguments.
-<code>Comparable&lt;T&gt;</code> dictates the implementation of int
-<code>compareTo(T t)</code> <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Class DictEntry&lt;S <span class="keyword">extends</span> <span class="title class_">Comparable</span>&lt;S&gt;&gt; </span><br><span class="line"><span class="keyword">implements</span> <span class="title class_">Comparable</span>&lt;Pair&lt;S,String&gt;</span><br></pre></td></tr></table></figure></li>
+<li>only <code>reference types</code> can be used as type arguments.
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Class DictEntry&lt;S <span class="keyword">extends</span> <span class="title class_">Comparable</span>&lt;S&gt;&gt; </span><br><span class="line"><span class="keyword">implements</span> <span class="title class_">Comparable</span>&lt;Pair&lt;S,String&gt;</span><br></pre></td></tr></table></figure></li>
 </ol>
 <ul>
-<li><p>Note that we use extends for interface bounding</p></li>
-<li><p>the constructor for a generic class is still declared as Pair
-(without the type parameters).</p></li>
-<li><p>Once a generic type is instantiated, it is called a parameterized
-type</p></li>
+<li><p>Note that we use <code>extends</code> for <code>interface</code>
+bounding</p></li>
+<li><p>the constructor for a generic class <code>Pair&lt;T&gt;</code> is
+still declared as <code>Pair</code> (without the type
+parameters).</p></li>
+<li><p>Once a <code>generic type</code> is instantiated, it is called a
+<code>parameterized type</code></p></li>
 </ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Seq</span>&lt;T&gt; &#123;</span><br><span class="line">  <span class="keyword">private</span> T[] array;</span><br><span class="line">  <span class="keyword">public</span> <span class="title function_">Seq</span><span class="params">(<span class="type">int</span> size)</span> &#123;</span><br><span class="line">  <span class="comment">// SuppressWarnings only be used on instantiating expression</span></span><br><span class="line">  <span class="meta">@SuppressWarnings(&quot;unchecked&quot;)</span></span><br><span class="line">    T[] a = (T[]) <span class="keyword">new</span> <span class="title class_">Object</span>[size];</span><br><span class="line">  <span class="built_in">this</span>.array = a;&#125;</span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">set</span><span class="params">(<span class="type">int</span> index, T item)</span> &#123;</span><br><span class="line">    <span class="built_in">this</span>.array[index] = item;&#125;</span><br><span class="line">  <span class="keyword">public</span> T <span class="title function_">get</span><span class="params">(<span class="type">int</span> index)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">this</span>.array[index];&#125;</span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">copyFrom</span><span class="params">(Seq&lt;? extends T&gt; src)</span> ;</span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">copyTo</span><span class="params">(Seq&lt;? <span class="built_in">super</span> T&gt; dest)</span> ;&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">A</span> &#123;</span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> &lt;S&gt; <span class="type">boolean</span> <span class="title function_">contains</span><span class="params">(Seq&lt;? extends S&gt; seq, S obj)</span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; seq.getLength(); i++) &#123;</span><br><span class="line">      <span class="type">S</span> <span class="variable">curr</span> <span class="operator">=</span> seq.get(i);</span><br><span class="line">      <span class="keyword">if</span> (curr.equals(obj))&#123;<span class="keyword">return</span> <span class="literal">true</span>;&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;&#125; <span class="comment">// have to have new genric type in static classes</span></span><br><span class="line">&#125;<span class="comment">//because static classes can be used without instantiation.</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Box</span>&lt;T&gt; &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">equals</span><span class="params">(Object other)</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (other <span class="keyword">instanceof</span> Box&lt;?&gt;) &#123;</span><br><span class="line">        Box&lt;?&gt; otherBox = (Box&lt;?&gt;) other; <span class="comment">//remember to add this!!!</span></span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">this</span>.content.equals(otherBox.getContent())) </span><br><span class="line">          &#123;<span class="keyword">return</span> <span class="literal">true</span>;&#125;&#125;&#125;&#125;</span><br></pre></td></tr></table></figure>
 <ol start="21" type="1">
-<li>Type erasure: after type checking, erase the type parameters and
-type arguments during compilation(to Object). If the bounded, replaced
-by the bounds. After type erasure, we do explicit typecast on an
+<li><span class="math inline">\(Type\)</span> <span
+class="math inline">\(erasure\)</span>: after <strong>type
+checking</strong>, erase the type parameters and type arguments during
+<strong>compilation</strong>(to Object). If the bounded, replaced by the
+bounds. After type erasure, we do explicit <code>typecast</code> on an
 object.</li>
 </ol>
 <ul>
-<li><p>arrays are reifiable type(gets full type information during
-run-time); but generics are not due to type erasure</p></li>
-<li><p>Actually, generic array declaration is fine but generic array
-instantiation is not. <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="title class_">Pair</span>&lt;S,T&gt;[<span class="number">2</span>];<span class="comment">//illegal</span></span><br><span class="line"><span class="keyword">new</span> <span class="title class_">T</span>[<span class="number">2</span>];<span class="comment">//illegal</span></span><br><span class="line">T[] array;<span class="comment">//allowed</span></span><br></pre></td></tr></table></figure></p></li>
+<li><p>arrays are <span class="math inline">\(reifiable\)</span>
+type(gets full type information during <strong>run-time</strong>); but
+generics are not due to type erasure</p></li>
+<li><p>Actually, generic array <strong>declaration</strong> is fine but
+generic array instantiation is not. <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="title class_">Pair</span>&lt;S,T&gt;[<span class="number">2</span>];<span class="comment">//illegal</span></span><br><span class="line"><span class="keyword">new</span> <span class="title class_">T</span>[<span class="number">2</span>];<span class="comment">//illegal</span></span><br><span class="line">T[] array;<span class="comment">//allowed</span></span><br></pre></td></tr></table></figure></p></li>
 </ul>
 <ol start="22" type="1">
-<li><p>ArrayList: a generic class,checks appropriate types during
-compile time. Note that it is <strong>invariant</strong>.</p></li>
+<li><p><code>ArrayList</code>: a generic class,checks appropriate types
+during compile time. Note that it is
+<strong>invariant</strong>.</p></li>
 <li><p><code>@SuppressWarning</code> to the most limited scope</p>
-<p>raw types: only used in instance of</p></li>
+<p><code>raw types</code>: only used in instance of</p></li>
 <li><p>Wild Cards:</p></li>
 </ol>
 <ul>
 <li><p><code>public void copyTo(Seq&lt;? super T&gt; dest)</code>
-<em>super is a contravariance type</em></p></li>
-<li><p>PECS: Producer Extends Consumer Super</p></li>
+<em>super is a <code>contravariance</code> type</em></p></li>
+<li><p><code>PECS</code>: Producer Extends Consumer Super</p></li>
 <li><p><em>Seq&lt;Object&gt; is NOT supertype of all Seq&lt;T&gt; due to
 generics being invariant.</em></p></li>
 <li><p><code>Seq&lt;?&gt;</code> is a sequence of objects of some
@@ -447,120 +518,148 @@ with type checking by the compiler;(Note that generics are invariants so
 <li><p><code>Seq</code> is a sequence of Object instanc es, without type
 checking.</p></li>
 </ul>
-<ol start="25" type="1">
-<li><p>Type Infering: T &lt;: Type2, then T is inferred as
-Type2</p></li>
-<li><p>Immutability:</p></li>
+<p>25.<code>Type Infering</code>: <code>T &lt;: Type2</code>, then
+<code>T</code> is inferred as <code>Type2</code></p>
+<ol start="28" type="1">
+<li><span class="math inline">\(Immutability\)</span>:</li>
 </ol>
 <ul>
 <li><p>the instance cannot have any visible changes outside its
 abstraction barrier.</p></li>
 <li><p>To make a method in a class immutable, it is recommended to
 declare the class as immutable <code>final</code> too as subclasses can
-override the method([S]why not declare the method as final? - the final
-keyword prevents assigning new values to the field, but if the field is
-referencing a mutable object, it is possible to mutate it. So we also
-need to ensure that the fields themselves are immutable.)</p></li>
+override the method([S]why not declare the method as <code>final</code>?
+- the final keyword prevents assigning new values to the field, but if
+the field is referencing a mutable object, it is
+<strong>possible</strong> to mutate it. So we also need to ensure that
+the fields themselves are immutable.)</p></li>
 <li><p>advatanges: allow sharing of reference between objects.</p></li>
 </ul>
 <ol start="29" type="1">
-<li>Nested Classes</li>
+<li><span class="math inline">\(Nested\)</span> <span
+class="math inline">\(Classes\)</span></li>
 </ol>
 <ul>
 <li><p>Inner class: non-static nested class</p></li>
-<li><p>When we call this.x in a nested class B in class A,
-<code>this</code> refers to instance field in B rather than A. To call
-the x field in A, we use <code>A.this.x</code>. This is called a <span
+<li><p>When we call <code>this.x</code> in a nested class <code>B</code>
+in class <code>A</code>, <code>this</code> refers to instance field in B
+rather than A. To call the x field in <code>A</code>, we use
+<code>A.this.x</code>. This is called a <span
 class="math inline">\(qualified\)</span> this.</p></li>
-<li><p>if a nested class is private, we cannot access an instance of
-nested class outside the class. However, for nested class B in class A,
-if there is a method in A <code>B getB() &#123;return new B();&#125;</code>, we
-can return an instance of B outside A. So we can do:
-<code>Object b = a.getB();</code>, but we cannot do
-<code>A.B b = a.getB()</code></p></li>
-<li><p>However, as long as the nested class B does not expose any detail
-of class A, it is enouraged to declare B as a public type. Then we can
-use <code>A.B b = a.new B();</code></p></li>
-<li><p>local class: non-static nested class in a method. A local class
-makes a copy of local variables inside itself. This is called <span
-class="math inline">\(capturing\)</span>.</p></li>
+<li><p>if a nested class is <code>private</code>, we cannot access an
+instance of nested class outside the class. However, for nested class
+<code>B</code> in class <code>A</code>, if there is a method in A
+<code>B getB() &#123;return new B();&#125;</code>, we can return an instance of B
+outside A. So we can do: <code>Object b = a.getB();</code>, but we
+cannot do <code>A.B b = a.getB()</code></p></li>
+<li><p><strong>However</strong>, as long as the nested class
+<code>B</code> does not expose any detail of class <code>A</code>, it is
+enouraged to declare <code>B</code> as a public type. Then we can use
+<code>A.B b = a.new B();</code></p></li>
+<li><p><span class="math inline">\(local\)</span> <span
+class="math inline">\(class\)</span>: non-static nested class in a
+method. A local class makes a copy of local variables inside itself.
+This is called <span class="math inline">\(capturing\)</span>.</p></li>
 <li><p>Java only allows local classes to access variables that are
-effectively final. They cannot be reassigned after initializstion.
-However, if the variables are reference type, they cannot be reassigned
-but can be mutated. See the below example. The <span
-class="math inline">\(capturing\)</span> is done after the instantiation
-of a nested class - the list is sorted in descendingOrder</p></li>
+<strong>effectively</strong> <code>final</code>. They cannot be
+reassigned after initializstion. However, if the variables are reference
+type, they cannot be reassigned but can be mutated. See the below
+example. The <span class="math inline">\(capturing\)</span> is done
+after the instantiation of a nested class - the list is sorted in
+descendingOrder</p></li>
 </ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> <span class="title function_">sortNames</span><span class="params">(List&lt;String&gt; names)</span> &#123;</span><br><span class="line">  <span class="type">Bool</span> <span class="variable">ascendingOrder</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Bool</span>(<span class="literal">true</span>);</span><br><span class="line">  <span class="keyword">class</span> <span class="title class_">NameComparator</span> <span class="keyword">implements</span> <span class="title class_">Comparator</span>&lt;String&gt; &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">compare</span><span class="params">(String s1, String s2)</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (ascendingOrder.val)</span><br><span class="line">        <span class="keyword">return</span> s1.length() - s2.length();</span><br><span class="line">      <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">return</span> s2.length() - s1.length();&#125;&#125;</span><br><span class="line">  ascendingOrder.val = <span class="literal">false</span>;</span><br><span class="line">  names.sort(<span class="keyword">new</span> <span class="title class_">NameComparator</span>());&#125;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Bool</span> &#123;</span><br><span class="line">  <span class="type">boolean</span> val;&#125;</span><br></pre></td></tr></table></figure>
 <ul>
-<li>Anonymous class: An anonymous class is where you only instantiate a
-local class in a single statement. There is a syntatic sugar:(e.g. the
-above code) <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">names.sort(<span class="keyword">new</span> <span class="title class_">Comparator</span>&lt;String&gt;() &#123; <span class="comment">// new X(arguments) &#123;body&#125;</span></span><br><span class="line">  <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">compare</span><span class="params">(String s1, String s2)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> s1.length() - s2.length();</span><br><span class="line"> &#125;&#125;);<span class="comment">// Here the class is anonymous!</span></span><br><span class="line"><span class="comment">// We can also do</span></span><br><span class="line">Comparator&lt;String&gt; cmp = <span class="keyword">new</span> ...;</span><br><span class="line">names.sort(cmp);</span><br></pre></td></tr></table></figure></li>
+<li><span class="math inline">\(Anonymous\)</span> <span
+class="math inline">\(class\)</span>: An anonymous class is where you
+only instantiate a local class in a single statement. There is a <span
+class="math inline">\(syntatic\)</span> <span
+class="math inline">\(sugar\)</span>:(e.g. the above code)
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">names.sort(<span class="keyword">new</span> <span class="title class_">Comparator</span>&lt;String&gt;() &#123; <span class="comment">// new X(arguments) &#123;body&#125;</span></span><br><span class="line">  <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">compare</span><span class="params">(String s1, String s2)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> s1.length() - s2.length();</span><br><span class="line"> &#125;&#125;);<span class="comment">// Here the class is anonymous!</span></span><br><span class="line"><span class="comment">// We can also do</span></span><br><span class="line">Comparator&lt;String&gt; cmp = <span class="keyword">new</span> ...;</span><br><span class="line">names.sort(cmp);</span><br></pre></td></tr></table></figure></li>
 </ul>
 <ol start="27" type="1">
-<li>Pure Functions: deterministic(return same y for same x), referential
-transparency(same x for same y), no side effects(no
+<li><span class="math inline">\(Pure\)</span> <span
+class="math inline">\(Functions\)</span>: deterministic(return same
+<code>y</code> for same <code>x</code>), referential transparency(same
+<code>x</code> for same <code>y</code>), no side effects(no
 printing/exception/changing of other variables etc.).</li>
 </ol>
 <ul>
-<li><p>Functional Interface: interface that has a single abstract
-method</p></li>
-<li><p>lambda:
+<li><p><span class="math inline">\(Functional\)</span> <span
+class="math inline">\(Interface\)</span>: interface that has a single
+abstract method</p></li>
+<li><p><span class="math inline">\(lambda\)</span>:
 <code>Transformer&lt;Integer, Integer&gt; t = (/*Integer*/ i) -&gt; (i + 1);</code>,
 where Transformer is a functional Interface. A lambda function is the
 same as a local class so it captures local variables used. Thus we store
-the function together ith the enclosing environment - closure.</p></li>
-<li><p>Function Reference:
+the function together ith the enclosing environment - <span
+class="math inline">\(closure\)</span>.</p></li>
+<li><p><span class="math inline">\(Function\)</span> <span
+class="math inline">\(Reference\)</span>:
 <code>Transformer&lt;Point, Double&gt; t = origin::distanceTo();</code>
 which is the same as:
 <code>t = p -&gt; origin.distanceTo(p)</code></p></li>
 <li><p>The technique of translating a general n-ary function to a
-sequence of n unary functions is called currying. e.g. instead of
+sequence of n unary functions is called <span
+class="math inline">\(currying\)</span>. e.g. instead of
 <code>(x,y) -&gt; x+y</code>, we do <code>x -&gt; y -&gt; x + y</code>.
-These functions are called curried fcuntions. With currying, we can
+These functions are called <span class="math inline">\(curried\)</span>
+<span class="math inline">\(fcuntions\)</span>. With currying, we can
 partially apply a function. This is useful if one of the arguments
 doen't change often/ is too expensive to compute.</p></li>
 </ul>
 <ol start="31" type="1">
-<li>Lazy Evaluation:</li>
+<li><span class="math inline">\(Lazy Evaluation\)</span>:</li>
 </ol>
 <ul>
-<li><p>Procrastinate: when we create a lambda, its content is not
-evaluated. Only when it is called the content is evaluated.</p></li>
-<li><p>Memoize things: Only works when the function is pure!</p></li>
+<li><p><span class="math inline">\(Procrastinate\)</span>: when we
+create a lambda, its content is not evaluated. Only when it is called
+the content is evaluated.</p></li>
+<li><p><span class="math inline">\(Memoization\)</span>: Only works when
+the function is pure!</p></li>
 </ul>
 <ol start="32" type="1">
-<li>Stream</li>
+<li><span class="math inline">\(Stream\)</span></li>
 </ol>
 <ul>
-<li>Limitation: stream can only be operated once. We cannot use terminal
-operation on a stream multiple times. We cannot iterate a stream
-multiple times. This would throw <code>IllegalStateException</code></li>
+<li>Limitation: stream can only be operated <strong>once</strong>. We
+cannot use terminal operation on a stream multiple times. We cannot
+iterate a stream multiple times. This would throw
+<code>IllegalStateException</code></li>
 </ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Terminal Operation: the evaluation of stream.</span></span><br><span class="line">Stream.of(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>).forEach(System.out::println);</span><br><span class="line">Stream.of(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>).reduce(<span class="number">0</span>, (x,y) -&gt; x + y);</span><br><span class="line"><span class="comment">// same as accumulate. start from left to right</span></span><br><span class="line"><span class="comment">//Matching: terminal operation</span></span><br><span class="line">noneMatch <span class="literal">true</span> <span class="keyword">if</span> none of the elements pass the given predicate.</span><br><span class="line">allMatch <span class="literal">true</span> <span class="keyword">if</span> every element passes the given predicate.</span><br><span class="line">anyMatch <span class="literal">true</span> <span class="keyword">if</span> at least one element passes the given predicate.</span><br><span class="line"><span class="comment">//Intermediate Operation: returns another Stream.</span></span><br><span class="line">Stream.of(<span class="string">&quot;hello\nworld&quot;</span>, <span class="string">&quot;ciao\nmondo&quot;</span>).map(x -&gt; x.lines()) </span><br><span class="line"><span class="comment">// returns a stream of streams</span></span><br><span class="line">Stream.of(...).flatMap(x -&gt; x.lines()) </span><br><span class="line"><span class="comment">// returns a stream of strings.</span></span><br><span class="line">limit: n -&gt; stream containing the first n elements</span><br><span class="line">Stream.iterate(<span class="number">0</span>, x -&gt; x + <span class="number">1</span>).takeWhile(x -&gt; x &lt; <span class="number">5</span>) <span class="comment">// 0 1 2 3 4</span></span><br><span class="line">peek: takes in a <span class="title function_">Consumer</span><span class="params">(operation (x)</span> -&gt; &#123;&#125;), which </span><br><span class="line">/allow us to apply lambda on the stream without changing it</span><br><span class="line"><span class="comment">//Stateful Operations: keep track of some states to operate</span></span><br><span class="line"><span class="comment">//Bounded Operations: only be called on finite stream</span></span><br><span class="line"><span class="comment">// e.g.: sorted / distinct [U]</span></span><br></pre></td></tr></table></figure>
 <ol start="30" type="1">
-<li>Monad:</li>
+<li><span class="math inline">\(Monad\)</span>:</li>
 </ol>
 <ul>
-<li><p>The left identity law: Monad.of(x).flatMap(x -&gt; f(x)) must be
-the same as f(x)</p></li>
-<li><p>The right identity law: monad.flatMap(x -&gt; Monad.of(x)) must
-be the same as monad</p></li>
-<li><p>associative law: monad.flatMap(x -&gt; f(x)).flatMap(x -&gt;
-g(x)) must be the same as monad.flatMap(x -&gt; f(x).flatMap(y -&gt;
-g(y)))</p></li>
+<li><p>The <span class="math inline">\(left\)</span> <span
+class="math inline">\(identity\)</span> <span
+class="math inline">\(law\)</span>:<code>Monad.of(x).flatMap(x -&gt; f(x))</code>
+must be the same as <code>f(x)</code></p></li>
+<li><p>The <span class="math inline">\(right\)</span> <span
+class="math inline">\(identity\)</span> <span
+class="math inline">\(law\)</span>:
+<code>monad.flatMap(x -&gt; Monad.of(x))</code> must be the same as
+<code>monad</code></p></li>
+<li><p><span class="math inline">\(associative\)</span> <span
+class="math inline">\(law\)</span>:
+<code>monad.flatMap(x -&gt; f(x)).flatMap(x -&gt; g(x))</code> must be
+the same as
+<code>monad.flatMap(x -&gt; f(x).flatMap(y -&gt; g(y)))</code></p></li>
 </ul>
 <ol start="31" type="1">
-<li>Functor</li>
+<li><span class="math inline">\(Functor\)</span></li>
 </ol>
 <ul>
-<li><p>preserving identity: functor.map(x -&gt; x) is the same as
-functor</p></li>
-<li><p>preserving composition: functor.map(x -&gt; f(x)).map(x -&gt;
-g(x)) is the same as functor.map(x -&gt; g(f(x)).</p></li>
+<li><p>preserving identity: <code>functor.map(x -&gt; x)</code> is the
+same as <code>functor</code></p></li>
+<li><p>preserving composition:
+<code>functor.map(x -&gt; f(x)).map(x -&gt; g(x))</code> is the same as
+<code>functor.map(x -&gt; g(f(x)).</code></p></li>
 </ul>
 <ol start="32" type="1">
-<li>Parallel Computing</li>
+<li><span class="math inline">\(Parallel\)</span> <span
+class="math inline">\(Computing\)</span></li>
 </ol>
 <ul>
 <li><p><code>s.parallel().filter(x -&gt; x &lt; 0).sequential().forEach(..);</code>
@@ -568,15 +667,16 @@ If we call <code>parallel</code> and <code>sequential</code> in the same
 stream, the last call wins.</p></li>
 <li><p>Conditions of parallelable</p>
 <ul>
-<li><p>Interference: one of the operations modify the source stream when
-the terminal operation is executed.</p></li>
-<li><p>Stateful: the lambda expression's result depends on a state that
-might change</p></li>
+<li><p><span class="math inline">\(Interference\)</span>: one of the
+operations modify the source stream when the terminal operation is
+executed.</p></li>
+<li><p><span class="math inline">\(Stateful\)</span>: the lambda
+expression's result depends on a state that might change</p></li>
 </ul></li>
 <li><p>Parallelising Reduce:</p>
 <ul>
-<li>combiner.apply(identity, i) = i; combiner and accumulator must both
-be associative and compatible</li>
+<li><code>combiner.apply(identity, i) = i</code>; combiner and
+accumulator must both be associative and compatible</li>
 </ul></li>
 </ul>
 <ol start="30" type="1">
@@ -633,6 +733,17 @@ target="_blank" rel="noopener" href="https://bartoszmilewski.com/2014/10/28/cate
 </ul>
 </div>
 
+          <div class="post-tags">
+              <a href="/tags/ComputerScience/" rel="tag"><i class="fa fa-tag"></i> ComputerScience</a>
+              <a href="/tags/Java/" rel="tag"><i class="fa fa-tag"></i> Java</a>
+              <a href="/tags/OOP/" rel="tag"><i class="fa fa-tag"></i> OOP</a>
+              <a href="/tags/Coding/" rel="tag"><i class="fa fa-tag"></i> Coding</a>
+              <a href="/tags/Basics/" rel="tag"><i class="fa fa-tag"></i> Basics</a>
+              <a href="/tags/Study/" rel="tag"><i class="fa fa-tag"></i> Study</a>
+              <a href="/tags/Notes/" rel="tag"><i class="fa fa-tag"></i> Notes</a>
+              <a href="/tags/Conclusion/" rel="tag"><i class="fa fa-tag"></i> Conclusion</a>
+              <a href="/tags/NUS/" rel="tag"><i class="fa fa-tag"></i> NUS</a>
+          </div>
 
         
 
