@@ -47,12 +47,11 @@
 <meta property="og:image" content="https://wfyishere.github.io/2024/03/11/CS2040S-Midterm-CheatSheet/Dijkstra.png">
 <meta property="og:image" content="https://wfyishere.github.io/2024/03/11/CS2040S-Midterm-CheatSheet/Dijkstra2.png">
 <meta property="og:image" content="https://wfyishere.github.io/2024/03/11/CS2040S-Midterm-CheatSheet/GraphSummary.png">
-<meta property="og:image" content="https://wfyishere.github.io/2024/03/11/CS2040S-Midterm-CheatSheet/PancakeWorstCase.png">
+<meta property="og:image" content="https://wfyishere.github.io/2024/03/11/CS2040S-Midterm-CheatSheet/PancakeFlipping.png">
 <meta property="article:published_time" content="2024-03-11T06:09:54.000Z">
-<meta property="article:modified_time" content="2024-06-27T14:26:42.886Z">
+<meta property="article:modified_time" content="2024-06-28T03:30:51.095Z">
 <meta property="article:author" content="Wen Fanyu">
 <meta property="article:tag" content="ComputerScience">
-<meta property="article:tag" content="HashMap">
 <meta property="article:tag" content="Java">
 <meta property="article:tag" content="Study">
 <meta property="article:tag" content="NUS">
@@ -62,6 +61,7 @@
 <meta property="article:tag" content="CS2040S">
 <meta property="article:tag" content="Sorting">
 <meta property="article:tag" content="Tree">
+<meta property="article:tag" content="HashMap">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://wfyishere.github.io/2024/03/11/CS2040S-Midterm-CheatSheet/RightRotation.png">
 
@@ -123,7 +123,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">21</span></a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">56</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">36</span></a></li><li class="menu-item menu-item-todo"><a href="/todo" rel="section"><i class="fa-solid fa-bars fa-fw"></i>Todo</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">17</span></a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">53</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">32</span></a></li><li class="menu-item menu-item-todo"><a href="/todo" rel="section"><i class="fa-solid fa-bars fa-fw"></i>Todo</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
         </a>
@@ -193,18 +193,18 @@ Cost</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-lin
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">36</span>
+          <span class="site-state-item-count">32</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">21</span>
+        <span class="site-state-item-count">17</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">56</span>
+        <span class="site-state-item-count">53</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -287,7 +287,7 @@ Cost</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-lin
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-06-27 22:26:42" itemprop="dateModified" datetime="2024-06-27T22:26:42+08:00">2024-06-27</time>
+      <time title="Modified: 2024-06-28 11:30:51" itemprop="dateModified" datetime="2024-06-28T11:30:51+08:00">2024-06-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -345,9 +345,11 @@ Cost</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-lin
 <li><p>Applications of <span class="math inline">\(binary
 search\)</span>: Think of binary search whenever:</p>
 <ul>
-<li><p>There is a sequence of "monotonic function" in blackbox. That is
-, for each v[i], for i &lt;= k, it returns false, for i &gt;= k, it
-returns true.</p></li>
+<li><p>There is a sequence of "<span
+class="math inline">\(monotonic\)</span> <span
+class="math inline">\(function\)</span>" in blackbox. That is , for each
+<code>v[i]</code>, for <code>i &lt;= k</code>, it returns false, for
+<code>i &gt;= k</code>, it returns true.</p></li>
 <li><p>We try to find the k which is the seperating point of a "valid"
 value.</p></li>
 </ul></li>
@@ -414,63 +416,72 @@ value.</p></li>
 work is done backwards</p></li>
 <li><p><span class="math inline">\(Quicksort\)</span>: Partition is done
 by continuously swapping <code>A[high] &lt; pivot</code> and
-<code>A[low] &gt; pivot</code> until low &gt;= high. <span
+<code>A[low] &gt; pivot</code> until <code>low &gt;= high</code>. <span
 class="math inline">\(Paranoid\)</span> <span
 class="math inline">\(Quicksort\)</span> is partition until a good
 partition.</p>
 <ul>
 <li><p>Halt recursion early, leaving small arrays unsorted. Then perform
 InsertionSort on entire array. (InsertionSort is fast on almost sorted
-arrays, about O(n))</p></li>
+arrays, about <span class="math inline">\(O(n)\)</span>)</p></li>
 <li><p>k pivot quicksort. Time complexity is <span
 class="math inline">\(O(n log n)\)</span>. The performance of 2 and 3
 pivot QuickSort are actually better than regular QuickSort because
 <em>2-pivot quicksort takes benefits of modern computer
 architecture</em>.</p>
 <ul>
-<li><p>Sort the k pivots in the pivot array K</p></li>
-<li><p>Do QuickSelect(e, K) on every element e in the original array
-(partitioning)</p></li>
+<li><p>Sort the <code>k</code> pivots in the pivot array
+<code>K</code></p></li>
+<li><p>Do <code>QuickSelect(e, K)</code> on every element <code>e</code>
+in the original array (partitioning)</p></li>
 <li><p>Recurse.</p></li>
 </ul></li>
 </ul></li>
 <li><p>Find <span class="math inline">\(k^{th}\)</span> smallest element
-in an unsorted array: Time complexity O(n) [U] Why
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Select(A[<span class="number">1.</span>.n], n, k)</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">1</span>) then <span class="keyword">return</span> A[<span class="number">1</span>];</span><br><span class="line">    <span class="keyword">else</span> Choose random pivot index pIndex.</span><br><span class="line">        p = partition(A[<span class="number">1.</span>.n], n, pIndex)</span><br><span class="line">        <span class="keyword">if</span> (k == p) then </span><br><span class="line">            <span class="keyword">return</span> A[p];</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (k &lt; p) then</span><br><span class="line">            <span class="keyword">return</span> Select(A[<span class="number">1.</span>.p–<span class="number">1</span>], k)</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (k &gt; p) then</span><br><span class="line">            <span class="keyword">return</span> Select(A[p+<span class="number">1</span>], k – p)</span><br></pre></td></tr></table></figure></p></li>
+in an unsorted array: Time complexity <span
+class="math inline">\(O(n)\)</span> [U] Why <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Select(A[<span class="number">1.</span>.n], n, k)</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">1</span>) then <span class="keyword">return</span> A[<span class="number">1</span>];</span><br><span class="line">    <span class="keyword">else</span> Choose random pivot index pIndex.</span><br><span class="line">        p = partition(A[<span class="number">1.</span>.n], n, pIndex)</span><br><span class="line">        <span class="keyword">if</span> (k == p) then </span><br><span class="line">            <span class="keyword">return</span> A[p];</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (k &lt; p) then</span><br><span class="line">            <span class="keyword">return</span> Select(A[<span class="number">1.</span>.p–<span class="number">1</span>], k)</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (k &gt; p) then</span><br><span class="line">            <span class="keyword">return</span> Select(A[p+<span class="number">1</span>], k – p)</span><br></pre></td></tr></table></figure></p></li>
 </ol>
 <h1 id="lecture-08-trees">Lecture 08 Trees</h1>
 <h2 id="dynamic-data-structures">Dynamic Data Structures</h2>
 <h2 id="tree">Tree</h2>
 <ol type="1">
-<li><p><strong>Successor</strong></p>
+<li><p><span class="math inline">\(Successor\)</span></p>
 <p>If you search for a key not in a tree, you would either find its
-successor or its predecessor</p>
+<span class="math inline">\(successor\)</span> or its <span
+class="math inline">\(predecessor\)</span></p>
 <p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Successor(<span class="type">int</span> key) &#123; <span class="comment">// successor function for key (in / not in tree)</span></span><br><span class="line">    <span class="type">int</span> <span class="variable">result</span> <span class="operator">=</span> search(key); <span class="comment">//either return successor or predecessor</span></span><br><span class="line">    <span class="keyword">if</span>(result &gt; key) <span class="keyword">return</span> result;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> SuccessorKeyInTree(result);&#125;</span><br><span class="line">SuccessorKeyInTree(<span class="type">int</span> key) &#123;</span><br><span class="line">    <span class="keyword">if</span> (key has right child ) <span class="keyword">return</span> rightChild;</span><br><span class="line">    <span class="keyword">while</span> ((parent != <span class="literal">null</span>) &amp;&amp; (child == parent.rightTree)) &#123;</span><br><span class="line">        child = parent;</span><br><span class="line">        parent = child.parentTree; <span class="comment">// note that here child has become parent&#125;</span></span><br><span class="line">    <span class="keyword">return</span> parent;&#125;</span><br></pre></td></tr></table></figure></p></li>
-<li><p><strong>Deleting</strong> <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (key.childNumber == <span class="number">0</span>) <span class="comment">//simply delete.</span></span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span> (key.childNumber == <span class="number">1</span>) <span class="comment">//make the child of key substitude chil</span></span><br><span class="line"><span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">//key has two child -&gt; key has right child -&gt; the successor is the min in the right child -&gt; sucessor has no left child.</span></span><br><span class="line">    substitude successor with its child and substitude key with successor.&#125;</span><br></pre></td></tr></table></figure></p></li>
-<li><p><strong>balanced</strong> if h = O(logN)</p></li>
+<li><p><span class="math inline">\(Deletion\)</span>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (key.childNumber == <span class="number">0</span>) <span class="comment">//simply delete.</span></span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span> (key.childNumber == <span class="number">1</span>) <span class="comment">//make the child of key substitude chil</span></span><br><span class="line"><span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">//key has two child -&gt; key has right child -&gt; the successor is the min in the right child -&gt; sucessor has no left child.</span></span><br><span class="line">    substitude successor with its child and substitude key with successor.&#125;</span><br></pre></td></tr></table></figure></p></li>
+<li><p><strong>balanced</strong> if <code>h = O(logN)</code></p></li>
 <li><p>Find the rank of a node <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">rank(node)</span><br><span class="line">    rank = node.left.weight + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (node != <span class="literal">null</span>) <span class="keyword">do</span></span><br><span class="line">        <span class="keyword">if</span> node is right child then</span><br><span class="line">            rank += node.parent.left.weight + <span class="number">1</span>;</span><br><span class="line">        node = node.parent;</span><br><span class="line">    <span class="keyword">return</span> rank;</span><br></pre></td></tr></table></figure></p></li>
 </ol>
 <h3 id="avl-trees">AVL Trees</h3>
 <ol type="1">
-<li>node v is height-balanced if |v.left.height – v.right.height| &lt;=
-1 -&gt; every height-balanced tree with n nodes has height h &lt;
-2log(n).</li>
+<li>node <code>v</code> is <span
+class="math inline">\(height-balanced\)</span> if
+<code>|v.left.height – v.right.height| &lt;= 1</code> -&gt; every
+height-balanced tree with <code>n</code> nodes has height
+<code>h &lt; 2log(n)</code>.</li>
 </ol>
 <p><em>Interesting Property: a maximal imbalanced AVL tree, with height
-h, has S(h) nodes, S(h) = S(h − 1) + S(h − 2) + 1.</em></p>
+<code>h</code>, has <code>S(h)</code> nodes,
+<code>S(h) = S(h − 1) + S(h − 2) + 1.</code></em></p>
 <figure>
 <img src="RightRotation.png" alt="RightRotation" />
 <figcaption aria-hidden="true">RightRotation</figcaption>
 </figure>
 <ol type="1">
-<li><p>Assume A is the lowest node violating valance property. Assuming
-that A is left heavy, B is A's left child</p>
+<li><p>Assume <code>A</code> is the lowest node violating balance
+property. Assuming that <code>A</code> is left heavy, <code>B</code> is
+<code>A</code>'s left child</p>
 <ul>
-<li><p>B is balanced / left heavy: right rotate A</p></li>
-<li><p>B is right heavy: right rotate B then right rotate A.</p></li>
+<li><p><code>B</code> is balanced / left heavy: right rotate
+<code>A</code></p></li>
+<li><p><code>B</code>is right heavy: right rotate <code>B</code> then
+right rotate <code>A</code>.</p></li>
 </ul></li>
-<li><p>Deletion: walk up the tree and rotate every unbalanced
-node.</p></li>
+<li><p><span class="math inline">\(Deletion\)</span>: walk up the tree
+and rotate every unbalanced node.</p></li>
 </ol>
 <p><em>If the number of keys in heavier sub-tree is at most twice the
 number of keys in lighter sub-tree, the tree is balanced but no
@@ -479,15 +490,16 @@ height-balanced.</em></p>
 <ol type="1">
 <li>modifying:
 <ul>
-<li>insert: O(h)</li>
-<li>delete: O(h)</li>
+<li>insert: <span class="math inline">\(O(h)\)</span></li>
+<li>delete: <span class="math inline">\(O(h)\)</span></li>
 </ul></li>
 <li>Query Operations:
 <ul>
-<li>search: O(h)</li>
-<li>predecessor / successor: O(h)</li>
-<li>findMax / findMin: O(h)</li>
-<li>Traversal: O(n)</li>
+<li>search: <span class="math inline">\(O(h)\)</span></li>
+<li>predecessor / successor: <span
+class="math inline">\(O(h)\)</span></li>
+<li>findMax / findMin: <span class="math inline">\(O(h)\)</span></li>
+<li>Traversal: <span class="math inline">\(O(n)\)</span></li>
 </ul></li>
 </ol>
 <h3 id="interval-queries">Interval Queries</h3>
@@ -496,16 +508,18 @@ height-balanced.</em></p>
 <img src="SearchIntervalTree.png" alt="sample interval tree" />
 <figcaption aria-hidden="true">sample interval tree</figcaption>
 </figure>
-<p>when we walk down the nodes to(17,19), the information that we need
-are: 17(left interval), 25(max = left subtree)</p>
+<p>when we walk down the nodes to <code>(17,19)</code>, the information
+that we need are: <code>17(left interval)</code>,
+<code>25(max = left subtree)</code></p>
 <ul>
-<li><p>Case 1: x &gt; 25 (max of left subtree):</p>
+<li><p>Case 1: <code>x &gt; 25</code> (max of left subtree):</p>
 <p>Go right. (the node is either in right tree or not in tree!)</p></li>
-<li><p>Case2: 17 &lt; x &lt;= 25</p>
-<p>Go left. (there must be atleast one node that contains x!)</p></li>
-<li><p>Case3: x &lt; 17</p>
+<li><p>Case2: <code>17 &lt; x &lt;= 25</code></p>
+<p>Go left. (there must be atleast one node that contains
+<code>x</code>!)</p></li>
+<li><p>Case3: <code>x &lt; 17</code></p>
 <p>Go left. (there is 0 possibility that the right subtree contains
-x!)</p></li>
+<code>x</code>!)</p></li>
 </ul>
 <p>In three cases we are safe to go (the direction we go contains the
 key / the direction we don't go does not contain key)</p>
@@ -529,17 +543,19 @@ sub-tree.</li>
 <figcaption aria-hidden="true">Sample Tree</figcaption>
 </figure>
 <ol start="2" type="1">
-<li><p>Do Search(10, 50): (Time complexity: <strong>O(log(n) +
-k)</strong>, where k is the number of items)</p>
+<li><p>Do <code>Search(10, 50)</code>: (Time complexity:
+<strong>O(log(n) + k)</strong>, where k is the number of items)</p>
 <ul>
 <li>Find Split Node: the highest node that search includes both left and
 right subtrees(in this case, 25) <strong>O(logn)</strong></li>
 <li>Do left and right traversal on the left and right tree.
 <strong>O(k)</strong></li>
-<li>Left Traversal: The search interval for a left-traversal at node v
-includes the maximum item in the left subtree of v. <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">LeftTraversal(v, low, high) &#123;</span><br><span class="line">    <span class="keyword">if</span> (low &lt;= v.key) &#123;</span><br><span class="line">        all-leaf-traversal(v.right); </span><br><span class="line">        <span class="comment">//change all-tree-traversals to total += v.right.ount</span></span><br><span class="line">        <span class="comment">//if just need to know how many nodes are with the range</span></span><br><span class="line">        LeftTraversal(v.left, low, high);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123; <span class="comment">// left traversal on the right subtree</span></span><br><span class="line">        LeftTraversal(v.right, low, high);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">RightTraversal(v, low, high) &#123;</span><br><span class="line">    <span class="keyword">if</span> (v.key &lt;= high) &#123;</span><br><span class="line">        all-leaf-traverasal(v.left);</span><br><span class="line">        RightTraversal(v.right, low, high);</span><br><span class="line">    &#125;  <span class="keyword">else</span> &#123;</span><br><span class="line">        RightTraversal(v.left, low, high);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li>Left Traversal: The search interval for a left-traversal at node
+<code>v</code> includes the maximum item in the left subtree of
+<code>v</code>. <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">LeftTraversal(v, low, high) &#123;</span><br><span class="line">    <span class="keyword">if</span> (low &lt;= v.key) &#123;</span><br><span class="line">        all-leaf-traversal(v.right); </span><br><span class="line">        <span class="comment">//change all-tree-traversals to total += v.right.ount</span></span><br><span class="line">        <span class="comment">//if just need to know how many nodes are with the range</span></span><br><span class="line">        LeftTraversal(v.left, low, high);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123; <span class="comment">// left traversal on the right subtree</span></span><br><span class="line">        LeftTraversal(v.right, low, high);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">RightTraversal(v, low, high) &#123;</span><br><span class="line">    <span class="keyword">if</span> (v.key &lt;= high) &#123;</span><br><span class="line">        all-leaf-traverasal(v.left);</span><br><span class="line">        RightTraversal(v.right, low, high);</span><br><span class="line">    &#125;  <span class="keyword">else</span> &#123;</span><br><span class="line">        RightTraversal(v.left, low, high);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 </ul></li>
-<li><p>BuildTree time complexity : O(n log n) ([U] why?)</p></li>
+<li><p>BuildTree time complexity : <span class="math inline">\(O(n log
+n)\)</span> ([U] why?)</p></li>
 <li><p>Dynamic updates: Rotation ([U] how?)</p></li>
 </ol>
 <h4 id="two-dimension">Two-Dimension</h4>
@@ -565,9 +581,9 @@ two-dimensional Trees!</figcaption>
 <h3 id="a-b-trees">(a, b) trees</h3>
 <h4 id="rules">Rules</h4>
 <ul>
-<li>2 ≤ a ≤ (b + 1)/2, where a and b refers to the minimum and maximum
-number of <strong>children</strong> in a internal node(not root /
-leaf).</li>
+<li><code>2 ≤ a ≤ (b + 1)/2</code>, where <code>a</code> and
+<code>b</code> refers to the minimum and maximum number of
+<strong>children</strong> in a internal node(not root / leaf).</li>
 </ul>
 <figure>
 <img src="abtreeChildPolicy.png" alt="(a,b)tree child policy" />
@@ -575,27 +591,35 @@ leaf).</li>
 </figure>
 <ul>
 <li><p>every node should follow that: numberOfChild = numberOfKey + 1.
-For a node with k keys (v1,v2,...,vk), the subtrees(t1,t2,...,tk+1)
-should follow that ： First child t1 has key range ≤ v1； Final child
-tk+1 has key range &gt; vk； All other children ti where i ∈ [2, k] has
-key range (vi−1, vi)</p></li>
+For a node with k keys <code>(v1,v2,...,vk)</code>, the subtrees
+<code>(t1,t2,...,tk+1)</code> should follow that ： First child
+<code>t1</code> has key range <code>t1 ≤ v1</code>； Final child
+<code>tk+1</code> has key range <code>tk+1 &gt; vk</code>； All other
+children <code>ti</code> where <code>i ∈ [2, k]</code> has key range
+<code>(vi−1, vi)</code></p></li>
 <li><p>All leaves should have the same depth.</p></li>
 </ul>
 <h4 id="manipulation">Manipulation</h4>
 <ol type="1">
-<li><p>Is ab tree balanced? <img src="abtreeBalance.png"
-alt="Is ab tree balanced?" /></p></li>
-<li><p>Insertion:</p></li>
+<li>Is ab tree balanced?</li>
 </ol>
-<p>Solution 1: (1) At first put the element in its correct place in the
-node (which is in sorted order)</p>
+<figure>
+<img src="abtreeBalance.png" alt="Is ab tree balanced?" />
+<figcaption aria-hidden="true">Is ab tree balanced?</figcaption>
+</figure>
 <ol start="2" type="1">
+<li>Insertion:</li>
+</ol>
+<p><strong>Solution 1:</strong></p>
+<ol type="1">
+<li><p>At first put the element in its correct place in the node (which
+is in sorted order)</p></li>
 <li><p>If the node overflows, then find the median ( = if is even and if
 is odd ) key in that node.</p></li>
 <li><p>Put the median key in the parent and split the current
 node</p></li>
 </ol>
-<p>Solution 2: Proactive Approach</p>
+<p><strong>Solution 2: Proactive Approach</strong></p>
 <p>Preemptively split a node whe it is full so that it does not overflow
 in the future.</p>
 <ol start="3" type="1">
@@ -608,7 +632,10 @@ in the future.</p>
 <img src="abtreeOrphan.png" alt="Delete 13" />
 <figcaption aria-hidden="true">Delete 13</figcaption>
 </figure>
-<pre><code>In this case, we replace the deleted node either with the predecessor or successor key</code></pre>
+<ul>
+<li>In this case, we replace the deleted node either with the
+predecessor or successor key</li>
+</ul>
 <ol start="2" type="1">
 <li>Case 2: Problem with downflow</li>
 </ol>
@@ -616,36 +643,42 @@ in the future.</p>
 <img src="abtreeDownFlow.png" alt="Delete 23" />
 <figcaption aria-hidden="true">Delete 23</figcaption>
 </figure>
-<p>If at least one sibling has at least a keys, then donate the key to
-the other sibling</p>
-<p>If none have enough keys, then merge the two siblings and the parent
-together.</p>
+<ul>
+<li><p>If at least one sibling has at least a keys, then donate the key
+to the other sibling</p></li>
+<li><p>If none have enough keys, then merge the two siblings and the
+parent together.</p></li>
+</ul>
 <p><img src="abtreeDownFlow2.png" alt="Downflow" /> <img
 src="abtreeDownFlow3.png" alt="Down flow again" /></p>
 <p><img src="abtreeDownFlow4.png" alt="Another example" /> <img
 src="abtreeDownFlow5.png" /> <img src="abtreeDownFlow6png" /></p>
 <h3 id="b-trees-1">B-trees</h3>
-<p>B-trees are simply (B, 2B)-trees. That is to say, they are a
-subcategory of (a, b)-trees such that a = B and b = 2B.</p>
+<p><span class="math inline">\(B-trees\)</span> are simply
+<code>(B, 2B)-trees</code>. That is to say, they are a subcategory of
+(a, b)-trees such that a = B and b = 2B.</p>
 <ol type="1">
 <li>Cost</li>
 </ol>
 <ul>
 <li><p>All the costs of searching a key list / splitting a node /
-merging / sharing B-tree nodes are O(1)!</p></li>
+merging / sharing B-tree nodes are <span
+class="math inline">\(O(1)\)</span>!</p></li>
 <li><p>The cost of searching a B-tree / inserting / deleting in a B tree
-is O(loga n)!</p></li>
+is <span class="math inline">\(O(loga n)\)</span>!</p></li>
 </ul>
 <h1 id="others-1">Others</h1>
 <ol type="1">
-<li>log2n = O( log10n ) Correct! We can easily switch between bases by
-multiplying by a constant.</li>
+<li><p><span class="math display">\[log2n  = O( log10n )\]</span></p>
+<p>Correct! We can easily switch between bases by multiplying by a
+constant.</p></li>
 </ol>
 <h1 id="lecture-12-hashing">Lecture 12 Hashing</h1>
 <h2 id="basic-concepts">Basic Concepts</h2>
 <ol type="1">
 <li><p>Difference with trees: no comparison between keys. [U] Why do you
-need O(n^2) time to sort in symbol table</p></li>
+need <span class="math inline">\(O(n^2)\)</span> time to sort in symbol
+table</p></li>
 <li><p>For <code>java.util.Map&lt;Key, Value&gt;</code></p>
 <ul>
 <li><p>No duplicates are allowed</p></li>
@@ -668,33 +701,42 @@ and only if two objects are the same!) <figure class="highlight java"><table><tr
 <ol start="4" type="1">
 <li><p>Two Good properties of a good Hash Function:</p>
 <ul>
-<li><p>For every bucket j, there is some i such that h(key, i) = j.
-(make sure that you make use of all the space)</p></li>
-<li><p>Simple Uniform Hashing Assumption: Every key is equally likely to
-be mapped to every permutation, independent of every other key. [U] wut?
-Why does linear probing violate the rule</p></li>
+<li><p>For every bucket <code>j</code>, there is some <code>i</code>
+such that <code>h(key, i) = j</code>. (make sure that you make use of
+all the space)</p></li>
+<li><p><span class="math inline">\(Simple\)</span> <span
+class="math inline">\(Uniform\)</span> <span
+class="math inline">\(Hashing\)</span> <span
+class="math inline">\(Assumption\)</span>: Every key is equally likely
+to be mapped to every permutation, independent of every other key. [U]
+wut? Why does linear probing violate the rule</p></li>
 </ul></li>
 </ol>
 <h2 id="coping-with-collision">Coping with Collision</h2>
 <h3 id="concept">Concept</h3>
 <blockquote>
-<p>Collision: h(k1) = h(k2), then k1 and k2 collide, where h is a hash
-function that takes in a key(e.g. "Hello") and returns the index where
-it should be stored in the array.</p>
+<p>Collision: <code>h(k1) = h(k2)</code>, then <code>k1</code> and
+<code>k2</code> collide, where h is a hash function that takes in a key
+and returns the index where it should be stored in the array.</p>
 </blockquote>
 <h3 id="chaining">Chaining</h3>
 <ol type="1">
 <li><p>Why don't we just insert each key into a random bucket?</p>
 <ul>
 <li><p>search would be slow!</p></li>
-<li><p>Simple Uniform Hasing Assumption: every key is equally likely to
-map to every bucket.</p>
+<li><p><span class="math inline">\(Simple\)</span> <span
+class="math inline">\(Uniform\)</span> <span
+class="math inline">\(Hasing\)</span> <span
+class="math inline">\(Assumption\)</span> (<span
+class="math inline">\(SUHA\)</span>): every key is equally likely to map
+to every bucket.</p>
 <ul>
-<li><p>What is the maximum chain length with SUHA? - O(log(n)) ([U]
-Why?)</p></li>
+<li><p>What is the maximum chain length with <span
+class="math inline">\(SUHA\)</span>? - O(log(n)) ([U] Why?)</p></li>
 <li><p>To minimize the maximum chain length, we use two function h1 and
 h2. store the k in the bucket with a smaller chain. This would reduce
-the maximum chain length to O(log log n)</p></li>
+the maximum chain length to <span class="math inline">\(O(log log
+n)\)</span></p></li>
 </ul></li>
 </ul></li>
 </ol>
@@ -705,9 +747,10 @@ in all buckets.</p></li>
 <li><p>Idea: probe a sequence of buckets until you find an empty
 one.</p>
 <ul>
-<li>h(key, i) where i is the time that you are trying (to find the
-slot), <em>Do note that it may not be that h(key, i) = h(key, i - 1) + 1
-and the "sequence" of objects may be arranged in random order.</em></li>
+<li><code>h(key, i)</code> where <code>i</code> is the time that you are
+trying (to find the slot), <em>Do note that it may not be that
+<code>h(key, i) = h(key, i - 1) + 1</code> and the "sequence" of objects
+may be arranged in random order.</em></li>
 </ul></li>
 <li><p>Problem: Deletion! If I simply set the box to null, when I try to
 search after deletion, I would stop at the deleted box and not search
@@ -715,21 +758,24 @@ for any element after that(we assume that search stops as the first
 null, since we only stores elements in order). To solve that, we
 <strong>use DELETED for deleted elements instead of
 null</strong>.</p></li>
-<li><p>Linear probing:</p>
+<li><p><span class="math inline">\(Linear\)</span> <span
+class="math inline">\(probing\)</span>:</p>
 <ul>
-<li><p>Clusters! There are clusters and there is a higher probability
-for the next h(k) to hit the cluster</p></li>
+<li><p><span class="math inline">\(Clusters\)</span>! There are clusters
+and there is a higher probability for the next <code>h(k)</code> to hit
+the cluster</p></li>
 <li><p>In practice, however, linear probing is faster. This is because
 caching!</p></li>
 </ul></li>
 <li><p>Double Hashing!</p>
 <ul>
 <li>Use two hash functions f, g. <span class="math display">\[h(k,i) =
-f(k) + i * g(k)\]</span> ([U] Claim: if g(k) is relatively prime to m,
-then h(k,i) hits all buckets. L15)</li>
+f(k) + i * g(k)\]</span> ([U] Claim: if <code>g(k)</code> is relatively
+prime to <code>m</code>, then <code>h(k,i)</code> hits all buckets.
+)</li>
 </ul></li>
 <li><p>Performance(assuming uniform hashing) ([U] why do you need this?
-Proof? L15):</p></li>
+Proof? ):</p></li>
 </ol>
 <p>if <span class="math display">\[\alpha = n/m\]</span>, then <span
 class="math display">\[Cost = \frac {1}{1 - \alpha}\]</span></p>
@@ -741,30 +787,36 @@ class="math inline">\(\alpha\)</span> -&gt; 1</p>
 <li><p>I don't know how many elements are going to be inserted! - Grow
 the table!</p></li>
 <li><p>Idea: Implement a new slot m2 and a new hash function. Scan the
-items in m1 (old hash table) and insert them in a new hash table -
-O(n)</p></li>
+items in <code>m1</code> (old hash table) and insert them in a new hash
+table - <span class="math inline">\(O(n)\)</span></p></li>
 </ol>
 <h3 id="how-fast-to-grow-the-hash-table">How fast to grow the hash
 table?</h3>
 <ol type="1">
-<li><p>m = m + 1: O(n^2); m = 2m: O(n); m = m^2: O(n^2)</p></li>
-<li><p>Shrinking and growing: if(n === m), then m = 2m. if(n &lt; m /
-4), then m = m /2</p>
+<li><p><code>m = m + 1</code>: <span
+class="math inline">\(O(n^2)\)</span>; <code>m = 2m</code>: <span
+class="math inline">\(O(n)\)</span>; <code>m = m^2</code>: <span
+class="math inline">\(O(n^2)\)</span></p></li>
+<li><p>Shrinking and growing:
+<code>if(n === m), then m = 2m. if(n &lt; m / 4), then m = m /2</code></p>
 <ul>
-<li><p>Claim: Everytime you double a table of size m, at least m / 2 new
-items were added.</p></li>
-<li><p>Everytime you shrink a table of size m, at least m / 4 items were
-deleted.</p></li>
+<li><p>Claim: Everytime you double a table of size <code>m</code>, at
+least <code>m / 2</code> new items were added.</p></li>
+<li><p>Everytime you shrink a table of size <code>m</code>, at least
+<code>m / 4</code> items were deleted.</p></li>
 </ul></li>
 <li><p>Technique of analyzing "average cost" (when some operations are
-cheap and some are expensive): Operation has amortized cost T(n) if for
-every integer k, the cost of k operations is &lt;= kT(n)</p>
+cheap and some are expensive): Operation has amortized cost <span
+class="math inline">\(T(n)\)</span> if for every integer <code>k</code>,
+the cost of <code>k</code> operations is <span
+class="math inline">\(&lt;= kT(n)\)</span></p>
 <ul>
 <li><p>e.g. For a list of insertions, the 5 insertions cost 5,5,5,13,7
 respectively. The amortized cost = 7, where 5 &lt; 7; 5 + 5 &lt; 7 * 2;
 5 + 5 + 5 &lt; 7 * 3...etc</p></li>
 <li><p>We claim that in this sense, the insert operation of a hash
-function has amortized cost O(1) [U] Proof</p></li>
+function has amortized cost <span class="math inline">\(O(1)\)</span>
+([U] Proof)</p></li>
 </ul></li>
 <li><p>[U] What if we don't want to be the person who triggers the 2
 hour hash table incrementing?</p></li>
@@ -774,8 +826,9 @@ hour hash table incrementing?</p></li>
 <h2 id="heaps">Heaps</h2>
 <h3 id="two-properties">Two properties</h3>
 <ol type="1">
-<li><p>Heap Ordering: priority[parent] &gt;= priority[child] (different
-from a binary search tree!)</p></li>
+<li><p>Heap Ordering:
+<code>priority[parent] &gt;= priority[child]</code> (different from a
+binary search tree!)</p></li>
 <li><p>Complete Binary Tree:</p>
 <ul>
 <li><p>Every level is full, except the last</p></li>
@@ -784,15 +837,16 @@ from a binary search tree!)</p></li>
 </ol>
 <h3 id="features">Features</h3>
 <ol type="1">
-<li><p>The maimum hbeight of a heap with n elements: floor(log
-n)</p></li>
-<li><p>Storing: we store the tree in an array in BFS order. In this
-case, it is easier to access the last node and the root node.</p></li>
+<li><p>The maimum hbeight of a heap with <code>n</code> elements:
+<code>floor(log n)</code></p></li>
+<li><p>Storing: we store the tree in an array in <strong>BFS</strong>
+order. In this case, it is easier to access the last node and the root
+node.</p></li>
 </ol>
 <p><img src="HeapStoring.png" style="width:40.0%" /></p>
 <ul>
 <li>How do we find the parent of a node? Since the tree is a Complete
-Binary Tree, the parent index would be: (k-1) / 2 !</li>
+Binary Tree, the parent index would be: <code>(k-1) / 2</code> !</li>
 </ul>
 <h3 id="operations">Operations</h3>
 <ol type="1">
@@ -823,18 +877,19 @@ property with the parent. [U] Why would this work</p></li>
 <li><p>extractMax: output the max and delete it.</p></li>
 </ol>
 <h3 id="performancee">Performancee:</h3>
-<p>All these operations are O(log n)!</p>
+<p>All these operations are <span class="math inline">\(O(log
+n)\)</span>!</p>
 <h3 id="heapsort">HeapSort</h3>
 <ol type="1">
 <li><p>Thought1: Unsorted List -&gt; Heap -&gt; Sorted List</p>
 <ul>
 <li><p>Procedure: Keep doing extractMax!</p></li>
-<li><p>Time complexity: O(n log n). Faster than Mergesort and slower
-than Quicksort.</p></li>
+<li><p>Time complexity: <span class="math inline">\(O(n log n)\)</span>.
+Faster than Mergesort and slower than Quicksort.</p></li>
 <li><p>Unstable [U]</p></li>
 <li><p>Ternary (3-way) HeapSort is a little faster</p></li>
 </ul></li>
-<li><p>Thought 2: Heapify!</p>
+<li><p>Thought 2: <span class="math inline">\(Heapify\)</span>!</p>
 <ul>
 <li><p>Procedure: view the array as a complete tree. Do recursion!</p>
 <ul>
@@ -862,32 +917,35 @@ log n) ？</li>
 <li><p>Nodes: At least one; Edges: Each Edge connect two nodes(In
 hypergraph, each edge connects &gt;=2 nodes in the graph)</p></li>
 <li><p><span class="math display">\[Graph G = &lt;V,E&gt;\]</span>,
-where V is a set of nodes, E is set of edges</p></li>
-<li><p>Simple path: set of edges connecting two nodes, which intersects
-eaach node at most once</p>
+where <code>V</code> is a set of nodes, <code>E</code> is set of
+edges</p></li>
+<li><p><span class="math inline">\(Simple\)</span> <span
+class="math inline">\(path\)</span>: set of edges connecting two nodes,
+which intersects eaach node at most once</p>
 <ul>
 <li><p>Connected: all nodes is connected by a path</p></li>
 <li><p>Cycle: where the last and first node are the same(not actually a
 path)</p></li>
 </ul></li>
-<li><p>Degree: number of adjacent edges.</p></li>
-<li><p>Diameter: <strong>Maximum</strong> distance between two nodes
-following the</p></li>
-<li><p>Cut of agraph is a partition of the vertices into two disjoint
-subssets.</p>
+<li><p><span class="math inline">\(Degree\)</span>: number of adjacent
+edges.</p></li>
+<li><p><span class="math inline">\(Diameter\)</span>:
+<strong>Maximum</strong> distance between two nodes following
+the</p></li>
+<li><p><span class="math inline">\(Cut\)</span> of agraph is a partition
+of the vertices into two disjoint subssets.</p>
 <ul>
 <li>Edge across the cut is the edge that has one node in each of the
 subsets</li>
 </ul></li>
-</ol>
-<p><strong>shortest</strong> path</p>
-<ol start="5" type="1">
-<li><p>Directed Path: Each edge is directed</p>
+<li><p><span class="math inline">\(Directed\)</span> <span
+class="math inline">\(Path\)</span>: Each edge is directed</p>
 <ul>
 <li>In-degree and Out-degree</li>
 </ul></li>
-<li><p>Weight: the cost to travel from v1 to v2 is w[v1][v2]. It can be
-a negative number</p></li>
+<li><p>Weight: the cost to travel from <code>v1</code> to
+<code>v2</code> is <code>w[v1][v2]</code>. It can be a negative
+number</p></li>
 </ol>
 <h3 id="different-kinds-of-graphs">Different Kinds of Graphs</h3>
 <ol type="1">
@@ -907,16 +965,23 @@ intercross each other</p></li>
 </ol>
 <h3 id="storing-data">Storing Data</h3>
 <ol type="1">
-<li><p><em>Adjacency Matrix</em> : Graph represented as A[v][w] = 1 iff
-there is an edge between v and w. Neat property: A^2 = if there is
-length 2 paths([U] How does this work)</p></li>
-<li><p>Memory usage for graph G = (V, E)</p>
+<li><p><span class="math inline">\(Adjacency\)</span> <span
+class="math inline">\(Matrix\)</span> : Graph represented as
+<code>A[v][w] = 1</code> <strong>iff</strong> there is an edge between
+<code>v</code> and <code>w</code>.</p>
 <ul>
-<li><p>Adjacency List: O(V+E)</p></li>
-<li><p>Adjacency Matrix: O(<span
-class="math inline">\(V^2\)</span>)</p></li>
-<li><p>if a graph is dense ( |E| = O(<span
-class="math inline">\(V^2\)</span>) ) use adjacency Matrix</p></li>
+<li><span class="math inline">\(Neat\)</span> <span
+class="math inline">\(property\)</span>: <code>A^2</code> = if there is
+length 2 paths([U] How does this work)</li>
+</ul></li>
+<li><p>Memory usage for graph <code>G = (V, E)</code></p>
+<ul>
+<li><p>Adjacency List: <span
+class="math inline">\(O(V+E)\)</span></p></li>
+<li><p>Adjacency Matrix: <span
+class="math inline">\(O(V^2)\)</span></p></li>
+<li><p>if a graph is dense ( <span class="math inline">\(|E| =
+O(V^2)\)</span> ) use adjacency Matrix</p></li>
 </ul></li>
 </ol>
 <h2 id="bfs-and-dfs">BFS and DFS</h2>
@@ -930,15 +995,16 @@ The 2nd level consists of nodes that have path of length 2 but
 <ol type="1">
 <li><p>Steps:</p>
 <ul>
-<li>Build levels.(calculate level[i] from level[i - 1], skip already
-visited nodes)</li>
+<li>Build levels.(calculate <code>level[i]</code> from
+<code>level[i - 1]</code>, skip already visited nodes)</li>
 </ul></li>
 </ol>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">BFS(Node[] nodeList, <span class="type">int</span> startId) &#123;</span><br><span class="line">    <span class="type">boolean</span>[] visited = <span class="keyword">new</span> <span class="title class_">boolean</span>[nodeList.length];</span><br><span class="line">    Arrays.fill(visited, <span class="literal">false</span>);</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span>[] parent = <span class="keyword">new</span> <span class="title class_">int</span>[nodelist.length]; <span class="comment">//Each node will have one parent [U], </span></span><br><span class="line">    <span class="comment">// the parent pointer would lead me to the shortest path</span></span><br><span class="line">    Arrays.fill(parent, -<span class="number">1</span>);</span><br><span class="line">    </span><br><span class="line">    Collection&lt;Integer&gt; frontier = <span class="keyword">new</span> <span class="title class_">Collection</span>&lt;Integer&gt;;</span><br><span class="line">    frontier.add(startId);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//Main code</span></span><br><span class="line">    visited[startId] = <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">while</span> (!frontier.isEmpty())&#123;</span><br><span class="line">        Collection&lt;Integer&gt; nextFrontier = <span class="keyword">new</span> <span class="title class_">Collection</span>&lt;Integer&gt;;</span><br><span class="line">        <span class="keyword">for</span> (Integer v : frontier) &#123;</span><br><span class="line">            <span class="keyword">for</span> (Integer w : nodeList[v].nbrList) &#123;</span><br><span class="line">                <span class="keyword">if</span> (!visited[w]) &#123;</span><br><span class="line">                    visited[w] = <span class="literal">true</span>;</span><br><span class="line">                    parent[w] = v;</span><br><span class="line">                    nextFrontier.add(w);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        frontier = nextFrontier;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// For components that are not connected with startID</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">start</span> <span class="operator">=</span> <span class="number">0</span>; start &lt; nodeList.length; start++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (!visited[start])&#123;</span><br><span class="line">            Collection&lt;Integer&gt; frontier = <span class="keyword">new</span> <span class="title class_">Collection</span>&lt;Integer&gt;;frontier.add(startId);</span><br><span class="line">            <span class="comment">// Main code goes here!</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <ol start="2" type="1">
-<li>Complexity: O(V + E). Each vertex is added once and each edge is
-added once. (Do note the difference between E-edges and number of
-neighbours in each vertex here.)</li>
+<li>Complexity: <span class="math inline">\(O(V + E)\)</span>. Each
+vertex is added once and each edge is added once. (Do note the
+difference between E-edges and number of neighbours in each vertex
+here.)</li>
 </ol>
 <h3 id="dfs">DFS</h3>
 <ol type="1">
@@ -947,7 +1013,8 @@ neighbours in each vertex here.)</li>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">DFS-visit(Node[] nodeList, <span class="type">boolean</span>[] visited, <span class="type">int</span> startId)&#123;</span><br><span class="line">    <span class="keyword">for</span> (Integer v : nodeList[startId].nbrList) &#123;</span><br><span class="line">        <span class="keyword">if</span> (!visited[v])&#123;</span><br><span class="line">            visited[v] = <span class="literal">true</span>;</span><br><span class="line">            DFS-visit(nodeList, visited, v);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// remember to include the disconnected parts here.</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="shortest-paths">Shortest Paths</h2>
 <ol type="1">
-<li>Key idea: triangle inequality <span
+<li>Key idea: <span class="math inline">\(triangle\)</span> <span
+class="math inline">\(inequality\)</span> <span
 class="math display">\[cost[s][c] &lt;= cost[s][a] +
 cost[a][c]\]</span></li>
 </ol>
@@ -964,10 +1031,11 @@ shortest path, just keep going in circles![^4]) [^4]: In fact, you can
 use Bellman-Ford to try finding a negative weight cycle - just try to
 see whether edge is relaxed after n-1 iterations!</p>
 <ol type="1">
-<li><p>Invariant: After j iterations(the outer loop), for any j-hop node
-<code>u</code>, cost[u] stores the correct answer. j-hop node refers to
-the node <code>u</code> where on the shortest path from <code>s</code>
-to <code>u</code>, there are j edges.</p></li>
+<li><p>Invariant: After <code>j</code> iterations(the outer loop), for
+any j-hop node <code>u</code>, <code>cost[u]</code> stores the correct
+answer. j-hop node refers to the node <code>u</code> where on the
+shortest path from <code>s</code> to <code>u</code>, there are
+<code>j</code> edges.</p></li>
 <li><p>Proof by Induction</p>
 <ul>
 <li><p>Base case: After 1st iteration, all 1-hop nodes stored the
@@ -975,10 +1043,10 @@ correct value <span class="math display">\[cost[u] =
 weight(s,u)\]</span></p></li>
 <li><p>If <span class="math display">\[cost[hop_{j - 1}] =
 ultimate\_value\]</span> after one iteration, the edge connecting
-(j-1)hop nodes and j-hop nodes are relaxed. Thus <span
+(<code>j-1</code>)hop nodes and j-hop nodes are relaxed. Thus <span
 class="math display">\[cost[hop_j] = ultimate\_value\]</span></p></li>
-<li><p>Since all nodes in Graph are at most n-1 hop nodes (since there
-is no cylce in the ultimate shortest path)</p></li>
+<li><p>Since all nodes in Graph are at most <code>n-1</code> hop nodes
+(since there is no cylce in the ultimate shortest path)</p></li>
 </ul></li>
 <li><p>Performance: O(V<em>E). </em>If weight of all edges are the same,
 then just use BFS*</p></li>
@@ -987,9 +1055,10 @@ then just use BFS*</p></li>
 <h5 id="basic-idea">Basic Idea</h5>
 <ol type="1">
 <li><p>Steps: Maintain a priority queue, which stores the keys and is
-prioritized with the current estimated dist[k]. Maintain an array vis[],
-where vis[k] = true if the node k is visited, or dist[k] stores the
-correct answer.</p>
+prioritized with the current estimated <code>dist[k]</code>. Maintain an
+array <code>vis</code>, where <code>vis[k] = true</code> if the node
+<code>k</code> is visited, or <code>dist[k]</code> stores the correct
+answer.</p>
 <ul>
 <li><p>Initialize: change all nodes to be unvisited and all <span
 class="math inline">\(dist[k] = infinity\)</span>. Put the starting node
@@ -1064,19 +1133,22 @@ which is contradictory to property(4).</p></li>
 is negative weight edges, formula(3) will not hold. This is different
 from Bellman-Ford Algorithm</em></p>
 <h5 id="performance-analysis">Performance Analysis</h5>
-<p><strong>Time Complexity</strong>: we insert / deletMin for |V| times
-each, since every node is added to the priority queue oncec. We
-decreaseKey at most |E| times. Since priority queue operations are O(log
-V) <span class="math display">\[runtime = O((V+E)logV) = O(E log
-V)\]</span></p>
+<p><strong>Time Complexity</strong>: we insert / delet Min for
+<code>|V|</code> times each, since every node is added to the priority
+queue oncec. We decreaseKey at most <code>|E|</code> times. Since
+priority queue operations are <span class="math inline">\(O(log
+V)\)</span> <span class="math display">\[runtime = O((V+E)logV) = O(E
+log V)\]</span></p>
 <ul>
-<li><p>Priority Queue by AVL tree(with Hash Table): O((V + E) log V) =
-O(E log V)</p>
+<li><p>Priority Queue by AVL tree(with Hash Table): <span
+class="math inline">\(O((V + E) log V) = O(E log V)\)</span></p>
 <ul>
-<li><p>insert: O(log n)</p></li>
-<li><p>deleteMin(): O(log n)</p></li>
-<li><p>decreaseKey(key, priority): O(log n)</p></li>
-<li><p>contains(key): O(1)</p></li>
+<li><p>insert: <span class="math inline">\(O(log n)\)</span></p></li>
+<li><p>deleteMin(): <span class="math inline">\(O(log
+n)\)</span></p></li>
+<li><p>decreaseKey(key, priority): <span class="math inline">\(O(log
+n)\)</span></p></li>
+<li><p>contains(key): <span class="math inline">\(O(1)\)</span></p></li>
 </ul></li>
 <li><p>Performance iseven vetter if use d-way Heap or Fibonacci
 Heap(?)</p></li>
@@ -1100,13 +1172,15 @@ I would not disobey the order. [U] Why</p></li>
 it doesn't work but what's the key point of determining which algorithm
 to use here?)</p></li>
 </ul></li>
-<li><p>Time Complexity: O(V+E)</p></li>
+<li><p>Time Complexity: <span
+class="math inline">\(O(V+E)\)</span></p></li>
 <li><p>Alternative Solution</p>
 <ul>
 <li><p>Add all nodes in Graph that has no incoming edges to the
 topo-order, remove all the edges adjacent to these nodes, remove the
 nodes, repeat.</p></li>
-<li><p>O(V + E)([U]Why? No EXPLAINATION?)</p></li>
+<li><p><span class="math inline">\(O(V + E)\)</span>([U]Why? No
+EXPLAINATION?)</p></li>
 </ul></li>
 <li><p>After we Topological Sort the problem, we just relax the nodes in
 topological order. ([U] How exactly do you implement this, it's quite
@@ -1116,34 +1190,39 @@ crucial for proving the correctness)</p></li>
 <ol type="1">
 <li><p>Functionalities</p>
 <ul>
-<li><p>Union(i, j)</p></li>
-<li><p>isConnected(i, j): return whether i and j are in the same
-union</p></li>
+<li><p><code>Union(i, j)</code></p></li>
+<li><p><code>isConnected(i, j)</code>: return whether i and j are in the
+same union</p></li>
 <li><p>Union-Split-Find: for weight unions that implements this
 functionality, check <a
 target="_blank" rel="noopener" href="https://www.researchgate.net/publication/289047691_Dynamic_graph_connectivity_in_polylogarithmic_worst_case_time">THIS</a></p></li>
 </ul></li>
 <li><p>Idea: store data in a tree structure. Each tree is a union. When
-union i, j, find the root of i and j and merge the two trees.</p>
+union <code>i</code>, <code>j</code>, find the root of <code>i</code>
+and <code>j</code> and merge the two trees.</p>
 <ul>
-<li><p>Find(i) : find the root of i</p></li>
-<li><p>Merge(rt1, rt2): union the two trees. We merge trees by setting
-the parent of the root of the smaller tree to be the root of the other
-tree.</p></li>
+<li><p><code>Find(i)</code> : find the root of <code>i</code></p></li>
+<li><p><code>Merge(rt1, rt2)</code>: union the two trees. We merge trees
+by setting the parent of the root of the smaller tree to be the root of
+the other tree.</p></li>
 </ul></li>
 <li><p>Performance</p>
 <ul>
-<li><p>isConnected(i, j) and Union(i, j) : O(h) / O(log n)</p></li>
-<li><p>Proof that h = O(log n) : Proof that for any tree of height h has
-at least <span class="math inline">\(2^k\)</span> nodes. Proof this by
-induction: suppose for height k trees this is true, proof that for
-height k+1 trees this is true.</p></li>
+<li><p><code>isConnected(i, j)</code> and <code>Union(i, j)</code> :
+<span class="math inline">\(O(h)\)</span> / <span
+class="math inline">\(O(log n)\)</span></p></li>
+<li><p>Proof that <span class="math inline">\(h = O(log n)\)</span> :
+Proof that for any tree of height h has at least <span
+class="math inline">\(2^k\)</span> nodes. Proof this by induction:
+suppose for height k trees this is true, proof that for height k+1 trees
+this is true.</p></li>
 <li><p>improvement: set parent of every node that is traversed to be the
 root node (flattens the tree - path compression!)</p></li>
 <li><p>Starting from empty, any sequence of m union/find operations on n
-objects takes: O(n + mα(m, n)time., where α is the inverse arckermann
-function ([U] ? Proof and some knowledge about the function? Tarjan
-1975)</p></li>
+objects takes: <span class="math inline">\(O(n + mα(m,
+n))\)</span>time., where <span class="math inline">\(α\)</span> is the
+inverse arckermann function ([U] ? Proof and some knowledge about the
+function? Tarjan 1975)</p></li>
 </ul></li>
 <li><p>Application</p>
 <ul>
@@ -1164,12 +1243,15 @@ which connects all nodes and has the least total weight.</p></li>
 distinct.</em></p>
 <ol type="1">
 <li><p>No cycles are in the MST.</p></li>
-<li><p>Cut Property: if you cut an edge on a minimum spanning tree, then
-the rest two components T1 and T2, would still be the MST for the
-respective nodes.(However, T1 MST + T2 MST + Minimum edge != (T1 +
-T2)MST)</p></li>
-<li><p>Cycle Property: For any cycle on the original graph, the maximum
-weigt edge is not in the MST.</p>
+<li><p><span class="math inline">\(Cut\)</span> <span
+class="math inline">\(Property\)</span>: if you cut an edge on a minimum
+spanning tree, then the rest two components <code>T1</code> and
+<code>T2</code>, would still be the MST for the respective
+nodes.(However, <code>T1 MST</code> + <code>T2 MST</code> +
+<code>Minimum edge</code> != <code>(T1 + T2)MST</code>)</p></li>
+<li><p><span class="math inline">\(Cycle\)</span> <span
+class="math inline">\(Property\)</span>: For any cycle on the original
+graph, the maximum weigt edge is not in the MST.</p>
 <ul>
 <li>Proof: Proof by contradiction - If the maximum weight edge is in the
 MST. By property 1, at least 1 edge of the cycle is not in the MST, lets
@@ -1191,17 +1273,18 @@ MST.</li>
 <li><p>Apply the red rule or vlue rule to an arbitrary edge until no
 more edges can be colored.</p>
 <ul>
-<li><p>Red Rule: If C isa cycle with no red arcs, then color the
-max-weight edge in C red. (Property 2)</p></li>
-<li><p>Blue Rule: If D is a cut with no blue arcs, then color the
-min-weight edge in D blue. (Property 4)</p></li>
+<li><p>Red Rule: If <code>C</code> is a cycle with no red arcs, then
+color the max-weight edge in <code>C</code> red. (Property 2)</p></li>
+<li><p>Blue Rule: If <code>D</code> is a cut with no blue arcs, then
+color the min-weight edge in <code>D</code> blue. (Property 4)</p></li>
 </ul></li>
 <li><p>Proof of the greedy algorithm:</p>
 <ul>
-<li>On termination, every cycle has a red edge, and the blue edges form
-a tree(if not, then there is a cut with no blue edge). Every edge is
-colored. ([U]Why, can't there be an eedge that neither satisfy the red
-rule, nor satisfy the blue rule? )</li>
+<li>On termination, every cycle has a <code>red</code> edge, and the
+<code>blue</code> edges form a tree(if not, then there is a cut with no
+<code>blue</code> edge). Every edge is <code>colored</code>. ([U]Why,
+can't there be an eedge that neither satisfy the <code>red</code> rule,
+nor satisfy the <code>blue</code> rule? )</li>
 </ul></li>
 </ol>
 <h3 id="mst-algorithms">MST Algorithms</h3>
@@ -1209,10 +1292,11 @@ rule, nor satisfy the blue rule? )</li>
 <ol type="1">
 <li><p>Basic Idea:</p>
 <ul>
-<li><p>S: set of nodes connected by blue edges.</p></li>
-<li><p>Repeat: Identify the cut: {S, V - S}</p></li>
+<li><p><code>S</code>: set of nodes connected by blue edges.</p></li>
+<li><p>Repeat: Identify the cut: {<code>S</code>,
+<code>V - S</code>}</p></li>
 <li><p>Find minimum weight edge on cut (Priority queue)</p></li>
-<li><p>Add new node to S</p></li>
+<li><p>Add new node to <code>S</code></p></li>
 </ul></li>
 </ol>
 <p>[U] In the code for prim, why should the priority queue keep track of
@@ -1224,9 +1308,10 @@ the nodes rather than simply keep track of the weights?</p>
 <li><p>sort edges by weight from smallest to biggest.</p></li>
 <li><p>Consider edges in ascending order:</p>
 <ul>
-<li><p>If both endpoints are in the same blue tree, then color the edge
-red. (Must be the heaviest edge in the loop!)</p></li>
-<li><p>else, color the edge blue.</p></li>
+<li><p>If both endpoints are in the same <code>blue</code> tree, then
+color the edge <code>red</code>. (Must be the heaviest edge in the
+loop!)</p></li>
+<li><p>else, color the edge <code>blue</code>.</p></li>
 </ul></li>
 </ul></li>
 </ol>
@@ -1276,111 +1361,128 @@ parrallel? Should it be named Topological sort or DAG?</p>
 <h1 id="problems-in-tutorials">Problems (in tutorials)</h1>
 <h2 id="mountain-stack">Mountain stack</h2>
 <p>A mountains consists of <strong>n</strong> hills, aligned linearly.
-Each hill <strong>i</strong>, stands at a height of a[i]. Standing at
-hill i, you’ll see a point j kilometers away if and only if all hills
-from i−j to i are no taller than a[i] meters. For each hill i, determine
-the maximum distance you can see from it(distance is "-1" if no hill
-blocks your sight). <em>(Hint: try using a stack to achieve O(n) time
-complexity)</em></p>
+Each hill <strong>i</strong>, stands at a height of <code>a[i]</code>.
+Standing at hill <code>i</code>, you’ll see a point <code>j</code>
+kilometers away if and only if all hills from <code>i−j</code> to
+<code>i</code> are no taller than <code>a[i]</code> meters. For each
+hill <code>i</code>, determine the maximum distance you can see from
+it(distance is "<code>-1</code>" if no hill blocks your sight).
+<em>(Hint: try using a stack to achieve <span
+class="math inline">\(O(n)\)</span> time complexity)</em></p>
 <p><strong>Answer</strong>: Use a monotonic decreasing stack:</p>
 <ul>
-<li>For every element at index i in the array:</li>
+<li>For every element at index <code>i</code> in the array:</li>
 </ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">boolean</span> <span class="variable">isInfinity</span> <span class="operator">=</span> <span class="literal">true</span>;</span><br><span class="line">While(!stack.empty) &#123;</span><br><span class="line">    curr = stack.peek(); <span class="comment">//get the top object without popping it</span></span><br><span class="line">    <span class="keyword">if</span>(curr.height &gt;= h[i])&#123;</span><br><span class="line">        isInfinity = <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        d[i]++;</span><br><span class="line">        stack.pop();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span>(isInfinity) d[i] = -<span class="number">1</span>;</span><br></pre></td></tr></table></figure>
 <p><em>[U] This is somehow incorrect. But the idea is similar. pls
 correct this.</em></p>
 <p>How to come up with this: <strong>Gather only the information you
-need</strong>! Information for any hill i that is lower than another
-hill j where j &gt; i can be eliminated!</p>
+need</strong>! Information for any hill <code>i</code> that is lower
+than another hill <code>j</code> where <code>j &gt; i</code> can be
+eliminated!</p>
 <h2 id="chicken-rice-competetion">Chicken Rice Competetion :</h2>
 <ul>
-<li>You have in front of you n plates of chicken rice, each plate
-contains n bites of chicken rice. Supppose you want to find the median
-chicken rice. Design an algorithm to maximize the amount of remaining
-chicken rice on the median plate.</li>
-<li>Solution 1: Run QuickSelect: on one level of QuickSelect, the
-expectation of time of bitten on any plate is (1 / n) * (n - 1) + (1 - 1
-/ n) * 1 &lt;= 2. Thus the expected consumption of chicken rice is O(2
-log n) bites.</li>
-<li>Solution 2: Inserting each plate into an AVL tree takes O(log n)
-comparisons. (However, if median is the root of AVL tree, there would be
-O(n) moves!)</li>
+<li>You have in front of you <code>n</code> plates of chicken rice, each
+plate contains <code>n</code> bites of chicken rice. Supppose you want
+to find the median chicken rice. Design an algorithm to maximize the
+amount of remaining chicken rice on the median plate.</li>
+<li>Solution 1: Run <span class="math inline">\(QuickSelect\)</span>: on
+one level of QuickSelect, the expectation of time of bitten on any plate
+is <code>(1 / n) * (n - 1) + (1 - 1 / n) * 1 &lt;= 2</code>. Thus the
+expected consumption of chicken rice is <span class="math inline">\(O(2
+log n)\)</span> bites.</li>
+<li>Solution 2: Inserting each plate into an AVL tree takes <span
+class="math inline">\(O(log n)\)</span> comparisons. (However, if median
+is the root of AVL tree, there would be <span
+class="math inline">\(O(n)\)</span> moves!)</li>
 <li><em>In fact, using a randomized algorithm, this can be solved with
-only O(log log(n)) bites to the median plate, but that is much, much
-more complicated</em> [U]</li>
+only <span class="math inline">\(O(log log(n))\)</span> bites to the
+median plate, but that is much, much more complicated</em> [U]</li>
 </ul>
 <h2 id="weight-selectioneonomic-research">Weight Selection(Eonomic
 Research):</h2>
 <ul>
-<li>You are an economist doing a research on the wealth of different
+<li><p>You are an economist doing a research on the wealth of different
 generations. Each row of data you've gained consists of a unique
 identifier, an age, and a number that represents their amount of wealth.
 Your goal is to divide the dataset into “equi-wealth” age ranges. That
-is, given a parameter k, you should produce k different age ranges A1,
-A2, ..., Ak with the following properties:
+is, given a parameter k, you should produce k different age ranges
+<code>A1</code>, <code>A2</code>, ..., <code>Ak</code> with the
+following properties:</p>
 <ol type="1">
-<li>All the ages of people in set <span
+<li><p>All the ages of people in set <span
 class="math inline">\(A_j\)</span> should be &lt;= the ages of people in
-<span class="math inline">\(A_{j+1}\)</span>.</li>
-<li>The sum of wealth in each set should be (roughly) the same
+<span class="math inline">\(A_{j+1}\)</span>.</p></li>
+<li><p>The sum of wealth in each set should be (roughly) the same
 (tolerating rounding errors if k does not divide the total wealth, or
-exact equality is not attainable).</li>
+exact equality is not attainable).</p></li>
 </ol></li>
 </ul>
-<p>You should assume that the given k is relatively small while the
-dataset is very large . (i.e. O(nk) &lt; O(n log n))</p>
+<p>You should assume that the given <code>k</code> is relatively small
+while the dataset is very large . (i.e. <span
+class="math inline">\(O(nk) &lt; O(n log n)\)</span>)</p>
 <p>Design the most efficient algorithm you can to solve this problem.
 Optionally, consider the case where rows can consist of the same ages,
 versus the case where rows have unique ages. - Solution: a weight
-selection problem. We are asking to find the 1/k,2/k,...,k−1/k order
+selection problem. We are asking to find the
+<code>1/k</code>,<code>2/k</code>,...,<code>k−1/k</code> order
 statistics of the weighted sum 1. Finding a single Weight Order
-Statistic. - First, use QuickSelect to find the median aged dataset, and
-then partition around the median - sum the totals on the left and right
-halves. (DO the sum while partitioning to save time!) If target weight
-&gt; left sum, subtract left sum weight from your target weight and
-search on right half...etc. This is O(n) time. 2. repeat for the k - 1
-targets and <em>Do one final partitioning to build your output lists([U]
-why is this nessary)</em> This is O(nk) time.</p>
+Statistic. - First, use <span class="math inline">\(QuickSelect\)</span>
+to find the median aged dataset, and then partition around the median -
+sum the totals on the left and right halves. (DO the sum while
+partitioning to save time!) If <code>target weight &gt; left sum</code>,
+subtract <code>left sum weight</code> from your
+<code>target weight</code> and search on right half...etc. This is <span
+class="math inline">\(O(n)\)</span> time. 2. repeat for the
+<code>k - 1</code> targets and <em>Do one final partitioning to build
+your output lists([U] why is this nessary)</em> This is <span
+class="math inline">\(O(nk)\)</span> time.</p>
 <ul>
-<li><p>Solution 2: Instead of finding the median, we use a random pivot.
-Each time we partition, we keep track of the sum of the wealth to the
-left of the selected pivots! We do Quickselect O(k) times and each
-selection takes O(n) times. ([U] Needs further explanation, see tutorial
-slides w6 "better solution") [U] Why is this better than Solution
-1?</p></li>
-<li><p>Solution 3: Find k order statistics all at once! When random
-pivot was selected, say its 2 * <span
+<li><p>Solution 2: Instead of finding the median, we use a <span
+class="math inline">\(random\)</span> <span
+class="math inline">\(pivot\)</span>. Each time we partition, we keep
+track of the sum of the wealth to the left of the selected pivots! We do
+<code>Quickselect</code> <span class="math inline">\(O(k)\)</span> times
+and each selection takes <span class="math inline">\(O(n)\)</span>
+times. ([U] Needs further explanation, see tutorial slides w6 "better
+solution") [U] Why is this better than Solution 1?</p></li>
+<li><p>Solution 3: Find <code>k</code> order statistics all at once!
+When random pivot was selected, say its 2 * <span
 class="math inline">\(\bar{w}\)</span>, then we recurse on the left to
 find the 1st order-statistics and recurse on the right to find the 3rd
-order-statistics! In this case, we get a rough overall runtime of O(n
-log k) ([U] Needs further explanation, see tutorial slides w6 "better
-solution")</p></li>
+order-statistics! In this case, we get a rough overall runtime of <span
+class="math inline">\(O(n log k)\)</span> ([U] Needs further
+explanation, see tutorial slides w6 "better solution")</p></li>
 <li><p>[U] How about naiive solution?</p></li>
 </ul>
 <h2 id="height-of-binary-tree-after-subtree-removal">Height of Binary
 Tree After Subtree Removal</h2>
 <ul>
-<li><p>Description: You are given a <strong>binary tree</strong> with n
-nodes. You are given m queries, where queries[i] asks the height of the
-tree after deletion of the subtree containing the ith node. What is the
-optimized solution?</p></li>
+<li><p>Description: You are given a <strong>binary tree</strong> with
+<code>n</code> nodes. You are given <code>m</code> queries, where
+<code>queries[i]</code> asks the height of the tree after deletion of
+the subtree containing the <code>i</code>th node. What is the optimized
+solution?</p></li>
 <li><p>Solution 1 : Build a tree. for each query, walk up the tree and
-try to update the node's height. O(log n * m) ([U] Why does the slides
-say its O(n * m)?)</p></li>
+try to update the node's height. <span class="math inline">\(O(log n *
+m)\)</span> ([U] Why does the slides say its O(n * m)?)</p></li>
 <li><p>Solution 2: <em>Depth of a node refers to the number of edges in
 the simple path from root to the node</em></p>
 <ol type="1">
-<li>preprocess the tree to get its depth using DFS and height using
-in-order-traversal.</li>
-<li>For ith query, we look at all the nodes with the same depth of ith
-node and find the maximum height among them. The answer to the query
-would be <code>node[i].depth + max_height</code>.</li>
-<li>SO how do we group the nodes of the same depth? We do this by
+<li><p>preprocess the tree to get its depth using DFS and height using
+in-order-traversal.</p></li>
+<li><p>For <code>i</code>th query, we look at all the nodes with the
+same depth of ith node and find the maximum height among them. The
+answer to the query would be
+<code>node[i].depth + max_height</code>.</p></li>
+<li><p>So how do we group the nodes of the same depth? We do this by
 iterating the nodes in in-order-traversal([U] wut?). For each group of
 nodes in the same depth, we only require the maximum height and second
-maximum height. To do this we need O(n) time([U] wut?).</li>
-<li>In this algorithm, we only need O(1) for each query. The overal time
-complexity would be O(n + m)</li>
+maximum height. To do this we need O(n) time([U] wut?).</p></li>
+<li><p>In this algorithm, we only need <span
+class="math inline">\(O(1)\)</span> for each query. The overal time
+complexity would be <span class="math inline">\(O(n +
+m)\)</span></p></li>
 </ol></li>
 </ul>
 <p>[U] <em>There is another method based on Euler Tour Tree (which is
@@ -1396,61 +1498,79 @@ pay!</h2>
 <li>Question 1</li>
 </ol>
 <ul>
-<li>Come up with an algorithm that will allow the students to determine
-the average pay of the group without revealing their own salaries to any
-of the other members in the group</li>
+<li><p>Come up with an algorithm that will allow the students to
+determine the average pay of the group without revealing their own
+salaries to any of the other members in the group</p>
+<ul>
 <li>Solution 1: Everyone pick a random number and add it to there
 salery. 1st person passes the sum to the 2nd person, the 2nd person add
 their sum to the number the 1st one passed ... Until everyone's sum adds
 up. Then they deduct the number one by one.</li>
+</ul></li>
 </ul>
 <ol start="2" type="1">
 <li>Extention:</li>
 </ol>
 <ul>
-<li>what happens if k members of the group decide to collude and share
-information. Is your algorithm still able to preserve the privacy of all
-the members, or could the salary for some of the members be leaked</li>
-<li>Solution 1 will not work! the (i-1)th and (i+1)th person can easily
-calculate the ith people's salery! ([U] is there a way to manipulate the
-order of adding and subtracting such that there is no way they can do
-that?)</li>
-<li>Solution 2: Divide the salery into n pieces and each person give the
-ith piece of their salery to the ith people! Even if everyone in the
-house except for the kth person cheat and try to calculate kth person's
-salery, they cannot do so! ([U] How did you come up with that!)</li>
-<li>Way to come up with a good algorithm: [U] ?
-<ol type="1">
-<li>How you (re)define the problem</li>
-<li>Determines what are the metrics of success</li>
-<li>How to iterate a solution?</li>
-</ol></li>
+<li><p>what happens if <code>k</code> members of the group decide to
+collude and share information. Is your algorithm still able to preserve
+the privacy of all the members, or could the salary for some of the
+members be leaked</p>
+<ul>
+<li>Solution 1 will not work! the (<code>i-1</code>)th and
+(<code>i+1</code>)th person can easily calculate the ith people's
+salery! ([U] is there a way to manipulate the order of adding and
+subtracting such that there is no way they can do that?)</li>
+</ul></li>
+<li><p>Solution 2: Divide the salery into <code>n</code> pieces and each
+person give the <code>i</code>th piece of their salery to the
+<code>i</code>th people! Even if everyone in the house except for the
+<code>k</code>th person cheat and try to calculate <code>k</code>th
+person's salery, they cannot do so! ([U] How did you come up with
+that!)</p></li>
 </ul>
+<ol start="3" type="1">
+<li><p>Way to come up with a good algorithm: [U] ?</p>
+<ol type="1">
+<li><p>How you (re)define the problem</p></li>
+<li><p>Determines what are the metrics of success</p></li>
+<li><p>How to iterate a solution?</p></li>
+</ol></li>
+</ol>
 <h2 id="pancake-flipping">Pancake flipping!</h2>
 <ol type="1">
-<li><p>Description: Try to serve pancakes a stack sorted by size. You
-can only flip the pancakes at the top of the pancake stack. <img
-src="PancakeFlipping.png" alt="Flipping top 3 pancakes" /></p></li>
-<li><p>Show that any pancake flipping algorithm requires at least n
-flips. What do we call such properties of the problem? [U] Check out
-recitation 2</p></li>
+<li>Description:</li>
+</ol>
+<p>Try to serve pancakes a stack sorted by size. You can only flip the
+pancakes at the top of the pancake stack.</p>
+<figure>
+<img src="PancakeFlipping.png" alt="Flipping top 3 pancakes" />
+<figcaption aria-hidden="true">Flipping top 3 pancakes</figcaption>
+</figure>
+<ol start="2" type="1">
+<li>Show that any pancake flipping algorithm requires at least n flips.
+What do we call such properties of the problem? [U] Check out recitation
+2</li>
 </ol>
 <ul>
-<li>A lower bound of the algorithm!</li>
-<li>Consider a possible worst case! <img src="PancakeWorstCase.png" />
-Why is this the worst case? [U] Worst case should differ for different
-algorithms?
+<li><p>A lower bound of the algorithm!</p></li>
+<li><p>Consider a possible worst case! <img
+src="PancakeWorstCase.png" /></p>
+<p>Why is this the worst case? [U] Worst case should differ for
+different algorithms?</p>
 <ul>
-<li>Feature 1: if two consecutive pancakes in the sorted pancake stack
-are together in the unsorted stack then we can treat those pancakes as
-one pancake either with burnt side up or down based on their order. This
-means that if 2 4 are adjacent in the original pancake, we must use at
-least one flip between 2 and 4 to seperate them!</li>
-<li>Feature 2: If the largest pancake is at the bottom we can simply
-ignore it.</li>
-<li>By Feature 1, we need at least n - 1 flips. By feature 2, we need at
-least 1 additional flip to seperate the bottom one and the table! Thus
-the lower bound is at least n flip.</li>
+<li><p>Feature 1: if two consecutive pancakes in the sorted pancake
+stack are together in the unsorted stack then we can treat those
+pancakes as one pancake either with burnt side up or down based on their
+order. This means that if <code>2</code> <code>4</code> are adjacent in
+the original pancake, we must use at least one flip between
+<code>2</code> and <code>4</code> to seperate them!</p></li>
+<li><p>Feature 2: If the largest pancake is at the bottom we can simply
+ignore it.</p></li>
+<li><p>By Feature 1, we need at least <code>n - 1</code> flips. By
+feature 2, we need at least 1 additional flip to seperate the bottom one
+and the table! Thus the lower bound is at least <code>n</code>
+flip.</p></li>
 </ul></li>
 </ul>
 <p>[U] Check out recitation 2 on more about pancake flipping.</p>
@@ -1460,8 +1580,8 @@ the lower bound is at least n flip.</li>
 </ol>
 <ul>
 <li>We are doing sorting when only calculating the cst of swapping
-subarrays. The cost of swapping subarrays of length k would cost
-O(k).</li>
+subarrays. The cost of swapping subarrays of length <code>k</code> would
+cost <span class="math inline">\(O(k)\)</span>.</li>
 </ul>
 <ol start="2" type="1">
 <li>What if we are sorting an array of two element? - Do mergesort!</li>
@@ -1471,7 +1591,8 @@ duplicates.</li>
 <ul>
 <li>Wait, we can do this using the solution in 2! partition is the same
 as sorting an array of two kinds of elements! The time complexity is
-T(n) = 2 * T(n / 2) + O(n log n). [U]</li>
+<span class="math inline">\(T(n) = 2 * T(n / 2) + O(n log n)\)</span>.
+[U]</li>
 </ul>
 <h2 id="random-permutation">Random Permutation</h2>
 <ol type="1">
@@ -1482,27 +1603,29 @@ algorithm!</p></li>
 </ol>
 <ul>
 <li>The possibility of each permuatation to appear in the array should
-be n!</li>
+be <span class="math inline">\(n!\)</span></li>
 </ul>
 <ol start="3" type="1">
 <li><p>Consider the Fisher-Yates / Knuth Shuffle algorithm: Time
-Complexity O(n) and Space complexity O(1)! [U] why is space complexity
-O(1)</p></li>
+Complexity <span class="math inline">\(O(n)\)</span> and Space
+complexity <span class="math inline">\(O(1)\)</span>! [U] why is space
+complexity <span class="math inline">\(O(1)\)</span></p></li>
 <li><p>Solution 2: assign a random number to each element and sort
 it!</p></li>
 </ol>
 <ul>
-<li>Question: what if we meet duplicate numbers?</li>
-<li>If the sorting is stable, simply treat the earlier occurence to be
-the smaller one([U] Is this still random? )</li>
-<li>If not, the sorting would not be stable!</li>
+<li><p>Question: what if we meet duplicate numbers?</p></li>
+<li><p>If the sorting is stable, simply treat the earlier occurence to
+be the smaller one([U] Is this still random? )</p></li>
+<li><p>If not, the sorting would not be stable!</p></li>
 </ul>
 <h2 id="binary-counter-amortized-cost">Binary Counter Amortized
 Cost</h2>
 <ol type="1">
-<li><p>Suppose we have a binary counter, after n increments, what is the
-amortized cost?</p></li>
-<li><p>Simple answer: O(log n). But this is not the case!</p></li>
+<li><p>Suppose we have a binary counter, after <code>n</code>
+increments, what is the amortized cost?</p></li>
+<li><p>Simple answer: <span class="math inline">\(O(log n)\)</span>. But
+this is not the case!</p></li>
 <li><p>Closer look: 2! [U] Seems kind of unclear</p>
 <ul>
 <li><p>Observation: each increament would only change one 0 to
@@ -1517,22 +1640,25 @@ dollar, when we change from 1 to 0, pay 1 dollar.</p></li>
 <li><p>Suppose we have a list of tasks, some of the has constraints like
 A has to be done at least 10 minitues before B, C must be done after D,
 E must be done at most 20 minutes after F...etc</p></li>
-<li><p>Think of this as a DAG problem! Imagine the tasks as nodes and
-the edges as constraints of the nodes, dist[u] means the shortest time
-needed to complete <code>u</code>.</p>
+<li><p>Think of this as a <span class="math inline">\(DAG\)</span>
+problem! Imagine the tasks as nodes and the edges as constraints of the
+nodes, <code>dist[u]</code> means the shortest time needed to complete
+<code>u</code>.</p>
 <ul>
-<li><p>For constraint: A has to be done at least 10 minutes before B.
-this means <span class="math inline">\(dist[A] + 10 &lt;=
-dist[B]\)</span> since in graphs we only have <span
+<li><p>For constraint: <code>A</code> has to be done at least 10 minutes
+before <code>B</code>. this means <span class="math inline">\(dist[A] +
+10 &lt;= dist[B]\)</span> since in graphs we only have <span
 class="math display">\[dist[u] &lt;= dist[v] + weight[u,v]\]</span>, we
 transform the constraint to be <span class="math display">\[dist[A]
-&lt;= dist[B] - 10\]</span>, therefore, the edge between A and B would
-be <span class="math inline">\(-10\)</span>.</p></li>
-<li><p>Now, we add Starting point S with edges of weight 0 connected to
-all nodes and run Bellman-Ford on S.</p></li>
+&lt;= dist[B] - 10\]</span>, therefore, the edge between <code>A</code>
+and <code>B</code> would be <span
+class="math inline">\(-10\)</span>.</p></li>
+<li><p>Now, we add Starting point <code>S</code> with edges of weight 0
+connected to all nodes and run Bellman-Ford on <code>S</code>.</p></li>
 <li><p>Time Complexity: <span class="math inline">\(O(n * m)\)</span>,
-where n, m is the number of tasks and constraints respectfully. ([U] Why
-don't we use topological sort?)</p></li>
+where <code>n</code>, <code>m</code> is the number of tasks and
+constraints respectfully. ([U] Why don't we use topological
+sort?)</p></li>
 </ul></li>
 </ol>
 <h1 id="puzzles">Puzzles:</h1>
@@ -1543,17 +1669,15 @@ don't we use topological sort?)</p></li>
 <li><p>[U]Treasure Island:</p></li>
 </ol>
 <p>You choose a set of keys.</p>
-<p>You can test whether all the good keys are in the set (and
-possibly</p>
-<p>some extra keys). If even one bad key is in the set, then it
-fails.</p>
+<p>You can test whether all the good keys are in the set (and possibly
+some extra keys). If even one bad key is in the set, then it fails.</p>
 <p>Goal: identify exactly the good keys.</p>
 <ol start="4" type="1">
 <li><p>PotW: Gambling for Profit? (Lecture 07 p121)</p></li>
 <li><p>Prisoners! (L10)</p></li>
 </ol>
 <hr />
-<p>** Updated Until:</p>
+<p>Updated Until:</p>
 <p>Lecture 11 p103</p>
 <p>tut 2</p>
 <p>[U] optional questions in tutorials.</p>
@@ -1591,7 +1715,6 @@ target="_blank" rel="noopener" href="https://visualgo.net/training">visualAlgo</
 
           <div class="post-tags">
               <a href="/tags/ComputerScience/" rel="tag"><i class="fa fa-tag"></i> ComputerScience</a>
-              <a href="/tags/HashMap/" rel="tag"><i class="fa fa-tag"></i> HashMap</a>
               <a href="/tags/Java/" rel="tag"><i class="fa fa-tag"></i> Java</a>
               <a href="/tags/Study/" rel="tag"><i class="fa fa-tag"></i> Study</a>
               <a href="/tags/NUS/" rel="tag"><i class="fa fa-tag"></i> NUS</a>
@@ -1601,6 +1724,7 @@ target="_blank" rel="noopener" href="https://visualgo.net/training">visualAlgo</
               <a href="/tags/CS2040S/" rel="tag"><i class="fa fa-tag"></i> CS2040S</a>
               <a href="/tags/Sorting/" rel="tag"><i class="fa fa-tag"></i> Sorting</a>
               <a href="/tags/Tree/" rel="tag"><i class="fa fa-tag"></i> Tree</a>
+              <a href="/tags/HashMap/" rel="tag"><i class="fa fa-tag"></i> HashMap</a>
           </div>
 
         
@@ -1647,14 +1771,14 @@ target="_blank" rel="noopener" href="https://visualgo.net/training">visualAlgo</
       <i class="fa fa-chart-line"></i>
     </span>
       <span>Word count total: </span>
-    <span title="Word count total">187k</span>
+    <span title="Word count total">137k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span>Reading time total &asymp;</span>
-    <span title="Reading time total">2:50</span>
+    <span title="Reading time total">2:04</span>
   </span>
 </div>
 
