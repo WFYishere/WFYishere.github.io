@@ -83,6 +83,57 @@ estimated reading time / the days this website has survived.</p>
 ]]></content>
   </entry>
   <entry>
+    <title>[LeetCode] 242 - Valid Anagram (python)</title>
+    <url>/2024/06/30/LeetCode-242-Valid-Anagram-python/</url>
+    <content><![CDATA[<p>Easy question, help me understand more about python dictionaries.</p>
+<span id="more"></span>
+<p>See the question description <a
+href="https://leetcode.com/problems/valid-anagram/description/">HERE</a></p>
+<h1 id="solution-1---hash-table-common-solution">Solution 1 - Hash Table
+common solution</h1>
+<h2 id="idea">Idea</h2>
+<p>Use Hashtable (in this case a dictionary in java) to store how many
+times each character appears in <code>s</code>, check if the same
+applies to <code>t</code></p>
+<h2 id="code">Code</h2>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">isAnagram</span>(<span class="params">self, s, t</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        :type s: str</span></span><br><span class="line"><span class="string">        :type t: str</span></span><br><span class="line"><span class="string">        :rtype: bool</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(s) != <span class="built_in">len</span>(t):</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line"></span><br><span class="line">        vocab = &#123;&#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> letter <span class="keyword">in</span> s:</span><br><span class="line">            <span class="keyword">if</span> letter <span class="keyword">in</span> vocab:</span><br><span class="line">                vocab[letter] += <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                vocab[letter] = <span class="number">1</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> letter <span class="keyword">in</span> t:</span><br><span class="line">            <span class="keyword">if</span> letter <span class="keyword">in</span> vocab:</span><br><span class="line">                <span class="keyword">if</span> vocab[letter] &lt;= <span class="number">0</span>:</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    vocab[letter] -= <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="performance-analysis">Performance Analysis</h2>
+<p>Time Complexity: O(n), <em>(32 ms)</em></p>
+<p>Space Complexity: O(1), <em>(11.78 MB)</em></p>
+<h1 id="solution-2---numerical-solution">Solution 2 - Numerical
+Solution</h1>
+<h2 id="idea-1">Idea</h2>
+<p>Utilize the python library of Counter</p>
+<p>I knew about this from <a
+href="https://leetcode.com/problems/valid-anagram/solutions/5370114/python-solution-with-only-single-one-line/">here</a></p>
+<h2 id="code-1">Code</h2>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">isAnagram</span>(<span class="params">self, s, t</span>):</span><br><span class="line">        <span class="keyword">return</span> Counter(s) == Counter(t)</span><br><span class="line">        </span><br></pre></td></tr></table></figure>
+<h2 id="performance-analysis-1">Performance Analysis</h2>
+<p>Time Complexity: O(n), <em>(44 ms)</em></p>
+<p>Space Complexity: O(), <em>(11.96 MB)</em></p>
+<h1 id="solution-3---numerical-solution">Solution 3 - Numerical
+Solution</h1>
+<h2 id="idea-2">Idea</h2>
+<p>Numerical solution. See detailed description <a
+href="https://leetcode.com/problems/valid-anagram/solutions/5380383/just-a-fun-quirky-solution/">here</a></p>
+<h2 id="code-2">Code</h2>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">isAnagram</span>(<span class="params">self, s, t</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        :type s: str</span></span><br><span class="line"><span class="string">        :type t: str</span></span><br><span class="line"><span class="string">        :rtype: bool</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        prime_map=[<span class="number">2</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">7</span>,<span class="number">11</span>,<span class="number">13</span>,<span class="number">17</span>,<span class="number">19</span>,<span class="number">23</span>,<span class="number">29</span>,<span class="number">31</span>,<span class="number">37</span>,<span class="number">41</span>,<span class="number">43</span>,<span class="number">47</span>,<span class="number">53</span>,<span class="number">59</span>,<span class="number">61</span>,<span class="number">67</span>,<span class="number">71</span>,<span class="number">73</span>,<span class="number">79</span>,<span class="number">83</span>,<span class="number">89</span>,<span class="number">97</span>,<span class="number">101</span>]</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(s)!=<span class="built_in">len</span>(t):</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        </span><br><span class="line">        ordinal=<span class="keyword">lambda</span> x:<span class="built_in">ord</span>(x)-<span class="number">97</span></span><br><span class="line"></span><br><span class="line">        s_map=<span class="number">1</span></span><br><span class="line">        <span class="keyword">for</span> c <span class="keyword">in</span> s:</span><br><span class="line">            s_map*=prime_map[ordinal(c)]</span><br><span class="line"></span><br><span class="line">        t_map=<span class="number">1</span></span><br><span class="line">        <span class="keyword">for</span> c <span class="keyword">in</span> t:</span><br><span class="line">            t_map*=prime_map[ordinal(c)]</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> t_map==s_map</span><br></pre></td></tr></table></figure>
+<h2 id="performance-analysis-2">Performance Analysis</h2>
+<p>Time Complexity: O(n), <em>(679 ms)</em></p>
+<p>Space Complexity: O(1), <em>(12.28 MB)</em></p>
+]]></content>
+      <categories>
+        <category>Solutions</category>
+        <category>LeetCode</category>
+        <category>Easy</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>Python</tag>
+        <tag>ComputerScience - HashTable - String - Sorting</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Notes for Python</title>
     <url>/2024/06/29/Notes-for-Python/</url>
     <content><![CDATA[<p>Cheatsheet for python basics.</p>
@@ -91,7 +142,7 @@ estimated reading time / the days this website has survived.</p>
 questions and I watched the <a
 href="https://www.youtube.com/watch?v=kqtD5dpn9C8&amp;t=455s">video from
 Mosh about learning python</a>, here's the notes.</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Basics</span></span><br><span class="line">age = <span class="number">20</span></span><br><span class="line">is_online = <span class="literal">False</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># common naming technique</span></span><br><span class="line">first_name = <span class="string">&quot;Mosh&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># receiving input</span></span><br><span class="line">name = <span class="built_in">input</span>(<span class="string">&quot;What is your name? &quot;</span>) <span class="comment"># note that this outputs a string</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello! &quot;</span>+ name)</span><br><span class="line">age = <span class="number">2024</span> - <span class="built_in">int</span>(<span class="string">&quot;2005&quot;</span>)</span><br><span class="line">age = <span class="built_in">str</span>(age)</span><br><span class="line"></span><br><span class="line"><span class="comment"># String</span></span><br><span class="line">course = <span class="string">&#x27;Python for Beginners&#x27;</span></span><br><span class="line">course.find(<span class="string">&#x27;for&#x27;</span>)</span><br><span class="line">course.replace(<span class="string">&#x27;for&#x27;</span>, <span class="string">&#x27;4&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;Python&#x27;</span> <span class="keyword">in</span> course) <span class="comment"># boolean</span></span><br><span class="line"><span class="built_in">print</span>(<span class="number">5</span> * <span class="string">&#x27;*&#x27;</span>) <span class="comment"># *</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Arithmetic Operations</span></span><br><span class="line"><span class="number">10</span> / <span class="number">3</span> <span class="comment"># 3.333</span></span><br><span class="line"><span class="number">10</span> // <span class="number">3</span> <span class="comment"># 3</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Boolean Expression</span></span><br><span class="line"><span class="built_in">print</span>(<span class="keyword">not</span> (price &gt; <span class="number">10</span> <span class="keyword">and</span> price &lt; <span class="number">30</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># if else</span></span><br><span class="line"><span class="keyword">if</span> (temperature &gt; <span class="number">30</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;It&#x27;s a hot day&quot;</span>)</span><br><span class="line"><span class="keyword">elif</span> (temperature &gt; <span class="number">20</span>): </span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;It&#x27;s a nice day&quot;</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;It&#x27;s cold&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># loops</span></span><br><span class="line"><span class="keyword">while</span> i &lt;= <span class="number">5</span>: </span><br><span class="line">    <span class="built_in">print</span>(i)</span><br><span class="line"><span class="keyword">for</span> item <span class="keyword">in</span> names: </span><br><span class="line">    <span class="built_in">print</span>(item)</span><br><span class="line">numbers = <span class="built_in">range</span>(<span class="number">0</span>, <span class="number">5</span>, <span class="number">2</span>) <span class="comment"># start end gap (default 1)</span></span><br><span class="line"><span class="built_in">print</span>(numbers) <span class="comment"># prints: (0, 5), a range object</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># list</span></span><br><span class="line">names = [<span class="number">0</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line">names[<span class="number">1</span>] = <span class="number">1</span></span><br><span class="line"><span class="built_in">print</span>(names[<span class="number">0</span>:<span class="number">3</span>]) <span class="comment"># [1,2,3,4]</span></span><br><span class="line">names.append(<span class="number">6</span>)</span><br><span class="line">names.insert(<span class="number">0</span>, <span class="number">0</span>) <span class="comment"># Lists are mutable</span></span><br><span class="line"><span class="built_in">print</span>(<span class="number">8</span> <span class="keyword">in</span> names)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">len</span>(names))</span><br><span class="line"></span><br><span class="line"><span class="comment"># tuple</span></span><br><span class="line">numbers = (<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>, <span class="number">4</span>, <span class="number">3</span>)</span><br><span class="line">numbers.count(<span class="number">3</span>) <span class="comment"># return 2</span></span><br><span class="line"><span class="comment"># tuples are immutable</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Basics</span></span><br><span class="line">age = <span class="number">20</span></span><br><span class="line">is_online = <span class="literal">False</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># common naming technique</span></span><br><span class="line">first_name = <span class="string">&quot;Mosh&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># receiving input</span></span><br><span class="line">name = <span class="built_in">input</span>(<span class="string">&quot;What is your name? &quot;</span>) <span class="comment"># note that this outputs a string</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello! &quot;</span>+ name)</span><br><span class="line">age = <span class="number">2024</span> - <span class="built_in">int</span>(<span class="string">&quot;2005&quot;</span>)</span><br><span class="line">age = <span class="built_in">str</span>(age)</span><br><span class="line"></span><br><span class="line"><span class="comment"># String</span></span><br><span class="line">course = <span class="string">&#x27;Python for Beginners&#x27;</span></span><br><span class="line">course.find(<span class="string">&#x27;for&#x27;</span>)</span><br><span class="line">course.replace(<span class="string">&#x27;for&#x27;</span>, <span class="string">&#x27;4&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;Python&#x27;</span> <span class="keyword">in</span> course) <span class="comment"># boolean</span></span><br><span class="line"><span class="built_in">print</span>(<span class="number">5</span> * <span class="string">&#x27;*&#x27;</span>) <span class="comment"># *</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Arithmetic Operations</span></span><br><span class="line"><span class="number">10</span> / <span class="number">3</span> <span class="comment"># 3.333</span></span><br><span class="line"><span class="number">10</span> // <span class="number">3</span> <span class="comment"># 3</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Boolean Expression</span></span><br><span class="line"><span class="built_in">print</span>(<span class="keyword">not</span> (price &gt; <span class="number">10</span> <span class="keyword">and</span> price &lt; <span class="number">30</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># if else</span></span><br><span class="line"><span class="keyword">if</span> (temperature &gt; <span class="number">30</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;It&#x27;s a hot day&quot;</span>)</span><br><span class="line"><span class="keyword">elif</span> (temperature &gt; <span class="number">20</span>): </span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;It&#x27;s a nice day&quot;</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;It&#x27;s cold&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># loops</span></span><br><span class="line"><span class="keyword">while</span> i &lt;= <span class="number">5</span>: </span><br><span class="line">    <span class="built_in">print</span>(i)</span><br><span class="line"><span class="keyword">for</span> item <span class="keyword">in</span> names: </span><br><span class="line">    <span class="built_in">print</span>(item)</span><br><span class="line">numbers = <span class="built_in">range</span>(<span class="number">0</span>, <span class="number">5</span>, <span class="number">2</span>) <span class="comment"># start end gap (default 1)</span></span><br><span class="line"><span class="built_in">print</span>(numbers) <span class="comment"># prints: (0, 5), a range object</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># list</span></span><br><span class="line">names = [<span class="number">0</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line">names[<span class="number">1</span>] = <span class="number">1</span></span><br><span class="line"><span class="built_in">print</span>(names[<span class="number">0</span>:<span class="number">3</span>]) <span class="comment"># [1,2,3,4]</span></span><br><span class="line">names.append(<span class="number">6</span>)</span><br><span class="line">names.insert(<span class="number">0</span>, <span class="number">0</span>) <span class="comment"># Lists are mutable</span></span><br><span class="line"><span class="built_in">print</span>(<span class="number">8</span> <span class="keyword">in</span> names)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">len</span>(names))</span><br><span class="line"></span><br><span class="line"><span class="comment"># tuple</span></span><br><span class="line">numbers = (<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>, <span class="number">4</span>, <span class="number">3</span>)</span><br><span class="line">numbers.count(<span class="number">3</span>) <span class="comment"># return 2</span></span><br><span class="line"><span class="comment"># tuples are immutable</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Set </span></span><br><span class="line">this_set = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>&#125;</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">len</span>(this_set)) <span class="comment"># type(this_set)</span></span><br><span class="line">this_set = <span class="built_in">set</span>((<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,))</span><br><span class="line"></span><br><span class="line"><span class="comment"># Dictionary</span></span><br><span class="line">this_dict = &#123;<span class="number">1</span>:<span class="string">&quot;hi&quot;</span>, <span class="number">2</span>: <span class="string">&quot;bye&quot;</span>, <span class="string">&quot;no&quot;</span>: <span class="string">&quot;yes&quot;</span>&#125;</span><br><span class="line"><span class="built_in">print</span>(this_dict[<span class="string">&quot;no&quot;</span>])</span><br><span class="line">this_dict = <span class="built_in">dict</span>(<span class="string">&quot;no&quot;</span> = <span class="string">&quot;hi&quot;</span>, age = <span class="number">36</span>, country = <span class="string">&quot;hello&quot;</span>)</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>Notes</category>
@@ -99,9 +150,9 @@ Mosh about learning python</a>, here's the notes.</p>
         <category>Basics</category>
       </categories>
       <tags>
+        <tag>Study</tag>
         <tag>ComputerScience</tag>
         <tag>Basics</tag>
-        <tag>Study</tag>
         <tag>Python</tag>
         <tag>Language</tag>
         <tag>Learning</tag>
@@ -407,8 +458,8 @@ where I call "backward" thinking.</p>
       </categories>
       <tags>
         <tag>ComputerScience</tag>
-        <tag>Java</tag>
         <tag>Tree</tag>
+        <tag>Java</tag>
         <tag>LeetCode</tag>
         <tag>Algorithems</tag>
         <tag>BruteForce</tag>
@@ -443,8 +494,8 @@ in the range [0, 100].}\)</span></p>
       </categories>
       <tags>
         <tag>ComputerScience</tag>
-        <tag>Java</tag>
         <tag>Tree</tag>
+        <tag>Java</tag>
         <tag>LeetCode</tag>
         <tag>Algorithems</tag>
         <tag>BruteForce</tag>
@@ -963,8 +1014,8 @@ up with the two pointers</p></li>
       </categories>
       <tags>
         <tag>ComputerScience</tag>
-        <tag>Java</tag>
         <tag>HashMap</tag>
+        <tag>Java</tag>
         <tag>LeetCode</tag>
         <tag>Algorithems</tag>
         <tag>BruteForce</tag>
@@ -1010,8 +1061,8 @@ simultaneously.</p>
       </categories>
       <tags>
         <tag>ComputerScience</tag>
-        <tag>Java</tag>
         <tag>DataStructure</tag>
+        <tag>Java</tag>
         <tag>LeetCode</tag>
         <tag>Algorithems</tag>
         <tag>BruteForce</tag>
@@ -1118,9 +1169,9 @@ Thus, we can use sorting algorithm on the strings.</p>
       </categories>
       <tags>
         <tag>ComputerScience</tag>
-        <tag>Java</tag>
         <tag>Sorting</tag>
         <tag>HashMap</tag>
+        <tag>Java</tag>
         <tag>LeetCode</tag>
         <tag>Algorithems</tag>
         <tag>BruteForce</tag>
@@ -1614,8 +1665,8 @@ class="math inline">\(10^9\)</span>)</p>
       </categories>
       <tags>
         <tag>ComputerScience</tag>
-        <tag>Java</tag>
         <tag>HashMap</tag>
+        <tag>Java</tag>
         <tag>LeetCode</tag>
         <tag>Algorithems</tag>
         <tag>BruteForce</tag>
@@ -1753,8 +1804,8 @@ hashmaps.</p>
       </categories>
       <tags>
         <tag>ComputerScience</tag>
-        <tag>Java</tag>
         <tag>HashMap</tag>
+        <tag>Java</tag>
         <tag>LeetCode</tag>
         <tag>Algorithems</tag>
         <tag>BruteForce</tag>
@@ -3469,17 +3520,17 @@ href="https://visualgo.net/training">visualAlgo</a></p>
         <category>ComputerScience</category>
       </categories>
       <tags>
-        <tag>ComputerScience</tag>
-        <tag>Java</tag>
         <tag>Study</tag>
-        <tag>NUS</tag>
+        <tag>ComputerScience</tag>
         <tag>Algorithm</tag>
         <tag>DataStructure</tag>
         <tag>CheatSheet</tag>
+        <tag>NUS</tag>
         <tag>CS2040S</tag>
         <tag>Sorting</tag>
         <tag>Tree</tag>
         <tag>HashMap</tag>
+        <tag>Java</tag>
       </tags>
   </entry>
   <entry>
@@ -3890,15 +3941,15 @@ href="https://bartoszmilewski.com/2014/10/28/category-theory-for-programmers-the
         <category>ComputerScience</category>
       </categories>
       <tags>
+        <tag>Study</tag>
         <tag>ComputerScience</tag>
+        <tag>NUS</tag>
         <tag>Java</tag>
         <tag>OOP</tag>
         <tag>Coding</tag>
         <tag>Basics</tag>
-        <tag>Study</tag>
         <tag>Notes</tag>
         <tag>Conclusion</tag>
-        <tag>NUS</tag>
       </tags>
   </entry>
   <entry>
@@ -5012,13 +5063,13 @@ delay slot.</p></li>
       <categories>
         <category>Notes</category>
         <category>ComputerScience</category>
-        <category>NUSCourse</category>
         <category>ComputerOrganization</category>
+        <category>NUSCourse</category>
         <category>ComputerScience</category>
       </categories>
       <tags>
-        <tag>ComputerScience</tag>
         <tag>Study</tag>
+        <tag>ComputerScience</tag>
         <tag>Notes</tag>
         <tag>C</tag>
         <tag>MIPS</tag>
