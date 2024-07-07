@@ -83,6 +83,38 @@ estimated reading time / the days this website has survived.</p>
 ]]></content>
   </entry>
   <entry>
+    <title>[LeetCode] 49 - Group Anagrams (python)</title>
+    <url>/2024/07/07/LeetCode-49-Group-Anagrams-python/</url>
+    <content><![CDATA[<p>Easy question with use of python dictionaries and sorting strings</p>
+<span id="more"></span>
+<p>See the question description <a
+href="https://leetcode.com/problems/group-anagrams/description/">HERE</a></p>
+<h1 id="solution-1---sort-string-and-put-in-dictionary">Solution 1 -
+Sort String and Put in Dictionary</h1>
+<h2 id="idea">Idea</h2>
+<p>Sort the string and use the sorted string as key to put in
+dictionary.</p>
+<p>Note that the range of length of string is 100, so we can sort the
+string without using a lot of time.</p>
+<h2 id="code">Code</h2>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">groupAnagrams</span>(<span class="params">strs</span>):</span><br><span class="line">    d = &#123;&#125;</span><br><span class="line">    str_sorted = <span class="string">&#x27;&#x27;</span>.join(<span class="built_in">sorted</span>(strs[<span class="number">0</span>])) <span class="comment"># sort string method in python</span></span><br><span class="line">    <span class="built_in">print</span>(str_sorted)</span><br><span class="line">    <span class="keyword">for</span> <span class="built_in">str</span> <span class="keyword">in</span> strs:</span><br><span class="line">        str_sorted = <span class="string">&#x27;&#x27;</span>.join(<span class="built_in">sorted</span>(<span class="built_in">str</span>))</span><br><span class="line">        <span class="built_in">print</span> (str_sorted)</span><br><span class="line">        <span class="keyword">if</span> str_sorted <span class="keyword">in</span> d:</span><br><span class="line">            d[str_sorted].append(<span class="built_in">str</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            d[str_sorted] = [<span class="built_in">str</span>]</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> d.values()</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(groupAnagrams ([<span class="string">&quot;eat&quot;</span>,<span class="string">&quot;tea&quot;</span>,<span class="string">&quot;tan&quot;</span>,<span class="string">&quot;ate&quot;</span>,<span class="string">&quot;nat&quot;</span>,<span class="string">&quot;bat&quot;</span>]))</span><br></pre></td></tr></table></figure>
+<h2 id="performance-analysis">Performance Analysis</h2>
+<p>Time Complexity: O(n * k log k), <em>(102 ms)</em>, where n is the
+number of strings and k is the length of the string</p>
+<p>Space Complexity: O(n), <em>(15.49 MB)</em></p>
+]]></content>
+      <categories>
+        <category>Solutions</category>
+        <category>LeetCode</category>
+        <category>Medium</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>Python</tag>
+        <tag>ComputerScience - HashTable - String - Sorting - Array</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>[LeetCode] 1 - Two Sum (Python)</title>
     <url>/2024/07/04/LeetCode-1-Two-Sum-Python/</url>
     <content><![CDATA[<p>Easy question with two solutions. Help me understand more about
@@ -191,10 +223,10 @@ Mosh about learning python</a>, here's the notes.</p>
         <category>Basics</category>
       </categories>
       <tags>
-        <tag>Study</tag>
+        <tag>Python</tag>
         <tag>ComputerScience</tag>
         <tag>Basics</tag>
-        <tag>Python</tag>
+        <tag>Study</tag>
         <tag>Language</tag>
         <tag>Learning</tag>
       </tags>
@@ -231,10 +263,10 @@ href="https://leetcode.com/problems/contains-duplicate/solutions/5369551/one-lin
         <category>Easy</category>
       </categories>
       <tags>
-        <tag>ComputerScience</tag>
-        <tag>Sorting</tag>
         <tag>LeetCode</tag>
         <tag>Python</tag>
+        <tag>ComputerScience</tag>
+        <tag>Sorting</tag>
         <tag>Array</tag>
         <tag>HashTable</tag>
       </tags>
@@ -498,10 +530,10 @@ where I call "backward" thinking.</p>
         <category>Medium</category>
       </categories>
       <tags>
-        <tag>ComputerScience</tag>
-        <tag>Tree</tag>
-        <tag>Java</tag>
         <tag>LeetCode</tag>
+        <tag>ComputerScience</tag>
+        <tag>Java</tag>
+        <tag>Tree</tag>
         <tag>Algorithems</tag>
         <tag>BruteForce</tag>
         <tag>BinaryTree</tag>
@@ -534,14 +566,14 @@ in the range [0, 100].}\)</span></p>
         <category>Easy</category>
       </categories>
       <tags>
-        <tag>ComputerScience</tag>
-        <tag>Tree</tag>
-        <tag>Java</tag>
         <tag>LeetCode</tag>
+        <tag>ComputerScience</tag>
+        <tag>Java</tag>
+        <tag>Tree</tag>
         <tag>Algorithems</tag>
         <tag>BruteForce</tag>
-        <tag>Recursion</tag>
         <tag>BinaryTree</tag>
+        <tag>Recursion</tag>
       </tags>
   </entry>
   <entry>
@@ -581,9 +613,9 @@ variables changes.</p>
         <category>Hard</category>
       </categories>
       <tags>
+        <tag>LeetCode</tag>
         <tag>ComputerScience</tag>
         <tag>Java</tag>
-        <tag>LeetCode</tag>
         <tag>Algorithems</tag>
         <tag>BruteForce</tag>
         <tag>HashTable</tag>
@@ -639,9 +671,9 @@ Pacific and Atlantic oceans.</p>
         <category>Medium</category>
       </categories>
       <tags>
+        <tag>LeetCode</tag>
         <tag>ComputerScience</tag>
         <tag>Java</tag>
-        <tag>LeetCode</tag>
         <tag>Algorithems</tag>
         <tag>BruteForce</tag>
         <tag>Array</tag>
@@ -687,9 +719,9 @@ palindrome.</p>
         <category>Medium</category>
       </categories>
       <tags>
+        <tag>LeetCode</tag>
         <tag>ComputerScience</tag>
         <tag>Java</tag>
-        <tag>LeetCode</tag>
         <tag>Algorithems</tag>
         <tag>BruteForce</tag>
         <tag>String</tag>
@@ -729,9 +761,9 @@ reached the end of node.</p>
         <category>Easy</category>
       </categories>
       <tags>
+        <tag>LeetCode</tag>
         <tag>ComputerScience</tag>
         <tag>Java</tag>
-        <tag>LeetCode</tag>
         <tag>Algorithems</tag>
         <tag>BruteForce</tag>
       </tags>
@@ -791,9 +823,9 @@ the choice of DFS.</p>
         <category>Medium</category>
       </categories>
       <tags>
+        <tag>LeetCode</tag>
         <tag>ComputerScience</tag>
         <tag>Java</tag>
-        <tag>LeetCode</tag>
         <tag>Algorithems</tag>
         <tag>BruteForce</tag>
         <tag>Array</tag>
@@ -831,9 +863,9 @@ digits, symbols and spaces.}\)</span></p>
         <category>Medium</category>
       </categories>
       <tags>
+        <tag>LeetCode</tag>
         <tag>ComputerScience</tag>
         <tag>Java</tag>
-        <tag>LeetCode</tag>
         <tag>Algorithems</tag>
         <tag>BruteForce</tag>
         <tag>SlidingWindow</tag>
@@ -884,9 +916,9 @@ gradually shrink it to where the two pointers each.</p>
         <category>Medium</category>
       </categories>
       <tags>
+        <tag>LeetCode</tag>
         <tag>ComputerScience</tag>
         <tag>Java</tag>
-        <tag>LeetCode</tag>
         <tag>Algorithems</tag>
         <tag>BruteForce</tag>
       </tags>
@@ -937,9 +969,9 @@ I learned about the sliding window technique. It's really genius.</p>
         <category>Medium</category>
       </categories>
       <tags>
+        <tag>LeetCode</tag>
         <tag>ComputerScience</tag>
         <tag>Java</tag>
-        <tag>LeetCode</tag>
         <tag>Algorithems</tag>
         <tag>BruteForce</tag>
         <tag>SlidingWindow</tag>
@@ -984,9 +1016,9 @@ href="https://wfyishere.github.io/2024/06/02/LeetCode-33-Search-in-Rotated-Sorte
         <category>Medium</category>
       </categories>
       <tags>
+        <tag>LeetCode</tag>
         <tag>ComputerScience</tag>
         <tag>Java</tag>
-        <tag>LeetCode</tag>
         <tag>Algorithems</tag>
         <tag>BruteForce</tag>
         <tag>Array</tag>
@@ -1054,10 +1086,10 @@ up with the two pointers</p></li>
         <category>Easy</category>
       </categories>
       <tags>
-        <tag>ComputerScience</tag>
-        <tag>HashMap</tag>
-        <tag>Java</tag>
         <tag>LeetCode</tag>
+        <tag>ComputerScience</tag>
+        <tag>Java</tag>
+        <tag>HashMap</tag>
         <tag>Algorithems</tag>
         <tag>BruteForce</tag>
         <tag>LinkedList</tag>
@@ -1101,15 +1133,15 @@ simultaneously.</p>
         <category>Easy</category>
       </categories>
       <tags>
-        <tag>ComputerScience</tag>
-        <tag>DataStructure</tag>
-        <tag>Java</tag>
         <tag>LeetCode</tag>
+        <tag>ComputerScience</tag>
+        <tag>Java</tag>
+        <tag>DataStructure</tag>
         <tag>Algorithems</tag>
         <tag>BruteForce</tag>
         <tag>LinkedList</tag>
-        <tag>List</tag>
         <tag>Recursion</tag>
+        <tag>List</tag>
         <tag>Iteration</tag>
       </tags>
   </entry>
@@ -1154,9 +1186,9 @@ rotated, then binary search on the unrotated subarray.</p>
         <category>Easy</category>
       </categories>
       <tags>
+        <tag>LeetCode</tag>
         <tag>ComputerScience</tag>
         <tag>Java</tag>
-        <tag>LeetCode</tag>
         <tag>Algorithems</tag>
         <tag>BruteForce</tag>
         <tag>BinarySearch</tag>
@@ -1209,11 +1241,11 @@ Thus, we can use sorting algorithm on the strings.</p>
         <category>Medium</category>
       </categories>
       <tags>
+        <tag>LeetCode</tag>
         <tag>ComputerScience</tag>
+        <tag>Java</tag>
         <tag>Sorting</tag>
         <tag>HashMap</tag>
-        <tag>Java</tag>
-        <tag>LeetCode</tag>
         <tag>Algorithems</tag>
         <tag>BruteForce</tag>
         <tag>Array</tag>
@@ -1275,9 +1307,9 @@ debugging! I feel like my coding skills still needs improving.</p>
         <category>Medium</category>
       </categories>
       <tags>
+        <tag>LeetCode</tag>
         <tag>ComputerScience</tag>
         <tag>Java</tag>
-        <tag>LeetCode</tag>
         <tag>Algorithems</tag>
         <tag>BruteForce</tag>
         <tag>Mathematics</tag>
@@ -1325,12 +1357,12 @@ we just need to sort the intervals and intuitively merge them.</p>
         <category>Medium</category>
       </categories>
       <tags>
+        <tag>LeetCode</tag>
         <tag>ComputerScience</tag>
         <tag>Java</tag>
-        <tag>LeetCode</tag>
         <tag>Algorithems</tag>
-        <tag>BruteForce</tag>
         <tag>Sort</tag>
+        <tag>BruteForce</tag>
       </tags>
   </entry>
   <entry>
@@ -1386,9 +1418,9 @@ E.g. Low-High Pointer is significantly easier approach here.</p>
         <category>Medium</category>
       </categories>
       <tags>
+        <tag>LeetCode</tag>
         <tag>ComputerScience</tag>
         <tag>Java</tag>
-        <tag>LeetCode</tag>
         <tag>Algorithems</tag>
         <tag>BruteForce</tag>
       </tags>
@@ -1436,9 +1468,9 @@ because I peeked at the solution first QwQ.</p>
         <category>Easy</category>
       </categories>
       <tags>
+        <tag>LeetCode</tag>
         <tag>ComputerScience</tag>
         <tag>Java</tag>
-        <tag>LeetCode</tag>
         <tag>Algorithems</tag>
         <tag>BruteForce</tag>
       </tags>
@@ -1565,9 +1597,9 @@ than CS!</p>
         <category>Easy</category>
       </categories>
       <tags>
+        <tag>LeetCode</tag>
         <tag>ComputerScience</tag>
         <tag>Java</tag>
-        <tag>LeetCode</tag>
         <tag>Algorithems</tag>
         <tag>BruteForce</tag>
         <tag>Recursion</tag>
@@ -1617,9 +1649,9 @@ is considered false. That's why we have to use stack structure.</p>
         <category>Easy</category>
       </categories>
       <tags>
+        <tag>LeetCode</tag>
         <tag>ComputerScience</tag>
         <tag>Java</tag>
-        <tag>LeetCode</tag>
         <tag>Algorithems</tag>
         <tag>BruteForce</tag>
       </tags>
@@ -1665,9 +1697,9 @@ solution</p>
         <category>Easy</category>
       </categories>
       <tags>
+        <tag>LeetCode</tag>
         <tag>ComputerScience</tag>
         <tag>Java</tag>
-        <tag>LeetCode</tag>
         <tag>Algorithems</tag>
         <tag>BruteForce</tag>
       </tags>
@@ -1705,13 +1737,13 @@ class="math inline">\(10^9\)</span>)</p>
         <category>Easy</category>
       </categories>
       <tags>
-        <tag>ComputerScience</tag>
-        <tag>HashMap</tag>
-        <tag>Java</tag>
         <tag>LeetCode</tag>
+        <tag>ComputerScience</tag>
+        <tag>Java</tag>
+        <tag>HashMap</tag>
         <tag>Algorithems</tag>
-        <tag>BruteForce</tag>
         <tag>Sort</tag>
+        <tag>BruteForce</tag>
       </tags>
   </entry>
   <entry>
@@ -1747,9 +1779,9 @@ price since day i, and try to find out largest
         <category>Easy</category>
       </categories>
       <tags>
+        <tag>LeetCode</tag>
         <tag>ComputerScience</tag>
         <tag>Java</tag>
-        <tag>LeetCode</tag>
         <tag>Algorithems</tag>
         <tag>BruteForce</tag>
       </tags>
@@ -1844,13 +1876,13 @@ hashmaps.</p>
         <category>Easy</category>
       </categories>
       <tags>
-        <tag>ComputerScience</tag>
-        <tag>HashMap</tag>
-        <tag>Java</tag>
         <tag>LeetCode</tag>
+        <tag>ComputerScience</tag>
+        <tag>Java</tag>
+        <tag>HashMap</tag>
         <tag>Algorithems</tag>
-        <tag>BruteForce</tag>
         <tag>Sort</tag>
+        <tag>BruteForce</tag>
       </tags>
   </entry>
   <entry>
@@ -3561,17 +3593,17 @@ href="https://visualgo.net/training">visualAlgo</a></p>
         <category>ComputerScience</category>
       </categories>
       <tags>
-        <tag>Study</tag>
         <tag>ComputerScience</tag>
+        <tag>Java</tag>
+        <tag>Study</tag>
+        <tag>NUS</tag>
         <tag>Algorithm</tag>
         <tag>DataStructure</tag>
         <tag>CheatSheet</tag>
-        <tag>NUS</tag>
         <tag>CS2040S</tag>
         <tag>Sorting</tag>
         <tag>Tree</tag>
         <tag>HashMap</tag>
-        <tag>Java</tag>
       </tags>
   </entry>
   <entry>
@@ -3982,15 +4014,15 @@ href="https://bartoszmilewski.com/2014/10/28/category-theory-for-programmers-the
         <category>ComputerScience</category>
       </categories>
       <tags>
-        <tag>Study</tag>
         <tag>ComputerScience</tag>
-        <tag>NUS</tag>
         <tag>Java</tag>
         <tag>OOP</tag>
         <tag>Coding</tag>
         <tag>Basics</tag>
+        <tag>Study</tag>
         <tag>Notes</tag>
         <tag>Conclusion</tag>
+        <tag>NUS</tag>
       </tags>
   </entry>
   <entry>
@@ -5104,13 +5136,13 @@ delay slot.</p></li>
       <categories>
         <category>Notes</category>
         <category>ComputerScience</category>
-        <category>NUSCourse</category>
         <category>ComputerOrganization</category>
+        <category>NUSCourse</category>
         <category>ComputerScience</category>
       </categories>
       <tags>
-        <tag>Study</tag>
         <tag>ComputerScience</tag>
+        <tag>Study</tag>
         <tag>Notes</tag>
         <tag>C</tag>
         <tag>MIPS</tag>
