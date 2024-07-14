@@ -83,6 +83,36 @@ estimated reading time / the days this website has survived.</p>
 ]]></content>
   </entry>
   <entry>
+    <title>[LeetCode] 20 - Valid Parentheses (python)</title>
+    <url>/2024/07/15/LeetCode-20-Valid-Parentheses-python/</url>
+    <content><![CDATA[<p>Simple question, help me understand more about Leetcode stack</p>
+<span id="more"></span>
+<p>See the question description <a
+href="https://leetcode.com/problems/valid-parentheses/description/">HERE</a></p>
+<h1 id="solution-1---stack">Solution 1 - Stack</h1>
+<h2 id="idea">Idea</h2>
+<p>Use a stack to store the left parentheses. If we encounter a left
+parentheses, we add them, if encounter a right parentheses, we check if
+the top element is the respective left parentheses.</p>
+<p>Finally, we check if stack is empty at the end.</p>
+<h2 id="code">Code</h2>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">isValid</span>(<span class="params">self, s</span>):</span><br><span class="line">        stack = []</span><br><span class="line">        <span class="built_in">dict</span> = &#123;<span class="string">&#x27;]&#x27;</span>:<span class="string">&#x27;[&#x27;</span>, <span class="string">&#x27;&#125;&#x27;</span>:<span class="string">&#x27;&#123;&#x27;</span>, <span class="string">&#x27;)&#x27;</span>:<span class="string">&#x27;(&#x27;</span>&#125;</span><br><span class="line">        <span class="keyword">for</span> char <span class="keyword">in</span> s:</span><br><span class="line">            <span class="keyword">if</span> (char == <span class="string">&#x27;(&#x27;</span> <span class="keyword">or</span> char == <span class="string">&#x27;[&#x27;</span> <span class="keyword">or</span> char == <span class="string">&#x27;&#123;&#x27;</span>):</span><br><span class="line">                stack.append(char)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">if</span> (stack != [] <span class="keyword">and</span> stack[-<span class="number">1</span>] == <span class="built_in">dict</span>[char]):</span><br><span class="line">                    stack.pop()</span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">return</span> stack == []</span><br></pre></td></tr></table></figure>
+<h2 id="performance-analysis">Performance Analysis</h2>
+<p>Time Complexity: O(n), <em>(12 ms)</em></p>
+<p>Space Complexity: O(n), <em>(11.6 MB)</em></p>
+]]></content>
+      <categories>
+        <category>Solutions</category>
+        <category>LeetCode</category>
+        <category>Easy</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>Python</tag>
+        <tag>ComputerScience - String - Stack</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>[LeetCode] 42 - Trapping Rain Water</title>
     <url>/2024/07/14/LeetCode-42-Trapping-Rain-Water/</url>
     <content><![CDATA[<p>This is so hard :C Couldn't think about adding water for each column.
@@ -1218,8 +1248,8 @@ up with the two pointers</p></li>
         <tag>Java</tag>
         <tag>LeetCode</tag>
         <tag>Algorithems</tag>
-        <tag>BruteForce</tag>
         <tag>HashMap</tag>
+        <tag>BruteForce</tag>
         <tag>LinkedList</tag>
       </tags>
   </entry>
@@ -1373,9 +1403,9 @@ Thus, we can use sorting algorithm on the strings.</p>
         <tag>Java</tag>
         <tag>LeetCode</tag>
         <tag>Algorithems</tag>
+        <tag>HashMap</tag>
         <tag>BruteForce</tag>
         <tag>Sorting</tag>
-        <tag>HashMap</tag>
         <tag>Array</tag>
         <tag>HashTable</tag>
         <tag>String</tag>
@@ -1489,8 +1519,8 @@ we just need to sort the intervals and intuitively merge them.</p>
         <tag>Java</tag>
         <tag>LeetCode</tag>
         <tag>Algorithems</tag>
-        <tag>BruteForce</tag>
         <tag>Sort</tag>
+        <tag>BruteForce</tag>
       </tags>
   </entry>
   <entry>
@@ -1869,9 +1899,9 @@ class="math inline">\(10^9\)</span>)</p>
         <tag>Java</tag>
         <tag>LeetCode</tag>
         <tag>Algorithems</tag>
-        <tag>BruteForce</tag>
         <tag>HashMap</tag>
         <tag>Sort</tag>
+        <tag>BruteForce</tag>
       </tags>
   </entry>
   <entry>
@@ -2008,9 +2038,9 @@ hashmaps.</p>
         <tag>Java</tag>
         <tag>LeetCode</tag>
         <tag>Algorithems</tag>
-        <tag>BruteForce</tag>
         <tag>HashMap</tag>
         <tag>Sort</tag>
+        <tag>BruteForce</tag>
       </tags>
   </entry>
   <entry>
@@ -3725,13 +3755,13 @@ href="https://visualgo.net/training">visualAlgo</a></p>
         <tag>Java</tag>
         <tag>Study</tag>
         <tag>NUS</tag>
+        <tag>HashMap</tag>
         <tag>Algorithm</tag>
         <tag>DataStructure</tag>
         <tag>CheatSheet</tag>
         <tag>CS2040S</tag>
         <tag>Sorting</tag>
         <tag>Tree</tag>
-        <tag>HashMap</tag>
       </tags>
   </entry>
   <entry>
@@ -5265,8 +5295,8 @@ delay slot.</p></li>
         <category>Notes</category>
         <category>ComputerScience</category>
         <category>NUSCourse</category>
-        <category>ComputerOrganization</category>
         <category>ComputerScience</category>
+        <category>ComputerOrganization</category>
       </categories>
       <tags>
         <tag>ComputerScience</tag>
