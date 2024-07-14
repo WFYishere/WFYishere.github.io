@@ -83,6 +83,112 @@ estimated reading time / the days this website has survived.</p>
 ]]></content>
   </entry>
   <entry>
+    <title>[LeetCode] 15 - 3Sum (python)</title>
+    <url>/2024/07/14/LeetCode-15-3Sum-python/</url>
+    <content><![CDATA[<p>Intersting question, helps me understand more about sets, lists and
+tuplets.</p>
+<span id="more"></span>
+<p>See the question description <a
+href="https://leetcode.com/problems/3sum/description/">HERE</a></p>
+<h1 id="solution-1---utilize-two-sum-and-iterate-array">Solution 1 -
+Utilize Two Sum and Iterate Array</h1>
+<h2 id="idea">Idea</h2>
+<p>For each element in <code>nums</code>, use twoSum to find elements
+that add up to <code>-nums[i]</code>.</p>
+<p>Here we only search for elements since i because we don't need
+duplicate answers.</p>
+<p>Also, we use sets to prevent duplicate answers (e.g. [-1,-1,-1,2,2],
+when i = 0, that is, we are trying to find elements that add to 1 in
+[-1,-1,2,2], twoSum would return [[-1,2][-1,2]])</p>
+<h2 id="code">Code</h2>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">threeSum</span>(<span class="params">self, nums</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        :type nums: List[int]</span></span><br><span class="line"><span class="string">        :rtype: List[List[int]]</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        my_set = <span class="built_in">set</span>()</span><br><span class="line">        n = <span class="built_in">len</span>(nums)</span><br><span class="line"></span><br><span class="line">        nums.sort()</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n - <span class="number">2</span>):</span><br><span class="line">            lst = self.twoSum(nums, -nums[i], i + <span class="number">1</span>, n - <span class="number">1</span>)</span><br><span class="line">            <span class="comment"># find two numbers that add up to -nums[i] from nums[i+1] to nums[n-1]</span></span><br><span class="line">            curr_ans = [[nums[i]] + triplets <span class="keyword">for</span> triplets <span class="keyword">in</span> lst]</span><br><span class="line">            <span class="comment"># add nums[i] to the triplets</span></span><br><span class="line">            my_set.update(<span class="built_in">map</span>(<span class="built_in">tuple</span>, curr_ans))</span><br><span class="line">            <span class="comment"># turn the lists in curr_ans into tuplets because sets only allow immutable elements</span></span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">list</span>(my_set)</span><br><span class="line">        <span class="comment"># transform set to list.</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">twoSum</span>(<span class="params">self, numbers, target, start, end</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        :type numbers: List[int]</span></span><br><span class="line"><span class="string">        :type target: int</span></span><br><span class="line"><span class="string">        :rtype: List[int]</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        left = start</span><br><span class="line">        right = end</span><br><span class="line">        lst = []</span><br><span class="line">        <span class="keyword">while</span> (left &lt; right):</span><br><span class="line">            <span class="keyword">if</span> (numbers[left] + numbers[right] == target):</span><br><span class="line">                lst.append([numbers[left], numbers[right]])</span><br><span class="line">                left += <span class="number">1</span></span><br><span class="line">                end -= <span class="number">1</span></span><br><span class="line">            <span class="keyword">elif</span> (numbers[left] + numbers[right] &lt; target):</span><br><span class="line">                left += <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                right -= <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> lst</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="performance-analysis">Performance Analysis</h2>
+<p>Time Complexity: O(n^2), <em>(2148 ms)</em></p>
+<p>Space Complexity: O(n), <em>(15.56 MB)</em></p>
+]]></content>
+      <categories>
+        <category>Solutions</category>
+        <category>LeetCode</category>
+        <category>Medium</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>Python</tag>
+        <tag>ComputerScience - Array - TwoPointers - Sorting</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[LeetCode] 167 - Two Sum II - Input Array Is Sorted</title>
+    <url>/2024/07/14/LeetCode-167-Two-Sum-II-Input-Array-Is-Sorted/</url>
+    <content><![CDATA[<p>Easy question with two pointers.</p>
+<span id="more"></span>
+<p>See the question description <a
+href="https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/">HERE</a></p>
+<h1 id="solution-1---two-pointers">Solution 1 - Two Pointers</h1>
+<h2 id="idea">Idea</h2>
+<p>use two pointers left and right and move them to the correct
+position. See the code below.</p>
+<h2 id="code">Code</h2>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">twoSum</span>(<span class="params">self, numbers, target</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        :type numbers: List[int]</span></span><br><span class="line"><span class="string">        :type target: int</span></span><br><span class="line"><span class="string">        :rtype: List[int]</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        left = <span class="number">0</span></span><br><span class="line">        right = <span class="built_in">len</span>(numbers) - <span class="number">1</span></span><br><span class="line">        <span class="keyword">while</span> (left &lt; right):</span><br><span class="line">            <span class="keyword">if</span> (numbers[left] + numbers[right] == target):</span><br><span class="line">                <span class="keyword">return</span> [left + <span class="number">1</span>, right + <span class="number">1</span>]</span><br><span class="line">            <span class="keyword">elif</span> (numbers[left] + numbers[right] &lt; target):</span><br><span class="line">                left += <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                right -= <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span></span><br></pre></td></tr></table></figure>
+<h2 id="performance-analysis">Performance Analysis</h2>
+<p>Time Complexity: O(n), <em>(95 ms)</em></p>
+<p>Space Complexity: O(1), <em>(12.56 MB)</em></p>
+<h1 id="solution-2no-code---binary-search">Solution 2(no code) - Binary
+Search</h1>
+<h2 id="idea-1">Idea</h2>
+<p>Iterate through the array, for each number <code>num</code>, use
+binary search to find <code>target - num</code></p>
+<p>Optimization: Since we are iterating the array from left to right,
+say that the search ends at <code>index2</code> for
+<code>numbers[index1]</code> in the array, and
+<code>numbers[index1] + numbers[index2] != target</code>, We can know
+that next time, we just need to perform binary search from
+<code>index1 + 1, index2</code></p>
+<h2 id="performance-analysis-1">Performance Analysis</h2>
+<p>Time Complexity: O(n) ([U] Need Precise Proof), <em>(95 ms)</em></p>
+<p>Space Complexity: O(1), <em>(12.56 MB)</em></p>
+]]></content>
+      <categories>
+        <category>Solutions</category>
+        <category>LeetCode</category>
+        <category>Medium</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>Python</tag>
+        <tag>ComputerScience - Array - Twopointers - BinarySearch</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[LeetCode] 125 - Valid Palindrome</title>
+    <url>/2024/07/14/LeetCode-125-Valid-Palindrome/</url>
+    <content><![CDATA[<p>Easy question helps me understand more on split and strins.</p>
+<span id="more"></span>
+<p>See the question description <a
+href="https://leetcode.com/problems/valid-palindrome/description/">HERE</a></p>
+<h1
+id="solution-1---multiple-paths-using-python-built-in-method-for-string">Solution
+1 - Multiple paths using python built-in method for string</h1>
+<h2 id="idea">Idea</h2>
+<p>Ideas explained in the comments of the code.</p>
+<h2 id="code">Code</h2>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">isPalindrome</span>(<span class="params">self, s</span>):</span><br><span class="line">        <span class="comment"># s_lowercase = str([lower(char) for char in s])</span></span><br><span class="line">        s_lowercase = s.lower()</span><br><span class="line">        <span class="comment"># Alternative 1: s_no_space = s_lowercase.replace(&quot; &quot;, &quot;&quot;) etc.</span></span><br><span class="line">        <span class="comment"># Alternative 2: s_no_space = re.sub(&#x27;[^a-z0-9]+&#x27;, &#x27;&#x27;, s_lowercase)</span></span><br><span class="line">        <span class="comment"># re.sub(pattern, repl, string, count=0, flags=0)</span></span><br><span class="line">        <span class="comment"># the function replace maximum of count number of character in &#x27;string&#x27; with &#x27;repl&#x27;</span></span><br><span class="line">        <span class="comment"># when the character matches &#x27;pattern&#x27; (count = 0 means any amount)</span></span><br><span class="line">        <span class="comment"># [^a-z0-9]: ^ means negation,</span></span><br><span class="line">        <span class="comment"># Alternative 3: s_no_space = &#x27;&#x27;.join(filter(str.isalnum, s_lowercase))</span></span><br><span class="line">        <span class="comment"># filter(boolean_function, iterable)</span></span><br><span class="line">        s_no_space = <span class="string">&#x27;&#x27;</span>.join([char <span class="keyword">for</span> char <span class="keyword">in</span> s_lowercase <span class="keyword">if</span> char.isalnum()])</span><br><span class="line">        <span class="comment"># &#x27;char&#x27;.join(str) joins each string in the list with the seperator &#x27;char&#x27;, here it is empty.</span></span><br><span class="line">        s_flip = s_no_space[::-<span class="number">1</span>]</span><br><span class="line">        <span class="comment"># [start:end:step], by default if step&lt;0, start = end of array, end = start of array.</span></span><br><span class="line">        <span class="keyword">return</span> s_flip == s_no_space</span><br></pre></td></tr></table></figure>
+<h2 id="performance-analysis">Performance Analysis</h2>
+<p>Time Complexity: O(n), <em>(27 ms)</em></p>
+<p>Space Complexity: O(n), <em>(13.30 MB)</em></p>
+]]></content>
+      <categories>
+        <category>Solutions</category>
+        <category>LeetCode</category>
+        <category>Easy</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>Python</tag>
+        <tag>ComputerScience - TwoPointers - String</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>[LeetCode] 128 - Longest Consecutive Sequence</title>
     <url>/2024/07/13/LeetCode-128-Longest-Consecutive-Sequence/</url>
     <content><![CDATA[<p>Interesting question, didn't come up with a O(n) solution at
@@ -411,9 +517,9 @@ href="https://leetcode.com/problems/contains-duplicate/solutions/5369551/one-lin
       </categories>
       <tags>
         <tag>ComputerScience</tag>
+        <tag>Sorting</tag>
         <tag>LeetCode</tag>
         <tag>Python</tag>
-        <tag>Sorting</tag>
         <tag>Array</tag>
         <tag>HashTable</tag>
       </tags>
@@ -474,10 +580,10 @@ where I call "backward" thinking.</p>
       <tags>
         <tag>ComputerScience</tag>
         <tag>Java</tag>
+        <tag>Tree</tag>
         <tag>LeetCode</tag>
         <tag>Algorithems</tag>
         <tag>BruteForce</tag>
-        <tag>Tree</tag>
         <tag>BinaryTree</tag>
       </tags>
   </entry>
@@ -510,10 +616,10 @@ in the range [0, 100].}\)</span></p>
       <tags>
         <tag>ComputerScience</tag>
         <tag>Java</tag>
+        <tag>Tree</tag>
         <tag>LeetCode</tag>
         <tag>Algorithems</tag>
         <tag>BruteForce</tag>
-        <tag>Tree</tag>
         <tag>Recursion</tag>
         <tag>BinaryTree</tag>
       </tags>
@@ -1030,9 +1136,9 @@ up with the two pointers</p></li>
       <tags>
         <tag>ComputerScience</tag>
         <tag>Java</tag>
+        <tag>HashMap</tag>
         <tag>LeetCode</tag>
         <tag>Algorithems</tag>
-        <tag>HashMap</tag>
         <tag>BruteForce</tag>
         <tag>LinkedList</tag>
       </tags>
@@ -1077,10 +1183,10 @@ simultaneously.</p>
       <tags>
         <tag>ComputerScience</tag>
         <tag>Java</tag>
+        <tag>DataStructure</tag>
         <tag>LeetCode</tag>
         <tag>Algorithems</tag>
         <tag>BruteForce</tag>
-        <tag>DataStructure</tag>
         <tag>LinkedList</tag>
         <tag>List</tag>
         <tag>Recursion</tag>
@@ -1185,11 +1291,11 @@ Thus, we can use sorting algorithm on the strings.</p>
       <tags>
         <tag>ComputerScience</tag>
         <tag>Java</tag>
+        <tag>Sorting</tag>
+        <tag>HashMap</tag>
         <tag>LeetCode</tag>
         <tag>Algorithems</tag>
-        <tag>HashMap</tag>
         <tag>BruteForce</tag>
-        <tag>Sorting</tag>
         <tag>Array</tag>
         <tag>HashTable</tag>
         <tag>String</tag>
@@ -1303,8 +1409,8 @@ we just need to sort the intervals and intuitively merge them.</p>
         <tag>Java</tag>
         <tag>LeetCode</tag>
         <tag>Algorithems</tag>
-        <tag>Sort</tag>
         <tag>BruteForce</tag>
+        <tag>Sort</tag>
       </tags>
   </entry>
   <entry>
@@ -1681,11 +1787,11 @@ class="math inline">\(10^9\)</span>)</p>
       <tags>
         <tag>ComputerScience</tag>
         <tag>Java</tag>
+        <tag>HashMap</tag>
         <tag>LeetCode</tag>
         <tag>Algorithems</tag>
-        <tag>HashMap</tag>
-        <tag>Sort</tag>
         <tag>BruteForce</tag>
+        <tag>Sort</tag>
       </tags>
   </entry>
   <entry>
@@ -1820,11 +1926,11 @@ hashmaps.</p>
       <tags>
         <tag>ComputerScience</tag>
         <tag>Java</tag>
+        <tag>HashMap</tag>
         <tag>LeetCode</tag>
         <tag>Algorithems</tag>
-        <tag>HashMap</tag>
-        <tag>Sort</tag>
         <tag>BruteForce</tag>
+        <tag>Sort</tag>
       </tags>
   </entry>
   <entry>
@@ -3530,8 +3636,8 @@ href="https://visualgo.net/training">visualAlgo</a></p>
       <categories>
         <category>Notes</category>
         <category>ComputerScience</category>
-        <category>NUSCourse</category>
         <category>Algorithm</category>
+        <category>NUSCourse</category>
         <category>ComputerScience</category>
       </categories>
       <tags>
@@ -3539,13 +3645,13 @@ href="https://visualgo.net/training">visualAlgo</a></p>
         <tag>Java</tag>
         <tag>Study</tag>
         <tag>NUS</tag>
-        <tag>HashMap</tag>
         <tag>Algorithm</tag>
         <tag>DataStructure</tag>
         <tag>CheatSheet</tag>
         <tag>CS2040S</tag>
         <tag>Sorting</tag>
         <tag>Tree</tag>
+        <tag>HashMap</tag>
       </tags>
   </entry>
   <entry>
@@ -5079,8 +5185,8 @@ delay slot.</p></li>
         <category>Notes</category>
         <category>ComputerScience</category>
         <category>NUSCourse</category>
-        <category>ComputerOrganization</category>
         <category>ComputerScience</category>
+        <category>ComputerOrganization</category>
       </categories>
       <tags>
         <tag>ComputerScience</tag>
