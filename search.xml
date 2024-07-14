@@ -83,6 +83,86 @@ estimated reading time / the days this website has survived.</p>
 ]]></content>
   </entry>
   <entry>
+    <title>[LeetCode] 42 - Trapping Rain Water</title>
+    <url>/2024/07/14/LeetCode-42-Trapping-Rain-Water/</url>
+    <content><![CDATA[<p>This is so hard :C Couldn't think about adding water for each column.
+But I do think that tags to the question are not that accurate.</p>
+<span id="more"></span>
+<p>See the question description <a
+href="https://leetcode.com/problems/trapping-rain-water/description/">HERE</a></p>
+<h1 id="solution-1---intuitive-solution">Solution 1 - Intuitive
+Solution</h1>
+<h2 id="idea">Idea</h2>
+<p>Use two arrays <code>leftMax</code> and <code>rightMax</code> to
+store the maximum height from left and from right.</p>
+<p>iterate through the array. The water that <code>i</code>th column can
+hold is <code>min(leftMax[i], rightMax[i]) - height[i]</code>, we just
+need to add them all up. (It's actually really hard to come up with
+this!)</p>
+<p>Optimization: We don't actually need arrays to store
+<code>leftMax</code> and <code>rightMax</code>, just use two integers
+and that is enough (so that's the "Two Pointer" Approach online)</p>
+<h2 id="code">Code</h2>
+<p><strong>This code is before optimization</strong></p>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">trap</span>(<span class="params">self, height</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        :type height: List[int]</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        n = <span class="built_in">len</span>(height)</span><br><span class="line">        leftMax = [<span class="number">0</span>] * n</span><br><span class="line">        rightMax = [<span class="number">0</span>] * n</span><br><span class="line">        ans = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">        leftMax[<span class="number">0</span>] = height[<span class="number">0</span>]</span><br><span class="line">        rightMax[n - <span class="number">1</span>] = height[n - <span class="number">1</span>]</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, n):</span><br><span class="line">            leftMax[i] = <span class="built_in">max</span>(height[i], leftMax[i - <span class="number">1</span>])</span><br><span class="line">            rightMax[n - i - <span class="number">1</span>] = <span class="built_in">max</span>(height[n - i - <span class="number">1</span>], rightMax[n - i])</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">            curr_water = <span class="built_in">min</span>(leftMax[i], rightMax[i]) - height[i]</span><br><span class="line">            ans += curr_water</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> ans</span><br></pre></td></tr></table></figure>
+<h2 id="performance-analysis">Performance Analysis</h2>
+<p>Time Complexity: O(n), <em>(98 ms)</em></p>
+<p>Space Complexity: O(n), <em>(13.41 MB)</em></p>
+]]></content>
+      <categories>
+        <category>Solutions</category>
+        <category>LeetCode</category>
+        <category>Hard</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>Python</tag>
+        <tag>ComputerScience - Array - Monotonic Stack</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[Leetcode] 11 - Container With Most Water (python)</title>
+    <url>/2024/07/14/Leetcode-11-Container-With-Most-Water-python/</url>
+    <content><![CDATA[<p>Helps me understnd more about the thought process of coming up with a
+solution to a difficult question.</p>
+<span id="more"></span>
+<p>See the question description <a
+href="https://leetcode.com/problems/container-with-most-water/description/">HERE</a></p>
+<h1 id="solution-1--">Solution 1 -</h1>
+<h2 id="idea">Idea</h2>
+<p>key Observation:</p>
+<ol type="1">
+<li><p>The area is determined by the <strong>min</strong>
+<code>height[left], height[right]</code> times
+<code>right - left</code></p></li>
+<li><p>We are trying to find all continers with different left, right
+indexes and compare them -&gt; use the two pointer approach</p></li>
+<li><p>If the pointers move closer to each other,
+<code>right - left</code> is always decreasing. This means that as we
+move the two pointers, we should always try to make
+<code>min(heght[left], height[right])</code> larger.</p></li>
+<li><p>Thus we should always move the pointer that is shorter to the one
+that is higher.</p></li>
+</ol>
+<p>See the code below for details.</p>
+<h2 id="code">Code</h2>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">maxArea</span>(<span class="params">self, height</span>):</span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        :type height: List[int]</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        left = <span class="number">0</span></span><br><span class="line">        maxContain = <span class="number">0</span></span><br><span class="line">        right = <span class="built_in">len</span>(height) - <span class="number">1</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> (left &lt; right):</span><br><span class="line">            currArea = <span class="built_in">min</span>(height[left], height[right]) * (right - left)</span><br><span class="line">            maxContain = <span class="built_in">max</span>(maxContain, currArea)</span><br><span class="line">            <span class="keyword">if</span> (height[left] &lt; height[right]):</span><br><span class="line">                left += <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                right -= <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> maxContain</span><br></pre></td></tr></table></figure>
+<h2 id="performance-analysis">Performance Analysis</h2>
+<p>Time Complexity: O(n), <em>(529 ms)</em></p>
+<p>Space Complexity: O(1), <em>(76.50 MB)</em></p>
+]]></content>
+      <categories>
+        <category>Solutions</category>
+        <category>LeetCode</category>
+        <category>Medium</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>Python</tag>
+        <tag>ComputerScience - Array - Two Pointers - Greedy</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>[LeetCode] 15 - 3Sum (python)</title>
     <url>/2024/07/14/LeetCode-15-3Sum-python/</url>
     <content><![CDATA[<p>Intersting question, helps me understand more about sets, lists and
@@ -517,9 +597,9 @@ href="https://leetcode.com/problems/contains-duplicate/solutions/5369551/one-lin
       </categories>
       <tags>
         <tag>ComputerScience</tag>
-        <tag>Sorting</tag>
         <tag>LeetCode</tag>
         <tag>Python</tag>
+        <tag>Sorting</tag>
         <tag>Array</tag>
         <tag>HashTable</tag>
       </tags>
@@ -580,10 +660,10 @@ where I call "backward" thinking.</p>
       <tags>
         <tag>ComputerScience</tag>
         <tag>Java</tag>
-        <tag>Tree</tag>
         <tag>LeetCode</tag>
         <tag>Algorithems</tag>
         <tag>BruteForce</tag>
+        <tag>Tree</tag>
         <tag>BinaryTree</tag>
       </tags>
   </entry>
@@ -616,10 +696,10 @@ in the range [0, 100].}\)</span></p>
       <tags>
         <tag>ComputerScience</tag>
         <tag>Java</tag>
-        <tag>Tree</tag>
         <tag>LeetCode</tag>
         <tag>Algorithems</tag>
         <tag>BruteForce</tag>
+        <tag>Tree</tag>
         <tag>Recursion</tag>
         <tag>BinaryTree</tag>
       </tags>
@@ -1136,10 +1216,10 @@ up with the two pointers</p></li>
       <tags>
         <tag>ComputerScience</tag>
         <tag>Java</tag>
-        <tag>HashMap</tag>
         <tag>LeetCode</tag>
         <tag>Algorithems</tag>
         <tag>BruteForce</tag>
+        <tag>HashMap</tag>
         <tag>LinkedList</tag>
       </tags>
   </entry>
@@ -1183,10 +1263,10 @@ simultaneously.</p>
       <tags>
         <tag>ComputerScience</tag>
         <tag>Java</tag>
-        <tag>DataStructure</tag>
         <tag>LeetCode</tag>
         <tag>Algorithems</tag>
         <tag>BruteForce</tag>
+        <tag>DataStructure</tag>
         <tag>LinkedList</tag>
         <tag>List</tag>
         <tag>Recursion</tag>
@@ -1291,11 +1371,11 @@ Thus, we can use sorting algorithm on the strings.</p>
       <tags>
         <tag>ComputerScience</tag>
         <tag>Java</tag>
-        <tag>Sorting</tag>
-        <tag>HashMap</tag>
         <tag>LeetCode</tag>
         <tag>Algorithems</tag>
         <tag>BruteForce</tag>
+        <tag>Sorting</tag>
+        <tag>HashMap</tag>
         <tag>Array</tag>
         <tag>HashTable</tag>
         <tag>String</tag>
@@ -1787,10 +1867,10 @@ class="math inline">\(10^9\)</span>)</p>
       <tags>
         <tag>ComputerScience</tag>
         <tag>Java</tag>
-        <tag>HashMap</tag>
         <tag>LeetCode</tag>
         <tag>Algorithems</tag>
         <tag>BruteForce</tag>
+        <tag>HashMap</tag>
         <tag>Sort</tag>
       </tags>
   </entry>
@@ -1926,10 +2006,10 @@ hashmaps.</p>
       <tags>
         <tag>ComputerScience</tag>
         <tag>Java</tag>
-        <tag>HashMap</tag>
         <tag>LeetCode</tag>
         <tag>Algorithems</tag>
         <tag>BruteForce</tag>
+        <tag>HashMap</tag>
         <tag>Sort</tag>
       </tags>
   </entry>
@@ -5185,8 +5265,8 @@ delay slot.</p></li>
         <category>Notes</category>
         <category>ComputerScience</category>
         <category>NUSCourse</category>
-        <category>ComputerScience</category>
         <category>ComputerOrganization</category>
+        <category>ComputerScience</category>
       </categories>
       <tags>
         <tag>ComputerScience</tag>
