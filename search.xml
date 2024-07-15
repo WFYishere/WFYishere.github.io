@@ -83,6 +83,33 @@ estimated reading time / the days this website has survived.</p>
 ]]></content>
   </entry>
   <entry>
+    <title>[LeetCode] 155 - Min Stack</title>
+    <url>/2024/07/16/LeetCode-155-Min-Stack/</url>
+    <content><![CDATA[<p>Interesting question, help me understand more about python class.</p>
+<span id="more"></span>
+<p>See the question description <a
+href="https://leetcode.com/problems/min-stack/">HERE</a></p>
+<h1 id="solution-1">Solution 1</h1>
+<h2 id="idea">Idea</h2>
+<p>See the code below. Use stack as the stack, use min to store the
+minimum elements for each element in stack.</p>
+<h2 id="code">Code</h2>
+<figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MinStack</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        self.stack = []</span><br><span class="line">        self.<span class="built_in">min</span> = []</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">push</span>(<span class="params">self, val</span>):</span><br><span class="line">        self.stack.append(val);</span><br><span class="line">        self.<span class="built_in">min</span>.append(<span class="built_in">min</span>(val, self.<span class="built_in">min</span>[-<span class="number">1</span>]) <span class="keyword">if</span> self.<span class="built_in">min</span> != [] <span class="keyword">else</span> val)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">pop</span>(<span class="params">self</span>):</span><br><span class="line">        self.<span class="built_in">min</span>.pop()</span><br><span class="line">        self.stack.pop()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">top</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">return</span> self.stack[-<span class="number">1</span>]</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">getMin</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">return</span> self.<span class="built_in">min</span>[-<span class="number">1</span>]</span><br><span class="line"><span class="comment"># Your MinStack object will be instantiated and called as such:</span></span><br><span class="line"><span class="comment"># obj = MinStack()</span></span><br><span class="line"><span class="comment"># obj.push(val)</span></span><br><span class="line"><span class="comment"># obj.pop()</span></span><br><span class="line"><span class="comment"># param_3 = obj.top()</span></span><br><span class="line"><span class="comment"># param_4 = obj.getMin()</span></span><br></pre></td></tr></table></figure>
+<h2 id="performance-analysis">Performance Analysis</h2>
+<p>Time Complexity: O(n), <em>(36 ms)</em></p>
+<p>Space Complexity: O(n), <em>(15.4 MB)</em></p>
+]]></content>
+      <categories>
+        <category>Solutions</category>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+        <tag>Python</tag>
+        <tag>ComputerScience</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>[LeetCode] 20 - Valid Parentheses (python)</title>
     <url>/2024/07/15/LeetCode-20-Valid-Parentheses-python/</url>
     <content><![CDATA[<p>Simple question, help me understand more about Leetcode stack</p>
@@ -586,10 +613,10 @@ Mosh about learning python</a>, here's the notes.</p>
         <category>Basics</category>
       </categories>
       <tags>
+        <tag>Python</tag>
+        <tag>Study</tag>
         <tag>ComputerScience</tag>
         <tag>Basics</tag>
-        <tag>Study</tag>
-        <tag>Python</tag>
         <tag>Language</tag>
         <tag>Learning</tag>
       </tags>
@@ -626,9 +653,9 @@ href="https://leetcode.com/problems/contains-duplicate/solutions/5369551/one-lin
         <category>Easy</category>
       </categories>
       <tags>
-        <tag>ComputerScience</tag>
         <tag>LeetCode</tag>
         <tag>Python</tag>
+        <tag>ComputerScience</tag>
         <tag>Sorting</tag>
         <tag>Array</tag>
         <tag>HashTable</tag>
@@ -688,11 +715,11 @@ where I call "backward" thinking.</p>
         <category>Medium</category>
       </categories>
       <tags>
-        <tag>ComputerScience</tag>
-        <tag>Java</tag>
         <tag>LeetCode</tag>
+        <tag>ComputerScience</tag>
         <tag>Algorithems</tag>
         <tag>BruteForce</tag>
+        <tag>Java</tag>
         <tag>Tree</tag>
         <tag>BinaryTree</tag>
       </tags>
@@ -724,11 +751,11 @@ in the range [0, 100].}\)</span></p>
         <category>Easy</category>
       </categories>
       <tags>
-        <tag>ComputerScience</tag>
-        <tag>Java</tag>
         <tag>LeetCode</tag>
+        <tag>ComputerScience</tag>
         <tag>Algorithems</tag>
         <tag>BruteForce</tag>
+        <tag>Java</tag>
         <tag>Tree</tag>
         <tag>Recursion</tag>
         <tag>BinaryTree</tag>
@@ -771,11 +798,11 @@ variables changes.</p>
         <category>Hard</category>
       </categories>
       <tags>
-        <tag>ComputerScience</tag>
-        <tag>Java</tag>
         <tag>LeetCode</tag>
+        <tag>ComputerScience</tag>
         <tag>Algorithems</tag>
         <tag>BruteForce</tag>
+        <tag>Java</tag>
         <tag>HashTable</tag>
         <tag>SlidingWindow</tag>
         <tag>String</tag>
@@ -829,11 +856,11 @@ Pacific and Atlantic oceans.</p>
         <category>Medium</category>
       </categories>
       <tags>
-        <tag>ComputerScience</tag>
-        <tag>Java</tag>
         <tag>LeetCode</tag>
+        <tag>ComputerScience</tag>
         <tag>Algorithems</tag>
         <tag>BruteForce</tag>
+        <tag>Java</tag>
         <tag>Array</tag>
         <tag>Breadth-First-Search</tag>
         <tag>Matrix</tag>
@@ -877,11 +904,11 @@ palindrome.</p>
         <category>Medium</category>
       </categories>
       <tags>
-        <tag>ComputerScience</tag>
-        <tag>Java</tag>
         <tag>LeetCode</tag>
+        <tag>ComputerScience</tag>
         <tag>Algorithems</tag>
         <tag>BruteForce</tag>
+        <tag>Java</tag>
         <tag>String</tag>
         <tag>Two Pointers</tag>
         <tag>Dynamic Programming</tag>
@@ -919,11 +946,11 @@ reached the end of node.</p>
         <category>Easy</category>
       </categories>
       <tags>
-        <tag>ComputerScience</tag>
-        <tag>Java</tag>
         <tag>LeetCode</tag>
+        <tag>ComputerScience</tag>
         <tag>Algorithems</tag>
         <tag>BruteForce</tag>
+        <tag>Java</tag>
       </tags>
   </entry>
   <entry>
@@ -981,11 +1008,11 @@ the choice of DFS.</p>
         <category>Medium</category>
       </categories>
       <tags>
-        <tag>ComputerScience</tag>
-        <tag>Java</tag>
         <tag>LeetCode</tag>
+        <tag>ComputerScience</tag>
         <tag>Algorithems</tag>
         <tag>BruteForce</tag>
+        <tag>Java</tag>
         <tag>Array</tag>
         <tag>Depth-First-Search</tag>
         <tag>Breadth-First-Search</tag>
@@ -1021,11 +1048,11 @@ digits, symbols and spaces.}\)</span></p>
         <category>Medium</category>
       </categories>
       <tags>
-        <tag>ComputerScience</tag>
-        <tag>Java</tag>
         <tag>LeetCode</tag>
+        <tag>ComputerScience</tag>
         <tag>Algorithems</tag>
         <tag>BruteForce</tag>
+        <tag>Java</tag>
         <tag>SlidingWindow</tag>
         <tag>String</tag>
       </tags>
@@ -1074,11 +1101,11 @@ gradually shrink it to where the two pointers each.</p>
         <category>Medium</category>
       </categories>
       <tags>
-        <tag>ComputerScience</tag>
-        <tag>Java</tag>
         <tag>LeetCode</tag>
+        <tag>ComputerScience</tag>
         <tag>Algorithems</tag>
         <tag>BruteForce</tag>
+        <tag>Java</tag>
       </tags>
   </entry>
   <entry>
@@ -1127,11 +1154,11 @@ I learned about the sliding window technique. It's really genius.</p>
         <category>Medium</category>
       </categories>
       <tags>
-        <tag>ComputerScience</tag>
-        <tag>Java</tag>
         <tag>LeetCode</tag>
+        <tag>ComputerScience</tag>
         <tag>Algorithems</tag>
         <tag>BruteForce</tag>
+        <tag>Java</tag>
         <tag>SlidingWindow</tag>
       </tags>
   </entry>
@@ -1174,11 +1201,11 @@ href="https://wfyishere.github.io/2024/06/02/LeetCode-33-Search-in-Rotated-Sorte
         <category>Medium</category>
       </categories>
       <tags>
-        <tag>ComputerScience</tag>
-        <tag>Java</tag>
         <tag>LeetCode</tag>
+        <tag>ComputerScience</tag>
         <tag>Algorithems</tag>
         <tag>BruteForce</tag>
+        <tag>Java</tag>
         <tag>Array</tag>
       </tags>
   </entry>
@@ -1244,12 +1271,12 @@ up with the two pointers</p></li>
         <category>Easy</category>
       </categories>
       <tags>
-        <tag>ComputerScience</tag>
-        <tag>Java</tag>
         <tag>LeetCode</tag>
+        <tag>ComputerScience</tag>
         <tag>Algorithems</tag>
         <tag>HashMap</tag>
         <tag>BruteForce</tag>
+        <tag>Java</tag>
         <tag>LinkedList</tag>
       </tags>
   </entry>
@@ -1291,11 +1318,11 @@ simultaneously.</p>
         <category>Easy</category>
       </categories>
       <tags>
-        <tag>ComputerScience</tag>
-        <tag>Java</tag>
         <tag>LeetCode</tag>
+        <tag>ComputerScience</tag>
         <tag>Algorithems</tag>
         <tag>BruteForce</tag>
+        <tag>Java</tag>
         <tag>DataStructure</tag>
         <tag>LinkedList</tag>
         <tag>List</tag>
@@ -1344,11 +1371,11 @@ rotated, then binary search on the unrotated subarray.</p>
         <category>Easy</category>
       </categories>
       <tags>
-        <tag>ComputerScience</tag>
-        <tag>Java</tag>
         <tag>LeetCode</tag>
+        <tag>ComputerScience</tag>
         <tag>Algorithems</tag>
         <tag>BruteForce</tag>
+        <tag>Java</tag>
         <tag>BinarySearch</tag>
       </tags>
   </entry>
@@ -1399,12 +1426,12 @@ Thus, we can use sorting algorithm on the strings.</p>
         <category>Medium</category>
       </categories>
       <tags>
-        <tag>ComputerScience</tag>
-        <tag>Java</tag>
         <tag>LeetCode</tag>
+        <tag>ComputerScience</tag>
         <tag>Algorithems</tag>
         <tag>HashMap</tag>
         <tag>BruteForce</tag>
+        <tag>Java</tag>
         <tag>Sorting</tag>
         <tag>Array</tag>
         <tag>HashTable</tag>
@@ -1465,11 +1492,11 @@ debugging! I feel like my coding skills still needs improving.</p>
         <category>Medium</category>
       </categories>
       <tags>
-        <tag>ComputerScience</tag>
-        <tag>Java</tag>
         <tag>LeetCode</tag>
+        <tag>ComputerScience</tag>
         <tag>Algorithems</tag>
         <tag>BruteForce</tag>
+        <tag>Java</tag>
         <tag>Mathematics</tag>
       </tags>
   </entry>
@@ -1515,12 +1542,12 @@ we just need to sort the intervals and intuitively merge them.</p>
         <category>Medium</category>
       </categories>
       <tags>
-        <tag>ComputerScience</tag>
-        <tag>Java</tag>
         <tag>LeetCode</tag>
+        <tag>ComputerScience</tag>
         <tag>Algorithems</tag>
         <tag>Sort</tag>
         <tag>BruteForce</tag>
+        <tag>Java</tag>
       </tags>
   </entry>
   <entry>
@@ -1576,11 +1603,11 @@ E.g. Low-High Pointer is significantly easier approach here.</p>
         <category>Medium</category>
       </categories>
       <tags>
-        <tag>ComputerScience</tag>
-        <tag>Java</tag>
         <tag>LeetCode</tag>
+        <tag>ComputerScience</tag>
         <tag>Algorithems</tag>
         <tag>BruteForce</tag>
+        <tag>Java</tag>
       </tags>
   </entry>
   <entry>
@@ -1626,11 +1653,11 @@ because I peeked at the solution first QwQ.</p>
         <category>Easy</category>
       </categories>
       <tags>
-        <tag>ComputerScience</tag>
-        <tag>Java</tag>
         <tag>LeetCode</tag>
+        <tag>ComputerScience</tag>
         <tag>Algorithems</tag>
         <tag>BruteForce</tag>
+        <tag>Java</tag>
       </tags>
   </entry>
   <entry>
@@ -1755,11 +1782,11 @@ than CS!</p>
         <category>Easy</category>
       </categories>
       <tags>
-        <tag>ComputerScience</tag>
-        <tag>Java</tag>
         <tag>LeetCode</tag>
+        <tag>ComputerScience</tag>
         <tag>Algorithems</tag>
         <tag>BruteForce</tag>
+        <tag>Java</tag>
         <tag>Recursion</tag>
         <tag>DynamicProgramming</tag>
         <tag>DivideAndConquer</tag>
@@ -1807,11 +1834,11 @@ is considered false. That's why we have to use stack structure.</p>
         <category>Easy</category>
       </categories>
       <tags>
-        <tag>ComputerScience</tag>
-        <tag>Java</tag>
         <tag>LeetCode</tag>
+        <tag>ComputerScience</tag>
         <tag>Algorithems</tag>
         <tag>BruteForce</tag>
+        <tag>Java</tag>
       </tags>
   </entry>
   <entry>
@@ -1855,11 +1882,11 @@ solution</p>
         <category>Easy</category>
       </categories>
       <tags>
-        <tag>ComputerScience</tag>
-        <tag>Java</tag>
         <tag>LeetCode</tag>
+        <tag>ComputerScience</tag>
         <tag>Algorithems</tag>
         <tag>BruteForce</tag>
+        <tag>Java</tag>
       </tags>
   </entry>
   <entry>
@@ -1895,13 +1922,13 @@ class="math inline">\(10^9\)</span>)</p>
         <category>Easy</category>
       </categories>
       <tags>
-        <tag>ComputerScience</tag>
-        <tag>Java</tag>
         <tag>LeetCode</tag>
+        <tag>ComputerScience</tag>
         <tag>Algorithems</tag>
         <tag>HashMap</tag>
         <tag>Sort</tag>
         <tag>BruteForce</tag>
+        <tag>Java</tag>
       </tags>
   </entry>
   <entry>
@@ -1937,11 +1964,11 @@ price since day i, and try to find out largest
         <category>Easy</category>
       </categories>
       <tags>
-        <tag>ComputerScience</tag>
-        <tag>Java</tag>
         <tag>LeetCode</tag>
+        <tag>ComputerScience</tag>
         <tag>Algorithems</tag>
         <tag>BruteForce</tag>
+        <tag>Java</tag>
       </tags>
   </entry>
   <entry>
@@ -2034,13 +2061,13 @@ hashmaps.</p>
         <category>Easy</category>
       </categories>
       <tags>
-        <tag>ComputerScience</tag>
-        <tag>Java</tag>
         <tag>LeetCode</tag>
+        <tag>ComputerScience</tag>
         <tag>Algorithems</tag>
         <tag>HashMap</tag>
         <tag>Sort</tag>
         <tag>BruteForce</tag>
+        <tag>Java</tag>
       </tags>
   </entry>
   <entry>
@@ -3751,14 +3778,14 @@ href="https://visualgo.net/training">visualAlgo</a></p>
         <category>ComputerScience</category>
       </categories>
       <tags>
-        <tag>ComputerScience</tag>
-        <tag>Java</tag>
         <tag>Study</tag>
-        <tag>NUS</tag>
+        <tag>ComputerScience</tag>
         <tag>HashMap</tag>
+        <tag>Java</tag>
         <tag>Algorithm</tag>
         <tag>DataStructure</tag>
         <tag>CheatSheet</tag>
+        <tag>NUS</tag>
         <tag>CS2040S</tag>
         <tag>Sorting</tag>
         <tag>Tree</tag>
@@ -4172,15 +4199,15 @@ href="https://bartoszmilewski.com/2014/10/28/category-theory-for-programmers-the
         <category>ComputerScience</category>
       </categories>
       <tags>
+        <tag>Study</tag>
+        <tag>Notes</tag>
         <tag>ComputerScience</tag>
         <tag>Java</tag>
+        <tag>NUS</tag>
         <tag>OOP</tag>
         <tag>Coding</tag>
         <tag>Basics</tag>
-        <tag>Study</tag>
-        <tag>Notes</tag>
         <tag>Conclusion</tag>
-        <tag>NUS</tag>
       </tags>
   </entry>
   <entry>
@@ -5299,9 +5326,9 @@ delay slot.</p></li>
         <category>ComputerOrganization</category>
       </categories>
       <tags>
-        <tag>ComputerScience</tag>
         <tag>Study</tag>
         <tag>Notes</tag>
+        <tag>ComputerScience</tag>
         <tag>C</tag>
         <tag>MIPS</tag>
         <tag>OperatingSystem</tag>
