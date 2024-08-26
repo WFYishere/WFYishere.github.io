@@ -1,0 +1,599 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.1.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon_coder.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon_coder.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon_coder.png">
+  <link rel="mask-icon" href="/images/favicon_coder.png" color="#222">
+  <meta name="google-site-verification" content="eTHQKcPBLYyk8UGRbE7UYNyfbTP8dDk5ivI4newcIH0">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Times:300,300italic,400,400italic,700,700italic%7CLato:300,300italic,400,400italic,700,700italic%7CMerriweather:300,300italic,400,400italic,700,700italic%7CTimes+New+Roman:300,300italic,400,400italic,700,700italic%7CConsolas:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext" referrerpolicy="no-referrer">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha256-yIDrPSXHZdOZhAqiBP7CKzIwMQmRCJ8UeB8Jo17YC4o=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/white/pace-theme-flash.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"wfyishere.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.19.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":true,"nav":null,"activeClass":"gitalk"},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="Notes for an interesting but hard class: Foundamentals of Logic in Computer Science. In the first lecture, prof spent 3 hours on teaching us how to define Propositions in a mthematical way.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[CS4269] 1 - What is Propositional Logic">
+<meta property="og:url" content="https://wfyishere.github.io/2024/08/26/CS4269-1-What-is-Propositional-Logic/index.html">
+<meta property="og:site_name" content="WFY&#39;s Blog">
+<meta property="og:description" content="Notes for an interesting but hard class: Foundamentals of Logic in Computer Science. In the first lecture, prof spent 3 hours on teaching us how to define Propositions in a mthematical way.">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-08-26T02:05:58.000Z">
+<meta property="article:modified_time" content="2024-08-26T02:05:58.022Z">
+<meta property="article:author" content="Wen Fanyu">
+<meta property="article:tag" content="ComputerScience">
+<meta property="article:tag" content="CS4269">
+<meta property="article:tag" content="TheoryOfComputation">
+<meta property="article:tag" content="Mathmatics">
+<meta property="article:tag" content="Hard">
+<meta property="article:tag" content="Logic">
+<meta property="article:tag" content="DiscreteMathematics">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://wfyishere.github.io/2024/08/26/CS4269-1-What-is-Propositional-Logic/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://wfyishere.github.io/2024/08/26/CS4269-1-What-is-Propositional-Logic/","path":"2024/08/26/CS4269-1-What-is-Propositional-Logic/","title":"[CS4269] 1 - What is Propositional Logic"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>[CS4269] 1 - What is Propositional Logic | WFY's Blog</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">WFY's Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">wfy的博客</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">21</span></a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">87</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">62</span></a></li><li class="menu-item menu-item-todo"><a href="/todo" rel="section"><i class="fa-solid fa-bars fa-fw"></i>Todo</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#introduction-to-logic"><span class="nav-number">1.</span> <span class="nav-text">Introduction to logic</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#propositional-logic"><span class="nav-number">2.</span> <span class="nav-text">Propositional Logic</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#basic-concepts"><span class="nav-number">2.1.</span> <span class="nav-text">Basic Concepts</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#definition---inductive"><span class="nav-number">2.2.</span> <span class="nav-text">Definition - Inductive</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#definition---set"><span class="nav-number">2.3.</span> <span class="nav-text">Definition - Set</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#definition---set-refinement"><span class="nav-number">2.4.</span> <span class="nav-text">Definition - Set Refinement</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#definition-refinement-proof"><span class="nav-number">2.4.1.</span> <span class="nav-text">Definition Refinement Proof</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#usage-of-definition"><span class="nav-number">2.4.2.</span> <span class="nav-text">Usage of Definition</span></a></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Wen Fanyu</p>
+  <div class="site-description" itemprop="description">留下自己的足迹</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">62</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">21</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">87</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/WFYishere" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;WFYishere" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:wenfanyu2005@hotmail.com" title="E-Mail → mailto:wenfanyu2005@hotmail.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/fanyu-wen-176b14289/" title="Linkedin → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;fanyu-wen-176b14289&#x2F;" rel="noopener me" target="_blank"><i class="fab fa-linkedin fa-fw"></i>Linkedin</a>
+      </span>
+  </div>
+  <div class="cc-license animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/small/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+        </div>
+      </div>
+        <div class="back-to-top animated" role="button" aria-label="Back to top">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+
+    
+
+    <script type="text/javascript" src="//rf.revolvermaps.com/0/0/8.js?i=5zo8jh0nep7&amp;m=0&amp;c=ff0000&amp;cr1=ffffff&amp;f=arial&amp;l=33" async="async"></script>
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://wfyishere.github.io/2024/08/26/CS4269-1-What-is-Propositional-Logic/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Wen Fanyu">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WFY's Blog">
+      <meta itemprop="description" content="留下自己的足迹">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="[CS4269] 1 - What is Propositional Logic | WFY's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          [CS4269] 1 - What is Propositional Logic
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2024-08-26 10:05:58" itemprop="dateCreated datePublished" datetime="2024-08-26T10:05:58+08:00">2024-08-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Notes/" itemprop="url" rel="index"><span itemprop="name">Notes</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Notes/ComputerScience/" itemprop="url" rel="index"><span itemprop="name">ComputerScience</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Notes/ComputerScience/Theory/" itemprop="url" rel="index"><span itemprop="name">Theory</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Notes/NUSCourse/" itemprop="url" rel="index"><span itemprop="name">NUSCourse</span></a>
+        </span>
+          , 
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Notes/NUSCourse/ComputerScience/" itemprop="url" rel="index"><span itemprop="name">ComputerScience</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>3.6k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>3 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>Notes for an interesting but hard class: Foundamentals of Logic in
+Computer Science. In the first lecture, prof spent 3 hours on teaching
+us how to define Propositions in a mthematical way.</p>
+<span id="more"></span>
+<h2 id="introduction-to-logic">Introduction to logic</h2>
+[
+<span class="math display">\[\begin{cases}
+\text{First Order Logic} \\
+\text{Propositional Logic}
+\end{cases}
+\begin{cases}
+\text{syntax \&amp; semantics} \\
+\text{experiences} \\
+\text{Proof Systems} \\
+\text{Computational Aspect}
+\end{cases}\]</span>
+<p>]</p>
+<h2 id="propositional-logic">Propositional Logic</h2>
+<h3 id="basic-concepts">Basic Concepts</h3>
+<ol type="1">
+<li><p>Statement</p>
+<ul>
+<li>A <strong>statement</strong> is a <em>sentence</em> that can be
+evaluated as <em>true/false</em></li>
+</ul></li>
+<li><p><span class="math inline">\(P\)</span> is a non-tempty set of
+propositions</p></li>
+</ol>
+<p><span class="math display">\[P = \{p_1, p_2,...\}\]</span></p>
+<ol start="3" type="1">
+<li><span class="math inline">\(C\)</span> is a set of Connectives</li>
+</ol>
+<p><span class="math display">\[C = \{\neg, \land, \lor\}\]</span></p>
+<p>Now, we want to define <strong>Formula</strong>. Intuitively, (or
+speaking in an English way), a formulae is a combination of
+statements.</p>
+<p>For example, if <span class="math inline">\(p_1 = \text{the weather
+is good today}\)</span>, <span class="math inline">\(p_2 = \text{the
+weather was good yesterday}\)</span>, then, we can have a formula <span
+class="math inline">\(\varphi = (\neg p_1) \land p_2\)</span></p>
+<p>How do we define <strong>formulae</strong> in a <em>mathematical</em>
+way?</p>
+<h3 id="definition---inductive">Definition - Inductive</h3>
+<p><span class="math display">\[\color{blue}\text{Def 1: A Formula is
+either a statement or is obtained by combining fomulae using the
+connectives}\]</span></p>
+<p><em>Note: Definition 1 should be constrained by adding the rules by
+which the formulae and connectives are combined.</em></p>
+<p><em>E.g. <span class="math inline">\(\neg\)</span> should only be
+added before a formula</em></p>
+<p><span class="math inline">\(\color{green}{\text{What is the problem
+with the inductive way of defining formulae?}}\)</span></p>
+<p>You should <strong>not</strong> use a thing to define itself!</p>
+<p>See how we go around this constraint in the next definition.</p>
+<h3 id="definition---set">Definition - Set</h3>
+<p><span class="math display">\[\text{Definition 2: We define FORM to be
+the set of all &quot;well-formed formulae&quot;}\]</span></p>
+<p><span class="math display">\[\color{blue}\text{FORM is the set such
+that} \\
+(1) P \subseteq FORM \\
+(2) \text{if }\varphi_1 \in \text{ FORM } \text{ then } \neg \varphi_1
+\in \text{ FORM} \\
+(3) \text{if } \varphi_1 \text{ and } \varphi_2 \in \text{ FORM then }
+(\varphi_1 \land \varphi_2) \in \text{ FORM } \\
+(4)\text{if } \varphi_1 \text{ and } \varphi_2 \in \text{ FORM then }
+(\varphi_1 \lor \varphi_2) \in \text{ FORM } \tag{1}\]</span></p>
+<h3 id="definition---set-refinement">Definition - Set Refinement</h3>
+<p><span class="math inline">\(\color{green}\text{What are the problems
+with this definition?}\)</span></p>
+<p><strong>Exclusiveness</strong>: the set does not exclude anything.
+That is, if I have a well-defined FORM, I can create a new well-defined
+FORM by adding random elements(e.g. apple) into it.</p>
+<ul>
+<li><p>We define an alphabet <span class="math display">\[\Delta = P
+\cup C \cup \{ &#39;)&#39; \: , &#39;(&#39; \}\]</span></p></li>
+<li><p>We define a formula to be a string over <span
+class="math inline">\(\Delta\)</span></p></li>
+</ul>
+<p><strong>Uniqueness</strong>: There might be many sets that satisfies
+the constraints in Definition2.</p>
+<p><span class="math display">\[\color{blue}\text{Define S } \subseteq
+\Delta^* \text{is said to be &quot;closed&quot; if S satisfies
+Definition 2}\]</span></p>
+<ul>
+<li><p>We define FORM to be the "smallest" of S.</p></li>
+<li><p>How do we define smallest? Use
+<strong>cardinality</strong>!</p></li>
+</ul>
+<p><span class="math display">\[ ACS = \{ S \subseteq \Delta* | \text{S
+is closed}\}\]</span></p>
+<p><span class="math display">\[\color{blue}\text{Def: FORM is s.t.} \\
+FORM \in ACS \\ \forall S \in ACS, FORM \subseteq S\]</span></p>
+<h4 id="definition-refinement-proof">Definition Refinement Proof</h4>
+<p>Now we need to proof that FORM is the set that we are looking
+for.</p>
+<p>To achieve that, we need to established two things:</p>
+<p><span class="math display">\[\color{green}\text{Uniqueness and
+Existence}\]</span></p>
+<p><strong>Uniqueness</strong>: Proof that: if <span
+class="math inline">\(S_1\)</span> is the "smallest" set in <span
+class="math inline">\(ACS\)</span>, and so is <span
+class="math inline">\(S_2\)</span>, then <span class="math inline">\(S_1
+= S_2\)</span>.</p>
+<ul>
+<li>Proof: <span class="math inline">\(S_1 \subseteq S_2, S_2 \subseteq
+S_1\)</span></li>
+</ul>
+<p><strong>Existence</strong>: Proof that the smallest set exists.</p>
+<ul>
+<li><p>Proof: Consider <span class="math display">\[S_0 = \bigcap_{S \in
+ACS} S\]</span> Now we just need to proof that <span
+class="math inline">\(S_0\)</span> is the "smallest" set, since
+intuitively we know that <span class="math inline">\(S_0\)</span> is the
+<span class="math inline">\(\text{FORM}\)</span> that we are looking
+for, and <span class="math inline">\(S_0\)</span> certainly
+exists.</p></li>
+<li><p>Now, we just need to proof that <span
+class="math inline">\(S_0\)</span> is closed and it is the subset of all
+S in ACS.</p></li>
+<li><p>These two can be easily proofed by definition.</p></li>
+</ul>
+<h4 id="usage-of-definition">Usage of Definition</h4>
+<p>Use the definition to claim that <span
+class="math inline">\(\neg\)</span> is not in <span
+class="math inline">\(S_0\)</span></p>
+<ul>
+<li><p>Solution 1: consider <span class="math display">\[S_1 = \Delta^*
+/ \{ &quot;\neg&quot;, \varepsilon \}\]</span>, <span
+class="math inline">\(S_1 \in ACS\)</span>. Since <span
+class="math inline">\(S_1\)</span> is in ACS and it doesn't have <span
+class="math inline">\(\neg\)</span>, we can say that <span
+class="math inline">\(\neg \notin S_0\)</span></p></li>
+<li><p>Solution 2: Suppose the claim is true, consider the same <span
+class="math inline">\(S_1\)</span> from solution 1.<span
+class="math inline">\(S_2 = S_0 \cap S_1\)</span>, <span
+class="math display">\[(S_2 \in ACS) \land (S_2 \subset S_0)\]</span>,
+<span class="math inline">\(S_0\)</span> is not the smallest
+set.</p></li>
+<li><p>Note that these two definitions attacks the definition of <span
+class="math inline">\(S_0\)</span> being the smallest set.</p></li>
+</ul>
+<hr />
+<p><em>Note: here we assume that a formula is a finite string.</em></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>Post author:  </strong>Wen Fanyu
+  </li>
+  <li class="post-copyright-link">
+      <strong>Post link: </strong>
+      <a href="https://wfyishere.github.io/2024/08/26/CS4269-1-What-is-Propositional-Logic/" title="[CS4269] 1 - What is Propositional Logic">https://wfyishere.github.io/2024/08/26/CS4269-1-What-is-Propositional-Logic/</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/ComputerScience/" rel="tag"><i class="fa fa-tag"></i> ComputerScience</a>
+              <a href="/tags/CS4269/" rel="tag"><i class="fa fa-tag"></i> CS4269</a>
+              <a href="/tags/TheoryOfComputation/" rel="tag"><i class="fa fa-tag"></i> TheoryOfComputation</a>
+              <a href="/tags/Mathmatics/" rel="tag"><i class="fa fa-tag"></i> Mathmatics</a>
+              <a href="/tags/Hard/" rel="tag"><i class="fa fa-tag"></i> Hard</a>
+              <a href="/tags/Logic/" rel="tag"><i class="fa fa-tag"></i> Logic</a>
+              <a href="/tags/DiscreteMathematics/" rel="tag"><i class="fa fa-tag"></i> DiscreteMathematics</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2024/08/10/LeetCode-981-Time-Based-Key-Value-Store/" rel="prev" title="[LeetCode] 981 - Time Based Key-Value Store">
+                  <i class="fa fa-angle-left"></i> [LeetCode] 981 - Time Based Key-Value Store
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments gitalk-container"></div>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Wen Fanyu</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+      <span>Word count total: </span>
+    <span title="Word count total">173k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span>Reading time total &asymp;</span>
+    <span title="Reading time total">2:37</span>
+  </span>
+</div>
+
+<!-- 网站运行时间的设置 -->
+<span id="timeDate">载入天数...</span>
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("01/20/2024 00:00:00");//此处修改你的建站时间或者网站上线时间
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "本站已成功存活 "+dnum+" 天 " + hnum + "小时" + mnum + "分钟";
+}
+setInterval("createtime()",250);
+</script>
+
+
+    </div>
+  </footer>
+
+  
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script size="300" alpha="0.6" zIndex="0" src="https://cdnjs.cloudflare.com/ajax/libs/ribbon.js/1.0.2/ribbon.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
+
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"WFYishere","repo":"Blog_comments","client_id":"61d14243abd55a9c5e17","client_secret":"899eab7ce0c9f0e5f96df28b5b7a9fa5362c981e","admin_user":"WFYishere","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":null,"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"0bd27165d831613666fb4dfb276ad2e2"}</script>
+<script src="/js/third-party/comments/gitalk.js"></script>
+
+</body>
+</html>
