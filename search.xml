@@ -92,18 +92,17 @@ Computer Science. In the first lecture, prof spent 3 hours on teaching
 us how to define Propositions in a mthematical way.</p>
 <span id="more"></span>
 <h2 id="introduction-to-logic">Introduction to logic</h2>
-[
-<span class="math display">\[\begin{cases}
+<p><span class="math display">\[ \text{What is Logic}\begin{cases}
 \text{First Order Logic} \\
 \text{Propositional Logic}
 \end{cases}
 \begin{cases}
-\text{syntax \&amp; semantics} \\
+\text{syntax &amp; semantics} \\
 \text{experiences} \\
 \text{Proof Systems} \\
 \text{Computational Aspect}
-\end{cases}\]</span>
-<p>]</p>
+\end{cases}
+\]</span></p>
 <h2 id="propositional-logic">Propositional Logic</h2>
 <h3 id="basic-concepts">Basic Concepts</h3>
 <ol type="1">
@@ -130,8 +129,8 @@ class="math inline">\(\varphi = (\neg p_1) \land p_2\)</span></p>
 <p>How do we define <strong>formulae</strong> in a <em>mathematical</em>
 way?</p>
 <h3 id="definition---inductive">Definition - Inductive</h3>
-<p><span class="math display">\[\color{blue}\text{Def 1: A Formula is
-either a statement or is obtained by combining fomulae using the
+<p><span class="math display">\[\color{lightblue}\text{Def 1: A Formula
+is either a statement or is obtained by combining fomulae using the
 connectives}\]</span></p>
 <p><em>Note: Definition 1 should be constrained by adding the rules by
 which the formulae and connectives are combined.</em></p>
@@ -144,15 +143,16 @@ with the inductive way of defining formulae?}}\)</span></p>
 <h3 id="definition---set">Definition - Set</h3>
 <p><span class="math display">\[\text{Definition 2: We define FORM to be
 the set of all &quot;well-formed formulae&quot;}\]</span></p>
-<p><span class="math display">\[\color{blue}\text{FORM is the set such
-that} \\
-(1) P \subseteq FORM \\
-(2) \text{if }\varphi_1 \in \text{ FORM } \text{ then } \neg \varphi_1
-\in \text{ FORM} \\
-(3) \text{if } \varphi_1 \text{ and } \varphi_2 \in \text{ FORM then }
-(\varphi_1 \land \varphi_2) \in \text{ FORM } \\
-(4)\text{if } \varphi_1 \text{ and } \varphi_2 \in \text{ FORM then }
-(\varphi_1 \lor \varphi_2) \in \text{ FORM } \tag{1}\]</span></p>
+<p><span class="math display">\[\color{lightblue}\text{FORM is the set
+such that} \]</span></p>
+<p><span class="math display">\[(1) P \subseteq FORM \]</span> <span
+class="math display">\[(2) \text{if }\varphi_1 \in \text{ FORM } \text{
+then } \neg \varphi_1 \in \text{ FORM} \]</span> <span
+class="math display">\[(3) \text{if } \varphi_1 \text{ and } \varphi_2
+\in \text{ FORM then } (\varphi_1 \land \varphi_2) \in \text{ FORM }
+\]</span> <span class="math display">\[(4)\text{if } \varphi_1 \text{
+and } \varphi_2 \in \text{ FORM then } (\varphi_1 \lor \varphi_2) \in
+\text{ FORM } \]</span></p>
 <h3 id="definition---set-refinement">Definition - Set Refinement</h3>
 <p><span class="math inline">\(\color{green}\text{What are the problems
 with this definition?}\)</span></p>
@@ -167,8 +167,8 @@ class="math inline">\(\Delta\)</span></p></li>
 </ul>
 <p><strong>Uniqueness</strong>: There might be many sets that satisfies
 the constraints in Definition2.</p>
-<p><span class="math display">\[\color{blue}\text{Define S } \subseteq
-\Delta^* \text{is said to be &quot;closed&quot; if S satisfies
+<p><span class="math display">\[\color{lightblue}\text{Define S }
+\subseteq \Delta^* \text{is said to be &quot;closed&quot; if S satisfies
 Definition 2}\]</span></p>
 <ul>
 <li><p>We define FORM to be the "smallest" of S.</p></li>
@@ -177,8 +177,10 @@ Definition 2}\]</span></p>
 </ul>
 <p><span class="math display">\[ ACS = \{ S \subseteq \Delta* | \text{S
 is closed}\}\]</span></p>
-<p><span class="math display">\[\color{blue}\text{Def: FORM is s.t.} \\
-FORM \in ACS \\ \forall S \in ACS, FORM \subseteq S\]</span></p>
+<p><span class="math display">\[\color{lightblue}\text{Def: FORM is s.t.
+} \]</span> <span class="math display">\[(1)FORM \in ACS \]</span> <span
+class="math display">\[(2)\forall S \in ACS, FORM \subseteq
+S\]</span></p>
 <h4 id="definition-refinement-proof">Definition Refinement Proof</h4>
 <p>Now we need to proof that FORM is the set that we are looking
 for.</p>
@@ -214,11 +216,10 @@ class="math inline">\(\neg\)</span> is not in <span
 class="math inline">\(S_0\)</span></p>
 <ul>
 <li><p>Solution 1: consider <span class="math display">\[S_1 = \Delta^*
-/ \{ &quot;\neg&quot;, \varepsilon \}\]</span>, <span
-class="math inline">\(S_1 \in ACS\)</span>. Since <span
-class="math inline">\(S_1\)</span> is in ACS and it doesn't have <span
-class="math inline">\(\neg\)</span>, we can say that <span
-class="math inline">\(\neg \notin S_0\)</span></p></li>
+/ \{ \neg, \varepsilon \}\]</span>, <span class="math inline">\(S_1 \in
+ACS\)</span>. Since <span class="math inline">\(S_1\)</span> is in ACS
+and it doesn't have <span class="math inline">\(\neg\)</span>, we can
+say that <span class="math inline">\(\neg \notin S_0\)</span></p></li>
 <li><p>Solution 2: Suppose the claim is true, consider the same <span
 class="math inline">\(S_1\)</span> from solution 1.<span
 class="math inline">\(S_2 = S_0 \cap S_1\)</span>, <span
@@ -1322,8 +1323,8 @@ in the range [0, 100].}\)</span></p>
         <tag>LeetCode</tag>
         <tag>Algorithems</tag>
         <tag>BruteForce</tag>
-        <tag>Recursion</tag>
         <tag>BinaryTree</tag>
+        <tag>Recursion</tag>
       </tags>
   </entry>
   <entry>
@@ -1890,8 +1891,8 @@ simultaneously.</p>
         <tag>Algorithems</tag>
         <tag>BruteForce</tag>
         <tag>LinkedList</tag>
-        <tag>List</tag>
         <tag>Recursion</tag>
+        <tag>List</tag>
         <tag>Iteration</tag>
       </tags>
   </entry>
@@ -5887,8 +5888,8 @@ delay slot.</p></li>
         <category>Notes</category>
         <category>ComputerScience</category>
         <category>NUSCourse</category>
-        <category>ComputerScience</category>
         <category>ComputerOrganization</category>
+        <category>ComputerScience</category>
       </categories>
       <tags>
         <tag>ComputerScience</tag>
