@@ -3,11 +3,11 @@
   <title>WFY&#39;s Blog</title>
   
   <subtitle>Full Snack Developer</subtitle>
-  <link href="https://wfyishere.github.io/project/atom.xml" rel="self"/>
+  <link href="https://wfyishere.github.io/atom.xml" rel="self"/>
   
-  <link href="https://wfyishere.github.io/project/"/>
+  <link href="https://wfyishere.github.io/"/>
   <updated>2025-01-16T10:52:21.264Z</updated>
-  <id>https://wfyishere.github.io/project/</id>
+  <id>https://wfyishere.github.io/</id>
   
   <author>
     <name>Wen Fanyu</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="https://wfyishere.github.io/project/2025/01/16/hello-world/"/>
-    <id>https://wfyishere.github.io/project/2025/01/16/hello-world/</id>
+    <link href="https://wfyishere.github.io/2025/01/16/hello-world/"/>
+    <id>https://wfyishere.github.io/2025/01/16/hello-world/</id>
     <published>2025-01-16T10:52:21.264Z</published>
     <updated>2025-01-16T10:52:21.264Z</updated>
     
