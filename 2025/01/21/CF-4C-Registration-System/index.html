@@ -9,7 +9,7 @@
     
     <title>
         
-            Hello World |
+            [CF] 4C - Registration System |
         
         WFY&#39;s Blog
     </title>
@@ -239,7 +239,7 @@
             <div class="post-content-bottom border-box">
                 
                     <div class="post-title">
-                        Hello World
+                        [CF] 4C - Registration System
                     </div>
                 
 
@@ -267,25 +267,49 @@
         
             <span class="meta-info-item post-create-date">
                 <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
-                <span class="datetime">2025-01-16</span>
+                <span class="datetime">2025-01-21</span>
             </span>
 
             
                 <span class="meta-info-item post-update-date">
                     <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                    <span class="datetime" data-updated="Thu Jan 16 2025 18:52:21 GMT+0800">2025-01-16</span>
+                    <span class="datetime" data-updated="Tue Jan 21 2025 22:22:10 GMT+0800">2025-01-21</span>
                 </span>
             
         
 
         
+            <span class="meta-info-item post-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
+                <ul class="post-category-ul">
+                    
+                            <li class="category-item"><a href="/categories/CompetitiveProgramming/">CompetitiveProgramming</a></li>
+                        
+                    
+                            <li class="category-item">&nbsp;<i class="icon fas fa-angle-right"></i>&nbsp;<a href="/categories/CompetitiveProgramming/CodeForces/">CodeForces</a></li>
+                        
+                    
+                            <li class="category-item">&nbsp;<i class="icon fas fa-angle-right"></i>&nbsp;<a href="/categories/CompetitiveProgramming/CodeForces/ProblemSet/">ProblemSet</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
 
+        
+            <span class="post-tag meta-info-item border-box">
+                <ul class="post-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/HashMap-Bruteforce-CPP-C/">HashMap, Bruteforce, CPP, C</a></li>
+                        
+                    
+                </ul>
+            </span>
         
 
         
         
             <span class="meta-info-item post-wordcount">
-                <i class="icon fas fa-file-word"></i>&nbsp;<span>75 Words</span>
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>185 Words</span>
             </span>
         
         
@@ -308,23 +332,21 @@
                     </div>
                 
 
-                <div class="post-content keep-markdown-body ">
+                <div class="post-content keep-markdown-body code-block-unshrink">
                     
 
                     
-                         <p>Welcome to <a class="link"   target="_blank" rel="noopener" href="https://hexo.io/" >Hexo<i class="fas fa-external-link-alt"></i></a>! This is your very first post. Check <a class="link"   target="_blank" rel="noopener" href="https://hexo.io/docs/" >documentation<i class="fas fa-external-link-alt"></i></a> for more info. If you get any problems when using Hexo, you can find the answer in <a class="link"   target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html" >troubleshooting<i class="fas fa-external-link-alt"></i></a> or you can ask me on <a class="link"   target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues" >GitHub<i class="fas fa-external-link-alt"></i></a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+                         <p>I learned some basics of C&#x2F;C++, including scanf and cin, how to use hashMap in C, etc.</p>
+<span id="more"></span>
 
-<p>More info: <a class="link"   target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html" >Writing<i class="fas fa-external-link-alt"></i></a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<h3 id="My-Solution"><a href="#My-Solution" class="headerlink" title="My Solution"></a>My Solution</h3><p>Store the value in a hashMap, use the name as key and the number of times it appeared as value and just store+print.</p>
+<p><strong>Idea</strong>: </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;unordered_map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    unordered_map &lt;string, <span class="type">int</span>&gt; hashMap;</span><br><span class="line">    <span class="type">int</span> n;</span><br><span class="line">    <span class="type">char</span> temp[<span class="number">50</span>];</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n);</span><br><span class="line">    <span class="keyword">while</span> (n &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>, temp);</span><br><span class="line">        <span class="function">string <span class="title">user_name</span><span class="params">(temp)</span></span>;</span><br><span class="line">        <span class="keyword">if</span> (hashMap.<span class="built_in">count</span>(user_name) &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            hashMap[user_name] ++;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%s%d\n&quot;</span>, user_name.<span class="built_in">c_str</span>(), hashMap[user_name]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            hashMap[user_name] = <span class="number">0</span>;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;OK\n&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        n--;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a class="link"   target="_blank" rel="noopener" href="https://hexo.io/docs/server.html" >Server<i class="fas fa-external-link-alt"></i></a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a class="link"   target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html" >Generating<i class="fas fa-external-link-alt"></i></a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a class="link"   target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html" >Deployment<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="Official-Solution"><a href="#Official-Solution" class="headerlink" title="Official Solution"></a>Official Solution</h3><p>pretty much the same</p>
+<h3 id="Thoughts"><a href="#Thoughts" class="headerlink" title="Thoughts"></a>Thoughts</h3><p>I learned how to use C++ documentations to checkup functions</p>
+<p>Also, a bit about how to use hashMap in C++</p>
+<p>Also learned a bit about scanf and cin differences and how to mix C with C++ to write code (because scanf(C) is faster but C++ provides some good libraries.)</p>
 
                     
                 </div>
@@ -333,6 +355,14 @@
 
                 <div class="post-bottom-tags-and-share border-box">
                     <div>
+                        
+                            <ul class="post-tags-box border-box">
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/HashMap-Bruteforce-CPP-C/">HashMap, Bruteforce, CPP, C</a>
+                                    </li>
+                                
+                            </ul>
                         
                     </div>
                     <div>
@@ -345,22 +375,22 @@
                 
                     <div class="post-nav border-box">
                         
-                            <div class="prev-post">
-                                <a class="prev"
-                                   rel="prev"
+                        
+                            <div class="next-post">
+                                <a class="next"
+                                   rel="next"
                                    href="/2025/01/20/CF-25A-IQ-test/"
                                    title="[CF] 25A - IQ test"
                                 >
-                                    <span class="left arrow-icon flex-center">
-                                        <i class="fas fa-chevron-left"></i>
-                                    </span>
                                     <span class="title flex-center">
                                         <span class="post-nav-title-item text-ellipsis">[CF] 25A - IQ test</span>
-                                        <span class="post-nav-item">Prev posts</span>
+                                        <span class="post-nav-item">Next posts</span>
+                                    </span>
+                                    <span class="right arrow-icon flex-center">
+                                        <i class="fas fa-chevron-right"></i>
                                     </span>
                                 </a>
                             </div>
-                        
                         
                     </div>
                 
@@ -381,7 +411,7 @@
             <div class="pc-post-toc left-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#My-Solution"><span class="nav-number">1.</span> <span class="nav-text">My Solution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Official-Solution"><span class="nav-number">2.</span> <span class="nav-text">Official Solution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Thoughts"><span class="nav-number">3.</span> <span class="nav-text">Thoughts</span></a></li></ol>
     </div>
 </div>
 
@@ -554,7 +584,7 @@
             <div class="tablet-post-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#My-Solution"><span class="nav-number">1.</span> <span class="nav-text">My Solution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Official-Solution"><span class="nav-number">2.</span> <span class="nav-text">Official Solution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Thoughts"><span class="nav-number">3.</span> <span class="nav-text">Thoughts</span></a></li></ol>
     </div>
 </div>
 

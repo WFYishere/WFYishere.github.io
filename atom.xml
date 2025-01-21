@@ -6,7 +6,7 @@
   <link href="https://wfyishere.github.io/atom.xml" rel="self"/>
   
   <link href="https://wfyishere.github.io/"/>
-  <updated>2025-01-20T14:26:06.587Z</updated>
+  <updated>2025-01-21T14:22:10.529Z</updated>
   <id>https://wfyishere.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>[CF] 4C - Registration System</title>
+    <link href="https://wfyishere.github.io/2025/01/21/CF-4C-Registration-System/"/>
+    <id>https://wfyishere.github.io/2025/01/21/CF-4C-Registration-System/</id>
+    <published>2025-01-21T14:15:33.000Z</published>
+    <updated>2025-01-21T14:22:10.529Z</updated>
+    
+    <content type="html"><![CDATA[<p>I learned some basics of C&#x2F;C++, including scanf and cin, how to use hashMap in C, etc.</p><span id="more"></span><h3 id="My-Solution"><a href="#My-Solution" class="headerlink" title="My Solution"></a>My Solution</h3><p>Store the value in a hashMap, use the name as key and the number of times it appeared as value and just store+print.</p><p><strong>Idea</strong>: </p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;unordered_map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    unordered_map &lt;string, <span class="type">int</span>&gt; hashMap;</span><br><span class="line">    <span class="type">int</span> n;</span><br><span class="line">    <span class="type">char</span> temp[<span class="number">50</span>];</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n);</span><br><span class="line">    <span class="keyword">while</span> (n &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>, temp);</span><br><span class="line">        <span class="function">string <span class="title">user_name</span><span class="params">(temp)</span></span>;</span><br><span class="line">        <span class="keyword">if</span> (hashMap.<span class="built_in">count</span>(user_name) &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            hashMap[user_name] ++;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%s%d\n&quot;</span>, user_name.<span class="built_in">c_str</span>(), hashMap[user_name]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            hashMap[user_name] = <span class="number">0</span>;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;OK\n&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        n--;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="Official-Solution"><a href="#Official-Solution" class="headerlink" title="Official Solution"></a>Official Solution</h3><p>pretty much the same</p><h3 id="Thoughts"><a href="#Thoughts" class="headerlink" title="Thoughts"></a>Thoughts</h3><p>I learned how to use C++ documentations to checkup functions</p><p>Also, a bit about how to use hashMap in C++</p><p>Also learned a bit about scanf and cin differences and how to mix C with C++ to write code (because scanf(C) is faster but C++ provides some good libraries.)</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;I learned some basics of C&amp;#x2F;C++, including scanf and cin, how to use hashMap in C, etc.&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="CompetitiveProgramming" scheme="https://wfyishere.github.io/categories/CompetitiveProgramming/"/>
+    
+    <category term="CodeForces" scheme="https://wfyishere.github.io/categories/CompetitiveProgramming/CodeForces/"/>
+    
+    <category term="ProblemSet" scheme="https://wfyishere.github.io/categories/CompetitiveProgramming/CodeForces/ProblemSet/"/>
+    
+    
+    <category term="HashMap, Bruteforce, CPP, C" scheme="https://wfyishere.github.io/tags/HashMap-Bruteforce-CPP-C/"/>
+    
+  </entry>
   
   <entry>
     <title>[CF] 25A - IQ test</title>
