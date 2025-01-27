@@ -6,7 +6,7 @@
   <link href="https://wfyishere.github.io/atom.xml" rel="self"/>
   
   <link href="https://wfyishere.github.io/"/>
-  <updated>2025-01-26T05:45:09.884Z</updated>
+  <updated>2025-01-27T13:21:05.271Z</updated>
   <id>https://wfyishere.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>[CF] 279B - Books</title>
+    <link href="https://wfyishere.github.io/2025/01/27/CF-279B-Books/"/>
+    <id>https://wfyishere.github.io/2025/01/27/CF-279B-Books/</id>
+    <published>2025-01-27T13:17:16.000Z</published>
+    <updated>2025-01-27T13:21:05.271Z</updated>
+    
+    <content type="html"><![CDATA[<p>Easy question but I thought of it in a too difficult way.</p><span id="more"></span><h3 id="My-Solution"><a href="#My-Solution" class="headerlink" title="My Solution"></a>My Solution</h3><p><strong>Idea</strong>: Notice that for each <code>i</code>th book, we just need to find <code>r_i</code> such that the sum of the time from <code>i</code> to <code>r_i</code>th book is smaller than <code>t</code>. We can also notice that r_i is not descending, so each time we calculate <code>r_i</code> from <code>r_&#123;i-1&#125;</code></p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure><h3 id="Official-Solution"><a href="#Official-Solution" class="headerlink" title="Official Solution"></a>Official Solution</h3><p>Similar Idea but <a class="link"   href="https://codeforces.com/blog/entry/95148" >much more descent code<i class="fas fa-external-link-alt"></i></a>.</p><h3 id="Thoughts"><a href="#Thoughts" class="headerlink" title="Thoughts"></a>Thoughts</h3><p>You shouldn’t solve a question from strange or fancy techniques. Try solving a question from the most bruteforce way and gradually decrease the question.</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;Easy question but I thought of it in a too difficult way.&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="CompetitiveProgramming" scheme="https://wfyishere.github.io/categories/CompetitiveProgramming/"/>
+    
+    <category term="CodeForces" scheme="https://wfyishere.github.io/categories/CompetitiveProgramming/CodeForces/"/>
+    
+    <category term="ProblemSet" scheme="https://wfyishere.github.io/categories/CompetitiveProgramming/CodeForces/ProblemSet/"/>
+    
+    
+    <category term="CPP" scheme="https://wfyishere.github.io/tags/CPP/"/>
+    
+    <category term="BruteForce" scheme="https://wfyishere.github.io/tags/BruteForce/"/>
+    
+  </entry>
   
   <entry>
     <title>[CF] 455A - Boredom</title>
