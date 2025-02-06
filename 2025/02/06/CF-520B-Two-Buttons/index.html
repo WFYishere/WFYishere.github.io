@@ -9,7 +9,7 @@
     
     <title>
         
-            [CF] 4C - Registration System |
+            [CF] 520B - Two Buttons |
         
         WFY&#39;s Blog
     </title>
@@ -239,7 +239,7 @@
             <div class="post-content-bottom border-box">
                 
                     <div class="post-title">
-                        [CF] 4C - Registration System
+                        [CF] 520B - Two Buttons
                     </div>
                 
 
@@ -267,13 +267,13 @@
         
             <span class="meta-info-item post-create-date">
                 <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
-                <span class="datetime">2025-01-21</span>
+                <span class="datetime">2025-02-06</span>
             </span>
 
             
                 <span class="meta-info-item post-update-date">
                     <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                    <span class="datetime" data-updated="Fri Jan 24 2025 15:25:11 GMT+0800">2025-01-24</span>
+                    <span class="datetime" data-updated="Thu Feb 06 2025 17:33:17 GMT+0800">2025-02-06</span>
                 </span>
             
         
@@ -291,6 +291,9 @@
                             <li class="category-item">&nbsp;<i class="icon fas fa-angle-right"></i>&nbsp;<a href="/categories/CompetitiveProgramming/CodeForces/ProblemSet/">ProblemSet</a></li>
                         
                     
+                            <li class="category-item">&nbsp;<i class="icon fas fa-angle-right"></i>&nbsp;<a href="/categories/Unsolved/">Unsolved</a></li>
+                        
+                    
                 </ul>
             </span>
         
@@ -302,13 +305,10 @@
                             <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/CPP/">CPP</a></li>
                         
                     
-                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/Bruteforce/">Bruteforce</a></li>
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/Math/">Math</a></li>
                         
                     
-                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/HashMap/">HashMap</a></li>
-                        
-                    
-                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/C/">C</a></li>
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/BFS/">BFS</a></li>
                         
                     
                 </ul>
@@ -318,12 +318,12 @@
         
         
             <span class="meta-info-item post-wordcount">
-                <i class="icon fas fa-file-word"></i>&nbsp;<span>185 Words</span>
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>695 Words</span>
             </span>
         
         
             <span class="meta-info-item post-min2read">
-                <i class="icon fas fa-clock"></i>&nbsp;<span>1 Mins</span>
+                <i class="icon fas fa-clock"></i>&nbsp;<span>4 Mins</span>
             </span>
         
         
@@ -345,17 +345,29 @@
                     
 
                     
-                         <p>I learned some basics of C&#x2F;C++, including scanf and cin, how to use hashMap in C, etc.</p>
+                         <p>Interesting problem with a much easier solution using mathematical methods.</p>
 <span id="more"></span>
 
-<h3 id="My-Solution"><a href="#My-Solution" class="headerlink" title="My Solution"></a>My Solution</h3><p>Store the value in a hashMap, use the name as key and the number of times it appeared as value and just store+print.</p>
-<p><strong>Idea</strong>: </p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;unordered_map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    unordered_map &lt;string, <span class="type">int</span>&gt; hashMap;</span><br><span class="line">    <span class="type">int</span> n;</span><br><span class="line">    <span class="type">char</span> temp[<span class="number">50</span>];</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n);</span><br><span class="line">    <span class="keyword">while</span> (n &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>, temp);</span><br><span class="line">        <span class="function">string <span class="title">user_name</span><span class="params">(temp)</span></span>;</span><br><span class="line">        <span class="keyword">if</span> (hashMap.<span class="built_in">count</span>(user_name) &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            hashMap[user_name] ++;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%s%d\n&quot;</span>, user_name.<span class="built_in">c_str</span>(), hashMap[user_name]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            hashMap[user_name] = <span class="number">0</span>;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;OK\n&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        n--;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="My-Solution"><a href="#My-Solution" class="headerlink" title="My Solution"></a>My Solution</h3><p><strong>Idea</strong>: Use BFS to solve the problem. Imagine each node as the current displayed number <code>i</code>, the path from <code>n</code> to <code>i</code> is how we press the button to arrive at <code>i</code>. Using BFS, we are garuanteed that the first time that we see <code>m</code>, the path from <code>n</code> to <code>m</code> would be the shortest path.</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;unordered_map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">int</span> MAX = <span class="number">10000</span>;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> n, m;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;n, &amp;m);</span><br><span class="line">    <span class="type">int</span> cnt[MAX<span class="number">+1</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line">    queue&lt;<span class="type">int</span>&gt; q;</span><br><span class="line">    q.<span class="built_in">push</span>(n);</span><br><span class="line">    <span class="type">int</span> curr = <span class="number">0</span>;</span><br><span class="line">    cnt[n] = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (curr != m &amp;&amp; !q.<span class="built_in">empty</span>()) &#123;</span><br><span class="line">        curr = q.<span class="built_in">front</span>();</span><br><span class="line">        q.<span class="built_in">pop</span>();</span><br><span class="line">        <span class="keyword">if</span> (((curr - <span class="number">1</span>) &gt; <span class="number">0</span>) &amp;&amp; ((curr<span class="number">-1</span>) &lt;= MAX) &amp;&amp; cnt[curr<span class="number">-1</span>] == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> ((curr - <span class="number">1</span>) == m) &#123;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, cnt[curr] + <span class="number">1</span>);</span><br><span class="line">                <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            cnt[curr - <span class="number">1</span>] = cnt[curr] + <span class="number">1</span>;</span><br><span class="line">            q.<span class="built_in">push</span>(curr - <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (((curr * <span class="number">2</span>) &gt; <span class="number">0</span> ) &amp;&amp; ((curr * <span class="number">2</span>) &lt;= MAX) &amp;&amp; cnt[curr*<span class="number">2</span>] == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> ((curr * <span class="number">2</span>) == m) &#123;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, cnt[curr] + <span class="number">1</span>);</span><br><span class="line">                <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            cnt[curr * <span class="number">2</span>] = cnt[curr] + <span class="number">1</span>;</span><br><span class="line">            q.<span class="built_in">push</span>(curr * <span class="number">2</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, cnt[m]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h3 id="Official-Solution"><a href="#Official-Solution" class="headerlink" title="Official Solution"></a>Official Solution</h3><p>pretty much the same</p>
-<h3 id="Thoughts"><a href="#Thoughts" class="headerlink" title="Thoughts"></a>Thoughts</h3><p>I learned how to use C++ documentations to checkup functions</p>
-<p>Also, a bit about how to use hashMap in C++</p>
-<p>Also learned a bit about scanf and cin differences and how to mix C with C++ to write code (because scanf(C) is faster but C++ provides some good libraries.)</p>
+<h3 id="Official-Solution"><a href="#Official-Solution" class="headerlink" title="Official Solution"></a>Official Solution</h3><p>Solution 1 is the solution that I have gave. The time complexity should be o(n).</p>
+<p>Solution 2 is a more mathematical solution. This problem is equivalent to: how to reach from <code>m</code> to <code>n</code> given two operations <code>+1</code> and <code>/2</code>. </p>
+<p>Observe that the operation <code>+1 +1 /2</code> is equivalent to <code>/2 +1</code>, while the later takes less step. That means that consecutive <code>+1</code> would only appear at the end of the “optimal operation list”, because consecutive <code>+1</code> should not appear before any <code>/2</code> (otherwise it would be replaced by <code>/2 +1</code>). </p>
+<p>This means that the optimal operation would look something like: some consecutive <code>/2</code>, some consecutive <code>+1 /2</code> followed by consecutive <code>+1</code>.</p>
+<p>This means that the optimal solution is: when <code>m</code> is larger than <code>n</code>, we either <code>/2</code> if m is even, or <code>+1 /2</code> if m is odd. Until at some point <code>m</code> is smaller than <code>n</code>, then we keep <code>+1</code>. (See proof)</p>
+<p>Furthermore, we can summarize that for given two kinds of operations <code>+b</code> and <code>/a</code>, where <code>b</code> and <code>a</code> are coprime, the only possible solution should be when <code>m</code> is larger than <code>n</code>, we <code>/a</code> whenerver <code>a</code> divides <code>m</code>, or <code>+b</code> until the current number divides <code>a</code>. When the current number is smaller than <code>n</code>, we keep <code>+b</code>.</p>
+<p>*Proof: </p>
+<p>imagine <code>dp[i]</code> denotes the minimal number of times to press the button from <code>i</code> to <code>n</code>.</p>
+<p>In this case, when <code>i</code> is larger than <code>n</code>:</p>
+<ol>
+<li><p><code>i</code> is not a multiple of <code>a</code>: <code>dp[i] = k + dp[i+kb]</code>. where <code>i+kb</code> is the minimal number that is a multiple of a(k &gt; 0). I.e. In this situation, the only thing you can do is <code>+b</code>, until at some point we have the opportunity to choose<code>/a</code>, which would lead to the second scenario.</p>
+</li>
+<li><p><code>i</code> is a multiple of <code>a</code>: In this case, <code>dp[i] = min&#123;dp[i+b], dp[i/a]&#125; + 1</code>. However, note that <code>dp[i+b]</code> goes back to the first scenario, which means that <code>dp[i+b] = a - 1 + dp[i+ab]</code>. Thus, <code>dp[i] = min&#123;dp[i+ab] + a, dp[i/a] + 1&#125;</code>. However, since <code>i</code> is larger than <code>n</code>, we know if we chose the <code>dp[i+ab] + a</code> part, at some point we have to divide by <code>a</code> to reach <code>n</code>. Suppose we decide to divide by <code>a</code> when we reach <code>i+kab</code>. That means, we reach <code>i/a+kb</code> by adding <code>b</code> <code>ka</code> times and dividing <code>a</code> 1 time. However, by the previous observation, we know that it would take less step if we divide a first and add <code>b</code> <code>k</code> times.</p>
+</li>
+</ol>
+<p>When <code>i</code> is smaller than <code>n</code>: add b (?)</p>
+<h3 id="Thoughts"><a href="#Thoughts" class="headerlink" title="Thoughts"></a>Thoughts</h3><p>Interesting problem. Hope I can prove it later.</p>
 
                     
                 </div>
@@ -372,15 +384,11 @@
                                     </li>
                                 
                                     <li class="tag-item border-box">
-                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/Bruteforce/">Bruteforce</a>
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/Math/">Math</a>
                                     </li>
                                 
                                     <li class="tag-item border-box">
-                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/HashMap/">HashMap</a>
-                                    </li>
-                                
-                                    <li class="tag-item border-box">
-                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/C/">C</a>
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/BFS/">BFS</a>
                                     </li>
                                 
                             </ul>
@@ -396,31 +404,15 @@
                 
                     <div class="post-nav border-box">
                         
-                            <div class="prev-post">
-                                <a class="prev"
-                                   rel="prev"
-                                   href="/2025/01/22/CF-230B-T-primes/"
-                                   title="[CF] 230B - T-primes"
-                                >
-                                    <span class="left arrow-icon flex-center">
-                                        <i class="fas fa-chevron-left"></i>
-                                    </span>
-                                    <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">[CF] 230B - T-primes</span>
-                                        <span class="post-nav-item">Prev posts</span>
-                                    </span>
-                                </a>
-                            </div>
-                        
                         
                             <div class="next-post">
                                 <a class="next"
                                    rel="next"
-                                   href="/2025/01/20/CF-25A-IQ-test/"
-                                   title="[CF] 25A - IQ test"
+                                   href="/2025/01/27/CF-279B-Books/"
+                                   title="[CF] 279B - Books"
                                 >
                                     <span class="title flex-center">
-                                        <span class="post-nav-title-item text-ellipsis">[CF] 25A - IQ test</span>
+                                        <span class="post-nav-title-item text-ellipsis">[CF] 279B - Books</span>
                                         <span class="post-nav-item">Next posts</span>
                                     </span>
                                     <span class="right arrow-icon flex-center">
