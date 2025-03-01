@@ -49,7 +49,7 @@ Here’s a sneak peek at some topics I plan to write about soon:
 
 - 🌍 **Website Updates**:  
   - Edit the different pages(edits,blogs,links,categories,tags) 
-
+   - Add the log session.
 - 💻 **Editorials**:  
 
 - 📝 **Experiences**:  
