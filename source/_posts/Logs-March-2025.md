@@ -13,4 +13,4 @@ Day 1: Edited Blog and studied MA3252 for 2 hours.
 
 Day 2 & 3: Fever, did nothing.
 
-Day 4: 
+Day 4: Studies 3252 for 2 hours and read CP4 CH2.1 CH 2.2
