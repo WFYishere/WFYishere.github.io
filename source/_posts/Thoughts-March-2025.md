@@ -21,3 +21,27 @@ Day 2
 Day 3
 
 > Health is the most important thing. 身体是革命的本钱。
+
+Day 4
+
+> More positive thoughts and less negative thoughts.
+
+Day 7
+
+> Do rather than see other people do.
+
+Day 8
+
+> Am I good at a lot of things? Or do I just do things that I am good at?
+
+Day 10
+
+> So you have to trust that the dots will somehow connect in your future. You have to trust in something — your gut, destiny, life, karma, whatever.  -- Jobs
+
+Day 13
+
+> Treat school coursework as correction of intuition, rather as a "course work where I need to learn everything in everydetail" or something to get by with.
+
+Day 15
+
+> 决心=极致的欲望+能成功的信念

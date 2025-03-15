@@ -17,7 +17,9 @@ This post are some notes that I have taken from the book CP4. Do note that it is
 
 # Menu
 
-TBC. 
+[Introduction]()
+
+[Data Structures]()
 
 # Study Plan
 
