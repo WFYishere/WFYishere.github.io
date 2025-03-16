@@ -273,7 +273,7 @@
             
                 <span class="meta-info-item post-update-date">
                     <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                    <span class="datetime" data-updated="Tue Mar 04 2025 23:06:34 GMT+0800">2025-03-04</span>
+                    <span class="datetime" data-updated="Sun Mar 16 2025 22:14:14 GMT+0800">2025-03-16</span>
                 </span>
             
         
@@ -315,12 +315,12 @@
         
         
             <span class="meta-info-item post-wordcount">
-                <i class="icon fas fa-file-word"></i>&nbsp;<span>1.2k Words</span>
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>115 Words</span>
             </span>
         
         
             <span class="meta-info-item post-min2read">
-                <i class="icon fas fa-clock"></i>&nbsp;<span>7 Mins</span>
+                <i class="icon fas fa-clock"></i>&nbsp;<span>1 Mins</span>
             </span>
         
         
@@ -346,460 +346,8 @@
 <span id="more"></span>
 
 <h1 id="Foreword"><a href="#Foreword" class="headerlink" title="Foreword"></a>Foreword</h1><p>This post are some notes that I have taken from the book CP4. Do note that it is much better if you read the book by yourself and these are just study notes that I have made. I didn’t make notes for all chapters, and the arrangement of this study note might be different from the ordering of chapters in the book. I have also included my study plan at the end of the post.</p>
-<h1 id="Chapter-1-Introduction"><a href="#Chapter-1-Introduction" class="headerlink" title="Chapter 1: Introduction"></a>Chapter 1: Introduction</h1><h2 id="Algorithm-Analysis"><a href="#Algorithm-Analysis" class="headerlink" title="Algorithm Analysis"></a>Algorithm Analysis</h2><ol>
-<li><p>Modern Computers process $\approx 100M$ operations per second. Use these to approximately estimate whetehr your algorithm is fast enough.</p>
-</li>
-<li><p>Approximations</p>
-</li>
-</ol>
-<ul>
-<li>$ 10! \approx 3 \times 10^6 $</li>
-<li>32-bit signed integers (<code>int</code>) and 64-bit signed integers (<code>long long</code>) have upper limits of  $2^{31}-1 \approx 10^9$, $2^{63}-1 \approx 10^{18}$</li>
-</ul>
-<ol start="3">
-<li>Estimating Time Complexity</li>
-</ol>
-<table>
-<thead>
-<tr>
-<th>$n$</th>
-<th>Worst AC Algorithm</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>$\leq [10..11]$</td>
-<td>$O(n!), O(n^6)$</td>
-</tr>
-<tr>
-<td>$\leq [17..19]$</td>
-<td>$O(2^n \times n^2)$</td>
-</tr>
-<tr>
-<td>$\leq [18..22]$</td>
-<td>$O(2^n \times n)$</td>
-</tr>
-<tr>
-<td>$\leq [24..26]$</td>
-<td>$O(2^n)$</td>
-</tr>
-<tr>
-<td>$\leq 100$</td>
-<td>$O(n^4)$</td>
-</tr>
-<tr>
-<td>$\leq 450$</td>
-<td>$O(n^3)$</td>
-</tr>
-<tr>
-<td>$\leq 1.5K$</td>
-<td>$O(n^{2.5})$</td>
-</tr>
-<tr>
-<td>$\leq 2.5K$</td>
-<td>$O(n^2 \log n)$</td>
-</tr>
-<tr>
-<td>$\leq 10K$</td>
-<td>$O(n^2)$</td>
-</tr>
-<tr>
-<td>$\leq 200K$</td>
-<td>$O(n^{1.5})$</td>
-</tr>
-<tr>
-<td>$\leq 4.5M$</td>
-<td>$O(n \log n)$</td>
-</tr>
-<tr>
-<td>$\leq 10M$</td>
-<td>$O(n \log \log n)$</td>
-</tr>
-<tr>
-<td>$\leq 100M$</td>
-<td>$O(n), O(\log n)$</td>
-</tr>
-</tbody></table>
-<h2 id="Testing-Your-Code"><a href="#Testing-Your-Code" class="headerlink" title="Testing Your Code"></a>Testing Your Code</h2><ol>
-<li>Use <code>fc</code> to tell the difference between your code and sample code, instead of manually checking.</li>
-</ol>
-<ul>
-<li><code>program.exe &lt; in.txt &gt; myout.txt</code></li>
-<li><code>fc myout.txt out.txt</code></li>
-</ul>
-<ol start="2">
-<li><p>For problems with multiple test cases in a single run , include two identical sample test cases consecutively in the same run to check if there are variables that are not resetted properly.</p>
-</li>
-<li><p>Include Corner Cases like <code>N=0</code> or <code>N=1</code> or negative values and large values out of bound of <code>int</code> </p>
-</li>
-<li><p>refrain from coding until you are sure that your algorithm is both correct and fast enough</p>
-</li>
-</ol>
-<h1 id="Data-Structures"><a href="#Data-Structures" class="headerlink" title="Data Structures"></a>Data Structures</h1><h2 id="Data-Structures-with-standard-libraries"><a href="#Data-Structures-with-standard-libraries" class="headerlink" title="Data Structures with standard libraries"></a>Data Structures with standard libraries</h2><h3 id="Linear-Data-Structures"><a href="#Linear-Data-Structures" class="headerlink" title="Linear Data Structures"></a>Linear Data Structures</h3><ol>
-<li>Vector</li>
-</ol>
-<table>
-<thead>
-<tr>
-<th><strong>Operation</strong></th>
-<th><strong>Time Complexity</strong></th>
-<th><strong>Explanation</strong></th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>Access Elements</strong></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><code>v[i]</code></td>
-<td><strong>O(1)</strong></td>
-<td>Direct index access is constant time.</td>
-</tr>
-<tr>
-<td><code>v.at(i)</code></td>
-<td><strong>O(1)</strong></td>
-<td>Same as <code>v[i]</code>, but with bounds checking.</td>
-</tr>
-<tr>
-<td><code>v.front()</code> &#x2F; <code>v.back()</code></td>
-<td><strong>O(1)</strong></td>
-<td>Accessing first or last element is constant time.</td>
-</tr>
-<tr>
-<td><strong>Insertion &amp; Deletion</strong></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><code>push_back(x)</code></td>
-<td><strong>O(1)</strong> (amortized)</td>
-<td>Adding an element to the end is usually constant time, but resizing can take O(n).</td>
-</tr>
-<tr>
-<td><code>pop_back()</code></td>
-<td><strong>O(1)</strong></td>
-<td>Removes the last element in constant time.</td>
-</tr>
-<tr>
-<td><code>insert(pos, x)</code></td>
-<td><strong>O(n)</strong></td>
-<td>Shifting elements to insert at <code>pos</code> takes linear time.</td>
-</tr>
-<tr>
-<td><code>erase(pos)</code></td>
-<td><strong>O(n)</strong></td>
-<td>Removing an element requires shifting the remaining elements.</td>
-</tr>
-<tr>
-<td><code>erase(start, end)</code></td>
-<td><strong>O(n)</strong></td>
-<td>Removing a range requires shifting elements after <code>end</code>.</td>
-</tr>
-<tr>
-<td><code>clear()</code></td>
-<td><strong>O(n)</strong></td>
-<td>Frees memory by destructing elements.</td>
-</tr>
-<tr>
-<td><strong>Size &amp; Capacity</strong></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><code>size()</code></td>
-<td><strong>O(1)</strong></td>
-<td><code>std::vector</code> keeps track of its size.</td>
-</tr>
-<tr>
-<td><code>capacity()</code></td>
-<td><strong>O(1)</strong></td>
-<td>Checking allocated memory is constant time.</td>
-</tr>
-<tr>
-<td><code>empty()</code></td>
-<td><strong>O(1)</strong></td>
-<td>Checks whether the size is zero.</td>
-</tr>
-<tr>
-<td><code>resize(n)</code></td>
-<td><strong>O(n)</strong></td>
-<td>Increasing size may require memory allocation and copying elements.</td>
-</tr>
-<tr>
-<td><code>shrink_to_fit()</code></td>
-<td><strong>O(n)</strong></td>
-<td>Reduces capacity to fit size, may require reallocation.</td>
-</tr>
-<tr>
-<td><strong>Searching &amp; Sorting</strong></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><code>std::find(v.begin(), v.end(), x)</code></td>
-<td><strong>O(n)</strong></td>
-<td>Linear search is slow for unsorted vectors.</td>
-</tr>
-<tr>
-<td><code>std::lower_bound(v.begin(), v.end(), x)</code></td>
-<td><strong>O(log n)</strong></td>
-<td>Binary search in a sorted vector.</td>
-</tr>
-<tr>
-<td><code>std::upper_bound(v.begin(), v.end(), x)</code></td>
-<td><strong>O(log n)</strong></td>
-<td>Finds the first element greater than <code>x</code>.</td>
-</tr>
-<tr>
-<td><code>std::sort(v.begin(), v.end())</code></td>
-<td><strong>O(n log n)</strong></td>
-<td>Uses IntroSort (QuickSort + HeapSort + InsertionSort).</td>
-</tr>
-<tr>
-<td><code>std::reverse(v.begin(), v.end())</code></td>
-<td><strong>O(n)</strong></td>
-<td>Swaps elements from both ends iteratively.</td>
-</tr>
-</tbody></table>
-<ol start="2">
-<li><p>Linked list</p>
-<ul>
-<li>Usually not used in competitions</li>
-</ul>
-</li>
-<li><p>Stack</p>
-</li>
-</ol>
-<table>
-<thead>
-<tr>
-<th><strong>Operation</strong></th>
-<th><strong>Time Complexity</strong></th>
-<th><strong>Explanation</strong></th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>push(x)</code></td>
-<td><strong>O(1)</strong></td>
-<td>Adds <code>x</code> to the top of the stack.</td>
-</tr>
-<tr>
-<td><code>pop()</code></td>
-<td><strong>O(1)</strong></td>
-<td>Removes the top element.</td>
-</tr>
-<tr>
-<td><code>top()</code></td>
-<td><strong>O(1)</strong></td>
-<td>Accesses the top element.</td>
-</tr>
-<tr>
-<td><code>size()</code></td>
-<td><strong>O(1)</strong></td>
-<td>Returns the number of elements.</td>
-</tr>
-<tr>
-<td><code>empty()</code></td>
-<td><strong>O(1)</strong></td>
-<td>Checks if the stack is empty.</td>
-</tr>
-</tbody></table>
-<ol start="4">
-<li>Queue</li>
-</ol>
-<table>
-<thead>
-<tr>
-<th><strong>Operation</strong></th>
-<th><strong>Time Complexity</strong></th>
-<th><strong>Explanation</strong></th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>push(x)</code></td>
-<td><strong>O(1)</strong></td>
-<td>Adds <code>x</code> to the back of the queue.</td>
-</tr>
-<tr>
-<td><code>pop()</code></td>
-<td><strong>O(1)</strong></td>
-<td>Removes the front element.</td>
-</tr>
-<tr>
-<td><code>front()</code></td>
-<td><strong>O(1)</strong></td>
-<td>Accesses the front element.</td>
-</tr>
-<tr>
-<td><code>back()</code></td>
-<td><strong>O(1)</strong></td>
-<td>Accesses the back element.</td>
-</tr>
-<tr>
-<td><code>size()</code></td>
-<td><strong>O(1)</strong></td>
-<td>Returns the number of elements.</td>
-</tr>
-<tr>
-<td><code>empty()</code></td>
-<td><strong>O(1)</strong></td>
-<td>Checks if the queue is empty.</td>
-</tr>
-</tbody></table>
-<h2 id="Non-Linear-Data-Structures"><a href="#Non-Linear-Data-Structures" class="headerlink" title="Non Linear Data Structures"></a>Non Linear Data Structures</h2><h3 id="Binary-Search-Tree"><a href="#Binary-Search-Tree" class="headerlink" title="Binary Search Tree"></a>Binary Search Tree</h3><p>Think of set and map as C++ built in implementation of Binary Search Tree, where every operation can be used in $O(log n)$ time. The only difference is that map stores a key-value pair and set stores only the key.</p>
-<ol>
-<li>Set</li>
-</ol>
-<table>
-<thead>
-<tr>
-<th><strong>Operation</strong></th>
-<th><strong>Time Complexity</strong></th>
-<th><strong>Explanation</strong></th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>s.insert(x)</code></td>
-<td><strong>O(log n)</strong></td>
-<td>Insert <code>x</code> into the set (maintains order).</td>
-</tr>
-<tr>
-<td><code>s.erase(x)</code></td>
-<td><strong>O(log n)</strong></td>
-<td>Removes <code>x</code> from the set.</td>
-</tr>
-<tr>
-<td><code>s.find(x)</code></td>
-<td><strong>O(log n)</strong></td>
-<td>Returns an iterator to <code>x</code>, or <code>s.end()</code> if not found.</td>
-</tr>
-<tr>
-<td><code>s.count(x)</code></td>
-<td><strong>O(log n)</strong></td>
-<td>Checks if <code>x</code> exists in the set (returns 0 or 1).</td>
-</tr>
-<tr>
-<td><code>s.lower_bound(x)</code></td>
-<td><strong>O(log n)</strong></td>
-<td>Finds the first element <strong>≥ <code>x</code></strong>.</td>
-</tr>
-<tr>
-<td><code>s.upper_bound(x)</code></td>
-<td><strong>O(log n)</strong></td>
-<td>Finds the first element <strong>&gt; <code>x</code></strong>.</td>
-</tr>
-<tr>
-<td><code>s.begin()</code> &#x2F; <code>s.end()</code></td>
-<td><strong>O(1)</strong></td>
-<td>Returns an iterator to the first&#x2F;last element.</td>
-</tr>
-<tr>
-<td><code>s.size()</code></td>
-<td><strong>O(1)</strong></td>
-<td>Returns the number of elements in the set.</td>
-</tr>
-</tbody></table>
-<ol start="2">
-<li>Map</li>
-</ol>
-<table>
-<thead>
-<tr>
-<th><strong>Operation</strong></th>
-<th><strong>Time Complexity</strong></th>
-<th><strong>Explanation</strong></th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>m[key] = value;</code></td>
-<td><strong>O(log n)</strong></td>
-<td>Insert or update <code>key → value</code>.</td>
-</tr>
-<tr>
-<td><code>m.insert(&#123;key, value&#125;)</code></td>
-<td><strong>O(log n)</strong></td>
-<td>Insert a new key-value pair.</td>
-</tr>
-<tr>
-<td><code>m.erase(key)</code></td>
-<td><strong>O(log n)</strong></td>
-<td>Removes the key from the map.</td>
-</tr>
-<tr>
-<td><code>m.find(key)</code></td>
-<td><strong>O(log n)</strong></td>
-<td>Returns an iterator to the key, or <code>m.end()</code> if not found.</td>
-</tr>
-<tr>
-<td><code>m.count(key)</code></td>
-<td><strong>O(log n)</strong></td>
-<td>Checks if <code>key</code> exists (returns 0 or 1).</td>
-</tr>
-<tr>
-<td><code>m.lower_bound(key)</code></td>
-<td><strong>O(log n)</strong></td>
-<td>Finds the first key <strong>≥ <code>key</code></strong>.</td>
-</tr>
-<tr>
-<td><code>m.upper_bound(key)</code></td>
-<td><strong>O(log n)</strong></td>
-<td>Finds the first key <strong>&gt; <code>key</code></strong>.</td>
-</tr>
-<tr>
-<td><code>m.begin()</code> &#x2F; <code>m.end()</code></td>
-<td><strong>O(1)</strong></td>
-<td>Returns an iterator to the first&#x2F;last key-value pair.</td>
-</tr>
-<tr>
-<td><code>m.size()</code></td>
-<td><strong>O(1)</strong></td>
-<td>Returns the number of key-value pairs.</td>
-</tr>
-</tbody></table>
-<h3 id="Heap"><a href="#Heap" class="headerlink" title="Heap"></a>Heap</h3><p><a class="link"   target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=t0Cq6tVNRBA" >Here<i class="fas fa-external-link-alt"></i></a> is a good video on heap. A heap is a complete binary tree where the root node is alawys larger than its children.</p>
-<table>
-<thead>
-<tr>
-<th><strong>Operation</strong></th>
-<th><strong>Time Complexity</strong></th>
-<th><strong>Explanation</strong></th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>pq.push(x)</code></td>
-<td><strong>O(log n)</strong></td>
-<td>Inserts <code>x</code> into the heap (maintains heap order).</td>
-</tr>
-<tr>
-<td><code>pq.pop()</code></td>
-<td><strong>O(log n)</strong></td>
-<td>Removes the maximum (or minimum) element.</td>
-</tr>
-<tr>
-<td><code>pq.top()</code></td>
-<td><strong>O(1)</strong></td>
-<td>Returns the highest priority element.</td>
-</tr>
-<tr>
-<td><code>pq.size()</code></td>
-<td><strong>O(1)</strong></td>
-<td>Returns the number of elements in the queue.</td>
-</tr>
-<tr>
-<td><code>pq.empty()</code></td>
-<td><strong>O(1)</strong></td>
-<td>Checks if the queue is empty.</td>
-</tr>
-<tr>
-<td><strong>Heap Construction (<code>make_heap</code>)</strong></td>
-<td><strong>O(n)</strong></td>
-<td>Converts an array into a heap.</td>
-</tr>
-</tbody></table>
-<p>For min-heap, we just use </p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">priority_queue&lt;<span class="type">int</span>, vector&lt;<span class="type">int</span>&gt;, greater&lt;<span class="type">int</span>&gt;&gt; minHeap;</span><br></pre></td></tr></table></figure>
-
-<h3 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h3><p>Do not use this because C++ does not have a built in library for it.</p>
+<h1 id="Menu"><a href="#Menu" class="headerlink" title="Menu"></a>Menu</h1><p><a href="">Introduction</a></p>
+<p><a href="">Data Structures</a></p>
 <h1 id="Study-Plan"><a href="#Study-Plan" class="headerlink" title="Study Plan"></a>Study Plan</h1><ol>
 <li><p>Week 1:</p>
 <ul>
@@ -845,6 +393,22 @@
                 
                     <div class="post-nav border-box">
                         
+                            <div class="prev-post">
+                                <a class="prev"
+                                   rel="prev"
+                                   href="/2025/03/01/CP4-Introduction/"
+                                   title="[CP4] - Introduction"
+                                >
+                                    <span class="left arrow-icon flex-center">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">[CP4] - Introduction</span>
+                                        <span class="post-nav-item">Prev posts</span>
+                                    </span>
+                                </a>
+                            </div>
+                        
                         
                             <div class="next-post">
                                 <a class="next"
@@ -881,7 +445,7 @@
             <div class="pc-post-toc left-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Foreword"><span class="nav-number">1.</span> <span class="nav-text">Foreword</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Chapter-1-Introduction"><span class="nav-number">2.</span> <span class="nav-text">Chapter 1: Introduction</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Algorithm-Analysis"><span class="nav-number">2.1.</span> <span class="nav-text">Algorithm Analysis</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Testing-Your-Code"><span class="nav-number">2.2.</span> <span class="nav-text">Testing Your Code</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Data-Structures"><span class="nav-number">3.</span> <span class="nav-text">Data Structures</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Data-Structures-with-standard-libraries"><span class="nav-number">3.1.</span> <span class="nav-text">Data Structures with standard libraries</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Linear-Data-Structures"><span class="nav-number">3.1.1.</span> <span class="nav-text">Linear Data Structures</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Non-Linear-Data-Structures"><span class="nav-number">3.2.</span> <span class="nav-text">Non Linear Data Structures</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Binary-Search-Tree"><span class="nav-number">3.2.1.</span> <span class="nav-text">Binary Search Tree</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Heap"><span class="nav-number">3.2.2.</span> <span class="nav-text">Heap</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HashMap"><span class="nav-number">3.2.3.</span> <span class="nav-text">HashMap</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Study-Plan"><span class="nav-number">4.</span> <span class="nav-text">Study Plan</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Foreword"><span class="nav-number">1.</span> <span class="nav-text">Foreword</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Menu"><span class="nav-number">2.</span> <span class="nav-text">Menu</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Study-Plan"><span class="nav-number">3.</span> <span class="nav-text">Study Plan</span></a></li></ol>
     </div>
 </div>
 
@@ -916,7 +480,7 @@
             
                 <span class="count-item border-box word">
                     <span class="item-type border-box">Total words</span>
-                    <span class="item-value border-box word">3.6k</span>
+                    <span class="item-value border-box word">3.8k</span>
                 </span>
             
 
@@ -1054,7 +618,7 @@
             <div class="tablet-post-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Foreword"><span class="nav-number">1.</span> <span class="nav-text">Foreword</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Chapter-1-Introduction"><span class="nav-number">2.</span> <span class="nav-text">Chapter 1: Introduction</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Algorithm-Analysis"><span class="nav-number">2.1.</span> <span class="nav-text">Algorithm Analysis</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Testing-Your-Code"><span class="nav-number">2.2.</span> <span class="nav-text">Testing Your Code</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Data-Structures"><span class="nav-number">3.</span> <span class="nav-text">Data Structures</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Data-Structures-with-standard-libraries"><span class="nav-number">3.1.</span> <span class="nav-text">Data Structures with standard libraries</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Linear-Data-Structures"><span class="nav-number">3.1.1.</span> <span class="nav-text">Linear Data Structures</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Non-Linear-Data-Structures"><span class="nav-number">3.2.</span> <span class="nav-text">Non Linear Data Structures</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Binary-Search-Tree"><span class="nav-number">3.2.1.</span> <span class="nav-text">Binary Search Tree</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Heap"><span class="nav-number">3.2.2.</span> <span class="nav-text">Heap</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HashMap"><span class="nav-number">3.2.3.</span> <span class="nav-text">HashMap</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Study-Plan"><span class="nav-number">4.</span> <span class="nav-text">Study Plan</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Foreword"><span class="nav-number">1.</span> <span class="nav-text">Foreword</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Menu"><span class="nav-number">2.</span> <span class="nav-text">Menu</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Study-Plan"><span class="nav-number">3.</span> <span class="nav-text">Study Plan</span></a></li></ol>
     </div>
 </div>
 
