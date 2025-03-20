@@ -42,6 +42,14 @@ Day 13
 
 > Treat school coursework as correction of intuition, rather as a "course work where I need to learn everything in everydetail" or something to get by with.
 
+Day 14
+
+> 看到一个人比你更强的时候，不要想让他人变弱，二十让自己变得更强。
+
 Day 15
 
-> 决心=极致的欲望+能成功的信念
+> 决心=极致的欲望+能成功的信念。这是最重要和特殊的能力。
+
+Day 19
+
+> Accept that you are imperfect - if you are already perfect now, what about the rest 50 years of your life?

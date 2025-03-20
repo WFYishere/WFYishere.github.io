@@ -35,4 +35,14 @@ Day 13: CS3263 exam
 
 Day 14: Read Quantum Shapley Value paper and had meeting.
 
-Day 15: Did QF1100 & MA3252 Homework for 2hours.
+Day 15: Did MA3252 Homework for 2hours.
+
+Day 16: Read more semi-value paper for 3 hours and did QF1100 for 0.5 horus.
+
+Day 17: Company visit UBS
+
+Day 18: Kaggle Competition Discussion 2 hours
+
+Day 19: Quantitative Interview Questions (QIC) 0.5 hours 
+
+Day 20: 1.5hours useless networking session, 2.5 hours coding of leetcode question with group mates, group project 0.5 hours, ECON 159 L1
