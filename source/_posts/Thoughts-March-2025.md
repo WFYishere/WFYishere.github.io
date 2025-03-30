@@ -53,3 +53,15 @@ Day 15
 Day 19
 
 > Accept that you are imperfect - if you are already perfect now, what about the rest 50 years of your life?
+
+Day 24: 
+
+> Spend less time planning and more time doing things.
+
+Day 25:
+
+> I have never felt that a day is so long...in a good way
+
+Day 27:
+
+> Take it slowly. You can't change in a day.

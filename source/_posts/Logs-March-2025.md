@@ -46,3 +46,21 @@ Day 18: Kaggle Competition Discussion 2 hours
 Day 19: Quantitative Interview Questions (QIC) 0.5 hours 
 
 Day 20: 1.5hours useless networking session, 2.5 hours coding of leetcode question with group mates, group project 0.5 hours, ECON 159 L1
+
+Day 21: 3263 tut for 2h
+
+Day 22: Coding Assessment for 2hours, QIC for 1 hours
+
+Day 23: Sunday rest.
+
+Day 24: Useless talk for 2 hours, QIC 0.5 hours, NST 2hours, ECON 159 L2,3,4
+
+Day 25: QIC 0.5 hours, Banzhaff 0.5 hours, ECON 159 L5
+
+Day 26: QIC 0.5hours
+
+Day 27: QIC 0.5 hours
+
+Day 28: QIC 0.5 horus + 3264 group project 1hours
+
+Day 29: QIC 0.5 horus + 2 hours ECON 159

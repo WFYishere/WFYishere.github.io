@@ -52,6 +52,8 @@ Here’s a sneak peek at some topics I plan to write about soon:
    - Add the log session.
 - 💻 **Editorials**:  
 
+   - Martingales
+   - Waiting Time (under folder papers)
 - 📝 **Experiences**:  
    - Linux Try
   
