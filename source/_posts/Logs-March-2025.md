@@ -64,3 +64,7 @@ Day 27: QIC 0.5 hours
 Day 28: QIC 0.5 horus + 3264 group project 1hours
 
 Day 29: QIC 0.5 horus + 2 hours ECON 159
+
+Day 30: QIC 0.5 hours + 1.5 hours 3263 project + 1.5 hours Qiskit learning
+
+Day 31: QIC 0.5 hours + 1 hour research paper reading.
