@@ -6,7 +6,7 @@
   <link href="https://wfyishere.github.io/atom.xml" rel="self"/>
   
   <link href="https://wfyishere.github.io/"/>
-  <updated>2025-03-16T14:14:14.585Z</updated>
+  <updated>2025-05-04T08:55:35.285Z</updated>
   <id>https://wfyishere.github.io/</id>
   
   <author>
@@ -15,6 +15,60 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>[Log] April 2025</title>
+    <link href="https://wfyishere.github.io/2025/04/01/Logs-April-2025/"/>
+    <id>https://wfyishere.github.io/2025/04/01/Logs-April-2025/</id>
+    <published>2025-03-31T16:00:01.000Z</published>
+    <updated>2025-05-04T08:55:35.285Z</updated>
+    
+    <content type="html"><![CDATA[<p>Goal for April: resolve the dopamine detox issue. I am not aiming for “high efficiency” or anything, simply asking that the internet should not destroy my brain.</p><span id="more"></span><p>Day 1: </p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;Goal for April: resolve the dopamine detox issue. I am not aiming for “high efficiency” or anything, simply asking that the internet should not destroy my brain.&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Logs" scheme="https://wfyishere.github.io/categories/Logs/"/>
+    
+    <category term="2025" scheme="https://wfyishere.github.io/categories/Logs/2025/"/>
+    
+    
+    <category term="Thoughts" scheme="https://wfyishere.github.io/tags/Thoughts/"/>
+    
+    <category term="Experiences" scheme="https://wfyishere.github.io/tags/Experiences/"/>
+    
+    <category term="Logs" scheme="https://wfyishere.github.io/tags/Logs/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[Thoughts] - April 2025</title>
+    <link href="https://wfyishere.github.io/2025/04/01/Thoughts-April-2025/"/>
+    <id>https://wfyishere.github.io/2025/04/01/Thoughts-April-2025/</id>
+    <published>2025-03-31T16:00:00.000Z</published>
+    <updated>2025-05-04T08:55:35.288Z</updated>
+    
+    <content type="html"><![CDATA[<p>Thoughts in April 2025.</p><span id="more"></span><p>Day 1</p><blockquote></blockquote>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;Thoughts in April 2025.&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Thoughts" scheme="https://wfyishere.github.io/categories/Thoughts/"/>
+    
+    <category term="MonthlyReports" scheme="https://wfyishere.github.io/categories/Thoughts/MonthlyReports/"/>
+    
+    <category term="2025" scheme="https://wfyishere.github.io/categories/Thoughts/MonthlyReports/2025/"/>
+    
+    
+    <category term="Thoughts" scheme="https://wfyishere.github.io/tags/Thoughts/"/>
+    
+    <category term="MonthlyReports" scheme="https://wfyishere.github.io/tags/MonthlyReports/"/>
+    
+  </entry>
   
   <entry>
     <title>[CP4] - Data Structures</title>
@@ -118,9 +172,9 @@
     <link href="https://wfyishere.github.io/2025/03/01/Logs-March-2025/"/>
     <id>https://wfyishere.github.io/2025/03/01/Logs-March-2025/</id>
     <published>2025-02-28T16:00:01.000Z</published>
-    <updated>2025-03-16T14:14:14.595Z</updated>
+    <updated>2025-05-04T08:55:35.286Z</updated>
     
-    <content type="html"><![CDATA[<p>Log for everyday. I want to keep this post so that I can keep track of what I did everyday, which would be quite useful for improving efficiency.</p><span id="more"></span><p>Day 1: Edited Blog and studied MA3252 for 2 hours.</p><p>Day 2 &amp; 3: Fever, did nothing.</p><p>Day 4: Studies 3252 for 2 hours and read CP4 CH2.1 CH 2.2</p><p>Day 5: Studied 3252 for 2 hours.</p><p>Day 6: Did nothing.</p><p>Day 7: Studies 3252 for 5 hours and exam 2 hours.</p><p>Day 8: Studies 3264 for 2 hours</p><p>Day 9: Studied 3264 for 5 hours</p><p>Day 10: Studied 3236 fo 4 hours, midterm 3236+3264 4hours, Studied QF 2hours</p><p>Day 11: Studies QF1100 for 5 hours, QF1100 exam</p><p>Day 12: Studies CS3263 for 3 hours</p><p>Day 13: CS3263 exam</p><p>Day 14: Read Quantum Shapley Value paper and had meeting.</p><p>Day 15: Did QF1100 &amp; MA3252 Homework for 2hours.</p>]]></content>
+    <content type="html"><![CDATA[<p>Log for everyday. I want to keep this post so that I can keep track of what I did everyday, which would be quite useful for improving efficiency.</p><span id="more"></span><p>Day 1: Edited Blog and studied MA3252 for 2 hours.</p><p>Day 2 &amp; 3: Fever, did nothing.</p><p>Day 4: Studies 3252 for 2 hours and read CP4 CH2.1 CH 2.2</p><p>Day 5: Studied 3252 for 2 hours.</p><p>Day 6: Did nothing.</p><p>Day 7: Studies 3252 for 5 hours and exam 2 hours.</p><p>Day 8: Studies 3264 for 2 hours</p><p>Day 9: Studied 3264 for 5 hours</p><p>Day 10: Studied 3236 fo 4 hours, midterm 3236+3264 4hours, Studied QF 2hours</p><p>Day 11: Studies QF1100 for 5 hours, QF1100 exam</p><p>Day 12: Studies CS3263 for 3 hours</p><p>Day 13: CS3263 exam</p><p>Day 14: Read Quantum Shapley Value paper and had meeting.</p><p>Day 15: Did MA3252 Homework for 2hours.</p><p>Day 16: Read more semi-value paper for 3 hours and did QF1100 for 0.5 horus.</p><p>Day 17: Company visit UBS</p><p>Day 18: Kaggle Competition Discussion 2 hours</p><p>Day 19: Quantitative Interview Questions (QIC) 0.5 hours </p><p>Day 20: 1.5hours useless networking session, 2.5 hours coding of leetcode question with group mates, group project 0.5 hours, ECON 159 L1</p><p>Day 21: 3263 tut for 2h</p><p>Day 22: Coding Assessment for 2hours, QIC for 1 hours</p><p>Day 23: Sunday rest.</p><p>Day 24: Useless talk for 2 hours, QIC 0.5 hours, NST 2hours, ECON 159 L2,3,4</p><p>Day 25: QIC 0.5 hours, Banzhaff 0.5 hours, ECON 159 L5</p><p>Day 26: QIC 0.5hours</p><p>Day 27: QIC 0.5 hours</p><p>Day 28: QIC 0.5 horus + 3264 group project 1hours</p><p>Day 29: QIC 0.5 horus + 2 hours ECON 159</p><p>Day 30: QIC 0.5 hours + 1.5 hours 3263 project + 1.5 hours Qiskit learning</p><p>Day 31: QIC 0.5 hours + 1 hour research paper reading.</p>]]></content>
     
     
     <summary type="html">&lt;p&gt;Log for everyday. I want to keep this post so that I can keep track of what I did everyday, which would be quite useful for improving efficiency.&lt;/p&gt;</summary>
@@ -145,9 +199,9 @@
     <link href="https://wfyishere.github.io/2025/03/01/Thoughts-March-2025/"/>
     <id>https://wfyishere.github.io/2025/03/01/Thoughts-March-2025/</id>
     <published>2025-02-28T16:00:00.000Z</published>
-    <updated>2025-03-16T14:14:14.601Z</updated>
+    <updated>2025-05-04T08:55:35.289Z</updated>
     
-    <content type="html"><![CDATA[<p>Thoughts in March 2025.</p><span id="more"></span><p>Day 1</p><blockquote><p>把人生当成一场跑步。不要因为过去的一公里跑得太慢而焦虑，也不要幻想自己在接下来的路程中能跑得飞快。相反的，关注现在，关注脚下的每一步，关注当下的呼吸，调整这一刻的速度。因为只有这一刻的行为，想法，感受是重要的。</p></blockquote><p>Day 2</p><blockquote><p>如果努力是x轴，收获是y轴，那么人生的曲线将是一条均值回归的线。努力将决定这条线的期望是什么样的，而运气将决定它的误差。有时方差过大，以至于我们认为努力是没有用的，于是很多人陷入虚无主义的漩涡当中。</p></blockquote><p>Day 3</p><blockquote><p>Health is the most important thing. 身体是革命的本钱。</p></blockquote><p>Day 4</p><blockquote><p>More positive thoughts and less negative thoughts.</p></blockquote><p>Day 7</p><blockquote><p>Do rather than see other people do.</p></blockquote><p>Day 8</p><blockquote><p>Am I good at a lot of things? Or do I just do things that I am good at?</p></blockquote><p>Day 10</p><blockquote><p>So you have to trust that the dots will somehow connect in your future. You have to trust in something — your gut, destiny, life, karma, whatever.  – Jobs</p></blockquote><p>Day 13</p><blockquote><p>Treat school coursework as correction of intuition, rather as a “course work where I need to learn everything in everydetail” or something to get by with.</p></blockquote><p>Day 15</p><blockquote><p>决心&#x3D;极致的欲望+能成功的信念</p></blockquote>]]></content>
+    <content type="html"><![CDATA[<p>Thoughts in March 2025.</p><span id="more"></span><p>Day 1</p><blockquote><p>把人生当成一场跑步。不要因为过去的一公里跑得太慢而焦虑，也不要幻想自己在接下来的路程中能跑得飞快。相反的，关注现在，关注脚下的每一步，关注当下的呼吸，调整这一刻的速度。因为只有这一刻的行为，想法，感受是重要的。</p></blockquote><p>Day 2</p><blockquote><p>如果努力是x轴，收获是y轴，那么人生的曲线将是一条均值回归的线。努力将决定这条线的期望是什么样的，而运气将决定它的误差。有时方差过大，以至于我们认为努力是没有用的，于是很多人陷入虚无主义的漩涡当中。</p></blockquote><p>Day 3</p><blockquote><p>Health is the most important thing. 身体是革命的本钱。</p></blockquote><p>Day 4</p><blockquote><p>More positive thoughts and less negative thoughts.</p></blockquote><p>Day 7</p><blockquote><p>Do rather than see other people do.</p></blockquote><p>Day 8</p><blockquote><p>Am I good at a lot of things? Or do I just do things that I am good at?</p></blockquote><p>Day 10</p><blockquote><p>So you have to trust that the dots will somehow connect in your future. You have to trust in something — your gut, destiny, life, karma, whatever.  – Jobs</p></blockquote><p>Day 13</p><blockquote><p>Treat school coursework as correction of intuition, rather as a “course work where I need to learn everything in everydetail” or something to get by with.</p></blockquote><p>Day 14</p><blockquote><p>看到一个人比你更强的时候，不要想让他人变弱，二十让自己变得更强。</p></blockquote><p>Day 15</p><blockquote><p>决心&#x3D;极致的欲望+能成功的信念。这是最重要和特殊的能力。</p></blockquote><p>Day 19</p><blockquote><p>Accept that you are imperfect - if you are already perfect now, what about the rest 50 years of your life?</p></blockquote><p>Day 24: </p><blockquote><p>Spend less time planning and more time doing things.</p></blockquote><p>Day 25:</p><blockquote><p>I have never felt that a day is so long…in a good way</p></blockquote><p>Day 27:</p><blockquote><p>Take it slowly. You can’t change in a day.</p></blockquote>]]></content>
     
     
     <summary type="html">&lt;p&gt;Thoughts in March 2025.&lt;/p&gt;</summary>
