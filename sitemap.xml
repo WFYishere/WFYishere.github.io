@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://wfyishere.github.io/about/index.html</loc>
+    <loc>https://wfyishere.github.io/2025/10/21/Notes-50-Challenging-Problems-in-Probability/</loc>
     
     <lastmod>2025-10-21</lastmod>
     
@@ -11,16 +11,7 @@
   </url>
   
   <url>
-    <loc>https://wfyishere.github.io/2025/10/20/JaneStreet/</loc>
-    
-    <lastmod>2025-10-21</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://wfyishere.github.io/2025/03/01/Competitive-Programming4-Notes/</loc>
+    <loc>https://wfyishere.github.io/2025/10/20/Competitive-Programming4-Notes/</loc>
     
     <lastmod>2025-10-20</lastmod>
     
@@ -31,7 +22,16 @@
   <url>
     <loc>https://wfyishere.github.io/2025/10/20/Geustimathon/</loc>
     
-    <lastmod>2025-10-20</lastmod>
+    <lastmod>2025-10-19</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://wfyishere.github.io/2025/10/20/JaneStreet/</loc>
+    
+    <lastmod>2025-10-19</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -40,43 +40,7 @@
   <url>
     <loc>https://wfyishere.github.io/2025/10/10/Fitness/</loc>
     
-    <lastmod>2025-10-20</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://wfyishere.github.io/2025/10/10/Sleep/</loc>
-    
-    <lastmod>2025-10-20</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://wfyishere.github.io/tags/index.html</loc>
-    
-    <lastmod>2025-03-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://wfyishere.github.io/links/index.html</loc>
-    
-    <lastmod>2025-03-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://wfyishere.github.io/categories/index.html</loc>
-    
-    <lastmod>2025-03-01</lastmod>
+    <lastmod>2025-10-09</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -85,25 +49,7 @@
   <url>
     <loc>https://wfyishere.github.io/2025/02/06/CF-520B-Two-Buttons/</loc>
     
-    <lastmod>2025-03-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://wfyishere.github.io/2025/01/26/CF-455A-Boredom/</loc>
-    
-    <lastmod>2025-03-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://wfyishere.github.io/2025/01/21/CF-4C-Registration-System/</loc>
-    
-    <lastmod>2025-03-01</lastmod>
+    <lastmod>2025-02-06</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -112,7 +58,16 @@
   <url>
     <loc>https://wfyishere.github.io/2025/01/27/CF-279B-Books/</loc>
     
-    <lastmod>2025-03-01</lastmod>
+    <lastmod>2025-01-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://wfyishere.github.io/2025/01/26/CF-455A-Boredom/</loc>
+    
+    <lastmod>2025-01-26</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -121,16 +76,7 @@
   <url>
     <loc>https://wfyishere.github.io/2025/01/24/CF-189A-Cut-Ribbon/</loc>
     
-    <lastmod>2025-03-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://wfyishere.github.io/2025/01/20/CF-25A-IQ-test/</loc>
-    
-    <lastmod>2025-03-01</lastmod>
+    <lastmod>2025-01-24</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -139,7 +85,61 @@
   <url>
     <loc>https://wfyishere.github.io/2025/01/22/CF-230B-T-primes/</loc>
     
-    <lastmod>2025-03-01</lastmod>
+    <lastmod>2025-01-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://wfyishere.github.io/2025/01/21/CF-4C-Registration-System/</loc>
+    
+    <lastmod>2025-01-21</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://wfyishere.github.io/2025/01/20/CF-25A-IQ-test/</loc>
+    
+    <lastmod>2025-01-20</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://wfyishere.github.io/links/index.html</loc>
+    
+    <lastmod>2025-01-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://wfyishere.github.io/tags/index.html</loc>
+    
+    <lastmod>2025-01-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://wfyishere.github.io/categories/index.html</loc>
+    
+    <lastmod>2025-01-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://wfyishere.github.io/about/index.html</loc>
+    
+    <lastmod>2025-01-16</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -169,13 +169,6 @@
   </url>
   
   <url>
-    <loc>https://wfyishere.github.io/tags/Bruteforce/</loc>
-    <lastmod>2025-10-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://wfyishere.github.io/tags/Algorithms/</loc>
     <lastmod>2025-10-21</lastmod>
     <changefreq>weekly</changefreq>
@@ -183,21 +176,14 @@
   </url>
   
   <url>
+    <loc>https://wfyishere.github.io/tags/Bruteforce/</loc>
+    <lastmod>2025-10-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://wfyishere.github.io/tags/BruteForce/</loc>
-    <lastmod>2025-10-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://wfyishere.github.io/tags/HashMap/</loc>
-    <lastmod>2025-10-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://wfyishere.github.io/tags/C/</loc>
     <lastmod>2025-10-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -212,6 +198,41 @@
   
   <url>
     <loc>https://wfyishere.github.io/tags/BFS/</loc>
+    <lastmod>2025-10-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://wfyishere.github.io/tags/Notes/</loc>
+    <lastmod>2025-10-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://wfyishere.github.io/tags/CompetitiveProgramming/</loc>
+    <lastmod>2025-10-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://wfyishere.github.io/tags/CP4/</loc>
+    <lastmod>2025-10-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://wfyishere.github.io/tags/HashMap/</loc>
+    <lastmod>2025-10-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://wfyishere.github.io/tags/C/</loc>
     <lastmod>2025-10-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -253,21 +274,35 @@
   </url>
   
   <url>
-    <loc>https://wfyishere.github.io/tags/Notes/</loc>
+    <loc>https://wfyishere.github.io/tags/Mathematics/</loc>
     <lastmod>2025-10-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://wfyishere.github.io/tags/CompetitiveProgramming/</loc>
+    <loc>https://wfyishere.github.io/tags/QuantFinance/</loc>
     <lastmod>2025-10-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://wfyishere.github.io/tags/CP4/</loc>
+    <loc>https://wfyishere.github.io/tags/Work/</loc>
+    <lastmod>2025-10-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://wfyishere.github.io/tags/Study/</loc>
+    <lastmod>2025-10-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://wfyishere.github.io/tags/Logs/</loc>
     <lastmod>2025-10-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -309,56 +344,14 @@
   </url>
   
   <url>
-    <loc>https://wfyishere.github.io/tags/QuantFinance/</loc>
+    <loc>https://wfyishere.github.io/tags/Statistics/</loc>
     <lastmod>2025-10-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://wfyishere.github.io/tags/Work/</loc>
-    <lastmod>2025-10-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://wfyishere.github.io/tags/Study/</loc>
-    <lastmod>2025-10-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://wfyishere.github.io/tags/Logs/</loc>
-    <lastmod>2025-10-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://wfyishere.github.io/tags/sleep/</loc>
-    <lastmod>2025-10-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://wfyishere.github.io/tags/circadian/</loc>
-    <lastmod>2025-10-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://wfyishere.github.io/tags/discipline/</loc>
-    <lastmod>2025-10-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://wfyishere.github.io/tags/recovery/</loc>
+    <loc>https://wfyishere.github.io/tags/Probability/</loc>
     <lastmod>2025-10-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -381,20 +374,6 @@
   </url>
   
   <url>
-    <loc>https://wfyishere.github.io/categories/CompetitiveProgramming/CodeForces/ProblemSet/</loc>
-    <lastmod>2025-10-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://wfyishere.github.io/categories/Notes/</loc>
-    <lastmod>2025-10-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://wfyishere.github.io/categories/CompetitiveProgramming/Notes/</loc>
     <lastmod>2025-10-21</lastmod>
     <changefreq>weekly</changefreq>
@@ -402,21 +381,7 @@
   </url>
   
   <url>
-    <loc>https://wfyishere.github.io/categories/Check-in/</loc>
-    <lastmod>2025-10-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://wfyishere.github.io/categories/Unsolved/</loc>
-    <lastmod>2025-10-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://wfyishere.github.io/categories/Notes/Books/</loc>
+    <loc>https://wfyishere.github.io/categories/CompetitiveProgramming/CodeForces/ProblemSet/</loc>
     <lastmod>2025-10-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -430,7 +395,28 @@
   </url>
   
   <url>
-    <loc>https://wfyishere.github.io/categories/Check-in/Fitness/</loc>
+    <loc>https://wfyishere.github.io/categories/Unsolved/</loc>
+    <lastmod>2025-10-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://wfyishere.github.io/categories/Notes/</loc>
+    <lastmod>2025-10-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://wfyishere.github.io/categories/Notes/Mathematics/</loc>
+    <lastmod>2025-10-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://wfyishere.github.io/categories/Check-in/</loc>
     <lastmod>2025-10-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -444,7 +430,7 @@
   </url>
   
   <url>
-    <loc>https://wfyishere.github.io/categories/Check-in/Sleep/</loc>
+    <loc>https://wfyishere.github.io/categories/Check-in/Fitness/</loc>
     <lastmod>2025-10-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
