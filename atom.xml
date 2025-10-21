@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>WFY&#39;s Blog</title>
+  
+  <subtitle>Full Snack Developer</subtitle>
+  <link href="https://wfyishere.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://wfyishere.github.io/"/>
+  <updated>2025-10-20T05:13:00.987Z</updated>
+  <id>https://wfyishere.github.io/</id>
+  
+  <author>
+    <name>Wen Fanyu</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Geustimathon</title>
+    <link href="https://wfyishere.github.io/2025/10/20/Geustimathon/"/>
+    <id>https://wfyishere.github.io/2025/10/20/Geustimathon/</id>
+    <published>2025-10-19T16:00:00.000Z</published>
+    <updated>2025-10-20T05:13:00.987Z</updated>
+    
+    <content type="html"><![CDATA[<hr><h3 id="Chapter-1"><a href="#Chapter-1" class="headerlink" title="Chapter 1"></a>Chapter 1</h3><ol><li><p>Take a problem, break into smaller steps s.t. for these steps you can estimate the upperbound and lowerbound immediately. Estimate the smaller steps and multiply it to get an estimate for the eventual answer.</p></li><li><p>Take the geometric mean of the upperbound and lowerbound. An estimate of the geometric mean is the average of the coefficients and exponents.</p></li></ol><p>$$Geometric Mean &#x3D; \sqrt{a * b}$$</p><p>Estimate of Geometric mean of $A &#x3D; a_c * 10 ^ {a_e}$ and $B &#x3D; b_c * 10 ^ {b_e}$:</p><p>$$Geometric Mean \approx \frac {(a_c + b_c)}{2} * 10 ^ {\frac {(a_e+ b_e)}{2} }$$</p><p>If the sum of exponents is odd, round down and * 3. </p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;hr&gt;
+&lt;h3 id=&quot;Chapter-1&quot;&gt;&lt;a href=&quot;#Chapter-1&quot; class=&quot;headerlink&quot; title=&quot;Chapter 1&quot;&gt;&lt;/a&gt;Chapter 1&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Take a problem, break into s</summary>
+      
+    
+    
+    
+    <category term="Notes" scheme="https://wfyishere.github.io/categories/Notes/"/>
+    
+    <category term="Books" scheme="https://wfyishere.github.io/categories/Notes/Books/"/>
+    
+    
+    <category term="JaneStreet" scheme="https://wfyishere.github.io/tags/JaneStreet/"/>
+    
+    <category term="Quant" scheme="https://wfyishere.github.io/tags/Quant/"/>
+    
+    <category term="Book" scheme="https://wfyishere.github.io/tags/Book/"/>
+    
+    <category term="StudyTips" scheme="https://wfyishere.github.io/tags/StudyTips/"/>
+    
+    <category term="DailyLife" scheme="https://wfyishere.github.io/tags/DailyLife/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Road to Jane Street</title>
+    <link href="https://wfyishere.github.io/2025/10/20/JaneStreet/"/>
+    <id>https://wfyishere.github.io/2025/10/20/JaneStreet/</id>
+    <published>2025-10-19T16:00:00.000Z</published>
+    <updated>2025-10-21T02:54:09.539Z</updated>
+    
+    <content type="html"><![CDATA[<hr><h2 id="Chapter-1-—-Introduction-Motivation-Plan"><a href="#Chapter-1-—-Introduction-Motivation-Plan" class="headerlink" title="Chapter 1 — Introduction, Motivation &amp; Plan"></a>Chapter 1 — Introduction, Motivation &amp; Plan</h2><h3 id="Why-Jane-Street"><a href="#Why-Jane-Street" class="headerlink" title="Why Jane Street"></a>Why Jane Street</h3><p>I went to JaneStreet Insight programme and realized that the vibe and atmosphere at Janestreet is what I was aiming for. Also, Janestreet have some of the smartest people in the world, whom I try to work with and study from.</p><p>So this blogpost will be a document of how I try to go to janestreet.</p><h3 id="Techniques"><a href="#Techniques" class="headerlink" title="Techniques"></a>Techniques</h3><ol><li>Number of Trials of probability p until successful: $$\frac{1}{p}$$</li></ol><h3 id="Reminders"><a href="#Reminders" class="headerlink" title="Reminders"></a>Reminders</h3><ol><li><p>Always consider to solve the problem bruteforcely when u think that theoretically its hard to solve the problem. Try with n &#x3D; 1, 2,… and find the pattern.</p></li><li><p>Solve the problem step by step.</p></li></ol><h3 id="Daily-Logs"><a href="#Daily-Logs" class="headerlink" title="Daily Logs"></a>Daily Logs</h3><h4 id="Oct-2025"><a href="#Oct-2025" class="headerlink" title="Oct 2025."></a>Oct 2025.</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">10.20</span><br><span class="line">    Mental Math: 19+34+35+34 - 10min</span><br><span class="line">    Guestimathon: read up to page 7 - 20 min</span><br><span class="line">    Fifty Challenging Problems in Probability: 1-6 - 73 min</span><br></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">10.21</span><br><span class="line">    Mental Math: 42+37+45+36 - 10min</span><br><span class="line">    Guestimathon: read up to page 29 - 15 min</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;hr&gt;
+&lt;h2 id=&quot;Chapter-1-—-Introduction-Motivation-Plan&quot;&gt;&lt;a href=&quot;#Chapter-1-—-Introduction-Motivation-Plan&quot; class=&quot;headerlink&quot; title=&quot;Chapter</summary>
+      
+    
+    
+    
+    <category term="Check-in" scheme="https://wfyishere.github.io/categories/Check-in/"/>
+    
+    <category term="Study" scheme="https://wfyishere.github.io/categories/Check-in/Study/"/>
+    
+    
+    <category term="JaneStreet" scheme="https://wfyishere.github.io/tags/JaneStreet/"/>
+    
+    <category term="QuantFinance" scheme="https://wfyishere.github.io/tags/QuantFinance/"/>
+    
+    <category term="Work" scheme="https://wfyishere.github.io/tags/Work/"/>
+    
+    <category term="Study" scheme="https://wfyishere.github.io/tags/Study/"/>
+    
+    <category term="Logs" scheme="https://wfyishere.github.io/tags/Logs/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>健身打卡</title>
+    <link href="https://wfyishere.github.io/2025/10/10/Fitness/"/>
+    <id>https://wfyishere.github.io/2025/10/10/Fitness/</id>
+    <published>2025-10-09T16:00:00.000Z</published>
+    <updated>2025-10-20T04:50:34.443Z</updated>
+    
+    <content type="html"><![CDATA[<hr><p>健身日记</p><span id="more"></span><h3 id="动力"><a href="#动力" class="headerlink" title="动力"></a>动力</h3><p>其实健身的动力非常简单——一想要有个好身材，二想要保持健康自律的生活。</p><h3 id="打卡"><a href="#打卡" class="headerlink" title="打卡"></a>打卡</h3><p>无注明默认4组，15次</p><h4 id="2025-10"><a href="#2025-10" class="headerlink" title="2025.10"></a>2025.10</h4><p>10.10：背 - 有点力竭</p><p><code>W字伸展 50次，高位下拉 20kg， 坐姿划船10kg*2组 + 15kg*2组，钢线二头弯举 7.5kg</code></p><p>10.12: 核心 - 中间有力竭但是后期还好</p><p><code>B站安娜半小时核心训练跟练，每个动作-10s + 跪姿俯卧撑 10次</code></p><p>10.13：胸 - 发力感不明显，重量很小</p><p><code>弹力带热身+坐姿推胸5kg+史密斯推胸 空杆（辅助）10次+钢线臂屈伸7.5kg</code></p><p>10.17: 三头+胸</p><p><code>跪姿俯卧撑 10次</code></p><p>10.18：背</p><p><code>W字伸展 50次 + 高位下拉20kg+坐姿划船20kg*2+15kg*2 + 牧师弯举 10kg+5kg 混合</code></p><p>10.19：肩 - 斜方肌有点痛……肩部酸痛明显</p><p><code>弹力带绕肩 + 飞鸟3kg + 推肩5kg 7.5kg混合 + 绳索面拉 7.5kg + 坐姿反飞鸟 7.5kg</code></p>]]></content>
+    
+    
+    <summary type="html">&lt;hr&gt;
+&lt;p&gt;健身日记&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Check-in" scheme="https://wfyishere.github.io/categories/Check-in/"/>
+    
+    <category term="Fitness" scheme="https://wfyishere.github.io/categories/Check-in/Fitness/"/>
+    
+    
+    <category term="fitness" scheme="https://wfyishere.github.io/tags/fitness/"/>
+    
+    <category term="habit" scheme="https://wfyishere.github.io/tags/habit/"/>
+    
+    <category term="strength" scheme="https://wfyishere.github.io/tags/strength/"/>
+    
+    <category term="cardio" scheme="https://wfyishere.github.io/tags/cardio/"/>
+    
+    <category term="wellness" scheme="https://wfyishere.github.io/tags/wellness/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>睡觉打卡</title>
+    <link href="https://wfyishere.github.io/2025/10/10/Sleep/"/>
+    <id>https://wfyishere.github.io/2025/10/10/Sleep/</id>
+    <published>2025-10-09T16:00:00.000Z</published>
+    <updated>2025-10-20T04:49:36.710Z</updated>
+    
+    <content type="html"><![CDATA[<hr><span id="more"></span><h3 id="起始动机"><a href="#起始动机" class="headerlink" title="起始动机"></a>起始动机</h3><p>我想把<strong>规律作息</strong>作为自律的基石。睡好觉不仅能让我白天更清醒、训练恢复更快，也能稳定情绪和专注力。~~还能保护我的掉发~</p><h3 id="规则（Week-1）"><a href="#规则（Week-1）" class="headerlink" title="规则（Week 1）"></a>规则（Week 1）</h3><ul><li><strong>固定时段</strong>：23:30 上床；07:30 起床（±10 分钟内为合格）。</li><li><strong>关屏时间</strong>：睡前 45 分钟不看手机&#x2F;电脑。</li><li><strong>例外处理</strong>：若晚睡，第二天依旧按时起床，中午 20 分钟补觉。</li></ul><h3 id="每日记录模板"><a href="#每日记录模板" class="headerlink" title="每日记录模板"></a>每日记录模板</h3><p>日期</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">入睡-起床：__ : __ -  __ : __</span><br><span class="line">小米手环打分：**/100</span><br><span class="line">白天清醒度：**/10</span><br></pre></td></tr></table></figure><h4 id="2025-10"><a href="#2025-10" class="headerlink" title="2025.10"></a>2025.10</h4><p>10.10</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">入睡-起床：02:34 - 11:11</span><br><span class="line">小米手环打分：82/100</span><br><span class="line">白天清醒度：8/10</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+    <summary type="html">&lt;hr&gt;</summary>
+    
+    
+    
+    <category term="Check-in" scheme="https://wfyishere.github.io/categories/Check-in/"/>
+    
+    <category term="Sleep" scheme="https://wfyishere.github.io/categories/Check-in/Sleep/"/>
+    
+    
+    <category term="sleep" scheme="https://wfyishere.github.io/tags/sleep/"/>
+    
+    <category term="circadian" scheme="https://wfyishere.github.io/tags/circadian/"/>
+    
+    <category term="discipline" scheme="https://wfyishere.github.io/tags/discipline/"/>
+    
+    <category term="recovery" scheme="https://wfyishere.github.io/tags/recovery/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[CP4] - Competitive Programming 4 Notes</title>
+    <link href="https://wfyishere.github.io/2025/03/01/Competitive-Programming4-Notes/"/>
+    <id>https://wfyishere.github.io/2025/03/01/Competitive-Programming4-Notes/</id>
+    <published>2025-03-01T06:59:01.000Z</published>
+    <updated>2025-10-20T14:53:25.350Z</updated>
+    
+    <content type="html"><![CDATA[<p>Notes for <a class="link"   href="https://cpbook.net/" >Competitive Programming 4<i class="fas fa-external-link-alt"></i></a>. A very good book.</p><span id="more"></span><h1 id="Foreword"><a href="#Foreword" class="headerlink" title="Foreword"></a>Foreword</h1><p>This post are some notes that I have taken from the book CP4. Do note that it is much better if you read the book by yourself and these are just study notes that I have made. I didn’t make notes for all chapters, and the arrangement of this study note might be different from the ordering of chapters in the book.</p><h1 id="Menu"><a href="#Menu" class="headerlink" title="Menu"></a>Menu</h1><h1 id="Chapter-1"><a href="#Chapter-1" class="headerlink" title="Chapter 1"></a>Chapter 1</h1><h2 id="1-3-Algorithm-Analysis"><a href="#1-3-Algorithm-Analysis" class="headerlink" title="1.3 Algorithm Analysis"></a>1.3 Algorithm Analysis</h2><blockquote><p>Modern Computers can process around $10^8$ problems</p></blockquote><p><strong>Familiarity with these bounds:</strong></p><ul><li>$2^{10} &#x3D; 1024 \approx 10^3$, $2^{20} &#x3D; 1,048,576 \approx 10^6$.</li><li>$10! &#x3D; 3,628,800 \approx 3 \times 10^6$, $11! &#x3D; 39,916,800 \approx 4 \times 10^7$.</li><li>32-bit signed integers (<code>int</code>) and 64-bit signed integers (<code>long long</code>) have upper limits of<br>$2^{31} - 1 \approx 2 \times 10^9$ and<br>$2^{63} - 1 \approx 9 \times 10^{18}$ </li><li>If you need to store integers $\ge 2^{64}$, use Big Integer.</li><li>The largest input size $n$ for typical programming contest problems must be $&lt; 1M$.<br>Beyond that, the Input&#x2F;Output (I&#x2F;O) routine will be the bottleneck.</li><li>Usually, $O(n \log_2 n)$ algorithms are sufficient to solve most contest problems for a simple reason:<br>$O(n \log_2 n)$ and the theoretically better $O(n)$ algorithms are hard to differentiate <em>empirically</em></li></ul><h1 id="Useful-Libraries"><a href="#Useful-Libraries" class="headerlink" title="Useful Libraries"></a>Useful Libraries</h1><ol><li><code>printf(&quot;%.*Lf\n&quot;, n, pi);</code> prints n decimals of pi. e.g. <code>n=3</code> would print <code>3.141</code></li></ol><h1 id="Study-Plan"><a href="#Study-Plan" class="headerlink" title="Study Plan"></a>Study Plan</h1>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;Notes for &lt;a class=&quot;link&quot;   href=&quot;https://cpbook.net/&quot; &gt;Competitive Programming 4&lt;i class=&quot;fas fa-external-link-alt&quot;&gt;&lt;/i&gt;&lt;/a&gt;. A very good book.&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="CompetitiveProgramming" scheme="https://wfyishere.github.io/categories/CompetitiveProgramming/"/>
+    
+    <category term="Notes" scheme="https://wfyishere.github.io/categories/CompetitiveProgramming/Notes/"/>
+    
+    <category term="CP4" scheme="https://wfyishere.github.io/categories/CompetitiveProgramming/Notes/CP4/"/>
+    
+    
+    <category term="Notes" scheme="https://wfyishere.github.io/tags/Notes/"/>
+    
+    <category term="CompetitiveProgramming" scheme="https://wfyishere.github.io/tags/CompetitiveProgramming/"/>
+    
+    <category term="CP4" scheme="https://wfyishere.github.io/tags/CP4/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[CF] 520B - Two Buttons</title>
+    <link href="https://wfyishere.github.io/2025/02/06/CF-520B-Two-Buttons/"/>
+    <id>https://wfyishere.github.io/2025/02/06/CF-520B-Two-Buttons/</id>
+    <published>2025-02-06T04:30:57.000Z</published>
+    <updated>2025-03-01T06:51:41.373Z</updated>
+    
+    <content type="html"><![CDATA[<p>Interesting problem with a much easier solution using mathematical methods.</p><span id="more"></span><h3 id="My-Solution"><a href="#My-Solution" class="headerlink" title="My Solution"></a>My Solution</h3><p><strong>Idea</strong>: Use BFS to solve the problem. Imagine each node as the current displayed number <code>i</code>, the path from <code>n</code> to <code>i</code> is how we press the button to arrive at <code>i</code>. Using BFS, we are garuanteed that the first time that we see <code>m</code>, the path from <code>n</code> to <code>m</code> would be the shortest path.</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;unordered_map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">int</span> MAX = <span class="number">10000</span>;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> n, m;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;n, &amp;m);</span><br><span class="line">    <span class="type">int</span> cnt[MAX<span class="number">+1</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line">    queue&lt;<span class="type">int</span>&gt; q;</span><br><span class="line">    q.<span class="built_in">push</span>(n);</span><br><span class="line">    <span class="type">int</span> curr = <span class="number">0</span>;</span><br><span class="line">    cnt[n] = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (curr != m &amp;&amp; !q.<span class="built_in">empty</span>()) &#123;</span><br><span class="line">        curr = q.<span class="built_in">front</span>();</span><br><span class="line">        q.<span class="built_in">pop</span>();</span><br><span class="line">        <span class="keyword">if</span> (((curr - <span class="number">1</span>) &gt; <span class="number">0</span>) &amp;&amp; ((curr<span class="number">-1</span>) &lt;= MAX) &amp;&amp; cnt[curr<span class="number">-1</span>] == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> ((curr - <span class="number">1</span>) == m) &#123;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, cnt[curr] + <span class="number">1</span>);</span><br><span class="line">                <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            cnt[curr - <span class="number">1</span>] = cnt[curr] + <span class="number">1</span>;</span><br><span class="line">            q.<span class="built_in">push</span>(curr - <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (((curr * <span class="number">2</span>) &gt; <span class="number">0</span> ) &amp;&amp; ((curr * <span class="number">2</span>) &lt;= MAX) &amp;&amp; cnt[curr*<span class="number">2</span>] == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> ((curr * <span class="number">2</span>) == m) &#123;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, cnt[curr] + <span class="number">1</span>);</span><br><span class="line">                <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            cnt[curr * <span class="number">2</span>] = cnt[curr] + <span class="number">1</span>;</span><br><span class="line">            q.<span class="built_in">push</span>(curr * <span class="number">2</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, cnt[m]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="Official-Solution"><a href="#Official-Solution" class="headerlink" title="Official Solution"></a>Official Solution</h3><p>Solution 1 is the solution that I have gave. The time complexity should be o(n).</p><p>Solution 2 is a more mathematical solution. This problem is equivalent to: how to reach from <code>m</code> to <code>n</code> given two operations <code>+1</code> and <code>/2</code>. </p><p>Observe that the operation <code>+1 +1 /2</code> is equivalent to <code>/2 +1</code>, while the later takes less step. That means that consecutive <code>+1</code> would only appear at the end of the “optimal operation list”, because consecutive <code>+1</code> should not appear before any <code>/2</code> (otherwise it would be replaced by <code>/2 +1</code>). </p><p>This means that the optimal operation would look something like: some consecutive <code>/2</code>, some consecutive <code>+1 /2</code> followed by consecutive <code>+1</code>.</p><p>This means that the optimal solution is: when <code>m</code> is larger than <code>n</code>, we either <code>/2</code> if m is even, or <code>+1 /2</code> if m is odd. Until at some point <code>m</code> is smaller than <code>n</code>, then we keep <code>+1</code>. (See proof)</p><p>Furthermore, we can summarize that for given two kinds of operations <code>+b</code> and <code>/a</code>, where <code>b</code> and <code>a</code> are coprime, the only possible solution should be when <code>m</code> is larger than <code>n</code>, we <code>/a</code> whenerver <code>a</code> divides <code>m</code>, or <code>+b</code> until the current number divides <code>a</code>. When the current number is smaller than <code>n</code>, we keep <code>+b</code>.</p><p>*Proof: </p><p>imagine <code>dp[i]</code> denotes the minimal number of times to press the button from <code>i</code> to <code>n</code>.</p><p>In this case, when <code>i</code> is larger than <code>n</code>:</p><ol><li><p><code>i</code> is not a multiple of <code>a</code>: <code>dp[i] = k + dp[i+kb]</code>. where <code>i+kb</code> is the minimal number that is a multiple of a(k &gt; 0). I.e. In this situation, the only thing you can do is <code>+b</code>, until at some point we have the opportunity to choose<code>/a</code>, which would lead to the second scenario.</p></li><li><p><code>i</code> is a multiple of <code>a</code>: In this case, <code>dp[i] = min&#123;dp[i+b], dp[i/a]&#125; + 1</code>. However, note that <code>dp[i+b]</code> goes back to the first scenario, which means that <code>dp[i+b] = a - 1 + dp[i+ab]</code>. Thus, <code>dp[i] = min&#123;dp[i+ab] + a, dp[i/a] + 1&#125;</code>. However, since <code>i</code> is larger than <code>n</code>, we know if we chose the <code>dp[i+ab] + a</code> part, at some point we have to divide by <code>a</code> to reach <code>n</code>. Suppose we decide to divide by <code>a</code> when we reach <code>i+kab</code>. That means, we reach <code>i/a+kb</code> by adding <code>b</code> <code>ka</code> times and dividing <code>a</code> 1 time. However, by the previous observation, we know that it would take less step if we divide a first and add <code>b</code> <code>k</code> times.</p></li></ol><p>When <code>i</code> is smaller than <code>n</code>: add b (?)</p><h3 id="Thoughts"><a href="#Thoughts" class="headerlink" title="Thoughts"></a>Thoughts</h3><p>Interesting problem. Hope I can prove it later.</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;Interesting problem with a much easier solution using mathematical methods.&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="CompetitiveProgramming" scheme="https://wfyishere.github.io/categories/CompetitiveProgramming/"/>
+    
+    <category term="CodeForces" scheme="https://wfyishere.github.io/categories/CompetitiveProgramming/CodeForces/"/>
+    
+    <category term="ProblemSet" scheme="https://wfyishere.github.io/categories/CompetitiveProgramming/CodeForces/ProblemSet/"/>
+    
+    <category term="Unsolved" scheme="https://wfyishere.github.io/categories/Unsolved/"/>
+    
+    
+    <category term="CPP" scheme="https://wfyishere.github.io/tags/CPP/"/>
+    
+    <category term="Math" scheme="https://wfyishere.github.io/tags/Math/"/>
+    
+    <category term="BFS" scheme="https://wfyishere.github.io/tags/BFS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[CF] 279B - Books</title>
+    <link href="https://wfyishere.github.io/2025/01/27/CF-279B-Books/"/>
+    <id>https://wfyishere.github.io/2025/01/27/CF-279B-Books/</id>
+    <published>2025-01-27T13:17:16.000Z</published>
+    <updated>2025-03-01T06:51:41.371Z</updated>
+    
+    <content type="html"><![CDATA[<p>Easy question but I thought of it in a too difficult way.</p><span id="more"></span><h3 id="My-Solution"><a href="#My-Solution" class="headerlink" title="My Solution"></a>My Solution</h3><p><strong>Idea</strong>: Notice that for each <code>i</code>th book, we just need to find <code>r_i</code> such that the sum of the time from <code>i</code> to <code>r_i</code>th book is smaller than <code>t</code>. We can also notice that r_i is not descending, so each time we calculate <code>r_i</code> from <code>r_&#123;i-1&#125;</code></p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure><h3 id="Official-Solution"><a href="#Official-Solution" class="headerlink" title="Official Solution"></a>Official Solution</h3><p>Similar Idea but <a class="link"   href="https://codeforces.com/blog/entry/95148" >much more descent code<i class="fas fa-external-link-alt"></i></a>.</p><h3 id="Thoughts"><a href="#Thoughts" class="headerlink" title="Thoughts"></a>Thoughts</h3><p>You shouldn’t solve a question from strange or fancy techniques. Try solving a question from the most bruteforce way and gradually decrease the question.</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;Easy question but I thought of it in a too difficult way.&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="CompetitiveProgramming" scheme="https://wfyishere.github.io/categories/CompetitiveProgramming/"/>
+    
+    <category term="CodeForces" scheme="https://wfyishere.github.io/categories/CompetitiveProgramming/CodeForces/"/>
+    
+    <category term="ProblemSet" scheme="https://wfyishere.github.io/categories/CompetitiveProgramming/CodeForces/ProblemSet/"/>
+    
+    
+    <category term="CPP" scheme="https://wfyishere.github.io/tags/CPP/"/>
+    
+    <category term="BruteForce" scheme="https://wfyishere.github.io/tags/BruteForce/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[CF] 455A - Boredom</title>
+    <link href="https://wfyishere.github.io/2025/01/26/CF-455A-Boredom/"/>
+    <id>https://wfyishere.github.io/2025/01/26/CF-455A-Boredom/</id>
+    <published>2025-01-26T05:32:07.000Z</published>
+    <updated>2025-03-01T06:51:41.372Z</updated>
+    
+    <content type="html"><![CDATA[<p>I thought of a different approach to the question, not sure if it will work. </p><span id="more"></span><h3 id="My-Solution"><a href="#My-Solution" class="headerlink" title="My Solution"></a>My Solution</h3><p><strong>Idea</strong>: The final score that we get &#x3D; <code>sum - sum_deleted</code>, which means that we are trying to minimize the sum of integers that we deleted.</p><p>Each time we choose <code>a_k</code>, we delete <code>deleted[a_k] = count[a_&#123;k-1&#125;] * a_&#123;k-1&#125; + count[a_&#123;k+1&#125;] * a_&#123;k+1&#125;</code>, where <code>count[a_k]</code> denotes the number of <code>a_k</code>. So is it possible to greedily search for the minimal <code>deleted[a_k]</code> each time and delete them? I am not sure if this will lead to optimal solution.</p><h3 id="Official-Solution"><a href="#Official-Solution" class="headerlink" title="Official Solution"></a>Official Solution</h3><p>Use dynamic programming. For each integer <code>a_k</code>, we either choose it or delete it. So we can do dp from the largest integer that we have: </p><ol><li>Suppose <code>dp[k]</code> denotes the largest score that we can have with the array of integers given and delete all the integers larger than k. So for test case</li></ol><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">10</span><br><span class="line">1 2 2 3 3 3 4 4 4 4 </span><br></pre></td></tr></table></figure><p><code>dp[2]</code> would denote the largest score that we can get from array <code>1 2 2</code></p><ol start="2"><li><code>dp[k]</code> can be degraded to situation where either we choose <code>k</code> or not choose <code>k</code>. If we choose <code>k</code>, then <code>k-</code> would also be deleted, which would be <code>dp[k-2] + cnt[k] * k</code>. If we don’t choose <code>k</code>, then it would be the same as <code>dp[k-1]</code>. So the dp formula:</li></ol><p><code>dp[k] = max(&#123;dp[k-2] + cnt[k] * k, dp[k-1]&#125;)</code></p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">long</span> <span class="type">long</span> dp[<span class="number">100001</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line"><span class="type">int</span> cnt[<span class="number">100001</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line"><span class="type">int</span> n;</span><br><span class="line"><span class="type">int</span> max_num = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        <span class="type">int</span> a;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;a);</span><br><span class="line">        cnt[a]++;</span><br><span class="line">        max_num = <span class="built_in">max</span>(a,max_num);</span><br><span class="line">    &#125;</span><br><span class="line">    dp[<span class="number">1</span>] = cnt[<span class="number">1</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">2</span>; i &lt;= max_num; i++) &#123;</span><br><span class="line">        dp[i] = <span class="built_in">max</span>(&#123;dp[i<span class="number">-1</span>], dp[i<span class="number">-2</span>] + (<span class="type">long</span> <span class="type">long</span>)cnt[i] * i&#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%I64d&quot;</span>, dp[max_num]);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="Thoughts"><a href="#Thoughts" class="headerlink" title="Thoughts"></a>Thoughts</h3><p>I didn’t thought about dynamic programming ways to solve this problem. I guess the best way to come up with a dp solution is to degrade the question to easier scenarios. I think this question is actually a typical “choose or not” type of dp problem.</p><p>Also, still not sure whether my solution will work. I will think about it when I am better :D</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;I thought of a different approach to the question, not sure if it will work. &lt;/p&gt;</summary>
+    
+    
+    
+    <category term="CompetitiveProgramming" scheme="https://wfyishere.github.io/categories/CompetitiveProgramming/"/>
+    
+    <category term="CodeForces" scheme="https://wfyishere.github.io/categories/CompetitiveProgramming/CodeForces/"/>
+    
+    <category term="ProblemSet" scheme="https://wfyishere.github.io/categories/CompetitiveProgramming/CodeForces/ProblemSet/"/>
+    
+    <category term="Unsolved" scheme="https://wfyishere.github.io/categories/Unsolved/"/>
+    
+    
+    <category term="DynamicProgramming" scheme="https://wfyishere.github.io/tags/DynamicProgramming/"/>
+    
+    <category term="CPP" scheme="https://wfyishere.github.io/tags/CPP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[CF] 189A - Cut Ribbon</title>
+    <link href="https://wfyishere.github.io/2025/01/24/CF-189A-Cut-Ribbon/"/>
+    <id>https://wfyishere.github.io/2025/01/24/CF-189A-Cut-Ribbon/</id>
+    <published>2025-01-24T14:28:57.000Z</published>
+    <updated>2025-03-01T06:51:41.370Z</updated>
+    
+    <content type="html"><![CDATA[<p>A simple dynamic programming question.</p><span id="more"></span><h3 id="My-Solution"><a href="#My-Solution" class="headerlink" title="My Solution"></a>My Solution</h3><p>Simply use dynamic programming. use dp[i] to indicate the maximum number of pieces for lenth i. The fromula would be <code>dp[i] = 1 + max(&#123;dp[i-a], dp[i-b], dp[i-c]&#125;)</code></p><p><strong>Idea</strong>: </p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">int</span> n, a, b, c;</span><br><span class="line"><span class="type">int</span> dp[<span class="number">4001</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">piece</span><span class="params">(<span class="type">int</span> len)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (len == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (len &lt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-8000</span>;</span><br><span class="line">    &#125; </span><br><span class="line">    <span class="keyword">if</span> (dp[len] != <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> dp[len];</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    dp[len] = <span class="built_in">max</span>(&#123;<span class="built_in">piece</span>(len-a), <span class="built_in">piece</span>(len-b), <span class="built_in">piece</span>(len-c)&#125;) + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">return</span> dp[len];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d%d%d&quot;</span>, &amp;n, &amp;a, &amp;b, &amp;c);</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> arr[] = &#123;a, b, c&#125;; </span><br><span class="line">    <span class="built_in">sort</span>(arr, arr + <span class="number">3</span>);</span><br><span class="line">    a = arr[<span class="number">0</span>];</span><br><span class="line">    b = arr[<span class="number">1</span>];</span><br><span class="line">    c = arr[<span class="number">2</span>];</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, <span class="built_in">piece</span>(n));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="Official-Solution"><a href="#Official-Solution" class="headerlink" title="Official Solution"></a>Official Solution</h3><p>The problem is to maximize x+y+z subject to ax+by+cz&#x3D;n. Constraints are low, so simply iterate over two variables (say x and y) and find the third variable (if any) from the second equation. Find the maximum over all feasible solutions.</p><p>Or use DP.</p><p>Probably bruteforce takes less space, time complexity for DP is <code>O(n / a)</code>, for bruteforce is the same.</p><h3 id="Thoughts"><a href="#Thoughts" class="headerlink" title="Thoughts"></a>Thoughts</h3><p>Easy DP question.</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;A simple dynamic programming question.&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="CompetitiveProgramming" scheme="https://wfyishere.github.io/categories/CompetitiveProgramming/"/>
+    
+    <category term="CodeForces" scheme="https://wfyishere.github.io/categories/CompetitiveProgramming/CodeForces/"/>
+    
+    <category term="ProblemSet" scheme="https://wfyishere.github.io/categories/CompetitiveProgramming/CodeForces/ProblemSet/"/>
+    
+    
+    <category term="DynamicProgramming" scheme="https://wfyishere.github.io/tags/DynamicProgramming/"/>
+    
+    <category term="CPP" scheme="https://wfyishere.github.io/tags/CPP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[CF] 230B - T-primes</title>
+    <link href="https://wfyishere.github.io/2025/01/22/CF-230B-T-primes/"/>
+    <id>https://wfyishere.github.io/2025/01/22/CF-230B-T-primes/</id>
+    <published>2025-01-22T06:10:30.000Z</published>
+    <updated>2025-03-01T06:51:41.370Z</updated>
+    
+    <content type="html"><![CDATA[<p>A simple problem on identifying prime numbers</p><span id="more"></span><h3 id="My-Solution"><a href="#My-Solution" class="headerlink" title="My Solution"></a>My Solution</h3><p><strong>Idea</strong>: It’s not hard to realize that we are looking for squared prime numbers. So for each number, we check whether it’s a squared number, if yes, then we check whether the square root is a prime number</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;unordered_map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> n;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n);</span><br><span class="line">    <span class="type">long</span> <span class="type">long</span> x;</span><br><span class="line">    <span class="keyword">while</span> (n &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%I64d&quot;</span>, &amp;x);</span><br><span class="line">        <span class="type">long</span> <span class="type">long</span> m = <span class="built_in">floor</span>(<span class="built_in">sqrt</span>(x));</span><br><span class="line">        <span class="keyword">if</span> (m * m != x <span class="keyword">or</span> x == <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;NO\n&quot;</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="type">int</span> s = <span class="built_in">floor</span>(<span class="built_in">sqrt</span>(m));</span><br><span class="line">            <span class="type">bool</span> is_prime = <span class="literal">true</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">2</span>; i &lt;= s; i++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (m % i == <span class="number">0</span>) &#123;</span><br><span class="line">                    is_prime = <span class="literal">false</span>;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (is_prime) &#123;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;YES\n&quot;</span>);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;NO\n&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        n--;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="Official-Solution"><a href="#Official-Solution" class="headerlink" title="Official Solution"></a>Official Solution</h3><p>Since range of x is <code>x &lt;= 10^12</code>, square root of x is <code>sqrt(x) &lt; 10^6</code> So we can try to precompute all possible prime numbers using <a class="link"   href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#:~:text=This%20algorithm%20produces%20all%20primes,as%20is%20usually%20the%20case." >Sieve of Eratosthenes<i class="fas fa-external-link-alt"></i></a></p><p>Store these prime numbers in a set and square it. Now for each input, we just need to check if it is in the set.</p><p>The code can be found <a class="link"   href="https://web.archive.org/web/20161225205232/http://pastie.org/4897166#10,13,15" >here<i class="fas fa-external-link-alt"></i></a></p><p>The time complexity is <code>O(sqrt(m) log log sqrt(m) + n * log(m_prime))</code>, where <code>m</code> is the upper bound of x, <code>m_prime</code> is the number of prime numbers within the 1 to <code>sqrt(m)</code>.</p><h3 id="Thoughts"><a href="#Thoughts" class="headerlink" title="Thoughts"></a>Thoughts</h3><p>Sometimes it’s better to precompute stuff.</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;A simple problem on identifying prime numbers&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="CompetitiveProgramming" scheme="https://wfyishere.github.io/categories/CompetitiveProgramming/"/>
+    
+    <category term="CodeForces" scheme="https://wfyishere.github.io/categories/CompetitiveProgramming/CodeForces/"/>
+    
+    <category term="ProblemSet" scheme="https://wfyishere.github.io/categories/CompetitiveProgramming/CodeForces/ProblemSet/"/>
+    
+    
+    <category term="CPP" scheme="https://wfyishere.github.io/tags/CPP/"/>
+    
+    <category term="Algorithms" scheme="https://wfyishere.github.io/tags/Algorithms/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[CF] 4C - Registration System</title>
+    <link href="https://wfyishere.github.io/2025/01/21/CF-4C-Registration-System/"/>
+    <id>https://wfyishere.github.io/2025/01/21/CF-4C-Registration-System/</id>
+    <published>2025-01-21T14:15:33.000Z</published>
+    <updated>2025-03-01T06:51:41.372Z</updated>
+    
+    <content type="html"><![CDATA[<p>I learned some basics of C&#x2F;C++, including scanf and cin, how to use hashMap in C, etc.</p><span id="more"></span><h3 id="My-Solution"><a href="#My-Solution" class="headerlink" title="My Solution"></a>My Solution</h3><p>Store the value in a hashMap, use the name as key and the number of times it appeared as value and just store+print.</p><p><strong>Idea</strong>: </p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;unordered_map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    unordered_map &lt;string, <span class="type">int</span>&gt; hashMap;</span><br><span class="line">    <span class="type">int</span> n;</span><br><span class="line">    <span class="type">char</span> temp[<span class="number">50</span>];</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n);</span><br><span class="line">    <span class="keyword">while</span> (n &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>, temp);</span><br><span class="line">        <span class="function">string <span class="title">user_name</span><span class="params">(temp)</span></span>;</span><br><span class="line">        <span class="keyword">if</span> (hashMap.<span class="built_in">count</span>(user_name) &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            hashMap[user_name] ++;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%s%d\n&quot;</span>, user_name.<span class="built_in">c_str</span>(), hashMap[user_name]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            hashMap[user_name] = <span class="number">0</span>;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;OK\n&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        n--;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="Official-Solution"><a href="#Official-Solution" class="headerlink" title="Official Solution"></a>Official Solution</h3><p>pretty much the same</p><h3 id="Thoughts"><a href="#Thoughts" class="headerlink" title="Thoughts"></a>Thoughts</h3><p>I learned how to use C++ documentations to checkup functions</p><p>Also, a bit about how to use hashMap in C++</p><p>Also learned a bit about scanf and cin differences and how to mix C with C++ to write code (because scanf(C) is faster but C++ provides some good libraries.)</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;I learned some basics of C&amp;#x2F;C++, including scanf and cin, how to use hashMap in C, etc.&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="CompetitiveProgramming" scheme="https://wfyishere.github.io/categories/CompetitiveProgramming/"/>
+    
+    <category term="CodeForces" scheme="https://wfyishere.github.io/categories/CompetitiveProgramming/CodeForces/"/>
+    
+    <category term="ProblemSet" scheme="https://wfyishere.github.io/categories/CompetitiveProgramming/CodeForces/ProblemSet/"/>
+    
+    
+    <category term="CPP" scheme="https://wfyishere.github.io/tags/CPP/"/>
+    
+    <category term="Bruteforce" scheme="https://wfyishere.github.io/tags/Bruteforce/"/>
+    
+    <category term="HashMap" scheme="https://wfyishere.github.io/tags/HashMap/"/>
+    
+    <category term="C" scheme="https://wfyishere.github.io/tags/C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[CF] 25A - IQ test</title>
+    <link href="https://wfyishere.github.io/2025/01/20/CF-25A-IQ-test/"/>
+    <id>https://wfyishere.github.io/2025/01/20/CF-25A-IQ-test/</id>
+    <published>2025-01-20T14:15:11.000Z</published>
+    <updated>2025-03-01T06:51:41.370Z</updated>
+    
+    <content type="html"><![CDATA[<p>My Very First CF problemset</p><span id="more"></span><h3 id="My-Solution"><a href="#My-Solution" class="headerlink" title="My Solution"></a>My Solution</h3><p><strong>Idea</strong>: we don’t need information from previous numbers, we only need three information: </p><ol><li>the common eveness <code>a</code></li><li>the current number <code>b</code></li><li>the index of the current number <code>num</code></li></ol><p>We also have a special case for when the first two numbers are different, in this situation we don’t know which number is the more common one. Thus we only need to look at the 3rd number.</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> n, a, b, c, num = <span class="number">2</span>;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;a, &amp;b);</span><br><span class="line">    a = a % <span class="number">2</span>;</span><br><span class="line">    b = b % <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">if</span> (a == b) &#123;</span><br><span class="line">        <span class="keyword">while</span> (num &lt; n) &#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;b);</span><br><span class="line">            num++;</span><br><span class="line">            <span class="keyword">if</span> (b % <span class="number">2</span> != a) &#123;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, num);</span><br><span class="line">                <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;c);</span><br><span class="line">        <span class="keyword">if</span> (c % <span class="number">2</span> == a) &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;2&quot;</span>);</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;1&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="Official-Solution"><a href="#Official-Solution" class="headerlink" title="Official Solution"></a>Official Solution</h3><p>count the number of odd numbers and even numbers, store the last odd and last even, and do it bruteforcely.</p><h3 id="Thoughts"><a href="#Thoughts" class="headerlink" title="Thoughts"></a>Thoughts</h3><p>I guess the two solutions start from two different ways but they probably have a similar time and space achievement. </p><p>This problem is my first problem in codeforces (since university), and it reminded me of how Olympiad was like :D</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;My Very First CF problemset&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="CompetitiveProgramming" scheme="https://wfyishere.github.io/categories/CompetitiveProgramming/"/>
+    
+    <category term="CodeForces" scheme="https://wfyishere.github.io/categories/CompetitiveProgramming/CodeForces/"/>
+    
+    <category term="ProblemSet" scheme="https://wfyishere.github.io/categories/CompetitiveProgramming/CodeForces/ProblemSet/"/>
+    
+    
+    <category term="CPP" scheme="https://wfyishere.github.io/tags/CPP/"/>
+    
+    <category term="Bruteforce" scheme="https://wfyishere.github.io/tags/Bruteforce/"/>
+    
+  </entry>
+  
+</feed>
