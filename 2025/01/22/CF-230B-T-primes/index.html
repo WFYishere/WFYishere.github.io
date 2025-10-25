@@ -327,10 +327,10 @@
             <span class="post-tag meta-info-item border-box">
                 <ul class="post-tag-ul">
                     
-                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/CPP/">CPP</a></li>
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/Algorithms/">Algorithms</a></li>
                         
                     
-                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/Algorithms/">Algorithms</a></li>
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/CPP/">CPP</a></li>
                         
                     
                 </ul>
@@ -365,15 +365,16 @@
                     
                          <p>A simple problem on identifying prime numbers</p>
 <span id="more"></span>
-
-<h3 id="My-Solution"><a href="#My-Solution" class="headerlink" title="My Solution"></a>My Solution</h3><p><strong>Idea</strong>: It’s not hard to realize that we are looking for squared prime numbers. So for each number, we check whether it’s a squared number, if yes, then we check whether the square root is a prime number</p>
+<h3 id="my-solution"><a class="markdownIt-Anchor" href="#my-solution"></a> My Solution</h3>
+<p><strong>Idea</strong>: It’s not hard to realize that we are looking for squared prime numbers. So for each number, we check whether it’s a squared number, if yes, then we check whether the square root is a prime number</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;unordered_map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> n;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n);</span><br><span class="line">    <span class="type">long</span> <span class="type">long</span> x;</span><br><span class="line">    <span class="keyword">while</span> (n &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%I64d&quot;</span>, &amp;x);</span><br><span class="line">        <span class="type">long</span> <span class="type">long</span> m = <span class="built_in">floor</span>(<span class="built_in">sqrt</span>(x));</span><br><span class="line">        <span class="keyword">if</span> (m * m != x <span class="keyword">or</span> x == <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;NO\n&quot;</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="type">int</span> s = <span class="built_in">floor</span>(<span class="built_in">sqrt</span>(m));</span><br><span class="line">            <span class="type">bool</span> is_prime = <span class="literal">true</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">2</span>; i &lt;= s; i++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (m % i == <span class="number">0</span>) &#123;</span><br><span class="line">                    is_prime = <span class="literal">false</span>;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (is_prime) &#123;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;YES\n&quot;</span>);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;NO\n&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        n--;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="Official-Solution"><a href="#Official-Solution" class="headerlink" title="Official Solution"></a>Official Solution</h3><p>Since range of x is <code>x &lt;= 10^12</code>, square root of x is <code>sqrt(x) &lt; 10^6</code> So we can try to precompute all possible prime numbers using <a class="link"   target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#:~:text=This%20algorithm%20produces%20all%20primes,as%20is%20usually%20the%20case." >Sieve of Eratosthenes<i class="fas fa-external-link-alt"></i></a></p>
+<h3 id="official-solution"><a class="markdownIt-Anchor" href="#official-solution"></a> Official Solution</h3>
+<p>Since range of x is <code>x &lt;= 10^12</code>, square root of x is <code>sqrt(x) &lt; 10^6</code> So we can try to precompute all possible prime numbers using <a class="link"   target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes#:~:text=This%20algorithm%20produces%20all%20primes,as%20is%20usually%20the%20case." >Sieve of Eratosthenes<i class="fas fa-external-link-alt"></i></a></p>
 <p>Store these prime numbers in a set and square it. Now for each input, we just need to check if it is in the set.</p>
 <p>The code can be found <a class="link"   target="_blank" rel="noopener" href="https://web.archive.org/web/20161225205232/http://pastie.org/4897166#10,13,15" >here<i class="fas fa-external-link-alt"></i></a></p>
 <p>The time complexity is <code>O(sqrt(m) log log sqrt(m) + n * log(m_prime))</code>, where <code>m</code> is the upper bound of x, <code>m_prime</code> is the number of prime numbers within the 1 to <code>sqrt(m)</code>.</p>
-<h3 id="Thoughts"><a href="#Thoughts" class="headerlink" title="Thoughts"></a>Thoughts</h3><p>Sometimes it’s better to precompute stuff.</p>
+<h3 id="thoughts"><a class="markdownIt-Anchor" href="#thoughts"></a> Thoughts</h3>
+<p>Sometimes it’s better to precompute stuff.</p>
 
                     
                 </div>
@@ -386,11 +387,11 @@
                             <ul class="post-tags-box border-box">
                                 
                                     <li class="tag-item border-box">
-                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/CPP/">CPP</a>
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/Algorithms/">Algorithms</a>
                                     </li>
                                 
                                     <li class="tag-item border-box">
-                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/Algorithms/">Algorithms</a>
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/CPP/">CPP</a>
                                     </li>
                                 
                             </ul>
@@ -458,7 +459,7 @@
             <div class="pc-post-toc left-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#My-Solution"><span class="nav-number">1.</span> <span class="nav-text">My Solution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Official-Solution"><span class="nav-number">2.</span> <span class="nav-text">Official Solution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Thoughts"><span class="nav-number">3.</span> <span class="nav-text">Thoughts</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#my-solution"><span class="nav-number">1.</span> <span class="nav-text"> My Solution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#official-solution"><span class="nav-number">2.</span> <span class="nav-text"> Official Solution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#thoughts"><span class="nav-number">3.</span> <span class="nav-text"> Thoughts</span></a></li></ol>
     </div>
 </div>
 
@@ -493,7 +494,7 @@
             
                 <span class="count-item border-box word">
                     <span class="item-type border-box">Total words</span>
-                    <span class="item-value border-box word">2.8k</span>
+                    <span class="item-value border-box word">3.7k</span>
                 </span>
             
 
@@ -631,7 +632,7 @@
             <div class="tablet-post-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#My-Solution"><span class="nav-number">1.</span> <span class="nav-text">My Solution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Official-Solution"><span class="nav-number">2.</span> <span class="nav-text">Official Solution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Thoughts"><span class="nav-number">3.</span> <span class="nav-text">Thoughts</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#my-solution"><span class="nav-number">1.</span> <span class="nav-text"> My Solution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#official-solution"><span class="nav-number">2.</span> <span class="nav-text"> Official Solution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#thoughts"><span class="nav-number">3.</span> <span class="nav-text"> Thoughts</span></a></li></ol>
     </div>
 </div>
 

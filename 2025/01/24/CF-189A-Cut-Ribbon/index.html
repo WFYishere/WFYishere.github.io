@@ -327,10 +327,10 @@
             <span class="post-tag meta-info-item border-box">
                 <ul class="post-tag-ul">
                     
-                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/DynamicProgramming/">DynamicProgramming</a></li>
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/CPP/">CPP</a></li>
                         
                     
-                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/CPP/">CPP</a></li>
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/DynamicProgramming/">DynamicProgramming</a></li>
                         
                     
                 </ul>
@@ -365,15 +365,16 @@
                     
                          <p>A simple dynamic programming question.</p>
 <span id="more"></span>
-
-<h3 id="My-Solution"><a href="#My-Solution" class="headerlink" title="My Solution"></a>My Solution</h3><p>Simply use dynamic programming. use dp[i] to indicate the maximum number of pieces for lenth i. The fromula would be <code>dp[i] = 1 + max(&#123;dp[i-a], dp[i-b], dp[i-c]&#125;)</code></p>
-<p><strong>Idea</strong>: </p>
+<h3 id="my-solution"><a class="markdownIt-Anchor" href="#my-solution"></a> My Solution</h3>
+<p>Simply use dynamic programming. use dp[i] to indicate the maximum number of pieces for lenth i. The fromula would be <code>dp[i] = 1 + max(&#123;dp[i-a], dp[i-b], dp[i-c]&#125;)</code></p>
+<p><strong>Idea</strong>:</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">int</span> n, a, b, c;</span><br><span class="line"><span class="type">int</span> dp[<span class="number">4001</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">piece</span><span class="params">(<span class="type">int</span> len)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (len == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (len &lt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-8000</span>;</span><br><span class="line">    &#125; </span><br><span class="line">    <span class="keyword">if</span> (dp[len] != <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> dp[len];</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    dp[len] = <span class="built_in">max</span>(&#123;<span class="built_in">piece</span>(len-a), <span class="built_in">piece</span>(len-b), <span class="built_in">piece</span>(len-c)&#125;) + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">return</span> dp[len];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d%d%d&quot;</span>, &amp;n, &amp;a, &amp;b, &amp;c);</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> arr[] = &#123;a, b, c&#125;; </span><br><span class="line">    <span class="built_in">sort</span>(arr, arr + <span class="number">3</span>);</span><br><span class="line">    a = arr[<span class="number">0</span>];</span><br><span class="line">    b = arr[<span class="number">1</span>];</span><br><span class="line">    c = arr[<span class="number">2</span>];</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, <span class="built_in">piece</span>(n));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="Official-Solution"><a href="#Official-Solution" class="headerlink" title="Official Solution"></a>Official Solution</h3><p>The problem is to maximize x+y+z subject to ax+by+cz&#x3D;n. Constraints are low, so simply iterate over two variables (say x and y) and find the third variable (if any) from the second equation. Find the maximum over all feasible solutions.</p>
+<h3 id="official-solution"><a class="markdownIt-Anchor" href="#official-solution"></a> Official Solution</h3>
+<p>The problem is to maximize x+y+z subject to ax+by+cz=n. Constraints are low, so simply iterate over two variables (say x and y) and find the third variable (if any) from the second equation. Find the maximum over all feasible solutions.</p>
 <p>Or use DP.</p>
 <p>Probably bruteforce takes less space, time complexity for DP is <code>O(n / a)</code>, for bruteforce is the same.</p>
-<h3 id="Thoughts"><a href="#Thoughts" class="headerlink" title="Thoughts"></a>Thoughts</h3><p>Easy DP question.</p>
+<h3 id="thoughts"><a class="markdownIt-Anchor" href="#thoughts"></a> Thoughts</h3>
+<p>Easy DP question.</p>
 
                     
                 </div>
@@ -386,11 +387,11 @@
                             <ul class="post-tags-box border-box">
                                 
                                     <li class="tag-item border-box">
-                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/DynamicProgramming/">DynamicProgramming</a>
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/CPP/">CPP</a>
                                     </li>
                                 
                                     <li class="tag-item border-box">
-                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/CPP/">CPP</a>
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/DynamicProgramming/">DynamicProgramming</a>
                                     </li>
                                 
                             </ul>
@@ -458,7 +459,7 @@
             <div class="pc-post-toc left-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#My-Solution"><span class="nav-number">1.</span> <span class="nav-text">My Solution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Official-Solution"><span class="nav-number">2.</span> <span class="nav-text">Official Solution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Thoughts"><span class="nav-number">3.</span> <span class="nav-text">Thoughts</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#my-solution"><span class="nav-number">1.</span> <span class="nav-text"> My Solution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#official-solution"><span class="nav-number">2.</span> <span class="nav-text"> Official Solution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#thoughts"><span class="nav-number">3.</span> <span class="nav-text"> Thoughts</span></a></li></ol>
     </div>
 </div>
 
@@ -493,7 +494,7 @@
             
                 <span class="count-item border-box word">
                     <span class="item-type border-box">Total words</span>
-                    <span class="item-value border-box word">2.8k</span>
+                    <span class="item-value border-box word">3.7k</span>
                 </span>
             
 
@@ -631,7 +632,7 @@
             <div class="tablet-post-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#My-Solution"><span class="nav-number">1.</span> <span class="nav-text">My Solution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Official-Solution"><span class="nav-number">2.</span> <span class="nav-text">Official Solution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Thoughts"><span class="nav-number">3.</span> <span class="nav-text">Thoughts</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#my-solution"><span class="nav-number">1.</span> <span class="nav-text"> My Solution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#official-solution"><span class="nav-number">2.</span> <span class="nav-text"> Official Solution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#thoughts"><span class="nav-number">3.</span> <span class="nav-text"> Thoughts</span></a></li></ol>
     </div>
 </div>
 
