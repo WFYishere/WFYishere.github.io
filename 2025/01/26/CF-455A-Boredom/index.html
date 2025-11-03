@@ -330,10 +330,10 @@
             <span class="post-tag meta-info-item border-box">
                 <ul class="post-tag-ul">
                     
-                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/CPP/">CPP</a></li>
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/DynamicProgramming/">DynamicProgramming</a></li>
                         
                     
-                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/DynamicProgramming/">DynamicProgramming</a></li>
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/CPP/">CPP</a></li>
                         
                     
                 </ul>
@@ -366,26 +366,26 @@
                     
 
                     
-                         <p>I thought of a different approach to the question, not sure if it will work.</p>
+                         <p>I thought of a different approach to the question, not sure if it will work. </p>
 <span id="more"></span>
-<h3 id="my-solution"><a class="markdownIt-Anchor" href="#my-solution"></a> My Solution</h3>
-<p><strong>Idea</strong>: The final score that we get = <code>sum - sum_deleted</code>, which means that we are trying to minimize the sum of integers that we deleted.</p>
+
+<h3 id="My-Solution"><a href="#My-Solution" class="headerlink" title="My Solution"></a>My Solution</h3><p><strong>Idea</strong>: The final score that we get &#x3D; <code>sum - sum_deleted</code>, which means that we are trying to minimize the sum of integers that we deleted.</p>
 <p>Each time we choose <code>a_k</code>, we delete <code>deleted[a_k] = count[a_&#123;k-1&#125;] * a_&#123;k-1&#125; + count[a_&#123;k+1&#125;] * a_&#123;k+1&#125;</code>, where <code>count[a_k]</code> denotes the number of <code>a_k</code>. So is it possible to greedily search for the minimal <code>deleted[a_k]</code> each time and delete them? I am not sure if this will lead to optimal solution.</p>
-<h3 id="official-solution"><a class="markdownIt-Anchor" href="#official-solution"></a> Official Solution</h3>
-<p>Use dynamic programming. For each integer <code>a_k</code>, we either choose it or delete it. So we can do dp from the largest integer that we have:</p>
+<h3 id="Official-Solution"><a href="#Official-Solution" class="headerlink" title="Official Solution"></a>Official Solution</h3><p>Use dynamic programming. For each integer <code>a_k</code>, we either choose it or delete it. So we can do dp from the largest integer that we have: </p>
 <ol>
 <li>Suppose <code>dp[k]</code> denotes the largest score that we can have with the array of integers given and delete all the integers larger than k. So for test case</li>
 </ol>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">10</span><br><span class="line">1 2 2 3 3 3 4 4 4 4 </span><br></pre></td></tr></table></figure>
+
 <p><code>dp[2]</code> would denote the largest score that we can get from array <code>1 2 2</code></p>
 <ol start="2">
 <li><code>dp[k]</code> can be degraded to situation where either we choose <code>k</code> or not choose <code>k</code>. If we choose <code>k</code>, then <code>k-</code> would also be deleted, which would be <code>dp[k-2] + cnt[k] * k</code>. If we don’t choose <code>k</code>, then it would be the same as <code>dp[k-1]</code>. So the dp formula:</li>
 </ol>
 <p><code>dp[k] = max(&#123;dp[k-2] + cnt[k] * k, dp[k-1]&#125;)</code></p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">long</span> <span class="type">long</span> dp[<span class="number">100001</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line"><span class="type">int</span> cnt[<span class="number">100001</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line"><span class="type">int</span> n;</span><br><span class="line"><span class="type">int</span> max_num = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        <span class="type">int</span> a;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;a);</span><br><span class="line">        cnt[a]++;</span><br><span class="line">        max_num = <span class="built_in">max</span>(a,max_num);</span><br><span class="line">    &#125;</span><br><span class="line">    dp[<span class="number">1</span>] = cnt[<span class="number">1</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">2</span>; i &lt;= max_num; i++) &#123;</span><br><span class="line">        dp[i] = <span class="built_in">max</span>(&#123;dp[i<span class="number">-1</span>], dp[i<span class="number">-2</span>] + (<span class="type">long</span> <span class="type">long</span>)cnt[i] * i&#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%I64d&quot;</span>, dp[max_num]);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="thoughts"><a class="markdownIt-Anchor" href="#thoughts"></a> Thoughts</h3>
-<p>I didn’t thought about dynamic programming ways to solve this problem. I guess the best way to come up with a dp solution is to degrade the question to easier scenarios. I think this question is actually a typical “choose or not” type of dp problem.</p>
-<p>Also, still not sure whether my solution will work. I will think about it when I am better 😄</p>
+
+<h3 id="Thoughts"><a href="#Thoughts" class="headerlink" title="Thoughts"></a>Thoughts</h3><p>I didn’t thought about dynamic programming ways to solve this problem. I guess the best way to come up with a dp solution is to degrade the question to easier scenarios. I think this question is actually a typical “choose or not” type of dp problem.</p>
+<p>Also, still not sure whether my solution will work. I will think about it when I am better :D</p>
 
                     
                 </div>
@@ -398,11 +398,11 @@
                             <ul class="post-tags-box border-box">
                                 
                                     <li class="tag-item border-box">
-                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/CPP/">CPP</a>
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/DynamicProgramming/">DynamicProgramming</a>
                                     </li>
                                 
                                     <li class="tag-item border-box">
-                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/DynamicProgramming/">DynamicProgramming</a>
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/CPP/">CPP</a>
                                     </li>
                                 
                             </ul>
@@ -470,7 +470,7 @@
             <div class="pc-post-toc left-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#my-solution"><span class="nav-number">1.</span> <span class="nav-text"> My Solution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#official-solution"><span class="nav-number">2.</span> <span class="nav-text"> Official Solution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#thoughts"><span class="nav-number">3.</span> <span class="nav-text"> Thoughts</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#My-Solution"><span class="nav-number">1.</span> <span class="nav-text">My Solution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Official-Solution"><span class="nav-number">2.</span> <span class="nav-text">Official Solution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Thoughts"><span class="nav-number">3.</span> <span class="nav-text">Thoughts</span></a></li></ol>
     </div>
 </div>
 
@@ -643,7 +643,7 @@
             <div class="tablet-post-toc">
                 <div class="post-toc-wrap border-box">
     <div class="post-toc border-box">
-        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#my-solution"><span class="nav-number">1.</span> <span class="nav-text"> My Solution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#official-solution"><span class="nav-number">2.</span> <span class="nav-text"> Official Solution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#thoughts"><span class="nav-number">3.</span> <span class="nav-text"> Thoughts</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#My-Solution"><span class="nav-number">1.</span> <span class="nav-text">My Solution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Official-Solution"><span class="nav-number">2.</span> <span class="nav-text">Official Solution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Thoughts"><span class="nav-number">3.</span> <span class="nav-text">Thoughts</span></a></li></ol>
     </div>
 </div>
 
