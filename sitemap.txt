@@ -1,3 +1,4 @@
+https://wfyishere.github.io/2025/11/03/Ballot-Box-Porblem/
 https://wfyishere.github.io/2025/10/25/A-Random-Thought-on-Sum-of-Geometric-Series-Inspired-by-an-Easy-Probability-Problem/
 https://wfyishere.github.io/2025/10/21/Notes-50-Challenging-Problems-in-Probability/
 https://wfyishere.github.io/2025/10/20/Competitive-Programming4-Notes/
@@ -49,6 +50,11 @@ https://wfyishere.github.io/tags/Mathematics/
 https://wfyishere.github.io/tags/QuantFinance/
 https://wfyishere.github.io/tags/Work/
 https://wfyishere.github.io/tags/Logs/
+https://wfyishere.github.io/tags/Ballot/
+https://wfyishere.github.io/tags/Catalan/
+https://wfyishere.github.io/tags/ReflectionPrinciple/
+https://wfyishere.github.io/tags/GeneratingFunctions/
+https://wfyishere.github.io/tags/TBC/
 https://wfyishere.github.io/categories/CompetitiveProgramming/
 https://wfyishere.github.io/categories/Notes/
 https://wfyishere.github.io/categories/CompetitiveProgramming/CodeForces/
@@ -62,3 +68,5 @@ https://wfyishere.github.io/categories/Check-in/Study/
 https://wfyishere.github.io/categories/Unsolved/
 https://wfyishere.github.io/categories/Notes/ComputerScience/
 https://wfyishere.github.io/categories/Notes/ComputerScience/CompetitiveProgramming/
+https://wfyishere.github.io/categories/Notes/Mathematics/Probability/
+https://wfyishere.github.io/categories/Notes/Mathematics/Probability/Combinatorics/
