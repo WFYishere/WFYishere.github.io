@@ -1,3 +1,4 @@
+https://wfyishere.github.io/2025/11/04/Poisson-Distribution/
 https://wfyishere.github.io/2025/11/03/Ballot-Box-Porblem/
 https://wfyishere.github.io/2025/10/25/A-Random-Thought-on-Sum-of-Geometric-Series-Inspired-by-an-Easy-Probability-Problem/
 https://wfyishere.github.io/2025/10/21/Notes-50-Challenging-Problems-in-Probability/
@@ -55,6 +56,8 @@ https://wfyishere.github.io/tags/Catalan/
 https://wfyishere.github.io/tags/ReflectionPrinciple/
 https://wfyishere.github.io/tags/GeneratingFunctions/
 https://wfyishere.github.io/tags/TBC/
+https://wfyishere.github.io/tags/Poisson/
+https://wfyishere.github.io/tags/ProbabilityTheory/
 https://wfyishere.github.io/categories/CompetitiveProgramming/
 https://wfyishere.github.io/categories/Notes/
 https://wfyishere.github.io/categories/CompetitiveProgramming/CodeForces/
